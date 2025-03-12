@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>FIDO2 CTAP crypto</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__fido2__ctap__crypto.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">FIDO2 CTAP crypto<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__fido2.html">FIDO2 - Fast Identity Online 2</a> &raquo; <a class="el" href="group__fido2__ctap.html">CTAP</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>FIDO2 CTAP crypto helper.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>FIDO2 CTAP crypto helper. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:ctap__crypto_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ctap__crypto_8h.html">ctap_crypto.h</a></td></tr>
+<tr class="memdesc:ctap__crypto_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIDO2 CTAP crypto helper defines, structures and function declarations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elliptic curve public key.  <a href="structctap__crypto__pub__key__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structctap__crypto__key__agreement__key__t.html">ctap_crypto_key_agreement_key_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Key agreement key.  <a href="structctap__crypto__key__agreement__key__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga8bef3f3fee26c70308a414fb343700fe"><td class="memItemLeft" align="right" valign="top"><a id="ga8bef3f3fee26c70308a414fb343700fe"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga8bef3f3fee26c70308a414fb343700fe">CTAP_CRYPTO_KEY_SIZE</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memdesc:ga8bef3f3fee26c70308a414fb343700fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size in bytes of cryptographic keys used. <br /></td></tr>
+<tr class="separator:ga8bef3f3fee26c70308a414fb343700fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1eb3056a137267d13a58ed2111c35909"><td class="memItemLeft" align="right" valign="top"><a id="ga1eb3056a137267d13a58ed2111c35909"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga1eb3056a137267d13a58ed2111c35909">CTAP_CRYPTO_ES256_DER_MAX_SIZE</a>&#160;&#160;&#160;72</td></tr>
+<tr class="memdesc:ga1eb3056a137267d13a58ed2111c35909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max size of ES256 signature in ASN.1 DER format. <br /></td></tr>
+<tr class="separator:ga1eb3056a137267d13a58ed2111c35909"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga19088d709e79ed0d171db084ba5a1ed2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga19088d709e79ed0d171db084ba5a1ed2">fido2_ctap_crypto_init</a> (void)</td></tr>
+<tr class="memdesc:ga19088d709e79ed0d171db084ba5a1ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize crypto helper.  <a href="#ga19088d709e79ed0d171db084ba5a1ed2">More...</a><br /></td></tr>
+<tr class="separator:ga19088d709e79ed0d171db084ba5a1ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fd161ca00f9410970da6fdf2b9b8b08"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga0fd161ca00f9410970da6fdf2b9b8b08">fido2_ctap_crypto_prng</a> (uint8_t *buf, size_t len)</td></tr>
+<tr class="memdesc:ga0fd161ca00f9410970da6fdf2b9b8b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__random.html#ga96ef972fa09ff461234522b64a686630">random_bytes</a>.  <a href="#ga0fd161ca00f9410970da6fdf2b9b8b08">More...</a><br /></td></tr>
+<tr class="separator:ga0fd161ca00f9410970da6fdf2b9b8b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac93e425d98ff050c0f0a9692f6f79e95"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#gac93e425d98ff050c0f0a9692f6f79e95">fido2_ctap_crypto_sha256_init</a> (<a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *ctx)</td></tr>
+<tr class="memdesc:gac93e425d98ff050c0f0a9692f6f79e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#gaa139dff5368e7abe4bd6ce8ec412a825">sha256_init</a>.  <a href="#gac93e425d98ff050c0f0a9692f6f79e95">More...</a><br /></td></tr>
+<tr class="separator:gac93e425d98ff050c0f0a9692f6f79e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21ba9961a2fd0ae086e4c9a37cdb1f45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga21ba9961a2fd0ae086e4c9a37cdb1f45">fido2_ctap_crypto_sha256_update</a> (<a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *ctx, const void *data, size_t len)</td></tr>
+<tr class="memdesc:ga21ba9961a2fd0ae086e4c9a37cdb1f45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga2d0ca6d5d14400a51700a52448baacb2">sha256_update</a>.  <a href="#ga21ba9961a2fd0ae086e4c9a37cdb1f45">More...</a><br /></td></tr>
+<tr class="separator:ga21ba9961a2fd0ae086e4c9a37cdb1f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99e012a97b53348f15ee455790cc6b98"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga99e012a97b53348f15ee455790cc6b98">fido2_ctap_crypto_sha256_final</a> (<a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *ctx, void *digest)</td></tr>
+<tr class="memdesc:ga99e012a97b53348f15ee455790cc6b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for <a class="el" href="group__sys__hashes__sha256.html#ga68fa67df986540bc7da102fa03e2e591">sha256_final</a>.  <a href="#ga99e012a97b53348f15ee455790cc6b98">More...</a><br /></td></tr>
+<tr class="separator:ga99e012a97b53348f15ee455790cc6b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b1675f80c3b917c93290f6d0daec494"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga3b1675f80c3b917c93290f6d0daec494">fido2_ctap_crypto_sha256</a> (const void *data, size_t len, void *digest)</td></tr>
+<tr class="memdesc:ga3b1675f80c3b917c93290f6d0daec494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#gad1360f15a220ecf3b6a2222a73875b3c">sha256</a>.  <a href="#ga3b1675f80c3b917c93290f6d0daec494">More...</a><br /></td></tr>
+<tr class="separator:ga3b1675f80c3b917c93290f6d0daec494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21021981ca9bed7009b731ca22da4f87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga21021981ca9bed7009b731ca22da4f87">fido2_ctap_crypto_hmac_sha256_init</a> (<a class="el" href="structhmac__context__t.html">hmac_context_t</a> *ctx, const void *key, size_t key_length)</td></tr>
+<tr class="memdesc:ga21021981ca9bed7009b731ca22da4f87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga921d7dcce661d2f8bbd825a19a76e620">hmac_sha256_init</a>.  <a href="#ga21021981ca9bed7009b731ca22da4f87">More...</a><br /></td></tr>
+<tr class="separator:ga21021981ca9bed7009b731ca22da4f87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab283ccbd42d9746fbff6afb71a7d77e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#gab283ccbd42d9746fbff6afb71a7d77e5">fido2_ctap_crypto_hmac_sha256_update</a> (<a class="el" href="structhmac__context__t.html">hmac_context_t</a> *ctx, const void *data, size_t len)</td></tr>
+<tr class="memdesc:gab283ccbd42d9746fbff6afb71a7d77e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga89999741ee7d8969192fcf724ef801d1">hmac_sha256_update</a>.  <a href="#gab283ccbd42d9746fbff6afb71a7d77e5">More...</a><br /></td></tr>
+<tr class="separator:gab283ccbd42d9746fbff6afb71a7d77e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c9d3dfef8c643d7a37eb1eb13a7078f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga2c9d3dfef8c643d7a37eb1eb13a7078f">fido2_ctap_crypto_hmac_sha256_final</a> (<a class="el" href="structhmac__context__t.html">hmac_context_t</a> *ctx, void *digest)</td></tr>
+<tr class="memdesc:ga2c9d3dfef8c643d7a37eb1eb13a7078f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga897c495b2203768ca17a7622086e16b8">hmac_sha256_final</a>.  <a href="#ga2c9d3dfef8c643d7a37eb1eb13a7078f">More...</a><br /></td></tr>
+<tr class="separator:ga2c9d3dfef8c643d7a37eb1eb13a7078f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88bd0d01a6e51d18c715830145b322d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga88bd0d01a6e51d18c715830145b322d4">fido2_ctap_crypto_hmac_sha256</a> (const void *key, size_t key_length, const void *data, size_t len, void *digest)</td></tr>
+<tr class="memdesc:ga88bd0d01a6e51d18c715830145b322d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga153aefd72bd890488cfefe6eebd921a6">hmac_sha256</a>.  <a href="#ga88bd0d01a6e51d18c715830145b322d4">More...</a><br /></td></tr>
+<tr class="separator:ga88bd0d01a6e51d18c715830145b322d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f35f657fdde75813cb8746ac228cffd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga5f35f657fdde75813cb8746ac228cffd">fido2_ctap_crypto_gen_keypair</a> (<a class="el" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a> *pub_key, uint8_t *priv_key, size_t len)</td></tr>
+<tr class="memdesc:ga5f35f657fdde75813cb8746ac228cffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate cryptographic key pair.  <a href="#ga5f35f657fdde75813cb8746ac228cffd">More...</a><br /></td></tr>
+<tr class="separator:ga5f35f657fdde75813cb8746ac228cffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd9ab38dbb0436fbca44188052296c09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#gabd9ab38dbb0436fbca44188052296c09">fido2_ctap_crypto_ecdh</a> (uint8_t *out, size_t len, <a class="el" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a> *pub_key, uint8_t *priv_key, size_t key_len)</td></tr>
+<tr class="memdesc:gabd9ab38dbb0436fbca44188052296c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elliptic-curve Diffie-Hellmann.  <a href="#gabd9ab38dbb0436fbca44188052296c09">More...</a><br /></td></tr>
+<tr class="separator:gabd9ab38dbb0436fbca44188052296c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac367be3131cdaed23b3a0a6d904c20ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#gac367be3131cdaed23b3a0a6d904c20ce">fido2_ctap_crypto_get_sig</a> (uint8_t *hash, size_t hash_len, uint8_t *sig, size_t *sig_len, const uint8_t *key, size_t key_len)</td></tr>
+<tr class="memdesc:gac367be3131cdaed23b3a0a6d904c20ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create cryptographic signature.  <a href="#gac367be3131cdaed23b3a0a6d904c20ce">More...</a><br /></td></tr>
+<tr class="separator:gac367be3131cdaed23b3a0a6d904c20ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63fddd0ee8b24bc231aebf888677a2e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga63fddd0ee8b24bc231aebf888677a2e8">fido2_ctap_crypto_aes_enc</a> (uint8_t *out, size_t *out_len, uint8_t *in, size_t in_len, const uint8_t *key, size_t key_len)</td></tr>
+<tr class="memdesc:ga63fddd0ee8b24bc231aebf888677a2e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt data using AES-256-CBC.  <a href="#ga63fddd0ee8b24bc231aebf888677a2e8">More...</a><br /></td></tr>
+<tr class="separator:ga63fddd0ee8b24bc231aebf888677a2e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga961093060756db1c6b0f32e88703dc41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga961093060756db1c6b0f32e88703dc41">fido2_ctap_crypto_aes_dec</a> (uint8_t *out, size_t *out_len, uint8_t *in, size_t in_len, const uint8_t *key, size_t key_len)</td></tr>
+<tr class="memdesc:ga961093060756db1c6b0f32e88703dc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrypt data using AES-256-CBC.  <a href="#ga961093060756db1c6b0f32e88703dc41">More...</a><br /></td></tr>
+<tr class="separator:ga961093060756db1c6b0f32e88703dc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3556bb2e38ed438098ec055c12752ad8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga3556bb2e38ed438098ec055c12752ad8">fido2_ctap_crypto_aes_ccm_enc</a> (uint8_t *out, size_t out_len, const uint8_t *in, size_t in_len, uint8_t *auth_data, size_t auth_data_len, uint8_t mac_len, uint8_t length_encoding, const uint8_t *nonce, size_t nonce_len, const uint8_t *key, size_t key_len)</td></tr>
+<tr class="memdesc:ga3556bb2e38ed438098ec055c12752ad8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt data using AES-128-CCM.  <a href="#ga3556bb2e38ed438098ec055c12752ad8">More...</a><br /></td></tr>
+<tr class="separator:ga3556bb2e38ed438098ec055c12752ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b9f1cae0f4898174024fdb210ec21e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap__crypto.html#ga9b9f1cae0f4898174024fdb210ec21e9">fido2_ctap_crypto_aes_ccm_dec</a> (uint8_t *out, size_t out_len, const uint8_t *in, size_t in_len, uint8_t *auth_data, size_t auth_data_len, uint8_t mac_len, uint8_t length_encoding, const uint8_t *nonce, size_t nonce_len, const uint8_t *key, size_t key_len)</td></tr>
+<tr class="memdesc:ga9b9f1cae0f4898174024fdb210ec21e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encrypt data using AES-128-CCM.  <a href="#ga9b9f1cae0f4898174024fdb210ec21e9">More...</a><br /></td></tr>
+<tr class="separator:ga9b9f1cae0f4898174024fdb210ec21e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga9b9f1cae0f4898174024fdb210ec21e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b9f1cae0f4898174024fdb210ec21e9">&#9670;&nbsp;</a></span>fido2_ctap_crypto_aes_ccm_dec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_aes_ccm_dec </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>out_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>in_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>auth_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>auth_data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mac_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length_encoding</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>nonce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nonce_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt data using AES-128-CCM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>encrypted data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out_len</td><td>length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>data to be encrypted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_len</td><td>length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_data</td><td>additional data to authenticate in MAC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_data_len</td><td>length of <code>auth_data</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac_len</td><td>length of appended MAC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length_encoding</td><td>max supported length of plaintext </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonce</td><td>nonce for ctr mode encryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonce_len</td><td>length of <code>nonce</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>symmetric key to use for encryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga3556bb2e38ed438098ec055c12752ad8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3556bb2e38ed438098ec055c12752ad8">&#9670;&nbsp;</a></span>fido2_ctap_crypto_aes_ccm_enc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_aes_ccm_enc </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>out_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>in_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>auth_data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>auth_data_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mac_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length_encoding</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>nonce</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>nonce_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt data using AES-128-CCM. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>encrypted data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out_len</td><td>length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>data to be encrypted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_len</td><td>length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_data</td><td>additional data to authenticate in MAC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">auth_data_len</td><td>length of <code>auth_data</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mac_len</td><td>length of appended MAC </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length_encoding</td><td>max supported length of plaintext </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonce</td><td>nonce for ctr mode encryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nonce_len</td><td>length of <code>nonce</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>symmetric key to use for encryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga961093060756db1c6b0f32e88703dc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga961093060756db1c6b0f32e88703dc41">&#9670;&nbsp;</a></span>fido2_ctap_crypto_aes_dec()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_aes_dec </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>out_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>in_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrypt data using AES-256-CBC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>decrypted data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out_len</td><td>length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>encrypted data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_len</td><td>len of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>symmetric key to use for decryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga63fddd0ee8b24bc231aebf888677a2e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga63fddd0ee8b24bc231aebf888677a2e8">&#9670;&nbsp;</a></span>fido2_ctap_crypto_aes_enc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_aes_enc </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>out_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>in_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encrypt data using AES-256-CBC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>encrypted data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out_len</td><td>length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>data to be encrypted </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_len</td><td>length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>symmetric key to use for encryption </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="gabd9ab38dbb0436fbca44188052296c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabd9ab38dbb0436fbca44188052296c09">&#9670;&nbsp;</a></span>fido2_ctap_crypto_ecdh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_ecdh </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a> *&#160;</td>
+          <td class="paramname"><em>pub_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>priv_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elliptic-curve Diffie-Hellmann. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>shared secret buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pub_key</td><td>public key of other party </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv_key</td><td>private key </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>priv_key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga5f35f657fdde75813cb8746ac228cffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5f35f657fdde75813cb8746ac228cffd">&#9670;&nbsp;</a></span>fido2_ctap_crypto_gen_keypair()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_gen_keypair </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structctap__crypto__pub__key__t.html">ctap_crypto_pub_key_t</a> *&#160;</td>
+          <td class="paramname"><em>pub_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>priv_key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate cryptographic key pair. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pub_key</td><td>public key buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">priv_key</td><td>private key buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>priv_key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="gac367be3131cdaed23b3a0a6d904c20ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac367be3131cdaed23b3a0a6d904c20ce">&#9670;&nbsp;</a></span>fido2_ctap_crypto_get_sig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_get_sig </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>hash_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>sig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>sig_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create cryptographic signature. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash</td><td>Hash to be signed </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hash_len</td><td>length of <code>hash</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sig</td><td>signature buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sig_len</td><td>length of <code>sig</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>private key to use for signature </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_len</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga88bd0d01a6e51d18c715830145b322d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga88bd0d01a6e51d18c715830145b322d4">&#9670;&nbsp;</a></span>fido2_ctap_crypto_hmac_sha256()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_hmac_sha256 </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>digest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga153aefd72bd890488cfefe6eebd921a6">hmac_sha256</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>key used in the hmac-sha256 computation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_length</td><td>length of <code>key</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to the buffer to generate the hmac-sha256 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>data</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">digest</td><td>the computed hmac-sha256, length MUST be SHA256_DIGEST_LENGTH</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>discards the pointer returned by <a class="el" href="group__sys__hashes__sha256.html#ga153aefd72bd890488cfefe6eebd921a6">hmac_sha256</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga2c9d3dfef8c643d7a37eb1eb13a7078f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c9d3dfef8c643d7a37eb1eb13a7078f">&#9670;&nbsp;</a></span>fido2_ctap_crypto_hmac_sha256_final()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_hmac_sha256_final </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhmac__context__t.html">hmac_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>digest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga897c495b2203768ca17a7622086e16b8">hmac_sha256_final</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td><a class="el" href="structhmac__context__t.html" title="Context for HMAC operations based on sha256. ">hmac_context_t</a> handle to use </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">digest</td><td>the computed hmac-sha256, length MUST be SHA256_DIGEST_LENGTH</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga21021981ca9bed7009b731ca22da4f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21021981ca9bed7009b731ca22da4f87">&#9670;&nbsp;</a></span>fido2_ctap_crypto_hmac_sha256_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_hmac_sha256_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhmac__context__t.html">hmac_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga921d7dcce661d2f8bbd825a19a76e620">hmac_sha256_init</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td><a class="el" href="structhmac__context__t.html" title="Context for HMAC operations based on sha256. ">hmac_context_t</a> handle to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>key used in the hmac-sha256 computation </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key_length</td><td>length of <code>key</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="gab283ccbd42d9746fbff6afb71a7d77e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab283ccbd42d9746fbff6afb71a7d77e5">&#9670;&nbsp;</a></span>fido2_ctap_crypto_hmac_sha256_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_hmac_sha256_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structhmac__context__t.html">hmac_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga89999741ee7d8969192fcf724ef801d1">hmac_sha256_update</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td><a class="el" href="structhmac__context__t.html" title="Context for HMAC operations based on sha256. ">hmac_context_t</a> handle to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to the buffer to generate hash from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>data</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga19088d709e79ed0d171db084ba5a1ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga19088d709e79ed0d171db084ba5a1ed2">&#9670;&nbsp;</a></span>fido2_ctap_crypto_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize crypto helper. </p>
+<p>Initializes crypto libs and creates key_agreement key pair</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga0fd161ca00f9410970da6fdf2b9b8b08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0fd161ca00f9410970da6fdf2b9b8b08">&#9670;&nbsp;</a></span>fido2_ctap_crypto_prng()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_prng </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__random.html#ga96ef972fa09ff461234522b64a686630">random_bytes</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>buffer to hold random bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>buf</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga3b1675f80c3b917c93290f6d0daec494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3b1675f80c3b917c93290f6d0daec494">&#9670;&nbsp;</a></span>fido2_ctap_crypto_sha256()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_sha256 </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>digest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#gad1360f15a220ecf3b6a2222a73875b3c">sha256</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>pointer to the buffer to generate hash from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of <code>data</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">digest</td><td>optional pointer to an array for the result, length must be SHA256_DIGEST_LENGTH</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>discards the pointer returned by <a class="el" href="group__sys__hashes__sha256.html#gad1360f15a220ecf3b6a2222a73875b3c">sha256</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga99e012a97b53348f15ee455790cc6b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga99e012a97b53348f15ee455790cc6b98">&#9670;&nbsp;</a></span>fido2_ctap_crypto_sha256_final()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_sha256_final </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>digest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper for <a class="el" href="group__sys__hashes__sha256.html#ga68fa67df986540bc7da102fa03e2e591">sha256_final</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>sha256_context_t handle to use </td></tr>
+    <tr><td class="paramname">digest</td><td>resulting digest, this is the hash of all the bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="gac93e425d98ff050c0f0a9692f6f79e95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac93e425d98ff050c0f0a9692f6f79e95">&#9670;&nbsp;</a></span>fido2_ctap_crypto_sha256_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_sha256_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#gaa139dff5368e7abe4bd6ce8ec412a825">sha256_init</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ctx</td><td>sha256_context_t handle to init</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga21ba9961a2fd0ae086e4c9a37cdb1f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21ba9961a2fd0ae086e4c9a37cdb1f45">&#9670;&nbsp;</a></span>fido2_ctap_crypto_sha256_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> fido2_ctap_crypto_sha256_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__hashes__sha256.html#gaef0579c8c986712533a9a972feca7d92">sha256_context_t</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wrapper function for <a class="el" href="group__sys__hashes__sha256.html#ga2d0ca6d5d14400a51700a52448baacb2">sha256_update</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">ctx</td><td>sha256_context_t handle to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Input data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Length of <code>data</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Touch device generic API</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__drivers__touch__dev.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Touch device generic API<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__misc.html">Miscellaneous Drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Define the generic API of a touch device.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Define the generic API of a touch device. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br />
+ This API is experimental and in an early state - expect changes!</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span style="display: none;">.nosp@m.</span>ndre<span style="display: none;">.nosp@m.</span>.abad<span style="display: none;">.nosp@m.</span>ie@i<span style="display: none;">.nosp@m.</span>nria.<span style="display: none;">.nosp@m.</span>fr</a> </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtouch__t.html">touch_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch coordinates.  <a href="structtouch__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtouch__dev__driver__t.html">touch_dev_driver_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic type for a touch driver.  <a href="structtouch__dev__driver__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtouch__dev.html">touch_dev</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic type for a touch device.  <a href="structtouch__dev.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtouch__dev__reg.html">touch_dev_reg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch dev registry entry.  <a href="structtouch__dev__reg.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5cad24239bba6040a25967e4cfe23f07"><td class="memItemLeft" align="right" valign="top"><a id="ga5cad24239bba6040a25967e4cfe23f07"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga5cad24239bba6040a25967e4cfe23f07">TOUCH_DEV_VALUE_INVALID</a>&#160;&#160;&#160;((<a class="el" href="structtouch__t.html">touch_t</a>){ UINT16_MAX, UINT16_MAX })</td></tr>
+<tr class="memdesc:ga5cad24239bba6040a25967e4cfe23f07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalid touch value. <br /></td></tr>
+<tr class="separator:ga5cad24239bba6040a25967e4cfe23f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga717c66ce86128285c1041c72d0861d06"><td class="memItemLeft" align="right" valign="top"><a id="ga717c66ce86128285c1041c72d0861d06"></a>
+typedef struct <a class="el" href="structtouch__dev.html">touch_dev</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a></td></tr>
+<tr class="memdesc:ga717c66ce86128285c1041c72d0861d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declaration for touch device struct. <br /></td></tr>
+<tr class="separator:ga717c66ce86128285c1041c72d0861d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga83870ac749c2cbc292043239697173a7"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga83870ac749c2cbc292043239697173a7">touch_event_cb_t</a>) (void *arg)</td></tr>
+<tr class="memdesc:ga83870ac749c2cbc292043239697173a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of touch event callback triggered from interrupt.  <a href="#ga83870ac749c2cbc292043239697173a7">More...</a><br /></td></tr>
+<tr class="separator:ga83870ac749c2cbc292043239697173a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacafc828e4020997c57e262fdeadcca6c"><td class="memItemLeft" align="right" valign="top"><a id="gacafc828e4020997c57e262fdeadcca6c"></a>
+typedef struct <a class="el" href="structtouch__dev__reg.html">touch_dev_reg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a></td></tr>
+<tr class="memdesc:gacafc828e4020997c57e262fdeadcca6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch dev registry entry. <br /></td></tr>
+<tr class="separator:gacafc828e4020997c57e262fdeadcca6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga2ac0a71afc90e75cec145a31ff4dbf16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga2ac0a71afc90e75cec145a31ff4dbf16">touch_dev_reg_add</a> (<a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a> *dev)</td></tr>
+<tr class="memdesc:ga2ac0a71afc90e75cec145a31ff4dbf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add pointer to a touch device item to the list of touch items.  <a href="#ga2ac0a71afc90e75cec145a31ff4dbf16">More...</a><br /></td></tr>
+<tr class="separator:ga2ac0a71afc90e75cec145a31ff4dbf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78fc29097b69a30dfb52f459bea5bea2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga78fc29097b69a30dfb52f459bea5bea2">touch_dev_reg_find_screen</a> (uint8_t screen_id)</td></tr>
+<tr class="memdesc:ga78fc29097b69a30dfb52f459bea5bea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the touch device that is attached to a given screen.  <a href="#ga78fc29097b69a30dfb52f459bea5bea2">More...</a><br /></td></tr>
+<tr class="separator:ga78fc29097b69a30dfb52f459bea5bea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84d5e99da99d6d110951d0b8332d7e84"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga84d5e99da99d6d110951d0b8332d7e84">touch_dev_height</a> (const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *dev)</td></tr>
+<tr class="memdesc:ga84d5e99da99d6d110951d0b8332d7e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the height of the touch device.  <a href="#ga84d5e99da99d6d110951d0b8332d7e84">More...</a><br /></td></tr>
+<tr class="separator:ga84d5e99da99d6d110951d0b8332d7e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7b956040a98da46c1f4f854db60a0e0"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#gad7b956040a98da46c1f4f854db60a0e0">touch_dev_width</a> (const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *dev)</td></tr>
+<tr class="memdesc:gad7b956040a98da46c1f4f854db60a0e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the width of the touch device.  <a href="#gad7b956040a98da46c1f4f854db60a0e0">More...</a><br /></td></tr>
+<tr class="separator:gad7b956040a98da46c1f4f854db60a0e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a6ae7ce0c841318d8bb6df26c93d137"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga5a6ae7ce0c841318d8bb6df26c93d137">touch_dev_max_numof</a> (const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *dev)</td></tr>
+<tr class="memdesc:ga5a6ae7ce0c841318d8bb6df26c93d137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of touches the touch device supports.  <a href="#ga5a6ae7ce0c841318d8bb6df26c93d137">More...</a><br /></td></tr>
+<tr class="separator:ga5a6ae7ce0c841318d8bb6df26c93d137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cfe2e0eab98131e8f90210e953a5e89"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#ga7cfe2e0eab98131e8f90210e953a5e89">touch_dev_touches</a> (const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *dev, <a class="el" href="structtouch__t.html">touch_t</a> *touches, size_t len)</td></tr>
+<tr class="memdesc:ga7cfe2e0eab98131e8f90210e953a5e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current touches on the touch device.  <a href="#ga7cfe2e0eab98131e8f90210e953a5e89">More...</a><br /></td></tr>
+<tr class="separator:ga7cfe2e0eab98131e8f90210e953a5e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfbc3fc4125810605a6815e9dbd7d653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#gadfbc3fc4125810605a6815e9dbd7d653">touch_dev_set_touch_event_callback</a> (const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *dev, <a class="el" href="group__drivers__touch__dev.html#ga83870ac749c2cbc292043239697173a7">touch_event_cb_t</a> cb, void *arg)</td></tr>
+<tr class="memdesc:gadfbc3fc4125810605a6815e9dbd7d653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set and configure the touch event callback.  <a href="#gadfbc3fc4125810605a6815e9dbd7d653">More...</a><br /></td></tr>
+<tr class="separator:gadfbc3fc4125810605a6815e9dbd7d653"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gaaa812f02f9f0b4ef5eb74b0717fac033"><td class="memItemLeft" align="right" valign="top"><a id="gaaa812f02f9f0b4ef5eb74b0717fac033"></a>
+<a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__touch__dev.html#gaaa812f02f9f0b4ef5eb74b0717fac033">touch_dev_reg</a></td></tr>
+<tr class="memdesc:gaaa812f02f9f0b4ef5eb74b0717fac033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Export the touch device registry as global variable. <br /></td></tr>
+<tr class="separator:gaaa812f02f9f0b4ef5eb74b0717fac033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga83870ac749c2cbc292043239697173a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83870ac749c2cbc292043239697173a7">&#9670;&nbsp;</a></span>touch_event_cb_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* touch_event_cb_t) (void *arg)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Signature of touch event callback triggered from interrupt. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>optional context for the callback </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="touch__dev_8h_source.html#l00054">54</a> of file <a class="el" href="touch__dev_8h_source.html">touch_dev.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga84d5e99da99d6d110951d0b8332d7e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84d5e99da99d6d110951d0b8332d7e84">&#9670;&nbsp;</a></span>touch_dev_height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t touch_dev_height </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the height of the touch device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Height in points </dd></dl>
+
+</div>
+</div>
+<a id="ga5a6ae7ce0c841318d8bb6df26c93d137"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a6ae7ce0c841318d8bb6df26c93d137">&#9670;&nbsp;</a></span>touch_dev_max_numof()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t touch_dev_max_numof </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the maximum number of touches the touch device supports. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of touches </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="touch__dev_8h_source.html#l00179">179</a> of file <a class="el" href="touch__dev_8h_source.html">touch_dev.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2ac0a71afc90e75cec145a31ff4dbf16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2ac0a71afc90e75cec145a31ff4dbf16">&#9670;&nbsp;</a></span>touch_dev_reg_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int touch_dev_reg_add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add pointer to a touch device item to the list of touch items. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success </dd>
+<dd>
+-ENODEV on invalid entry </dd></dl>
+
+</div>
+</div>
+<a id="ga78fc29097b69a30dfb52f459bea5bea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga78fc29097b69a30dfb52f459bea5bea2">&#9670;&nbsp;</a></span>touch_dev_reg_find_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__touch__dev.html#gacafc828e4020997c57e262fdeadcca6c">touch_dev_reg_t</a>* touch_dev_reg_find_screen </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>screen_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the touch device that is attached to a given screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen_id</td><td>Identifier (number) of the screen</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the touch device in the registry </dd>
+<dd>
+NULL if there's no match </dd></dl>
+
+</div>
+</div>
+<a id="gadfbc3fc4125810605a6815e9dbd7d653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadfbc3fc4125810605a6815e9dbd7d653">&#9670;&nbsp;</a></span>touch_dev_set_touch_event_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void touch_dev_set_touch_event_callback </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__drivers__touch__dev.html#ga83870ac749c2cbc292043239697173a7">touch_event_cb_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set and configure the touch event callback. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>The callback function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">arg</td><td>Context argument </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7cfe2e0eab98131e8f90210e953a5e89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7cfe2e0eab98131e8f90210e953a5e89">&#9670;&nbsp;</a></span>touch_dev_touches()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t touch_dev_touches </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structtouch__t.html">touch_t</a> *&#160;</td>
+          <td class="paramname"><em>touches</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the current touches on the touch device. </p>
+<p>If <code>touches</code> is NULL, this function only returns the number of touches.</p>
+<p>Touch position coordinates use the top left corner as origin.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">touches</td><td>The array of touches </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The touches array len </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of touch positions, 0 means no touch </dd></dl>
+
+</div>
+</div>
+<a id="gad7b956040a98da46c1f4f854db60a0e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7b956040a98da46c1f4f854db60a0e0">&#9670;&nbsp;</a></span>touch_dev_width()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t touch_dev_width </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__touch__dev.html#ga717c66ce86128285c1041c72d0861d06">touch_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the width of the touch device. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Pointer to the touch device</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Width in points </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

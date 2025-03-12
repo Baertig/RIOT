@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LoRa modulation compile configurations</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__lora__conf.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">LoRa modulation compile configurations<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__lora.html">LoRa modulation</a> &#124; <a class="el" href="group__config.html">Compile time configurations</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga36dd161fca636170aaf35a1b8a298fc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga36dd161fca636170aaf35a1b8a298fc8">LORA_FREQUENCY_RESOLUTION_NANOHERTZ_DEFAULT</a>&#160;&#160;&#160;61035156250</td></tr>
+<tr class="memdesc:ga36dd161fca636170aaf35a1b8a298fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frequency resolution in nano Hz.  <a href="#ga36dd161fca636170aaf35a1b8a298fc8">More...</a><br /></td></tr>
+<tr class="separator:ga36dd161fca636170aaf35a1b8a298fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabee9e33b1627e2080dec2146be3067ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#gabee9e33b1627e2080dec2146be3067ab">CONFIG_LORA_PREAMBLE_LENGTH_DEFAULT</a>&#160;&#160;&#160;(8U)</td></tr>
+<tr class="memdesc:gabee9e33b1627e2080dec2146be3067ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preamble length, same for Tx and Rx.  <a href="#gabee9e33b1627e2080dec2146be3067ab">More...</a><br /></td></tr>
+<tr class="separator:gabee9e33b1627e2080dec2146be3067ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b5eaef058db82ae34779a04ae10d647"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga4b5eaef058db82ae34779a04ae10d647">CONFIG_LORA_SYMBOL_TIMEOUT_DEFAULT</a>&#160;&#160;&#160;(10U)</td></tr>
+<tr class="memdesc:ga4b5eaef058db82ae34779a04ae10d647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol timeout period in symbols.  <a href="#ga4b5eaef058db82ae34779a04ae10d647">More...</a><br /></td></tr>
+<tr class="separator:ga4b5eaef058db82ae34779a04ae10d647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5047d88aa55281b47060c996d0d81d6d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga5047d88aa55281b47060c996d0d81d6d">CONFIG_LORA_BW_DEFAULT</a>&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#gga13ffcc7bac9f0d706a062c76c809ffa1a2cdfb456ab4912987e1200a536ec9f4c">LORA_BW_125_KHZ</a>)</td></tr>
+<tr class="memdesc:ga5047d88aa55281b47060c996d0d81d6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set channel bandwidth.  <a href="#ga5047d88aa55281b47060c996d0d81d6d">More...</a><br /></td></tr>
+<tr class="separator:ga5047d88aa55281b47060c996d0d81d6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1dccc0e59a5918f1c2bca82a8ecc6bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#gaa1dccc0e59a5918f1c2bca82a8ecc6bd">CONFIG_LORA_SF_DEFAULT</a>&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#ggaca0fa93565639356580e925808adfce2a252967b1109a2820337ae52698bd38bd">LORA_SF7</a>)</td></tr>
+<tr class="memdesc:gaa1dccc0e59a5918f1c2bca82a8ecc6bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Spreading Factor (SF)  <a href="#gaa1dccc0e59a5918f1c2bca82a8ecc6bd">More...</a><br /></td></tr>
+<tr class="separator:gaa1dccc0e59a5918f1c2bca82a8ecc6bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43f874ee4cf6abf58a1b6384b3c3bb23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga43f874ee4cf6abf58a1b6384b3c3bb23">CONFIG_LORA_CR_DEFAULT</a>&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#ggae29c89b0f3c72163f95695c230c0740ca916cb1c30262177cf11791adf3c6c976">LORA_CR_4_5</a>)</td></tr>
+<tr class="memdesc:ga43f874ee4cf6abf58a1b6384b3c3bb23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Coding Rate (CR)  <a href="#ga43f874ee4cf6abf58a1b6384b3c3bb23">More...</a><br /></td></tr>
+<tr class="separator:ga43f874ee4cf6abf58a1b6384b3c3bb23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga515fc7a316f8848622b87ee43e556098"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga515fc7a316f8848622b87ee43e556098">CONFIG_LORA_IQ_INVERTED_DEFAULT</a></td></tr>
+<tr class="memdesc:ga515fc7a316f8848622b87ee43e556098"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this to 1 to enable inverted I/Q mode.  <a href="#ga515fc7a316f8848622b87ee43e556098">More...</a><br /></td></tr>
+<tr class="separator:ga515fc7a316f8848622b87ee43e556098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga206c850e2e12a92d2f7c3f184986e991"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga206c850e2e12a92d2f7c3f184986e991">CONFIG_LORA_FREQUENCY_HOPPING_DEFAULT</a></td></tr>
+<tr class="memdesc:ga206c850e2e12a92d2f7c3f184986e991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this to 1 to enable frequency hopping.  <a href="#ga206c850e2e12a92d2f7c3f184986e991">More...</a><br /></td></tr>
+<tr class="separator:ga206c850e2e12a92d2f7c3f184986e991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25f1eb22926f93f6825601568a97ada8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga25f1eb22926f93f6825601568a97ada8">CONFIG_LORA_FREQUENCY_HOPPING_PERIOD_DEFAULT</a>&#160;&#160;&#160;(0U)</td></tr>
+<tr class="memdesc:ga25f1eb22926f93f6825601568a97ada8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frequency hopping period in symbols.  <a href="#ga25f1eb22926f93f6825601568a97ada8">More...</a><br /></td></tr>
+<tr class="separator:ga25f1eb22926f93f6825601568a97ada8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f491f665780926b1cf750712d353649"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga7f491f665780926b1cf750712d353649">CONFIG_LORA_FIXED_HEADER_LEN_MODE_DEFAULT</a></td></tr>
+<tr class="memdesc:ga7f491f665780926b1cf750712d353649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set this to 1 to enable fixed header length mode (implicit header)  <a href="#ga7f491f665780926b1cf750712d353649">More...</a><br /></td></tr>
+<tr class="separator:ga7f491f665780926b1cf750712d353649"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4619b785a7750b4bb3d67ab76fd3eb80"><td class="memItemLeft" align="right" valign="top"><a id="ga4619b785a7750b4bb3d67ab76fd3eb80"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga4619b785a7750b4bb3d67ab76fd3eb80">CONFIG_LORA_PAYLOAD_CRC_OFF_DEFAULT</a></td></tr>
+<tr class="memdesc:ga4619b785a7750b4bb3d67ab76fd3eb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable payload CRC, optional. <br /></td></tr>
+<tr class="separator:ga4619b785a7750b4bb3d67ab76fd3eb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97f52603060c741ab2f143958b2aa2ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__lora__conf.html#ga97f52603060c741ab2f143958b2aa2ad">CONFIG_LORA_PAYLOAD_LENGTH_DEFAULT</a>&#160;&#160;&#160;(0U)</td></tr>
+<tr class="memdesc:ga97f52603060c741ab2f143958b2aa2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure payload length.  <a href="#ga97f52603060c741ab2f143958b2aa2ad">More...</a><br /></td></tr>
+<tr class="separator:ga97f52603060c741ab2f143958b2aa2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga5047d88aa55281b47060c996d0d81d6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5047d88aa55281b47060c996d0d81d6d">&#9670;&nbsp;</a></span>CONFIG_LORA_BW_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_BW_DEFAULT&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#gga13ffcc7bac9f0d706a062c76c809ffa1a2cdfb456ab4912987e1200a536ec9f4c">LORA_BW_125_KHZ</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set channel bandwidth. </p>
+<p>Configure the channel bandwidth. Refer to country specific regulation on channel usage to identify the correct bandwidth. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00093">93</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga43f874ee4cf6abf58a1b6384b3c3bb23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43f874ee4cf6abf58a1b6384b3c3bb23">&#9670;&nbsp;</a></span>CONFIG_LORA_CR_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_CR_DEFAULT&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#ggae29c89b0f3c72163f95695c230c0740ca916cb1c30262177cf11791adf3c6c976">LORA_CR_4_5</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Coding Rate (CR) </p>
+<p>Configure Coding Rate (CR). CR denotes the implementation of forward error correction (FEC). This may be done by encoding 4-bit data with redundancies into 5-bit, 6-bit, 7-bit, or 8-bit. Coding Rate (CR) value need to be adjusted according to conditions of the channel used for data transmission. If there are too many interferences in the channel, then it’s recommended to increase the value of CR. However, the rise in CR value will also increase the duration for the transmission. Refer to country specific air time usage regulations before varying the CR. To calculate air time refer <a href="https://www.loratools.nl/#/airtime">https://www.loratools.nl/#/airtime</a> . </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00155">155</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7f491f665780926b1cf750712d353649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f491f665780926b1cf750712d353649">&#9670;&nbsp;</a></span>CONFIG_LORA_FIXED_HEADER_LEN_MODE_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_FIXED_HEADER_LEN_MODE_DEFAULT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set this to 1 to enable fixed header length mode (implicit header) </p>
+<p>If fixed header length mode ( implicit header mode) is enabled, PHY header (<code>PHDR</code>) in LoRa frame is discarded. For more information, refer to the section "LoRa frame structure" in this <a href="https://link.springer.com/article/10.1186/s13638-019-1542-x">publication</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00195">195</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga206c850e2e12a92d2f7c3f184986e991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga206c850e2e12a92d2f7c3f184986e991">&#9670;&nbsp;</a></span>CONFIG_LORA_FREQUENCY_HOPPING_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_FREQUENCY_HOPPING_DEFAULT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set this to 1 to enable frequency hopping. </p>
+<p>If Frequency hopping spread spectrum (FHSS) is enabled a portion of each LoRa packet is transmitted on each hopping channel from a look up table of frequencies managed by the host microcontroller. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00174">174</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga25f1eb22926f93f6825601568a97ada8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga25f1eb22926f93f6825601568a97ada8">&#9670;&nbsp;</a></span>CONFIG_LORA_FREQUENCY_HOPPING_PERIOD_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_FREQUENCY_HOPPING_PERIOD_DEFAULT&#160;&#160;&#160;(0U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frequency hopping period in symbols. </p>
+<p>Configure the hopping period, in symbols, time which each transmission will dwell in any given channel. One symbol has a length in time of (2^SF)/BW seconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00184">184</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga515fc7a316f8848622b87ee43e556098"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga515fc7a316f8848622b87ee43e556098">&#9670;&nbsp;</a></span>CONFIG_LORA_IQ_INVERTED_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_IQ_INVERTED_DEFAULT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set this to 1 to enable inverted I/Q mode. </p>
+<p>Enable this to invert the IQ signals used in RF modulation circuit. For more information on I/Q modulation technique visit <a href="http://www.ni.com/tutorial/4805/en/">http://www.ni.com/tutorial/4805/en/</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00164">164</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga97f52603060c741ab2f143958b2aa2ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97f52603060c741ab2f143958b2aa2ad">&#9670;&nbsp;</a></span>CONFIG_LORA_PAYLOAD_LENGTH_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_PAYLOAD_LENGTH_DEFAULT&#160;&#160;&#160;(0U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure payload length. </p>
+<p>Configure the length of payload. The configuration is unused when using explicit header mode ( <a class="el" href="group__net__lora__conf.html#ga7f491f665780926b1cf750712d353649">CONFIG_LORA_FIXED_HEADER_LEN_MODE_DEFAULT</a> ) as <code>PHDR</code> carries the length information. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00212">212</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="gabee9e33b1627e2080dec2146be3067ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabee9e33b1627e2080dec2146be3067ab">&#9670;&nbsp;</a></span>CONFIG_LORA_PREAMBLE_LENGTH_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_PREAMBLE_LENGTH_DEFAULT&#160;&#160;&#160;(8U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Preamble length, same for Tx and Rx. </p>
+<p>Configure preamble used in LoRa frame. Each LoRa frame begins with a preamble. It starts with a series of upchirps to cover the whole frequency band of the particular channel assigned. The last two upchirps encode the sync word. Sync word is used to differentiate between LoRa transmissions that use the same frequency bands. The sync word is followed by two and a quarter downchirps, for a duration of 2.25 symbols. The total duration of this preamble can be configured between 10.25 and 65,539.25 symbol hence the value can range from 8 to 65537. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00059">59</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa1dccc0e59a5918f1c2bca82a8ecc6bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa1dccc0e59a5918f1c2bca82a8ecc6bd">&#9670;&nbsp;</a></span>CONFIG_LORA_SF_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_SF_DEFAULT&#160;&#160;&#160;(<a class="el" href="group__net__lora.html#ggaca0fa93565639356580e925808adfce2a252967b1109a2820337ae52698bd38bd">LORA_SF7</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Spreading Factor (SF) </p>
+<p>Configure Spreading Factor (SF). SF denotes the amount of spreading code applied to the original data signal. A larger SF increases the time on air, which increases energy consumption, reduces the data rate, and improves communication range. Each step up in spreading factor effectively doubles the time on air to transmit the same amount of data. Refer to country specific air time usage regulations before varying the SF. To calculate air time refer <a href="https://www.loratools.nl/#/airtime">https://www.loratools.nl/#/airtime</a> . </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00123">123</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4b5eaef058db82ae34779a04ae10d647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b5eaef058db82ae34779a04ae10d647">&#9670;&nbsp;</a></span>CONFIG_LORA_SYMBOL_TIMEOUT_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_LORA_SYMBOL_TIMEOUT_DEFAULT&#160;&#160;&#160;(10U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Symbol timeout period in symbols. </p>
+<p>Configure symbol time out in terms of number of symbols. One symbol has a length in time of (2^SF)/BW seconds. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00068">68</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+<a id="ga36dd161fca636170aaf35a1b8a298fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga36dd161fca636170aaf35a1b8a298fc8">&#9670;&nbsp;</a></span>LORA_FREQUENCY_RESOLUTION_NANOHERTZ_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LORA_FREQUENCY_RESOLUTION_NANOHERTZ_DEFAULT&#160;&#160;&#160;61035156250</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Frequency resolution in nano Hz. </p>
+<p>This is the same as <code>(32 * 10^15) &gt;&gt; 19</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2net_2lora_8h_source.html#l00044">44</a> of file <a class="el" href="sys_2include_2net_2lora_8h_source.html">lora.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:33 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

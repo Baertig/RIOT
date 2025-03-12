@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>PSA Wrapper Functions: Cipher</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__psa__crypto__cipher.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">PSA Wrapper Functions: Cipher<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:psa__ciphers_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="psa__ciphers_8h.html">psa_ciphers.h</a></td></tr>
+<tr class="memdesc:psa__ciphers_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function declarations for low level wrapper functions for cipher operations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6cdc5ae6e564b047ef8a8a9bc41a8150"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#ga6cdc5ae6e564b047ef8a8a9bc41a8150">psa_cipher_cbc_aes_128_encrypt</a> (const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:ga6cdc5ae6e564b047ef8a8a9bc41a8150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for an AES 128 CBC encryption.  <a href="#ga6cdc5ae6e564b047ef8a8a9bc41a8150">More...</a><br /></td></tr>
+<tr class="separator:ga6cdc5ae6e564b047ef8a8a9bc41a8150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab858b1487f90e5d7b1dad739981dd73c"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#gab858b1487f90e5d7b1dad739981dd73c">psa_cipher_cbc_aes_128_decrypt</a> (const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:gab858b1487f90e5d7b1dad739981dd73c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for an AES 128 CBC decryption.  <a href="#gab858b1487f90e5d7b1dad739981dd73c">More...</a><br /></td></tr>
+<tr class="separator:gab858b1487f90e5d7b1dad739981dd73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2a69df4a7c0f4b539865a3c827d45181"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#ga2a69df4a7c0f4b539865a3c827d45181">psa_cipher_cbc_aes_192_encrypt</a> (const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:ga2a69df4a7c0f4b539865a3c827d45181"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for an AES 192 CBC encryption.  <a href="#ga2a69df4a7c0f4b539865a3c827d45181">More...</a><br /></td></tr>
+<tr class="separator:ga2a69df4a7c0f4b539865a3c827d45181"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9ebbaf380d000811e9581c0e68659a8"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#gaf9ebbaf380d000811e9581c0e68659a8">psa_cipher_cbc_aes_256_encrypt</a> (const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:gaf9ebbaf380d000811e9581c0e68659a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for an AES 256 CBC encryption.  <a href="#gaf9ebbaf380d000811e9581c0e68659a8">More...</a><br /></td></tr>
+<tr class="separator:gaf9ebbaf380d000811e9581c0e68659a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26a5b33b1ba6477b08fca693c45bdf55"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#ga26a5b33b1ba6477b08fca693c45bdf55">psa_cipher_chacha20_encrypt</a> (uint8_t *key_buffer, size_t key_buffer_size, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:ga26a5b33b1ba6477b08fca693c45bdf55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for ChaCha20 encryption/decryption.  <a href="#ga26a5b33b1ba6477b08fca693c45bdf55">More...</a><br /></td></tr>
+<tr class="separator:ga26a5b33b1ba6477b08fca693c45bdf55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22e9ef416995405d3ccc8c4081969da0"><td class="memItemLeft" align="right" valign="top">psa_status_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__cipher.html#ga22e9ef416995405d3ccc8c4081969da0">psa_cipher_chacha20_decrypt</a> (uint8_t *key_buffer, size_t key_buffer_size, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</td></tr>
+<tr class="memdesc:ga22e9ef416995405d3ccc8c4081969da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low level wrapper function to call a driver for ChaCha20 decryption.  <a href="#ga22e9ef416995405d3ccc8c4081969da0">More...</a><br /></td></tr>
+<tr class="separator:ga22e9ef416995405d3ccc8c4081969da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gab858b1487f90e5d7b1dad739981dd73c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab858b1487f90e5d7b1dad739981dd73c">&#9670;&nbsp;</a></span>psa_cipher_cbc_aes_128_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_cbc_aes_128_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *&#160;</td>
+          <td class="paramname"><em>attributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">psa_algorithm_t&#160;</td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for an AES 128 CBC decryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a31dd2b33667e1a4aebd4789d789c9c55">psa_cipher_decrypt()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attributes</td><td></td></tr>
+    <tr><td class="paramname">key_buffer</td><td></td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td></td></tr>
+    <tr><td class="paramname">alg</td><td></td></tr>
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">input_length</td><td></td></tr>
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">output_size</td><td></td></tr>
+    <tr><td class="paramname">output_length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>psa_status_t </dd></dl>
+
+</div>
+</div>
+<a id="ga6cdc5ae6e564b047ef8a8a9bc41a8150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cdc5ae6e564b047ef8a8a9bc41a8150">&#9670;&nbsp;</a></span>psa_cipher_cbc_aes_128_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_cbc_aes_128_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *&#160;</td>
+          <td class="paramname"><em>attributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">psa_algorithm_t&#160;</td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for an AES 128 CBC encryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attributes</td><td></td></tr>
+    <tr><td class="paramname">key_buffer</td><td></td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td></td></tr>
+    <tr><td class="paramname">alg</td><td></td></tr>
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">input_length</td><td></td></tr>
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">output_size</td><td></td></tr>
+    <tr><td class="paramname">output_length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>psa_status_t </dd></dl>
+
+</div>
+</div>
+<a id="ga2a69df4a7c0f4b539865a3c827d45181"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2a69df4a7c0f4b539865a3c827d45181">&#9670;&nbsp;</a></span>psa_cipher_cbc_aes_192_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_cbc_aes_192_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *&#160;</td>
+          <td class="paramname"><em>attributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">psa_algorithm_t&#160;</td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for an AES 192 CBC encryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attributes</td><td></td></tr>
+    <tr><td class="paramname">key_buffer</td><td></td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td></td></tr>
+    <tr><td class="paramname">alg</td><td></td></tr>
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">input_length</td><td></td></tr>
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">output_size</td><td></td></tr>
+    <tr><td class="paramname">output_length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>psa_status_t </dd></dl>
+
+</div>
+</div>
+<a id="gaf9ebbaf380d000811e9581c0e68659a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9ebbaf380d000811e9581c0e68659a8">&#9670;&nbsp;</a></span>psa_cipher_cbc_aes_256_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_cbc_aes_256_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *&#160;</td>
+          <td class="paramname"><em>attributes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">psa_algorithm_t&#160;</td>
+          <td class="paramname"><em>alg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for an AES 256 CBC encryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">attributes</td><td></td></tr>
+    <tr><td class="paramname">key_buffer</td><td></td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td></td></tr>
+    <tr><td class="paramname">alg</td><td></td></tr>
+    <tr><td class="paramname">input</td><td></td></tr>
+    <tr><td class="paramname">input_length</td><td></td></tr>
+    <tr><td class="paramname">output</td><td></td></tr>
+    <tr><td class="paramname">output_size</td><td></td></tr>
+    <tr><td class="paramname">output_length</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>psa_status_t </dd></dl>
+
+</div>
+</div>
+<a id="ga22e9ef416995405d3ccc8c4081969da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga22e9ef416995405d3ccc8c4081969da0">&#9670;&nbsp;</a></span>psa_cipher_chacha20_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_chacha20_decrypt </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for ChaCha20 decryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a31dd2b33667e1a4aebd4789d789c9c55">psa_cipher_decrypt()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_buffer</td><td>Buffer containing the Key. </td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td>Size of the key in bytes. Must be 32 bytes long. </td></tr>
+    <tr><td class="paramname">input</td><td>Input buffer containing the 12 byte nonce used in the encryption followed by the cipher to be decrypted. </td></tr>
+    <tr><td class="paramname">input_length</td><td>Size of input buffer (including 12 byte nonce). </td></tr>
+    <tr><td class="paramname">output</td><td>Output buffer. </td></tr>
+    <tr><td class="paramname">output_size</td><td>Size of output buffer. Must be at least (input_length - 12) bytes long. </td></tr>
+    <tr><td class="paramname">output_length</td><td>Actual size of the output. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga26a5b33b1ba6477b08fca693c45bdf55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga26a5b33b1ba6477b08fca693c45bdf55">&#9670;&nbsp;</a></span>psa_cipher_chacha20_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">psa_status_t psa_cipher_chacha20_encrypt </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>key_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>key_buffer_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>input_length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>output_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>output_length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Low level wrapper function to call a driver for ChaCha20 encryption/decryption. </p>
+<p>See <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_buffer</td><td>Buffer containing the Key. </td></tr>
+    <tr><td class="paramname">key_buffer_size</td><td>Size of the key in bytes. Must be 32 bytes. </td></tr>
+    <tr><td class="paramname">input</td><td>Input Buffer containing the message to be encrypted. </td></tr>
+    <tr><td class="paramname">input_length</td><td>Size of input buffer. </td></tr>
+    <tr><td class="paramname">output</td><td>Output buffer containing the generated 12 byte nonce followed by the cipher of the input. </td></tr>
+    <tr><td class="paramname">output_size</td><td>Size of output buffer. Must be at least (input_length + 12) bytes long. </td></tr>
+    <tr><td class="paramname">output_length</td><td>Actual size of the output (including nonce). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

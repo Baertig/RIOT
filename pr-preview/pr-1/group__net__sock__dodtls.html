@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DNS over DTLS sock API</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__sock__dodtls.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">DNS over DTLS sock API<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__sock.html">Sock API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Sock DNS over DTLS client.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Sock DNS over DTLS client. </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://datatracker.ietf.org/doc/html/rfc8094">RFC 8094</a></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br />
+ This implementation is in an experimental state. RFC 8094 requires DNS over TLS (DoT) as a fall-back for the <a href="https://datatracker.ietf.org/doc/html/rfc8094#section-5">PMTU issues</a>). This fallback is not in place in this implementation. Consequently, <a href="https://datatracker.ietf.org/doc/html/rfc6891">EDNS(0)</a> to negotiate maximum response size is also not in place. </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__net__sock__dodtls__conf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls__conf.html">DNS over DTLS compile-time configuration</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:dodtls_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="dodtls_8h.html">dodtls.h</a></td></tr>
+<tr class="memdesc:dodtls_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">DNS over DTLS sock definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga3e9fb31e4907dcffaa3718aac628fcb5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga3e9fb31e4907dcffaa3718aac628fcb5">sock_dodtls_query</a> (const char *domain_name, void *addr_out, int family)</td></tr>
+<tr class="memdesc:ga3e9fb31e4907dcffaa3718aac628fcb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get IP address for DNS name.  <a href="#ga3e9fb31e4907dcffaa3718aac628fcb5">More...</a><br /></td></tr>
+<tr class="separator:ga3e9fb31e4907dcffaa3718aac628fcb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85d3b14a5f75ee0efd6dd7d5283bde5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga85d3b14a5f75ee0efd6dd7d5283bde5b">sock_dodtls_get_server</a> (<a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *server)</td></tr>
+<tr class="memdesc:ga85d3b14a5f75ee0efd6dd7d5283bde5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured DNS over DTLS server endpoint.  <a href="#ga85d3b14a5f75ee0efd6dd7d5283bde5b">More...</a><br /></td></tr>
+<tr class="separator:ga85d3b14a5f75ee0efd6dd7d5283bde5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga548e02abf8648d092338ea6db19f9953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga548e02abf8648d092338ea6db19f9953">sock_dodtls_get_dtls_sock</a> (void)</td></tr>
+<tr class="memdesc:ga548e02abf8648d092338ea6db19f9953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the sock used by the DNS over DTLS client.  <a href="#ga548e02abf8648d092338ea6db19f9953">More...</a><br /></td></tr>
+<tr class="separator:ga548e02abf8648d092338ea6db19f9953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e9f23e1933f86f3230c0893c06df577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__sock__dtls.html#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga3e9f23e1933f86f3230c0893c06df577">sock_dodtls_get_server_session</a> (void)</td></tr>
+<tr class="memdesc:ga3e9f23e1933f86f3230c0893c06df577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the DTLS ssession used by the DNS over DTLS client.  <a href="#ga3e9f23e1933f86f3230c0893c06df577">More...</a><br /></td></tr>
+<tr class="separator:ga3e9f23e1933f86f3230c0893c06df577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2311e49c94c78b8aefff845e7219a66c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga2311e49c94c78b8aefff845e7219a66c">sock_dodtls_set_server</a> (const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *server, const <a class="el" href="structcredman__credential__t.html">credman_credential_t</a> *creds)</td></tr>
+<tr class="memdesc:ga2311e49c94c78b8aefff845e7219a66c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure and establish session with DNS over DTLS server.  <a href="#ga2311e49c94c78b8aefff845e7219a66c">More...</a><br /></td></tr>
+<tr class="separator:ga2311e49c94c78b8aefff845e7219a66c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+DNS over DTLS defines</h2></td></tr>
+<tr class="memitem:ga21c2f54257e3c1b332900e4397b9597d"><td class="memItemLeft" align="right" valign="top"><a id="ga21c2f54257e3c1b332900e4397b9597d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#ga21c2f54257e3c1b332900e4397b9597d">SOCK_DODTLS_PORT</a>&#160;&#160;&#160;(853)</td></tr>
+<tr class="memdesc:ga21c2f54257e3c1b332900e4397b9597d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default DNS over DTLS server port. <br /></td></tr>
+<tr class="separator:ga21c2f54257e3c1b332900e4397b9597d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd7607813b73d73d5c6374f51de7b528"><td class="memItemLeft" align="right" valign="top"><a id="gafd7607813b73d73d5c6374f51de7b528"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#gafd7607813b73d73d5c6374f51de7b528">CONFIG_SOCK_DODTLS_RETRIES</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:gafd7607813b73d73d5c6374f51de7b528"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of DNS over DTLS query retries. <br /></td></tr>
+<tr class="separator:gafd7607813b73d73d5c6374f51de7b528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeaad8a9f86387f78f8ecb5d0bae1b210"><td class="memItemLeft" align="right" valign="top"><a id="gaeaad8a9f86387f78f8ecb5d0bae1b210"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__sock__dodtls.html#gaeaad8a9f86387f78f8ecb5d0bae1b210">CONFIG_SOCK_DODTLS_TIMEOUT_MS</a>&#160;&#160;&#160;(1000U)</td></tr>
+<tr class="memdesc:gaeaad8a9f86387f78f8ecb5d0bae1b210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for DNS over DTLS queries in milliseconds. <br /></td></tr>
+<tr class="separator:gaeaad8a9f86387f78f8ecb5d0bae1b210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga548e02abf8648d092338ea6db19f9953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga548e02abf8648d092338ea6db19f9953">&#9670;&nbsp;</a></span>sock_dodtls_get_dtls_sock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__net__sock__async.html#gaa63acc71681400dd4b856ce09e27cafb">sock_dtls_t</a>* sock_dodtls_get_dtls_sock </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the sock used by the DNS over DTLS client. </p>
+<dl class="section return"><dt>Returns</dt><dd>The sock used by the DNS over DTLS client </dd></dl>
+
+</div>
+</div>
+<a id="ga85d3b14a5f75ee0efd6dd7d5283bde5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85d3b14a5f75ee0efd6dd7d5283bde5b">&#9670;&nbsp;</a></span>sock_dodtls_get_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sock_dodtls_get_server </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *&#160;</td>
+          <td class="paramname"><em>server</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured DNS over DTLS server endpoint. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">server</td><td>The currently configured DNS over DTLS server endpoint. May not be NULL on input.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if <code>server</code> was set. </dd>
+<dd>
+-ENOTCONN, when currently no server is configured. </dd></dl>
+
+</div>
+</div>
+<a id="ga3e9f23e1933f86f3230c0893c06df577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e9f23e1933f86f3230c0893c06df577">&#9670;&nbsp;</a></span>sock_dodtls_get_server_session()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__net__sock__dtls.html#ga8595b9670004ad4afc5738109ecce649">sock_dtls_session_t</a>* sock_dodtls_get_server_session </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the DTLS ssession used by the DNS over DTLS client. </p>
+<dl class="section return"><dt>Returns</dt><dd>The DTLS session used by the DNS over DTLS client </dd></dl>
+
+</div>
+</div>
+<a id="ga3e9fb31e4907dcffaa3718aac628fcb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e9fb31e4907dcffaa3718aac628fcb5">&#9670;&nbsp;</a></span>sock_dodtls_query()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sock_dodtls_query </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>domain_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>addr_out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>family</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get IP address for DNS name. </p>
+<p>This function will synchronously try to resolve a DNS A or AAAA record by contacting the DNS server specified in the global variable <a class="el" href="group__net__sock__dns.html#ga99ea302f97897ac95d47f1cb83b2ac91">sock_dns_server</a>.</p>
+<p>By supplying AF_INET, AF_INET6 or AF_UNSPEC in <code>family</code> requesting of A records (IPv4), AAAA records (IPv6) or both can be selected.</p>
+<p>This function will return the first DNS record it receives. IF both A and AAAA are requested, AAAA will be preferred.</p>
+<dl class="section note"><dt>Note</dt><dd><code>addr_out</code> needs to provide space for any possible result! (4byte when family==AF_INET, 16byte otherwise)</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain_name</td><td>DNS name to resolve into address </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addr_out</td><td>buffer to write result into </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">family</td><td>Either AF_INET, AF_INET6 or AF_UNSPEC</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the size of the resolved address on success </dd>
+<dd>
+-ECONNREFUSED, when a DNS over DTLS server is not configured. </dd>
+<dd>
+-ENOSPC, when the length of <code>domain_name</code> is greater than <a class="el" href="group__net__sock__dodtls__conf.html#ga3bf2261b6c618389f16bc1fc5e513b14">SOCK_DODTLS_MAX_NAME_LEN</a>. </dd>
+<dd>
+-EBADSG, when the DNS reply is not parseable. </dd></dl>
+
+</div>
+</div>
+<a id="ga2311e49c94c78b8aefff845e7219a66c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2311e49c94c78b8aefff845e7219a66c">&#9670;&nbsp;</a></span>sock_dodtls_set_server()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sock_dodtls_set_server </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__net__sock__udp.html#gaedc829c7973d7870c1ec078f9ffd45a1">sock_udp_ep_t</a> *&#160;</td>
+          <td class="paramname"><em>server</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structcredman__credential__t.html">credman_credential_t</a> *&#160;</td>
+          <td class="paramname"><em>creds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure and establish session with DNS over DTLS server. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>A DNS over DTLS server endpoint. May be NULL to destroy the session with and unset the currently configured server. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">creds</td><td>DTLS credentials for the server (see <a class="el" href="group__net__credman.html">(D)TLS Credential Manager</a>). May be NULL, when <code>server</code> is also NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success. </dd>
+<dd>
+-EINVAL, if <code>cred</code> contains invalid values. </dd>
+<dd>
+-ENOSPC, if <code>cred</code> does not fit into <a class="el" href="group__net__credman.html">(D)TLS Credential Manager</a>. </dd>
+<dd>
+Any other negative errno potentially returned by <a class="el" href="group__net__sock__udp.html#ga20fa4b890dff1c97a63075090e6f9d7d">sock_udp_create()</a>, <a class="el" href="group__net__sock__dtls.html#ga10998fac05f15688f9dd34a22c7bb682">sock_dtls_create()</a>, <a class="el" href="group__net__sock__dtls.html#ga6ebde4fba6fd184710d1ec1c6285e7a2">sock_dtls_session_init()</a> or <a class="el" href="group__net__sock__dtls.html#ga893395d4c18709210d66d979a2f9ea69">sock_dtls_recv()</a>. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:33 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

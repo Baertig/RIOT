@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/asymmetric_signature/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('asymmetric__signature_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Asymmetric signature algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Asymmetric signature algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="hash_2algorithm_8h_source.html">psa/hash/algorithm.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="asymmetric__signature_2algorithm_8h__incl.svg" width="242" height="291"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="asymmetric__signature_2algorithm_8h__dep__incl.svg" width="2546" height="722"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="asymmetric__signature_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a68a0af1dd89b33fb1e53139f654988f6"><td class="memItemLeft" align="right" valign="top"><a id="a68a0af1dd89b33fb1e53139f654988f6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a68a0af1dd89b33fb1e53139f654988f6">PSA_ALG_CATEGORY_SIGN</a>&#160;&#160;&#160;((psa_algorithm_t)0x06000000)</td></tr>
+<tr class="memdesc:a68a0af1dd89b33fb1e53139f654988f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for asymmetric signature algorithms. <br /></td></tr>
+<tr class="separator:a68a0af1dd89b33fb1e53139f654988f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d490d0904e0698f6c1268a89d72ff31"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a6d490d0904e0698f6c1268a89d72ff31">PSA_ALG_IS_SIGN</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == PSA_ALG_CATEGORY_ASYMMETRIC_SIGNATURE)</td></tr>
+<tr class="memdesc:a6d490d0904e0698f6c1268a89d72ff31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an asymmetric signature algorithm, also known as public-key signature algorithm.  <a href="#a6d490d0904e0698f6c1268a89d72ff31">More...</a><br /></td></tr>
+<tr class="separator:a6d490d0904e0698f6c1268a89d72ff31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d545279f23d43b1b2a744d0dd6826d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">PSA_ALG_IS_RSA_PKCS1V15_SIGN</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000200)</td></tr>
+<tr class="memdesc:a9d545279f23d43b1b2a744d0dd6826d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an RSA PKCS#1 v1.5 signature algorithm.  <a href="#a9d545279f23d43b1b2a744d0dd6826d0">More...</a><br /></td></tr>
+<tr class="separator:a9d545279f23d43b1b2a744d0dd6826d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa04fae7393a76d5161558768cb82a78"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">PSA_ALG_IS_RSA_PSS</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000300)</td></tr>
+<tr class="memdesc:afa04fae7393a76d5161558768cb82a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a RSA PSS signature algorithm.  <a href="#afa04fae7393a76d5161558768cb82a78">More...</a><br /></td></tr>
+<tr class="separator:afa04fae7393a76d5161558768cb82a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae93883052098a9a433251599be3e05e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#ae93883052098a9a433251599be3e05e5">PSA_ALG_IS_RSA_PSS_ANY_SALT</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06001300)</td></tr>
+<tr class="memdesc:ae93883052098a9a433251599be3e05e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an RSA PSS signature algorithm that permits any salt length.  <a href="#ae93883052098a9a433251599be3e05e5">More...</a><br /></td></tr>
+<tr class="separator:ae93883052098a9a433251599be3e05e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3577ae16a2f607c3d4f894344258aa18"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a3577ae16a2f607c3d4f894344258aa18">PSA_ALG_IS_RSA_PSS_STANDARD_SALT</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000300)</td></tr>
+<tr class="memdesc:a3577ae16a2f607c3d4f894344258aa18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an RSA PSS signature algorithm that requires the standard salt length.  <a href="#a3577ae16a2f607c3d4f894344258aa18">More...</a><br /></td></tr>
+<tr class="separator:a3577ae16a2f607c3d4f894344258aa18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb92dc138c9d2388033ff5fc1dab7b48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#afb92dc138c9d2388033ff5fc1dab7b48">PSA_ALG_IS_ECDSA</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#a68a0af1dd89b33fb1e53139f654988f6">PSA_ALG_CATEGORY_SIGN</a>)</td></tr>
+<tr class="memdesc:afb92dc138c9d2388033ff5fc1dab7b48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is ECDSA.  <a href="#afb92dc138c9d2388033ff5fc1dab7b48">More...</a><br /></td></tr>
+<tr class="separator:afb92dc138c9d2388033ff5fc1dab7b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8766fe0fb8c1e2d32644e0d092c43a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#acd8766fe0fb8c1e2d32644e0d092c43a">PSA_ALG_IS_DETERMINISTIC_ECDSA</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000700)</td></tr>
+<tr class="memdesc:acd8766fe0fb8c1e2d32644e0d092c43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is deterministic ECDSA.  <a href="#acd8766fe0fb8c1e2d32644e0d092c43a">More...</a><br /></td></tr>
+<tr class="separator:acd8766fe0fb8c1e2d32644e0d092c43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b0fafebd139f6f815285b7cad622ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#ae7b0fafebd139f6f815285b7cad622ea">PSA_ALG_IS_RANDOMIZED_ECDSA</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000600)</td></tr>
+<tr class="memdesc:ae7b0fafebd139f6f815285b7cad622ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is randomized ECDSA.  <a href="#ae7b0fafebd139f6f815285b7cad622ea">More...</a><br /></td></tr>
+<tr class="separator:ae7b0fafebd139f6f815285b7cad622ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada6b4732688e435a881f7771e3a63e16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#ada6b4732688e435a881f7771e3a63e16">PSA_ALG_IS_HASH_EDDSA</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000900)</td></tr>
+<tr class="memdesc:ada6b4732688e435a881f7771e3a63e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is HashEdDSA.  <a href="#ada6b4732688e435a881f7771e3a63e16">More...</a><br /></td></tr>
+<tr class="separator:ada6b4732688e435a881f7771e3a63e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7664f69c28b193cc6cb8368481fcda64"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH</a>(alg)</td></tr>
+<tr class="memdesc:a7664f69c28b193cc6cb8368481fcda64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a signature algorithm that can be used with <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> and <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a>.  <a href="#a7664f69c28b193cc6cb8368481fcda64">More...</a><br /></td></tr>
+<tr class="separator:a7664f69c28b193cc6cb8368481fcda64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a8ea0536975363b66410cdeafe38b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">PSA_ALG_IS_HASH_AND_SIGN</a>(alg)</td></tr>
+<tr class="memdesc:ad8a8ea0536975363b66410cdeafe38b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a hash-and-sign algorithm that signs exactly the hash value.  <a href="#ad8a8ea0536975363b66410cdeafe38b6">More...</a><br /></td></tr>
+<tr class="separator:ad8a8ea0536975363b66410cdeafe38b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8b87e858614134de566edaa4d84db8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#acd8b87e858614134de566edaa4d84db8">PSA_ALG_IS_SIGN_MESSAGE</a>(alg)&#160;&#160;&#160;(<a class="el" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH</a>(alg) || (alg) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#a76d6053fb1867c2c46c5f8131c8a8cae">PSA_ALG_PURE_EDDSA</a>)</td></tr>
+<tr class="memdesc:acd8b87e858614134de566edaa4d84db8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a signature algorithm that can be used with <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a8112e02cd89cc652acb2f45074a7464e">psa_verify_message()</a>.  <a href="#acd8b87e858614134de566edaa4d84db8">More...</a><br /></td></tr>
+<tr class="separator:acd8b87e858614134de566edaa4d84db8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf83d7430e82b97cecb8b26ca6fa1426"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#acf83d7430e82b97cecb8b26ca6fa1426">PSA_ALG_IS_WILDCARD</a>(alg)&#160;&#160;&#160;(<a class="el" href="hash_2algorithm_8h.html#a181b0fe4619c1a70c5ef82f28eea09f5">PSA_ALG_GET_HASH</a>(alg) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>)</td></tr>
+<tr class="memdesc:acf83d7430e82b97cecb8b26ca6fa1426"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm encoding is a wildcard.  <a href="#acf83d7430e82b97cecb8b26ca6fa1426">More...</a><br /></td></tr>
+<tr class="separator:acf83d7430e82b97cecb8b26ca6fa1426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1288ea8bd397a8a3f5e19e94110f2e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>&#160;&#160;&#160;((psa_algorithm_t)0x020000ff)</td></tr>
+<tr class="memdesc:aa1288ea8bd397a8a3f5e19e94110f2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">When setting a hash-and-sign algorithm in a key policy, permit any hash algorithm.  <a href="#aa1288ea8bd397a8a3f5e19e94110f2e4">More...</a><br /></td></tr>
+<tr class="separator:aa1288ea8bd397a8a3f5e19e94110f2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a702ff75385a6ae7d4247033f479439af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a702ff75385a6ae7d4247033f479439af">PSA_ALG_RSA_PKCS1V15_SIGN</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(0x06000200 | ((hash_alg) &amp; 0x000000ff)))</td></tr>
+<tr class="memdesc:a702ff75385a6ae7d4247033f479439af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSA PKCS#1 v1.5 message signature scheme, with hashing.  <a href="#a702ff75385a6ae7d4247033f479439af">More...</a><br /></td></tr>
+<tr class="separator:a702ff75385a6ae7d4247033f479439af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4215e2a78dcf834e9a625927faa2a817"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a4215e2a78dcf834e9a625927faa2a817">PSA_ALG_RSA_PKCS1V15_SIGN_RAW</a>&#160;&#160;&#160;((psa_algorithm_t)0x06000200)</td></tr>
+<tr class="memdesc:a4215e2a78dcf834e9a625927faa2a817"><td class="mdescLeft">&#160;</td><td class="mdescRight">The raw RSA PKCS#1 v1.5 signature algorithm, without hashing.  <a href="#a4215e2a78dcf834e9a625927faa2a817">More...</a><br /></td></tr>
+<tr class="separator:a4215e2a78dcf834e9a625927faa2a817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62152bf4cb4bf6aace5e1be8f143564d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(0x06000300 | ((hash_alg) &amp; 0x000000ff)))</td></tr>
+<tr class="memdesc:a62152bf4cb4bf6aace5e1be8f143564d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSA PSS message signature scheme, with hashing.  <a href="#a62152bf4cb4bf6aace5e1be8f143564d">More...</a><br /></td></tr>
+<tr class="separator:a62152bf4cb4bf6aace5e1be8f143564d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b7355a2cd6bde88177634d539127f2b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(0x06001300 | ((hash_alg) &amp; 0x000000ff)))</td></tr>
+<tr class="memdesc:a9b7355a2cd6bde88177634d539127f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSA PSS message signature scheme, with hashing.  <a href="#a9b7355a2cd6bde88177634d539127f2b">More...</a><br /></td></tr>
+<tr class="separator:a9b7355a2cd6bde88177634d539127f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9800fdbe6ea881e0ac0ce03d145928"><td class="memItemLeft" align="right" valign="top"><a id="afd9800fdbe6ea881e0ac0ce03d145928"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">PSA_ALG_ECDSA_BASE</a>&#160;&#160;&#160;((psa_algorithm_t)0x06000600)</td></tr>
+<tr class="memdesc:afd9800fdbe6ea881e0ac0ce03d145928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base of ECDSA algorithms. <br /></td></tr>
+<tr class="separator:afd9800fdbe6ea881e0ac0ce03d145928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e3ce9f514a227d5ba5d8318870452e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a>(hash_alg)&#160;&#160;&#160;(<a class="el" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">PSA_ALG_ECDSA_BASE</a> | ((hash_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>))</td></tr>
+<tr class="memdesc:a7e3ce9f514a227d5ba5d8318870452e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The randomized ECDSA signature scheme, with hashing.  <a href="#a7e3ce9f514a227d5ba5d8318870452e3">More...</a><br /></td></tr>
+<tr class="separator:a7e3ce9f514a227d5ba5d8318870452e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d6b6044a62e33cae0cf64bfc3b22a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a51d6b6044a62e33cae0cf64bfc3b22a4">PSA_ALG_ECDSA_ANY</a>&#160;&#160;&#160;<a class="el" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">PSA_ALG_ECDSA_BASE</a></td></tr>
+<tr class="memdesc:a51d6b6044a62e33cae0cf64bfc3b22a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The randomized ECDSA signature scheme, without hashing.  <a href="#a51d6b6044a62e33cae0cf64bfc3b22a4">More...</a><br /></td></tr>
+<tr class="separator:a51d6b6044a62e33cae0cf64bfc3b22a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11da566bcd341661c8de921e2ca5ed03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(0x06000700 | ((hash_alg) &amp; 0x000000ff)))</td></tr>
+<tr class="memdesc:a11da566bcd341661c8de921e2ca5ed03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deterministic ECDSA signature scheme, with hashing.  <a href="#a11da566bcd341661c8de921e2ca5ed03">More...</a><br /></td></tr>
+<tr class="separator:a11da566bcd341661c8de921e2ca5ed03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76d6053fb1867c2c46c5f8131c8a8cae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a76d6053fb1867c2c46c5f8131c8a8cae">PSA_ALG_PURE_EDDSA</a>&#160;&#160;&#160;((psa_algorithm_t)0x06000800)</td></tr>
+<tr class="memdesc:a76d6053fb1867c2c46c5f8131c8a8cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edwards-curve digital signature algorithm without prehashing (PureEdDSA), using standard parameters.  <a href="#a76d6053fb1867c2c46c5f8131c8a8cae">More...</a><br /></td></tr>
+<tr class="separator:a76d6053fb1867c2c46c5f8131c8a8cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3be20c4293031a8f32e7cb66d26f5c3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a3be20c4293031a8f32e7cb66d26f5c3d">PSA_ALG_ED25519PH</a>&#160;&#160;&#160;((psa_algorithm_t)0x0600090B)</td></tr>
+<tr class="memdesc:a3be20c4293031a8f32e7cb66d26f5c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edwards-curve digital signature algorithm with prehashing (HashEdDSA), using the Edwards25519 curve.  <a href="#a3be20c4293031a8f32e7cb66d26f5c3d">More...</a><br /></td></tr>
+<tr class="separator:a3be20c4293031a8f32e7cb66d26f5c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c632df795535af4334d37a08a01481b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__signature_2algorithm_8h.html#a1c632df795535af4334d37a08a01481b">PSA_ALG_ED448PH</a>&#160;&#160;&#160;((psa_algorithm_t)0x06000915)</td></tr>
+<tr class="memdesc:a1c632df795535af4334d37a08a01481b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Edwards-curve digital signature algorithm with prehashing (HashEdDSA), using the Edwards448 curve.  <a href="#a1c632df795535af4334d37a08a01481b">More...</a><br /></td></tr>
+<tr class="separator:a1c632df795535af4334d37a08a01481b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa1288ea8bd397a8a3f5e19e94110f2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1288ea8bd397a8a3f5e19e94110f2e4">&#9670;&nbsp;</a></span>PSA_ALG_ANY_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ANY_HASH&#160;&#160;&#160;((psa_algorithm_t)0x020000ff)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>When setting a hash-and-sign algorithm in a key policy, permit any hash algorithm. </p>
+<p>This value can be used to form the permitted algorithm attribute of a key policy for a signature algorithm that is parametrized by a hash. A key with this policy can then be used to perform operations using the same signature algorithm parametrized with any supported hash. A signature algorithm created using this macro is a wildcard algorithm, and <a class="el" href="asymmetric__signature_2algorithm_8h.html#acf83d7430e82b97cecb8b26ca6fa1426">PSA_ALG_IS_WILDCARD()</a> will return true.</p>
+<p>This value must not be used to build other algorithms that are parametrized over a hash. For any valid use of this macro to build an algorithm alg, <a class="el" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">PSA_ALG_IS_HASH_AND_SIGN(alg)</a> is true. This value must not be used to build an algorithm specification to perform an operation. It is only valid for setting the permitted algorithm in a key policy.</p>
+<p><b>Usage:</b> For example, suppose that <code>PSA_xxx_SIGNATURE</code> is one of the following macros:</p><ul>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a702ff75385a6ae7d4247033f479439af">PSA_ALG_RSA_PKCS1V15_SIGN</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a></li>
+</ul>
+<p>The following sequence of operations shows how <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a> can be used in a key policy:</p><ol type="1">
+<li>Set the key usage flags using <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>, for example: <div class="fragment"><div class="line">@ref <a class="code" href="crypto_8h.html#a42a65b3c4522ce9b67ea5ea7720e17de">psa_set_key_usage_flags</a>(@p &amp;attributes, @ref <a class="code" href="usage_8h.html#a552117ac92b79500cae87d4e65a85c54">PSA_KEY_USAGE_SIGN_MESSAGE</a>);</div><div class="line"><span class="comment">// or VERIFY_MESSAGE</span></div><div class="line">@ref <a class="code" href="crypto_8h.html#aeb8341ca52baa0279475ea3fd3bcdc98">psa_set_key_algorithm</a>(@p &amp;attributes,</div><div class="line">PSA_xxx_SIGNATURE(@ref <a class="code" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>));</div></div><!-- fragment --></li>
+<li>Import or generate key material.</li>
+<li>Call <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> or <a class="el" href="crypto_8h.html#a8112e02cd89cc652acb2f45074a7464e">psa_verify_message()</a>, passing an algorithm built from PSA_xxx_SIGNATURE and a specific hash. Each call to sign or verify a message can use a different hash algorithm. <div class="fragment"><div class="line">@ref <a class="code" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message</a>(@p key, PSA_xxx_SIGNATURE(@ref <a class="code" href="hash_2algorithm_8h.html#a619471f978e13cdd0a1e37145e4bf341">PSA_ALG_SHA_256</a>), ...);</div><div class="line">@ref <a class="code" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message</a>(@p key, PSA_xxx_SIGNATURE(@ref <a class="code" href="hash_2algorithm_8h.html#afba3ae409f46d3dd7f37a0910660c3e9">PSA_ALG_SHA_512</a>), ...);</div><div class="line">@ref <a class="code" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message</a>(@p key, PSA_xxx_SIGNATURE(@ref <a class="code" href="hash_2algorithm_8h.html#aace70d9515489bbe3c5e7ac1b7d9155b">PSA_ALG_SHA3_256</a>), ...);</div></div><!-- fragment --> </li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00284">284</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a11da566bcd341661c8de921e2ca5ed03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11da566bcd341661c8de921e2ca5ed03">&#9670;&nbsp;</a></span>PSA_ALG_DETERMINISTIC_ECDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_DETERMINISTIC_ECDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(0x06000700 | ((hash_alg) &amp; 0x000000ff)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deterministic ECDSA signature scheme, with hashing. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This is the deterministic ECDSA signature scheme defined by Deterministic Usage of the
+     Digital Signature Algorithm (DSA) and Elliptic Curve Digital Signature Algorithm
+     (ECDSA) [RFC6979].
+
+     The representation of a signature is the same as with @ref PSA_ALG_ECDSA().
+</pre><dl class="section note"><dt>Note</dt><dd>When based on the same hash algorithm, the verification operations for <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a> are identical. A signature created using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> can be verified with the same key using either <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> or <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a>. Similarly, a signature created using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a> can be verified with the same key using either <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> or <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a>.</dd></dl>
+<p>In particular, it is impossible to determine whether a signature was produced with deterministic ECDSA or with randomized ECDSA: it is only possible to verify that a signature was made with ECDSA with the private key corresponding to the public key used for the verification.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a0b6f5d4d5037c54ffa850d8059c32df0">PSA_KEY_TYPE_ECC_KEY_PAIR</a>(<code>family</code>)</li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad54c03d3b47020e571a72cd01d978cf2">PSA_KEY_TYPE_ECC_PUBLIC_KEY</a>(<code>family</code>) (signature verification only)</li>
+</ul>
+<p>where family is a Weierstrass Elliptic curve family. That is, one of the following values:</p><ul>
+<li>PSA_ECC_FAMILY_SECT_XX</li>
+<li>PSA_ECC_FAMILY_SECP_XX</li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash_alg</td><td>A hash algorithm: a value of type psa_algorithm_t such that <a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(<code>hash_alg</code>) is true. This includes <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a> when specifying the algorithm in a key policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding deterministic ECDSA signature algorithm. Unspecified if <code>hash_alg</code> is not a supported hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00530">530</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e3ce9f514a227d5ba5d8318870452e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3ce9f514a227d5ba5d8318870452e3">&#9670;&nbsp;</a></span>PSA_ALG_ECDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ECDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">PSA_ALG_ECDSA_BASE</a> | ((hash_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The randomized ECDSA signature scheme, with hashing. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This algorithm is randomized: each invocation returns a different, equally valid
+     signature.
+</pre><dl class="section note"><dt>Note</dt><dd>When based on the same hash algorithm, the verification operations for <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a> are identical. A signature created using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> can be verified with the same key using either <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> or <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a>. Similarly, a signature created using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a> can be verified with the same key using either <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA</a> or <a class="el" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">PSA_ALG_DETERMINISTIC_ECDSA</a>.</dd></dl>
+<p>In particular, it is impossible to determine whether a signature was produced with deterministic ECDSA or with randomized ECDSA: it is only possible to verify that a signature was made with ECDSA with the private key corresponding to the public key used for the verification.</p>
+<p>This signature scheme is defined by SEC 1: Elliptic Curve Cryptography <a href="https://www.secg.org/sec1-v2.pdf">SEC1</a>, and also by Public Key Cryptography For The Financial Services Industry: The Elliptic Curve Digital Signature Algorithm (ECDSA) [X9-62])(<a href="https://standards.globalspec.com/std/1955141/ANSI%20X9.62">https://standards.globalspec.com/std/1955141/ANSI%20X9.62</a>), with a random per-message secret number <code>k</code>.</p>
+<p>The representation of the signature as a byte string consists of the concatenation of the signature values <code>r</code> and <code>s</code>. Each of <code>r</code> and <code>s</code> is encoded as an <code>N</code>-octet string, where <code>N</code> is the length of the base point of the curve in octets. Each value is represented in big-endian order, with the most significant octet first.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a0b6f5d4d5037c54ffa850d8059c32df0">PSA_KEY_TYPE_ECC_KEY_PAIR(family)</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad54c03d3b47020e571a72cd01d978cf2">PSA_KEY_TYPE_ECC_PUBLIC_KEY(family)</a> (signature verification only)</li>
+</ul>
+<p>where family is a Weierstrass Elliptic curve family. That is, one of the following values:</p><ul>
+<li><code>PSA_ECC_FAMILY_SECT_XX</code> </li>
+<li><code>PSA_ECC_FAMILY_SECP_XX</code> </li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash_alg</td><td>A hash algorithm: a value of type psa_algorithm_t such that <a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(<code>hash_alg</code>) is true. This includes <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a> when specifying the algorithm in a key policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding randomized ECDSA signature algorithm. Unspecified if <code>hash_alg</code> is not a supported hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00457">457</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a51d6b6044a62e33cae0cf64bfc3b22a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51d6b6044a62e33cae0cf64bfc3b22a4">&#9670;&nbsp;</a></span>PSA_ALG_ECDSA_ANY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ECDSA_ANY&#160;&#160;&#160;<a class="el" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">PSA_ALG_ECDSA_BASE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The randomized ECDSA signature scheme, without hashing. </p>
+<p>This algorithm can be only used with the <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> and <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a> functions.</p>
+<p>This algorithm is randomized: each invocation returns a different, equally valid signature.</p>
+<p>This is the same signature scheme as <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA()</a>, but without specifying a hash algorithm, and skipping the message hashing operation.</p>
+<p>This algorithm is only recommended to sign or verify a sequence of bytes that are an already-calculated hash. Note that the input is padded with zeros on the left or truncated on the right as required to fit the curve size.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a0b6f5d4d5037c54ffa850d8059c32df0">PSA_KEY_TYPE_ECC_KEY_PAIR</a>(<code>family</code>)</li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad54c03d3b47020e571a72cd01d978cf2">PSA_KEY_TYPE_ECC_PUBLIC_KEY</a>(<code>family</code>) (signature verification only)</li>
+</ul>
+<p>where <code>family</code> is a Weierstrass Elliptic curve family. That is, one of the following values:</p><ul>
+<li><code>PSA_ECC_FAMILY_SECT_XX</code> </li>
+<li><code>PSA_ECC_FAMILY_SECP_XX</code> </li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00487">487</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3be20c4293031a8f32e7cb66d26f5c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3be20c4293031a8f32e7cb66d26f5c3d">&#9670;&nbsp;</a></span>PSA_ALG_ED25519PH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ED25519PH&#160;&#160;&#160;((psa_algorithm_t)0x0600090B)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Edwards-curve digital signature algorithm with prehashing (HashEdDSA), using the Edwards25519 curve. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This computes the Ed25519ph algorithm as specified in Edwards-Curve Digital Signature
+     Algorithm (EdDSA) [RFC8032](https://tools.ietf.org/html/rfc8032.html) §5.1, and
+     requires an Edwards25519 curve key. An empty string is used as the context. The prehash
+     function is SHA-512.
+
+     @b Usage
+     This is a hash-and-sign algorithm. To calculate a signature, use one of the following
+     approaches:
+     -   Call @ref psa_sign_message() with the message.
+     -   Calculate the SHA-512 hash of the message with @ref psa_hash_compute(), or with a
+         multi-part hash operation, using the hash algorithm @ref PSA_ALG_SHA_512. Then sign
+         the calculated hash with @ref psa_sign_hash().
+
+     Verifying a signature is similar, using @ref psa_verify_message() or
+     @ref psa_verify_hash() instead of the signature function.
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_ECC_KEY_PAIR(@ref PSA_ECC_FAMILY_TWISTED_EDWARDS)
+     - @ref PSA_KEY_TYPE_ECC_PUBLIC_KEY(@ref PSA_ECC_FAMILY_TWISTED_EDWARDS) (signature
+       verification only)</pre> 
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00597">597</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c632df795535af4334d37a08a01481b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c632df795535af4334d37a08a01481b">&#9670;&nbsp;</a></span>PSA_ALG_ED448PH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ED448PH&#160;&#160;&#160;((psa_algorithm_t)0x06000915)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Edwards-curve digital signature algorithm with prehashing (HashEdDSA), using the Edwards448 curve. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This computes the Ed448ph algorithm as specified in Edwards-Curve Digital Signature
+     Algorithm (EdDSA) [RFC8032](https://tools.ietf.org/html/rfc8032.html) §5.2, and
+     requires an Edwards448 curve key. An empty string is used as the context. The prehash
+     function is the first 64 bytes of the output from SHAKE256.
+
+     @b Usage
+     This is a hash-and-sign algorithm. To calculate a signature, use one of the following
+     approaches:
+     -   Call @ref psa_sign_message() with the message.
+     -   Calculate the first 64 bytes of the SHAKE256 output of the message with
+         @ref psa_hash_compute(), or with a multi-part hash operation, using the hash
+         algorithm @ref PSA_ALG_SHAKE256_512. Then sign the calculated hash with
+         @ref psa_sign_hash().
+
+     Verifying a signature is similar, using @ref psa_verify_message() or
+     @ref psa_verify_hash() instead of the signature function.
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_ECC_KEY_PAIR(@ref PSA_ECC_FAMILY_TWISTED_EDWARDS)
+     - @ref PSA_KEY_TYPE_ECC_PUBLIC_KEY(@ref PSA_ECC_FAMILY_TWISTED_EDWARDS) (signature
+       verification only)</pre> 
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00627">627</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="acd8766fe0fb8c1e2d32644e0d092c43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8766fe0fb8c1e2d32644e0d092c43a">&#9670;&nbsp;</a></span>PSA_ALG_IS_DETERMINISTIC_ECDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_DETERMINISTIC_ECDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000700)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is deterministic ECDSA. </p>
+<p>See also <a class="el" href="asymmetric__signature_2algorithm_8h.html#afb92dc138c9d2388033ff5fc1dab7b48">PSA_ALG_IS_ECDSA()</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#ae7b0fafebd139f6f815285b7cad622ea">PSA_ALG_IS_RANDOMIZED_ECDSA()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a deterministic ECDSA algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00129">129</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="afb92dc138c9d2388033ff5fc1dab7b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb92dc138c9d2388033ff5fc1dab7b48">&#9670;&nbsp;</a></span>PSA_ALG_IS_ECDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_ECDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#a68a0af1dd89b33fb1e53139f654988f6">PSA_ALG_CATEGORY_SIGN</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is ECDSA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an ECDSA algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00116">116</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8a8ea0536975363b66410cdeafe38b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a8ea0536975363b66410cdeafe38b6">&#9670;&nbsp;</a></span>PSA_ALG_IS_HASH_AND_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_HASH_AND_SIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH</a>(alg) &amp;&amp;       \</div><div class="line">     ((alg) &amp; <a class="code" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>) != 0)</div><div class="ttc" id="asymmetric__signature_2algorithm_8h_html_a7664f69c28b193cc6cb8368481fcda64"><div class="ttname"><a href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH</a></div><div class="ttdeci">#define PSA_ALG_IS_SIGN_HASH(alg)</div><div class="ttdoc">Whether the specified algorithm is a signature algorithm that can be used with psa_sign_hash() and ps...</div><div class="ttdef"><b>Definition:</b> <a href="asymmetric__signature_2algorithm_8h_source.html#l00171">algorithm.h:171</a></div></div>
+<div class="ttc" id="hash_2algorithm_8h_html_ac41a7077aef55bb20c629c8949d43c57"><div class="ttname"><a href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a></div><div class="ttdeci">#define PSA_ALG_HASH_MASK</div><div class="ttdoc">Hash algorithm mask. </div><div class="ttdef"><b>Definition:</b> <a href="hash_2algorithm_8h_source.html#l00039">algorithm.h:39</a></div></div>
+</div><!-- fragment -->
+<p>Whether the specified algorithm is a hash-and-sign algorithm that signs exactly the hash value. </p>
+<p>This macro identifies algorithms that can be used with <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> that use the exact message hash value as an input the signature operation. For example, if <a class="el" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">PSA_ALG_IS_HASH_AND_SIGN</a>(<code>alg</code>) is true, the following call sequence is equivalent to <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message</a>(<code>key</code>, <code>alg</code>, <code>msg</code>, <code>msg_len</code>, ...):</p>
+<div class="fragment"><div class="line">@ref <a class="code" href="structpsa__hash__operation__s.html">psa_hash_operation_t</a> op = {0};</div><div class="line">uint8_t hash[@ref <a class="code" href="crypto__sizes_8h.html#a6ce1014efbbc0bcca286ef7f9a72cb29">PSA_HASH_MAX_SIZE</a>];</div><div class="line"><span class="keywordtype">size_t</span> hash_len;</div><div class="line">@ref <a class="code" href="crypto_8h.html#a8d72896cf70fc4d514c5c6b978912515">psa_hash_setup</a>(&amp;op, @ref <a class="code" href="hash_2algorithm_8h.html#a181b0fe4619c1a70c5ef82f28eea09f5">PSA_ALG_GET_HASH</a>(alg));</div><div class="line">@ref <a class="code" href="crypto_8h.html#a65b16ef97d7f650899b7db4b7d1112ff">psa_hash_update</a>(&amp;op, msg, msg_len);</div><div class="line">@ref <a class="code" href="crypto_8h.html#a4795fd06a0067b0adcd92e9627b8c97e">psa_hash_finish</a>(&amp;op, hash, <span class="keyword">sizeof</span>(hash), &amp;hash_len);</div><div class="line">@ref <a class="code" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash</a>(key, alg, hash, hash_len, ...);</div></div><!-- fragment --><p>This excludes hash-and-sign algorithms that require a encoded or modified hash for the signature step in the algorithm, such as <a class="el" href="asymmetric__signature_2algorithm_8h.html#a4215e2a78dcf834e9a625927faa2a817">PSA_ALG_RSA_PKCS1V15_SIGN_RAW</a>. For such algorithms, <a class="el" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH()</a> is true but <a class="el" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">PSA_ALG_IS_HASH_AND_SIGN()</a> is false.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a hash-and-sign algorithm that signs exactly the hash value 0 otherwise A wildcard signature algorithm policy, using <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>, returns the same value as the signature algorithm parameterised with a valid hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00207">207</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ada6b4732688e435a881f7771e3a63e16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada6b4732688e435a881f7771e3a63e16">&#9670;&nbsp;</a></span>PSA_ALG_IS_HASH_EDDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_HASH_EDDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000900)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is HashEdDSA. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a HashEdDSA algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00153">153</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae7b0fafebd139f6f815285b7cad622ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b0fafebd139f6f815285b7cad622ea">&#9670;&nbsp;</a></span>PSA_ALG_IS_RANDOMIZED_ECDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RANDOMIZED_ECDSA</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000600)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is randomized ECDSA. </p>
+<p>See also <a class="el" href="asymmetric__signature_2algorithm_8h.html#afb92dc138c9d2388033ff5fc1dab7b48">PSA_ALG_IS_ECDSA()</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#acd8766fe0fb8c1e2d32644e0d092c43a">PSA_ALG_IS_DETERMINISTIC_ECDSA()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is arandomized ECDSA algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00142">142</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d545279f23d43b1b2a744d0dd6826d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d545279f23d43b1b2a744d0dd6826d0">&#9670;&nbsp;</a></span>PSA_ALG_IS_RSA_PKCS1V15_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RSA_PKCS1V15_SIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an RSA PKCS#1 v1.5 signature algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a RSA PKCS#1 v1.5 signature algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00057">57</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="afa04fae7393a76d5161558768cb82a78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa04fae7393a76d5161558768cb82a78">&#9670;&nbsp;</a></span>PSA_ALG_IS_RSA_PSS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RSA_PSS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000300)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a RSA PSS signature algorithm. </p>
+<p>This macro returns 1 for algorithms constructed using either <a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS()</a> or <a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a RSA PSS signature algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00071">71</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae93883052098a9a433251599be3e05e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae93883052098a9a433251599be3e05e5">&#9670;&nbsp;</a></span>PSA_ALG_IS_RSA_PSS_ANY_SALT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RSA_PSS_ANY_SALT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06001300)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an RSA PSS signature algorithm that permits any salt length. </p>
+<p>An RSA PSS signature algorithm that permits any salt length is constructed using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT()</a>.</p>
+<p>See also <a class="el" href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">PSA_ALG_IS_RSA_PSS()</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#a3577ae16a2f607c3d4f894344258aa18">PSA_ALG_IS_RSA_PSS_STANDARD_SALT()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a RSA PSS signature algorithm that permits any salt length 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00088">88</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3577ae16a2f607c3d4f894344258aa18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3577ae16a2f607c3d4f894344258aa18">&#9670;&nbsp;</a></span>PSA_ALG_IS_RSA_PSS_STANDARD_SALT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RSA_PSS_STANDARD_SALT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x06000300)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an RSA PSS signature algorithm that requires the standard salt length. </p>
+<p>An RSA PSS signature algorithm that requires the standard salt length is constructed using <a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS()</a>.</p>
+<p>See also <a class="el" href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">PSA_ALG_IS_RSA_PSS()</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#ae93883052098a9a433251599be3e05e5">PSA_ALG_IS_RSA_PSS_ANY_SALT()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an RSA PSS signature algorithm that requires the standard salt length 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00105">105</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6d490d0904e0698f6c1268a89d72ff31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d490d0904e0698f6c1268a89d72ff31">&#9670;&nbsp;</a></span>PSA_ALG_IS_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_SIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == PSA_ALG_CATEGORY_ASYMMETRIC_SIGNATURE)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an asymmetric signature algorithm, also known as public-key signature algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an asymmetric signature algorithm algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00046">46</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a7664f69c28b193cc6cb8368481fcda64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7664f69c28b193cc6cb8368481fcda64">&#9670;&nbsp;</a></span>PSA_ALG_IS_SIGN_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_SIGN_HASH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(<a class="code" href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">PSA_ALG_IS_RSA_PSS</a>(alg) || <a class="code" href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">PSA_ALG_IS_RSA_PKCS1V15_SIGN</a>(alg) ||    \</div><div class="line">     PSA_ALG_IS_ECDSA(alg) || <a class="code" href="asymmetric__signature_2algorithm_8h.html#ada6b4732688e435a881f7771e3a63e16">PSA_ALG_IS_HASH_EDDSA</a>(alg))</div><div class="ttc" id="asymmetric__signature_2algorithm_8h_html_afa04fae7393a76d5161558768cb82a78"><div class="ttname"><a href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">PSA_ALG_IS_RSA_PSS</a></div><div class="ttdeci">#define PSA_ALG_IS_RSA_PSS(alg)</div><div class="ttdoc">Whether the specified algorithm is a RSA PSS signature algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="asymmetric__signature_2algorithm_8h_source.html#l00071">algorithm.h:71</a></div></div>
+<div class="ttc" id="asymmetric__signature_2algorithm_8h_html_a9d545279f23d43b1b2a744d0dd6826d0"><div class="ttname"><a href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">PSA_ALG_IS_RSA_PKCS1V15_SIGN</a></div><div class="ttdeci">#define PSA_ALG_IS_RSA_PKCS1V15_SIGN(alg)</div><div class="ttdoc">Whether the specified algorithm is an RSA PKCS#1 v1.5 signature algorithm. </div><div class="ttdef"><b>Definition:</b> <a href="asymmetric__signature_2algorithm_8h_source.html#l00057">algorithm.h:57</a></div></div>
+<div class="ttc" id="asymmetric__signature_2algorithm_8h_html_ada6b4732688e435a881f7771e3a63e16"><div class="ttname"><a href="asymmetric__signature_2algorithm_8h.html#ada6b4732688e435a881f7771e3a63e16">PSA_ALG_IS_HASH_EDDSA</a></div><div class="ttdeci">#define PSA_ALG_IS_HASH_EDDSA(alg)</div><div class="ttdoc">Whether the specified algorithm is HashEdDSA. </div><div class="ttdef"><b>Definition:</b> <a href="asymmetric__signature_2algorithm_8h_source.html#l00153">algorithm.h:153</a></div></div>
+</div><!-- fragment -->
+<p>Whether the specified algorithm is a signature algorithm that can be used with <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> and <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a>. </p>
+<p>This includes all algorithms such that <a class="el" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">PSA_ALG_IS_HASH_AND_SIGN()</a> is true, as well as signature algorithms for which the input to <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> or <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a> is not directly a hash, such as <a class="el" href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">PSA_ALG_IS_RSA_PKCS1V15_SIGN</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a signature algorithm that can be used to sign a hash. 0 if alg is a signature algorithm that can only be used to sign a message. 0 if alg is not a signature algorithm </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00171">171</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="acd8b87e858614134de566edaa4d84db8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8b87e858614134de566edaa4d84db8">&#9670;&nbsp;</a></span>PSA_ALG_IS_SIGN_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_SIGN_MESSAGE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">PSA_ALG_IS_SIGN_HASH</a>(alg) || (alg) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#a76d6053fb1867c2c46c5f8131c8a8cae">PSA_ALG_PURE_EDDSA</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a signature algorithm that can be used with <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a8112e02cd89cc652acb2f45074a7464e">psa_verify_message()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a signature algorithm that can be used to sign a message. 0 if alg is a signature algorithm that can only be used to sign an already-calculated hash. 0 if alg is not a signature algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00222">222</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="acf83d7430e82b97cecb8b26ca6fa1426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf83d7430e82b97cecb8b26ca6fa1426">&#9670;&nbsp;</a></span>PSA_ALG_IS_WILDCARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_WILDCARD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="hash_2algorithm_8h.html#a181b0fe4619c1a70c5ef82f28eea09f5">PSA_ALG_GET_HASH</a>(alg) == <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm encoding is a wildcard. </p>
+<p>Wildcard algorithm values can only be used to set the permitted algorithm field in a key policy, wildcard values cannot be used to perform an operation.</p>
+<p>See <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a> for example of how a wildcard algorithm can be used in a key policy.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a wildcard algorithm encoding. 0 if alg is a non-wildcard algorithm encoding that is suitable for an operation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00239">239</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a76d6053fb1867c2c46c5f8131c8a8cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d6053fb1867c2c46c5f8131c8a8cae">&#9670;&nbsp;</a></span>PSA_ALG_PURE_EDDSA</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_PURE_EDDSA&#160;&#160;&#160;((psa_algorithm_t)0x06000800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Edwards-curve digital signature algorithm without prehashing (PureEdDSA), using standard parameters. </p>
+<p>This algorithm can be only used with the <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a8112e02cd89cc652acb2f45074a7464e">psa_verify_message()</a> functions.</p>
+<p>This is the PureEdDSA digital signature algorithm defined by Edwards-Curve Digital Signature Algorithm (EdDSA) <a href="https://tools.ietf.org/html/rfc8032.html">RFC8032</a>, using standard parameters.</p>
+<p>PureEdDSA requires an elliptic curve key on a twisted Edwards curve. The following curves are supported:</p><ul>
+<li>Edwards25519: the Ed25519 algorithm is computed. The output signature is a 64-byte string: the concatenation of R and S as defined by <a href="https://tools.ietf.org/html/rfc8032.html">RFC8032</a> §5.1.6.</li>
+<li>Edwards448: the Ed448 algorithm is computed with an empty string as the context. The output signature is a 114-byte string: the concatenation of R and S as defined by <a href="https://tools.ietf.org/html/rfc8032.html">RFC8032</a> §5.2.6.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>Contexts are not supported in the current version of this specification because there is no suitable signature interface that can take the context as a parameter. A future version of this specification may add suitable functions and extend this algorithm to support contexts.</dd>
+<dd>
+To sign or verify the pre-computed hash of a message using EdDSA, the HashEdDSA algorithms (<a class="el" href="asymmetric__signature_2algorithm_8h.html#a3be20c4293031a8f32e7cb66d26f5c3d">PSA_ALG_ED25519PH</a> and <a class="el" href="asymmetric__signature_2algorithm_8h.html#a1c632df795535af4334d37a08a01481b">PSA_ALG_ED448PH</a>) can be used with <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> and <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a>. The signature produced by HashEdDSA is distinct from that produced by PureEdDSA.</dd></dl>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a0b6f5d4d5037c54ffa850d8059c32df0">PSA_KEY_TYPE_ECC_KEY_PAIR(PSA_ECC_FAMILY_TWISTED_EDWARDS)</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad54c03d3b47020e571a72cd01d978cf2">PSA_KEY_TYPE_ECC_PUBLIC_KEY(PSA_ECC_FAMILY_TWISTED_EDWARDS)</a> (signature verification only) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00568">568</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a702ff75385a6ae7d4247033f479439af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a702ff75385a6ae7d4247033f479439af">&#9670;&nbsp;</a></span>PSA_ALG_RSA_PKCS1V15_SIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_PKCS1V15_SIGN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(0x06000200 | ((hash_alg) &amp; 0x000000ff)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RSA PKCS#1 v1.5 message signature scheme, with hashing. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This signature scheme is defined by PKCS #1: RSA Cryptography Specifications Version 2.2
+     [RFC8017](https://tools.ietf.org/html/rfc8017.html) §8.2 under the name
+     RSASSA-PKCS1-v1_5.
+
+     When used with @ref psa_sign_hash() or @ref psa_verify_hash(), the provided hash
+     parameter is used as `H` from step 2 onwards in the message encoding algorithm
+     EMSA-PKCS1-V1_5-ENCODE() in [RFC8017](https://tools.ietf.org/html/rfc8017.html) §9.2.
+     `H` is usually the message digest, using the @c hash_alg hash algorithm.
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_RSA_KEY_PAIR
+     - @ref PSA_KEY_TYPE_RSA_PUBLIC_KEY (signature verification only)
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash_alg</td><td>A hash algorithm: a value of type psa_algorithm_t such that <a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(<code>hash_alg</code>) is true. This includes <a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a> when specifying the algorithm in a key policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding RSA PKCS#1 v1.5 signature algorithm. Unspecified if <code>hash_alg</code> is not a supported hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00311">311</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a4215e2a78dcf834e9a625927faa2a817"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4215e2a78dcf834e9a625927faa2a817">&#9670;&nbsp;</a></span>PSA_ALG_RSA_PKCS1V15_SIGN_RAW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_PKCS1V15_SIGN_RAW&#160;&#160;&#160;((psa_algorithm_t)0x06000200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The raw RSA PKCS#1 v1.5 signature algorithm, without hashing. </p>
+<p>This algorithm can be only used with the <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> and <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a> functions. This signature scheme is defined by PKCS #1: RSA Cryptography Specifications Version 2.2 <a href="https://tools.ietf.org/html/rfc8017.html">RFC8017</a> §8.2 under the name RSASSA-PKCS1-v1_5.</p>
+<p>The hash parameter to <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> or <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a> is used as <code>T</code> from step 3 onwards in the message encoding algorithm EMSA-PKCS1-V1_5-ENCODE() in <a href="https://tools.ietf.org/html/rfc8017.html">RFC8017</a> §9.2.0 <code>T</code> is the DER encoding of the DigestInfo structure normally produced by step 2 in the message encoding algorithm.</p>
+<p>The wildcard key policy <a class="el" href="asymmetric__signature_2algorithm_8h.html#a702ff75385a6ae7d4247033f479439af">PSA_ALG_RSA_PKCS1V15_SIGN</a>(<a class="el" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">PSA_ALG_ANY_HASH</a>) also permits a key to be used with the <a class="el" href="asymmetric__signature_2algorithm_8h.html#a4215e2a78dcf834e9a625927faa2a817">PSA_ALG_RSA_PKCS1V15_SIGN_RAW</a> signature algorithm.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a11745b110166e927e2abeabc7d532051">PSA_KEY_TYPE_RSA_KEY_PAIR</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a9ba0878f56c8bcd1995ac017a74f513b">PSA_KEY_TYPE_RSA_PUBLIC_KEY</a> (signature verification only) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00336">336</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a62152bf4cb4bf6aace5e1be8f143564d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62152bf4cb4bf6aace5e1be8f143564d">&#9670;&nbsp;</a></span>PSA_ALG_RSA_PSS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_PSS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(0x06000300 | ((hash_alg) &amp; 0x000000ff)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RSA PSS message signature scheme, with hashing. </p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This algorithm is randomized: each invocation returns a different, equally valid
+     signature.
+
+     This is the signature scheme defined by
+     [RFC8017](https://tools.ietf.org/html/rfc8017.html) §8.1 under the name RSASSA-PSS,
+     with the following options:
+     -   The mask generation function is MGF1 defined by
+         [RFC8017](https://tools.ietf.org/html/rfc8017.html) Appendix B.
+     -   When creating a signature, the salt length is equal to the length of the hash, or
+         the largest possible salt length for the algorithm and key size if that is smaller
+         than the hash length.
+     -   When verifying a signature, the salt length must be equal to the length of the
+         hash, or the largest possible salt length for the algorithm and key size if that is
+         smaller than the hash length.
+     -   The specified hash algorithm is used to hash the input message, to create the
+         salted hash, and for the mask generation.
+</pre><dl class="section note"><dt>Note</dt><dd>The <a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT()</a> algorithm is equivalent to <a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS()</a> when creating a signature, but permits any salt length when verifying a signature.</dd></dl>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a11745b110166e927e2abeabc7d532051">PSA_KEY_TYPE_RSA_KEY_PAIR</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a9ba0878f56c8bcd1995ac017a74f513b">PSA_KEY_TYPE_RSA_PUBLIC_KEY</a> (signature verification only) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00367">367</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b7355a2cd6bde88177634d539127f2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b7355a2cd6bde88177634d539127f2b">&#9670;&nbsp;</a></span>PSA_ALG_RSA_PSS_ANY_SALT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_PSS_ANY_SALT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(0x06001300 | ((hash_alg) &amp; 0x000000ff)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RSA PSS message signature scheme, with hashing. </p>
+<p>This variant permits any salt length for signature verification.</p>
+<p>This algorithm can be used with both the message and hash signature functions. </p><pre class="fragment">     This algorithm is randomized: each invocation returns a different, equally valid
+     signature.
+
+     This is the signature scheme defined by
+     [RFC8017](https://tools.ietf.org/html/rfc8017.html) §8.1 under the name RSASSA-PSS,
+     with the following options:
+     -   The mask generation function is MGF1 defined by
+         [RFC8017](https://tools.ietf.org/html/rfc8017.html) Appendix B.
+     -   When creating a signature, the salt length is equal to the length of the hash, or
+         the largest possible salt length for the algorithm and key size if that is smaller
+         than the hash length.
+     -   When verifying a signature, any salt length permitted by the RSASSA-PSS signature
+         algorithm is accepted.
+     -   The specified hash algorithm is used to hash the input message, to create the
+         salted hash, and for the mask generation.
+</pre><dl class="section note"><dt>Note</dt><dd>The <a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS()</a> algorithm is equivalent to <a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT()</a> when creating a signature, but is strict about the permitted salt length when verifying a signature.</dd></dl>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a11745b110166e927e2abeabc7d532051">PSA_KEY_TYPE_RSA_KEY_PAIR</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a9ba0878f56c8bcd1995ac017a74f513b">PSA_KEY_TYPE_RSA_PUBLIC_KEY</a> (signature verification only) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__signature_2algorithm_8h_source.html#l00400">400</a> of file <a class="el" href="asymmetric__signature_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

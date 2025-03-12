@@ -1,0 +1,26 @@
+var group__cpu__kinetis =
+[
+    [ "Kinetis ADC", "group__cpu__kinetis__adc.html", null ],
+    [ "Kinetis Bit Manipulation Engine (BME)", "group__cpu__kinetis__bme.html", "group__cpu__kinetis__bme" ],
+    [ "Kinetis CPUID", "group__cpu__kinetis__cpuid.html", null ],
+    [ "Kinetis GPIO", "group__cpu__kinetis__gpio.html", null ],
+    [ "Kinetis I2C", "group__cpu__kinetis__i2c.html", null ],
+    [ "Kinetis MCG", "group__cpu__kinetis__mcg.html", "group__cpu__kinetis__mcg" ],
+    [ "Kinetis PWM", "group__cpu__kinetis__pwm.html", null ],
+    [ "Kinetis RNGA", "group__cpu__kinetis__rnga.html", null ],
+    [ "Kinetis RTC", "group__cpu__kinetis__rtc.html", null ],
+    [ "Kinetis SPI", "group__cpu__kinetis__spi.html", null ],
+    [ "Kinetis Timer", "group__cpu__kinetis__timer.html", null ],
+    [ "Kinetis UART", "group__cpu__kinetis__uart.html", null ],
+    [ "Kinetis WDOG", "group__cpu__kinetis__wdog.html", "group__cpu__kinetis__wdog" ],
+    [ "cpu_conf.h", "kinetis_2include_2cpu__conf_8h.html", null ],
+    [ "cpu_conf_kinetis.h", "cpu__conf__kinetis_8h.html", null ],
+    [ "cpu_conf_kinetis_ea.h", "cpu__conf__kinetis__ea_8h.html", null ],
+    [ "cpu_conf_kinetis_k.h", "cpu__conf__kinetis__k_8h.html", null ],
+    [ "cpu_conf_kinetis_l.h", "cpu__conf__kinetis__l_8h.html", null ],
+    [ "cpu_conf_kinetis_m.h", "cpu__conf__kinetis__m_8h.html", null ],
+    [ "cpu_conf_kinetis_v.h", "cpu__conf__kinetis__v_8h.html", null ],
+    [ "cpu_conf_kinetis_w.h", "cpu__conf__kinetis__w_8h.html", null ],
+    [ "periph_cpu.h", "kinetis_2include_2periph__cpu_8h.html", null ],
+    [ "vectors_kinetis.h", "vectors__kinetis_8h.html", null ]
+];

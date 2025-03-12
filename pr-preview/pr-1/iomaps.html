@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>IO-Mapping and Shields</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('iomaps.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">IO-Mapping and Shields </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#iomaps-intro">Introduction                                                    </a></li>
+<li class="level1"><a href="#iomaps-mapping">I/O Mappings                                                  </a><ul><li class="level2"><a href="#iomaps-mapping-gpio">Digital Pins                                             </a></li>
+<li class="level2"><a href="#iomaps-mapping-adc">Analog Pins                                               </a></li>
+<li class="level2"><a href="#iomaps-mapping-dac">DAC Pins                                                  </a></li>
+<li class="level2"><a href="#iomaps-mapping-pwm">PWM Pins                                                  </a></li>
+<li class="level2"><a href="#iomaps-mapping-uart">UART Device                                              </a></li>
+<li class="level2"><a href="#iomaps-mapping-i2c">I²C Buses                                                 </a></li>
+<li class="level2"><a href="#iomaps-mapping-spi">SPI Buses                                                 </a></li>
+</ul>
+</li>
+<li class="level1"><a href="#iomaps-shields">Mechanical and Electrical Compatibility                       </a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="iomaps-intro"></a>
+Introduction                                                    </h1>
+<p>Arduino has popularized the concept of adding an abstraction layer over the MCU GPIOs and ADC multiplexer as "Digital Pins" and "Analog Pins". For historic reasons as well as to express appreciation for the introduction of concept, we prefix features and macros that map board pins to MCU pins with <code>ARDUINO</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>This means, we also explicitly use the Arduino feature for boards that are neither official Arduino products nor compatible.</dd></dl>
+<h1><a class="anchor" id="iomaps-mapping"></a>
+I/O Mappings                                                  </h1>
+<p>All I/O mappings are provided by the <code>arduino_iomap.h</code> header file. This is provided either by the board directly (e.g. in <code>&lt;RIOT git repo&gt;/board/&lt;board&gt;/include/arduino_iomap.h</code>) or by the board family (e.g. in <code>board/common/&lt;board family&gt;/include/arduino_iomap.h</code>).</p>
+<p>To add support to new boards, start by copy-pasting the <code>arduino_iomap.h</code> from an existing board and adapt/extend the macros as needed. Finally, add the features to the <code>Makefile.features</code> and <code>KConfig</code> files of the board that indicate the presence of the added mappings.</p>
+<h2><a class="anchor" id="iomaps-mapping-gpio"></a>
+Digital Pins                                             </h2>
+<p>The feature <code>arduino_pins</code> is provided by boards that do have a mapping to digital pins. The GPIO for e.g. <code>D3</code> is provided as <code>ARDUINO_PIN_3</code>. The number of the highest digital pin is provided as <code>ARDUINO_PIN_LAST</code>. E.g. if <code>ARDUINO_PIN_LAST</code> is 42, digital pins <code>D0</code> to <code>D42</code> are typically provided.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Some boards do have "gaps" in the pin mapping. It could be that e.g. <code>ARDUINO_PIN_5</code> is defined, but <code>ARDUINO_PIN_4</code> is not.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Often aliases are provided for analog pins in digital mode. E.g. to use the pin <code>A3</code> as digital pin, <code>ARDUINO_PIN_A3</code> can be used to avoid looking up what digital number that pin has.</dd></dl>
+<h2><a class="anchor" id="iomaps-mapping-adc"></a>
+Analog Pins                                               </h2>
+<p>The feature <code>arduino_analog</code> is provided by boards that do have a mapping of ADC lines to analog pins. E.g. the ADC line corresponding to pin <code>A5</code> would be <code>ARDUINO_A5</code>. The number of the highest analog pin is provided as <code>ARDUINO_ANALOG_PIN_LAST</code>. The macro <code>ARDUINO_ANALOG_PIN_LAST</code> is defined if and only if a mapping is provided (so it can be used to test for this feature).</p>
+<dl class="section warning"><dt>Warning</dt><dd>Some boards do have "gaps" in the analog pin mapping. It could be that e.g. <code>ARDUINO_A3</code> is defined, but <code>ARDUINO_A2</code> is not.</dd></dl>
+<h2><a class="anchor" id="iomaps-mapping-dac"></a>
+DAC Pins                                                  </h2>
+<p>The feature <code>arduino_dac</code> is provided by boards that do have a mapping of DAC pins to DAC lines. E.g. the DAC line for the pin DAC1 would be <code>ARDUINO_DAC1</code>. The number of the highest DAC pin is provided as <code>ARDUINO_DAC_PIN_LAST</code>. The macro <code>ARDUINO_DAC_PIN_LAST</code> is defined if and only if a mapping is provided (so it can be used to test for this feature).</p>
+<dl class="section warning"><dt>Warning</dt><dd>Some boards do have "gaps" in the analog pin mapping. It could be that e.g. <code>ARDUINO_DAC4</code> is defined, but <code>ARDUINO_DAC3</code> is not.</dd></dl>
+<h2><a class="anchor" id="iomaps-mapping-pwm"></a>
+PWM Pins                                                  </h2>
+<p>The feature <code>arduino_pwm</code> is provided by boards that do have a mapping of digital pins to PWM settings. E.g. the PWM device connected to the digital pin <code>D11</code> would be <code>ARDUINO_PIN_11_PWM_DEV</code> and the channel would be <code>ARDUINO_PIN_11_PWM_CHAN</code>. A PWM frequency for all PWM pins is defined as <code>ARDUINO_PWM_FREQU</code>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Typically only few digital pins support PWM. For pins without PWM output no <code>ARDUINO_PIN_&lt;NUM&gt;_PWM_DEV</code> macro and no <code>ARDUINO_PIN_&lt;NUM&gt;_PWM_DEV</code> is defined.</dd></dl>
+<h2><a class="anchor" id="iomaps-mapping-uart"></a>
+UART Device                                              </h2>
+<p>The feature <code>arduino_uart</code> is provided by boards that do provide an UART device mapping. For the official Arduino boards and compatible boards, the <code>ARDUINO_UART_D0D1</code> macro refers to the UART device that uses the digital pins <code>D0</code> and <code>D1</code>.</p>
+<p>Please extend the table below to keep naming among boards of the same form factor consistent:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Form Factor  </th><th class="markdownTableHeadLeft">Macro Name  </th><th class="markdownTableHeadLeft">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Nano  </td><td class="markdownTableBodyLeft"><code>ARDUINO_UART_D0D1</code>  </td><td class="markdownTableBodyLeft">UART on D0 (RXD) and D1 (TXD)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Uno  </td><td class="markdownTableBodyLeft"><code>ARDUINO_UART_D0D1</code>  </td><td class="markdownTableBodyLeft">UART on D0 (RXD) and D1 (TXD)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Mega  </td><td class="markdownTableBodyLeft"><code>ARDUINO_UART_D0D1</code>  </td><td class="markdownTableBodyLeft">UART on D0 (RXD) and D1 (TXD)   </td></tr>
+</table>
+<h2><a class="anchor" id="iomaps-mapping-i2c"></a>
+I²C Buses                                                 </h2>
+<p>The feature <code>arduino_i2c</code> is provided by boards that do provide an I²C bus mapping.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Form Factor  </th><th class="markdownTableHeadLeft">Macro Name  </th><th class="markdownTableHeadLeft">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Nano  </td><td class="markdownTableBodyLeft"><code>ARDUINO_I2C_NANO</code>  </td><td class="markdownTableBodyLeft">D18 (SDA) / D19 (SCL)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Uno  </td><td class="markdownTableBodyLeft"><code>ARDUINO_I2C_UNO</code>  </td><td class="markdownTableBodyLeft">D18 (SDA) / D19 (SCL)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Mega  </td><td class="markdownTableBodyLeft"><code>ARDUINO_I2C_UNO</code>  </td><td class="markdownTableBodyLeft">D20 (SDA) / D21 (SCL)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Zero  </td><td class="markdownTableBodyLeft"><code>ARDUINO_I2C_UNO</code>  </td><td class="markdownTableBodyLeft">D20 (SDA) / D21 (SCL)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Due  </td><td class="markdownTableBodyLeft"><code>ARDUINO_I2C_UNO</code>  </td><td class="markdownTableBodyLeft">D70 (SDA) / D71 (SCL)   </td></tr>
+</table>
+<p>The <code>ARDUINO_I2C_UNO</code> refers to the I²C bus next to the AREF pin (the topmost pins on header on the top right) of an Arduino Uno compatible board, e.g. such as the Arduino Mega2560. Even though the Arduino UNO, the Arduino MEGA2560, the Arduino Zero and the Arduino Zero all having the I²C bus at the exact same mechanical positions, the digital pin number of the I²C bus next to the AREF differs between the versions.</p>
+<h2><a class="anchor" id="iomaps-mapping-spi"></a>
+SPI Buses                                                 </h2>
+<p>The feature <code>arduino_spi</code> is provided by boards that do provide an SPI bus mapping.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Form Factor  </th><th class="markdownTableHeadLeft">Macro Name  </th><th class="markdownTableHeadLeft">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Nano  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_ISP</code>  </td><td class="markdownTableBodyLeft">The SPI on the ISP header   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Nano  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_D11D12D13</code>  </td><td class="markdownTableBodyLeft">D11 (MOSI) / D12 (MISO) / D13 (SCK)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Uno  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_ISP</code>  </td><td class="markdownTableBodyLeft">The SPI on the ISP header   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Uno  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_D11D12D13</code>  </td><td class="markdownTableBodyLeft">D11 (MOSI) / D12 (MISO) / D13 (SCK)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Arduino Mega  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_ISP</code>  </td><td class="markdownTableBodyLeft">The SPI on the ISP header   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Arduino Mega  </td><td class="markdownTableBodyLeft"><code>ARDUINO_SPI_D11D12D13</code>  </td><td class="markdownTableBodyLeft">D11 (MOSI) / D12 (MISO) / D13 (SCK)   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>The original AVR based Arduinos only have a single hard SPI bus which is only provided via the ISP header. Many modern Arduino compatible boards do not provide the ISP header and only have SPI on D11/D12/D13 provided.</dd></dl>
+<h1><a class="anchor" id="iomaps-shields"></a>
+Mechanical and Electrical Compatibility                       </h1>
+<p>Modules implementing drivers for extension boards, a.k.a. shields, can express their mechanical and electrical requirements by depending on <code>arduino_shield_...</code> features. The following list of features currently exists:</p>
+<p>| Feature Name | Compatibility Claim | | | <code>arduino_shield_nano</code> | Board has side headers compatible with the Arduino Nano | | <code>arduino_shield_uno</code> | Board has side headers compatible with the Arduino UNO | | <code>arduino_shield_mega</code> | Board has side headers compatible with the Arduino MEGA | | <code>arduino_shield_isp</code> | Board has an ISP header |</p>
+<dl class="section note"><dt>Note</dt><dd>A board providing <code>arduino_shield_mega</code> <b>MUST</b> also provide <code>arduino_shield_uno</code>, as Arduino MEGA boards are backward compatible to shields for the Arduino UNO.</dd></dl>
+<p>E.g. a module that implements the W5100 based Ethernet shield would depend on both <code>arduino_shield_uno</code> and <code>arduino_shield_isp</code> for electrical compatibility as well as on <code>arduino_spi</code> for SPI bus mapping and <code>arduino_pins</code> for the CS pin mapping. This module could reuse the existing <code>w5100</code> driver and just supply the correct <code><a class="el" href="structw5100__params__t.html" title="W5100 device descriptor. ">w5100_params_t</a></code> using the I/O mappings. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

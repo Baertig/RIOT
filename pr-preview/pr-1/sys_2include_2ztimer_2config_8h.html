@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/ztimer/config.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sys_2include_2ztimer_2config_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">config.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__ztimer.html">ztimer high level timer abstraction layer</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ztimer default configuration  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ztimer default configuration </p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span style="display: none;">.nosp@m.</span>r@sc<span style="display: none;">.nosp@m.</span>hleis<span style="display: none;">.nosp@m.</span>er.d<span style="display: none;">.nosp@m.</span>e</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;periph_conf.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="ztimer_8h_source.html">ztimer.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sys_2include_2ztimer_2config_8h__incl.svg" width="1416" height="799"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="sys_2include_2ztimer_2config_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:ab915043cc9cb94c04e98fe8b87b9809a"><td class="memItemLeft" align="right" valign="top"><a id="ab915043cc9cb94c04e98fe8b87b9809a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_ZTIMER_USEC_TYPE_PERIPH_TIMER</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:ab915043cc9cb94c04e98fe8b87b9809a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2378d153069150591eb7fa2082f573d9"><td class="memItemLeft" align="right" valign="top"><a id="a2378d153069150591eb7fa2082f573d9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a2378d153069150591eb7fa2082f573d9">CONFIG_ZTIMER_USEC_DEV</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__timer.html#gac66133744b2b503740e6324e2efa644e">TIMER_DEV</a>(0))</td></tr>
+<tr class="memdesc:a2378d153069150591eb7fa2082f573d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default timer device for ZTIMER_USEC. <br /></td></tr>
+<tr class="separator:a2378d153069150591eb7fa2082f573d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781967fcc395e7cbe0317295c0b40a62"><td class="memItemLeft" align="right" valign="top"><a id="a781967fcc395e7cbe0317295c0b40a62"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a781967fcc395e7cbe0317295c0b40a62">CONFIG_ZTIMER_LPTIMER_WIDTH</a>&#160;&#160;&#160;(32)</td></tr>
+<tr class="memdesc:a781967fcc395e7cbe0317295c0b40a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default width of ZTIMER_LPTIMER. <br /></td></tr>
+<tr class="separator:a781967fcc395e7cbe0317295c0b40a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0da89da11cd4268db8298bae9fbe1d85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a0da89da11cd4268db8298bae9fbe1d85">CONFIG_ZTIMER_USEC_MIN</a>&#160;&#160;&#160;(10)</td></tr>
+<tr class="memdesc:a0da89da11cd4268db8298bae9fbe1d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZTIMER_USEC optimal minimum value for <a class="el" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock. ">ztimer_set()</a>  <a href="#a0da89da11cd4268db8298bae9fbe1d85">More...</a><br /></td></tr>
+<tr class="separator:a0da89da11cd4268db8298bae9fbe1d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c54257ec2503e81286ed45eebc33f3"><td class="memItemLeft" align="right" valign="top"><a id="af7c54257ec2503e81286ed45eebc33f3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#af7c54257ec2503e81286ed45eebc33f3">CONFIG_ZTIMER_USEC_WIDTH</a>&#160;&#160;&#160;(32)</td></tr>
+<tr class="memdesc:af7c54257ec2503e81286ed45eebc33f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ZTIMER_USEC counter object width. <br /></td></tr>
+<tr class="separator:af7c54257ec2503e81286ed45eebc33f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9275561629b28ab2bb2682aaf2353f27"><td class="memItemLeft" align="right" valign="top"><a id="a9275561629b28ab2bb2682aaf2353f27"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a9275561629b28ab2bb2682aaf2353f27">CONFIG_ZTIMER_USEC_BASE_FREQ</a>&#160;&#160;&#160;(1000000LU)</td></tr>
+<tr class="memdesc:a9275561629b28ab2bb2682aaf2353f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency of ZTIMER_USEC_BASE (base ztimer for ZTIMER_USEC) <br /></td></tr>
+<tr class="separator:a9275561629b28ab2bb2682aaf2353f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7ecbab62970758765d82a9fa4f6f58f"><td class="memItemLeft" align="right" valign="top"><a id="af7ecbab62970758765d82a9fa4f6f58f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#af7ecbab62970758765d82a9fa4f6f58f">CONFIG_ZTIMER_MSEC_BASE_FREQ</a>&#160;&#160;&#160;(<a class="el" href="sys_2include_2ztimer_2config_8h.html#a9275561629b28ab2bb2682aaf2353f27">CONFIG_ZTIMER_USEC_BASE_FREQ</a>)</td></tr>
+<tr class="memdesc:af7ecbab62970758765d82a9fa4f6f58f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency of ZTIMER_MSEC_BASE (base ztimer for ZTIMER_MSEC) <br /></td></tr>
+<tr class="separator:af7ecbab62970758765d82a9fa4f6f58f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d62d52d52b726340b0200df6e63e6de"><td class="memItemLeft" align="right" valign="top"><a id="a5d62d52d52b726340b0200df6e63e6de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a5d62d52d52b726340b0200df6e63e6de">CONFIG_ZTIMER_TIMER_BLOCK_PM_MODE</a>&#160;&#160;&#160;<a class="el" href="group__sys__ztimer.html#ga31826ee80148499098015ed01ce503d6">ZTIMER_CLOCK_NO_REQUIRED_PM_MODE</a></td></tr>
+<tr class="memdesc:a5d62d52d52b726340b0200df6e63e6de"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum pm mode required for ZTIMER_TIMER to run. <br /></td></tr>
+<tr class="separator:a5d62d52d52b726340b0200df6e63e6de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0595661ad2f3084e6661e895a6636a4"><td class="memItemLeft" align="right" valign="top"><a id="ab0595661ad2f3084e6661e895a6636a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#ab0595661ad2f3084e6661e895a6636a4">CONFIG_ZTIMER_LPTIMER_BLOCK_PM_MODE</a>&#160;&#160;&#160;<a class="el" href="group__sys__ztimer.html#ga31826ee80148499098015ed01ce503d6">ZTIMER_CLOCK_NO_REQUIRED_PM_MODE</a></td></tr>
+<tr class="memdesc:ab0595661ad2f3084e6661e895a6636a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum pm mode required for ZTIMER_LPTIMER to run. <br /></td></tr>
+<tr class="separator:ab0595661ad2f3084e6661e895a6636a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0bca57ed70b2f5f5212d0d4777eb9be"><td class="memItemLeft" align="right" valign="top"><a id="af0bca57ed70b2f5f5212d0d4777eb9be"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#af0bca57ed70b2f5f5212d0d4777eb9be">CONFIG_ZTIMER_RTT_BLOCK_PM_MODE</a>&#160;&#160;&#160;<a class="el" href="group__sys__ztimer.html#ga31826ee80148499098015ed01ce503d6">ZTIMER_CLOCK_NO_REQUIRED_PM_MODE</a></td></tr>
+<tr class="memdesc:af0bca57ed70b2f5f5212d0d4777eb9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum pm mode required for ZTIMER_RTT to run. <br /></td></tr>
+<tr class="separator:af0bca57ed70b2f5f5212d0d4777eb9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ce274abf9508dec842af4594b399b0f"><td class="memItemLeft" align="right" valign="top"><a id="a1ce274abf9508dec842af4594b399b0f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a1ce274abf9508dec842af4594b399b0f">CONFIG_ZTIMER_RTC_BLOCK_PM_MODE</a>&#160;&#160;&#160;<a class="el" href="group__sys__ztimer.html#ga31826ee80148499098015ed01ce503d6">ZTIMER_CLOCK_NO_REQUIRED_PM_MODE</a></td></tr>
+<tr class="memdesc:a1ce274abf9508dec842af4594b399b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum pm mode required for ZTIMER_RTC to run. <br /></td></tr>
+<tr class="separator:a1ce274abf9508dec842af4594b399b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac94d9b8a5362364c4f958e7b779a693c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#ac94d9b8a5362364c4f958e7b779a693c">CONFIG_ZTIMER_USEC_ADJUST_CLOCK_START</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ac94d9b8a5362364c4f958e7b779a693c"><td class="mdescLeft">&#160;</td><td class="mdescRight">An offset for ZTIMER_USEC allowing to compensate for the offset introduced by turning on the underlying peripheral.  <a href="#ac94d9b8a5362364c4f958e7b779a693c">More...</a><br /></td></tr>
+<tr class="separator:ac94d9b8a5362364c4f958e7b779a693c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3cb5fd08980ee01401c783b74533de"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#acf3cb5fd08980ee01401c783b74533de">CONFIG_ZTIMER_USEC_ADJUST_SET</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:acf3cb5fd08980ee01401c783b74533de"><td class="mdescLeft">&#160;</td><td class="mdescRight">An offset for ZTIMER_USEC allowing to compensate for the offset of <a class="el" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set()</a>.  <a href="#acf3cb5fd08980ee01401c783b74533de">More...</a><br /></td></tr>
+<tr class="separator:acf3cb5fd08980ee01401c783b74533de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b3622389af270c94d341a6dc69114bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a3b3622389af270c94d341a6dc69114bb">CONFIG_ZTIMER_USEC_ADJUST_SLEEP</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a3b3622389af270c94d341a6dc69114bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">An offset for ZTIMER_USEC allowing to compentsate for the offset of <a class="el" href="group__sys__ztimer.html#gade98636e198f2d571c8acd861d29d360">ztimer_sleep()</a>.  <a href="#a3b3622389af270c94d341a6dc69114bb">More...</a><br /></td></tr>
+<tr class="separator:a3b3622389af270c94d341a6dc69114bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b30d2f1413385ff95ff900d467603eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys_2include_2ztimer_2config_8h.html#a4b30d2f1413385ff95ff900d467603eb">CONFIG_ZTIMER_AUTO_ADJUST_SETTLE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a4b30d2f1413385ff95ff900d467603eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some MCUs clocks need some warm-up time during which timing is inaccurate.  <a href="#a4b30d2f1413385ff95ff900d467603eb">More...</a><br /></td></tr>
+<tr class="separator:a4b30d2f1413385ff95ff900d467603eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4b30d2f1413385ff95ff900d467603eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b30d2f1413385ff95ff900d467603eb">&#9670;&nbsp;</a></span>CONFIG_ZTIMER_AUTO_ADJUST_SETTLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ZTIMER_AUTO_ADJUST_SETTLE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Some MCUs clocks need some warm-up time during which timing is inaccurate. </p>
+<p>This can be a hindrance when using the <a class="el" href="group__pseudomodule__ztimer__auto__adjust.html">ztimer_auto_adjust</a> module.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This value will increase the boards start-up time </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2ztimer_2config_8h_source.html#l00198">198</a> of file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+
+</div>
+</div>
+<a id="ac94d9b8a5362364c4f958e7b779a693c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac94d9b8a5362364c4f958e7b779a693c">&#9670;&nbsp;</a></span>CONFIG_ZTIMER_USEC_ADJUST_CLOCK_START</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ZTIMER_USEC_ADJUST_CLOCK_START&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An offset for ZTIMER_USEC allowing to compensate for the offset introduced by turning on the underlying peripheral. </p>
+<dl class="section note"><dt>Note</dt><dd>This value can be measured with the <code>tests/sys/ztimer_ondemand_benchmark</code> tool.</dd></dl>
+<p>This value should be configured in the board.h. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2ztimer_2config_8h_source.html#l00163">163</a> of file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+
+</div>
+</div>
+<a id="acf3cb5fd08980ee01401c783b74533de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3cb5fd08980ee01401c783b74533de">&#9670;&nbsp;</a></span>CONFIG_ZTIMER_USEC_ADJUST_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ZTIMER_USEC_ADJUST_SET&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An offset for ZTIMER_USEC allowing to compensate for the offset of <a class="el" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set()</a>. </p>
+<p>It can be measured with <a class="el" href="group__sys__ztimer__overhead.html#gac552b38ec2ae60b86d47776d38fb400f">ztimer_overhead_set()</a> </p><pre class="fragment">    This value should be configured in the board.h.</pre> 
+<p class="definition">Definition at line <a class="el" href="sys_2include_2ztimer_2config_8h_source.html#l00174">174</a> of file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+
+</div>
+</div>
+<a id="a3b3622389af270c94d341a6dc69114bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b3622389af270c94d341a6dc69114bb">&#9670;&nbsp;</a></span>CONFIG_ZTIMER_USEC_ADJUST_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ZTIMER_USEC_ADJUST_SLEEP&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An offset for ZTIMER_USEC allowing to compentsate for the offset of <a class="el" href="group__sys__ztimer.html#gade98636e198f2d571c8acd861d29d360">ztimer_sleep()</a>. </p>
+<dl class="section note"><dt>Note</dt><dd>As internally <a class="el" href="group__sys__ztimer.html#gade98636e198f2d571c8acd861d29d360">ztimer_sleep()</a> uses <a class="el" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set()</a> <a class="el" href="sys_2include_2ztimer_2config_8h.html#acf3cb5fd08980ee01401c783b74533de">CONFIG_ZTIMER_USEC_ADJUST_SET</a> should be tuned before.</dd></dl>
+<p>This value should be configured in the board.h. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2ztimer_2config_8h_source.html#l00187">187</a> of file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+
+</div>
+</div>
+<a id="a0da89da11cd4268db8298bae9fbe1d85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0da89da11cd4268db8298bae9fbe1d85">&#9670;&nbsp;</a></span>CONFIG_ZTIMER_USEC_MIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ZTIMER_USEC_MIN&#160;&#160;&#160;(10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ZTIMER_USEC optimal minimum value for <a class="el" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c" title="Set a timer on a clock. ">ztimer_set()</a> </p>
+<p>When scheduling an ISR every timer will be set to: max(CONFIG_ZTIMER_USEC_MIN, value).</p>
+<p>This value only applies if the counter object used for ZTIMER_USEC is periph_timer. This is supposed to be defined per-device in e.g., board.h. </p>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2ztimer_2config_8h_source.html#l00081">81</a> of file <a class="el" href="sys_2include_2ztimer_2config_8h_source.html">config.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

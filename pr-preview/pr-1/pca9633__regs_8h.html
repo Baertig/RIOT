@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/pca9633/include/pca9633_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pca9633__regs_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">pca9633_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__actuators.html">Actuator Device Drivers</a> &raquo; <a class="el" href="group__drivers__pca9633.html">PCA9633 I2C PWM controller</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Register definitions for the PCA9633 I2C PWM controller.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for the PCA9633 I2C PWM controller. </p>
+<dl class="section author"><dt>Author</dt><dd>Hendrik van Essen <a href="#" onclick="location.href='mai'+'lto:'+'hen'+'dr'+'ik.'+'ve'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">hendr<span style="display: none;">.nosp@m.</span>ik.v<span style="display: none;">.nosp@m.</span>e@fu-<span style="display: none;">.nosp@m.</span>berl<span style="display: none;">.nosp@m.</span>in.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="pca9633__regs_8h_source.html">pca9633_regs.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="bitarithm_8h_source.html">bitarithm.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for pca9633_regs.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pca9633__regs_8h__incl.svg" width="195" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pca9633__regs_8h__dep__incl.svg" width="395" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="pca9633__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a7375b355dfaff4c2b99c68e82921035b"><td class="memItemLeft" align="right" valign="top"><a id="a7375b355dfaff4c2b99c68e82921035b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a7375b355dfaff4c2b99c68e82921035b">PCA9633_REG_MODE1</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a7375b355dfaff4c2b99c68e82921035b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode register 1. <br /></td></tr>
+<tr class="separator:a7375b355dfaff4c2b99c68e82921035b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc8f650b565b07c713360f626e2929c"><td class="memItemLeft" align="right" valign="top"><a id="a4fc8f650b565b07c713360f626e2929c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a4fc8f650b565b07c713360f626e2929c">PCA9633_REG_MODE2</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:a4fc8f650b565b07c713360f626e2929c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode register 2. <br /></td></tr>
+<tr class="separator:a4fc8f650b565b07c713360f626e2929c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013da1189a78e5516d3a0116f85fb1a0"><td class="memItemLeft" align="right" valign="top"><a id="a013da1189a78e5516d3a0116f85fb1a0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a013da1189a78e5516d3a0116f85fb1a0">PCA9633_REG_PWM0</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:a013da1189a78e5516d3a0116f85fb1a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brightness control LED0. <br /></td></tr>
+<tr class="separator:a013da1189a78e5516d3a0116f85fb1a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b76ad70dc7333290ffd42312c52573d"><td class="memItemLeft" align="right" valign="top"><a id="a3b76ad70dc7333290ffd42312c52573d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a3b76ad70dc7333290ffd42312c52573d">PCA9633_REG_PWM1</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="memdesc:a3b76ad70dc7333290ffd42312c52573d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brightness control LED1. <br /></td></tr>
+<tr class="separator:a3b76ad70dc7333290ffd42312c52573d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a379d32c5c5207e541f979fad87d6deee"><td class="memItemLeft" align="right" valign="top"><a id="a379d32c5c5207e541f979fad87d6deee"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a379d32c5c5207e541f979fad87d6deee">PCA9633_REG_PWM2</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:a379d32c5c5207e541f979fad87d6deee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brightness control LED2. <br /></td></tr>
+<tr class="separator:a379d32c5c5207e541f979fad87d6deee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1c9a72ba0bef5cb276261891442e6f4"><td class="memItemLeft" align="right" valign="top"><a id="af1c9a72ba0bef5cb276261891442e6f4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#af1c9a72ba0bef5cb276261891442e6f4">PCA9633_REG_PWM3</a>&#160;&#160;&#160;0x05</td></tr>
+<tr class="memdesc:af1c9a72ba0bef5cb276261891442e6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Brightness control LED3. <br /></td></tr>
+<tr class="separator:af1c9a72ba0bef5cb276261891442e6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f46987643b026a83bc53008c265e416"><td class="memItemLeft" align="right" valign="top"><a id="a4f46987643b026a83bc53008c265e416"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a4f46987643b026a83bc53008c265e416">PCA9633_REG_GRPPWM</a>&#160;&#160;&#160;0x06</td></tr>
+<tr class="memdesc:a4f46987643b026a83bc53008c265e416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group duty cycle control. <br /></td></tr>
+<tr class="separator:a4f46987643b026a83bc53008c265e416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774b1e93b4196707f1d7d555baa133db"><td class="memItemLeft" align="right" valign="top"><a id="a774b1e93b4196707f1d7d555baa133db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a774b1e93b4196707f1d7d555baa133db">PCA9633_REG_GRPFREQ</a>&#160;&#160;&#160;0x07</td></tr>
+<tr class="memdesc:a774b1e93b4196707f1d7d555baa133db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Group frequency. <br /></td></tr>
+<tr class="separator:a774b1e93b4196707f1d7d555baa133db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ecdb16167ff63c3205c1520318c028"><td class="memItemLeft" align="right" valign="top"><a id="ad3ecdb16167ff63c3205c1520318c028"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#ad3ecdb16167ff63c3205c1520318c028">PCA9633_REG_LEDOUT</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:ad3ecdb16167ff63c3205c1520318c028"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED output state. <br /></td></tr>
+<tr class="separator:ad3ecdb16167ff63c3205c1520318c028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07832d1efb4c0215cc91e3c699dcae33"><td class="memItemLeft" align="right" valign="top"><a id="a07832d1efb4c0215cc91e3c699dcae33"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a07832d1efb4c0215cc91e3c699dcae33">PCA9633_REG_SUBADR1</a>&#160;&#160;&#160;0x09</td></tr>
+<tr class="memdesc:a07832d1efb4c0215cc91e3c699dcae33"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C-bus subaddress 1. <br /></td></tr>
+<tr class="separator:a07832d1efb4c0215cc91e3c699dcae33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa561c5163ea18bcb079761d6edb4712f"><td class="memItemLeft" align="right" valign="top"><a id="aa561c5163ea18bcb079761d6edb4712f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#aa561c5163ea18bcb079761d6edb4712f">PCA9633_REG_SUBADR2</a>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="memdesc:aa561c5163ea18bcb079761d6edb4712f"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C-bus subaddress 2. <br /></td></tr>
+<tr class="separator:aa561c5163ea18bcb079761d6edb4712f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab16745c5972cba08969aac99d10d7ebd"><td class="memItemLeft" align="right" valign="top"><a id="ab16745c5972cba08969aac99d10d7ebd"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#ab16745c5972cba08969aac99d10d7ebd">PCA9633_REG_SUBADR3</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="memdesc:ab16745c5972cba08969aac99d10d7ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C-bus subaddress 3. <br /></td></tr>
+<tr class="separator:ab16745c5972cba08969aac99d10d7ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59e15a0f5e4e2bbb6344167987359073"><td class="memItemLeft" align="right" valign="top"><a id="a59e15a0f5e4e2bbb6344167987359073"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a59e15a0f5e4e2bbb6344167987359073">PCA9633_REG_ALLCALLADR</a>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="memdesc:a59e15a0f5e4e2bbb6344167987359073"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED All Call I2C-bus address. <br /></td></tr>
+<tr class="separator:a59e15a0f5e4e2bbb6344167987359073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f48fec83bb6fa6fe34aa0f58368cc64"><td class="memItemLeft" align="right" valign="top"><a id="a7f48fec83bb6fa6fe34aa0f58368cc64"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a7f48fec83bb6fa6fe34aa0f58368cc64">PCA9633_BIT_AI2</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#aa6b8f3261ae9e2e1043380c192f7b5f0">BIT7</a></td></tr>
+<tr class="memdesc:a7f48fec83bb6fa6fe34aa0f58368cc64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit for register Auto-Increment 0 = disabled 1 = enabled. <br /></td></tr>
+<tr class="separator:a7f48fec83bb6fa6fe34aa0f58368cc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a994a4969f14bfcca3aacab55d3bfe21a"><td class="memItemLeft" align="right" valign="top"><a id="a994a4969f14bfcca3aacab55d3bfe21a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a994a4969f14bfcca3aacab55d3bfe21a">PCA9633_BIT_AI1</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#acc2d074401e2b6322ee8f03476c24677">BIT6</a></td></tr>
+<tr class="memdesc:a994a4969f14bfcca3aacab55d3bfe21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit for Auto-Increment bit1. <br /></td></tr>
+<tr class="separator:a994a4969f14bfcca3aacab55d3bfe21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d7ad4c74325c609e5f10ac4cbffc63"><td class="memItemLeft" align="right" valign="top"><a id="ac1d7ad4c74325c609e5f10ac4cbffc63"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#ac1d7ad4c74325c609e5f10ac4cbffc63">PCA9633_BIT_AI0</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#ae692bc3df48028ceb1ddc2534a993bb8">BIT5</a></td></tr>
+<tr class="memdesc:ac1d7ad4c74325c609e5f10ac4cbffc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit for Auto-Increment bit0. <br /></td></tr>
+<tr class="separator:ac1d7ad4c74325c609e5f10ac4cbffc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7de36b615c76fbb2e5c78fca3737d9b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#ac7de36b615c76fbb2e5c78fca3737d9b">PCA9633_BIT_SLEEP</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#aa731e0b6cf75f4e637ee88959315f5e4">BIT4</a></td></tr>
+<tr class="memdesc:ac7de36b615c76fbb2e5c78fca3737d9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = Normal mode 1 = Low power mode.  <a href="#ac7de36b615c76fbb2e5c78fca3737d9b">More...</a><br /></td></tr>
+<tr class="separator:ac7de36b615c76fbb2e5c78fca3737d9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7b81c3460466a1c4153e6d1fe381f5"><td class="memItemLeft" align="right" valign="top"><a id="a7c7b81c3460466a1c4153e6d1fe381f5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a7c7b81c3460466a1c4153e6d1fe381f5">PCA9633_BIT_SUB1</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#a8e44574a8a8becc885b05f3bc367ef6a">BIT3</a></td></tr>
+<tr class="memdesc:a7c7b81c3460466a1c4153e6d1fe381f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = PCA9633 does not respond to I2C-bus subaddress 1 1 = PCA9633 responds to I2C-bus subaddress 1 <br /></td></tr>
+<tr class="separator:a7c7b81c3460466a1c4153e6d1fe381f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb96e7c435036fd895b140956c04f25b"><td class="memItemLeft" align="right" valign="top"><a id="afb96e7c435036fd895b140956c04f25b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#afb96e7c435036fd895b140956c04f25b">PCA9633_BIT_SUB2</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#a9c9560bccccb00174801c728f1ed1399">BIT2</a></td></tr>
+<tr class="memdesc:afb96e7c435036fd895b140956c04f25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = PCA9633 does not respond to I2C-bus subaddress 2 1 = PCA9633 responds to I2C-bus subaddress 2 <br /></td></tr>
+<tr class="separator:afb96e7c435036fd895b140956c04f25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588ff05adaabe9cbfe56d17c886527ed"><td class="memItemLeft" align="right" valign="top"><a id="a588ff05adaabe9cbfe56d17c886527ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a588ff05adaabe9cbfe56d17c886527ed">PCA9633_BIT_SUB3</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#a601923eba46784638244c1ebf2622a2a">BIT1</a></td></tr>
+<tr class="memdesc:a588ff05adaabe9cbfe56d17c886527ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = PCA9633 does not respond to I2C-bus subaddress 3 1 = PCA9633 responds to I2C-bus subaddress 3 <br /></td></tr>
+<tr class="separator:a588ff05adaabe9cbfe56d17c886527ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f0626b1aec5e5adbeb4217b84af0d06"><td class="memItemLeft" align="right" valign="top"><a id="a9f0626b1aec5e5adbeb4217b84af0d06"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a9f0626b1aec5e5adbeb4217b84af0d06">PCA9633_BIT_ALLCALL</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#ad4d43f8748b542bce39e18790f845ecc">BIT0</a></td></tr>
+<tr class="memdesc:a9f0626b1aec5e5adbeb4217b84af0d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = PCA9633 does not respond to LED All Call I2C-bus address 1 = PCA9633 responds to LED All Call I2C-bus address <br /></td></tr>
+<tr class="separator:a9f0626b1aec5e5adbeb4217b84af0d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e73b7b6c82f233ab4002565d69b783"><td class="memItemLeft" align="right" valign="top"><a id="a32e73b7b6c82f233ab4002565d69b783"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a32e73b7b6c82f233ab4002565d69b783">PCA9633_BIT_DMBLNK</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#ae692bc3df48028ceb1ddc2534a993bb8">BIT5</a></td></tr>
+<tr class="memdesc:a32e73b7b6c82f233ab4002565d69b783"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit for group control; 0=dimming, 1=blinking. <br /></td></tr>
+<tr class="separator:a32e73b7b6c82f233ab4002565d69b783"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5792ca6d811d2ca0d44ae490eb819a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a8e5792ca6d811d2ca0d44ae490eb819a">PCA9633_BIT_INVRT</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#aa731e0b6cf75f4e637ee88959315f5e4">BIT4</a></td></tr>
+<tr class="memdesc:a8e5792ca6d811d2ca0d44ae490eb819a"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = Output logic state not inverted.  <a href="#a8e5792ca6d811d2ca0d44ae490eb819a">More...</a><br /></td></tr>
+<tr class="separator:a8e5792ca6d811d2ca0d44ae490eb819a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a358e351b9b2a34ae96521f5cda4c27cc"><td class="memItemLeft" align="right" valign="top"><a id="a358e351b9b2a34ae96521f5cda4c27cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a358e351b9b2a34ae96521f5cda4c27cc">PCA9633_BIT_OCH</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#a8e44574a8a8becc885b05f3bc367ef6a">BIT3</a></td></tr>
+<tr class="memdesc:a358e351b9b2a34ae96521f5cda4c27cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = Outputs change on STOP command 1 = Outputs change on ACK <br /></td></tr>
+<tr class="separator:a358e351b9b2a34ae96521f5cda4c27cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1860f4fc81ac43c696bf8a51bb23455"><td class="memItemLeft" align="right" valign="top"><a id="af1860f4fc81ac43c696bf8a51bb23455"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#af1860f4fc81ac43c696bf8a51bb23455">PCA9633_BIT_OUTDRV</a>&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#a9c9560bccccb00174801c728f1ed1399">BIT2</a></td></tr>
+<tr class="memdesc:af1860f4fc81ac43c696bf8a51bb23455"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = The 4 LED outputs are configured with an open-drain structure 1 = The 4 LED outputs are configured with a totem pole structure <br /></td></tr>
+<tr class="separator:af1860f4fc81ac43c696bf8a51bb23455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af41e50a30b70e11465dfbb572ccfa836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#af41e50a30b70e11465dfbb572ccfa836">PCA9633_BITMASK_OUTNE</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="memdesc:af41e50a30b70e11465dfbb572ccfa836"><td class="mdescLeft">&#160;</td><td class="mdescRight">00 = When OE = 1 (output drivers not enabled), LEDn = 0.  <a href="#af41e50a30b70e11465dfbb572ccfa836">More...</a><br /></td></tr>
+<tr class="separator:af41e50a30b70e11465dfbb572ccfa836"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4844d27c03eba644af0eeeeadb18242c"><td class="memItemLeft" align="right" valign="top"><a id="a4844d27c03eba644af0eeeeadb18242c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a4844d27c03eba644af0eeeeadb18242c">PCA9633_BITMASK_LDR3</a>&#160;&#160;&#160;0xC0</td></tr>
+<tr class="memdesc:a4844d27c03eba644af0eeeeadb18242c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for LDR3. <br /></td></tr>
+<tr class="separator:a4844d27c03eba644af0eeeeadb18242c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaad21762b0b2084f06e61859f09d7a1"><td class="memItemLeft" align="right" valign="top"><a id="adaad21762b0b2084f06e61859f09d7a1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#adaad21762b0b2084f06e61859f09d7a1">PCA9633_BITMASK_LDR2</a>&#160;&#160;&#160;0x30</td></tr>
+<tr class="memdesc:adaad21762b0b2084f06e61859f09d7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for LDR2. <br /></td></tr>
+<tr class="separator:adaad21762b0b2084f06e61859f09d7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8ad3b62a0f7e0e631f82a98cbe7cf4"><td class="memItemLeft" align="right" valign="top"><a id="a4d8ad3b62a0f7e0e631f82a98cbe7cf4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a4d8ad3b62a0f7e0e631f82a98cbe7cf4">PCA9633_BITMASK_LDR1</a>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="memdesc:a4d8ad3b62a0f7e0e631f82a98cbe7cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for LDR1. <br /></td></tr>
+<tr class="separator:a4d8ad3b62a0f7e0e631f82a98cbe7cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131482640c2571928e02594d8e0ae191"><td class="memItemLeft" align="right" valign="top"><a id="a131482640c2571928e02594d8e0ae191"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9633__regs_8h.html#a131482640c2571928e02594d8e0ae191">PCA9633_BITMASK_LDR0</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="memdesc:a131482640c2571928e02594d8e0ae191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bitmask for LDR0. <br /></td></tr>
+<tr class="separator:a131482640c2571928e02594d8e0ae191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a8e5792ca6d811d2ca0d44ae490eb819a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e5792ca6d811d2ca0d44ae490eb819a">&#9670;&nbsp;</a></span>PCA9633_BIT_INVRT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCA9633_BIT_INVRT&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#aa731e0b6cf75f4e637ee88959315f5e4">BIT4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0 = Output logic state not inverted. </p>
+<p>Value to use when no external driver used 1 = Output logic state inverted. Value to use when external driver used </p>
+
+<p class="definition">Definition at line <a class="el" href="pca9633__regs_8h_source.html#l00154">154</a> of file <a class="el" href="pca9633__regs_8h_source.html">pca9633_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7de36b615c76fbb2e5c78fca3737d9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7de36b615c76fbb2e5c78fca3737d9b">&#9670;&nbsp;</a></span>PCA9633_BIT_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCA9633_BIT_SLEEP&#160;&#160;&#160;<a class="el" href="bitarithm_8h.html#aa731e0b6cf75f4e637ee88959315f5e4">BIT4</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0 = Normal mode 1 = Low power mode. </p>
+<p>Oscillator off </p>
+
+<p class="definition">Definition at line <a class="el" href="pca9633__regs_8h_source.html#l00117">117</a> of file <a class="el" href="pca9633__regs_8h_source.html">pca9633_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="af41e50a30b70e11465dfbb572ccfa836"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af41e50a30b70e11465dfbb572ccfa836">&#9670;&nbsp;</a></span>PCA9633_BITMASK_OUTNE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCA9633_BITMASK_OUTNE&#160;&#160;&#160;0x03</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>00 = When OE = 1 (output drivers not enabled), LEDn = 0. </p>
+<p>01* = When OE = 1 (output drivers not enabled): LEDn = 1 when OUTDRV = 1 LEDn = high-impedance when OUTDRV = 0 (same as OUTNE[1:0] = 10) 10 When OE = 1 (output drivers not enabled), LEDn = high-impedance. 11 reserved </p>
+
+<p class="definition">Definition at line <a class="el" href="pca9633__regs_8h_source.html#l00176">176</a> of file <a class="el" href="pca9633__regs_8h_source.html">pca9633_regs.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

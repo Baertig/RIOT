@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>aux_anaif_regs_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structaux__anaif__regs__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">aux_anaif_regs_t Struct Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>AUX_ANAIF registers.  
+ <a href="structaux__anaif__regs__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>AUX_ANAIF registers. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00206">206</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2d855559d66236999b2ef3582cfa8775"><td class="memItemLeft" align="right" valign="top"><a id="a2d855559d66236999b2ef3582cfa8775"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a2d855559d66236999b2ef3582cfa8775">__reserved</a> [4]</td></tr>
+<tr class="memdesc:a2d855559d66236999b2ef3582cfa8775"><td class="mdescLeft">&#160;</td><td class="mdescRight">meh <br /></td></tr>
+<tr class="separator:a2d855559d66236999b2ef3582cfa8775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92b64d9134c3ac4376de3524eb41250"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#ab92b64d9134c3ac4376de3524eb41250">ADCCTL</a></td></tr>
+<tr class="memdesc:ab92b64d9134c3ac4376de3524eb41250"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC control.  <a href="#ab92b64d9134c3ac4376de3524eb41250">More...</a><br /></td></tr>
+<tr class="separator:ab92b64d9134c3ac4376de3524eb41250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8ee548b389742a9ffd3d9d74e247ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#ada8ee548b389742a9ffd3d9d74e247ad">ADCFIFOSTAT</a></td></tr>
+<tr class="memdesc:ada8ee548b389742a9ffd3d9d74e247ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC fifo status.  <a href="#ada8ee548b389742a9ffd3d9d74e247ad">More...</a><br /></td></tr>
+<tr class="separator:ada8ee548b389742a9ffd3d9d74e247ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ff051570586418fa7fc9cf69fd77b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#af3ff051570586418fa7fc9cf69fd77b2">ADCFIFO</a></td></tr>
+<tr class="memdesc:af3ff051570586418fa7fc9cf69fd77b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC fifo.  <a href="#af3ff051570586418fa7fc9cf69fd77b2">More...</a><br /></td></tr>
+<tr class="separator:af3ff051570586418fa7fc9cf69fd77b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208f78aec3ae99fb12dc0f2b01477fff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a208f78aec3ae99fb12dc0f2b01477fff">ADCTRIG</a></td></tr>
+<tr class="memdesc:a208f78aec3ae99fb12dc0f2b01477fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC trigger.  <a href="#a208f78aec3ae99fb12dc0f2b01477fff">More...</a><br /></td></tr>
+<tr class="separator:a208f78aec3ae99fb12dc0f2b01477fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9eb0b0bc2c6687609666f8d6f5cbc41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#af9eb0b0bc2c6687609666f8d6f5cbc41">ISRCCTL</a></td></tr>
+<tr class="memdesc:af9eb0b0bc2c6687609666f8d6f5cbc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">current source control  <a href="#af9eb0b0bc2c6687609666f8d6f5cbc41">More...</a><br /></td></tr>
+<tr class="separator:af9eb0b0bc2c6687609666f8d6f5cbc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2d7eb91fdb4ebb3b412fcec69d8637"><td class="memItemLeft" align="right" valign="top"><a id="aaf2d7eb91fdb4ebb3b412fcec69d8637"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#aaf2d7eb91fdb4ebb3b412fcec69d8637">__reserved1</a> [0x4]</td></tr>
+<tr class="memdesc:aaf2d7eb91fdb4ebb3b412fcec69d8637"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:aaf2d7eb91fdb4ebb3b412fcec69d8637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a896b6a18602d18ec15e5964de6cdd12e"><td class="memItemLeft" align="right" valign="top"><a id="a896b6a18602d18ec15e5964de6cdd12e"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a896b6a18602d18ec15e5964de6cdd12e">__reserved2</a> [0x3]</td></tr>
+<tr class="memdesc:a896b6a18602d18ec15e5964de6cdd12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:a896b6a18602d18ec15e5964de6cdd12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae60e654ee9fdd37a1d87d6a7aa3debc4"><td class="memItemLeft" align="right" valign="top"><a id="ae60e654ee9fdd37a1d87d6a7aa3debc4"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#ae60e654ee9fdd37a1d87d6a7aa3debc4">DACCTL</a></td></tr>
+<tr class="memdesc:ae60e654ee9fdd37a1d87d6a7aa3debc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Control. <br /></td></tr>
+<tr class="separator:ae60e654ee9fdd37a1d87d6a7aa3debc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc72b2ad0114e7b0b8fd6c9a1640cc56"><td class="memItemLeft" align="right" valign="top"><a id="afc72b2ad0114e7b0b8fd6c9a1640cc56"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#afc72b2ad0114e7b0b8fd6c9a1640cc56">LPMBIASCTL</a></td></tr>
+<tr class="memdesc:afc72b2ad0114e7b0b8fd6c9a1640cc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low-Power Mode Bias Control. <br /></td></tr>
+<tr class="separator:afc72b2ad0114e7b0b8fd6c9a1640cc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d1b9ed29bf4fef65b2cd92204337ecd"><td class="memItemLeft" align="right" valign="top"><a id="a0d1b9ed29bf4fef65b2cd92204337ecd"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a0d1b9ed29bf4fef65b2cd92204337ecd">DACSMPLCTL</a></td></tr>
+<tr class="memdesc:a0d1b9ed29bf4fef65b2cd92204337ecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Sample Control. <br /></td></tr>
+<tr class="separator:a0d1b9ed29bf4fef65b2cd92204337ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116de2aea094fe17c95fd8a633da756f"><td class="memItemLeft" align="right" valign="top"><a id="a116de2aea094fe17c95fd8a633da756f"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a116de2aea094fe17c95fd8a633da756f">DACSMPLCFG0</a></td></tr>
+<tr class="memdesc:a116de2aea094fe17c95fd8a633da756f"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Sample Configuration 0. <br /></td></tr>
+<tr class="separator:a116de2aea094fe17c95fd8a633da756f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17b7895309fcf69166881e24bd17a7d3"><td class="memItemLeft" align="right" valign="top"><a id="a17b7895309fcf69166881e24bd17a7d3"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a17b7895309fcf69166881e24bd17a7d3">DACSMPLCFG1</a></td></tr>
+<tr class="memdesc:a17b7895309fcf69166881e24bd17a7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Sample Configuration 1. <br /></td></tr>
+<tr class="separator:a17b7895309fcf69166881e24bd17a7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bb9a09483fc81f20086deba8b67517"><td class="memItemLeft" align="right" valign="top"><a id="ad8bb9a09483fc81f20086deba8b67517"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#ad8bb9a09483fc81f20086deba8b67517">DACVALUE</a></td></tr>
+<tr class="memdesc:ad8bb9a09483fc81f20086deba8b67517"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Value. <br /></td></tr>
+<tr class="separator:ad8bb9a09483fc81f20086deba8b67517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268ece136a60a17468671af215502188"><td class="memItemLeft" align="right" valign="top"><a id="a268ece136a60a17468671af215502188"></a>
+<a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structaux__anaif__regs__t.html#a268ece136a60a17468671af215502188">DACSTAT</a></td></tr>
+<tr class="memdesc:a268ece136a60a17468671af215502188"><td class="mdescLeft">&#160;</td><td class="mdescRight">DAC Status. <br /></td></tr>
+<tr class="separator:a268ece136a60a17468671af215502188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ab92b64d9134c3ac4376de3524eb41250"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92b64d9134c3ac4376de3524eb41250">&#9670;&nbsp;</a></span>ADCCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_anaif_regs_t::ADCCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC control. </p>
+<p>ADC Control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00208">208</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="af3ff051570586418fa7fc9cf69fd77b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3ff051570586418fa7fc9cf69fd77b2">&#9670;&nbsp;</a></span>ADCFIFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_anaif_regs_t::ADCFIFO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC fifo. </p>
+<p>ADC FIFO. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00210">210</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="ada8ee548b389742a9ffd3d9d74e247ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8ee548b389742a9ffd3d9d74e247ad">&#9670;&nbsp;</a></span>ADCFIFOSTAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_anaif_regs_t::ADCFIFOSTAT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC fifo status. </p>
+<p>ADC FIFO status. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00209">209</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="a208f78aec3ae99fb12dc0f2b01477fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a208f78aec3ae99fb12dc0f2b01477fff">&#9670;&nbsp;</a></span>ADCTRIG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_anaif_regs_t::ADCTRIG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC trigger. </p>
+<p>ADC Trigger. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00211">211</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<a id="af9eb0b0bc2c6687609666f8d6f5cbc41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9eb0b0bc2c6687609666f8d6f5cbc41">&#9670;&nbsp;</a></span>ISRCCTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CC13x2__cmsis.html#ga0e1b07bbc5af28a654767bb3dfb132ad">reg32_t</a> aux_anaif_regs_t::ISRCCTL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>current source control </p>
+<p>Current Source Control. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26x0__cc13x0__aux_8h_source.html#l00212">212</a> of file <a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>cpu/cc26x0_cc13x0/include/<a class="el" href="cc26x0__cc13x0__aux_8h_source.html">cc26x0_cc13x0_aux.h</a></li>
+<li>cpu/cc26x2_cc13x2/include/<a class="el" href="cc26x2__cc13x2__aux_8h_source.html">cc26x2_cc13x2_aux.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

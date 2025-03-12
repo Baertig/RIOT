@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/asymmetric_signature/algorithm.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('asymmetric__signature_2algorithm_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="asymmetric__signature_2algorithm_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2024 TU Dresden</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2021 HAW Hamburg</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef PSA_CRYPTO_PSA_ASYMMETRIC_SIGNATURE_ALGORITHM_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define PSA_CRYPTO_PSA_ASYMMETRIC_SIGNATURE_ALGORITHM_H</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;psa/algorithm.h&quot;</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hash_2algorithm_8h.html">psa/hash/algorithm.h</a>&quot;</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a68a0af1dd89b33fb1e53139f654988f6">   35</a></span>&#160;<span class="preprocessor">#define PSA_ALG_CATEGORY_SIGN ((psa_algorithm_t)0x06000000)</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a6d490d0904e0698f6c1268a89d72ff31">   46</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_SIGN(alg) \</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">    (((alg) &amp; PSA_ALG_CATEGORY_MASK) == PSA_ALG_CATEGORY_ASYMMETRIC_SIGNATURE)</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">   57</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_RSA_PKCS1V15_SIGN(alg) \</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000200)</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#afa04fae7393a76d5161558768cb82a78">   71</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_RSA_PSS(alg) \</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000300)</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#ae93883052098a9a433251599be3e05e5">   88</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_RSA_PSS_ANY_SALT(alg) \</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06001300)</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a3577ae16a2f607c3d4f894344258aa18">  105</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_RSA_PSS_STANDARD_SALT(alg) \</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000300)</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#afb92dc138c9d2388033ff5fc1dab7b48">  116</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_ECDSA(alg) \</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">    (((alg) &amp; PSA_ALG_CATEGORY_MASK) == PSA_ALG_CATEGORY_SIGN)</span></div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#acd8766fe0fb8c1e2d32644e0d092c43a">  129</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_DETERMINISTIC_ECDSA(alg) \</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000700)</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#ae7b0fafebd139f6f815285b7cad622ea">  142</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_RANDOMIZED_ECDSA(alg) \</span></div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000600)</span></div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#ada6b4732688e435a881f7771e3a63e16">  153</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_HASH_EDDSA(alg) \</span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">    (((alg) &amp; ~0x000000ff) == 0x06000900)</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div><div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a7664f69c28b193cc6cb8368481fcda64">  171</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_SIGN_HASH(alg) \</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">    (PSA_ALG_IS_RSA_PSS(alg) || PSA_ALG_IS_RSA_PKCS1V15_SIGN(alg) ||    \</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">     PSA_ALG_IS_ECDSA(alg) || PSA_ALG_IS_HASH_EDDSA(alg))</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div><div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#ad8a8ea0536975363b66410cdeafe38b6">  207</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_HASH_AND_SIGN(alg)   \</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">    (PSA_ALG_IS_SIGN_HASH(alg) &amp;&amp;       \</span></div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">     ((alg) &amp; PSA_ALG_HASH_MASK) != 0)</span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div><div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#acd8b87e858614134de566edaa4d84db8">  222</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_SIGN_MESSAGE(alg) \</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">    (PSA_ALG_IS_SIGN_HASH(alg) || (alg) == PSA_ALG_PURE_EDDSA)</span></div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;</div><div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#acf83d7430e82b97cecb8b26ca6fa1426">  239</a></span>&#160;<span class="preprocessor">#define PSA_ALG_IS_WILDCARD(alg) \</span></div><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">    (PSA_ALG_GET_HASH(alg) == PSA_ALG_ANY_HASH)</span></div><div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div><div class="line"><a name="l00284"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#aa1288ea8bd397a8a3f5e19e94110f2e4">  284</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ANY_HASH ((psa_algorithm_t)0x020000ff)</span></div><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div><div class="line"><a name="l00311"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a702ff75385a6ae7d4247033f479439af">  311</a></span>&#160;<span class="preprocessor">#define PSA_ALG_RSA_PKCS1V15_SIGN(hash_alg) \</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">    ((psa_algorithm_t)(0x06000200 | ((hash_alg) &amp; 0x000000ff)))</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;</div><div class="line"><a name="l00336"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a4215e2a78dcf834e9a625927faa2a817">  336</a></span>&#160;<span class="preprocessor">#define PSA_ALG_RSA_PKCS1V15_SIGN_RAW ((psa_algorithm_t)0x06000200)</span></div><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div><div class="line"><a name="l00367"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">  367</a></span>&#160;<span class="preprocessor">#define PSA_ALG_RSA_PSS(hash_alg) \</span></div><div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;<span class="preprocessor">    ((psa_algorithm_t)(0x06000300 | ((hash_alg) &amp; 0x000000ff)))</span></div><div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;</div><div class="line"><a name="l00400"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">  400</a></span>&#160;<span class="preprocessor">#define PSA_ALG_RSA_PSS_ANY_SALT(hash_alg) \</span></div><div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;<span class="preprocessor">    ((psa_algorithm_t)(0x06001300 | ((hash_alg) &amp; 0x000000ff)))</span></div><div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;</div><div class="line"><a name="l00406"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#afd9800fdbe6ea881e0ac0ce03d145928">  406</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ECDSA_BASE ((psa_algorithm_t)0x06000600)</span></div><div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div><div class="line"><a name="l00457"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">  457</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ECDSA(hash_alg)                                 \</span></div><div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="preprocessor">    (PSA_ALG_ECDSA_BASE | ((hash_alg) &amp; PSA_ALG_HASH_MASK))</span></div><div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;</div><div class="line"><a name="l00487"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a51d6b6044a62e33cae0cf64bfc3b22a4">  487</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ECDSA_ANY PSA_ALG_ECDSA_BASE</span></div><div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;</div><div class="line"><a name="l00530"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a11da566bcd341661c8de921e2ca5ed03">  530</a></span>&#160;<span class="preprocessor">#define PSA_ALG_DETERMINISTIC_ECDSA(hash_alg) \</span></div><div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;<span class="preprocessor">    ((psa_algorithm_t)(0x06000700 | ((hash_alg) &amp; 0x000000ff)))</span></div><div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;</div><div class="line"><a name="l00568"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a76d6053fb1867c2c46c5f8131c8a8cae">  568</a></span>&#160;<span class="preprocessor">#define PSA_ALG_PURE_EDDSA ((psa_algorithm_t)0x06000800)</span></div><div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;</div><div class="line"><a name="l00597"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a3be20c4293031a8f32e7cb66d26f5c3d">  597</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ED25519PH ((psa_algorithm_t)0x0600090B)</span></div><div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;</div><div class="line"><a name="l00627"></a><span class="lineno"><a class="line" href="asymmetric__signature_2algorithm_8h.html#a1c632df795535af4334d37a08a01481b">  627</a></span>&#160;<span class="preprocessor">#define PSA_ALG_ED448PH ((psa_algorithm_t)0x06000915)</span></div><div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;</div><div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;}</div><div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;</div><div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PSA_CRYPTO_PSA_ASYMMETRIC_SIGNATURE_ALGORITHM_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;</div><div class="ttc" id="hash_2algorithm_8h_html"><div class="ttname"><a href="hash_2algorithm_8h.html">algorithm.h</a></div><div class="ttdoc">Hash algorithm definitions for the PSA Crypto API. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Running and creating tests</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('running-and-creating-tests.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Running and creating tests </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>There are a number of tests included in RIOT. They are located in the <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests">tests directory</a>. These tests allow basic functionality to be verified as well as provide an example of usage.</p>
+<h1><a class="anchor" id="autotoc_md2329"></a>
+Directory Structure</h1>
+<p>The <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests">tests directory</a> in RIOT is further divided into a number of subdirectories.</p>
+<ul>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/bench"><em>bench</em></a>: Benchmark tests, these provide numbers on how RIOT performs on the used hardware.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/build_system"><em>build_system</em></a>: Tests the RIOT build system functionality, such as blob, external board/module/package dirs, and kconfig.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/core"><em>core</em></a>: Tests the RIOT core functionality such as threading and IPC.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/cpu"><em>cpu</em></a>: Tests RIOT cpu specific features such as efm32, stm32, native and AVR.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/drivers"><em>drivers</em></a>: Tests individual drivers. The tests for sensors print the measured values to the console, others demonstrate the functionality of the driver and attached hardware.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/net"><em>net</em></a>: Tests the networking features provided in RIOT, such as CoAP, emcute, GNRC, IEEE 802.15.4 and sntp.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/periph"><em>periph</em></a>: Tests the low level peripherals in RIOT, such as interacting with SPI and I2C peripherals.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/pkg"><em>pkg</em></a>: Tests the external packages available in RIOT, such as lvgl, lwip, nanocbor, and tinyusb.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/sys"><em>sys</em></a>: Collection of tests for the utilities in <a href="https://github.com/RIOT-OS/RIOT/tree/master/sys"><em>sys</em></a> directory of RIOT.</li>
+<li><a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/unittests"><em>unittests</em></a>: Collection of very simple test applications that test simple modules and do not rely on extra hardware. Can be flashed and run as single application to test all unit tests at once.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2330"></a>
+Running automated tests</h1>
+<p>Some tests can be performed automatically. The test automation scripts are defined in the <code>&lt;test_application&gt;/tests/</code> folder. They are written in python and interact through the serial (typically UART) with the test application code running on a board to do the validation. It is recommended to flash the board with the test just before running it because some platforms cannot be reset while testing.</p>
+<h2><a class="anchor" id="autotoc_md2331"></a>
+Running single test</h2>
+<p>From the test application directory run: </p><pre class="fragment">BOARD=&lt;board_of_your_choice&gt; make flash test
+</pre><p>An automated way of knowing if a test is available is to execute the 'test/available' target from the test application directory. It executes without error if tests run by 'make test' are present. </p><pre class="fragment">make test/available
+</pre><h2><a class="anchor" id="autotoc_md2332"></a>
+Running all test for particular board</h2>
+<p>If you would like execute all tests for given board, you could use dedicated script <code>compile_and_test_for_board.py</code></p>
+<p>Go to main RIOT directory and execute command: </p><pre class="fragment">./dist/tools/compile_and_test_for_board/compile_and_test_for_board.py . &lt;board_of_your_choice&gt; --with-test-only --jobs=4
+</pre><p>More details concerning other available parameters provided by this tool can be found in <a href="https://github.com/RIOT-OS/RIOT/tree/master/dist/tools/compile_and_test_for_board">README.md file</a> and directly in <a href="https://github.com/RIOT-OS/RIOT/tree/master/dist/tools/compile_and_test_for_board/compile_and_test_for_board.py">compile_and_test_for_board.py</a> script.</p>
+<h2><a class="anchor" id="autotoc_md2333"></a>
+Running tests that require a preliminary manual configuration</h2>
+<p>Some tests need active monitoring or manual setup steps but still have some automated scripts. The test automation scripts are defined in the <code>&lt;test_application&gt;/tests-with-config/</code> folder. For running them, follow the setup or analysis documentation and use the <code>test-with-config</code> target.</p>
+<h2><a class="anchor" id="autotoc_md2334"></a>
+Running tests that require root privileges</h2>
+<p>Some tests require root privileges to launch their automated script. In this case, the test automation scripts are defined in the <code>&lt;test_application&gt;/tests-as-root/</code> folder. For running them, follow the setup or analysis documentation and use the <code>test-as-root</code> target.</p>
+<h2><a class="anchor" id="autotoc_md2335"></a>
+Cleaning intermediate files</h2>
+<p>After test execution intermediate files are not automatically deleted. Execution of multiple tests, especially all for particular board could generate many files. For example, after execution of all test for stm32f469i-disco board (more than 230 tests) around 7.5 GB of intermediate files are created.</p>
+<p>There are few methods for cleaning intermediate files.</p>
+<p>If you would like to clean intermediate file only for particular board you should go to main RIOT directory and execute one from these commands: </p><pre class="fragment">./dist/tools/compile_and_test_for_board/compile_and_test_for_board.py . &lt;board_of_your_choice&gt; --compile-targets clean
+</pre><p>or </p><pre class="fragment">make BOARD=&lt;board_of_your_choice&gt; clean
+</pre><p>If you would like to clean intermediate files for all boards go to main RIOT directory and use this command.</p>
+<dl class="section warning"><dt>Warning</dt><dd>This command cleans all local files, for example, pkg downloads and locally generared docs.</dd></dl>
+<pre class="fragment">make distclean
+</pre><h1><a class="anchor" id="autotoc_md2336"></a>
+Implementing automated tests</h1>
+<p>The goal is to be able to run all tests in a sequential way for as many targets as possible.</p>
+<p>As some board can't be reset without a manual trigger tests should be implemented with some kind of <code>synchronization</code>. This can be done in two ways:</p>
+<ul>
+<li>use <code>test_utils_interactive_sync</code> when uart input/output does not need to be disabled for the test. This is enabled by default, except for <code>native</code> and <code>native64</code>.</li>
+<li>set up the test in a loop so the test script will be able so sync with some kind of start condition in the test.</li>
+</ul>
+<p>The module for the first option is <code>test_utils_interactive_sync</code> and is set as a default module in <code>Makefile.tests_common</code>. It can be disabled by setting in the application makefile <code>DISABLE_MODULE += test_utils_interactive_sync</code>. The python test script will adapt to it automatically.</p>
+<p>When using the <code>shell</code> module, <code>test_utils_interactive_sync</code> will use the shell itself to synchronize, and will not use <code><a class="el" href="group__test__utils__interactive__sync.html#ga61e0edd9e603413420d97346e3c7bae2" title="Wait for the tester to start test. ">test_utils_interactive_sync()</a>;</code> function to synchronize. Some times you will want to synchronize before the start of the script and use <code><a class="el" href="group__test__utils__interactive__sync.html#ga61e0edd9e603413420d97346e3c7bae2" title="Wait for the tester to start test. ">test_utils_interactive_sync()</a>;</code> function (e.g.: <a href="tests/ps_schedstatistics/main.c">tests/ps_schedstatistics</a>). For these cases you can disable <code>test_utils_interactive_sync_shell</code> module in the application <code>Makefile</code>: <code>DISABLE_MODULE += test_utils_interactive_sync_shell</code>.</p>
+<h2><a class="anchor" id="autotoc_md2337"></a>
+Automated Tests Guidelines</h2>
+<p>When using <code>pexpect</code> <code>$</code> is useless for matching the end of a line, instead use <code>\r\n</code>(<a href="https://pexpect.readthedocs.io/en/stable/overview.html#find-the-end-of-line-cr-lf-conventions">pexpect end-of-line</a>).</p>
+<p>Beware of <code>+</code> and <code>*</code> at the end of patterns. These patterns will always get a minimal match (non-greedy).(<a href="https://pexpect.readthedocs.io/en/stable/overview.html#beware-of-and-at-the-end-of-patterns">pexpect end-of-patterns</a>) This can be an issue when matching groups and using the matched groups to verify some kind of behavior since <code>*</code> could return an empty match and <code>+</code> only a subset.</p>
+<p>This is especially prevalent since <code><a class="el" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2" title="A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...">printf()</a></code> is buffered so the output might not arrive in a single read to <code>pexpect</code>.</p>
+<p>To avoid this make sure to match a non-ambiguous character at the end of the pattern like <code>\r\n</code>, <code>\s</code>, <code>\)</code>, etc..</p>
+<p><b>don't</b>:</p>
+<div class="fragment"><div class="line">child.expect(r&#39;some string: (\d+)&#39;)</div></div><!-- fragment --><p><b>do</b>:</p>
+<div class="fragment"><div class="line">child.expect(r&#39;some string: (\d+)\r\n&#39;)</div></div><!-- fragment --> <div class="fragment"><div class="line">child.expect(r&#39;some string: (\d+)\s&#39;)</div></div><!-- fragment --> <div class="fragment"><div class="line">child.expect(r&#39;some string: (\d+) ,&#39;)</div></div><!-- fragment --><h2><a class="anchor" id="autotoc_md2338"></a>
+Use expect() instead of assert()</h2>
+<p>In order to make a test application functional in all cases, use <code><a class="el" href="group__test__utils__expect.html#gadd37fb477fadd68ccc0f938027ba132e" title="abort the program if condition is false ">expect()</a></code> instead of <code><a class="el" href="assert_8h.html#a3153a272f18d0f805028fce7e4337b53" title="abort the program if assertion is false ">assert()</a></code>. The former works like the latter, but will still be compiled in if <code>NDEBUG</code> is defined. This is useful to keep a test application working even when compiling with -DNDEBUG, allowing for the code-under-test to be compiled with that flag. Otherwise, the application would force compiling all tested code with assertions enabled. <code><a class="el" href="group__test__utils__expect.html#gadd37fb477fadd68ccc0f938027ba132e" title="abort the program if condition is false ">expect()</a></code> is defined in the header <code><a class="el" href="expect_8h.html" title="test &quot;expect condition&quot; utility function ">test_utils/expect.h</a></code>.</p>
+<h2><a class="anchor" id="autotoc_md2339"></a>
+Interaction through the uart</h2>
+<p>Tests implemented with <code>testrunner</code> use the <code>cleanterm</code> target that provides an interaction without adding extra text output or input handling. It can currently be expected to have unmodified line based interaction with the board.</p>
+<p>The expected behavior is verified with the test in <code>tests/test_tools</code>.</p>
+<p>Tests cannot rely on having on all boards and terminal programs:</p><ul>
+<li>unbuffered input</li>
+<li>allowing sending special characters like <code>ctrl+c/ctrl+d</code> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

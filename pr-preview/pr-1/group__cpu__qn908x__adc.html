@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>NXP QN908x ADC - Analog to Digital converter</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__cpu__qn908x__adc.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">NXP QN908x ADC - Analog to Digital converter<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__qn908x.html">NXP QN908x</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>NXP QN908x ADC driver.  
+<a href="#details">More...</a></p>
+<p>NXP QN908x ADC driver. </p>
+<p>This ADC is a differential sigma-delta ADC. There are 9 external signals named ADC0 to ADC7 and ADC_VREFI that can be connected to specific external GPIO pins. There are several combinations of measurements possible with the ADC module using these external signals as well as some internal signals, but not every combination is a possible input pair to the ADC.</p>
+<p>The ADC block runs at either 4 MHz or 32 KHz from the high speed or low speed clock sources respective. An additional divisor is available to select some intermediate clock values. However, this is not the sample rate, since a single sample from <a class="el" href="group__drivers__periph__adc.html#ga0ffa20b26f649b1879b487f9aa0aa4b4">adc_sample()</a> requires multiple internal samples which are then filtered and decimated by the hardware, giving about 128 slower sample rate than the selected clock.</p>
+<p>Each board-defined ADC line is configured with a single integer value which is the logic or of the following values:</p><ul>
+<li>The differential pair of signals among the options in <a class="el" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83">qn908x_adc_channel_t</a>,</li>
+<li>For those channels that use the "Vinn" signal, a value selecting the Vinn signal in <a class="el" href="qn908x_2include_2periph__cpu_8h.html#ac72f8dbacd89a0bd6c33654409d938f6">qn908x_adc_vinn_t</a>,</li>
+<li>The reference voltage "Vref" that the ADC will use for its full range selected with <a class="el" href="qn908x_2include_2periph__cpu_8h.html#a3ef56804a626b9072d0578747d941cae">qn908x_adc_vref_t</a>,</li>
+<li>The ADC input gain as selected by <a class="el" href="qn908x_2include_2periph__cpu_8h.html#aace28180461989db4b23d823b84db093">qn908x_adc_gain_t</a>, which will multiply the differential input by a factor between 0.5 and 2, and</li>
+<li>An optional gain flag <a class="el" href="qn908x_2include_2periph__cpu_8h.html#a0eec9ae0c58babedd37c1ea59e8472cc">ADC_VREF_GAIN_X15</a>.</li>
+<li>An optional PGA enabled flag <a class="el" href="qn908x_2include_2periph__cpu_8h.html#ac478beb12ce9fd2efcefb70c28c08e38">ADC_PGA_ENABLE</a>.</li>
+</ul>
+<p>The hardware resolution of the ADC data is always 23-bits signed, but smaller resolutions can be requested which will result in a smaller output value.</p>
+<p>An internal temperature sensor is available and connected to the ADC when selecting <a class="el" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83a1ed27e96d73bc3032ec54d2738163cf4">ADC_CHANNEL_TEMP</a> as the channel. In this case the returned value is still a number that represents the temperature dependent voltage level of the internal signal which then needs to be converted to a temperature by the application using calibration parameters. When using the internal temperature sensor, the 1.2V bandgap Vref is recommended with a Vinn of 1/2 Vref since the measured voltage is about 800 mV at room temperature.</p>
+<p>A special microvolts (ADC_RES_UV) resolution value for <a class="el" href="group__drivers__periph__adc.html#gae4d48fdca21097fd8b34324f33ae4020">adc_res_t</a> is supported when using the internal 1.2 V bandgap as the reference voltage, in which case <a class="el" href="group__drivers__periph__adc.html#ga0ffa20b26f649b1879b487f9aa0aa4b4">adc_sample</a> will return the measured value in microvolts as a signed integer, with a max range of +/- 1.8 V when using the x1.5 Vref multiplier. This special resolution mode takes into account the factory calibration of the internal reference voltage for more accurate readings. In any other case, the return value is a signed integer with as many bits as resolution requested not including the sign bit. Note that the return value may be a negative when measuring a negative differential voltage between the plus and minus side of the input.</p>
+<p>For example, if 8-bit resolution is requested for an ADC line where the channel connects the - side to Vinn configured as Vss, a maximum value of 255 can be returned when the + side level is as high as the Vref signal. However, a negative value of -255 is also possible if Vinn is configured as Vref and the + side level is as low as Vss.</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structadc__conf__t.html">adc_conf_t</a> adc_config[] = {</div><div class="line">    <span class="comment">/* Pin A11 to Vss, 1.8v Vref. */</span></div><div class="line">    <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83adb495d448e06e06dbce8730438e08bbf">ADC_CHANNEL_ADC7_VINN</a> | <a class="code" href="qn908x_2include_2periph__cpu_8h.html#a0eec9ae0c58babedd37c1ea59e8472cc">ADC_VREF_GAIN_X15</a>,</div><div class="line">    <span class="comment">/* Pin A10 to A11, 1.2V Vref. */</span></div><div class="line">    <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83acd308b77afc64c07049b457391342f85">ADC_CHANNEL_ADC6_ADC7</a>,</div><div class="line">    <span class="comment">/* Temperature (in V) over to 0.6 V, 1.2 V Vref. */</span></div><div class="line">    <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83a1ed27e96d73bc3032ec54d2738163cf4">ADC_CHANNEL_TEMP</a> | <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ac72f8dbacd89a0bd6c33654409d938f6a36cdfa63a92b19ef0a36055c9db348ad">ADC_VINN_VREF_2</a>,</div><div class="line">    <span class="comment">/* Internal &quot;battery monitor&quot;, Vcc/4 to Vss, 1.2V Vref. */</span></div><div class="line">    <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ae4f11c2a2596f24bf17ef128da122b83adec41259cf2fb1202ca482acea0a46ed">ADC_CHANNEL_VCC4_VINN</a> | <a class="code" href="qn908x_2include_2periph__cpu_8h.html#ac72f8dbacd89a0bd6c33654409d938f6a92882959d3d802af594615bfc271ffb9">ADC_VINN_AVSS</a>,</div><div class="line">};</div><div class="line"><span class="preprocessor">#define ADC_NUMOF           ARRAY_SIZE(adc_config)</span></div><div class="line"></div><div class="line"><span class="preprocessor">#define QN908X_ADC_CLOCK    ADC_CLOCK_500K</span></div></div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ieee802154_submac Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structieee802154__submac.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">ieee802154_submac Struct Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ieee802154.html">IEEE 802.15.4</a> &raquo; <a class="el" href="group__net__ieee802154__submac.html">IEEE802.15.4 SubMAC layer</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>IEEE 802.15.4 SubMAC descriptor.  
+ <a href="structieee802154__submac.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>IEEE 802.15.4 SubMAC descriptor. </p>
+
+<p class="definition">Definition at line <a class="el" href="submac_8h_source.html#l00191">191</a> of file <a class="el" href="submac_8h_source.html">submac.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="submac_8h_source.html">submac.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aeb1519e8423c6f05f762c28816c9e903"><td class="memItemLeft" align="right" valign="top"><a id="aeb1519e8423c6f05f762c28816c9e903"></a>
+<a class="el" href="group__drivers__ieee802154__hal.html#ga4715febafac1cf09aab1cc3cdeb1460e">ieee802154_dev_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#aeb1519e8423c6f05f762c28816c9e903">dev</a></td></tr>
+<tr class="memdesc:aeb1519e8423c6f05f762c28816c9e903"><td class="mdescLeft">&#160;</td><td class="mdescRight">802.15.4 HAL descriptor <br /></td></tr>
+<tr class="separator:aeb1519e8423c6f05f762c28816c9e903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf062215b257e96600ec039de6b8fc6"><td class="memItemLeft" align="right" valign="top"><a id="a2bf062215b257e96600ec039de6b8fc6"></a>
+<a class="el" href="unioneui64__t.html">eui64_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a2bf062215b257e96600ec039de6b8fc6">ext_addr</a></td></tr>
+<tr class="memdesc:a2bf062215b257e96600ec039de6b8fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 extended address. <br /></td></tr>
+<tr class="separator:a2bf062215b257e96600ec039de6b8fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501b314446aaddc240f1ead5db7b648d"><td class="memItemLeft" align="right" valign="top"><a id="a501b314446aaddc240f1ead5db7b648d"></a>
+<a class="el" href="byteorder_8h.html#a639ad79c8926cb896d5a8f12b14d49e3">network_uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a501b314446aaddc240f1ead5db7b648d">short_addr</a></td></tr>
+<tr class="memdesc:a501b314446aaddc240f1ead5db7b648d"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 short address. <br /></td></tr>
+<tr class="separator:a501b314446aaddc240f1ead5db7b648d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25133da0dbcc612798c909dcdbe40675"><td class="memItemLeft" align="right" valign="top"><a id="a25133da0dbcc612798c909dcdbe40675"></a>
+const <a class="el" href="structieee802154__submac__cb__t.html">ieee802154_submac_cb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a25133da0dbcc612798c909dcdbe40675">cb</a></td></tr>
+<tr class="memdesc:a25133da0dbcc612798c909dcdbe40675"><td class="mdescLeft">&#160;</td><td class="mdescRight">pointer to the SubMAC callbacks <br /></td></tr>
+<tr class="separator:a25133da0dbcc612798c909dcdbe40675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3e6bd99fa365ca9c05e9c1befbe461a"><td class="memItemLeft" align="right" valign="top"><a id="ac3e6bd99fa365ca9c05e9c1befbe461a"></a>
+<a class="el" href="structieee802154__csma__be__t.html">ieee802154_csma_be_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#ac3e6bd99fa365ca9c05e9c1befbe461a">be</a></td></tr>
+<tr class="memdesc:ac3e6bd99fa365ca9c05e9c1befbe461a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSMA-CA backoff exponent params. <br /></td></tr>
+<tr class="separator:ac3e6bd99fa365ca9c05e9c1befbe461a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a58177bf2d3f3069ec2389fd805e5ba"><td class="memItemLeft" align="right" valign="top"><a id="a6a58177bf2d3f3069ec2389fd805e5ba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a6a58177bf2d3f3069ec2389fd805e5ba">wait_for_ack</a></td></tr>
+<tr class="memdesc:a6a58177bf2d3f3069ec2389fd805e5ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">SubMAC is waiting for an ACK frame. <br /></td></tr>
+<tr class="separator:a6a58177bf2d3f3069ec2389fd805e5ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c660dea6a185d791303b6441d40a72c"><td class="memItemLeft" align="right" valign="top"><a id="a9c660dea6a185d791303b6441d40a72c"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a9c660dea6a185d791303b6441d40a72c">ack_timeout_us</a></td></tr>
+<tr class="memdesc:a9c660dea6a185d791303b6441d40a72c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ACK timeout in µs. <br /></td></tr>
+<tr class="separator:a9c660dea6a185d791303b6441d40a72c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c2d735f5e9a751ef3523de8fb7b856a"><td class="memItemLeft" align="right" valign="top"><a id="a3c2d735f5e9a751ef3523de8fb7b856a"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a3c2d735f5e9a751ef3523de8fb7b856a">csma_backoff_us</a></td></tr>
+<tr class="memdesc:a3c2d735f5e9a751ef3523de8fb7b856a"><td class="mdescLeft">&#160;</td><td class="mdescRight">CSMA sender backoff period in µs. <br /></td></tr>
+<tr class="separator:a3c2d735f5e9a751ef3523de8fb7b856a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5e07f1b7bc9e63d0211766c7285e5e"><td class="memItemLeft" align="right" valign="top"><a id="afd5e07f1b7bc9e63d0211766c7285e5e"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#afd5e07f1b7bc9e63d0211766c7285e5e">panid</a></td></tr>
+<tr class="memdesc:afd5e07f1b7bc9e63d0211766c7285e5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 PAN ID. <br /></td></tr>
+<tr class="separator:afd5e07f1b7bc9e63d0211766c7285e5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e7974fa7cb84640855f439eec299d3"><td class="memItemLeft" align="right" valign="top"><a id="a92e7974fa7cb84640855f439eec299d3"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a92e7974fa7cb84640855f439eec299d3">channel_num</a></td></tr>
+<tr class="memdesc:a92e7974fa7cb84640855f439eec299d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 channel number. <br /></td></tr>
+<tr class="separator:a92e7974fa7cb84640855f439eec299d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6bcd5fc90afd2670b10296559e711c"><td class="memItemLeft" align="right" valign="top"><a id="a8e6bcd5fc90afd2670b10296559e711c"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a8e6bcd5fc90afd2670b10296559e711c">channel_page</a></td></tr>
+<tr class="memdesc:a8e6bcd5fc90afd2670b10296559e711c"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 channel page. <br /></td></tr>
+<tr class="separator:a8e6bcd5fc90afd2670b10296559e711c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5122fc6f995a7ce27deb7f6f25fc31f6"><td class="memItemLeft" align="right" valign="top"><a id="a5122fc6f995a7ce27deb7f6f25fc31f6"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a5122fc6f995a7ce27deb7f6f25fc31f6">retrans</a></td></tr>
+<tr class="memdesc:a5122fc6f995a7ce27deb7f6f25fc31f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">current number of retransmissions <br /></td></tr>
+<tr class="separator:a5122fc6f995a7ce27deb7f6f25fc31f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e59d75da127e0de5d282bbe155cdfe3"><td class="memItemLeft" align="right" valign="top"><a id="a1e59d75da127e0de5d282bbe155cdfe3"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a1e59d75da127e0de5d282bbe155cdfe3">csma_retries_nb</a></td></tr>
+<tr class="memdesc:a1e59d75da127e0de5d282bbe155cdfe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">current number of CSMA-CA retries <br /></td></tr>
+<tr class="separator:a1e59d75da127e0de5d282bbe155cdfe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013d33276e8a792bf24116854c1aea60"><td class="memItemLeft" align="right" valign="top"><a id="a013d33276e8a792bf24116854c1aea60"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a013d33276e8a792bf24116854c1aea60">backoff_mask</a></td></tr>
+<tr class="memdesc:a013d33276e8a792bf24116854c1aea60"><td class="mdescLeft">&#160;</td><td class="mdescRight">internal value used for random backoff calculation <br /></td></tr>
+<tr class="separator:a013d33276e8a792bf24116854c1aea60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4b96bdcf09af8d154e1aa1e379a438"><td class="memItemLeft" align="right" valign="top"><a id="aec4b96bdcf09af8d154e1aa1e379a438"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#aec4b96bdcf09af8d154e1aa1e379a438">csma_retries</a></td></tr>
+<tr class="memdesc:aec4b96bdcf09af8d154e1aa1e379a438"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum number of CSMA-CA retries <br /></td></tr>
+<tr class="separator:aec4b96bdcf09af8d154e1aa1e379a438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e9386f17a951b79926a7e1069fcb7e0"><td class="memItemLeft" align="right" valign="top"><a id="a4e9386f17a951b79926a7e1069fcb7e0"></a>
+int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a4e9386f17a951b79926a7e1069fcb7e0">tx_pow</a></td></tr>
+<tr class="memdesc:a4e9386f17a951b79926a7e1069fcb7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmission power (in dBm) <br /></td></tr>
+<tr class="separator:a4e9386f17a951b79926a7e1069fcb7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d39d247041ee139529fc14c46773e7"><td class="memItemLeft" align="right" valign="top"><a id="ae8d39d247041ee139529fc14c46773e7"></a>
+<a class="el" href="group__net__ieee802154__submac.html#ga07efe921eed33a6e7dabfe3170d19468">ieee802154_fsm_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#ae8d39d247041ee139529fc14c46773e7">fsm_state</a></td></tr>
+<tr class="memdesc:ae8d39d247041ee139529fc14c46773e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the SubMAC. <br /></td></tr>
+<tr class="separator:ae8d39d247041ee139529fc14c46773e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a6d2316859c81fed0d970528e0afe6"><td class="memItemLeft" align="right" valign="top"><a id="aa9a6d2316859c81fed0d970528e0afe6"></a>
+<a class="el" href="group__net__ieee802154__header.html#gaa78b6fe7ff1bba2869970de4e9e4d79f">ieee802154_phy_mode_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#aa9a6d2316859c81fed0d970528e0afe6">phy_mode</a></td></tr>
+<tr class="memdesc:aa9a6d2316859c81fed0d970528e0afe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">IEEE 802.15.4 PHY mode. <br /></td></tr>
+<tr class="separator:aa9a6d2316859c81fed0d970528e0afe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a345c12b4fc0aa762c68e66d36c00f2c7"><td class="memItemLeft" align="right" valign="top"><a id="a345c12b4fc0aa762c68e66d36c00f2c7"></a>
+const <a class="el" href="group__sys__iolist.html#gaa17f91ef26edec149cd806d8457aa3a0">iolist_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structieee802154__submac.html#a345c12b4fc0aa762c68e66d36c00f2c7">psdu</a></td></tr>
+<tr class="memdesc:a345c12b4fc0aa762c68e66d36c00f2c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores the current PSDU <br /></td></tr>
+<tr class="separator:a345c12b4fc0aa762c68e66d36c00f2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/net/ieee802154/<a class="el" href="submac_8h_source.html">submac.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

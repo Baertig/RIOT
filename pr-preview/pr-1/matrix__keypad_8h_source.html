@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/matrix_keypad.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('matrix__keypad_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">matrix_keypad.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="matrix__keypad_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2021 Koen Zandberg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifndef MATRIX_KEYPAD_H</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#define MATRIX_KEYPAD_H</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifndef CONFIG_MATRIX_KEYPAD_NUM_ROWS</span></div><div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gababd1b99c2dcbcf7a33116bf7dcd7e8b">   67</a></span>&#160;<span class="preprocessor">#define CONFIG_MATRIX_KEYPAD_NUM_ROWS   2</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifndef CONFIG_MATRIX_KEYPAD_NUM_COLUMNS</span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gaf5967420f77fd25b02f139b8c5979f2b">   74</a></span>&#160;<span class="preprocessor">#define CONFIG_MATRIX_KEYPAD_NUM_COLUMNS   2</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#ifndef CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN</span></div><div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gaa80d44d3763dd8a85cb967ba068cf9f3">   85</a></span>&#160;<span class="preprocessor">#define CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN  0xC0</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifndef CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_END</span></div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gad309c53ba7a9448a298d87ba420f73dc">   96</a></span>&#160;<span class="preprocessor">#define CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_END  0x7</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#ifndef CONFIG_MATRIX_KEYPAD_ROWS_USE_OPEN_DRAIN</span></div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#ga82a04ca5044662858728b189d175fa32">  103</a></span>&#160;<span class="preprocessor">#define CONFIG_MATRIX_KEYPAD_ROWS_USE_OPEN_DRAIN  0</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#if CONFIG_MATRIX_KEYPAD_ROWS_USE_OPEN_DRAIN</span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#define MATRIX_KEYPAD_ROWS_GPIO_MODE GPIO_OD_PU</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gaa200a961debfdcfe7d6889127129530b">  112</a></span>&#160;<span class="preprocessor">#define MATRIX_KEYPAD_ROWS_GPIO_MODE GPIO_OUT</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#ga783555adfb1fb2680610ca6cc63234dc">  118</a></span>&#160;<span class="preprocessor">#define MATRIX_KEYPAD_DEBOUNCE_MASK  \</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">    (CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_BEGIN | CONFIG_MATRIX_KEYPAD_DEBOUNCE_PATTERN_END)</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor">#if CONFIG_MATRIX_KEYPAD_NUM_COLUMNS &lt;= 8</span></div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">  126</a></span>&#160;<span class="keyword">typedef</span> uint8_t <a class="code" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a>;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#elif CONFIG_MATRIX_KEYPAD_NUM_COLUMNS &lt;= 16</span></div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="keyword">typedef</span> uint16_t <a class="code" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#elif CONFIG_MATRIX_KEYPAD_NUM_COLUMNS &lt;= 32</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="keyword">typedef</span> uint32_t <a class="code" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a>;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#elif CONFIG_MATRIX_KEYPAD_NUM_COLUMNS &lt;= 64</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keyword">typedef</span> uint64_t <a class="code" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a>;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#error Too many columns on matrix keypad.</span></div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div><div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="structmatrix__keypad__params__t.html">  140</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="structmatrix__keypad__params__t.html#a30b9f76cd9bfc2a8e47df17a1e6b54a0">  145</a></span>&#160;    gpio_t rows[<a class="code" href="group__drivers__matrix__keypad.html#gababd1b99c2dcbcf7a33116bf7dcd7e8b">CONFIG_MATRIX_KEYPAD_NUM_ROWS</a>];</div><div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structmatrix__keypad__params__t.html#a77ebc5cc69cfcb957902730d92d28c0c">  150</a></span>&#160;    gpio_t columns[<a class="code" href="group__drivers__matrix__keypad.html#gaf5967420f77fd25b02f139b8c5979f2b">CONFIG_MATRIX_KEYPAD_NUM_COLUMNS</a>];</div><div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="structmatrix__keypad__params__t.html#ae2a3b8165332d7c8db60e213f565ad0f">  155</a></span>&#160;    uint32_t <a class="code" href="structmatrix__keypad__params__t.html#ae2a3b8165332d7c8db60e213f565ad0f">row2col_delay</a>;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;} <a class="code" href="structmatrix__keypad__params__t.html">matrix_keypad_params_t</a>;</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div><div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="group__drivers__matrix__keypad.html#ga5feba9dc3d19cfcddc5b7191f8ad9008">  166</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="group__drivers__matrix__keypad.html#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a>)(<span class="keywordtype">void</span> *arg, <span class="keywordtype">size_t</span> row, <span class="keywordtype">size_t</span> column, <span class="keywordtype">bool</span> state);</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div><div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html">  171</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html#af5bae906923d77e2e08d9f3e6a66ec69">  175</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structmatrix__keypad__params__t.html">matrix_keypad_params_t</a> *<a class="code" href="structmatrix__keypad__t.html#af5bae906923d77e2e08d9f3e6a66ec69">params</a>;</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div><div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html#a6df1777f88cb5f6caa617e89c58afef4">  180</a></span>&#160;    uint8_t debounce[<a class="code" href="group__drivers__matrix__keypad.html#gababd1b99c2dcbcf7a33116bf7dcd7e8b">CONFIG_MATRIX_KEYPAD_NUM_ROWS</a>][<a class="code" href="group__drivers__matrix__keypad.html#gaf5967420f77fd25b02f139b8c5979f2b">CONFIG_MATRIX_KEYPAD_NUM_COLUMNS</a>];</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div><div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html#a29daa3d6d0e9ee2006efdff79e0773e0">  185</a></span>&#160;    <a class="code" href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a> state[<a class="code" href="group__drivers__matrix__keypad.html#gababd1b99c2dcbcf7a33116bf7dcd7e8b">CONFIG_MATRIX_KEYPAD_NUM_ROWS</a>];</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div><div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html#af4cc59269d3a51c943d52aea51ee54be">  190</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="structmatrix__keypad__t.html#af4cc59269d3a51c943d52aea51ee54be">arg</a>;</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div><div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="structmatrix__keypad__t.html#a5fa05b50d3d5f472c98b73e7c79ef162">  195</a></span>&#160;    <a class="code" href="group__drivers__matrix__keypad.html#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a> <a class="code" href="structmatrix__keypad__t.html#a5fa05b50d3d5f472c98b73e7c79ef162">callback</a>;</div><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;} <a class="code" href="structmatrix__keypad__t.html">matrix_keypad_t</a>;</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__drivers__matrix__keypad.html#gad5541860cf1318cb91dee462d64f4590">matrix_keypad_init</a>(<a class="code" href="structmatrix__keypad__t.html">matrix_keypad_t</a> *dev,</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                       <span class="keyword">const</span> <a class="code" href="structmatrix__keypad__params__t.html">matrix_keypad_params_t</a> *params,</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                       <a class="code" href="group__drivers__matrix__keypad.html#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a> callback,</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                       <span class="keywordtype">void</span> *arg);</div><div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="group__drivers__matrix__keypad.html#gac6ca1b06c03bc385b2d0430a1dfdf49e">matrix_keypad_scan</a>(<a class="code" href="structmatrix__keypad__t.html">matrix_keypad_t</a> *dev);</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;}</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MATRIX_KEYPAD_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div><div class="ttc" id="structmatrix__keypad__t_html_af4cc59269d3a51c943d52aea51ee54be"><div class="ttname"><a href="structmatrix__keypad__t.html#af4cc59269d3a51c943d52aea51ee54be">matrix_keypad_t::arg</a></div><div class="ttdeci">void * arg</div><div class="ttdoc">callback context </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00190">matrix_keypad.h:190</a></div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_gad5541860cf1318cb91dee462d64f4590"><div class="ttname"><a href="group__drivers__matrix__keypad.html#gad5541860cf1318cb91dee462d64f4590">matrix_keypad_init</a></div><div class="ttdeci">int matrix_keypad_init(matrix_keypad_t *dev, const matrix_keypad_params_t *params, matrix_keypad_cb_t callback, void *arg)</div><div class="ttdoc">Initialize the given device. </div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_gaf5967420f77fd25b02f139b8c5979f2b"><div class="ttname"><a href="group__drivers__matrix__keypad.html#gaf5967420f77fd25b02f139b8c5979f2b">CONFIG_MATRIX_KEYPAD_NUM_COLUMNS</a></div><div class="ttdeci">#define CONFIG_MATRIX_KEYPAD_NUM_COLUMNS</div><div class="ttdoc">Maximum number of columns. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00074">matrix_keypad.h:74</a></div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_gab4a96502cc17f4a2d355273188f15492"><div class="ttname"><a href="group__drivers__matrix__keypad.html#gab4a96502cc17f4a2d355273188f15492">matrix_keypad_state_row_t</a></div><div class="ttdeci">uint8_t matrix_keypad_state_row_t</div><div class="ttdoc">Type definition for a full row (all columns) state, variable width depending on the number of columns...</div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00126">matrix_keypad.h:126</a></div></div>
+<div class="ttc" id="structmatrix__keypad__t_html_af5bae906923d77e2e08d9f3e6a66ec69"><div class="ttname"><a href="structmatrix__keypad__t.html#af5bae906923d77e2e08d9f3e6a66ec69">matrix_keypad_t::params</a></div><div class="ttdeci">const matrix_keypad_params_t * params</div><div class="ttdoc">Device initialization parameters. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00175">matrix_keypad.h:175</a></div></div>
+<div class="ttc" id="structmatrix__keypad__params__t_html"><div class="ttname"><a href="structmatrix__keypad__params__t.html">matrix_keypad_params_t</a></div><div class="ttdoc">Device initialization parameters. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00140">matrix_keypad.h:140</a></div></div>
+<div class="ttc" id="structmatrix__keypad__params__t_html_ae2a3b8165332d7c8db60e213f565ad0f"><div class="ttname"><a href="structmatrix__keypad__params__t.html#ae2a3b8165332d7c8db60e213f565ad0f">matrix_keypad_params_t::row2col_delay</a></div><div class="ttdeci">uint32_t row2col_delay</div><div class="ttdoc">Delay in microseconds between configuring the row gpio and reading out the column. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00155">matrix_keypad.h:155</a></div></div>
+<div class="ttc" id="structmatrix__keypad__t_html_a5fa05b50d3d5f472c98b73e7c79ef162"><div class="ttname"><a href="structmatrix__keypad__t.html#a5fa05b50d3d5f472c98b73e7c79ef162">matrix_keypad_t::callback</a></div><div class="ttdeci">matrix_keypad_cb_t callback</div><div class="ttdoc">Callback called when a key changes state. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00195">matrix_keypad.h:195</a></div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_gac6ca1b06c03bc385b2d0430a1dfdf49e"><div class="ttname"><a href="group__drivers__matrix__keypad.html#gac6ca1b06c03bc385b2d0430a1dfdf49e">matrix_keypad_scan</a></div><div class="ttdeci">size_t matrix_keypad_scan(matrix_keypad_t *dev)</div><div class="ttdoc">Scan through the keypad matrix. </div></div>
+<div class="ttc" id="structmatrix__keypad__t_html"><div class="ttname"><a href="structmatrix__keypad__t.html">matrix_keypad_t</a></div><div class="ttdoc">Device descriptor for the driver. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00171">matrix_keypad.h:171</a></div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_ga5feba9dc3d19cfcddc5b7191f8ad9008"><div class="ttname"><a href="group__drivers__matrix__keypad.html#ga5feba9dc3d19cfcddc5b7191f8ad9008">matrix_keypad_cb_t</a></div><div class="ttdeci">void(* matrix_keypad_cb_t)(void *arg, size_t row, size_t column, bool state)</div><div class="ttdoc">Callback for key state changes. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00166">matrix_keypad.h:166</a></div></div>
+<div class="ttc" id="group__drivers__matrix__keypad_html_gababd1b99c2dcbcf7a33116bf7dcd7e8b"><div class="ttname"><a href="group__drivers__matrix__keypad.html#gababd1b99c2dcbcf7a33116bf7dcd7e8b">CONFIG_MATRIX_KEYPAD_NUM_ROWS</a></div><div class="ttdeci">#define CONFIG_MATRIX_KEYPAD_NUM_ROWS</div><div class="ttdoc">Maximum number of rows. </div><div class="ttdef"><b>Definition:</b> <a href="matrix__keypad_8h_source.html#l00067">matrix_keypad.h:67</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:19 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

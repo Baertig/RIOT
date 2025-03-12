@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/xg23-pk6068a/include/board.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('xg23-pk6068a_2include_2board_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">board.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__xg23-pk6068a.html">Silicon Labs xG23-PK6068A starter kit</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Board specific definitions for the xG23-PK6068A.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Board specific definitions for the xG23-PK6068A. </p>
+<dl class="section author"><dt>Author</dt><dd>Juergen Fitschen <a href="#" onclick="location.href='mai'+'lto:'+'me@'+'ju'+'e.y'+'t'; return false;">me@ju<span style="display: none;">.nosp@m.</span>e.yt</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="xg23-pk6068a_2include_2board_8h_source.html">board.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="boards_2xg23-pk6068a_2include_2periph__conf_8h_source.html">periph_conf.h</a>&quot;</code><br />
+<code>#include &quot;periph_cpu.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for board.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="xg23-pk6068a_2include_2board_8h__incl.svg" width="616" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="xg23-pk6068a_2include_2board_8h__dep__incl.svg" width="178" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="xg23-pk6068a_2include_2board_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a916f2adc2080b4fe88034086d107a8dc"><td class="memItemLeft" align="right" valign="top"><a id="a916f2adc2080b4fe88034086d107a8dc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xg23-pk6068a_2include_2board_8h.html#a916f2adc2080b4fe88034086d107a8dc">board_init</a> (void)</td></tr>
+<tr class="memdesc:a916f2adc2080b4fe88034086d107a8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize board specific hardware. <br /></td></tr>
+<tr class="separator:a916f2adc2080b4fe88034086d107a8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c3b6f4d20928e0c688bf36ed4b76a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="xg23-pk6068a_2include_2board_8h.html#a48c3b6f4d20928e0c688bf36ed4b76a3">PM_BLOCKER_INITIAL</a>&#160;&#160;&#160;{ 0, 0, 0 }</td></tr>
+<tr class="memdesc:a48c3b6f4d20928e0c688bf36ed4b76a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize pm_layered with no pre-defined blockers.  <a href="#a48c3b6f4d20928e0c688bf36ed4b76a3">More...</a><br /></td></tr>
+<tr class="separator:a48c3b6f4d20928e0c688bf36ed4b76a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+ztimer configuration</h2></td></tr>
+<tr class="memitem:a56fdd369ce9b13a0ae3b6192770024a9"><td class="memItemLeft" align="right" valign="top"><a id="a56fdd369ce9b13a0ae3b6192770024a9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_ZTIMER_LPTIMER_DEV</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__timer.html#gac66133744b2b503740e6324e2efa644e">TIMER_DEV</a>(1)</td></tr>
+<tr class="separator:a56fdd369ce9b13a0ae3b6192770024a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1489a4c7211de93b9168f022908b46ae"><td class="memItemLeft" align="right" valign="top"><a id="a1489a4c7211de93b9168f022908b46ae"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_ZTIMER_LPTIMER_FREQ</b>&#160;&#160;&#160;LFXO_FREQ</td></tr>
+<tr class="separator:a1489a4c7211de93b9168f022908b46ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a781967fcc395e7cbe0317295c0b40a62"><td class="memItemLeft" align="right" valign="top"><a id="a781967fcc395e7cbe0317295c0b40a62"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_ZTIMER_LPTIMER_WIDTH</b>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a781967fcc395e7cbe0317295c0b40a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0595661ad2f3084e6661e895a6636a4"><td class="memItemLeft" align="right" valign="top"><a id="ab0595661ad2f3084e6661e895a6636a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>CONFIG_ZTIMER_LPTIMER_BLOCK_PM_MODE</b>&#160;&#160;&#160;<a class="el" href="efm32_2include_2periph__cpu_8h.html#a511963c6f24b62886e927ba12f672133">EFM32_PM_MODE_EM3</a></td></tr>
+<tr class="separator:ab0595661ad2f3084e6661e895a6636a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Board VCOM interface</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp9229d8ae845c8f9b01331a82dba80e3b"></a>Power mode required for GPIO IRQs</p>
+<p>If all GPIO IRQs are expected on port A or B, EM3 is the lowest allowed power mode. No power level has to be blocked in this case. If GPIO IRQs shall be fired on port C or D, we must stay in EM1. Uncomment the line down below in this case.</p>
+<p>Define the GPIO pin to enable the VCOM interface </p>
+</td></tr>
+<tr class="memitem:a3e6452eb9713214df8735ac4fdd113db"><td class="memItemLeft" align="right" valign="top"><a id="a3e6452eb9713214df8735ac4fdd113db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VCOM_UART</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294">UART_DEV</a>(0)</td></tr>
+<tr class="separator:a3e6452eb9713214df8735ac4fdd113db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afea47fa6d56d7049a4b3976b3ed14766"><td class="memItemLeft" align="right" valign="top"><a id="afea47fa6d56d7049a4b3976b3ed14766"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>VCOM_EN_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 0)</td></tr>
+<tr class="separator:afea47fa6d56d7049a4b3976b3ed14766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Push button pin definitions</h2></td></tr>
+<tr class="memitem:aea39132b18ce668ed815d13c3153323b"><td class="memItemLeft" align="right" valign="top"><a id="aea39132b18ce668ed815d13c3153323b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PB0_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 1)</td></tr>
+<tr class="separator:aea39132b18ce668ed815d13c3153323b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33c970f051ff2f38a217f39f00599c1"><td class="memItemLeft" align="right" valign="top"><a id="aa33c970f051ff2f38a217f39f00599c1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PB1_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 3)</td></tr>
+<tr class="separator:aa33c970f051ff2f38a217f39f00599c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+LED pin definitions</h2></td></tr>
+<tr class="memitem:a3fc522fda449d6edde717d6a857429cf"><td class="memItemLeft" align="right" valign="top"><a id="a3fc522fda449d6edde717d6a857429cf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED0_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1a8b7dd81ba2f0d15957795457d92ce139">PB</a>, 2)</td></tr>
+<tr class="separator:a3fc522fda449d6edde717d6a857429cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memItemLeft" align="right" valign="top"><a id="a318aa17e5d40e2132d2c7f6269ce7f51"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED1_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a10e74d65d7876276a8f6061c71dcf469aefbc069e0ac4cd293f3ba527bec2befe">PD</a>, 3)</td></tr>
+<tr class="separator:a318aa17e5d40e2132d2c7f6269ce7f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Macros for controlling the on-board LEDs</h2></td></tr>
+<tr class="memitem:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memItemLeft" align="right" valign="top"><a id="a1e48dc02333bfc2e6ad3e5bd466eecd4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED0_ON</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga5a4136d2b41a16dee4b8539d1690ea42">gpio_set</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>)</td></tr>
+<tr class="separator:a1e48dc02333bfc2e6ad3e5bd466eecd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memItemLeft" align="right" valign="top"><a id="aef2e39b9fd343d0e437fac0463f3e02d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED0_OFF</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga127706eecc321da649b1d31691d0b546">gpio_clear</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>)</td></tr>
+<tr class="separator:aef2e39b9fd343d0e437fac0463f3e02d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memItemLeft" align="right" valign="top"><a id="aebc6389533d9fc8dcbe4d2129a4d5a45"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED0_TOGGLE</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga016c2a4e5d611bc64034f70e922f5d52">gpio_toggle</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a3fc522fda449d6edde717d6a857429cf">LED0_PIN</a>)</td></tr>
+<tr class="separator:aebc6389533d9fc8dcbe4d2129a4d5a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memItemLeft" align="right" valign="top"><a id="aadd4c7ae0cd4e9bbb17f7055dd51fe08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED1_ON</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga5a4136d2b41a16dee4b8539d1690ea42">gpio_set</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>)</td></tr>
+<tr class="separator:aadd4c7ae0cd4e9bbb17f7055dd51fe08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memItemLeft" align="right" valign="top"><a id="a343fd2d3ce61b84f88ddfaea32c67c58"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED1_OFF</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga127706eecc321da649b1d31691d0b546">gpio_clear</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>)</td></tr>
+<tr class="separator:a343fd2d3ce61b84f88ddfaea32c67c58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fdbba1d750146b73da35c1731fd17"><td class="memItemLeft" align="right" valign="top"><a id="a267fdbba1d750146b73da35c1731fd17"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LED1_TOGGLE</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#ga016c2a4e5d611bc64034f70e922f5d52">gpio_toggle</a>(<a class="el" href="samr34-xpro_2include_2board_8h.html#a318aa17e5d40e2132d2c7f6269ce7f51">LED1_PIN</a>)</td></tr>
+<tr class="separator:a267fdbba1d750146b73da35c1731fd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Display configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpc40c01b21ea1cd56ac83868b7c03bff2"></a>Connection to the on-board Sharp Memory LCD (LS013B7DH03). </p>
+</td></tr>
+<tr class="memitem:ac4bafa01fb75e4ebc81bf352d05af75c"><td class="memItemLeft" align="right" valign="top"><a id="ac4bafa01fb75e4ebc81bf352d05af75c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_SPI</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(0)</td></tr>
+<tr class="separator:ac4bafa01fb75e4ebc81bf352d05af75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cc4707ccf41b6bce492db88be62872"><td class="memItemLeft" align="right" valign="top"><a id="af3cc4707ccf41b6bce492db88be62872"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_SCS_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1aa2c62b62b658ac45e83749e9e9c1cb46">PC</a>, 8)</td></tr>
+<tr class="separator:af3cc4707ccf41b6bce492db88be62872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fa093711db8fd53fe0e5797c9dd350"><td class="memItemLeft" align="right" valign="top"><a id="ae3fa093711db8fd53fe0e5797c9dd350"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_EXTCOMIN_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1aa2c62b62b658ac45e83749e9e9c1cb46">PC</a>, 6)</td></tr>
+<tr class="separator:ae3fa093711db8fd53fe0e5797c9dd350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a356d848633b646413a8efa563b741629"><td class="memItemLeft" align="right" valign="top"><a id="a356d848633b646413a8efa563b741629"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DISP_ENABLE_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1aa2c62b62b658ac45e83749e9e9c1cb46">PC</a>, 9)</td></tr>
+<tr class="separator:a356d848633b646413a8efa563b741629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Flash configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpf0d18756c6741aca0b96ae64bebd6e71"></a>Connection to the on-board MX25R8035F. </p>
+</td></tr>
+<tr class="memitem:a232a35d7a3adf71edf21eff160c639cf"><td class="memItemLeft" align="right" valign="top"><a id="a232a35d7a3adf71edf21eff160c639cf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FLASH_SPI</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(0)</td></tr>
+<tr class="separator:a232a35d7a3adf71edf21eff160c639cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef52395a58c8191f3d4a21a6d1d950c3"><td class="memItemLeft" align="right" valign="top"><a id="aef52395a58c8191f3d4a21a6d1d950c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>FLASH_CS_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1aa2c62b62b658ac45e83749e9e9c1cb46">PC</a>, 4)</td></tr>
+<tr class="separator:aef52395a58c8191f3d4a21a6d1d950c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Sensor configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp7073490fecd78e729a74fba840884a4e"></a>Connection to the on-board Si7021 temperature &amp; humidity sensor. </p>
+</td></tr>
+<tr class="memitem:a1d95f0f459e7753efd6b1ec0d6b25437"><td class="memItemLeft" align="right" valign="top"><a id="a1d95f0f459e7753efd6b1ec0d6b25437"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SI70XX_PARAM_I2C_DEV</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb">I2C_DEV</a>(0)</td></tr>
+<tr class="separator:a1d95f0f459e7753efd6b1ec0d6b25437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0104fa9895a5df77c7cdbc5579cc012"><td class="memItemLeft" align="right" valign="top"><a id="ae0104fa9895a5df77c7cdbc5579cc012"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SI7021_EN_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(<a class="el" href="sam__common_2include_2periph__cpu__common_8h.html#a29d44341ce767c5dfc737d622fc97ba1aa2c62b62b658ac45e83749e9e9c1cb46">PC</a>, 9)</td></tr>
+<tr class="separator:ae0104fa9895a5df77c7cdbc5579cc012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a48c3b6f4d20928e0c688bf36ed4b76a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48c3b6f4d20928e0c688bf36ed4b76a3">&#9670;&nbsp;</a></span>PM_BLOCKER_INITIAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PM_BLOCKER_INITIAL&#160;&#160;&#160;{ 0, 0, 0 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize pm_layered with no pre-defined blockers. </p>
+<p>All peripheral drivers keep track of required pm modes. </p>
+
+<p class="definition">Definition at line <a class="el" href="xg23-pk6068a_2include_2board_8h_source.html#l00036">36</a> of file <a class="el" href="xg23-pk6068a_2include_2board_8h_source.html">board.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:22 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

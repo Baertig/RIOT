@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/key/attributes.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('attributes_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">attributes.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Key attributes definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Key attributes definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="attributes_8h_source.html">attributes.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="bits_8h_source.html">bits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="id_8h_source.html">id.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lifetime_8h_source.html">lifetime.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="psa__crypto_2psa_2key_2type_8h_source.html">type.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usage_8h_source.html">usage.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for attributes.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="attributes_8h__incl.svg" width="568" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="attributes_8h__dep__incl.svg" width="2546" height="796"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="attributes_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__key__policy__s.html">psa_key_policy_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure storing the key usage policies.  <a href="structpsa__key__policy__s.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__key__attributes__s.html">psa_key_attributes_s</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure storing key attributes.  <a href="structpsa__key__attributes__s.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac45b6c1e7228a1f425338279ee679c4e"><td class="memItemLeft" align="right" valign="top"><a id="ac45b6c1e7228a1f425338279ee679c4e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="attributes_8h.html#ac45b6c1e7228a1f425338279ee679c4e">PSA_KEY_ATTRIBUTES_INIT</a>&#160;&#160;&#160;{ 0 }</td></tr>
+<tr class="memdesc:ac45b6c1e7228a1f425338279ee679c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro returns a suitable initializer for a key attribute object of type <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a>. <br /></td></tr>
+<tr class="separator:ac45b6c1e7228a1f425338279ee679c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af553efd409845b6d09ff25ce2ba36607"><td class="memItemLeft" align="right" valign="top"><a id="af553efd409845b6d09ff25ce2ba36607"></a>
+typedef struct <a class="el" href="structpsa__key__policy__s.html">psa_key_policy_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="attributes_8h.html#af553efd409845b6d09ff25ce2ba36607">psa_key_policy_t</a></td></tr>
+<tr class="memdesc:af553efd409845b6d09ff25ce2ba36607"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type for key usage policies. <br /></td></tr>
+<tr class="separator:af553efd409845b6d09ff25ce2ba36607"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ec645e1fdafe59d591104451ebf5680"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structpsa__key__attributes__s.html">psa_key_attributes_s</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a></td></tr>
+<tr class="memdesc:a0ec645e1fdafe59d591104451ebf5680"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of an object containing key attributes.  <a href="#a0ec645e1fdafe59d591104451ebf5680">More...</a><br /></td></tr>
+<tr class="separator:a0ec645e1fdafe59d591104451ebf5680"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06966a8812aacd323ccdf06dbb43667d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="attributes_8h.html#a06966a8812aacd323ccdf06dbb43667d">psa_key_attributes_init</a> (void)</td></tr>
+<tr class="memdesc:a06966a8812aacd323ccdf06dbb43667d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an initial value for a key attribute object.  <a href="#a06966a8812aacd323ccdf06dbb43667d">More...</a><br /></td></tr>
+<tr class="separator:a06966a8812aacd323ccdf06dbb43667d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0ec645e1fdafe59d591104451ebf5680"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ec645e1fdafe59d591104451ebf5680">&#9670;&nbsp;</a></span>psa_key_attributes_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structpsa__key__attributes__s.html">psa_key_attributes_s</a> <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type of an object containing key attributes. </p>
+<p>This is the object that represents the metadata of a key object. Metadata that can be stored in attributes includes:</p><ul>
+<li>The location of the key in storage, indicated by its key identifier and its lifetime.</li>
+<li>The key’s policy, comprising usage flags and a specification of the permitted algorithm(s).</li>
+<li>Information about the key itself: the key type and its size.</li>
+<li>Implementations can define additional attributes.</li>
+</ul>
+<p>The actual key material is not considered an attribute of a key. Key attributes do not contain information that is generally considered highly confidential.</p>
+<dl class="section note"><dt>Note</dt><dd>Implementations are recommended to define the attribute object as a simple data structure, with fields corresponding to the individual key attributes. In such an implementation, each function <code>psa_set_key_xxx()</code> sets a field and the corresponding function <code>psa_get_key_xxx()</code> retrieves the value of the field. An implementation can report attribute values that are equivalent to the original one, but have a different encoding. For example, an implementation can use a more compact representation for types where many bit-patterns are invalid or not supported, and store all values that it does not support as a special marker value. In such an implementation, after setting an invalid value, the corresponding get function returns an invalid value which might not be the one that was originally stored.</dd></dl>
+<p>This is an implementation-defined type. Applications that make assumptions about the content of this object will result in in implementation-specific behavior, and are non-portable.</p>
+<p>An attribute object can contain references to auxiliary resources, for example pointers to allocated memory or indirect references to pre-calculated values. In order to free such resources, the application must call <a class="el" href="crypto_8h.html#af737271e0d134f480334784fc23c8672">psa_reset_key_attributes()</a>. As an exception, calling <a class="el" href="crypto_8h.html#af737271e0d134f480334784fc23c8672">psa_reset_key_attributes()</a> on an attribute object is optional if the object has only been modified by the following functions since it was initialized or last reset with <a class="el" href="crypto_8h.html#af737271e0d134f480334784fc23c8672">psa_reset_key_attributes()</a>:</p><ul>
+<li><a class="el" href="crypto_8h.html#adc4695aa3d47aa1664271fdc1199bf65">psa_set_key_id()</a></li>
+<li><a class="el" href="crypto_8h.html#ac03ccf09ca6d36cc3d5b43f8303db6f7">psa_set_key_lifetime()</a></li>
+<li><a class="el" href="crypto_8h.html#a6857ef0ecb3fa844d4536939d9c64025">psa_set_key_type()</a></li>
+<li><a class="el" href="crypto_8h.html#af61683ac87f87687a40262b5afbfa018">psa_set_key_bits()</a></li>
+<li><a class="el" href="crypto_8h.html#a42a65b3c4522ce9b67ea5ea7720e17de">psa_set_key_usage_flags()</a></li>
+<li><a class="el" href="crypto_8h.html#aeb8341ca52baa0279475ea3fd3bcdc98">psa_set_key_algorithm()</a> Before calling any function on a key attribute object, the application must initialize it by any of the following means:</li>
+<li>Set the object to all-bits-zero, for example: <div class="fragment"><div class="line">@ref <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> attributes;</div><div class="line">memset(&amp;attributes, 0, <span class="keyword">sizeof</span>(attributes));</div></div><!-- fragment --></li>
+<li>Initialize the object to logical zero values by declaring the object as static or global without an explicit initializer, for example: <div class="fragment"><div class="line"><span class="keyword">static</span> @ref <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> attributes;</div></div><!-- fragment --></li>
+<li>Initialize the object to the initializer <a class="el" href="attributes_8h.html#ac45b6c1e7228a1f425338279ee679c4e">PSA_KEY_ATTRIBUTES_INIT</a>, for example: <div class="fragment"><div class="line">@ref <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> attributes = @ref <a class="code" href="attributes_8h.html#ac45b6c1e7228a1f425338279ee679c4e">PSA_KEY_ATTRIBUTES_INIT</a>;</div></div><!-- fragment --></li>
+<li>Assign the result of the function <a class="el" href="attributes_8h.html#a06966a8812aacd323ccdf06dbb43667d">psa_key_attributes_init()</a> to the object, for example: <div class="fragment"><div class="line">@ref <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> attributes;</div><div class="line">attributes = @ref <a class="code" href="attributes_8h.html#a06966a8812aacd323ccdf06dbb43667d">psa_key_attributes_init</a>();</div></div><!-- fragment --></li>
+</ul>
+<p>A freshly initialized attribute object contains the following values:</p><ul>
+<li>lifetime: <a class="el" href="lifetime_8h.html#a8b438870ba69489b685730d346455108">PSA_KEY_LIFETIME_VOLATILE</a>.</li>
+<li>key identifier: <a class="el" href="id_8h.html#a650b5f7c553bf6f8db2076dbd9f4dd44">PSA_KEY_ID_NULL</a> — which is not a valid key identifier.</li>
+<li>type: <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#afce7ab2b54ce97ea5bff73f13a9f3e5b">PSA_KEY_TYPE_NONE</a> — meaning that the type is unspecified.</li>
+<li>key size: <code>0</code> — meaning that the size is unspecified.</li>
+<li>usage flags: <code>0</code> — which allows no usage except exporting a public key.</li>
+<li>algorithm: PSA_ALG_NONE — which does not allow cryptographic usage, but allows exporting.</li>
+</ul>
+<p>A typical sequence to create a key is as follows:</p><ol type="1">
+<li>Create and initialize an attribute object.</li>
+<li>If the key is persistent, call <a class="el" href="crypto_8h.html#adc4695aa3d47aa1664271fdc1199bf65">psa_set_key_id()</a>. Also call <a class="el" href="crypto_8h.html#ac03ccf09ca6d36cc3d5b43f8303db6f7">psa_set_key_lifetime()</a> to place the key in a non-default location.</li>
+<li>Set the key policy with <a class="el" href="crypto_8h.html#a42a65b3c4522ce9b67ea5ea7720e17de">psa_set_key_usage_flags()</a> and <a class="el" href="crypto_8h.html#aeb8341ca52baa0279475ea3fd3bcdc98">psa_set_key_algorithm()</a>.</li>
+<li>Set the key type with <a class="el" href="crypto_8h.html#a6857ef0ecb3fa844d4536939d9c64025">psa_set_key_type()</a>. Skip this step if copying an existing key with <a class="el" href="crypto_8h.html#a78da90274bd8f8680017a4bb513803a1">psa_copy_key()</a>.</li>
+<li>When generating a random key with <a class="el" href="crypto_8h.html#a950b4199ae7a0164006bd3d6927d1efe">psa_generate_key()</a> or deriving a key with <a class="el" href="crypto_8h.html#ad286b675f3f8b46fa6cab620de6bead3">psa_key_derivation_output_key()</a>, set the desired key size with <a class="el" href="crypto_8h.html#af61683ac87f87687a40262b5afbfa018">psa_set_key_bits()</a>.</li>
+<li>Call a key creation function: <a class="el" href="crypto_8h.html#ad088d8ebc854d2f7a5b5c1769bc9ed40">psa_import_key()</a>, <a class="el" href="crypto_8h.html#a950b4199ae7a0164006bd3d6927d1efe">psa_generate_key()</a>, <a class="el" href="crypto_8h.html#ad286b675f3f8b46fa6cab620de6bead3">psa_key_derivation_output_key()</a> or <a class="el" href="crypto_8h.html#a78da90274bd8f8680017a4bb513803a1">psa_copy_key()</a>. This function reads the attribute object, creates a key with these attributes, and outputs an identifier for the newly created key.</li>
+<li>Optionally call <a class="el" href="crypto_8h.html#af737271e0d134f480334784fc23c8672">psa_reset_key_attributes()</a>, now that the attribute object is no longer needed. Currently this call is not required as the attributes defined in this specification do not require additional resources beyond the object itself.</li>
+</ol>
+<p>A typical sequence to query a key’s attributes is as follows:</p><ol type="1">
+<li>Call <a class="el" href="crypto_8h.html#a8e70d36a3db2ec34425722166f5fa75b">psa_get_key_attributes()</a>.</li>
+<li>Call <code>psa_get_key_xxx()</code> functions to retrieve the required attribute(s).</li>
+<li>Call <a class="el" href="crypto_8h.html#af737271e0d134f480334784fc23c8672">psa_reset_key_attributes()</a> to free any resources that can be used by the attribute object.</li>
+</ol>
+<p>Once a key has been created, it is impossible to change its attributes. </p>
+
+<p class="definition">Definition at line <a class="el" href="attributes_8h_source.html#l00161">161</a> of file <a class="el" href="attributes_8h_source.html">attributes.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a06966a8812aacd323ccdf06dbb43667d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06966a8812aacd323ccdf06dbb43667d">&#9670;&nbsp;</a></span>psa_key_attributes_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> psa_key_attributes_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an initial value for a key attribute object. </p>
+<dl class="section return"><dt>Returns</dt><dd>psa_key_attributes_t </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="attributes_8h_source.html#l00174">174</a> of file <a class="el" href="attributes_8h_source.html">attributes.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

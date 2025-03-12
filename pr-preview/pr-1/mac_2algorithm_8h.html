@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/mac/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mac_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>MAC algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>MAC algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="hash_2algorithm_8h_source.html">psa/hash/algorithm.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mac_2algorithm_8h__incl.svg" width="227" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mac_2algorithm_8h__dep__incl.svg" width="2546" height="707"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mac_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a5e6e0039d0b0d18afb3e13e5b9602b3a"><td class="memItemLeft" align="right" valign="top"><a id="a5e6e0039d0b0d18afb3e13e5b9602b3a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a5e6e0039d0b0d18afb3e13e5b9602b3a">PSA_ALG_CATEGORY_MAC</a>&#160;&#160;&#160;((psa_algorithm_t)0x03000000)</td></tr>
+<tr class="memdesc:a5e6e0039d0b0d18afb3e13e5b9602b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for MAC algorithms. <br /></td></tr>
+<tr class="separator:a5e6e0039d0b0d18afb3e13e5b9602b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0675192b82720fb8c9037a95bdeb6c88"><td class="memItemLeft" align="right" valign="top"><a id="a0675192b82720fb8c9037a95bdeb6c88"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a0675192b82720fb8c9037a95bdeb6c88">PSA_ALG_HMAC_BASE</a>&#160;&#160;&#160;(0x03800000)</td></tr>
+<tr class="memdesc:a0675192b82720fb8c9037a95bdeb6c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">HMAC Base. <br /></td></tr>
+<tr class="separator:a0675192b82720fb8c9037a95bdeb6c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca7aee4c9dde316b3b1a150a26eab776"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#aca7aee4c9dde316b3b1a150a26eab776">PSA_ALG_IS_MAC</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="mac_2algorithm_8h.html#a5e6e0039d0b0d18afb3e13e5b9602b3a">PSA_ALG_CATEGORY_MAC</a>)</td></tr>
+<tr class="memdesc:aca7aee4c9dde316b3b1a150a26eab776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a MAC algorithm.  <a href="#aca7aee4c9dde316b3b1a150a26eab776">More...</a><br /></td></tr>
+<tr class="separator:aca7aee4c9dde316b3b1a150a26eab776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a050c3c3cbc6eb96418f18847601c8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a4a050c3c3cbc6eb96418f18847601c8a">PSA_ALG_IS_HMAC</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7fc0ff00) == 0x03800000)</td></tr>
+<tr class="memdesc:a4a050c3c3cbc6eb96418f18847601c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an HMAC algorithm.  <a href="#a4a050c3c3cbc6eb96418f18847601c8a">More...</a><br /></td></tr>
+<tr class="separator:a4a050c3c3cbc6eb96418f18847601c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49d1eb601125d65a5c5b252aa45479e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#ae49d1eb601125d65a5c5b252aa45479e">PSA_ALG_IS_BLOCK_CIPHER_MAC</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7fc00000) == 0x03c00000)</td></tr>
+<tr class="memdesc:ae49d1eb601125d65a5c5b252aa45479e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a MAC algorithm based on a block cipher.  <a href="#ae49d1eb601125d65a5c5b252aa45479e">More...</a><br /></td></tr>
+<tr class="separator:ae49d1eb601125d65a5c5b252aa45479e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70f397425684b3efcde1e0e34c28261f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a70f397425684b3efcde1e0e34c28261f">PSA_ALG_HMAC</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(<a class="el" href="mac_2algorithm_8h.html#a0675192b82720fb8c9037a95bdeb6c88">PSA_ALG_HMAC_BASE</a> | ((hash_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>)))</td></tr>
+<tr class="memdesc:a70f397425684b3efcde1e0e34c28261f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to build an HMAC message-authentication-code algorithm from an underlying hash algorithm.  <a href="#a70f397425684b3efcde1e0e34c28261f">More...</a><br /></td></tr>
+<tr class="separator:a70f397425684b3efcde1e0e34c28261f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20bdc755de7b90f6621ccb1e6bb5d9e1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a20bdc755de7b90f6621ccb1e6bb5d9e1">PSA_ALG_CBC_MAC</a>&#160;&#160;&#160;((psa_algorithm_t)0x03c00100)</td></tr>
+<tr class="memdesc:a20bdc755de7b90f6621ccb1e6bb5d9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The CBC-MAC message-authentication-code algorithm, constructed over a block cipher.  <a href="#a20bdc755de7b90f6621ccb1e6bb5d9e1">More...</a><br /></td></tr>
+<tr class="separator:a20bdc755de7b90f6621ccb1e6bb5d9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146328a1e0023a02464e232d6ecefdc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a146328a1e0023a02464e232d6ecefdc2">PSA_ALG_CMAC</a>&#160;&#160;&#160;((psa_algorithm_t)0x03c00200)</td></tr>
+<tr class="memdesc:a146328a1e0023a02464e232d6ecefdc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The CMAC message-authentication-code algorithm, constructed over a block cipher.  <a href="#a146328a1e0023a02464e232d6ecefdc2">More...</a><br /></td></tr>
+<tr class="separator:a146328a1e0023a02464e232d6ecefdc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2b3168ff49ec31374ecc8c81ac0665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#aba2b3168ff49ec31374ecc8c81ac0665">PSA_ALG_TRUNCATED_MAC</a>(mac_alg,  mac_length)&#160;&#160;&#160;((psa_algorithm_t)(((mac_alg) &amp; ~0x003f0000) | (((mac_length) &amp; 0x3f) &lt;&lt; 16)))</td></tr>
+<tr class="memdesc:aba2b3168ff49ec31374ecc8c81ac0665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to build a truncated MAC algorithm.  <a href="#aba2b3168ff49ec31374ecc8c81ac0665">More...</a><br /></td></tr>
+<tr class="separator:aba2b3168ff49ec31374ecc8c81ac0665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ccc56b173d00f2058aa6112d378a46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#a38ccc56b173d00f2058aa6112d378a46">PSA_ALG_FULL_LENGTH_MAC</a>(mac_alg)&#160;&#160;&#160;((psa_algorithm_t)((mac_alg) &amp; ~0x003f0000))</td></tr>
+<tr class="memdesc:a38ccc56b173d00f2058aa6112d378a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to construct the MAC algorithm with a full length MAC, from a truncated MAC algorithm.  <a href="#a38ccc56b173d00f2058aa6112d378a46">More...</a><br /></td></tr>
+<tr class="separator:a38ccc56b173d00f2058aa6112d378a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9b6eed00b39ff89a0325c83554295d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mac_2algorithm_8h.html#ae9b6eed00b39ff89a0325c83554295d3">PSA_ALG_AT_LEAST_THIS_LENGTH_MAC</a>(mac_alg,  min_mac_length)&#160;&#160;&#160;/* specification-defined value */</td></tr>
+<tr class="memdesc:ae9b6eed00b39ff89a0325c83554295d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to build a MAC minimum-MAC-length wildcard algorithm.  <a href="#ae9b6eed00b39ff89a0325c83554295d3">More...</a><br /></td></tr>
+<tr class="separator:ae9b6eed00b39ff89a0325c83554295d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae9b6eed00b39ff89a0325c83554295d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9b6eed00b39ff89a0325c83554295d3">&#9670;&nbsp;</a></span>PSA_ALG_AT_LEAST_THIS_LENGTH_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_AT_LEAST_THIS_LENGTH_MAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mac_alg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">min_mac_length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;/* specification-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to build a MAC minimum-MAC-length wildcard algorithm. </p>
+<p>A key with a minimum-MAC-length MAC wildcard algorithm as permitted algorithm policy can be used with all MAC algorithms sharing the same base algorithm, and where the (potentially truncated) MAC length of the specific algorithm is equal to or larger then the wildcard algorithm’s minimum MAC length.</p>
+<dl class="section note"><dt>Note</dt><dd>When setting the minimum required MAC length to less than the smallest MAC length allowed by the base algorithm, this effectively becomes an ‘any-MAC-length-allowed’ policy for that base algorithm.</dd></dl>
+<p>The untruncated MAC algorithm can be recovered using <a class="el" href="mac_2algorithm_8h.html#a38ccc56b173d00f2058aa6112d378a46">PSA_ALG_FULL_LENGTH_MAC()</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> The resulting wildcard MAC algorithm is compatible with the same key types as the MAC algorithm used to construct it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mac_alg</td><td>A MAC algorithm: a value of type psa_algorithm_t such that <a class="el" href="mac_2algorithm_8h.html#aca7aee4c9dde316b3b1a150a26eab776">PSA_ALG_IS_MAC(alg)</a> is true. This can be a truncated or untruncated MAC algorithm. </td></tr>
+    <tr><td class="paramname">min_mac_length</td><td>Desired minimum length of the message authentication code in bytes. This must be at most the untruncated length of the MAC and must be at least 1. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding MAC wildcard algorithm with the specified minimum MAC length. Unspecified if mac_alg is not a supported MAC algorithm or if min_mac_length is less than 1 or too large for the specified MAC algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00218">218</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a20bdc755de7b90f6621ccb1e6bb5d9e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20bdc755de7b90f6621ccb1e6bb5d9e1">&#9670;&nbsp;</a></span>PSA_ALG_CBC_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CBC_MAC&#160;&#160;&#160;((psa_algorithm_t)0x03c00100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The CBC-MAC message-authentication-code algorithm, constructed over a block cipher. </p>
+<dl class="section warning"><dt>Warning</dt><dd>CBC-MAC is insecure in many cases. A more secure mode, such as <a class="el" href="mac_2algorithm_8h.html#a146328a1e0023a02464e232d6ecefdc2">PSA_ALG_CMAC</a>, is recommended.</dd></dl>
+<p>The CBC-MAC algorithm must be used with a key for a block cipher. For example, one of <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a>.</p>
+<p>CBC-MAC is defined as MAC Algorithm 1 in ISO/IEC 9797-1:2011 Information technology — Security techniques — Message Authentication Codes (MACs) — Part 1: Mechanisms using a block cipher <a href="https://www.iso.org/standard/50375.html">ISO9797</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a853d69f982740f4fd40cc964075c188f">PSA_KEY_TYPE_ARIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a577562bfbbc691c820d55ec308333138">PSA_KEY_TYPE_DES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad8e5da742343fd5519f9d8a630c2ed81">PSA_KEY_TYPE_CAMELLIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a5b2b1f1434710f4ddbcea30919f08a2c">PSA_KEY_TYPE_SM4</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00115">115</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a146328a1e0023a02464e232d6ecefdc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146328a1e0023a02464e232d6ecefdc2">&#9670;&nbsp;</a></span>PSA_ALG_CMAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CMAC&#160;&#160;&#160;((psa_algorithm_t)0x03c00200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The CMAC message-authentication-code algorithm, constructed over a block cipher. </p>
+<p>The CMAC algorithm must be used with a key for a block cipher. For example, when used with a key with type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a>, the resulting operation is AES-CMAC.</p>
+<p>CMAC is defined in NIST Special Publication 800-38B: Recommendation for Block Cipher Modes of Operation: the CMAC Mode for Authentication <a href="https://doi.org/10.6028/NIST.SP.800-38B">SP800-38B</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a853d69f982740f4fd40cc964075c188f">PSA_KEY_TYPE_ARIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a577562bfbbc691c820d55ec308333138">PSA_KEY_TYPE_DES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad8e5da742343fd5519f9d8a630c2ed81">PSA_KEY_TYPE_CAMELLIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a5b2b1f1434710f4ddbcea30919f08a2c">PSA_KEY_TYPE_SM4</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00134">134</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a38ccc56b173d00f2058aa6112d378a46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ccc56b173d00f2058aa6112d378a46">&#9670;&nbsp;</a></span>PSA_ALG_FULL_LENGTH_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_FULL_LENGTH_MAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mac_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)((mac_alg) &amp; ~0x003f0000))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to construct the MAC algorithm with a full length MAC, from a truncated MAC algorithm. </p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> The resulting untruncated MAC algorithm is compatible with the same key types as the MAC algorithm used to construct it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mac_alg</td><td>A MAC algorithm: a value of type psa_algorithm_t such that <a class="el" href="mac_2algorithm_8h.html#aca7aee4c9dde316b3b1a150a26eab776">PSA_ALG_IS_MAC</a>(<code>mac_alg</code>) is true. This can be a truncated or untruncated MAC algorithm.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding MAC algorithm with a full length MAC. Unspecified if <code>mac_alg</code> is not a supported MAC algorithm. * </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00187">187</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a70f397425684b3efcde1e0e34c28261f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70f397425684b3efcde1e0e34c28261f">&#9670;&nbsp;</a></span>PSA_ALG_HMAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_HMAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(<a class="el" href="mac_2algorithm_8h.html#a0675192b82720fb8c9037a95bdeb6c88">PSA_ALG_HMAC_BASE</a> | ((hash_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to build an HMAC message-authentication-code algorithm from an underlying hash algorithm. </p>
+<p>For example, <a class="el" href="mac_2algorithm_8h.html#a70f397425684b3efcde1e0e34c28261f">PSA_ALG_HMAC</a>(<a class="el" href="hash_2algorithm_8h.html#a619471f978e13cdd0a1e37145e4bf341">PSA_ALG_SHA_256</a>) is HMAC-SHA-256. The HMAC construction is defined in HMAC: Keyed-Hashing for Message Authentication [RFC2104].</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a92d989f4ca64abd00f463defd773a6f8">PSA_KEY_TYPE_HMAC</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash_alg</td><td>A hash algorithm (PSA_ALG_XXX value such that <a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(<code>hash_alg</code>) is true).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding HMAC algorithm. Unspecified if <code>hash_alg</code> is not a supported hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00091">91</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae49d1eb601125d65a5c5b252aa45479e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae49d1eb601125d65a5c5b252aa45479e">&#9670;&nbsp;</a></span>PSA_ALG_IS_BLOCK_CIPHER_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_BLOCK_CIPHER_MAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7fc00000) == 0x03c00000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a MAC algorithm based on a block cipher. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a MAC algorithm based on a block cipher 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00072">72</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a4a050c3c3cbc6eb96418f18847601c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a050c3c3cbc6eb96418f18847601c8a">&#9670;&nbsp;</a></span>PSA_ALG_IS_HMAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_HMAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7fc0ff00) == 0x03800000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an HMAC algorithm. </p>
+<p>HMAC is a family of MAC algorithms that are based on a hash function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an HMAC algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00062">62</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aca7aee4c9dde316b3b1a150a26eab776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca7aee4c9dde316b3b1a150a26eab776">&#9670;&nbsp;</a></span>PSA_ALG_IS_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_MAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="mac_2algorithm_8h.html#a5e6e0039d0b0d18afb3e13e5b9602b3a">PSA_ALG_CATEGORY_MAC</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a MAC algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a MAC algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00050">50</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aba2b3168ff49ec31374ecc8c81ac0665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2b3168ff49ec31374ecc8c81ac0665">&#9670;&nbsp;</a></span>PSA_ALG_TRUNCATED_MAC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_TRUNCATED_MAC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mac_alg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mac_length&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((psa_algorithm_t)(((mac_alg) &amp; ~0x003f0000) | (((mac_length) &amp; 0x3f) &lt;&lt; 16)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to build a truncated MAC algorithm. </p>
+<p>A truncated MAC algorithm is identical to the corresponding MAC algorithm except that the MAC value for the truncated algorithm consists of only the first mac_length bytes of the MAC value for the untruncated algorithm.</p>
+<dl class="section note"><dt>Note</dt><dd>This macro might allow constructing algorithm identifiers that are not valid, either because the specified length is larger than the untruncated MAC or because the specified length is smaller than permitted by the implementation.</dd>
+<dd>
+It is implementation-defined whether a truncated MAC that is truncated to the same length as the MAC of the untruncated algorithm is considered identical to the untruncated algorithm for policy comparison purposes.</dd></dl>
+<p>The untruncated MAC algorithm can be recovered using <a class="el" href="mac_2algorithm_8h.html#a38ccc56b173d00f2058aa6112d378a46">PSA_ALG_FULL_LENGTH_MAC()</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> The resulting truncated MAC algorithm is compatible with the same key types as the MAC algorithm used to construct it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mac_alg</td><td>A MAC algorithm: a value of type psa_algorithm_t such that <a class="el" href="mac_2algorithm_8h.html#aca7aee4c9dde316b3b1a150a26eab776">PSA_ALG_IS_MAC</a>(<code>mac_alg</code>) is true. This can be a truncated or untruncated MAC algorithm. </td></tr>
+    <tr><td class="paramname">mac_length</td><td>Desired length of the truncated MAC in bytes. This must be at most the untruncated length of the MAC and must be at least an implementation-specified minimum. The implementation-specified minimum must not be zero.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding MAC algorithm with the specified length. Unspecified if <code>mac_alg</code> is not a supported MAC algorithm or if <code>mac_length</code> is too small or too large for the specified MAC algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mac_2algorithm_8h_source.html#l00169">169</a> of file <a class="el" href="mac_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

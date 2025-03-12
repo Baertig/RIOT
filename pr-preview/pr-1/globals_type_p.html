@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_type_p.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_p"></a>- p -</h3><ul>
+<li>pcf857x_data_t
+: <a class="el" href="group__drivers__pcf857x.html#ga4fb98ac27d4530a770ba33243b5ca50a">pcf857x.h</a>
+</li>
+<li>ph_oem_interrupt_pin_cb_t
+: <a class="el" href="group__drivers__ph__oem.html#ga46905a646ccbf3030706c31a3c755ab2">ph_oem.h</a>
+</li>
+<li>ph_oem_params_t
+: <a class="el" href="group__drivers__ph__oem.html#ga4fcde69663e37f3edc7e2d0b21ab027b">ph_oem.h</a>
+</li>
+<li>ph_oem_reg_t
+: <a class="el" href="ph__oem__regs_8h.html#a587f55e8f0e59baafe194cd5b485e524">ph_oem_regs.h</a>
+</li>
+<li>ph_oem_t
+: <a class="el" href="group__drivers__ph__oem.html#ga12c144b3f848cf361157814fd5d0acd4">ph_oem.h</a>
+</li>
+<li>pio_i2c_bus_t
+: <a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">i2c.h</a>
+</li>
+<li>pio_i2c_t
+: <a class="el" href="group__drivers__periph__pio__i2c.html#ga0d8313c149c8bb3d9fcb44f4e9b0b2cc">i2c.h</a>
+</li>
+<li>pio_instr_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#a00db7e56e84a3259d68d7bfe5ff188a9">pio.h</a>
+</li>
+<li>pio_isr_sm_vec_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#aebb48c9122d7ec6d7ac7dd145e21438b">pio.h</a>
+</li>
+<li>pio_isr_vec_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#a8d88365790ebed5ea3e9f93174d91fe7">pio.h</a>
+</li>
+<li>pio_program_conf_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#af22c665a2d6160ae31a8116b7f78ded6">pio.h</a>
+</li>
+<li>pio_program_i2c_t
+: <a class="el" href="group__drivers__periph__pio__i2c.html#ga84d5f9fec920f73111a70fc10a02c4d2">i2c.h</a>
+</li>
+<li>pio_sm_clkdiv_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#ac0ab09bd28a27aecde3c1b188caaa7f0">pio.h</a>
+</li>
+<li>pio_sm_ctrl_regs_t
+: <a class="el" href="cpu_2rpx0xx_2include_2pio_2pio_8h.html#a23b3a21b052f4e3d7df3cb9c08204d92">pio.h</a>
+</li>
+<li>pio_sm_t
+: <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio.h</a>
+</li>
+<li>pio_t
+: <a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio.h</a>
+</li>
+<li>pipe_t
+: <a class="el" href="group__sys__pipe.html#ga45ca558b3c92e4b1ca1c1631aecf038d">pipe.h</a>
+</li>
+<li>plic_isr_cb_t
+: <a class="el" href="plic_8h.html#a21ac8e77150a3dd82f64a0dc3aa60f4d">plic.h</a>
+</li>
+<li>priority_queue_node_t
+: <a class="el" href="priority__queue_8h.html#a64902f2e81b5868ff87c351eba2c44bf">priority_queue.h</a>
+</li>
+<li>psa_aead_operation_t
+: <a class="el" href="crypto__types_8h.html#a14f6a01afbaa8c5b3d8c5d345cbaa3ed">crypto_types.h</a>
+</li>
+<li>psa_cipher_aes_128_ctx_t
+: <a class="el" href="psa__periph__aes__ctx_8h.html#a76853c035d080d5d934fa82afab2761f">psa_periph_aes_ctx.h</a>
+</li>
+<li>psa_cipher_operation_t
+: <a class="el" href="crypto__types_8h.html#a1399de29db657e3737bb09927aae51fa">crypto_types.h</a>
+</li>
+<li>psa_dh_family_t
+: <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#af632c5b13aa19c98f8591d4beda8dd1a">type.h</a>
+</li>
+<li>psa_drv_se_aead_decrypt_t
+: <a class="el" href="group__se__aead.html#gab517338cb0541c9e36fbcea713622104">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_aead_encrypt_t
+: <a class="el" href="group__se__aead.html#ga0acef6488a7dddbc707467907dec1842">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_allocate_key_t
+: <a class="el" href="group__se__key__management.html#gaab9a5d39285c68ac29264017e0119d98">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_asymmetric_decrypt_t
+: <a class="el" href="group__se__asymmetric.html#ga3472b9f36ffd9eb303100d5ec3eacda0">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_asymmetric_encrypt_t
+: <a class="el" href="group__se__asymmetric.html#ga8544105c218640adfc4f983da4b34478">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_asymmetric_sign_t
+: <a class="el" href="group__se__asymmetric.html#gaac5182bca42737841785662743594515">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_asymmetric_verify_t
+: <a class="el" href="group__se__asymmetric.html#gabb372536a004009294591eaf6cc4d186">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_abort_t
+: <a class="el" href="group__se__cipher.html#ga1cb204afa81012e4c561e0731792cae9">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_ecb_t
+: <a class="el" href="group__se__cipher.html#gaec35ce527439186d9f7e283e24c63a75">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_finish_t
+: <a class="el" href="group__se__cipher.html#ga06bf0bfbf55291d0bf5a411175a0350b">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_set_iv_t
+: <a class="el" href="group__se__cipher.html#ga4c603c3ee2f0f98a09d9df1e9a0c86bf">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_setup_t
+: <a class="el" href="group__se__cipher.html#ga7d31744990222cf99a02bcd905996a3a">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_cipher_update_t
+: <a class="el" href="group__se__cipher.html#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_destroy_key_t
+: <a class="el" href="group__se__key__management.html#gaaf8c22c4a5b87035fcb594858d68e1ba">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_export_key_t
+: <a class="el" href="group__se__key__management.html#gab9779816d17fa8ab42345b7c297dc843">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_generate_key_t
+: <a class="el" href="group__se__key__management.html#ga62df4bbc6b63ab5ef8183012b12a6cf8">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_import_key_t
+: <a class="el" href="group__se__key__management.html#ga9e04e71aff4837259e54598708edcf7d">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_init_t
+: <a class="el" href="group__se__init.html#ga61d926bb163ea2aae3c6e27c19ebe58c">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_key_derivation_collateral_t
+: <a class="el" href="group__driver__derivation.html#ga3d730798a122772534887ea87e2f9c4e">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_key_derivation_derive_t
+: <a class="el" href="group__driver__derivation.html#ga27684e05d9af85548b26849302f4db8a">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_key_derivation_export_t
+: <a class="el" href="group__driver__derivation.html#ga25d0d785a7acd6957891f3c1022f91b4">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_key_derivation_setup_t
+: <a class="el" href="group__driver__derivation.html#ga517b85e6c8f12f986de375a7e70028fe">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_abort_t
+: <a class="el" href="group__se__mac.html#ga5ffdfc1d70ef3b4da100e9e46a08e511">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_finish_t
+: <a class="el" href="group__se__mac.html#ga8d2c6b8639790e00a755774270c9a36a">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_finish_verify_t
+: <a class="el" href="group__se__mac.html#ga57c46b9072760a2f3f501dc8278bf963">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_generate_t
+: <a class="el" href="group__se__mac.html#gac8b2bbcfeb4a8f4409a4777051f55666">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_setup_t
+: <a class="el" href="group__se__mac.html#ga1d7dacfb4ede205538c5713b11e10326">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_update_t
+: <a class="el" href="group__se__mac.html#ga5066f0423519b1a403019f16cad004f6">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_mac_verify_t
+: <a class="el" href="group__se__mac.html#ga6e7e9a020f0061492ba383aa404f1c09">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_drv_se_validate_slot_number_t
+: <a class="el" href="group__se__key__management.html#ga26c4b96c6d68dbd74b0512475d29f934">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_ecc_family_t
+: <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ae7ad3569cb9c91b1ebe59a056edb2fc6">type.h</a>
+</li>
+<li>psa_hash_operation_t
+: <a class="el" href="crypto__types_8h.html#a3c4205d2ce66c4095fc5c78c25273fab">crypto_types.h</a>
+</li>
+<li>psa_hashes_sha1_ctx_t
+: <a class="el" href="psa__periph__hashes__ctx_8h.html#afe6b1b182eb4e9012881d1f56f106b1a">psa_periph_hashes_ctx.h</a>
+</li>
+<li>psa_hashes_sha224_ctx_t
+: <a class="el" href="psa__periph__hashes__ctx_8h.html#a6fe7e0b5a8a32176b0eea49b578e677f">psa_periph_hashes_ctx.h</a>
+</li>
+<li>psa_hashes_sha256_ctx_t
+: <a class="el" href="psa__periph__hashes__ctx_8h.html#a83a959f81cb5d96f5b7a7b20ffc4af67">psa_periph_hashes_ctx.h</a>
+</li>
+<li>psa_hashes_sha512_ctx_t
+: <a class="el" href="psa__periph__hashes__ctx_8h.html#ad8e800275d755b463b26246536452ee9">psa_periph_hashes_ctx.h</a>
+</li>
+<li>psa_key_attributes_t
+: <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">attributes.h</a>
+</li>
+<li>psa_key_bits_t
+: <a class="el" href="bits_8h.html#a57270c808928ab5d7c9cfc7cb1e5735d">bits.h</a>
+</li>
+<li>psa_key_derivation_operation_t
+: <a class="el" href="crypto__types_8h.html#a1ad89f1ce73274b54b6557dda5ee6290">crypto_types.h</a>
+</li>
+<li>psa_key_derivation_step_t
+: <a class="el" href="crypto__types_8h.html#aac4eeacd36596c548b3a48fc06c5048b">crypto_types.h</a>
+</li>
+<li>psa_key_id_t
+: <a class="el" href="id_8h.html#a11e986351c65bd3dc3c0fe2cd9926e4b">id.h</a>
+</li>
+<li>psa_key_lifetime_t
+: <a class="el" href="lifetime_8h.html#a6821ff6dd39dc2bc370ded760ad8b0cf">lifetime.h</a>
+</li>
+<li>psa_key_location_t
+: <a class="el" href="lifetime_8h.html#a5e700601f686237a8d1e29363ae543d5">lifetime.h</a>
+</li>
+<li>psa_key_persistence_t
+: <a class="el" href="lifetime_8h.html#a183689a3018896e1e2e4f2bcc57bcff3">lifetime.h</a>
+</li>
+<li>psa_key_policy_t
+: <a class="el" href="attributes_8h.html#af553efd409845b6d09ff25ce2ba36607">attributes.h</a>
+</li>
+<li>psa_key_slot_number_t
+: <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_crypto_se_driver.h</a>
+</li>
+<li>psa_key_type_t
+: <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a63fce6880ca5933b5d6baa257febf1f6">type.h</a>
+</li>
+<li>psa_key_usage_t
+: <a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">usage.h</a>
+</li>
+<li>psa_mac_operation_t
+: <a class="el" href="crypto__types_8h.html#a78f0838b0c4e3db28b26355624d4bd37">crypto_types.h</a>
+</li>
+<li>psa_se_drv_data_t
+: <a class="el" href="group__psa__crypto__se__mgmt.html#ga2cc4525b5eb9ba57afafa290a45d0553">psa_crypto_se_management.h</a>
+</li>
+<li>pthread_barrier_waiting_node_t
+: <a class="el" href="pthread__barrier_8h.html#a3ab6f04efd5ee69a6716acd2ac9efc0d">pthread_barrier.h</a>
+</li>
+<li>pthread_key_t
+: <a class="el" href="pthread__tls_8h.html#a82d03a37ba2386502248f6abdb393dec">pthread_tls.h</a>
+</li>
+<li>pthread_mutex_t
+: <a class="el" href="pthread__mutex_8h.html#ad754f8b063fdca715302e856c8aae010">pthread_mutex.h</a>
+</li>
+<li>pthread_t
+: <a class="el" href="pthread__threading_8h.html#aef97522a9ff3c410d2392cadc7ff821d">pthread_threading.h</a>
+</li>
+<li>ptp_seconds_t
+: <a class="el" href="group__drivers__periph__ptp.html#ga18326e1117400ac2e3fbedff671d3339">ptp.h</a>
+</li>
+<li>pwm_t
+: <a class="el" href="group__drivers__periph__pwm.html#gab937c6061314ac13efc7d18ffc9b436d">pwm.h</a>
+</li>
+<li>pwr_reduction_t
+: <a class="el" href="atxmega_2include_2periph__cpu_8h.html#a84dd39eddad92f5ea43b0368b47ed1d8">periph_cpu.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

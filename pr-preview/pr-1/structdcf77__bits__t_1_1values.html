@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>dcf77_bits_t::values Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structdcf77__bits__t_1_1values.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">dcf77_bits_t::values Struct Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Struct of bitfields.  
+ <a href="structdcf77__bits__t_1_1values.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Struct of bitfields. </p>
+
+<p class="definition">Definition at line <a class="el" href="dcf77__internal_8h_source.html#l00033">33</a> of file <a class="el" href="dcf77__internal_8h_source.html">dcf77_internal.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="dcf77__internal_8h_source.html">dcf77_internal.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ac0608389d784e93eb70d955bd345d735"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#ac0608389d784e93eb70d955bd345d735">start</a>: 1</td></tr>
+<tr class="memdesc:ac0608389d784e93eb70d955bd345d735"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Struct of bitfields  <a href="#ac0608389d784e93eb70d955bd345d735">More...</a><br /></td></tr>
+<tr class="separator:ac0608389d784e93eb70d955bd345d735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425a54dc628555e5ffbc64acda457c5a"><td class="memItemLeft" align="right" valign="top"><a id="a425a54dc628555e5ffbc64acda457c5a"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a425a54dc628555e5ffbc64acda457c5a">wheater</a>: 14</td></tr>
+<tr class="memdesc:a425a54dc628555e5ffbc64acda457c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for weather value. <br /></td></tr>
+<tr class="separator:a425a54dc628555e5ffbc64acda457c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d707dd80f766fdbf0f52f6257ad90f"><td class="memItemLeft" align="right" valign="top"><a id="a87d707dd80f766fdbf0f52f6257ad90f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a87d707dd80f766fdbf0f52f6257ad90f">calling</a>: 1</td></tr>
+<tr class="memdesc:a87d707dd80f766fdbf0f52f6257ad90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for calling value. <br /></td></tr>
+<tr class="separator:a87d707dd80f766fdbf0f52f6257ad90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66f81c1b13f4832cc83db4d2d3795269"><td class="memItemLeft" align="right" valign="top"><a id="a66f81c1b13f4832cc83db4d2d3795269"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a66f81c1b13f4832cc83db4d2d3795269">mez_mesz_shift</a>: 1</td></tr>
+<tr class="memdesc:a66f81c1b13f4832cc83db4d2d3795269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for shift value. <br /></td></tr>
+<tr class="separator:a66f81c1b13f4832cc83db4d2d3795269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d70577ecb5b47bfe26475977424508"><td class="memItemLeft" align="right" valign="top"><a id="a26d70577ecb5b47bfe26475977424508"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a26d70577ecb5b47bfe26475977424508">mesz</a>: 2</td></tr>
+<tr class="memdesc:a26d70577ecb5b47bfe26475977424508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for mesz value. <br /></td></tr>
+<tr class="separator:a26d70577ecb5b47bfe26475977424508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd0f6e62afafee5e01dfd220ba8bf41"><td class="memItemLeft" align="right" valign="top"><a id="a0fd0f6e62afafee5e01dfd220ba8bf41"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a0fd0f6e62afafee5e01dfd220ba8bf41">shift_sec</a>: 1</td></tr>
+<tr class="memdesc:a0fd0f6e62afafee5e01dfd220ba8bf41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for leap-second value. <br /></td></tr>
+<tr class="separator:a0fd0f6e62afafee5e01dfd220ba8bf41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b8ff33af0d051df46ffe3d675a427b6"><td class="memItemLeft" align="right" valign="top"><a id="a3b8ff33af0d051df46ffe3d675a427b6"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a3b8ff33af0d051df46ffe3d675a427b6">start_time</a>: 1</td></tr>
+<tr class="memdesc:a3b8ff33af0d051df46ffe3d675a427b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for start_Bit value. <br /></td></tr>
+<tr class="separator:a3b8ff33af0d051df46ffe3d675a427b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14c9d45b41f980027417c2e207b4d9ae"><td class="memItemLeft" align="right" valign="top"><a id="a14c9d45b41f980027417c2e207b4d9ae"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a14c9d45b41f980027417c2e207b4d9ae">minute_l</a>: 4</td></tr>
+<tr class="memdesc:a14c9d45b41f980027417c2e207b4d9ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for lower minute value. <br /></td></tr>
+<tr class="separator:a14c9d45b41f980027417c2e207b4d9ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3768657c33fca6dad19bf4106801b9c7"><td class="memItemLeft" align="right" valign="top"><a id="a3768657c33fca6dad19bf4106801b9c7"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a3768657c33fca6dad19bf4106801b9c7">minute_h</a>: 3</td></tr>
+<tr class="memdesc:a3768657c33fca6dad19bf4106801b9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for higher minute value. <br /></td></tr>
+<tr class="separator:a3768657c33fca6dad19bf4106801b9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba0fef2101af82c772ae1f7201fdcae"><td class="memItemLeft" align="right" valign="top"><a id="a2ba0fef2101af82c772ae1f7201fdcae"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a2ba0fef2101af82c772ae1f7201fdcae">minute_par</a>: 1</td></tr>
+<tr class="memdesc:a2ba0fef2101af82c772ae1f7201fdcae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for minuteparity value. <br /></td></tr>
+<tr class="separator:a2ba0fef2101af82c772ae1f7201fdcae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353d637e73bf0e0c5ba38fb49d68ddf8"><td class="memItemLeft" align="right" valign="top"><a id="a353d637e73bf0e0c5ba38fb49d68ddf8"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a353d637e73bf0e0c5ba38fb49d68ddf8">hour_l</a>: 4</td></tr>
+<tr class="memdesc:a353d637e73bf0e0c5ba38fb49d68ddf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for lower hour value. <br /></td></tr>
+<tr class="separator:a353d637e73bf0e0c5ba38fb49d68ddf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98b62939cba9f52ee35b37d1436698c"><td class="memItemLeft" align="right" valign="top"><a id="aa98b62939cba9f52ee35b37d1436698c"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#aa98b62939cba9f52ee35b37d1436698c">hour_h</a>: 2</td></tr>
+<tr class="memdesc:aa98b62939cba9f52ee35b37d1436698c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for higher hour value. <br /></td></tr>
+<tr class="separator:aa98b62939cba9f52ee35b37d1436698c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d30499ef385a31d02945cca5bbb669f"><td class="memItemLeft" align="right" valign="top"><a id="a7d30499ef385a31d02945cca5bbb669f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a7d30499ef385a31d02945cca5bbb669f">hour_par</a>: 1</td></tr>
+<tr class="memdesc:a7d30499ef385a31d02945cca5bbb669f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for hourparity value. <br /></td></tr>
+<tr class="separator:a7d30499ef385a31d02945cca5bbb669f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7238678c8037ba1994c4d60eff4fc2cb"><td class="memItemLeft" align="right" valign="top"><a id="a7238678c8037ba1994c4d60eff4fc2cb"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a7238678c8037ba1994c4d60eff4fc2cb">day_l</a>: 4</td></tr>
+<tr class="memdesc:a7238678c8037ba1994c4d60eff4fc2cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for lower calenderday value. <br /></td></tr>
+<tr class="separator:a7238678c8037ba1994c4d60eff4fc2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb8aca27d1f552ea2382be2afd7c042e"><td class="memItemLeft" align="right" valign="top"><a id="abb8aca27d1f552ea2382be2afd7c042e"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#abb8aca27d1f552ea2382be2afd7c042e">day_h</a>: 2</td></tr>
+<tr class="memdesc:abb8aca27d1f552ea2382be2afd7c042e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for higher calenderday value. <br /></td></tr>
+<tr class="separator:abb8aca27d1f552ea2382be2afd7c042e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046d7dbaf4cf3edb05b6a20c175bee7f"><td class="memItemLeft" align="right" valign="top"><a id="a046d7dbaf4cf3edb05b6a20c175bee7f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a046d7dbaf4cf3edb05b6a20c175bee7f">wday</a>: 3</td></tr>
+<tr class="memdesc:a046d7dbaf4cf3edb05b6a20c175bee7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for weekday value. <br /></td></tr>
+<tr class="separator:a046d7dbaf4cf3edb05b6a20c175bee7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acae859dde8eed2be8f13c08830a3a954"><td class="memItemLeft" align="right" valign="top"><a id="acae859dde8eed2be8f13c08830a3a954"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#acae859dde8eed2be8f13c08830a3a954">month_l</a>: 4</td></tr>
+<tr class="memdesc:acae859dde8eed2be8f13c08830a3a954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for lower month value. <br /></td></tr>
+<tr class="separator:acae859dde8eed2be8f13c08830a3a954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace603460ce6b6d59b544deda5d78f7e0"><td class="memItemLeft" align="right" valign="top"><a id="ace603460ce6b6d59b544deda5d78f7e0"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#ace603460ce6b6d59b544deda5d78f7e0">month_h</a>: 1</td></tr>
+<tr class="memdesc:ace603460ce6b6d59b544deda5d78f7e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for higher month value. <br /></td></tr>
+<tr class="separator:ace603460ce6b6d59b544deda5d78f7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8191eb4429aab8eec04a3803a1f0e20c"><td class="memItemLeft" align="right" valign="top"><a id="a8191eb4429aab8eec04a3803a1f0e20c"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a8191eb4429aab8eec04a3803a1f0e20c">year_l</a>: 4</td></tr>
+<tr class="memdesc:a8191eb4429aab8eec04a3803a1f0e20c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for lower year value. <br /></td></tr>
+<tr class="separator:a8191eb4429aab8eec04a3803a1f0e20c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b166200549d7e3db7e57440b37cffa"><td class="memItemLeft" align="right" valign="top"><a id="a31b166200549d7e3db7e57440b37cffa"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a31b166200549d7e3db7e57440b37cffa">year_h</a>: 4</td></tr>
+<tr class="memdesc:a31b166200549d7e3db7e57440b37cffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for higher year value. <br /></td></tr>
+<tr class="separator:a31b166200549d7e3db7e57440b37cffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4169b6136459eca746be6371aad2d433"><td class="memItemLeft" align="right" valign="top"><a id="a4169b6136459eca746be6371aad2d433"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a4169b6136459eca746be6371aad2d433">date_par</a>: 1</td></tr>
+<tr class="memdesc:a4169b6136459eca746be6371aad2d433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for dateparity value. <br /></td></tr>
+<tr class="separator:a4169b6136459eca746be6371aad2d433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ccdc731678a4c5c7fb34927ed4175b9"><td class="memItemLeft" align="right" valign="top"><a id="a4ccdc731678a4c5c7fb34927ed4175b9"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdcf77__bits__t_1_1values.html#a4ccdc731678a4c5c7fb34927ed4175b9">buff</a>: 5</td></tr>
+<tr class="memdesc:a4ccdc731678a4c5c7fb34927ed4175b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Bits for experimental buffer value. <br /></td></tr>
+<tr class="separator:a4ccdc731678a4c5c7fb34927ed4175b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ac0608389d784e93eb70d955bd345d735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0608389d784e93eb70d955bd345d735">&#9670;&nbsp;</a></span>start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t dcf77_bits_t::values::start</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>&lt; Struct of bitfields </p>
+<p>Number of Bits for start value </p>
+
+<p class="definition">Definition at line <a class="el" href="dcf77__internal_8h_source.html#l00034">34</a> of file <a class="el" href="dcf77__internal_8h_source.html">dcf77_internal.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/dcf77/include/<a class="el" href="dcf77__internal_8h_source.html">dcf77_internal.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ADC Noise Entropy Source</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__entropy__source__adc.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ADC Noise Entropy Source<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__entropy__source.html">Entropy Sources</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Entropy Source based on LSB of ADC samples.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Entropy Source based on LSB of ADC samples. </p>
+<p>This module provides entropy from ADC samples. Thereby, only the LSB is considered for generation of output values. The available resolution as well as internal sampling rates, specific driver settings and device inaccuracies may lead to different behavior between different platforms. The configured ADC pin might be unconnected and floating, it can be exposed as an I/O pin or internally connected to a thermal noise source, an avalanche diode circuit or the receive path of an antenna. The possibilities are manifold, thus, configuration and deployment properties of this module need to be thoroughly validated.</p>
+<dl class="section note"><dt>Note</dt><dd>It is worth noting that ADC pins are typically vulnerable when physically accessible. Developers should consider additional tamper detection concepts and enclosures. </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:adc__noise_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc__noise_8h.html">adc_noise.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gad8b2d20aa5337f94730afd9e5c7f59c2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__adc.html#gad8b2d20aa5337f94730afd9e5c7f59c2">entropy_source_adc_init</a> (void)</td></tr>
+<tr class="memdesc:gad8b2d20aa5337f94730afd9e5c7f59c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize ADC and test structures, if tests are enabled.  <a href="#gad8b2d20aa5337f94730afd9e5c7f59c2">More...</a><br /></td></tr>
+<tr class="separator:gad8b2d20aa5337f94730afd9e5c7f59c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1b0edbe12ea0f689db1cea95bb90e2c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__adc.html#gaf1b0edbe12ea0f689db1cea95bb90e2c">entropy_source_adc_get</a> (uint8_t *buf, size_t len)</td></tr>
+<tr class="memdesc:gaf1b0edbe12ea0f689db1cea95bb90e2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates bytes from ADC noise.  <a href="#gaf1b0edbe12ea0f689db1cea95bb90e2c">More...</a><br /></td></tr>
+<tr class="separator:gaf1b0edbe12ea0f689db1cea95bb90e2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa63077f79b2528a44af61cf63c73173a"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__adc.html#gaa63077f79b2528a44af61cf63c73173a">entropy_source_adc_entropy_per_sample</a> (void)</td></tr>
+<tr class="memdesc:gaa63077f79b2528a44af61cf63c73173a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static entropy per sample value for this source [bit/sample * 2^16].  <a href="#gaa63077f79b2528a44af61cf63c73173a">More...</a><br /></td></tr>
+<tr class="separator:gaa63077f79b2528a44af61cf63c73173a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cd2ee565693595de78fbfd99b8f5147"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga2cd2ee565693595de78fbfd99b8f5147">CONFIG_ENTROPY_SOURCE_ADC_LINE</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888">ADC_LINE</a>(0)</td></tr>
+<tr class="memdesc:ga2cd2ee565693595de78fbfd99b8f5147"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC line default configuration.  <a href="#ga2cd2ee565693595de78fbfd99b8f5147">More...</a><br /></td></tr>
+<tr class="separator:ga2cd2ee565693595de78fbfd99b8f5147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffb640c981502b3e705460a64038651c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gaffb640c981502b3e705460a64038651c">CONFIG_ENTROPY_SOURCE_ADC_HMIN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gaffb640c981502b3e705460a64038651c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC estimated entropy per sample [2^16 * bit/sample].  <a href="#gaffb640c981502b3e705460a64038651c">More...</a><br /></td></tr>
+<tr class="separator:gaffb640c981502b3e705460a64038651c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga942687afa455a8d3356afa5e8fa42464"><td class="memItemLeft" align="right" valign="top"><a id="ga942687afa455a8d3356afa5e8fa42464"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga942687afa455a8d3356afa5e8fa42464">CONFIG_ENTROPY_SOURCE_ADC_HEALTH_TEST</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga942687afa455a8d3356afa5e8fa42464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable ADC health test by default. <br /></td></tr>
+<tr class="separator:ga942687afa455a8d3356afa5e8fa42464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc1ad5779488e7b2592834feb43693d8"><td class="memItemLeft" align="right" valign="top"><a id="gacc1ad5779488e7b2592834feb43693d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gacc1ad5779488e7b2592834feb43693d8">CONFIG_ENTROPY_SOURCE_ADC_COND</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gacc1ad5779488e7b2592834feb43693d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable ADC conditioning test by default. <br /></td></tr>
+<tr class="separator:gacc1ad5779488e7b2592834feb43693d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gaffb640c981502b3e705460a64038651c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffb640c981502b3e705460a64038651c">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ADC_HMIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ADC_HMIN&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC estimated entropy per sample [2^16 * bit/sample]. </p>
+<p>The entropy value needs to be estimated and evaluated thoroughly beforehand deployment! To avoid float, the actual entropy value per one byte sample needs to be manually multiplied by 2^16 before before configuring it (e.g., to an entropy value of 1 bit/sample, a value of 1 * 65536 needs to be set) . We default to zero which is an invalid configuration to enforce a thoughtful investigation on the actual entropy properties. See <a class="el" href="group__sys__entropy__source.html">Entropy Sources</a> for further information about entropy source validation.H_min=0 bit/sample * 2^16 is invalid and needs to set manually! </p>
+
+<p class="definition">Definition at line <a class="el" href="adc__noise_8h_source.html#l00099">99</a> of file <a class="el" href="adc__noise_8h_source.html">adc_noise.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2cd2ee565693595de78fbfd99b8f5147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cd2ee565693595de78fbfd99b8f5147">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ADC_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ADC_LINE&#160;&#160;&#160;<a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888">ADC_LINE</a>(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC line default configuration. </p>
+<p>The ADC line maps to an I/O pin. This number acts as index to an array of predefined ADC devices that contain the pin definition. Typically, the array is defined by a board in a periph_conf.h file. Please note that a board is not required to specify a minimum number of lines. </p>
+
+<p class="definition">Definition at line <a class="el" href="adc__noise_8h_source.html#l00081">81</a> of file <a class="el" href="adc__noise_8h_source.html">adc_noise.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaa63077f79b2528a44af61cf63c73173a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa63077f79b2528a44af61cf63c73173a">&#9670;&nbsp;</a></span>entropy_source_adc_entropy_per_sample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t entropy_source_adc_entropy_per_sample </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Static entropy per sample value for this source [bit/sample * 2^16]. </p>
+<dl class="section return"><dt>Returns</dt><dd>entropy per sample </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="adc__noise_8h_source.html#l00155">155</a> of file <a class="el" href="adc__noise_8h_source.html">adc_noise.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf1b0edbe12ea0f689db1cea95bb90e2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf1b0edbe12ea0f689db1cea95bb90e2c">&#9670;&nbsp;</a></span>entropy_source_adc_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int entropy_source_adc_get </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates bytes from ADC noise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buf</td><td>pointer to write noisy bytes to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>number of bytes to generate</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ENTROPY_SOURCE_OK on success </dd>
+<dd>
+negative <a class="el" href="group__sys__entropy__source__common.html#ga403490f8fc59992806050b17172988f8">entropy_source_error_t</a> code on error </dd></dl>
+
+</div>
+</div>
+<a id="gad8b2d20aa5337f94730afd9e5c7f59c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad8b2d20aa5337f94730afd9e5c7f59c2">&#9670;&nbsp;</a></span>entropy_source_adc_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int entropy_source_adc_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize ADC and test structures, if tests are enabled. </p>
+<dl class="section return"><dt>Returns</dt><dd>ENTROPY_SOURCE_OK on success </dd>
+<dd>
+ENTROPY_SOURCE_ERR_INIT on ADC initialization failure </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Porting layer</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__pkg__lwip__sys.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">Porting layer<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__lwip.html">lwIP network stack</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>System abstraction layer.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>System abstraction layer. </p>
+<p>Describes compiler and processor to lwIP.</p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:cc_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc_8h.html">cc.h</a></td></tr>
+<tr class="memdesc:cc_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compiler/platform abstraction. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:sys__arch_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sys__arch_8h.html">sys_arch.h</a></td></tr>
+<tr class="memdesc:sys__arch_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">OS abstraction layer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsys__mbox__t.html">sys_mbox_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform specific mailbox type.  <a href="structsys__mbox__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga1771b7fb65ee640524d0052f229768c3"><td class="memItemLeft" align="right" valign="top"><a id="ga1771b7fb65ee640524d0052f229768c3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga1771b7fb65ee640524d0052f229768c3">BYTE_ORDER</a>&#160;&#160;&#160;(<a class="el" href="group__sys__endian.html#ga8782a401fbf55261460863fc2f8df1ce">LITTLE_ENDIAN</a>)</td></tr>
+<tr class="memdesc:ga1771b7fb65ee640524d0052f229768c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">platform's endianness <br /></td></tr>
+<tr class="separator:ga1771b7fb65ee640524d0052f229768c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7bada49634cd3b28b28bdcedd763a1e6"><td class="memItemLeft" align="right" valign="top"><a id="ga7bada49634cd3b28b28bdcedd763a1e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga7bada49634cd3b28b28bdcedd763a1e6">LWIP_COMPAT_MUTEX</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga7bada49634cd3b28b28bdcedd763a1e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">System configuration. <br /></td></tr>
+<tr class="separator:ga7bada49634cd3b28b28bdcedd763a1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga7c9d990da751199db420fb736da269ca"><td class="memItemLeft" align="right" valign="top"><a id="ga7c9d990da751199db420fb736da269ca"></a>
+typedef <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga7c9d990da751199db420fb736da269ca">sys_thread_t</a></td></tr>
+<tr class="memdesc:ga7c9d990da751199db420fb736da269ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform specific thread type. <br /></td></tr>
+<tr class="separator:ga7c9d990da751199db420fb736da269ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga967f4543b952529f35e4cce8562b8306"><td class="memItemLeft" align="right" valign="top"><a id="ga967f4543b952529f35e4cce8562b8306"></a>
+<a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga967f4543b952529f35e4cce8562b8306">lwip_tcpip_thread</a></td></tr>
+<tr class="memdesc:ga967f4543b952529f35e4cce8562b8306"><td class="mdescLeft">&#160;</td><td class="mdescRight">PID of the lwIP TCP/IP thread. <br /></td></tr>
+<tr class="separator:ga967f4543b952529f35e4cce8562b8306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+(sn)printf formatters for the generic lwIP types</h2></td></tr>
+<tr class="memitem:ga90c130a97711a9d7e5015c610f2dfe8f"><td class="memItemLeft" align="right" valign="top"><a id="ga90c130a97711a9d7e5015c610f2dfe8f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X8_F</b>&#160;&#160;&#160;&quot;02&quot; PRIx8</td></tr>
+<tr class="separator:ga90c130a97711a9d7e5015c610f2dfe8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9d7f6eb2ee9fcc5eda3545dbb1886e0"><td class="memItemLeft" align="right" valign="top"><a id="gaa9d7f6eb2ee9fcc5eda3545dbb1886e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>U16_F</b>&#160;&#160;&#160;PRIu16</td></tr>
+<tr class="separator:gaa9d7f6eb2ee9fcc5eda3545dbb1886e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac05a82d37afb251470f5e17ca15ab6e9"><td class="memItemLeft" align="right" valign="top"><a id="gac05a82d37afb251470f5e17ca15ab6e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S16_F</b>&#160;&#160;&#160;PRId16</td></tr>
+<tr class="separator:gac05a82d37afb251470f5e17ca15ab6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1418f92673e54a36b6e376109e526382"><td class="memItemLeft" align="right" valign="top"><a id="ga1418f92673e54a36b6e376109e526382"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X16_F</b>&#160;&#160;&#160;PRIx16</td></tr>
+<tr class="separator:ga1418f92673e54a36b6e376109e526382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8b0a364e95b07cb0c47709fdc6037d6"><td class="memItemLeft" align="right" valign="top"><a id="gad8b0a364e95b07cb0c47709fdc6037d6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>U32_F</b>&#160;&#160;&#160;PRIu32</td></tr>
+<tr class="separator:gad8b0a364e95b07cb0c47709fdc6037d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b1eca99bc81e248c7074ea87fc9ca63"><td class="memItemLeft" align="right" valign="top"><a id="ga4b1eca99bc81e248c7074ea87fc9ca63"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>S32_F</b>&#160;&#160;&#160;PRId32</td></tr>
+<tr class="separator:ga4b1eca99bc81e248c7074ea87fc9ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac219830a93d05c5f18f64ce87a34be14"><td class="memItemLeft" align="right" valign="top"><a id="gac219830a93d05c5f18f64ce87a34be14"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>X32_F</b>&#160;&#160;&#160;PRIx32</td></tr>
+<tr class="separator:gac219830a93d05c5f18f64ce87a34be14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4cd359b6110f318ef71814587e1df029"><td class="memItemLeft" align="right" valign="top"><a id="ga4cd359b6110f318ef71814587e1df029"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SZT_F</b>&#160;&#160;&#160;PRIuPTR</td></tr>
+<tr class="separator:ga4cd359b6110f318ef71814587e1df029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Compiler hints for packing structures</h2></td></tr>
+<tr class="memitem:gaab0b988124e37a978d9a88e7c1c778e0"><td class="memItemLeft" align="right" valign="top"><a id="gaab0b988124e37a978d9a88e7c1c778e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PACK_STRUCT_FIELD</b>(x)&#160;&#160;&#160;x</td></tr>
+<tr class="separator:gaab0b988124e37a978d9a88e7c1c778e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga33623da05bb55497534c3dc26ebebeb2"><td class="memItemLeft" align="right" valign="top"><a id="ga33623da05bb55497534c3dc26ebebeb2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PACK_STRUCT_STRUCT</b>&#160;&#160;&#160;__attribute__((packed))</td></tr>
+<tr class="separator:ga33623da05bb55497534c3dc26ebebeb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73199061891adf1b912d20835c7d5e96"><td class="memItemLeft" align="right" valign="top"><a id="ga73199061891adf1b912d20835c7d5e96"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PACK_STRUCT_BEGIN</b></td></tr>
+<tr class="separator:ga73199061891adf1b912d20835c7d5e96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga465fef70f294e21cbf4ea51fc342f20e"><td class="memItemLeft" align="right" valign="top"><a id="ga465fef70f294e21cbf4ea51fc342f20e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PACK_STRUCT_END</b></td></tr>
+<tr class="separator:ga465fef70f294e21cbf4ea51fc342f20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Platform specific diagnostic output</h2></td></tr>
+<tr class="memitem:gaccef167be13a500ce30036030a9b142b"><td class="memItemLeft" align="right" valign="top"><a id="gaccef167be13a500ce30036030a9b142b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_PLATFORM_DIAG</b>(x)&#160;&#160;&#160;<a class="el" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a> x</td></tr>
+<tr class="separator:gaccef167be13a500ce30036030a9b142b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e8bcd0282525704d6dd596bdd1b47d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_PLATFORM_ASSERT</b>(x)</td></tr>
+<tr class="separator:ga7e8bcd0282525704d6dd596bdd1b47d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Critical sections protection definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp06bdea7e591d530abdf5b007def5db5d"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nongnu.org/lwip/2_1_x/group__sys__prot.html">https://www.nongnu.org/lwip/2_1_x/group__sys__prot.html</a> </dd></dl>
+</td></tr>
+<tr class="memitem:ga09658c138f072b24ba5ea0cf04efc7d4"><td class="memItemLeft" align="right" valign="top"><a id="ga09658c138f072b24ba5ea0cf04efc7d4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYS_ARCH_PROTECT</b>(x)&#160;&#160;&#160;<a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201">mutex_lock</a>(&amp;x)</td></tr>
+<tr class="separator:ga09658c138f072b24ba5ea0cf04efc7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga985dd6a54f63dec5ee774ac395165511"><td class="memItemLeft" align="right" valign="top"><a id="ga985dd6a54f63dec5ee774ac395165511"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYS_ARCH_UNPROTECT</b>(x)&#160;&#160;&#160;<a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187">mutex_unlock</a>(&amp;x)</td></tr>
+<tr class="separator:ga985dd6a54f63dec5ee774ac395165511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga923dfcf83f301643f55f39aff13262fa"><td class="memItemLeft" align="right" valign="top"><a id="ga923dfcf83f301643f55f39aff13262fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYS_ARCH_DECL_PROTECT</b>(x)&#160;&#160;&#160;<a class="el" href="structmutex__t.html">mutex_t</a> x = <a class="el" href="group__core__sync__mutex.html#ga96be0bfc33e7e113099c7546798bec99">MUTEX_INIT</a></td></tr>
+<tr class="separator:ga923dfcf83f301643f55f39aff13262fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Semaphores definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp109faa04231511b29d62e4cae9643106"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nongnu.org/lwip/2_1_x/group__sys__sem.html">https://www.nongnu.org/lwip/2_1_x/group__sys__sem.html</a> </dd></dl>
+</td></tr>
+<tr class="memitem:ga600e78747126830ab5e7e705d5dfef36"><td class="memItemLeft" align="right" valign="top"><a id="ga600e78747126830ab5e7e705d5dfef36"></a>
+typedef <a class="el" href="structsema__t.html">sema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga600e78747126830ab5e7e705d5dfef36">sys_sem_t</a></td></tr>
+<tr class="memdesc:ga600e78747126830ab5e7e705d5dfef36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform specific semaphore type. <br /></td></tr>
+<tr class="separator:ga600e78747126830ab5e7e705d5dfef36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga050703aecc49d88052058d0eceeeee5c"><td class="memItemLeft" align="right" valign="top"><a id="ga050703aecc49d88052058d0eceeeee5c"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>sys_sem_valid</b> (<a class="el" href="group__pkg__lwip__sys.html#ga600e78747126830ab5e7e705d5dfef36">sys_sem_t</a> *sem)</td></tr>
+<tr class="separator:ga050703aecc49d88052058d0eceeeee5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf3a9add7e5316ab4d0f41c61abd989b"><td class="memItemLeft" align="right" valign="top"><a id="gabf3a9add7e5316ab4d0f41c61abd989b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_sem_valid</b>(sem)&#160;&#160;&#160;(sys_sem_valid(sem))</td></tr>
+<tr class="separator:gabf3a9add7e5316ab4d0f41c61abd989b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f111b3968b318265cdb08fa50d7a9ca"><td class="memItemLeft" align="right" valign="top"><a id="ga5f111b3968b318265cdb08fa50d7a9ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_sem_set_invalid</b>(sem)</td></tr>
+<tr class="separator:ga5f111b3968b318265cdb08fa50d7a9ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Mutexes definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp66693f7ef7722f29e6e66bf5291bc63b"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nongnu.org/lwip/2_1_x/group__sys__mutex.html">https://www.nongnu.org/lwip/2_1_x/group__sys__mutex.html</a> </dd></dl>
+</td></tr>
+<tr class="memitem:ga5b9595432c64f54f0b93e43494372d14"><td class="memItemLeft" align="right" valign="top"><a id="ga5b9595432c64f54f0b93e43494372d14"></a>
+typedef <a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__sys.html#ga5b9595432c64f54f0b93e43494372d14">sys_mutex_t</a></td></tr>
+<tr class="memdesc:ga5b9595432c64f54f0b93e43494372d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Platform specific mutex type. <br /></td></tr>
+<tr class="separator:ga5b9595432c64f54f0b93e43494372d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75d200bd2376626d47ba19e27d6668f2"><td class="memItemLeft" align="right" valign="top"><a id="ga75d200bd2376626d47ba19e27d6668f2"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mutex_valid</b> (<a class="el" href="group__pkg__lwip__sys.html#ga5b9595432c64f54f0b93e43494372d14">sys_mutex_t</a> *mutex)</td></tr>
+<tr class="separator:ga75d200bd2376626d47ba19e27d6668f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe2f3321582648f613b12a5955e16f7e"><td class="memItemLeft" align="right" valign="top"><a id="gabe2f3321582648f613b12a5955e16f7e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mutex_valid</b>(mutex)&#160;&#160;&#160;(sys_mutex_valid(mutex))</td></tr>
+<tr class="separator:gabe2f3321582648f613b12a5955e16f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac89760fd41421be0c4316521b1cf0bc3"><td class="memItemLeft" align="right" valign="top"><a id="gac89760fd41421be0c4316521b1cf0bc3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mutex_set_invalid</b>(mutex)</td></tr>
+<tr class="separator:gac89760fd41421be0c4316521b1cf0bc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Mailboxes OS abstraction layer definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpdae608b3b55efb6a9066853d3060f489"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://www.nongnu.org/lwip/2_1_x/group__sys__mbox.html">https://www.nongnu.org/lwip/2_1_x/group__sys__mbox.html</a> </dd></dl>
+</td></tr>
+<tr class="memitem:ga880b51f6dd6c8eafce99e69411d67328"><td class="memItemLeft" align="right" valign="top"><a id="ga880b51f6dd6c8eafce99e69411d67328"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mbox_valid</b> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox)</td></tr>
+<tr class="separator:ga880b51f6dd6c8eafce99e69411d67328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf592cf1f55f4db1c6e0539cf2106abe3"><td class="memItemLeft" align="right" valign="top"><a id="gaf592cf1f55f4db1c6e0539cf2106abe3"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mbox_set_invalid</b> (<a class="el" href="structsys__mbox__t.html">sys_mbox_t</a> *mbox)</td></tr>
+<tr class="separator:gaf592cf1f55f4db1c6e0539cf2106abe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6084e542da137ecb93bb42ce1087518"><td class="memItemLeft" align="right" valign="top"><a id="gab6084e542da137ecb93bb42ce1087518"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SYS_MBOX_SIZE</b>&#160;&#160;&#160;(8)</td></tr>
+<tr class="separator:gab6084e542da137ecb93bb42ce1087518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48da3a5813e2a48d70fa071830e46b66"><td class="memItemLeft" align="right" valign="top"><a id="ga48da3a5813e2a48d70fa071830e46b66"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mbox_valid</b>(mbox)&#160;&#160;&#160;(sys_mbox_valid(mbox))</td></tr>
+<tr class="separator:ga48da3a5813e2a48d70fa071830e46b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13e7468207472977fbc2decd168044b2"><td class="memItemLeft" align="right" valign="top"><a id="ga13e7468207472977fbc2decd168044b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mbox_set_invalid</b>(mbox)&#160;&#160;&#160;(sys_mbox_set_invalid(mbox))</td></tr>
+<tr class="separator:ga13e7468207472977fbc2decd168044b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Functions for locking/unlocking core to assure thread safety.</h2></td></tr>
+<tr class="memitem:ga02d4d9c4ae621257235a6256292f6991"><td class="memItemLeft" align="right" valign="top"><a id="ga02d4d9c4ae621257235a6256292f6991"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sys_lock_tcpip_core</b> (void)</td></tr>
+<tr class="separator:ga02d4d9c4ae621257235a6256292f6991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5a3c5fc2a0c7e33ab4d3c7d1030eeb4"><td class="memItemLeft" align="right" valign="top"><a id="gab5a3c5fc2a0c7e33ab4d3c7d1030eeb4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sys_unlock_tcpip_core</b> (void)</td></tr>
+<tr class="separator:gab5a3c5fc2a0c7e33ab4d3c7d1030eeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4700525e737fc025fea4887b172e0c95"><td class="memItemLeft" align="right" valign="top"><a id="ga4700525e737fc025fea4887b172e0c95"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LOCK_TCPIP_CORE</b>()&#160;&#160;&#160;sys_lock_tcpip_core()</td></tr>
+<tr class="separator:ga4700525e737fc025fea4887b172e0c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga915effea029b9c4891e1ec635eb1826d"><td class="memItemLeft" align="right" valign="top"><a id="ga915effea029b9c4891e1ec635eb1826d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>UNLOCK_TCPIP_CORE</b>()&#160;&#160;&#160;sys_unlock_tcpip_core()</td></tr>
+<tr class="separator:ga915effea029b9c4891e1ec635eb1826d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga7e8bcd0282525704d6dd596bdd1b47d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e8bcd0282525704d6dd596bdd1b47d0">&#9670;&nbsp;</a></span>LWIP_PLATFORM_ASSERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LWIP_PLATFORM_ASSERT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">do</span> { \</div><div class="line">            printf(<span class="stringliteral">&quot;Assertion \&quot;%s\&quot; failed at %s:%d\n&quot;</span>, x, __FILE__, __LINE__); \</div><div class="line">            fflush(NULL); \</div><div class="line">            abort(); \</div><div class="line">        } <span class="keywordflow">while</span> (0)</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="cc_8h_source.html#l00096">96</a> of file <a class="el" href="cc_8h_source.html">cc.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

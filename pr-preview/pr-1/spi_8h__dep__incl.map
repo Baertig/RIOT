@@ -1,0 +1,127 @@
+<map id="drivers/include/periph/spi.h" name="drivers/include/periph/spi.h">
+<area shape="rect" id="node2" href="$spidev__linux_8h.html" title="Implementation of SPI access from Linux User Space. " alt="" coords="99,102,235,143"/>
+<area shape="rect" id="node3" href="$common_2arduino-atmega_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for Arduino Atmega boards. " alt="" coords="259,95,437,151"/>
+<area shape="rect" id="node4" href="$common_2arduino-due_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="461,95,638,151"/>
+<area shape="rect" id="node5" href="$common_2arduino-zero_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="662,95,839,151"/>
+<area shape="rect" id="node6" href="$remote_2include_2board__common_8h.html" title="Board specific definitions for the RE&#45;Mote boards. " alt="" coords="863,102,1049,143"/>
+<area shape="rect" id="node8" href="$common_2slwstk6000b_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6000B starter kit. " alt="" coords="1073,102,1279,143"/>
+<area shape="rect" id="node10" href="$e180-zg120b-tb_2include_2board_8h.html" title="Board specific definitions for the E180&#45;ZG120B&#45;TB starter kit. " alt="" coords="1304,102,1456,143"/>
+<area shape="rect" id="node12" href="$ikea-tradfri_2include_2board_8h.html" title="Board specific definitions for the IKEA TRÅDFRI modules. " alt="" coords="1480,102,1619,143"/>
+<area shape="rect" id="node14" href="$omote_2include_2board_8h.html" title="Board specific definitions for the omote board. " alt="" coords="1643,102,1803,143"/>
+<area shape="rect" id="node17" href="$slstk3400a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3400A starter kit. " alt="" coords="1827,102,2013,143"/>
+<area shape="rect" id="node19" href="$slstk3401a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3401A starter kit. " alt="" coords="2037,102,2222,143"/>
+<area shape="rect" id="node21" href="$slstk3402a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3402A starter kit. " alt="" coords="2246,102,2431,143"/>
+<area shape="rect" id="node23" href="$slstk3701a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3701A starter kit. " alt="" coords="2455,102,2641,143"/>
+<area shape="rect" id="node25" href="$sltb001a_2include_2board_8h.html" title="Board specific definitions for the SLTB001A starter kit. " alt="" coords="2665,102,2837,143"/>
+<area shape="rect" id="node27" href="$sltb009a_2include_2board_8h.html" title="Board specific definitions for the SLTB009A starter kit. " alt="" coords="2861,102,3033,143"/>
+<area shape="rect" id="node29" href="$slwstk6220a_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6220A starter kit. " alt="" coords="3057,102,3204,143"/>
+<area shape="rect" id="node31" href="$stk3200_2include_2board_8h.html" title="Board specific definitions for the STK3200 starter kit. " alt="" coords="3229,102,3398,143"/>
+<area shape="rect" id="node33" href="$stk3600_2include_2board_8h.html" title="Board specific definitions for the STK3600 starter kit. " alt="" coords="3422,102,3591,143"/>
+<area shape="rect" id="node35" href="$stk3700_2include_2board_8h.html" title="Board specific definitions for the STK3700 starter kit. " alt="" coords="3615,102,3785,143"/>
+<area shape="rect" id="node37" href="$cc110x__communication_8h.html" title="Functions to communicate with the CC1100/CC1101 transceiver. " alt="" coords="3206,206,3389,247"/>
+<area shape="rect" id="node39" href="$adt7310_8h.html" title="Interface definition for the ADT7310 sensor driver. " alt="" coords="4060,109,4244,136"/>
+<area shape="rect" id="node40" href="$at25xxx_8h.html" title="Driver for the AT25xxx series of EEPROMs. " alt="" coords="4268,109,4449,136"/>
+<area shape="rect" id="node43" href="$at86rf215_8h.html" title="Interface definition for AT86RF215 based drivers. " alt="" coords="4473,109,4668,136"/>
+<area shape="rect" id="node46" href="$at86rf2xx_8h.html" title="Interface definition for AT86RF2xx based drivers. " alt="" coords="4693,109,4886,136"/>
+<area shape="rect" id="node51" href="$ata8520e_8h.html" title="Device driver for Microchip ATA8520E transceiver (Sigfox) " alt="" coords="5057,109,5247,136"/>
+<area shape="rect" id="node53" href="$atwinc15x0_8h.html" title="Netdev Driver for the Microchip ATWINC15x0 WiFi Module. " alt="" coords="5345,109,5548,136"/>
+<area shape="rect" id="node55" href="$bme680_8h.html" title="Interface definition for the Bosch BME680 sensor. " alt="" coords="5591,109,5775,136"/>
+<area shape="rect" id="node57" href="$candev__mcp2515_8h.html" title="Definition of the implementation of the CAN controller driver. " alt="" coords="5837,102,6001,143"/>
+<area shape="rect" id="node61" href="$cc110x_8h.html" title="Interface definition for the CC1100/CC1101 driver. " alt="" coords="3861,109,4035,136"/>
+<area shape="rect" id="node62" href="$cc2420_8h.html" title="Interface definition for the CC2420 driver. " alt="" coords="6044,109,6220,136"/>
+<area shape="rect" id="node65" href="$ds3234_8h.html" title="DS3234 device driver. " alt="" coords="6244,109,6423,136"/>
+<area shape="rect" id="node67" href="$enc28j60_8h.html" title="Interface definition for the ENC28J60 driver. " alt="" coords="6447,109,6636,136"/>
+<area shape="rect" id="node68" href="$encx24j600_8h.html" title="Interface definition for the ENCX24J600 driver. " alt="" coords="6661,109,6865,136"/>
+<area shape="rect" id="node70" href="$epd__bw__spi_8h.html" title="Generic black/white e&#45;paper/e&#45;ink display SPI driver. " alt="" coords="6889,102,7033,143"/>
+<area shape="rect" id="node72" href="$lcd_8h.html" title="drivers/include/lcd.h" alt="" coords="7224,109,7373,136"/>
+<area shape="rect" id="node77" href="$sdcard__spi_8h.html" title="Public interface for the sdcard_spi driver. " alt="" coords="7925,102,8086,143"/>
+<area shape="rect" id="node81" href="$sdcard__spi__internal_8h.html" title="Interface for issuing commands on sd&#45;cards via SPI. " alt="" coords="8183,199,8323,255"/>
+<area shape="rect" id="node82" href="$kw2xrf_8h.html" title="Interface definition for the kw2xrf driver. " alt="" coords="8317,109,8491,136"/>
+<area shape="rect" id="node87" href="$l3gxxxx_8h.html" title="Device Driver for ST L3Gxxxx 3&#45;axis gyroscope sensor family. " alt="" coords="8516,109,8695,136"/>
+<area shape="rect" id="node89" href="$lis3dh_8h.html" title="Device driver interface for the LIS3DH accelerometer. " alt="" coords="8719,109,8887,136"/>
+<area shape="rect" id="node91" href="$max31855_8h.html" title="drivers/include/max31855.h" alt="" coords="8911,109,9110,136"/>
+<area shape="rect" id="node93" href="$mfrc522_8h.html" title="drivers/include/mfrc522.h" alt="" coords="9134,109,9319,136"/>
+<area shape="rect" id="node94" href="$mrf24j40_8h.html" title="Interface definition for MRF24J40 based drivers. " alt="" coords="9343,109,9534,136"/>
+<area shape="rect" id="node97" href="$mtd__spi__nor_8h.html" title="Interface definition for the serial flash memory driver. " alt="" coords="9558,102,9703,143"/>
+<area shape="rect" id="node98" href="$nrf24l01p_8h.html" title="drivers/include/nrf24l01p.h" alt="" coords="9728,109,9923,136"/>
+<area shape="rect" id="node99" href="$nrf24l01p__ng_8h.html" title="Public interface for NRF24L01+ (NG) devices. " alt="" coords="9997,109,10213,136"/>
+<area shape="rect" id="node103" href="$nrf24l01p__ng__params_8h.html" title="Board specific configuration for all NRF24L01+ (NG) devices. " alt="" coords="9931,303,10091,359"/>
+<area shape="rect" id="node106" href="$nvram-spi_8h.html" title="Device interface for various SPI connected NVRAM. " alt="" coords="10237,102,10397,143"/>
+<area shape="rect" id="node107" href="$pcd8544_8h.html" title="Interface definition for the PCD8544 LCD driver. " alt="" coords="10421,109,10608,136"/>
+<area shape="rect" id="node108" href="$pn532_8h.html" title="PN532 driver. " alt="" coords="10633,109,10805,136"/>
+<area shape="rect" id="node109" href="$soft__spi_8h.html" title="Software SPI port descriptor definition. " alt="" coords="10829,102,10973,143"/>
+<area shape="rect" id="node111" href="$sx126x_8h.html" title="drivers/include/sx126x.h" alt="" coords="10997,109,11173,136"/>
+<area shape="rect" id="node114" href="$sx127x_8h.html" title="Public interface for SX127X driver. " alt="" coords="11197,109,11373,136"/>
+<area shape="rect" id="node118" href="$sx1280_8h.html" title="drivers/include/sx1280.h" alt="" coords="11398,109,11575,136"/>
+<area shape="rect" id="node120" href="$w5100_8h.html" title="Interface definition for the W5100 device driver. " alt="" coords="11599,109,11774,136"/>
+<area shape="rect" id="node121" href="$w5500_8h.html" title="Interface definition for the W5500 device driver. " alt="" coords="11798,109,11973,136"/>
+<area shape="rect" id="node122" href="$io1__xplained__internals_8h.html" title="Internal addresses, constants for the IO1 Xplained extension. " alt="" coords="7614,95,7767,151"/>
+<area shape="rect" id="node123" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions. " alt="" coords="11997,102,12160,143"/>
+<area shape="rect" id="node124" href="$mfrc522__params_8h.html" title="Default configuration for the MFRC522 controller. " alt="" coords="12184,102,12357,143"/>
+<area shape="rect" id="node125" href="$hal__spi_8h.html" title="SPI abstraction layer RIOT adaption. " alt="" coords="12381,102,12563,143"/>
+<area shape="rect" id="node126" href="$spiport_8hpp.html" title="Definition of the Arduino &#39;SPI&#39; interface. " alt="" coords="12587,102,12730,143"/>
+<area shape="rect" id="node7" href="$fancy__leds_8h.html" title="LED extended functions. " alt="" coords="5,206,181,247"/>
+<area shape="rect" id="node9" href="$common_2slwstk6000b_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="206,206,413,247"/>
+<area shape="rect" id="node11" href="$e180-zg120b-tb_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="437,206,621,247"/>
+<area shape="rect" id="node13" href="$ikea-tradfri_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="646,206,813,247"/>
+<area shape="rect" id="node15" href="$omote_2include_2adc__params_8h.html" title="Board specific configuration of direct mapped ADC in omote. " alt="" coords="1021,206,1181,247"/>
+<area shape="rect" id="node16" href="$omote_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="837,206,997,247"/>
+<area shape="rect" id="node18" href="$slstk3400a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="1206,206,1391,247"/>
+<area shape="rect" id="node20" href="$slstk3401a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="1415,206,1601,247"/>
+<area shape="rect" id="node22" href="$slstk3402a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="1625,206,1810,247"/>
+<area shape="rect" id="node24" href="$slstk3701a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="1834,206,2019,247"/>
+<area shape="rect" id="node26" href="$sltb001a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="2043,206,2215,247"/>
+<area shape="rect" id="node28" href="$sltb009a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="2239,206,2411,247"/>
+<area shape="rect" id="node30" href="$slwstk6220a_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="2435,206,2602,247"/>
+<area shape="rect" id="node32" href="$stk3200_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="2626,206,2795,247"/>
+<area shape="rect" id="node34" href="$stk3600_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="2819,206,2989,247"/>
+<area shape="rect" id="node36" href="$stk3700_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="3013,206,3182,247"/>
+<area shape="rect" id="node38" href="$cc110x__internal_8h.html" title="Internal functions of the CC110x transceiver driver. " alt="" coords="3216,310,3379,351"/>
+<area shape="rect" id="node41" href="$at25xxx__params_8h.html" title="Default configuration for the M95M01 EEPROM. " alt="" coords="3630,206,3799,247"/>
+<area shape="rect" id="node42" href="$at25xxx_2mtd_8h.html" title="Interface definition for at25xxx MTD wrapper. " alt="" coords="3413,206,3582,247"/>
+<area shape="rect" id="node44" href="$at86rf215__internal_8h.html" title="Low&#45;Level functions for the AT86RF215 driver. " alt="" coords="4030,206,4213,247"/>
+<area shape="rect" id="node45" href="$at86rf215__params_8h.html" title="Default configuration for the AT86RF215 driver. " alt="" coords="3823,206,4006,247"/>
+<area shape="rect" id="node47" href="$at86rf2xx__aes_8h.html" title="The extended feature set of at86rf2xx transceivers comprises a hardware implementation of AES..." alt="" coords="4443,206,4624,247"/>
+<area shape="rect" id="node48" href="$at86rf2xx__internal_8h.html" title="Internal interfaces for AT86RF2xx drivers. " alt="" coords="4635,310,4816,351"/>
+<area shape="rect" id="node49" href="$at86rf2xx__registers_8h.html" title="Register and command definitions for AT86RF2xx devices. " alt="" coords="4699,206,4880,247"/>
+<area shape="rect" id="node50" href="$at86rf2xx__params_8h.html" title="Default configuration for the AT86RF2xx driver. " alt="" coords="4237,206,4419,247"/>
+<area shape="rect" id="node52" href="$ata8520e__params_8h.html" title="Default initialization parameters for the ATA8520E device. " alt="" coords="4904,206,5083,247"/>
+<area shape="rect" id="node54" href="$atwinc15x0__internal_8h.html" title="Internal definitions for the ATWINC15x0 WiFi netdev driver. " alt="" coords="5107,199,5253,255"/>
+<area shape="rect" id="node56" href="$bme680__params_8h.html" title="Default configuration for BME680 device driver. " alt="" coords="5278,206,5450,247"/>
+<area shape="rect" id="node58" href="$mcp2515__params_8h.html" title="Parameters for the CAN driver implementation. " alt="" coords="5919,206,6097,247"/>
+<area shape="rect" id="node59" href="$mcp2515_8h.html" title="Driver for the Microchip MCP2515 can controller. " alt="" coords="5474,213,5678,240"/>
+<area shape="rect" id="node60" href="$mcp2515__spi_8h.html" title="Driver for the Microchip MCP2515 can controller. " alt="" coords="5703,206,5895,247"/>
+<area shape="rect" id="node63" href="$cc2420__internal_8h.html" title="Definitions and settings for the cc2420. " alt="" coords="6310,206,6474,247"/>
+<area shape="rect" id="node64" href="$cc2420__params_8h.html" title="Default configuration for the CC2420 driver. " alt="" coords="6122,206,6286,247"/>
+<area shape="rect" id="node66" href="$ds3234__params_8h.html" title="Default configuration for DS3234 devices. " alt="" coords="6498,206,6665,247"/>
+<area shape="rect" id="node69" href="$encx24j600__params_8h.html" title="Default configuration for the ENCX24J600 Ethernet driver. " alt="" coords="6689,199,6837,255"/>
+<area shape="rect" id="node71" href="$epd__bw__spi__params_8h.html" title="Default configuration for epd_bw_spi. " alt="" coords="6861,199,7008,255"/>
+<area shape="rect" id="node73" href="$ili9341__params_8h.html" title="Default configuration for ili9341. " alt="" coords="7218,206,7379,247"/>
+<area shape="rect" id="node74" href="$ili9341_8h.html" title="drivers/include/ili9341.h" alt="" coords="7404,213,7577,240"/>
+<area shape="rect" id="node75" href="$st77xx_8h.html" title="drivers/include/st77xx.h" alt="" coords="7601,213,7775,240"/>
+<area shape="rect" id="node76" href="$st77xx__params_8h.html" title="Default configuration for ST77xx LCD controllers. " alt="" coords="7033,206,7194,247"/>
+<area shape="rect" id="node78" href="$io1__xplained_8h.html" title="Device driver interface for the Atmel IO1 Xplained extension. " alt="" coords="8020,206,8159,247"/>
+<area shape="rect" id="node80" href="$mtd__sdcard_8h.html" title="Interface definition for the mtd_sdcard driver. " alt="" coords="7850,206,7995,247"/>
+<area shape="rect" id="node79" href="$io1__xplained__params_8h.html" title="Default configuration for IO1 Xplained. " alt="" coords="7874,303,8027,359"/>
+<area shape="rect" id="node83" href="$kw2xrf__getset_8h.html" title="get/set interfaces for kw2xrf driver " alt="" coords="8585,206,8748,247"/>
+<area shape="rect" id="node84" href="$kw2xrf__tm_8h.html" title="Testing interfaces for kw2xrf driver. " alt="" coords="8527,310,8689,351"/>
+<area shape="rect" id="node85" href="$kw2xrf__intern_8h.html" title="Internal function interfaces for kw2xrf driver. " alt="" coords="8772,206,8935,247"/>
+<area shape="rect" id="node86" href="$kw2xrf__params_8h.html" title="Default configuration for the KW2XRF driver. " alt="" coords="8348,206,8511,247"/>
+<area shape="rect" id="node88" href="$l3gxxxx__params_8h.html" title="Default configuration for ST L3Gxxxx 3&#45;axis gyroscope sensor family. " alt="" coords="8959,206,9126,247"/>
+<area shape="rect" id="node90" href="$lis3dh__params_8h.html" title="Default configuration for LIS3DH devices. " alt="" coords="9150,206,9306,247"/>
+<area shape="rect" id="node92" href="$max31855__params_8h.html" title="Default configuration for the MAX31855 driver. " alt="" coords="9331,206,9517,247"/>
+<area shape="rect" id="node95" href="$mrf24j40__internal_8h.html" title="Internal interfaces for MRF24J40 drivers. " alt="" coords="9744,206,9923,247"/>
+<area shape="rect" id="node96" href="$mrf24j40__params_8h.html" title="Default configuration for the MRF24J40 driver. " alt="" coords="9541,206,9720,247"/>
+<area shape="rect" id="node100" href="$nrf24l01p__ng__communication_8h.html" title="Functions to communicate with the NRF24L01+ (NG) transceiver via SPI. " alt="" coords="10232,199,10392,255"/>
+<area shape="rect" id="node101" href="$nrf24l01p__ng__registers_8h.html" title="Register map of NRF24L01+ (NG) devices. " alt="" coords="10475,303,10635,359"/>
+<area shape="rect" id="node102" href="$nrf24l01p__ng__constants_8h.html" title="Constants from the datasheet of the NRF24L01+ (NG) transceiver. " alt="" coords="10048,199,10208,255"/>
+<area shape="rect" id="node104" href="$nrf24l01p__ng__diagnostics_8h.html" title="Functions to print NRF24L01+ (NG) debug information. " alt="" coords="10416,199,10576,255"/>
+<area shape="rect" id="node105" href="$nrf24l01p__ng__states_8h.html" title="Operation states of NRF24L01+ (NG) devices. " alt="" coords="10600,199,10760,255"/>
+<area shape="rect" id="node110" href="$soft__spi__params_8h.html" title="Software SPI configuration. " alt="" coords="10835,206,11002,247"/>
+<area shape="rect" id="node112" href="$sx126x__internal_8h.html" title="drivers/sx126x/include\l/sx126x_internal.h" alt="" coords="11214,206,11378,247"/>
+<area shape="rect" id="node113" href="$sx126x__params_8h.html" title="Default configuration. " alt="" coords="11026,206,11190,247"/>
+<area shape="rect" id="node115" href="$boards_2nz32-sc151_2include_2sx127x__params_8h.html" title="sx127x configuration for nz32&#45;sc15 using modtronix inAir9 LoRa module " alt="" coords="11779,206,11968,247"/>
+<area shape="rect" id="node116" href="$sx127x__internal_8h.html" title="Semtech SX127X internal functions. " alt="" coords="11402,206,11566,247"/>
+<area shape="rect" id="node117" href="$drivers_2sx127x_2include_2sx127x__params_8h.html" title="Default configuration for SX127X driver. " alt="" coords="11590,206,11754,247"/>
+<area shape="rect" id="node119" href="$sx1280__params_8h.html" title="Default configuration. " alt="" coords="11992,206,12157,247"/>
+</map>

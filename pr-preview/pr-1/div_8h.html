@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/div.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('div_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">div.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__math.html">Math libraries and utilities</a> &raquo; <a class="el" href="group__sys__div.html">Integer division functions</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span style="display: none;">.nosp@m.</span>r@sc<span style="display: none;">.nosp@m.</span>hleis<span style="display: none;">.nosp@m.</span>er.d<span style="display: none;">.nosp@m.</span>e</a> </dd>
+<dd>
+Joakim Nohlgård <a href="#" onclick="location.href='mai'+'lto:'+'joa'+'ki'+'m.n'+'oh'+'lga'+'rd'+'@ei'+'st'+'ec.'+'se'; return false;">joaki<span style="display: none;">.nosp@m.</span>m.no<span style="display: none;">.nosp@m.</span>hlgar<span style="display: none;">.nosp@m.</span>d@ei<span style="display: none;">.nosp@m.</span>stec.<span style="display: none;">.nosp@m.</span>se</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for div.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="div_8h__incl.svg" width="146" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="div_8h__dep__incl.svg" width="2735" height="663"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="div_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:aa582d82bfc335a1472e82066337fdbab"><td class="memItemLeft" align="right" valign="top"><a id="aa582d82bfc335a1472e82066337fdbab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#aa582d82bfc335a1472e82066337fdbab">DIV_H_INV_15625_32</a>&#160;&#160;&#160;0x431bde83ul</td></tr>
+<tr class="memdesc:aa582d82bfc335a1472e82066337fdbab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximation of (2**l)/d for d=15625, l=12, 32 bits. <br /></td></tr>
+<tr class="separator:aa582d82bfc335a1472e82066337fdbab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06fcc99e39d277ba341277596fc372c"><td class="memItemLeft" align="right" valign="top"><a id="aa06fcc99e39d277ba341277596fc372c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#aa06fcc99e39d277ba341277596fc372c">DIV_H_INV_15625_64</a>&#160;&#160;&#160;0x431bde82d7b634dbull</td></tr>
+<tr class="memdesc:aa06fcc99e39d277ba341277596fc372c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Approximation of (2**l)/d for d=15625, l=12, 64 bits. <br /></td></tr>
+<tr class="separator:aa06fcc99e39d277ba341277596fc372c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70d0ba5db3a7b5d438068b53789d7f7"><td class="memItemLeft" align="right" valign="top"><a id="ae70d0ba5db3a7b5d438068b53789d7f7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#ae70d0ba5db3a7b5d438068b53789d7f7">DIV_H_INV_15625_SHIFT</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:ae70d0ba5db3a7b5d438068b53789d7f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Required shifts for division by 15625, l above. <br /></td></tr>
+<tr class="separator:ae70d0ba5db3a7b5d438068b53789d7f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a511e31a5bfa6ca7d3333aef1f5c45a"><td class="memItemLeft" align="right" valign="top"><a id="a7a511e31a5bfa6ca7d3333aef1f5c45a"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>_div_mulhi64</b> (const uint64_t a, const uint64_t b)</td></tr>
+<tr class="separator:a7a511e31a5bfa6ca7d3333aef1f5c45a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6359e251605ac2405f08d0e2287c4352"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#a6359e251605ac2405f08d0e2287c4352">div_u64_by_15625</a> (uint64_t val)</td></tr>
+<tr class="memdesc:a6359e251605ac2405f08d0e2287c4352"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer divide val by 15625, 64 bit version.  <a href="#a6359e251605ac2405f08d0e2287c4352">More...</a><br /></td></tr>
+<tr class="separator:a6359e251605ac2405f08d0e2287c4352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1259de03c076f5bc98ddf9c84497c3d8"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#a1259de03c076f5bc98ddf9c84497c3d8">div_u64_by_125</a> (uint64_t val)</td></tr>
+<tr class="memdesc:a1259de03c076f5bc98ddf9c84497c3d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer divide val by 125.  <a href="#a1259de03c076f5bc98ddf9c84497c3d8">More...</a><br /></td></tr>
+<tr class="separator:a1259de03c076f5bc98ddf9c84497c3d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d56b4673ce9a2e89f92422e31c6b103"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#a3d56b4673ce9a2e89f92422e31c6b103">div_u64_by_1000000</a> (uint64_t val)</td></tr>
+<tr class="memdesc:a3d56b4673ce9a2e89f92422e31c6b103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer divide val by 1000000.  <a href="#a3d56b4673ce9a2e89f92422e31c6b103">More...</a><br /></td></tr>
+<tr class="separator:a3d56b4673ce9a2e89f92422e31c6b103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b987b7f92ef091fe90abd7e41b0c62"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#a49b987b7f92ef091fe90abd7e41b0c62">div_u32_by_15625div512</a> (uint32_t val)</td></tr>
+<tr class="memdesc:a49b987b7f92ef091fe90abd7e41b0c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide val by (15625/512)  <a href="#a49b987b7f92ef091fe90abd7e41b0c62">More...</a><br /></td></tr>
+<tr class="separator:a49b987b7f92ef091fe90abd7e41b0c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae896148829b01b5fb6dbeaa12191ce90"><td class="memItemLeft" align="right" valign="top">static uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#ae896148829b01b5fb6dbeaa12191ce90">div_u64_by_15625div512</a> (uint64_t val)</td></tr>
+<tr class="memdesc:ae896148829b01b5fb6dbeaa12191ce90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divide val by (15625/512)  <a href="#ae896148829b01b5fb6dbeaa12191ce90">More...</a><br /></td></tr>
+<tr class="separator:ae896148829b01b5fb6dbeaa12191ce90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22311f0972c313c541f1d423f1d1d18"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#ae22311f0972c313c541f1d423f1d1d18">div_u32_by_44488</a> (uint32_t val)</td></tr>
+<tr class="memdesc:ae22311f0972c313c541f1d423f1d1d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Integer divide val by 44488.  <a href="#ae22311f0972c313c541f1d423f1d1d18">More...</a><br /></td></tr>
+<tr class="separator:ae22311f0972c313c541f1d423f1d1d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2933b985650b79b434fae1f265530fb7"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="div_8h.html#a2933b985650b79b434fae1f265530fb7">div_u32_mod_44488</a> (uint32_t val)</td></tr>
+<tr class="memdesc:a2933b985650b79b434fae1f265530fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modulo 44488.  <a href="#a2933b985650b79b434fae1f265530fb7">More...</a><br /></td></tr>
+<tr class="separator:a2933b985650b79b434fae1f265530fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a49b987b7f92ef091fe90abd7e41b0c62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b987b7f92ef091fe90abd7e41b0c62">&#9670;&nbsp;</a></span>div_u32_by_15625div512()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t div_u32_by_15625div512 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divide val by (15625/512) </p>
+<p>This is used to quantize a 1MHz value to the closest 32768Hz value, e.g., for timers.</p>
+<p>The algorithm uses the modular multiplicative inverse of 15625 to use only multiplication and bit shifts to perform the division.</p>
+<p>The result will be equal to the mathematical expression: floor((val * 512) / 15625)</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / (15625/512)) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00130">130</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="ae22311f0972c313c541f1d423f1d1d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae22311f0972c313c541f1d423f1d1d18">&#9670;&nbsp;</a></span>div_u32_by_44488()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t div_u32_by_44488 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Integer divide val by 44488. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / 44488) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00164">164</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="a2933b985650b79b434fae1f265530fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2933b985650b79b434fae1f265530fb7">&#9670;&nbsp;</a></span>div_u32_mod_44488()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t div_u32_mod_44488 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Modulo 44488. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val % 44488) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00175">175</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="a3d56b4673ce9a2e89f92422e31c6b103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d56b4673ce9a2e89f92422e31c6b103">&#9670;&nbsp;</a></span>div_u64_by_1000000()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t div_u64_by_1000000 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Integer divide val by 1000000. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / 1000000) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00111">111</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="a1259de03c076f5bc98ddf9c84497c3d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1259de03c076f5bc98ddf9c84497c3d8">&#9670;&nbsp;</a></span>div_u64_by_125()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t div_u64_by_125 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Integer divide val by 125. </p>
+<p>This function can be used to convert uint64_t microsecond times (or intervals) to milliseconds and store them in uint32_t variables, with up to ~50 days worth of milliseconds ((2**32*1000) -1). Use e.g., ms = div_u64_by_125(microseconds &gt;&gt; 3)</p>
+<dl class="section pre"><dt>Precondition</dt><dd>val &lt;= 536870911999 ((2**32 * 125) -1)</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / 125) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00091">91</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="a6359e251605ac2405f08d0e2287c4352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6359e251605ac2405f08d0e2287c4352">&#9670;&nbsp;</a></span>div_u64_by_15625()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t div_u64_by_15625 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Integer divide val by 15625, 64 bit version. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / 15625) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00070">70</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+<a id="ae896148829b01b5fb6dbeaa12191ce90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae896148829b01b5fb6dbeaa12191ce90">&#9670;&nbsp;</a></span>div_u64_by_15625div512()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint64_t div_u64_by_15625div512 </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Divide val by (15625/512) </p>
+<p>This is used to quantize a 1MHz value to the closest 32768Hz value, e.g., for timers.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>dividend </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>(val / (15625/512)) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="div_8h_source.html#l00144">144</a> of file <a class="el" href="div_8h_source.html">div.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

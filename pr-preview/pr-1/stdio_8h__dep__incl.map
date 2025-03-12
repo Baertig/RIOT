@@ -1,0 +1,276 @@
+<map id="cpu/avr8_common/include/stdio.h" name="cpu/avr8_common/include/stdio.h">
+<area shape="rect" id="node2" href="$debug_8h.html" title="Debug&#45;header. " alt="" coords="8691,102,8866,129"/>
+<area shape="rect" id="node4" href="$core_2lib_2include_2log_8h.html" title="System logging header. " alt="" coords="17648,102,17803,129"/>
+<area shape="rect" id="node5" href="$atmega__gpio_8h.html" title="Macros and inline functions for accessing GPIOs of the ATmega family. " alt="" coords="34241,474,34447,515"/>
+<area shape="rect" id="node6" href="$avr8__common_2include_2cpu_8h.html" title="Common implementations and headers for AVR&#45;8 family based micro&#45;controllers. " alt="" coords="17877,95,18064,136"/>
+<area shape="rect" id="node7" href="$avr8__common_2include_2irq__arch_8h.html" title="Implementation of the kernels irq interface. " alt="" coords="181,191,368,233"/>
+<area shape="rect" id="node8" href="$flash__utils__arch_8h.html" title="Implementation of flash_utils. " alt="" coords="18259,95,18445,136"/>
+<area shape="rect" id="node9" href="$cc2538_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="562,191,705,233"/>
+<area shape="rect" id="node10" href="$esp__common_2include_2cpu_8h.html" title="CPU common functions for ESP SoCs. " alt="" coords="18521,95,18701,136"/>
+<area shape="rect" id="node11" href="$cpu_2esp__common_2include_2log__module_8h.html" title="Log module to realize consistent log messages for ESP SoCs. " alt="" coords="18725,95,18905,136"/>
+<area shape="rect" id="node12" href="$lpc23xx_2include_2cpu_8h_source.html" title="cpu/lpc23xx/include\l/cpu.h" alt="" coords="18089,95,18234,136"/>
+<area shape="rect" id="node14" href="$native_2include_2cpu_8h_source.html" title="cpu/native/include\l/cpu.h" alt="" coords="18929,95,19065,136"/>
+<area shape="rect" id="node236" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions. " alt="" coords="33595,288,33757,329"/>
+<area shape="rect" id="node238" href="$spiffs__config_8h_source.html" title="pkg/spiffs/include\l/spiffs_config.h" alt="" coords="34010,288,34142,329"/>
+<area shape="rect" id="node244" href="$native__internal_8h_source.html" title="cpu/native/include\l/native_internal.h" alt="" coords="33932,95,34068,136"/>
+<area shape="rect" id="node245" href="$ncv7356_8h.html" title="ncv7356 generic CAN transceiver interface initialization " alt="" coords="34093,102,34278,129"/>
+<area shape="rect" id="node246" href="$nrf24l01p_8h.html" title="drivers/include/nrf24l01p.h" alt="" coords="34303,102,34497,129"/>
+<area shape="rect" id="node247" href="$srf04_8h.html" title="Device driver for the srf04 ultra sonic range finder. " alt="" coords="33692,102,33857,129"/>
+<area shape="rect" id="node248" href="$tja1042_8h.html" title="tja1042 generic CAN transceiver interface initialization " alt="" coords="34572,102,34751,129"/>
+<area shape="rect" id="node249" href="$schc__config_8h_source.html" title="pkg/libschc/include\l/schc_config.h" alt="" coords="34775,95,34913,136"/>
+<area shape="rect" id="node250" href="$cc_8h.html" title="Compiler/platform abstraction. " alt="" coords="34937,102,35121,129"/>
+<area shape="rect" id="node251" href="$dsme__platform_8h.html" title="pkg/opendsme/include\l/opendsme/dsme_platform.h" alt="" coords="35369,95,35573,136"/>
+<area shape="rect" id="node254" href="$dsme__settings_8h.html" title="pkg/opendsme/include\l/opendsme/dsme_settings.h" alt="" coords="35146,95,35345,136"/>
+<area shape="rect" id="node255" href="$openwsn__log_8h.html" title="System logging header OpenWSN definitions. " alt="" coords="35597,95,35752,136"/>
+<area shape="rect" id="node256" href="$lwm2m__client_8h.html" title="Definitions and public API for a LwM2M client using Wakaama. " alt="" coords="35777,95,35933,136"/>
+<area shape="rect" id="node262" href="$pkg_2wakaama_2include_2objects_2device_8h.html" title="pkg/wakaama/include\l/objects/device.h" alt="" coords="36169,191,36325,233"/>
+<area shape="rect" id="node267" href="$security_8h.html" title="pkg/wakaama/include\l/objects/security.h" alt="" coords="36349,191,36505,233"/>
+<area shape="rect" id="node268" href="$sock__tls_8h_source.html" title="pkg/wolfssl/sock_tls\l/sock_tls.h" alt="" coords="36059,95,36202,136"/>
+<area shape="rect" id="node269" href="$flash__utils_8h.html" title="Utility functions, macros, and types for read&#45;only memory. " alt="" coords="36226,102,36393,129"/>
+<area shape="rect" id="node270" href="$aes128__cmac_8h.html" title="AES128_CMAC interface definition. " alt="" coords="36417,95,36556,136"/>
+<area shape="rect" id="node271" href="$submac_8h_source.html" title="sys/include/net/ieee802154\l/submac.h" alt="" coords="36581,95,36777,136"/>
+<area shape="rect" id="node272" href="$net_2lorawan_2hdr_8h.html" title="LoRaWAN header type and helper function definitions. " alt="" coords="36801,95,36972,136"/>
+<area shape="rect" id="node273" href="$gnrc__lorawan__internal_8h.html" title="GNRC LoRaWAN internal header. " alt="" coords="36867,184,37029,240"/>
+<area shape="rect" id="node274" href="$expect_8h.html" title="test &quot;expect condition&quot; utility function " alt="" coords="37047,95,37198,136"/>
+<area shape="rect" id="node275" href="$sys_2log__printfnoformat_2include_2log__module_8h.html" title="log_module header " alt="" coords="37223,95,37388,136"/>
+<area shape="rect" id="node3" href="$_2lfs__log_8h.html" title="littlefs v2 logging macro overrides " alt="" coords="5,199,157,225"/>
+<area shape="rect" id="node13" href="$lpc23xx_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="393,191,538,233"/>
+<area shape="rect" id="node15" href="$atmega__common_2include_2gpio__ll__arch_8h.html" title="CPU specific part of the Peripheral GPIO Low&#45;Level API. " alt="" coords="3952,474,4157,515"/>
+<area shape="rect" id="node16" href="$atmega__common_2include_2periph__cpu__common_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="27891,191,28096,233"/>
+<area shape="rect" id="node17" href="$cc26xx__cc13xx_2include_2periph__cpu__common_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="28121,191,28309,233"/>
+<area shape="rect" id="node18" href="$efm32_2include_2gpio__ll__arch_8h.html" title="CPU specific part of the Peripheral GPIO Low&#45;Level API. " alt="" coords="27623,288,27793,329"/>
+<area shape="rect" id="node19" href="$efm32_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="27681,191,27866,233"/>
+<area shape="rect" id="node20" href="$kinetis_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="28384,191,28523,233"/>
+<area shape="rect" id="node21" href="$lm4f120_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="28547,191,28698,233"/>
+<area shape="rect" id="node22" href="$lpc1768_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="28723,191,28869,233"/>
+<area shape="rect" id="node23" href="$eeprom__native_8h.html" title="cpu/native/include\l/eeprom_native.h" alt="" coords="28893,191,29029,233"/>
+<area shape="rect" id="node24" href="$nrf5x__common_2include_2gpio__ll__arch_8h.html" title="CPU specific part of the Peripheral GPIO Low&#45;Level API. " alt="" coords="5739,474,5931,515"/>
+<area shape="rect" id="node25" href="$nrfusb_8h.html" title="USB interface functions for the nrf52840 class devices. " alt="" coords="29104,191,29296,233"/>
+<area shape="rect" id="node26" href="$nrf5x__common_2include_2periph__cpu__common_8h.html" title="nRF5x common definitions for handling peripherals " alt="" coords="29320,191,29512,233"/>
+<area shape="rect" id="node27" href="$qn908x_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="29537,191,29682,233"/>
+<area shape="rect" id="node28" href="$riscv__common_2include_2periph__cpu__common_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="29707,191,29893,233"/>
+<area shape="rect" id="node29" href="$rpx0xx_2include_2periph__cpu_8h.html" title="RP2040 specific definitions for handling peripherals. " alt="" coords="29917,191,30059,233"/>
+<area shape="rect" id="node30" href="$sam0__common_2include_2periph__cpu__common_8h.html" title="Common CPU specific definitions for all SAMx21 based CPUs. " alt="" coords="30083,191,30274,233"/>
+<area shape="rect" id="node31" href="$sam__common_2include_2periph__cpu__common_8h.html" title="Common CPU specific definitions for all SAM3/SAM4x based CPUs. " alt="" coords="30298,191,30481,233"/>
+<area shape="rect" id="node32" href="$stm32_2include_2periph__cpu_8h.html" title="Shared CPU specific definitions for the STM32 family. " alt="" coords="28911,377,29094,419"/>
+<area shape="rect" id="node33" href="$boards_2cc2538dk_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the CC2538DK board. " alt="" coords="2608,578,2787,619"/>
+<area shape="rect" id="node34" href="$boards_2common_2arduino-zero_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for Arduino Zero board and clones. " alt="" coords="3521,467,3698,523"/>
+<area shape="rect" id="node35" href="$common_2arduino-zero_2include_2board_8h.html" title="Board specific definitions for the Arduino Zero board and clones. " alt="" coords="3521,578,3698,619"/>
+<area shape="rect" id="node36" href="$cfg__clk__default_8h.html" title="Default clock configuration for cc2538 based boards. " alt="" coords="2403,474,2581,515"/>
+<area shape="rect" id="node37" href="$boards_2generic-cc2538-cc2592-dk_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the Generic CC2538&#45;CC2592&#45;DK board. " alt="" coords="2400,571,2584,627"/>
+<area shape="rect" id="node38" href="$boards_2common_2slwstk6000b_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLWSTK6000B starter kit. " alt="" coords="30702,474,30909,515"/>
+<area shape="rect" id="node39" href="$common_2slwstk6000b_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6000B starter kit. " alt="" coords="30759,578,30966,619"/>
+<area shape="rect" id="node40" href="$boards_2common_2sodaq_2include_2cfg__clock__default_8h.html" title="Default clock configuration for SODAQ boards. " alt="" coords="26358,474,26551,515"/>
+<area shape="rect" id="node41" href="$boards_2sodaq-autonomo_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SODAQ Autonomo board. " alt="" coords="26237,578,26411,619"/>
+<area shape="rect" id="node42" href="$boards_2sodaq-one_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SODAQ ONE board. " alt="" coords="26567,578,26751,619"/>
+<area shape="rect" id="node43" href="$boards_2sodaq-sara-aff_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SODAQ SARA AFF boards. " alt="" coords="26049,578,26212,619"/>
+<area shape="rect" id="node44" href="$boards_2sodaq-sara-sff_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SODAQ SARA SFF board. " alt="" coords="26775,578,26937,619"/>
+<area shape="rect" id="node45" href="$cfg__rtc__default_8h.html" title="Default RTC configuration for SODAQ boards. " alt="" coords="26766,474,26946,515"/>
+<area shape="rect" id="node46" href="$sodaq_2include_2cfg__rtt__default_8h.html" title="Default RTT configuration for SODAQ boards. " alt="" coords="29667,474,29845,515"/>
+<area shape="rect" id="node47" href="$sodaq_2include_2cfg__spi__default_8h.html" title="Default SPI configuration for SODAQ boards. " alt="" coords="25830,474,26010,515"/>
+<area shape="rect" id="node48" href="$sodaq_2include_2cfg__timer__default_8h.html" title="Default timer configuration for SODAQ boards. " alt="" coords="26035,474,26232,515"/>
+<area shape="rect" id="node49" href="$sodaq_2include_2cfg__usbdev__default_8h.html" title="Default usbdev configuration for SODAQ boards. " alt="" coords="26575,467,26742,523"/>
+<area shape="rect" id="node50" href="$boards_2e180-zg120b-tb_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the E180&#45;ZG120B&#45;TB Test Board. " alt="" coords="31035,474,31213,515"/>
+<area shape="rect" id="node51" href="$e180-zg120b-tb_2include_2board_8h.html" title="Board specific definitions for the E180&#45;ZG120B&#45;TB starter kit. " alt="" coords="31111,578,31263,619"/>
+<area shape="rect" id="node52" href="$boards_2feather-m0_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for Adafruit Feather M0. " alt="" coords="29142,474,29333,515"/>
+<area shape="rect" id="node53" href="$feather-m0_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather M0. " alt="" coords="29142,578,29333,619"/>
+<area shape="rect" id="node54" href="$boards_2hamilton_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Hamilton mote. " alt="" coords="32265,474,32439,515"/>
+<area shape="rect" id="node55" href="$hamilton_2include_2board_8h.html" title="Support for the HamiltonIoT Hamilton board. " alt="" coords="32265,578,32439,619"/>
+<area shape="rect" id="node56" href="$boards_2ikea-tradfri_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the IKEA TRÅDFRI modules. " alt="" coords="31339,474,31501,515"/>
+<area shape="rect" id="node57" href="$ikea-tradfri_2include_2board_8h.html" title="Board specific definitions for the IKEA TRÅDFRI modules. " alt="" coords="31584,578,31723,619"/>
+<area shape="rect" id="node58" href="$mega-xplained_2include_2board_8h_source.html" title="boards/mega&#45;xplained\l/include/board.h" alt="" coords="31526,474,31687,515"/>
+<area shape="rect" id="node59" href="$boards_2qn9080dk_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for QN9080DK base board board. " alt="" coords="29459,474,29642,515"/>
+<area shape="rect" id="node60" href="$qn9080dk_2include_2board_8h.html" title="Board specific definitions for the QN9080DK base board. " alt="" coords="29459,578,29642,619"/>
+<area shape="rect" id="node61" href="$boards_2rpi-pico_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Raspberry Pi Pico. " alt="" coords="30411,474,30576,515"/>
+<area shape="rect" id="node62" href="$rpi-pico_2include_2board_8h.html" title="Board specific definitions for the Raspberry Pi Pico. " alt="" coords="30411,578,30576,619"/>
+<area shape="rect" id="node63" href="$sam4s-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM 4S Xplained Pro board. " alt="" coords="31711,474,31902,515"/>
+<area shape="rect" id="node64" href="$boards_2samd10-xmini_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM D10 Xplained Mini board. " alt="" coords="31977,474,32140,515"/>
+<area shape="rect" id="node65" href="$samd10-xmini_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D10 Xplained Mini board. " alt="" coords="31981,578,32137,619"/>
+<area shape="rect" id="node66" href="$boards_2samd20-xpro_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM D20 Xplained Pro board. " alt="" coords="32513,474,32676,515"/>
+<area shape="rect" id="node67" href="$samd20-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D20 Xplained Pro board. " alt="" coords="32519,578,32671,619"/>
+<area shape="rect" id="node68" href="$boards_2samd21-xpro_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM D21 Xplained Pro board. " alt="" coords="33295,474,33457,515"/>
+<area shape="rect" id="node69" href="$samd21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D21 Xplained Pro board. " alt="" coords="33300,578,33452,619"/>
+<area shape="rect" id="node70" href="$boards_2samr21-xpro_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Atmel SAM R21 Xplained Pro board. " alt="" coords="33793,474,33956,515"/>
+<area shape="rect" id="node71" href="$samr21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM R21 Xplained Pro board. " alt="" coords="33799,578,33950,619"/>
+<area shape="rect" id="node72" href="$boards_2seeeduino__xiao_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Serpente board. " alt="" coords="33053,474,33219,515"/>
+<area shape="rect" id="node73" href="$seeeduino__xiao_2include_2board_8h.html" title="Support for the Seeeduino XIAO board. " alt="" coords="33082,578,33249,619"/>
+<area shape="rect" id="node74" href="$boards_2sensebox__samd21_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for SenseBox MCU with SAMD21. " alt="" coords="1579,474,1763,515"/>
+<area shape="rect" id="node75" href="$sensebox__samd21_2include_2board_8h.html" title="Support for the SenseBox MCU with SAMD21 board. " alt="" coords="1579,578,1763,619"/>
+<area shape="rect" id="node76" href="$boards_2serpente_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the Serpente board. " alt="" coords="32801,474,32977,515"/>
+<area shape="rect" id="node77" href="$serpente_2include_2board_8h.html" title="Support for the Serpente board. " alt="" coords="32828,578,33004,619"/>
+<area shape="rect" id="node78" href="$boards_2slstk3400a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLSTK3400A starter kit. " alt="" coords="33533,474,33718,515"/>
+<area shape="rect" id="node79" href="$slstk3400a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3400A starter kit. " alt="" coords="33562,578,33747,619"/>
+<area shape="rect" id="node80" href="$boards_2slstk3401a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLSTK3401A starter kit. " alt="" coords="34031,474,34217,515"/>
+<area shape="rect" id="node81" href="$slstk3401a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3401A starter kit. " alt="" coords="34211,578,34397,619"/>
+<area shape="rect" id="node82" href="$boards_2slstk3402a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLSTK3402A starter kit. " alt="" coords="561,474,746,515"/>
+<area shape="rect" id="node83" href="$slstk3402a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3402A starter kit. " alt="" coords="509,578,694,619"/>
+<area shape="rect" id="node84" href="$boards_2slstk3701a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLSTK3701A starter kit. " alt="" coords="822,474,1007,515"/>
+<area shape="rect" id="node85" href="$slstk3701a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3701A starter kit. " alt="" coords="743,578,929,619"/>
+<area shape="rect" id="node86" href="$boards_2sltb001a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLTB001A starter kit. " alt="" coords="1083,474,1255,515"/>
+<area shape="rect" id="node87" href="$sltb001a_2include_2board_8h.html" title="Board specific definitions for the SLTB001A starter kit. " alt="" coords="1022,578,1194,619"/>
+<area shape="rect" id="node88" href="$boards_2sltb009a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLTB009A starter kit. " alt="" coords="1331,474,1503,515"/>
+<area shape="rect" id="node89" href="$sltb009a_2include_2board_8h.html" title="Board specific definitions for the SLTB009A starter kit. " alt="" coords="1306,578,1478,619"/>
+<area shape="rect" id="node90" href="$boards_2slwstk6220a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the SLWSTK6220A starter kit. " alt="" coords="3045,474,3208,515"/>
+<area shape="rect" id="node91" href="$slwstk6220a_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6220A starter kit. " alt="" coords="3021,578,3168,619"/>
+<area shape="rect" id="node92" href="$boards_2stk3200_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the STK3200 starter kit. " alt="" coords="4182,474,4351,515"/>
+<area shape="rect" id="node93" href="$stk3200_2include_2board_8h.html" title="Board specific definitions for the STK3200 starter kit. " alt="" coords="3951,578,4121,619"/>
+<area shape="rect" id="node94" href="$boards_2stk3600_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the STK3600 starter kit. " alt="" coords="29921,474,30090,515"/>
+<area shape="rect" id="node95" href="$stk3600_2include_2board_8h.html" title="Board specific definitions for the STK3600 starter kit. " alt="" coords="29959,578,30129,619"/>
+<area shape="rect" id="node96" href="$boards_2stk3700_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for the STK3700 starter kit. " alt="" coords="30166,474,30335,515"/>
+<area shape="rect" id="node97" href="$stk3700_2include_2board_8h.html" title="Board specific definitions for the STK3700 starter kit. " alt="" coords="30191,578,30361,619"/>
+<area shape="rect" id="node98" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO. " alt="" coords="1888,474,2069,515"/>
+<area shape="rect" id="node99" href="$boards_2stm32g0316-disco_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for STM32G0316&#45;DISCO board. " alt="" coords="2144,474,2328,515"/>
+<area shape="rect" id="node100" href="$stm32g0316-disco_2include_2board_8h.html" title="Board specific definitions for the STM32G0316&#45;DISCO. " alt="" coords="2144,578,2328,619"/>
+<area shape="rect" id="node101" href="$boards_2weact-g030f6_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for WeAct&#45;G030F6. " alt="" coords="2757,474,2920,515"/>
+<area shape="rect" id="node102" href="$weact-g030f6_2include_2board_8h.html" title="Board specific definitions for WeAct&#45;G030F6. " alt="" coords="2811,578,2965,619"/>
+<area shape="rect" id="node103" href="$boards_2xg23-pk6068a_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for xG23&#45;PK6068A board. " alt="" coords="3283,474,3445,515"/>
+<area shape="rect" id="node104" href="$xg23-pk6068a_2include_2board_8h.html" title="Board specific definitions for the xG23&#45;PK6068A. " alt="" coords="3285,578,3443,619"/>
+<area shape="rect" id="node105" href="$io1__xplained__internals_8h.html" title="Internal addresses, constants for the IO1 Xplained extension. " alt="" coords="3774,467,3927,523"/>
+<area shape="rect" id="node106" href="$cpu__fmc_8h.html" title="Specific FMC definitions for the STM32. " alt="" coords="29041,288,29223,329"/>
+<area shape="rect" id="node107" href="$cpu__gpio_8h.html" title="GPIO CPU definitions for the STM32 family. " alt="" coords="30814,191,30997,233"/>
+<area shape="rect" id="node108" href="$cpu__i2c_8h.html" title="I2C CPU specific definitions for the STM32 family. " alt="" coords="30294,288,30477,329"/>
+<area shape="rect" id="node109" href="$cpu__pwm_8h.html" title="PWM CPU specific definitions for the STM32 family. " alt="" coords="30087,288,30270,329"/>
+<area shape="rect" id="node110" href="$cpu__qdec_8h.html" title="QDEC CPU specific definitions for the STM32 family. " alt="" coords="30553,288,30735,329"/>
+<area shape="rect" id="node111" href="$cpu__spi_8h.html" title="SPI CPU specific definitions for the STM32 family. " alt="" coords="30759,288,30942,329"/>
+<area shape="rect" id="node112" href="$cpu__uart_8h.html" title="UART CPU specific definitions for the STM32 family. " alt="" coords="30966,288,31149,329"/>
+<area shape="rect" id="node113" href="$cpu__timer_8h.html" title="Timer CPU specific definitions for the STM32 family. " alt="" coords="30505,191,30687,233"/>
+<area shape="rect" id="node114" href="$acd52832_2include_2board_8h.html" title="For more information: http://aconno.de/acd52832/. " alt="" coords="3054,191,3234,233"/>
+<area shape="rect" id="node115" href="$adafruit-clue_2include_2board_8h.html" title="Board specific configuration for the Adafruit Clue board. " alt="" coords="3258,191,3406,233"/>
+<area shape="rect" id="node116" href="$adafruit-grand-central-m4-express_2include_2board_8h.html" title="Board specific definitions for the Adafruit Grand Central M4 Express. " alt="" coords="3431,184,3625,240"/>
+<area shape="rect" id="node117" href="$adafruit-itsybitsy-m4_2include_2board_8h.html" title="Board specific definitions for the Adafruit ItsyBitsy M4. " alt="" coords="3649,191,3823,233"/>
+<area shape="rect" id="node118" href="$adafruit-itsybitsy-nrf52_2include_2board_8h.html" title="Board specific configuration for Adafruit ItsyBitsy nRF52840. " alt="" coords="3847,191,4020,233"/>
+<area shape="rect" id="node119" href="$adafruit-metro-m4-express_2include_2board_8h.html" title="Board specific definitions for the Adafruit Metro M4 Express. " alt="" coords="4044,191,4247,233"/>
+<area shape="rect" id="node120" href="$adafruit-pybadge_2include_2board_8h.html" title="Board specific definitions for the Adafruit PyBadge. " alt="" coords="4271,191,4449,233"/>
+<area shape="rect" id="node121" href="$alientek-pandora_2include_2board_8h.html" title="Board specific definitions for the Alientek Pandora board. " alt="" coords="4473,191,4647,233"/>
+<area shape="rect" id="node122" href="$arduino-mkr1000_2include_2board_8h.html" title="Board specific definitions for the Arduino MKR1000 board. " alt="" coords="4672,191,4851,233"/>
+<area shape="rect" id="node123" href="$arduino-mkrfox1200_2include_2board_8h.html" title="Board specific definitions for the Arduino MKRFOX1200 board. " alt="" coords="4875,191,5074,233"/>
+<area shape="rect" id="node124" href="$arduino-mkrwan1300_2include_2board_8h.html" title="Support for the Arduino MKRWAN1300 board. " alt="" coords="5098,191,5302,233"/>
+<area shape="rect" id="node125" href="$arduino-mkrzero_2include_2board_8h.html" title="Board specific definitions for the Arduino MKRZERO board. " alt="" coords="5326,191,5501,233"/>
+<area shape="rect" id="node126" href="$arduino-nano-33-ble_2include_2board_8h.html" title="Board specific configuration for the Arduino Nano 33 BLE. " alt="" coords="5525,191,5693,233"/>
+<area shape="rect" id="node127" href="$arduino-nano-33-ble-sense_2include_2board_8h.html" title="Board specific configuration for the Arduino Nano 33 BLE sense. " alt="" coords="5717,184,5872,240"/>
+<area shape="rect" id="node128" href="$arduino-nano-33-iot_2include_2board_8h.html" title="Board specific definitions for the Arduino Nano 33 IoT. " alt="" coords="5896,191,6061,233"/>
+<area shape="rect" id="node129" href="$atmega1284p_2include_2board_8h.html" title="Board specific definitions for the standalone ATmega1284P &quot;board&quot;. " alt="" coords="6085,191,6243,233"/>
+<area shape="rect" id="node130" href="$atmega256rfr2-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmega256RFR2 Xplained Pro. " alt="" coords="6267,191,6434,233"/>
+<area shape="rect" id="node131" href="$atmega328p_2include_2board_8h.html" title="Board specific definitions for the standalone ATmega328p &quot;board&quot;. " alt="" coords="6458,191,6657,233"/>
+<area shape="rect" id="node132" href="$atmega328p-xplained-mini_2include_2board_8h.html" title="Board specific definitions for the standalone ATmega328p &quot;board&quot;. " alt="" coords="6681,191,6887,233"/>
+<area shape="rect" id="node133" href="$atmega8_2include_2board_8h.html" title="Board specific definitions for the standalone ATmega8 &quot;board&quot;. " alt="" coords="6911,191,7086,233"/>
+<area shape="rect" id="node134" href="$atxmega-a1-xplained_2include_2board_8h.html" title="Board specific definitions for the ATxmegaA1 Xplained board. " alt="" coords="7110,191,7309,233"/>
+<area shape="rect" id="node135" href="$atxmega-a1u-xpro_2include_2board_8h.html" title="Board specific definitions for the ATxmegaA1U Xplained Pro board. " alt="" coords="7333,191,7491,233"/>
+<area shape="rect" id="node136" href="$atxmega-a3bu-xplained_2include_2board_8h.html" title="Board specific definitions for the ATxmegaA3BU Xplained board. " alt="" coords="7516,191,7697,233"/>
+<area shape="rect" id="node137" href="$avr-rss2_2include_2board_8h.html" title="Board definitions for the rss2 256rfr2 board. " alt="" coords="7722,191,7891,233"/>
+<area shape="rect" id="node138" href="$b-l072z-lrwan1_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;L072Z&#45;LRWAN1 board. " alt="" coords="7915,191,8077,233"/>
+<area shape="rect" id="node139" href="$b-l475e-iot01a_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;L475E&#45;IOT01A board. " alt="" coords="8101,191,8261,233"/>
+<area shape="rect" id="node140" href="$b-u585i-iot02a_2include_2board_8h.html" title="Board specific definitions for the ST B&#45;U585I&#45;IOT02A board. " alt="" coords="8285,191,8445,233"/>
+<area shape="rect" id="node141" href="$bastwan_2include_2board_8h.html" title="Support for the BASTWAN SAM R34 board. " alt="" coords="8469,191,8640,233"/>
+<area shape="rect" id="node142" href="$cc2538dk_2include_2board_8h.html" title="boards/cc2538dk/include\l/board.h" alt="" coords="8664,191,8843,233"/>
+<area shape="rect" id="node143" href="$arduino-atmega_2include_2board__common_8h.html" title="Common board configuration for Arduino Atmega boards. " alt="" coords="8867,184,9045,240"/>
+<area shape="rect" id="node144" href="$common_2arduino-due_2include_2board_8h.html" title="Board specific definitions for the Arduino Due based boards. " alt="" coords="9069,191,9246,233"/>
+<area shape="rect" id="node145" href="$arduino-mkr_2include_2board__common_8h.html" title="Board specific definitions for the Arduino MKR board. " alt="" coords="9270,191,9485,233"/>
+<area shape="rect" id="node146" href="$esp32x_2include_2board__common_8h.html" title="Board definitions that are common for all ESP32x boards. " alt="" coords="9509,191,9694,233"/>
+<area shape="rect" id="node147" href="$esp8266_2include_2board__common_8h.html" title="Board definitions that are common for all ESP8266 boards. " alt="" coords="9718,191,9903,233"/>
+<area shape="rect" id="node148" href="$iotlab_2include_2board__common_8h.html" title="Board specific definitions for the iotlab&#45;m3 board. " alt="" coords="9927,191,10113,233"/>
+<area shape="rect" id="node149" href="$kw41z_2include_2board__common_8h.html" title="Shared configuration for some kw41z&#45;based boards. " alt="" coords="10137,191,10322,233"/>
+<area shape="rect" id="node150" href="$msb-430_2include_2board__common_8h.html" title="Common definitions for all msb&#45;430 based boards. " alt="" coords="10346,191,10531,233"/>
+<area shape="rect" id="node151" href="$nrf51_2include_2board__common_8h.html" title="Shared configuration for some nRF51&#45;based boards. " alt="" coords="10555,191,10741,233"/>
+<area shape="rect" id="node152" href="$nrf52_2include_2board__common_8h.html" title="Shared files and configuration for all nRF52 boards. " alt="" coords="10765,191,10950,233"/>
+<area shape="rect" id="node153" href="$board__nucleo_8h.html" title="Global common Nucleo board configuration. " alt="" coords="10974,191,11146,233"/>
+<area shape="rect" id="node154" href="$common_2particle-mesh_2include_2board_8h.html" title="Common board specific configuration for the Particle Mesh. " alt="" coords="11170,191,11345,233"/>
+<area shape="rect" id="node155" href="$remote_2include_2board__common_8h.html" title="Board specific definitions for the RE&#45;Mote boards. " alt="" coords="11369,191,11554,233"/>
+<area shape="rect" id="node156" href="$common_2saml1x_2include_2board_8h.html" title="Board specific definitions for the Microchip SAML10 &amp; SAML11 Xplained Pro board. " alt="" coords="11578,191,11750,233"/>
+<area shape="rect" id="node157" href="$derfmega128_2include_2board_8h.html" title="Board specific definitions for the deRFmega128 modules. " alt="" coords="11774,191,11930,233"/>
+<area shape="rect" id="node158" href="$derfmega256_2include_2board_8h.html" title="Board specific definitions for the deRFmega256 modules. " alt="" coords="11954,191,12110,233"/>
+<area shape="rect" id="node159" href="$ek-lm4f120xl_2include_2board_8h.html" title="Board specific definitions for the Stellaris Launchpad LM4F120 board. " alt="" coords="12134,191,12285,233"/>
+<area shape="rect" id="node160" href="$f4vi1_2include_2board_8h.html" title="Board specific definitions for the f4vi1 board. " alt="" coords="12309,191,12459,233"/>
+<area shape="rect" id="node161" href="$feather-nrf52840_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather nRF52840 Express. " alt="" coords="12483,191,12663,233"/>
+<area shape="rect" id="node162" href="$feather-nrf52840-sense_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather nRF52840 Sense. " alt="" coords="12687,191,12867,233"/>
+<area shape="rect" id="node163" href="$firefly_2include_2board_8h.html" title="Support for the Firefly board. " alt="" coords="12891,191,13047,233"/>
+<area shape="rect" id="node164" href="$frdm-k22f_2include_2board_8h.html" title="Board specific definitions for the FRDM&#45;K22F. " alt="" coords="13071,191,13254,233"/>
+<area shape="rect" id="node165" href="$frdm-k64f_2include_2board_8h.html" title="Board specific definitions for the FRDM&#45;K64F. " alt="" coords="13278,191,13461,233"/>
+<area shape="rect" id="node166" href="$frdm-kl43z_2include_2board_8h.html" title="Board specific definitions for the FRDM&#45;KL43Z. " alt="" coords="13485,191,13672,233"/>
+<area shape="rect" id="node167" href="$frdm-kw41z_2include_2board_8h.html" title="Board specific definitions for the FRDM&#45;KW41Z. " alt="" coords="13697,191,13890,233"/>
+<area shape="rect" id="node168" href="$gba__cartridge_2include_2board_8h.html" title="boards/gba_cartridge\l/include/board.h" alt="" coords="13914,191,14070,233"/>
+<area shape="rect" id="node169" href="$generic-cc2538-cc2592-dk_2include_2board_8h.html" title="Definitions for the Generic CC2538&#45;CC2592&#45;DK Board. " alt="" coords="14095,191,14287,233"/>
+<area shape="rect" id="node170" href="$hifive1b_2include_2board_8h.html" title="Board specific definitions for the SiFive HiFive1b RISC&#45;V board. " alt="" coords="14311,191,14481,233"/>
+<area shape="rect" id="node171" href="$i-nucleo-lrwan1_2include_2board_8h.html" title="Board specific definitions for the ST I&#45;NUCLEO&#45;LRWAN1 board. " alt="" coords="14505,191,14669,233"/>
+<area shape="rect" id="node172" href="$im880b_2include_2board_8h.html" title="Support for im880b. " alt="" coords="14693,191,14859,233"/>
+<area shape="rect" id="node173" href="$iotlab-a8-m3_2include_2board_8h.html" title="Board specific definitions for the iotlab&#45;a8&#45;m3 board. " alt="" coords="14884,191,15031,233"/>
+<area shape="rect" id="node174" href="$iotlab-m3_2include_2board_8h.html" title="Board specific definitions for the iotlab&#45;m3 board. " alt="" coords="15055,191,15233,233"/>
+<area shape="rect" id="node175" href="$limifrog-v1_2include_2board_8h.html" title="Board specific definitions for the limifrog&#45;v1 board. " alt="" coords="15257,191,15394,233"/>
+<area shape="rect" id="node176" href="$lsn50_2include_2board_8h.html" title="Board specific definitions for the LSN50 board. " alt="" coords="15419,191,15571,233"/>
+<area shape="rect" id="node177" href="$mbed__lpc1768_2include_2board_8h.html" title="Board specific definitions for the mbed_lpc1768 board. " alt="" coords="15595,191,15757,233"/>
+<area shape="rect" id="node178" href="$microduino-corerf_2include_2board_8h.html" title="Board specific definitions for the Microduino CoreRF board. " alt="" coords="15781,191,15963,233"/>
+<area shape="rect" id="node179" href="$msbiot_2include_2board_8h.html" title="Board specific definitions for the MSB&#45;IoT board. " alt="" coords="15987,191,16149,233"/>
+<area shape="rect" id="node180" href="$mulle_2include_2board_8h.html" title="Board specific definitions for the Eistec Mulle IoT board. " alt="" coords="16173,191,16326,233"/>
+<area shape="rect" id="node181" href="$nrf52832-mdk_2include_2board_8h.html" title="Board specific configuration for the nRF52832&#45;MDK. " alt="" coords="16351,191,16511,233"/>
+<area shape="rect" id="node182" href="$nrf52840-mdk_2include_2board_8h.html" title="Board specific configuration for the nRF52840&#45;MDK. " alt="" coords="16535,191,16695,233"/>
+<area shape="rect" id="node183" href="$nrf52840-mdk-dongle_2include_2board_8h.html" title="Board specific configuration for the nRF52840 MDK USB Dongle. " alt="" coords="16719,191,16891,233"/>
+<area shape="rect" id="node184" href="$nrf52840dongle_2include_2board_8h.html" title="Board specific configuration for the nRF52840&#45;Dongle. " alt="" coords="16915,191,17087,233"/>
+<area shape="rect" id="node185" href="$nrf5340dk-app_2include_2board_8h.html" title="Board configuration for the nRF5340DK&#45;app board. " alt="" coords="17112,191,17275,233"/>
+<area shape="rect" id="node186" href="$nrf9160dk_2include_2board_8h.html" title="Board configuration for the nrf9160dk board. " alt="" coords="17299,191,17485,233"/>
+<area shape="rect" id="node187" href="$nz32-sc151_2include_2board_8h.html" title="Board specific definitions for the nz32&#45;sc151 board. " alt="" coords="17509,191,17699,233"/>
+<area shape="rect" id="node188" href="$olimex-msp430-h1611_2include_2board_8h.html" title="Basic definitions for the Olimex MSP430&#45;H1611 board. " alt="" coords="17723,191,17893,233"/>
+<area shape="rect" id="node189" href="$olimex-msp430-h2618_2include_2board_8h.html" title="Basic definitions for the Olimex MSP430&#45;H2618 board. " alt="" coords="17917,191,18086,233"/>
+<area shape="rect" id="node190" href="$olimexino-stm32_2include_2board_8h.html" title="Board specific definitions for the OLIMEXINO STM32 board. " alt="" coords="18111,191,18284,233"/>
+<area shape="rect" id="node191" href="$omote_2include_2board_8h.html" title="Board specific definitions for the omote board. " alt="" coords="18308,191,18468,233"/>
+<area shape="rect" id="node192" href="$openlabs-kw41z-mini_2include_2board_8h.html" title="Board specific definitions for openlabs&#45;kw41z&#45;mini. " alt="" coords="18493,191,18662,233"/>
+<area shape="rect" id="node193" href="$openmote-b_2include_2board_8h.html" title="Board specific definitions for the OpenMote&#45;B board. " alt="" coords="18686,191,18882,233"/>
+<area shape="rect" id="node194" href="$openmote-cc2538_2include_2board_8h.html" title="Board specific definitions for the OpenMote&#45;cc2538 board. " alt="" coords="18906,191,19089,233"/>
+<area shape="rect" id="node195" href="$p-l496g-cell02_2include_2board_8h.html" title="Board specific definitions for the P&#45;L496G&#45;CELL02 board. " alt="" coords="19113,191,19271,233"/>
+<area shape="rect" id="node196" href="$pba-d-01-kw2x_2include_2board_8h.html" title="Board specific definitions for the phyWAVE evaluation board. " alt="" coords="19295,191,19457,233"/>
+<area shape="rect" id="node197" href="$phynode-kw41z_2include_2board_8h.html" title="Board specific definitions for the USB&#45;KW41Z. " alt="" coords="19481,191,19649,233"/>
+<area shape="rect" id="node198" href="$pinetime_2include_2board_8h.html" title="Board specific configuration for the PineTime. " alt="" coords="19674,191,19849,233"/>
+<area shape="rect" id="node199" href="$pyboard_2include_2board_8h.html" title="Board specific definitions for the pyboard board. " alt="" coords="19873,191,20044,233"/>
+<area shape="rect" id="node200" href="$reel_2include_2board_8h.html" title="Board specific configuration for the Phytec &#39;reel board&#39;. " alt="" coords="20068,191,20212,233"/>
+<area shape="rect" id="node201" href="$remote-pa_2include_2board_8h.html" title="Board specific definitions for the Re&#45;Mote board prototype A. " alt="" coords="20237,191,20422,233"/>
+<area shape="rect" id="node202" href="$remote-reva_2include_2board_8h.html" title="Board specific definitions for the RE&#45;Mote board Revision A. " alt="" coords="20447,191,20596,233"/>
+<area shape="rect" id="node203" href="$remote-revb_2include_2board_8h.html" title="Board specific definitions for the RE&#45;Mote board Revision B. " alt="" coords="20621,191,20771,233"/>
+<area shape="rect" id="node204" href="$ruuvitag_2include_2board_8h.html" title="Board specific configuration for the RuuviTag board. " alt="" coords="20796,191,20967,233"/>
+<area shape="rect" id="node205" href="$same51-curiosity-nano_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM E51 Curiosity Nano board. " alt="" coords="20991,191,21166,233"/>
+<area shape="rect" id="node206" href="$same54-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM E54 Xplained Pro board. " alt="" coords="21191,191,21343,233"/>
+<area shape="rect" id="node207" href="$saml21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM L21 Xplained Pro board. " alt="" coords="21367,191,21513,233"/>
+<area shape="rect" id="node208" href="$samr30-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM R30 Xplained Pro board. " alt="" coords="21538,191,21689,233"/>
+<area shape="rect" id="node209" href="$samr34-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM R34 Xplained Pro board. " alt="" coords="21713,191,21863,233"/>
+<area shape="rect" id="node210" href="$seeeduino__arch-pro_2include_2board_8h.html" title="Board specific definitions for the Seeduino Arch Pro board. " alt="" coords="21888,191,22056,233"/>
+<area shape="rect" id="node211" href="$sodaq-autonomo_2include_2board_8h.html" title="Board specific definitions for the SODAQ Autonomo board. " alt="" coords="22081,191,22255,233"/>
+<area shape="rect" id="node212" href="$sodaq-explorer_2include_2board_8h.html" title="Board specific definitions for the SODAQ ExpLoRer board. " alt="" coords="22280,191,22445,233"/>
+<area shape="rect" id="node213" href="$sodaq-one_2include_2board_8h.html" title="Board specific definitions for the SODAQ ONE board. " alt="" coords="22469,191,22653,233"/>
+<area shape="rect" id="node214" href="$sodaq-sara-aff_2include_2board_8h.html" title="Board specific definitions for the SODAQ SARA AFF boards. " alt="" coords="22678,191,22837,233"/>
+<area shape="rect" id="node215" href="$sodaq-sara-sff_2include_2board_8h.html" title="Board specific definitions for the SODAQ SARA SFF board. " alt="" coords="22861,191,23019,233"/>
+<area shape="rect" id="node216" href="$spark-core_2include_2board_8h.html" title="Board specific definitions for the spark&#45;core board. " alt="" coords="23043,191,23229,233"/>
+<area shape="rect" id="node217" href="$stm32f0discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F0Discovery evaluation board. " alt="" coords="23253,191,23435,233"/>
+<area shape="rect" id="node218" href="$stm32f3discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F3Discovery evaluation board. " alt="" coords="23459,191,23640,233"/>
+<area shape="rect" id="node219" href="$stm32f429i-disc1_2include_2board_8h.html" title="Board specific definitions for the STM32F429I&#45;DISC1 evaluation board. " alt="" coords="23664,191,23840,233"/>
+<area shape="rect" id="node220" href="$stm32f469i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F469I&#45;DISCO board. " alt="" coords="23864,191,24040,233"/>
+<area shape="rect" id="node221" href="$stm32f4discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F4Discovery evaluation board. " alt="" coords="24064,191,24245,233"/>
+<area shape="rect" id="node222" href="$stm32f723e-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F723E&#45;DISCO board. " alt="" coords="24269,191,24451,233"/>
+<area shape="rect" id="node223" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board. " alt="" coords="24475,191,24651,233"/>
+<area shape="rect" id="node224" href="$stm32l0538-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L0538&#45;DISCO evaluation board. " alt="" coords="24675,191,24853,233"/>
+<area shape="rect" id="node225" href="$stm32l476g-disco_2include_2board_8h.html" title="Support for the STM32L476G&#45;DISCO board. " alt="" coords="24877,191,25056,233"/>
+<area shape="rect" id="node226" href="$stm32l496g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32L496G&#45;DISCO board. " alt="" coords="25080,191,25259,233"/>
+<area shape="rect" id="node227" href="$stm32mp157c-dk2_2include_2board_8h.html" title="Board specific definitions for the STM32MP157C&#45;DK2 board. " alt="" coords="25283,191,25442,233"/>
+<area shape="rect" id="node228" href="$teensy31_2include_2board_8h.html" title="Board specific definitions for the Teensy3.1 &amp; 3.2 board. " alt="" coords="25466,191,25643,233"/>
+<area shape="rect" id="node229" href="$telosb_2include_2board_8h.html" title="Basic definitions for the TelosB board. " alt="" coords="25668,191,25825,233"/>
+<area shape="rect" id="node230" href="$thingy52_2include_2board_8h.html" title="Board specific configuration for the Nordic Thingy:52 board. " alt="" coords="25850,191,26025,233"/>
+<area shape="rect" id="node231" href="$ublox-c030-u201_2include_2board_8h.html" title="Board specific definitions for the Ublox C030&#45;U201 board. " alt="" coords="26049,191,26223,233"/>
+<area shape="rect" id="node232" href="$usb-kw41z_2include_2board_8h.html" title="Board specific definitions for the USB&#45;KW41Z. " alt="" coords="26248,191,26432,233"/>
+<area shape="rect" id="node233" href="$yarm_2include_2board_8h.html" title="Support for the Acmesystems YARM board. " alt="" coords="26457,191,26607,233"/>
+<area shape="rect" id="node234" href="$z1_2include_2board_8h.html" title=" &#160;Zolertia Z1 board configuration " alt="" coords="26632,199,26819,225"/>
+<area shape="rect" id="node235" href="$zigduino_2include_2board_8h.html" title="Board specific definitions for the Zigduino board. " alt="" coords="33701,191,33872,233"/>
+<area shape="rect" id="node240" href="$kw41zrf__intern_8h.html" title="Internal function interfaces for kw41zrf driver. " alt="" coords="26893,191,27064,233"/>
+<area shape="rect" id="node241" href="$libb2__config_8h_source.html" title="pkg/libb2/include/libb2\l_config.h" alt="" coords="27089,191,27253,233"/>
+<area shape="rect" id="node242" href="$mcu_8h.html" title="Abstraction layer for RIOT adaption. " alt="" coords="27277,191,27459,233"/>
+<area shape="rect" id="node243" href="$bit_8h.html" title="Bit access macros with bit&#45;banding support for Cortex&#45;M based CPUs. " alt="" coords="27483,199,27605,225"/>
+<area shape="rect" id="node237" href="$srf04__params_8h.html" title="Default configuration for srf04 devices. " alt="" coords="33833,288,33986,329"/>
+<area shape="rect" id="node239" href="$spiffs__fs_8h.html" title="SPIFFS integration with vfs. " alt="" coords="33969,385,34143,411"/>
+<area shape="rect" id="node252" href="$DSMEMessage_8h.html" title="DSME Message interface implementation for GNRC. " alt="" coords="34907,191,35109,233"/>
+<area shape="rect" id="node253" href="$DSMEPlatform_8h.html" title="DSME Platform interface implementation. " alt="" coords="34839,288,35039,329"/>
+<area shape="rect" id="node257" href="$lwm2m__client__connection_8h.html" title="Public API and definitions of the connection handle for LwM2M client implementation using Wakaama..." alt="" coords="35133,191,35331,233"/>
+<area shape="rect" id="node258" href="$lwm2m__client__objects_8h.html" title="Public API and definitions for the helper functions to interact with basic objects from a LwM2M clien..." alt="" coords="35355,191,35528,233"/>
+<area shape="rect" id="node259" href="$barometer_8h.html" title="pkg/wakaama/include\l/objects/barometer.h" alt="" coords="35481,288,35637,329"/>
+<area shape="rect" id="node260" href="$pkg_2wakaama_2include_2objects_2common_8h.html" title="pkg/wakaama/include\l/objects/common.h" alt="" coords="35603,191,35759,233"/>
+<area shape="rect" id="node261" href="$current_8h.html" title="pkg/wakaama/include\l/objects/current.h" alt="" coords="35661,288,35817,329"/>
+<area shape="rect" id="node263" href="$humidity_8h.html" title="pkg/wakaama/include\l/objects/humidity.h" alt="" coords="35841,288,35997,329"/>
+<area shape="rect" id="node264" href="$illuminance_8h.html" title="pkg/wakaama/include\l/objects/illuminance.h" alt="" coords="36021,288,36179,329"/>
+<area shape="rect" id="node265" href="$ipso__sensor__base_8h.html" title="pkg/wakaama/include\l/objects/ipso_sensor\l_base.h" alt="" coords="35835,184,35991,240"/>
+<area shape="rect" id="node266" href="$temperature_8h.html" title="pkg/wakaama/include\l/objects/temperature.h" alt="" coords="36203,288,36373,329"/>
+</map>

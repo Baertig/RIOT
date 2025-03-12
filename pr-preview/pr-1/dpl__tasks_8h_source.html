@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/uwb-core/include/dpl/dpl_tasks.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dpl__tasks_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">dpl_tasks.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dpl__tasks_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 Inria</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef DPL_DPL_TASKS_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define DPL_DPL_TASKS_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;os/os_task.h&quot;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structdpl__task.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdpl__task.html">dpl_task</a> {</div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structdpl__task.html#a72329c7aa012e1d97b5001e270779c72">   33</a></span>&#160;    <span class="keyword">struct </span>os_task <a class="code" href="structdpl__task.html#a72329c7aa012e1d97b5001e270779c72">t</a>;   </div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="dpl__tasks_8h.html#aa0c7765e3be6403f2e5f1853067c51d7">   39</a></span>&#160;<span class="keyword">typedef</span> os_task_func_t <a class="code" href="dpl__tasks_8h.html#aa0c7765e3be6403f2e5f1853067c51d7">dpl_task_func_t</a>;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="dpl__tasks_8h.html#a1b277f3661447c423c38e57a16cc0c3d">   60</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="dpl__tasks_8h.html#a1b277f3661447c423c38e57a16cc0c3d">dpl_task_init</a>(<span class="keyword">struct</span> <a class="code" href="structdpl__task.html">dpl_task</a> *t, <span class="keyword">const</span> <span class="keywordtype">char</span> *name, <a class="code" href="dpl__tasks_8h.html#aa0c7765e3be6403f2e5f1853067c51d7">dpl_task_func_t</a> func,</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                  <span class="keywordtype">void</span> *arg, uint8_t prio, <a class="code" href="dpl__types_8h.html#a4a36ea09631d69359da7698137d284e4">dpl_time_t</a> sanity_itvl,</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                  <a class="code" href="dpl__types_8h.html#a81db320866f2ab5b964f348838020ef4">dpl_stack_t</a> *stack_bottom, uint16_t stack_size)</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> os_task_init(&amp;t-&gt;<a class="code" href="structdpl__task.html#a72329c7aa012e1d97b5001e270779c72">t</a>, name, func, arg, prio, sanity_itvl, stack_bottom, stack_size);</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="dpl__tasks_8h.html#a278988e35727906c29ae1236efbc751a">   71</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="dpl__tasks_8h.html#a278988e35727906c29ae1236efbc751a">dpl_task_remove</a>(<span class="keyword">struct</span> <a class="code" href="structdpl__task.html">dpl_task</a> *t)</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> os_task_remove(&amp;t-&gt;<a class="code" href="structdpl__task.html#a72329c7aa012e1d97b5001e270779c72">t</a>);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="dpl__tasks_8h.html#ac011a8c3f81ae6f784026b006911a166">   81</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint8_t <a class="code" href="dpl__tasks_8h.html#ac011a8c3f81ae6f784026b006911a166">dpl_task_count</a>(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> os_task_count();</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="dpl__tasks_8h.html#a09dd50d8e38355a92d0929ab6e717005">   89</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="dpl__tasks_8h.html#a09dd50d8e38355a92d0929ab6e717005">dpl_task_yield</a>(<span class="keywordtype">void</span>)</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> os_task_yield();</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* DPL_DPL_TASKS_H */</span><span class="preprocessor"></span></div><div class="ttc" id="structdpl__task_html_a72329c7aa012e1d97b5001e270779c72"><div class="ttname"><a href="structdpl__task.html#a72329c7aa012e1d97b5001e270779c72">dpl_task::t</a></div><div class="ttdeci">struct os_task t</div><div class="ttdoc">os task </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00033">dpl_tasks.h:33</a></div></div>
+<div class="ttc" id="dpl__tasks_8h_html_aa0c7765e3be6403f2e5f1853067c51d7"><div class="ttname"><a href="dpl__tasks_8h.html#aa0c7765e3be6403f2e5f1853067c51d7">dpl_task_func_t</a></div><div class="ttdeci">os_task_func_t dpl_task_func_t</div><div class="ttdoc">dpl task function </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00039">dpl_tasks.h:39</a></div></div>
+<div class="ttc" id="dpl__tasks_8h_html_a1b277f3661447c423c38e57a16cc0c3d"><div class="ttname"><a href="dpl__tasks_8h.html#a1b277f3661447c423c38e57a16cc0c3d">dpl_task_init</a></div><div class="ttdeci">static int dpl_task_init(struct dpl_task *t, const char *name, dpl_task_func_t func, void *arg, uint8_t prio, dpl_time_t sanity_itvl, dpl_stack_t *stack_bottom, uint16_t stack_size)</div><div class="ttdoc">Initialize a task. </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00060">dpl_tasks.h:60</a></div></div>
+<div class="ttc" id="dpl__types_8h_html_a81db320866f2ab5b964f348838020ef4"><div class="ttname"><a href="dpl__types_8h.html#a81db320866f2ab5b964f348838020ef4">dpl_stack_t</a></div><div class="ttdeci">os_stack_t dpl_stack_t</div><div class="ttdoc">dpl stack buffer type </div><div class="ttdef"><b>Definition:</b> <a href="dpl__types_8h_source.html#l00062">dpl_types.h:62</a></div></div>
+<div class="ttc" id="dpl__tasks_8h_html_a09dd50d8e38355a92d0929ab6e717005"><div class="ttname"><a href="dpl__tasks_8h.html#a09dd50d8e38355a92d0929ab6e717005">dpl_task_yield</a></div><div class="ttdeci">static void dpl_task_yield(void)</div><div class="ttdoc">Lets current thread yield. </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00089">dpl_tasks.h:89</a></div></div>
+<div class="ttc" id="structdpl__task_html"><div class="ttname"><a href="structdpl__task.html">dpl_task</a></div><div class="ttdoc">dpl task wrapper </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00032">dpl_tasks.h:32</a></div></div>
+<div class="ttc" id="dpl__tasks_8h_html_a278988e35727906c29ae1236efbc751a"><div class="ttname"><a href="dpl__tasks_8h.html#a278988e35727906c29ae1236efbc751a">dpl_task_remove</a></div><div class="ttdeci">static int dpl_task_remove(struct dpl_task *t)</div><div class="ttdoc">removes specified task </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00071">dpl_tasks.h:71</a></div></div>
+<div class="ttc" id="dpl__types_8h_html_a4a36ea09631d69359da7698137d284e4"><div class="ttname"><a href="dpl__types_8h.html#a4a36ea09631d69359da7698137d284e4">dpl_time_t</a></div><div class="ttdeci">os_time_t dpl_time_t</div><div class="ttdoc">dpl time type </div><div class="ttdef"><b>Definition:</b> <a href="dpl__types_8h_source.html#l00057">dpl_types.h:57</a></div></div>
+<div class="ttc" id="dpl__tasks_8h_html_ac011a8c3f81ae6f784026b006911a166"><div class="ttname"><a href="dpl__tasks_8h.html#ac011a8c3f81ae6f784026b006911a166">dpl_task_count</a></div><div class="ttdeci">static uint8_t dpl_task_count(void)</div><div class="ttdoc">Return the number of tasks initialized. </div><div class="ttdef"><b>Definition:</b> <a href="dpl__tasks_8h_source.html#l00081">dpl_tasks.h:81</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

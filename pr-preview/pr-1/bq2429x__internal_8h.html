@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/bq2429x/include/bq2429x_internal.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('bq2429x__internal_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">bq2429x_internal.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__power.html">Power Supply Drivers</a> &raquo; <a class="el" href="group__drivers__bq2429x.html">BQ2429x</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Internal address, registers, constants for the BQ2429x family power ICs.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Internal address, registers, constants for the BQ2429x family power ICs. </p>
+<dl class="section author"><dt>Author</dt><dd>Jean Pierre Dudey <a href="#" onclick="location.href='mai'+'lto:'+'jea'+'nd'+'ude'+'y@'+'hot'+'ma'+'il.'+'co'+'m'; return false;">jeand<span style="display: none;">.nosp@m.</span>udey<span style="display: none;">.nosp@m.</span>@hotm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="bq2429x__internal_8h_source.html">bq2429x_internal.h</a>.</p>
+</div>
+<p><a href="bq2429x__internal_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a1f068e3e7b4ddb975614db077b730d20"><td class="memItemLeft" align="right" valign="top"><a id="a1f068e3e7b4ddb975614db077b730d20"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a1f068e3e7b4ddb975614db077b730d20">BQ2429X_I2C_ADDR</a>&#160;&#160;&#160;(0x6B)</td></tr>
+<tr class="memdesc:a1f068e3e7b4ddb975614db077b730d20"><td class="mdescLeft">&#160;</td><td class="mdescRight">BQ2429x I2C device slave address. <br /></td></tr>
+<tr class="separator:a1f068e3e7b4ddb975614db077b730d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcaa6c69b044f112701abf5210d32e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a7dcaa6c69b044f112701abf5210d32e8">BQ2429X_REG00</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="memdesc:a7dcaa6c69b044f112701abf5210d32e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers.  <a href="#a7dcaa6c69b044f112701abf5210d32e8">More...</a><br /></td></tr>
+<tr class="separator:a7dcaa6c69b044f112701abf5210d32e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a500c49c39b2153b628e6fba27c1a436d"><td class="memItemLeft" align="right" valign="top"><a id="a500c49c39b2153b628e6fba27c1a436d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a500c49c39b2153b628e6fba27c1a436d">BQ2429X_REG01</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a500c49c39b2153b628e6fba27c1a436d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power-On Configuration. <br /></td></tr>
+<tr class="separator:a500c49c39b2153b628e6fba27c1a436d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a623efc466e6132b5a3c1c05112cc4a37"><td class="memItemLeft" align="right" valign="top"><a id="a623efc466e6132b5a3c1c05112cc4a37"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a623efc466e6132b5a3c1c05112cc4a37">BQ2429X_REG02</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a623efc466e6132b5a3c1c05112cc4a37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge Current Control. <br /></td></tr>
+<tr class="separator:a623efc466e6132b5a3c1c05112cc4a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96d8f2cd1e22482e27cf31e8053965d"><td class="memItemLeft" align="right" valign="top"><a id="aa96d8f2cd1e22482e27cf31e8053965d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#aa96d8f2cd1e22482e27cf31e8053965d">BQ2429X_REG04</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:aa96d8f2cd1e22482e27cf31e8053965d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge Voltage Control. <br /></td></tr>
+<tr class="separator:aa96d8f2cd1e22482e27cf31e8053965d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06b9cc23f1986117cc4c8dbf72e98fe6"><td class="memItemLeft" align="right" valign="top"><a id="a06b9cc23f1986117cc4c8dbf72e98fe6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a06b9cc23f1986117cc4c8dbf72e98fe6">BQ2429X_REG05</a>&#160;&#160;&#160;(0x05)</td></tr>
+<tr class="memdesc:a06b9cc23f1986117cc4c8dbf72e98fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Charge Termination/Timer Control. <br /></td></tr>
+<tr class="separator:a06b9cc23f1986117cc4c8dbf72e98fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415b070d2c9fefe9c6ba6b451df89c08"><td class="memItemLeft" align="right" valign="top"><a id="a415b070d2c9fefe9c6ba6b451df89c08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a415b070d2c9fefe9c6ba6b451df89c08">BQ2429X_REG08</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:a415b070d2c9fefe9c6ba6b451df89c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Status. <br /></td></tr>
+<tr class="separator:a415b070d2c9fefe9c6ba6b451df89c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b858ae137f9ee895860c541c57f85d5"><td class="memItemLeft" align="right" valign="top"><a id="a3b858ae137f9ee895860c541c57f85d5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a3b858ae137f9ee895860c541c57f85d5">BQ2429X_REG09</a>&#160;&#160;&#160;(0x09)</td></tr>
+<tr class="memdesc:a3b858ae137f9ee895860c541c57f85d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">New Fault Register. <br /></td></tr>
+<tr class="separator:a3b858ae137f9ee895860c541c57f85d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a3785acbf06693873053127ad4fb46"><td class="memItemLeft" align="right" valign="top"><a id="a85a3785acbf06693873053127ad4fb46"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a85a3785acbf06693873053127ad4fb46">BQ2429X_REG0A</a>&#160;&#160;&#160;(0x0A)</td></tr>
+<tr class="memdesc:a85a3785acbf06693873053127ad4fb46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor / Part / Revision Status. <br /></td></tr>
+<tr class="separator:a85a3785acbf06693873053127ad4fb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80c3aa3abf381a30656f2ff58352a43c"><td class="memItemLeft" align="right" valign="top"><a id="a80c3aa3abf381a30656f2ff58352a43c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bq2429x__internal_8h.html#a80c3aa3abf381a30656f2ff58352a43c">BQ2429X_REG00_VINDPM_m</a>&#160;&#160;&#160;(0x78)</td></tr>
+<tr class="memdesc:a80c3aa3abf381a30656f2ff58352a43c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register values. <br /></td></tr>
+<tr class="separator:a80c3aa3abf381a30656f2ff58352a43c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfab77d694e951e97415a4b9a05ae049"><td class="memItemLeft" align="right" valign="top"><a id="adfab77d694e951e97415a4b9a05ae049"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG00_VINDPM_s</b>&#160;&#160;&#160;(3)</td></tr>
+<tr class="separator:adfab77d694e951e97415a4b9a05ae049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354b5670a90cd1caf9c727f862930db7"><td class="memItemLeft" align="right" valign="top"><a id="a354b5670a90cd1caf9c727f862930db7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG00_IINLIM_m</b>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="separator:a354b5670a90cd1caf9c727f862930db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f0dfc0378e2a55c95d3ebe060aa9c38"><td class="memItemLeft" align="right" valign="top"><a id="a2f0dfc0378e2a55c95d3ebe060aa9c38"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG00_IINLIM_s</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:a2f0dfc0378e2a55c95d3ebe060aa9c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1221ce4f9f622ba29abaa8decf4d7828"><td class="memItemLeft" align="right" valign="top"><a id="a1221ce4f9f622ba29abaa8decf4d7828"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_OTG_m</b>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:a1221ce4f9f622ba29abaa8decf4d7828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee60efccf4cb60bca83f2cbc9a189f0a"><td class="memItemLeft" align="right" valign="top"><a id="aee60efccf4cb60bca83f2cbc9a189f0a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_OTG_s</b>&#160;&#160;&#160;(5)</td></tr>
+<tr class="separator:aee60efccf4cb60bca83f2cbc9a189f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae85b72bc712be9f38e89a41ed7a3b950"><td class="memItemLeft" align="right" valign="top"><a id="ae85b72bc712be9f38e89a41ed7a3b950"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_OTG_ENABLE</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:ae85b72bc712be9f38e89a41ed7a3b950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30dce80b0612c2d402e31d30d8acc09"><td class="memItemLeft" align="right" valign="top"><a id="ab30dce80b0612c2d402e31d30d8acc09"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_OTG_DISABLE</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:ab30dce80b0612c2d402e31d30d8acc09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa024dcbf8f834bcd4806a344dc286bec"><td class="memItemLeft" align="right" valign="top"><a id="aa024dcbf8f834bcd4806a344dc286bec"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_CHG_m</b>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:aa024dcbf8f834bcd4806a344dc286bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a169a5acb223d5956852c7e99387626f1"><td class="memItemLeft" align="right" valign="top"><a id="a169a5acb223d5956852c7e99387626f1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_CHG_s</b>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a169a5acb223d5956852c7e99387626f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42fbf226c87f5b997edaedbc54010ec5"><td class="memItemLeft" align="right" valign="top"><a id="a42fbf226c87f5b997edaedbc54010ec5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_CHG_ENABLE</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:a42fbf226c87f5b997edaedbc54010ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc52e62bb8bf1021cd05c00c3cecb43a"><td class="memItemLeft" align="right" valign="top"><a id="abc52e62bb8bf1021cd05c00c3cecb43a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG01_CHG_DISABLE</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:abc52e62bb8bf1021cd05c00c3cecb43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd50ab995c367dcec3494835a3509b6"><td class="memItemLeft" align="right" valign="top"><a id="a5bd50ab995c367dcec3494835a3509b6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG02_ICHG_m</b>&#160;&#160;&#160;(0xFC)</td></tr>
+<tr class="separator:a5bd50ab995c367dcec3494835a3509b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416719575c241a6e6c1051318badef28"><td class="memItemLeft" align="right" valign="top"><a id="a416719575c241a6e6c1051318badef28"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG02_ICHG_s</b>&#160;&#160;&#160;(2)</td></tr>
+<tr class="separator:a416719575c241a6e6c1051318badef28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88afbe751f46c44a316e6a4980e28499"><td class="memItemLeft" align="right" valign="top"><a id="a88afbe751f46c44a316e6a4980e28499"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG04_VREG_m</b>&#160;&#160;&#160;(0xFC)</td></tr>
+<tr class="separator:a88afbe751f46c44a316e6a4980e28499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591452b78a4f44455e4d52cef4ab6182"><td class="memItemLeft" align="right" valign="top"><a id="a591452b78a4f44455e4d52cef4ab6182"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG04_VREG_s</b>&#160;&#160;&#160;(2)</td></tr>
+<tr class="separator:a591452b78a4f44455e4d52cef4ab6182"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2aa343b1fe85e408a9bd5b7fbe9a222b"><td class="memItemLeft" align="right" valign="top"><a id="a2aa343b1fe85e408a9bd5b7fbe9a222b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG05_WD_m</b>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="separator:a2aa343b1fe85e408a9bd5b7fbe9a222b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7df61c87d7d385255b68e940ff80569b"><td class="memItemLeft" align="right" valign="top"><a id="a7df61c87d7d385255b68e940ff80569b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG05_WD_s</b>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a7df61c87d7d385255b68e940ff80569b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab461633ac2e6c7ff2b936591d3fbfe1d"><td class="memItemLeft" align="right" valign="top"><a id="ab461633ac2e6c7ff2b936591d3fbfe1d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG05_WD_DISABLE</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:ab461633ac2e6c7ff2b936591d3fbfe1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c822645d36a14edc72d2327a417b381"><td class="memItemLeft" align="right" valign="top"><a id="a6c822645d36a14edc72d2327a417b381"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_VBUS_STATUS_m</b>&#160;&#160;&#160;(0xC0)</td></tr>
+<tr class="separator:a6c822645d36a14edc72d2327a417b381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e94a70dc1e883a5008f9442c1efbc8a"><td class="memItemLeft" align="right" valign="top"><a id="a5e94a70dc1e883a5008f9442c1efbc8a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_VBUS_STATUS_s</b>&#160;&#160;&#160;(6)</td></tr>
+<tr class="separator:a5e94a70dc1e883a5008f9442c1efbc8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86967497b223ccc7e2c9594167ef736"><td class="memItemLeft" align="right" valign="top"><a id="af86967497b223ccc7e2c9594167ef736"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_CHG_STAT_m</b>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="separator:af86967497b223ccc7e2c9594167ef736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a615ca3e293a844f64b3ae4ec6656d750"><td class="memItemLeft" align="right" valign="top"><a id="a615ca3e293a844f64b3ae4ec6656d750"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_CHG_STAT_s</b>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a615ca3e293a844f64b3ae4ec6656d750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5145591678639c0a68bc6ce1e6f7c782"><td class="memItemLeft" align="right" valign="top"><a id="a5145591678639c0a68bc6ce1e6f7c782"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_DPM_STAT_m</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:a5145591678639c0a68bc6ce1e6f7c782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7fc4a460e7db0e3ddd0c22e04ec4aa6"><td class="memItemLeft" align="right" valign="top"><a id="ab7fc4a460e7db0e3ddd0c22e04ec4aa6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_DPM_STAT_s</b>&#160;&#160;&#160;(3)</td></tr>
+<tr class="separator:ab7fc4a460e7db0e3ddd0c22e04ec4aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcd72cbb9ef2ab17fc65ca8a3f69eb1"><td class="memItemLeft" align="right" valign="top"><a id="acdcd72cbb9ef2ab17fc65ca8a3f69eb1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_PG_STAT_m</b>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="separator:acdcd72cbb9ef2ab17fc65ca8a3f69eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade19fde319fe389b9f525990276587c4"><td class="memItemLeft" align="right" valign="top"><a id="ade19fde319fe389b9f525990276587c4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_PG_STAT_s</b>&#160;&#160;&#160;(2)</td></tr>
+<tr class="separator:ade19fde319fe389b9f525990276587c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f161bb4f8259c9d38f0d685b566c954"><td class="memItemLeft" align="right" valign="top"><a id="a2f161bb4f8259c9d38f0d685b566c954"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_THERM_STAT_m</b>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:a2f161bb4f8259c9d38f0d685b566c954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac8b70113dcbbbc93c6972ca11603531"><td class="memItemLeft" align="right" valign="top"><a id="aac8b70113dcbbbc93c6972ca11603531"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_THERM_STAT_s</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:aac8b70113dcbbbc93c6972ca11603531"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af144d1aa6df2bd20664d67385ed45c4b"><td class="memItemLeft" align="right" valign="top"><a id="af144d1aa6df2bd20664d67385ed45c4b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_VSYS_STAT_m</b>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:af144d1aa6df2bd20664d67385ed45c4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a810c5ca9f0970505327c85b023450e35"><td class="memItemLeft" align="right" valign="top"><a id="a810c5ca9f0970505327c85b023450e35"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG08_VSYS_STAT_s</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:a810c5ca9f0970505327c85b023450e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ead99d5783a85cd395d3e06f0a77c6"><td class="memItemLeft" align="right" valign="top"><a id="ac7ead99d5783a85cd395d3e06f0a77c6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_WD_FAULT_m</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:ac7ead99d5783a85cd395d3e06f0a77c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebcf14f9ef897b4994285aecf02b4e21"><td class="memItemLeft" align="right" valign="top"><a id="aebcf14f9ef897b4994285aecf02b4e21"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_WD_FAULT_s</b>&#160;&#160;&#160;(7)</td></tr>
+<tr class="separator:aebcf14f9ef897b4994285aecf02b4e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17d26b840963767cbe87788bd4845eff"><td class="memItemLeft" align="right" valign="top"><a id="a17d26b840963767cbe87788bd4845eff"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_OTG_FAULT_m</b>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="separator:a17d26b840963767cbe87788bd4845eff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d96d5f7016febb9eb2adefe70f7860e"><td class="memItemLeft" align="right" valign="top"><a id="a8d96d5f7016febb9eb2adefe70f7860e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_OTG_FAULT_s</b>&#160;&#160;&#160;(6)</td></tr>
+<tr class="separator:a8d96d5f7016febb9eb2adefe70f7860e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fb5037edf19c49d38ed4a73f3d0fec9"><td class="memItemLeft" align="right" valign="top"><a id="a8fb5037edf19c49d38ed4a73f3d0fec9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_CHRG_FAULT_m</b>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="separator:a8fb5037edf19c49d38ed4a73f3d0fec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb7098147bcc4399006a01b93480e046"><td class="memItemLeft" align="right" valign="top"><a id="acb7098147bcc4399006a01b93480e046"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_CHRG_FAULT_s</b>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:acb7098147bcc4399006a01b93480e046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c74d47f3aff37c5cdae3f5a9a6f5c9"><td class="memItemLeft" align="right" valign="top"><a id="a89c74d47f3aff37c5cdae3f5a9a6f5c9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_BAT_FAULT_m</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:a89c74d47f3aff37c5cdae3f5a9a6f5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef11d47cb642cfa939972e3d1af00b17"><td class="memItemLeft" align="right" valign="top"><a id="aef11d47cb642cfa939972e3d1af00b17"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_BAT_FAULT_s</b>&#160;&#160;&#160;(3)</td></tr>
+<tr class="separator:aef11d47cb642cfa939972e3d1af00b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f10a6f2f5096cfb3f9c855b07c6e5f"><td class="memItemLeft" align="right" valign="top"><a id="a31f10a6f2f5096cfb3f9c855b07c6e5f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_NTC_FAULT_1_m</b>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="separator:a31f10a6f2f5096cfb3f9c855b07c6e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ed0eb9eb67d0c0aa7676478ea34a08"><td class="memItemLeft" align="right" valign="top"><a id="af1ed0eb9eb67d0c0aa7676478ea34a08"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_NTC_FAULT_1_s</b>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:af1ed0eb9eb67d0c0aa7676478ea34a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b8d5bd3ec7e36dcf88b35d8bdd2d91"><td class="memItemLeft" align="right" valign="top"><a id="a95b8d5bd3ec7e36dcf88b35d8bdd2d91"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_NTC_FAULT_0_m</b>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:a95b8d5bd3ec7e36dcf88b35d8bdd2d91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a82707048e8a43f4510ad695a1bf1b2"><td class="memItemLeft" align="right" valign="top"><a id="a5a82707048e8a43f4510ad695a1bf1b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>BQ2429X_REG09_NTC_FAULT_0_s</b>&#160;&#160;&#160;(0)</td></tr>
+<tr class="separator:a5a82707048e8a43f4510ad695a1bf1b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a7dcaa6c69b044f112701abf5210d32e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dcaa6c69b044f112701abf5210d32e8">&#9670;&nbsp;</a></span>BQ2429X_REG00</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BQ2429X_REG00&#160;&#160;&#160;(0x00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers. </p>
+<p>Input Source Control </p>
+
+<p class="definition">Definition at line <a class="el" href="bq2429x__internal_8h_source.html#l00036">36</a> of file <a class="el" href="bq2429x__internal_8h_source.html">bq2429x_internal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

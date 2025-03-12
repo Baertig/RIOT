@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/ds3231.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('ds3231_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ds3231.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__ds3231.html">DS3231 Real Time Clock</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interface definition for the Maxim DS3231 RTC.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interface definition for the Maxim DS3231 RTC. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span style="display: none;">.nosp@m.</span>.pet<span style="display: none;">.nosp@m.</span>ersen<span style="display: none;">.nosp@m.</span>@fu-<span style="display: none;">.nosp@m.</span>berli<span style="display: none;">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="ds3231_8h_source.html">ds3231.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;time.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="errno_8h_source.html">errno.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="i2c_8h_source.html">periph/i2c.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ds3231.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ds3231_8h__incl.svg" width="751" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="ds3231_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structds3231__t.html">ds3231_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for DS3231 devices.  <a href="structds3231__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structds3231__params__t.html">ds3231_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of configuration parameters for DS3231 devices.  <a href="structds3231__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga180301d20436a62982bfba72292ca191"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga180301d20436a62982bfba72292ca191">DS3231_I2C_ADDR</a>&#160;&#160;&#160;0x68</td></tr>
+<tr class="memdesc:ga180301d20436a62982bfba72292ca191"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default address of DS3231 sensors. <br /></td></tr>
+<tr class="separator:ga180301d20436a62982bfba72292ca191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga9d62e2a4d6edc3a479d15fdf213decd0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="group__drivers__ds3231.html#gga9d62e2a4d6edc3a479d15fdf213decd0adfb2c0e60fd9c163e0ccbb302e865305">DS3231_OPT_BAT_ENABLE</a> = 0x01, 
+<a class="el" href="group__drivers__ds3231.html#gga9d62e2a4d6edc3a479d15fdf213decd0a4e132ae746cb81bb8a64be092e6062ae">DS3221_OPT_32KHZ_ENABLE</a> = 0x02, 
+<a class="el" href="group__drivers__ds3231.html#gga9d62e2a4d6edc3a479d15fdf213decd0a2d29f194a26147467282d45530cffc78">DS3231_OPT_INTER_ENABLE</a> = 0x04
+ }</td></tr>
+<tr class="memdesc:ga9d62e2a4d6edc3a479d15fdf213decd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration options.  <a href="group__drivers__ds3231.html#ga9d62e2a4d6edc3a479d15fdf213decd0">More...</a><br /></td></tr>
+<tr class="separator:ga9d62e2a4d6edc3a479d15fdf213decd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga850bdc21e0c9ecd7430e7d29bb5c857b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga850bdc21e0c9ecd7430e7d29bb5c857b">ds3231_alm_1_mode_t</a> { <br />
+&#160;&#160;<a class="el" href="group__drivers__ds3231.html#gga850bdc21e0c9ecd7430e7d29bb5c857ba4115148c463fdc77d74908fb789ad18e">DS3231_AL1_TRIG_PER_S</a> = 0x0F, 
+<a class="el" href="group__drivers__ds3231.html#gga850bdc21e0c9ecd7430e7d29bb5c857ba67b1fab492e6980b6887ce5bfde310fb">DS3231_AL1_TRIG_S</a> = 0x0E, 
+<a class="el" href="group__drivers__ds3231.html#gga850bdc21e0c9ecd7430e7d29bb5c857bae2465adae4e63f0fd786ad920dca23e7">DS3231_AL1_TRIG_M_S</a> = 0x0C, 
+<a class="el" href="group__drivers__ds3231.html#gga850bdc21e0c9ecd7430e7d29bb5c857bad1013cbf1ab3ee6962517f75c6922e90">DS3231_AL1_TRIG_H_M_S</a> = 0x08, 
+<br />
+&#160;&#160;<a class="el" href="group__drivers__ds3231.html#gga850bdc21e0c9ecd7430e7d29bb5c857ba9443c89d6a82d94ed11cb9f44e388619">DS3231_AL1_TRIG_D_H_M_S</a> = 0x00
+<br />
+ }</td></tr>
+<tr class="memdesc:ga850bdc21e0c9ecd7430e7d29bb5c857b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alarm trigger type of alarm 1 for DS3231 devices.  <a href="group__drivers__ds3231.html#ga850bdc21e0c9ecd7430e7d29bb5c857b">More...</a><br /></td></tr>
+<tr class="separator:ga850bdc21e0c9ecd7430e7d29bb5c857b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac56f86335bd86b0d26b626384a3e5d7d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gac56f86335bd86b0d26b626384a3e5d7d">ds3231_alm_2_mode_t</a> { <a class="el" href="group__drivers__ds3231.html#ggac56f86335bd86b0d26b626384a3e5d7dad42c8155bd2f9f161824bcb34ee169fa">DS3231_AL2_TRIG_PER_M</a> = 0x07, 
+<a class="el" href="group__drivers__ds3231.html#ggac56f86335bd86b0d26b626384a3e5d7da814f15f71a95bf70ce48129c958c7e4c">DS3231_AL2_TRIG_M</a> = 0x06, 
+<a class="el" href="group__drivers__ds3231.html#ggac56f86335bd86b0d26b626384a3e5d7da7b5d2990ebd45468fff6d3f356ca2271">DS3231_AL2_TRIG_H_M</a> = 0x04, 
+<a class="el" href="group__drivers__ds3231.html#ggac56f86335bd86b0d26b626384a3e5d7da7ec4a0b7ca7d8bbc534b0d8f4ee93df2">DS3231_AL2_TRIG_D_H_M_S</a> = 0x00
+ }</td></tr>
+<tr class="memdesc:gac56f86335bd86b0d26b626384a3e5d7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alarm trigger type of alarm 2 for DS3231 devices.  <a href="group__drivers__ds3231.html#gac56f86335bd86b0d26b626384a3e5d7d">More...</a><br /></td></tr>
+<tr class="separator:gac56f86335bd86b0d26b626384a3e5d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa6095666756932bccf316044e04d64fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gaa6095666756932bccf316044e04d64fd">ds3231_init</a> (<a class="el" href="structds3231__t.html">ds3231_t</a> *dev, const <a class="el" href="structds3231__params__t.html">ds3231_params_t</a> *params)</td></tr>
+<tr class="memdesc:gaa6095666756932bccf316044e04d64fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the given DS3231 device.  <a href="group__drivers__ds3231.html#gaa6095666756932bccf316044e04d64fd">More...</a><br /></td></tr>
+<tr class="separator:gaa6095666756932bccf316044e04d64fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d34ae7f1a5995efcc4db971b968b019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga9d34ae7f1a5995efcc4db971b968b019">ds3231_get_time</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, struct tm *time)</td></tr>
+<tr class="memdesc:ga9d34ae7f1a5995efcc4db971b968b019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get date and time from the device.  <a href="group__drivers__ds3231.html#ga9d34ae7f1a5995efcc4db971b968b019">More...</a><br /></td></tr>
+<tr class="separator:ga9d34ae7f1a5995efcc4db971b968b019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga469cd84e0376553996157a6e804a93ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga469cd84e0376553996157a6e804a93ba">ds3231_set_time</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, const struct tm *time)</td></tr>
+<tr class="memdesc:ga469cd84e0376553996157a6e804a93ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set date and time of the device.  <a href="group__drivers__ds3231.html#ga469cd84e0376553996157a6e804a93ba">More...</a><br /></td></tr>
+<tr class="separator:ga469cd84e0376553996157a6e804a93ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab26528577b6717c00d07347d281a0137"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gab26528577b6717c00d07347d281a0137">ds3231_set_alarm_1</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, struct tm *time, <a class="el" href="group__drivers__ds3231.html#ga850bdc21e0c9ecd7430e7d29bb5c857b">ds3231_alm_1_mode_t</a> trigger)</td></tr>
+<tr class="memdesc:gab26528577b6717c00d07347d281a0137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set alarm 1 of the device.  <a href="group__drivers__ds3231.html#gab26528577b6717c00d07347d281a0137">More...</a><br /></td></tr>
+<tr class="separator:gab26528577b6717c00d07347d281a0137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72a11fa913cf4c9a92952fabf04c6113"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga72a11fa913cf4c9a92952fabf04c6113">ds3231_set_alarm_2</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, struct tm *time, <a class="el" href="group__drivers__ds3231.html#gac56f86335bd86b0d26b626384a3e5d7d">ds3231_alm_2_mode_t</a> trigger)</td></tr>
+<tr class="memdesc:ga72a11fa913cf4c9a92952fabf04c6113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set alarm 2 of the device.  <a href="group__drivers__ds3231.html#ga72a11fa913cf4c9a92952fabf04c6113">More...</a><br /></td></tr>
+<tr class="separator:ga72a11fa913cf4c9a92952fabf04c6113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf458eceb7088265853211d7ba260e0ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gaf458eceb7088265853211d7ba260e0ac">ds3231_clear_alarm_1_flag</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev)</td></tr>
+<tr class="memdesc:gaf458eceb7088265853211d7ba260e0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear alarm 1 flag (A1F)  <a href="group__drivers__ds3231.html#gaf458eceb7088265853211d7ba260e0ac">More...</a><br /></td></tr>
+<tr class="separator:gaf458eceb7088265853211d7ba260e0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19ec071ca0693f7386d95cd484cb9d7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga19ec071ca0693f7386d95cd484cb9d7f">ds3231_clear_alarm_2_flag</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev)</td></tr>
+<tr class="memdesc:ga19ec071ca0693f7386d95cd484cb9d7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear alarm 2 flag (A2F)  <a href="group__drivers__ds3231.html#ga19ec071ca0693f7386d95cd484cb9d7f">More...</a><br /></td></tr>
+<tr class="separator:ga19ec071ca0693f7386d95cd484cb9d7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad970e29e9a258b5d763d14933a3ea2ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gad970e29e9a258b5d763d14933a3ea2ea">ds3231_get_alarm_1_flag</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, bool *flag)</td></tr>
+<tr class="memdesc:gad970e29e9a258b5d763d14933a3ea2ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of alarm 1 flag (A1F)  <a href="group__drivers__ds3231.html#gad970e29e9a258b5d763d14933a3ea2ea">More...</a><br /></td></tr>
+<tr class="separator:gad970e29e9a258b5d763d14933a3ea2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa458972a5476bba2d7872536a65df7bb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gaa458972a5476bba2d7872536a65df7bb">ds3231_get_alarm_2_flag</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, bool *flag)</td></tr>
+<tr class="memdesc:gaa458972a5476bba2d7872536a65df7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of alarm 2 flag (A2F)  <a href="group__drivers__ds3231.html#gaa458972a5476bba2d7872536a65df7bb">More...</a><br /></td></tr>
+<tr class="separator:gaa458972a5476bba2d7872536a65df7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga647bfd256c3d96a590e3daa1f6df9a0b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga647bfd256c3d96a590e3daa1f6df9a0b">ds3231_toggle_alarm_1</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, bool enable)</td></tr>
+<tr class="memdesc:ga647bfd256c3d96a590e3daa1f6df9a0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable alarm 1 interrupt on the device.  <a href="group__drivers__ds3231.html#ga647bfd256c3d96a590e3daa1f6df9a0b">More...</a><br /></td></tr>
+<tr class="separator:ga647bfd256c3d96a590e3daa1f6df9a0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35afe62305300a2d67607ba2eccc1843"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga35afe62305300a2d67607ba2eccc1843">ds3231_toggle_alarm_2</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, bool enable)</td></tr>
+<tr class="memdesc:ga35afe62305300a2d67607ba2eccc1843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable alarm 2 interrupt on the device.  <a href="group__drivers__ds3231.html#ga35afe62305300a2d67607ba2eccc1843">More...</a><br /></td></tr>
+<tr class="separator:ga35afe62305300a2d67607ba2eccc1843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fb4ef10a9301aaa3a2108c0ee52b1dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga5fb4ef10a9301aaa3a2108c0ee52b1dc">ds3231_get_aging_offset</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, int8_t *offset)</td></tr>
+<tr class="memdesc:ga5fb4ef10a9301aaa3a2108c0ee52b1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the configured aging offset (see datasheet for more information)  <a href="group__drivers__ds3231.html#ga5fb4ef10a9301aaa3a2108c0ee52b1dc">More...</a><br /></td></tr>
+<tr class="separator:ga5fb4ef10a9301aaa3a2108c0ee52b1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae19b58d0ee9fe5186716bdbcf6327a2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gae19b58d0ee9fe5186716bdbcf6327a2f">ds3231_set_aging_offset</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, int8_t offset)</td></tr>
+<tr class="memdesc:gae19b58d0ee9fe5186716bdbcf6327a2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aging offset (see datasheet for more information)  <a href="group__drivers__ds3231.html#gae19b58d0ee9fe5186716bdbcf6327a2f">More...</a><br /></td></tr>
+<tr class="separator:gae19b58d0ee9fe5186716bdbcf6327a2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4cbe50540c88bc878ee99e8d7bfba459"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga4cbe50540c88bc878ee99e8d7bfba459">ds3231_get_temp</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev, int16_t *temp)</td></tr>
+<tr class="memdesc:ga4cbe50540c88bc878ee99e8d7bfba459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get temperature from the device.  <a href="group__drivers__ds3231.html#ga4cbe50540c88bc878ee99e8d7bfba459">More...</a><br /></td></tr>
+<tr class="separator:ga4cbe50540c88bc878ee99e8d7bfba459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga516c0c885ea27118a29137428f4e73b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga516c0c885ea27118a29137428f4e73b0">ds3231_enable_bat</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev)</td></tr>
+<tr class="memdesc:ga516c0c885ea27118a29137428f4e73b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the backup battery.  <a href="group__drivers__ds3231.html#ga516c0c885ea27118a29137428f4e73b0">More...</a><br /></td></tr>
+<tr class="separator:ga516c0c885ea27118a29137428f4e73b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd8ace8906f00de9f1377f96492f5f71"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#gafd8ace8906f00de9f1377f96492f5f71">ds3231_disable_bat</a> (const <a class="el" href="structds3231__t.html">ds3231_t</a> *dev)</td></tr>
+<tr class="memdesc:gafd8ace8906f00de9f1377f96492f5f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the backup battery.  <a href="group__drivers__ds3231.html#gafd8ace8906f00de9f1377f96492f5f71">More...</a><br /></td></tr>
+<tr class="separator:gafd8ace8906f00de9f1377f96492f5f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga563cdfeea3a55a3c169909190b4ca849"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html#ga563cdfeea3a55a3c169909190b4ca849">DS3231_FLAG_ALARM_1</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:ga563cdfeea3a55a3c169909190b4ca849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Alarm flags returned by the ds3231_await_alarm function. <br /></td></tr>
+<tr class="separator:ga563cdfeea3a55a3c169909190b4ca849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a4850a15108142514a4fad21c4adc2a"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>DS3231_FLAG_ALARM_2</b>&#160;&#160;&#160;0x02</td></tr>
+<tr class="separator:ga7a4850a15108142514a4fad21c4adc2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

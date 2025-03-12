@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/key_agreement/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('key__agreement_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Key agreement algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Key agreement algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="key__agreement_2algorithm_8h__incl.svg" width="239" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="key__agreement_2algorithm_8h__dep__incl.svg" width="2546" height="707"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="key__agreement_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a808e397a4891c612df4a5b20eebc2fac"><td class="memItemLeft" align="right" valign="top"><a id="a808e397a4891c612df4a5b20eebc2fac"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a808e397a4891c612df4a5b20eebc2fac">PSA_ALG_CATEGORY_KEY_AGREEMENT</a>&#160;&#160;&#160;((psa_algorithm_t)0x09000000)</td></tr>
+<tr class="memdesc:a808e397a4891c612df4a5b20eebc2fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for key agreement algorithms. <br /></td></tr>
+<tr class="separator:a808e397a4891c612df4a5b20eebc2fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59753742cb06553bd22751bbef472b6f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a59753742cb06553bd22751bbef472b6f">PSA_ALG_IS_KEY_AGREEMENT</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="key__agreement_2algorithm_8h.html#a808e397a4891c612df4a5b20eebc2fac">PSA_ALG_CATEGORY_KEY_AGREEMENT</a>)</td></tr>
+<tr class="memdesc:a59753742cb06553bd22751bbef472b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a key agreement algorithm.  <a href="#a59753742cb06553bd22751bbef472b6f">More...</a><br /></td></tr>
+<tr class="separator:a59753742cb06553bd22751bbef472b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af837c55ba698b488b6e63300e3470abf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#af837c55ba698b488b6e63300e3470abf">PSA_ALG_KEY_AGREEMENT_GET_BASE</a>(alg)&#160;&#160;&#160;((psa_algorithm_t)((alg) &amp; 0xffff0000))</td></tr>
+<tr class="memdesc:af837c55ba698b488b6e63300e3470abf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the raw key agreement algorithm from a full key agreement algorithm.  <a href="#af837c55ba698b488b6e63300e3470abf">More...</a><br /></td></tr>
+<tr class="separator:af837c55ba698b488b6e63300e3470abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56c1189add62b59e8e6a28a809b57037"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a56c1189add62b59e8e6a28a809b57037">PSA_ALG_KEY_AGREEMENT_GET_KDF</a>(alg)&#160;&#160;&#160;((psa_algorithm_t)((alg) &amp; 0xfe00ffff))</td></tr>
+<tr class="memdesc:a56c1189add62b59e8e6a28a809b57037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the key derivation algorithm used in a full key agreement algorithm.  <a href="#a56c1189add62b59e8e6a28a809b57037">More...</a><br /></td></tr>
+<tr class="separator:a56c1189add62b59e8e6a28a809b57037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa40ab362ce141ce541d69b2eb1f41438"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#aa40ab362ce141ce541d69b2eb1f41438">PSA_ALG_IS_RAW_KEY_AGREEMENT</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7f00ffff) == 0x09000000)</td></tr>
+<tr class="memdesc:aa40ab362ce141ce541d69b2eb1f41438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a raw key agreement algorithm.  <a href="#aa40ab362ce141ce541d69b2eb1f41438">More...</a><br /></td></tr>
+<tr class="separator:aa40ab362ce141ce541d69b2eb1f41438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3cf76164cd9375af4fb8a291078a19e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#aa3cf76164cd9375af4fb8a291078a19e">PSA_ALG_IS_FFDH</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7fff0000) == 0x09010000)</td></tr>
+<tr class="memdesc:aa3cf76164cd9375af4fb8a291078a19e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a finite field Diffie-Hellman algorithm.  <a href="#aa3cf76164cd9375af4fb8a291078a19e">More...</a><br /></td></tr>
+<tr class="separator:aa3cf76164cd9375af4fb8a291078a19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9b6533d2a6bea7bac7ae01facb820d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a9d9b6533d2a6bea7bac7ae01facb820d">PSA_ALG_IS_ECDH</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7fff0000) == 0x09020000)</td></tr>
+<tr class="memdesc:a9d9b6533d2a6bea7bac7ae01facb820d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an elliptic curve Diffie-Hellman algorithm.  <a href="#a9d9b6533d2a6bea7bac7ae01facb820d">More...</a><br /></td></tr>
+<tr class="separator:a9d9b6533d2a6bea7bac7ae01facb820d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebbb6f93a05b6511e6f108ffd2d1eb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a0ebbb6f93a05b6511e6f108ffd2d1eb4">PSA_ALG_FFDH</a>&#160;&#160;&#160;((psa_algorithm_t)0x09010000)</td></tr>
+<tr class="memdesc:a0ebbb6f93a05b6511e6f108ffd2d1eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The finite-field Diffie-Hellman (DH) key agreement algorithm.  <a href="#a0ebbb6f93a05b6511e6f108ffd2d1eb4">More...</a><br /></td></tr>
+<tr class="separator:a0ebbb6f93a05b6511e6f108ffd2d1eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2dbcf71b63785e7dd7b54a100edee43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#ab2dbcf71b63785e7dd7b54a100edee43">PSA_ALG_ECDH</a>&#160;&#160;&#160;((psa_algorithm_t)0x09020000)</td></tr>
+<tr class="memdesc:ab2dbcf71b63785e7dd7b54a100edee43"><td class="mdescLeft">&#160;</td><td class="mdescRight">The elliptic curve Diffie-Hellman (ECDH) key agreement algorithm.  <a href="#ab2dbcf71b63785e7dd7b54a100edee43">More...</a><br /></td></tr>
+<tr class="separator:ab2dbcf71b63785e7dd7b54a100edee43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78bb81cffb87a635c247725eeb2a2682"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT</a>(ka_alg,  kdf_alg)&#160;&#160;&#160;((ka_alg) | (kdf_alg))</td></tr>
+<tr class="memdesc:a78bb81cffb87a635c247725eeb2a2682"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro to build a combined algorithm that chains a key agreement with a key derivation.  <a href="#a78bb81cffb87a635c247725eeb2a2682">More...</a><br /></td></tr>
+<tr class="separator:a78bb81cffb87a635c247725eeb2a2682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ab2dbcf71b63785e7dd7b54a100edee43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2dbcf71b63785e7dd7b54a100edee43">&#9670;&nbsp;</a></span>PSA_ALG_ECDH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ECDH&#160;&#160;&#160;((psa_algorithm_t)0x09020000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The elliptic curve Diffie-Hellman (ECDH) key agreement algorithm. </p>
+<p>This algorithm can be used directly in a call to <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, or combined with a key derivation operation using <a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT()</a> for use with <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>.</p>
+<p>When used as a key’s permitted algorithm policy, the following uses are permitted:</p><ul>
+<li>In a call to <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, with algorithm <a class="el" href="key__agreement_2algorithm_8h.html#ab2dbcf71b63785e7dd7b54a100edee43">PSA_ALG_ECDH</a>.</li>
+<li>In a call to <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>, with any combined key agreement and key derivation algorithm constructed with <a class="el" href="key__agreement_2algorithm_8h.html#ab2dbcf71b63785e7dd7b54a100edee43">PSA_ALG_ECDH</a>.</li>
+</ul>
+<p>When used as part of a multi-part key derivation operation, this implements a Diffie-Hellman key agreement scheme using a single elliptic curve key-pair for each participant. This includes the Ephemeral unified model, the Static unified model, and the One-pass Diffie-Hellman schemes. The input step <a class="el" href="crypto__values_8h.html#a0ddfbe764baba995c402b1b0ef59392e">PSA_KEY_DERIVATION_INPUT_SECRET</a> is used when providing the secret and peer keys to the operation.</p>
+<p>The shared secret produced by key agreement is the x-coordinate of the shared secret point. It is always <code>ceiling(m / 8)</code> bytes long where <code>m</code> is the bit size associated with the curve, i.e. the bit size of the order of the curve’s coordinate field. When <code>m</code> is not a multiple of 8, the byte containing the most significant bit of the shared secret is padded with zero bits. The byte order is either little-endian or big-endian depending on the curve type.</p>
+<ul>
+<li>For Montgomery curves (curve family <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a1f624c5cdaf25b21287af33024e1aff8">PSA_ECC_FAMILY_MONTGOMERY</a>), the shared secret is the x-coordinate of <code>Z = d_A Q_B = d_B Q_A</code> in little-endian byte order.<ul>
+<li>For Curve25519, this is the X25519 function defined in Curve25519: new Diffie-Hellman speed records <a href="https://www.iacr.org/archive/pkc2006/39580209/39580209.pdf">Curve25519</a>. The bit size <code>m</code> is 255.</li>
+<li>For Curve448, this is the X448 function defined in Ed448-Goldilocks, a new elliptic curve <a href="https://eprint.iacr.org/2015/625.pdf">Curve448</a>. The bit size <code>m</code> is 448.</li>
+</ul>
+</li>
+<li>For Weierstrass curves (curve families <code>PSA_ECC_FAMILY_SECP_XX</code>, <code>PSA_ECC_FAMILY_SECT_XX</code>, <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a> and <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a>) the shared secret is the x-coordinate of <code>Z = h d_A Q_B = h d_B Q_A</code> in big-endian byte order. This is the Elliptic Curve Cryptography Cofactor Diffie-Hellman primitive defined by SEC 1: Elliptic Curve Cryptography <a href="https://www.secg.org/sec1-v2.pdf">SEC1</a> §3.3.2 as, and also as ECC CDH by NIST Special Publication 800-56A: Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography <a href="https://doi.org/10.6028/NIST.SP.800-56Ar3">SP800-56A</a> §5.7.1.2.<ul>
+<li>Over prime fields (curve families <code>PSA_ECC_FAMILY_SECP_XX</code>, <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a> and <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a>), the bit size is <code>m = ceiling(log_2(p))</code> for the field <code>F_p</code>.</li>
+<li>Over binary fields (curve families <code>PSA_ECC_FAMILY_SECT_XX</code>), the bit size is <code>m</code> for the field <code>F_{2^m}</code>.</li>
+</ul>
+</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>The cofactor Diffie-Hellman primitive is equivalent to the standard elliptic curve Diffie-Hellman calculation <code>Z = d_A Q_B = d_B Q_A</code> (<a href="https://www.secg.org/sec1-v2.pdf">SEC1</a> §3.3.1) for curves where the cofactor <code>h</code> is 1. This is true for all curves in the <code>PSA_ECC_FAMILY_SECP_XX</code>, <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a>, and <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a> families.</dd></dl>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a0b6f5d4d5037c54ffa850d8059c32df0">PSA_KEY_TYPE_ECC_KEY_PAIR</a>(<code>family</code>)</li>
+</ul>
+<p>where <code>family</code> is a Weierstrass or Montgomery Elliptic curve family. That is, one of the following values:</p><ul>
+<li><code>PSA_ECC_FAMILY_SECT_XX</code> </li>
+<li><code>PSA_ECC_FAMILY_SECP_XX</code> </li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aaf7310c0eaed708f3199796d95b70633">PSA_ECC_FAMILY_FRP</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ac1643f1baf38b30d07c20a6eac697f15">PSA_ECC_FAMILY_BRAINPOOL_P_R1</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a1f624c5cdaf25b21287af33024e1aff8">PSA_ECC_FAMILY_MONTGOMERY</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00223">223</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ebbb6f93a05b6511e6f108ffd2d1eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebbb6f93a05b6511e6f108ffd2d1eb4">&#9670;&nbsp;</a></span>PSA_ALG_FFDH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_FFDH&#160;&#160;&#160;((psa_algorithm_t)0x09010000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The finite-field Diffie-Hellman (DH) key agreement algorithm. </p>
+<p>This algorithm can be used directly in a call to <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, or combined with a key derivation operation using <a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT()</a> for use with <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>.</p>
+<p>When used as a key’s permitted algorithm policy, the following uses are permitted:</p><ul>
+<li>In a call to <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, with algorithm <a class="el" href="key__agreement_2algorithm_8h.html#a0ebbb6f93a05b6511e6f108ffd2d1eb4">PSA_ALG_FFDH</a>.</li>
+<li>In a call to <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>, with any combined key agreement and key derivation algorithm constructed with <a class="el" href="key__agreement_2algorithm_8h.html#a0ebbb6f93a05b6511e6f108ffd2d1eb4">PSA_ALG_FFDH</a>.</li>
+</ul>
+<p>When used as part of a multi-part key derivation operation, this implements a Diffie-Hellman key agreement scheme using a single Diffie-Hellman key-pair for each participant. This includes the <code>dhEphem</code>, <code>dhOneFlow</code>, and <code>dhStatic</code> schemes. The input step <a class="el" href="crypto__values_8h.html#a0ddfbe764baba995c402b1b0ef59392e">PSA_KEY_DERIVATION_INPUT_SECRET</a> is used when providing the secret and peer keys to the operation.</p>
+<p>The shared secret produced by this key agreement algorithm is <code>g^{ab}</code> in big-endian format. It is <code>ceiling(m / 8)</code> bytes long where <code>m</code> is the size of the prime <code>p</code> in bits.</p>
+<p>This key agreement scheme is defined by NIST Special Publication 800-56A: Recommendation for Pair-Wise Key-Establishment Schemes Using Discrete Logarithm Cryptography <a href="https://doi.org/10.6028/NIST.SP.800-56Ar3">SP800-56A</a> §5.7.1.1 under the name FFC DH.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ab4f857c4cd56f5fe65ded421e61bcc8c">PSA_KEY_TYPE_DH_KEY_PAIR()</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00154">154</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9d9b6533d2a6bea7bac7ae01facb820d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9b6533d2a6bea7bac7ae01facb820d">&#9670;&nbsp;</a></span>PSA_ALG_IS_ECDH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_ECDH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7fff0000) == 0x09020000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an elliptic curve Diffie-Hellman algorithm. </p>
+<p>This includes the raw elliptic curve Diffie-Hellman algorithm as well as elliptic curve Diffie-Hellman followed by any supporter key derivation algorithm.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an elliptic curve Diffie-Hellman algorithm 0 otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00121">121</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa3cf76164cd9375af4fb8a291078a19e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3cf76164cd9375af4fb8a291078a19e">&#9670;&nbsp;</a></span>PSA_ALG_IS_FFDH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_FFDH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7fff0000) == 0x09010000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a finite field Diffie-Hellman algorithm. </p>
+<p>This includes the raw finite field Diffie-Hellman algorithm as well as finite-field Diffie-Hellman followed by any supported key derivation algorithm.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a finite field Diffie-Hellman algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00107">107</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a59753742cb06553bd22751bbef472b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59753742cb06553bd22751bbef472b6f">&#9670;&nbsp;</a></span>PSA_ALG_IS_KEY_AGREEMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_KEY_AGREEMENT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="key__agreement_2algorithm_8h.html#a808e397a4891c612df4a5b20eebc2fac">PSA_ALG_CATEGORY_KEY_AGREEMENT</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a key agreement algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a key agreement algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00044">44</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa40ab362ce141ce541d69b2eb1f41438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa40ab362ce141ce541d69b2eb1f41438">&#9670;&nbsp;</a></span>PSA_ALG_IS_RAW_KEY_AGREEMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RAW_KEY_AGREEMENT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7f00ffff) == 0x09000000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a raw key agreement algorithm. </p>
+<p>A raw key agreement algorithm is one that does not specify a key derivation function. Usually, raw key agreement algorithms are constructed directly with a PSA_ALG_xxx macro while non-raw key agreement algorithms are constructed with <a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT()</a>.</p>
+<p>The raw key agreement algorithm can be extracted from a full key agreement algorithm identifier using <a class="el" href="key__agreement_2algorithm_8h.html#af837c55ba698b488b6e63300e3470abf">PSA_ALG_KEY_AGREEMENT_GET_BASE()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a raw key agreement algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00093">93</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a78bb81cffb87a635c247725eeb2a2682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bb81cffb87a635c247725eeb2a2682">&#9670;&nbsp;</a></span>PSA_ALG_KEY_AGREEMENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_KEY_AGREEMENT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ka_alg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">kdf_alg&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((ka_alg) | (kdf_alg))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Macro to build a combined algorithm that chains a key agreement with a key derivation. </p>
+<p>A combined key agreement algorithm is used with a multi-part key derivation operation, using a call to <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>.</p>
+<p>The component parts of a key agreement algorithm can be extracted using <a class="el" href="key__agreement_2algorithm_8h.html#af837c55ba698b488b6e63300e3470abf">PSA_ALG_KEY_AGREEMENT_GET_BASE()</a> and <a class="el" href="key__agreement_2algorithm_8h.html#a56c1189add62b59e8e6a28a809b57037">PSA_ALG_KEY_AGREEMENT_GET_KDF()</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> The resulting combined key agreement algorithm is compatible with the same key types as the raw key agreement algorithm used to construct it.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ka_alg</td><td>A key agreement algorithm: a value of type psa_algorithm_t such that <a class="el" href="key__agreement_2algorithm_8h.html#a59753742cb06553bd22751bbef472b6f">PSA_ALG_IS_KEY_AGREEMENT</a>(<code>ka_alg</code>) is true. </td></tr>
+    <tr><td class="paramname">kdf_alg</td><td>A key derivation algorithm: a value of type psa_algorithm_t such that <a class="el" href="key__derivation_2algorithm_8h.html#af8b90c648aa53dbd06c236695e300cd0">PSA_ALG_IS_KEY_DERIVATION</a>(<code>kdf_alg</code>) is true.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding key agreement and derivation algorithm. Unspecified if ka_alg is not a supported key agreement algorithm or kdf_alg is not a supported key derivation algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00247">247</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="af837c55ba698b488b6e63300e3470abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af837c55ba698b488b6e63300e3470abf">&#9670;&nbsp;</a></span>PSA_ALG_KEY_AGREEMENT_GET_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_KEY_AGREEMENT_GET_BASE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)((alg) &amp; 0xffff0000))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the raw key agreement algorithm from a full key agreement algorithm. </p>
+<p>See also <a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT()</a> and <a class="el" href="key__agreement_2algorithm_8h.html#a56c1189add62b59e8e6a28a809b57037">PSA_ALG_KEY_AGREEMENT_GET_KDF()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>A key agreement algorithm: a value of type psa_algorithm_t such that <a class="el" href="key__agreement_2algorithm_8h.html#a59753742cb06553bd22751bbef472b6f">PSA_ALG_IS_KEY_AGREEMENT</a>(<code>alg</code>) is true.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The underlying raw key agreement algorithm if <code>alg</code> is a key agreement algorithm. Unspecified if alg is not a key agreement algorithm or if it is not supported by the implementation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00059">59</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a56c1189add62b59e8e6a28a809b57037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c1189add62b59e8e6a28a809b57037">&#9670;&nbsp;</a></span>PSA_ALG_KEY_AGREEMENT_GET_KDF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_KEY_AGREEMENT_GET_KDF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)((alg) &amp; 0xfe00ffff))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the key derivation algorithm used in a full key agreement algorithm. </p>
+<p>See also <a class="el" href="key__agreement_2algorithm_8h.html#a78bb81cffb87a635c247725eeb2a2682">PSA_ALG_KEY_AGREEMENT()</a> and <a class="el" href="key__agreement_2algorithm_8h.html#af837c55ba698b488b6e63300e3470abf">PSA_ALG_KEY_AGREEMENT_GET_BASE()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>A key agreement algorithm: a value of type psa_algorithm_t such that <a class="el" href="key__agreement_2algorithm_8h.html#a59753742cb06553bd22751bbef472b6f">PSA_ALG_IS_KEY_AGREEMENT</a>(<code>alg</code>) is true.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The underlying key derivation algorithm if <code>alg</code> is a key agreement algorithm. Unspecified if alg is not a key agreement algorithm or if it is not supported by the implementation. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="key__agreement_2algorithm_8h_source.html#l00074">74</a> of file <a class="el" href="key__agreement_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

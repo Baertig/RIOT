@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/stm32/include/periph/cpu_common.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('stm32_2include_2periph_2cpu__common_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cpu_common.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__stm32.html">STM32</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Common CPU definitions for the STM32 family.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Common CPU definitions for the STM32 family. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span style="display: none;">.nosp@m.</span>.pet<span style="display: none;">.nosp@m.</span>ersen<span style="display: none;">.nosp@m.</span>@fu-<span style="display: none;">.nosp@m.</span>berli<span style="display: none;">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span style="display: none;">.nosp@m.</span>nt@o<span style="display: none;">.nosp@m.</span>takey<span style="display: none;">.nosp@m.</span>s.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="stm32_2include_2periph_2cpu__common_8h_source.html">cpu_common.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;cpu_conf.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cpu_common.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="stm32_2include_2periph_2cpu__common_8h__incl.svg" width="199" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="stm32_2include_2periph_2cpu__common_8h__dep__incl.svg" width="40643" height="543"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="stm32_2include_2periph_2cpu__common_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a1943715eaeaa63e28b7b4e207f655fca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#a1943715eaeaa63e28b7b4e207f655fca">CPUID_LEN</a>&#160;&#160;&#160;(12U)</td></tr>
+<tr class="memdesc:a1943715eaeaa63e28b7b4e207f655fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Length of the CPU_ID in octets.  <a href="#a1943715eaeaa63e28b7b4e207f655fca">More...</a><br /></td></tr>
+<tr class="separator:a1943715eaeaa63e28b7b4e207f655fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3fc6a1a30b894ce55d50e7eac993b2"><td class="memItemLeft" align="right" valign="top"><a id="a0d3fc6a1a30b894ce55d50e7eac993b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#a0d3fc6a1a30b894ce55d50e7eac993b2">CPUID_ADDR</a>&#160;&#160;&#160;(UID_BASE)</td></tr>
+<tr class="memdesc:a0d3fc6a1a30b894ce55d50e7eac993b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starting address of the CPU ID. <br /></td></tr>
+<tr class="separator:a0d3fc6a1a30b894ce55d50e7eac993b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbe9c50af707480e7b3e6e9058cedc8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> { <a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8a402946f16a9c1022f209ede5060783f0">AHB</a>, 
+<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8a0a7928dc21633f8cf78bf136bda6fe45">APB1</a>, 
+<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8adfa21a626736aaaec7b1b077ebf3180b">APB2</a>, 
+<a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#afcbe9c50af707480e7b3e6e9058cedc8aca9b379b9c0746cfbfc781d3a808ff5d">BUS_NUMOF</a>
+ }</td></tr>
+<tr class="memdesc:afcbe9c50af707480e7b3e6e9058cedc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU specific LSI clock speed.  <a href="stm32_2include_2periph_2cpu__common_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">More...</a><br /></td></tr>
+<tr class="separator:afcbe9c50af707480e7b3e6e9058cedc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc6c61f08126486556df81b18638f63"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#a0dc6c61f08126486556df81b18638f63">periph_apb_clk</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus)</td></tr>
+<tr class="memdesc:a0dc6c61f08126486556df81b18638f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual bus clock frequency for the APB buses.  <a href="#a0dc6c61f08126486556df81b18638f63">More...</a><br /></td></tr>
+<tr class="separator:a0dc6c61f08126486556df81b18638f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad25423eea4a9dffc90d0005f59f71665"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#ad25423eea4a9dffc90d0005f59f71665">periph_timer_clk</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus)</td></tr>
+<tr class="memdesc:ad25423eea4a9dffc90d0005f59f71665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual timer clock frequency.  <a href="#ad25423eea4a9dffc90d0005f59f71665">More...</a><br /></td></tr>
+<tr class="separator:ad25423eea4a9dffc90d0005f59f71665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e041ea8d5deb05257048da1642d36ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#a8e041ea8d5deb05257048da1642d36ce">periph_clk_en</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus, uint32_t mask)</td></tr>
+<tr class="memdesc:a8e041ea8d5deb05257048da1642d36ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the given peripheral clock.  <a href="#a8e041ea8d5deb05257048da1642d36ce">More...</a><br /></td></tr>
+<tr class="separator:a8e041ea8d5deb05257048da1642d36ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe3fb311530bf7e14b217cc09fa28e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#abe3fb311530bf7e14b217cc09fa28e5d">periph_clk_dis</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus, uint32_t mask)</td></tr>
+<tr class="memdesc:abe3fb311530bf7e14b217cc09fa28e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the given peripheral clock.  <a href="#abe3fb311530bf7e14b217cc09fa28e5d">More...</a><br /></td></tr>
+<tr class="separator:abe3fb311530bf7e14b217cc09fa28e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cbff3003bbcf53837499e91172dbe10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#a3cbff3003bbcf53837499e91172dbe10">periph_lpclk_en</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus, uint32_t mask)</td></tr>
+<tr class="memdesc:a3cbff3003bbcf53837499e91172dbe10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the given peripheral clock in low power mode.  <a href="#a3cbff3003bbcf53837499e91172dbe10">More...</a><br /></td></tr>
+<tr class="separator:a3cbff3003bbcf53837499e91172dbe10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea3b2556b5e8fdf277ce530d9aab3f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stm32_2include_2periph_2cpu__common_8h.html#aeea3b2556b5e8fdf277ce530d9aab3f3">periph_lpclk_dis</a> (<a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a> bus, uint32_t mask)</td></tr>
+<tr class="memdesc:aeea3b2556b5e8fdf277ce530d9aab3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the given peripheral clock in low power mode.  <a href="#aeea3b2556b5e8fdf277ce530d9aab3f3">More...</a><br /></td></tr>
+<tr class="separator:aeea3b2556b5e8fdf277ce530d9aab3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1943715eaeaa63e28b7b4e207f655fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1943715eaeaa63e28b7b4e207f655fca">&#9670;&nbsp;</a></span>CPUID_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPUID_LEN&#160;&#160;&#160;(12U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Length of the CPU_ID in octets. </p>
+<p>This is the same for all members of the stm32 family </p>
+
+<p class="definition">Definition at line <a class="el" href="stm32_2include_2periph_2cpu__common_8h_source.html#l00045">45</a> of file <a class="el" href="stm32_2include_2periph_2cpu__common_8h_source.html">cpu_common.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="afcbe9c50af707480e7b3e6e9058cedc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbe9c50af707480e7b3e6e9058cedc8">&#9670;&nbsp;</a></span>bus_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CPU specific LSI clock speed. </p>
+<p>Available peripheral buses </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="afcbe9c50af707480e7b3e6e9058cedc8a402946f16a9c1022f209ede5060783f0"></a>AHB&#160;</td><td class="fielddoc"><p>Advanced High-performance Bus. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcbe9c50af707480e7b3e6e9058cedc8a0a7928dc21633f8cf78bf136bda6fe45"></a>APB1&#160;</td><td class="fielddoc"><p>Advanced Peripheral Bus 1. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcbe9c50af707480e7b3e6e9058cedc8adfa21a626736aaaec7b1b077ebf3180b"></a>APB2&#160;</td><td class="fielddoc"><p>Advanced Peripheral Bus 2. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="afcbe9c50af707480e7b3e6e9058cedc8aca9b379b9c0746cfbfc781d3a808ff5d"></a>BUS_NUMOF&#160;</td><td class="fielddoc"><p>number of buses </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="stm32_2include_2periph_2cpu__common_8h_source.html#l00180">180</a> of file <a class="el" href="stm32_2include_2periph_2cpu__common_8h_source.html">cpu_common.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a0dc6c61f08126486556df81b18638f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc6c61f08126486556df81b18638f63">&#9670;&nbsp;</a></span>periph_apb_clk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t periph_apb_clk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the actual bus clock frequency for the APB buses. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>target APBx bus</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bus clock frequency in Hz </dd></dl>
+
+</div>
+</div>
+<a id="abe3fb311530bf7e14b217cc09fa28e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe3fb311530bf7e14b217cc09fa28e5d">&#9670;&nbsp;</a></span>periph_clk_dis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void periph_clk_dis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the given peripheral clock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>bus the peripheral is connected to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit in the RCC enable register </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e041ea8d5deb05257048da1642d36ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e041ea8d5deb05257048da1642d36ce">&#9670;&nbsp;</a></span>periph_clk_en()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void periph_clk_en </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable the given peripheral clock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>bus the peripheral is connected to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit in the RCC enable register </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeea3b2556b5e8fdf277ce530d9aab3f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeea3b2556b5e8fdf277ce530d9aab3f3">&#9670;&nbsp;</a></span>periph_lpclk_dis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void periph_lpclk_dis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the given peripheral clock in low power mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>bus the peripheral is connected to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit in the RCC enable register </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3cbff3003bbcf53837499e91172dbe10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cbff3003bbcf53837499e91172dbe10">&#9670;&nbsp;</a></span>periph_lpclk_en()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void periph_lpclk_en </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable the given peripheral clock in low power mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>bus the peripheral is connected to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit in the RCC enable register </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad25423eea4a9dffc90d0005f59f71665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad25423eea4a9dffc90d0005f59f71665">&#9670;&nbsp;</a></span>periph_timer_clk()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t periph_timer_clk </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="gd32v_2include_2periph__cpu_8h.html#afcbe9c50af707480e7b3e6e9058cedc8">bus_t</a>&#160;</td>
+          <td class="paramname"><em>bus</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the actual timer clock frequency. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bus</td><td>corresponding APBx bus</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>timer clock frequency in Hz </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:24 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

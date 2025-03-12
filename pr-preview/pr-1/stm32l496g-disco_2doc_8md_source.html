@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/stm32l496g-disco/doc.md Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('stm32l496g-disco_2doc_8md.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">boards/stm32l496g-disco/doc.md</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;@defgroup    boards_stm32l496g-disco STM32L496G-DISCO</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;@ingroup     boards</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;@brief       Support for the STM32L496G-DISCO board.</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;## Overview</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;The ST [STM32L496G-DISCO](https://www.st.com/en/evaluation-tools/32l496gdiscovery.html)</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;is an evaluation board with the ARM Cortex-M4 based ultra-low power</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;microcontroller STM32L496AG with 320KB of RAM and 1MB of ROM Flash.</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;The main features of this board are:</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;- 1.54 RGB 240 x 240 pixel TFT color LCD display with capacitive touch screen,</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;- SAI audio codec, with stereo output, including analog microphone input</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;- Stereo digital microphones</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;- 8-Mbit external PSRAM</div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;- 64-Mbit external QSPI flash</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;- USB OTG FS port</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;- 8-bit camera interface</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;- Stereo headset jack</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;- micso-SD card connector</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;## Current Hardware Support:</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;| Feature                 | Support | Remark |</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;|------------------------ |:-:| --------------------- |</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;| ADC                     | X | 8 channels |</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;| DAC                     | X | 1 or 2 channels |</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;| I2C                     | X | 2 devices (I2C1 and I2C2) |</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;| PWM                     | X | 3 devices with a total og 6 channels |</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;| SPI                     | X | 1 or 2 devices (SPI1 and SPI2) |</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;| Timers                  | X | 2 devices (TIM2 and TIM3) |</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;| UART                    | X | 3 devices (USART2, LPUART1 and USART1) |</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;| USB OTG FS              | X | 1 device |</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;| TFT color LCD 240 x 40  | - | ST7789H2 used as driver IC (not supported yet) |</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;| Capacitive Touch Screen | - | FT3267 used as driver IC (not supported yet) |</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;| Stereo microphones      | - | |</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;| SAI audio codec         | - | |</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;| External PSRAM          | x | Connected to FMC peripheral |</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;| External Quad-SPI Flash | - | QSPI peripheral is not yet supported |</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;| SD Card Interface       | - | SDMMC1 on PC8..PC13/PD2 |</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;## Board Configuration (sorted by peripheral):</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;| RIOT Peripheral   | GPIO | Connector pin | Remark    |</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;|:------------------|:----:|:--------------|:----------|</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;| ADC_LINE(0)       | PC4  | Arduino A0    | ADC1 IN13 |</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;| ADC_LINE(1)       | PC1  | Arduino A1    | ADC1 IN2  |</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;| ADC_LINE(2)       | PC3  | Arduino A2    | ADC1 IN4  |</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;| ADC_LINE(3)       | PF10 | Arduino A3    | ADC3 IN13 |</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;| ADC_LINE(4)       | PA1  | Arduino A4    | ADC1 IN6  |</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;| ADC_LINE(5)       | PC0  | Arduino A5    | ADC2 IN13 |</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;| ADC_LINE(6)       | -    | V_REF_INT     | ADC1 IN0 connected to V_REFINT |</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;| ADC_LINE(7)       | PA4  | STmod+ ADC    | ADC1 IN9 if `periph_dac` is not used |</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;| ADC_LINE(7)       | -    | -             | ADC2 IN17 connected to DAC1 if `periph_dac` is used |</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;| DAC_LINE(0)       | PA4  | STmod+ ADC    | DAC1 if `periph_dac` is used |</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;| DAC_LINE(1)       | PA5  | Arduino D13   | DAC2 if `periph_spi` is not used |</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;| I2C_DEV(0) SCL    | PB8  | Arduino D15   | I2C1 SCL, also connected to STmod+ SCL |</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;| I2C_DEV(0) SDA    | PB7  | Arduino D14   | I2C1 SDA, also connected to STmod+ SDA |</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;| I2C_DEV(1) SCL    | PH14 | -             | I2C2 SCL, used for MFX_x, CODEC_x, CTP_x, DCMI_x |</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;| I2C_DEV(1) SDA    | PB14 | -             | I2C2 SDA, used for MFX_x, CODEC_x, CTP_x, DCMI_x |</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;| PWM_DEV(0) CH0    | PH15 | Arduino D3    | TIM8_CH3N  |</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;| PWM_DEV(0) CH1    | PI6  | Arduino D6    | TIM8_CH2   |</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;| PWM_DEV(0) CH2    | PH13 | Arduino D9    | TIM8_CH1N  |</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;| PWM_DEV(1) CH0    | PB9  | Arduino D5    | TIM4_CH4   |</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;| PWM_DEV(2) CH0    | PA0  | STmod+ PWM    | TIM5_CH1   |</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;| SPI_DEV(0) SCK    | PA5  | Arduino D13   | SPI1 SCK   |</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;| SPI_DEV(0) MISO   | PB4  | Arduino D12   | SPI1 MISO  |</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;| SPI_DEV(0) MOSI   | PB5  | Arduino D11   | SPI1 MOSI  |</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;| SPI_DEV(0) CS     | PA15 | Arduino D10   | SPI1 NSS   |</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;| SPI_DEV(1) SCK    | PI1  | STmod+ CLK, Pmod CLK   | SPI2 SCK (*1)  |</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;| SPI_DEV(1) MISO   | PI2  | STmod+ MISO, Pmod MISO | SPI2 MISO (*1) |</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;| SPI_DEV(1) MOSI   | PB15 | STmod+ MOSI, Pmod MOSI | SPI2 MOSI (*1) |</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;| SPI_DEV(1) CS     | PG1  | STmod+ CS, Pmod CS     | SPI2 NSS (*1)  |</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;| UART_DEV(0) RX    | PD6  | ST-Link       | USART2 RX |</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;| UART_DEV(0) TX    | PA2  | ST-Link       | USART2 TX |</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;| UART_DEV(1) RX    | PD6  | Arduino D0    | LPUART1 RX |</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;| UART_DEV(1) TX    | PA2  | Arduino D1    | LPUART1 TX |</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;| UART_DEV(2) RX    | PG10 | STmod+ RX, Pmod RX   | USART1 RX (*2)  |</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;| UART_DEV(2) TX    | PB6  | STmod+ TX, Pmod TX   | USART1 TX (*2)  |</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;| UART_DEV(2) CTS   | PG11 | STmod+ CTS, Pmod CTS | USART1 CTS (*2) |</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;| UART_DEV(2) RTS   | PG12 | STmod+ RTS, Pmod RTS | USART1 RTS (*2) |</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;&lt;br&gt;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;@note</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;- (*1) SPI2 is only available if module `periph_spi_stmod` is used.</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;       SB4, SB5, SB9 must be closed to connect SPI2 to STmod+ and Pmod.</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;- (*2) USART1 is only available if module `periph_spi_stmod` is not used.</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;       SB6, SB7, SB8 must be closed to connect USART1 to STmod+ and Pmod</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;       (default).</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;## Board Configuration (sorted by connectors):</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;| Connector       | RIOT Peripheral   | GPIO | Remark     |</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;|:----------------|:------------------|:----:|:-----------|</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;| Arduino A0      | ADC_LINE(0)       | PC4  | ADC1 IN13  |</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;| Arduino A1      | ADC_LINE(1)       | PC1  | ADC1 IN2   |</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;| Arduino A2      | ADC_LINE(2)       | PC3  | ADC1 IN4   |</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;| Arduino A3      | ADC_LINE(3)       | PF10 | ADC3 IN13  |</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;| Arduino A4      | ADC_LINE(4)       | PA1  | ADC1 IN6   |</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;| Arduino A5      | ADC_LINE(5)       | PC0  | ADC2 IN13  |</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;| Arduino D0      | UART_DEV(1) RX    | PD6  | LPUART1 RX |</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;| Arduino D1      | UART_DEV(1) TX    | PA2  | LPUART1 TX |</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;| Arduino D3      | PWM_DEV(0) CH0    | PH15 | TIM8_CH3N  |</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;| Arduino D6      | PWM_DEV(0) CH1    | PI6  | TIM8_CH2   |</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;| Arduino D5      | PWM_DEV(1) CH0    | PB9  | TIM4_CH4   |</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;| Arduino D9      | PWM_DEV(0) CH2    | PH13 | TIM8_CH1N  |</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;| Arduino D10     | SPI_DEV(0) CS     | PA15 | SPI1 CS    |</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;| Arduino D11     | SPI_DEV(0) MOSI   | PB5  | SPI1 MOSI  |</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;| Arduino D12     | SPI_DEV(0) MISO   | PB4  | SPI1 MISO  |</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;| Arduino D13     | SPI_DEV(0) SCK    | PA5  | SPI1 SCK   |</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;| Arduino D13     | DAC_LINE(1)       | PA5  | DAC2 if `periph_spi` is not used |</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;| Arduino D14     | I2C_DEV(0) SDA    | PB7  | I2C1 SDA   |</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;| Arduino D15     | I2C_DEV(0) SCL    | PB8  | I2C1 SCL   |</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;| Pmod SPI CLK    | SPI_DEV(1) SCK    | PI1  | SPI2 SCK (*1)  |</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;| Pmod SPI CS     | SPI_DEV(4) CS     | PG1  | SPI2 NSS (*1)  |</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;| Pmod SPI MISO   | SPI_DEV(2) MISO   | PI2  | SPI2 MISO (*1) |</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;| Pmod SPI MOSI   | SPI_DEV(3) MOSI   | PB15 | SPI2 MOSI (*1) |</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;| Pmod UART CTS   | UART_DEV(2) CTS   | PG11 | USART1 CTS (*2) |</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;| Pmod UART RTS   | UART_DEV(2) RTS   | PG12 | USART1 RTS (*2) |</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;| Pmod UART RX    | UART_DEV(2) RX    | PG10 | USART1 RX (*2)  |</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;| Pmod UART TX    | UART_DEV(2) TX    | PB6  | USART1 TX (*2)  |</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;| STmod+ ADC      | ADC_LINE(7)       | PA4  | ADC1 IN9 if `periph_dac` is not used |</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;| STmod+ ADC      | DAC_LINE(0)       | PA4  | DAC1 if `periph_dac` is used |</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;| STmod+ PWM      | PWM_DEV(2) CH0    | PA0  | TIM5_CH1   |</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;| STmod+ I2C SCL  | I2C_DEV(0) SCL    | PB8  | I2C2 SCL   |</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;| STmod+ I2C SDA  | I2C_DEV(0) SDA    | PB7  | I2C2 SDA   |</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;| STmod+ SPI CLK  | SPI_DEV(1) SCK    | PI1  | SPI2 SCK (*1)  |</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;| STmod+ SPI CS   | SPI_DEV(1) CS     | PG1  | SPI2 NSS (*1)  |</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;| STmod+ SPI MISO | SPI_DEV(1) MISO   | PI2  | SPI2 MISO (*1) |</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;| STmod+ SPI MOSI | SPI_DEV(1) MOSI   | PB15 | SPI2 MOSI (*1) |</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;| STmod+ UART CTS | UART_DEV(2) CTS   | PG11 | USART1 CTS (*2) |</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;| STmod+ UART RTS | UART_DEV(2) RTS   | PG12 | USART1 RTS (*2) |</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;| STmod+ UART RX  | UART_DEV(2) RX    | PG10 | USART1 RX (*2)  |</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;| STmod+ UART TX  | UART_DEV(2) TX    | PB6  | USART1 TX (*2)  |</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;| ST-Link         | UART_DEV(0) RX    | PD6  | USART2 RX  |</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;| ST-Link         | UART_DEV(0) TX    | PA2  | USART2 TX  |</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;&lt;br&gt;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;@note</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;- (*1) SPI2 is only available if module `periph_spi_stmod` is used.</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;       SB4, SB5, SB9 must be closed to connect SPI2 to STmod+ and Pmod.</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;- (*2) USART1 is only available if module `periph_spi_stmod` is not used.</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;       SB6, SB7, SB8 must be closed to connect USART1 to STmod+ and Pmod</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;       (default).</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;## Flashing the device</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;The STM32L496G-DISCO board includes an on-board ST-LINK programmer and can be</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;flashed using OpenOCD. The board can be flashed with:</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;```</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;make BOARD=stm32l496g-disco flash</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;```</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;and debug via GDB with</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;```</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;make BOARD=stm32l496g-disco debug</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;```</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;## Supported Toolchains</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;For using the STM32L496G-DISCO board we recommend the usage of the</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;[GNU Tools for ARM Embedded Processors](https://launchpad.net/gcc-arm-embedded)</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;toolchain.</div></div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:18 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

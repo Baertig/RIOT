@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/usb/usbus.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('usbus_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">usbus.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usb__usbus.html">USBUS device and endpoint manager</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS basic interface.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USBUS basic interface. </p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span style="display: none;">.nosp@m.</span>berg<span style="display: none;">.nosp@m.</span>zand.<span style="display: none;">.nosp@m.</span>net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="clist_8h_source.html">clist.h</a>&quot;</code><br />
+<code>#include &quot;event.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="sched_8h_source.html">sched.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="modules_8h_source.html">modules.h</a>&quot;</code><br />
+<code>#include &quot;msg.h&quot;</code><br />
+<code>#include &quot;thread.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="usb_8h_source.html">usb.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="usbdev_8h_source.html">periph/usbdev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="descriptor_8h_source.html">usb/descriptor.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for usbus.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usbus_8h__incl.svg" width="1324" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usbus_8h__dep__incl.svg" width="1318" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="usbus_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__string.html">usbus_string</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS string type.  <a href="structusbus__string.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__descr__gen__funcs__t.html">usbus_descr_gen_funcs_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS descriptor generator function pointers.  <a href="structusbus__descr__gen__funcs__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__descr__gen.html">usbus_descr_gen</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS descriptor generator.  <a href="structusbus__descr__gen.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__endpoint.html">usbus_endpoint</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS endpoint context.  <a href="structusbus__endpoint.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__urb.html">usbus_urb</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS USB request/response block.  <a href="structusbus__urb.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__interface__alt.html">usbus_interface_alt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS interface alternative setting.  <a href="structusbus__interface__alt.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__interface.html">usbus_interface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS interface.  <a href="structusbus__interface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler__driver.html">usbus_handler_driver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS event handler function pointers.  <a href="structusbus__handler__driver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler.html">usbus_handler</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS handler struct.  <a href="structusbus__handler.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus.html">usbus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS context struct.  <a href="structusbus.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga716388f05520c1a4c867879f43f62cff"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html#ga716388f05520c1a4c867879f43f62cff">USBUS_STACKSIZE</a>&#160;&#160;&#160;(<a class="el" href="native_2include_2cpu__conf_8h.html#a713ebddc00581f4d415095cdbfd8791f">THREAD_STACKSIZE_DEFAULT</a>)</td></tr>
+<tr class="memdesc:ga716388f05520c1a4c867879f43f62cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS thread stack size. <br /></td></tr>
+<tr class="separator:ga716388f05520c1a4c867879f43f62cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2624d46a655f464083481e55f5faa756"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html#ga2624d46a655f464083481e55f5faa756">USBUS_PRIO</a>&#160;&#160;&#160;(<a class="el" href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a> - 6)</td></tr>
+<tr class="memdesc:ga2624d46a655f464083481e55f5faa756"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS thread priority. <br /></td></tr>
+<tr class="separator:ga2624d46a655f464083481e55f5faa756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b5f3b3794045ba18e9d2f2f8f24c643"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html#ga8b5f3b3794045ba18e9d2f2f8f24c643">CONFIG_USBUS_AUTO_ATTACH</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga8b5f3b3794045ba18e9d2f2f8f24c643"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS auto attach setting.  <a href="group__usb__usbus__conf.html#ga8b5f3b3794045ba18e9d2f2f8f24c643">More...</a><br /></td></tr>
+<tr class="separator:ga8b5f3b3794045ba18e9d2f2f8f24c643"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a681c7d01b49625a5dbc7d70cdb6e68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html#ga8a681c7d01b49625a5dbc7d70cdb6e68">CONFIG_USBUS_MSC_AUTO_MTD</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga8a681c7d01b49625a5dbc7d70cdb6e68"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC auto MTD setting.  <a href="group__usb__usbus__conf.html#ga8a681c7d01b49625a5dbc7d70cdb6e68">More...</a><br /></td></tr>
+<tr class="separator:ga8a681c7d01b49625a5dbc7d70cdb6e68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fb95fe07ea93ba49f960ed592f4293b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus__conf.html#ga1fb95fe07ea93ba49f960ed592f4293b">CONFIG_USBUS_EP0_SIZE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:ga1fb95fe07ea93ba49f960ed592f4293b"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS endpoint 0 buffer size.  <a href="group__usb__usbus__conf.html#ga1fb95fe07ea93ba49f960ed592f4293b">More...</a><br /></td></tr>
+<tr class="separator:ga1fb95fe07ea93ba49f960ed592f4293b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2dba99cdf52ae0b6f8d422cad17f10b6"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga2dba99cdf52ae0b6f8d422cad17f10b6">USBUS_TNAME</a>&#160;&#160;&#160;&quot;usbus&quot;</td></tr>
+<tr class="memdesc:ga2dba99cdf52ae0b6f8d422cad17f10b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS thread name. <br /></td></tr>
+<tr class="separator:ga2dba99cdf52ae0b6f8d422cad17f10b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga119a3b2afeccae5f38df3564679ba4f9"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__string.html">usbus_string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga119a3b2afeccae5f38df3564679ba4f9">usbus_string_t</a></td></tr>
+<tr class="memdesc:ga119a3b2afeccae5f38df3564679ba4f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS string type. <br /></td></tr>
+<tr class="separator:ga119a3b2afeccae5f38df3564679ba4f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6a7ed25efb69d40694b3d95125743a4"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus.html">usbus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a></td></tr>
+<tr class="memdesc:gac6a7ed25efb69d40694b3d95125743a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS context forward declaration. <br /></td></tr>
+<tr class="separator:gac6a7ed25efb69d40694b3d95125743a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac1b5cc2688623f80e0104149531bb098"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__handler.html">usbus_handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a></td></tr>
+<tr class="memdesc:gac1b5cc2688623f80e0104149531bb098"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS event handler forward declaration. <br /></td></tr>
+<tr class="separator:gac1b5cc2688623f80e0104149531bb098"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6dcd222871354dac1687b5c9bccabafc"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structusbus__descr__gen.html">usbus_descr_gen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga6dcd222871354dac1687b5c9bccabafc">usbus_descr_gen_t</a></td></tr>
+<tr class="memdesc:ga6dcd222871354dac1687b5c9bccabafc"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS descriptor generator.  <a href="group__usb__usbus.html#ga6dcd222871354dac1687b5c9bccabafc">More...</a><br /></td></tr>
+<tr class="separator:ga6dcd222871354dac1687b5c9bccabafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga515805747848536dee691f658ed3dad4"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__endpoint.html">usbus_endpoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a></td></tr>
+<tr class="memdesc:ga515805747848536dee691f658ed3dad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS endpoint context. <br /></td></tr>
+<tr class="separator:ga515805747848536dee691f658ed3dad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cc53d82bc7190ba2684e6444431297d"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__urb.html">usbus_urb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a></td></tr>
+<tr class="memdesc:ga7cc53d82bc7190ba2684e6444431297d"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS USB request/response block. <br /></td></tr>
+<tr class="separator:ga7cc53d82bc7190ba2684e6444431297d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga393ca4068f63feec578de870d2380116"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structusbus__interface__alt.html">usbus_interface_alt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga393ca4068f63feec578de870d2380116">usbus_interface_alt_t</a></td></tr>
+<tr class="memdesc:ga393ca4068f63feec578de870d2380116"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS interface alternative setting.  <a href="group__usb__usbus.html#ga393ca4068f63feec578de870d2380116">More...</a><br /></td></tr>
+<tr class="separator:ga393ca4068f63feec578de870d2380116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac92adf9487ad4a048ed40bc58ef9f502"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__interface.html">usbus_interface</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac92adf9487ad4a048ed40bc58ef9f502">usbus_interface_t</a></td></tr>
+<tr class="memdesc:gac92adf9487ad4a048ed40bc58ef9f502"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS interface. <br /></td></tr>
+<tr class="separator:gac92adf9487ad4a048ed40bc58ef9f502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8ab90df107d206f966a36a8f882e32c"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structusbus__handler__driver.html">usbus_handler_driver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gad8ab90df107d206f966a36a8f882e32c">usbus_handler_driver_t</a></td></tr>
+<tr class="memdesc:gad8ab90df107d206f966a36a8f882e32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS event handler function pointers. <br /></td></tr>
+<tr class="separator:gad8ab90df107d206f966a36a8f882e32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga5d99cb353d12b5a49b4a3b10b9863ba5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga5d99cb353d12b5a49b4a3b10b9863ba5">usbus_event_usb_t</a> { <a class="el" href="group__usb__usbus.html#gga5d99cb353d12b5a49b4a3b10b9863ba5a6b0088c19942e50a84c39a4d0758a258">USBUS_EVENT_USB_RESET</a>, 
+<a class="el" href="group__usb__usbus.html#gga5d99cb353d12b5a49b4a3b10b9863ba5a07f1c5c2e8e0d46d4376454d9b2a3217">USBUS_EVENT_USB_SOF</a>, 
+<a class="el" href="group__usb__usbus.html#gga5d99cb353d12b5a49b4a3b10b9863ba5ac4f471fa426e9b53daf38cfebf569902">USBUS_EVENT_USB_SUSPEND</a>, 
+<a class="el" href="group__usb__usbus.html#gga5d99cb353d12b5a49b4a3b10b9863ba5a34f97b0c6df548a174939c44e879c31c">USBUS_EVENT_USB_RESUME</a>
+ }</td></tr>
+<tr class="memdesc:ga5d99cb353d12b5a49b4a3b10b9863ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB handler events.  <a href="group__usb__usbus.html#ga5d99cb353d12b5a49b4a3b10b9863ba5">More...</a><br /></td></tr>
+<tr class="separator:ga5d99cb353d12b5a49b4a3b10b9863ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d339c5c7f7d634704eab92320d06ab5"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga1d339c5c7f7d634704eab92320d06ab5">usbus_event_transfer_t</a> { <a class="el" href="group__usb__usbus.html#gga1d339c5c7f7d634704eab92320d06ab5a6b3071bb58cb7ab19ee9728fb531363e">USBUS_EVENT_TRANSFER_COMPLETE</a>, 
+<a class="el" href="group__usb__usbus.html#gga1d339c5c7f7d634704eab92320d06ab5acf46ae7dcc372b446289a6d8e620bc80">USBUS_EVENT_TRANSFER_FAIL</a>, 
+<a class="el" href="group__usb__usbus.html#gga1d339c5c7f7d634704eab92320d06ab5ac9b516ba76c9bf1345b827acf5032929">USBUS_EVENT_TRANSFER_STALL</a>
+ }</td></tr>
+<tr class="memdesc:ga1d339c5c7f7d634704eab92320d06ab5"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB endpoint transfer status events.  <a href="group__usb__usbus.html#ga1d339c5c7f7d634704eab92320d06ab5">More...</a><br /></td></tr>
+<tr class="separator:ga1d339c5c7f7d634704eab92320d06ab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2a0ad7e221dee20728cb73b3aac22ea"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gaf2a0ad7e221dee20728cb73b3aac22ea">usbus_state_t</a> { <br />
+&#160;&#160;<a class="el" href="group__usb__usbus.html#ggaf2a0ad7e221dee20728cb73b3aac22eaa9b1d18475f0830c390b055f5903ed121">USBUS_STATE_DISCONNECT</a>, 
+<a class="el" href="group__usb__usbus.html#ggaf2a0ad7e221dee20728cb73b3aac22eaa24e8e21136ea1e0f85ce53f3ef37be5d">USBUS_STATE_RESET</a>, 
+<a class="el" href="group__usb__usbus.html#ggaf2a0ad7e221dee20728cb73b3aac22eaa4ba7186d798c05cff5aa20c9cf02a8a3">USBUS_STATE_ADDR</a>, 
+<a class="el" href="group__usb__usbus.html#ggaf2a0ad7e221dee20728cb73b3aac22eaa48fb69e21b0abfcec06c5fc61016bcdf">USBUS_STATE_CONFIGURED</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__usb__usbus.html#ggaf2a0ad7e221dee20728cb73b3aac22eaaa227b11b4b4494aabfc4ba5144bb9638">USBUS_STATE_SUSPEND</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gaf2a0ad7e221dee20728cb73b3aac22ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">state machine states for the global USBUS thread  <a href="group__usb__usbus.html#gaf2a0ad7e221dee20728cb73b3aac22ea">More...</a><br /></td></tr>
+<tr class="separator:gaf2a0ad7e221dee20728cb73b3aac22ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75a538ca121919799d4e604539db2525"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">usbus_control_request_state_t</a> { <br />
+&#160;&#160;<a class="el" href="group__usb__usbus.html#gga75a538ca121919799d4e604539db2525ae47ed3e144d204df771a790a43cb8799">USBUS_CONTROL_REQUEST_STATE_READY</a>, 
+<a class="el" href="group__usb__usbus.html#gga75a538ca121919799d4e604539db2525ac7bcc649f1028c8c3ef02864ae39f2f8">USBUS_CONTROL_REQUEST_STATE_INDATA</a>, 
+<a class="el" href="group__usb__usbus.html#gga75a538ca121919799d4e604539db2525a2fcac391e67fa0418d69029f819b54aa">USBUS_CONTROL_REQUEST_STATE_OUTACK</a>, 
+<a class="el" href="group__usb__usbus.html#gga75a538ca121919799d4e604539db2525a9d76064747aa090045a7fc1c2cba9728">USBUS_CONTROL_REQUEST_STATE_OUTDATA</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__usb__usbus.html#gga75a538ca121919799d4e604539db2525a2e0cba3f46c78aea2c71c17d2ff8a2fb">USBUS_CONTROL_REQUEST_STATE_INACK</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga75a538ca121919799d4e604539db2525"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS control request state machine.  <a href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">More...</a><br /></td></tr>
+<tr class="separator:ga75a538ca121919799d4e604539db2525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga316b8d32cac7eb21446ce7935ace810d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga316b8d32cac7eb21446ce7935ace810d">usbus_descr_len_type_t</a> { <a class="el" href="group__usb__usbus.html#gga316b8d32cac7eb21446ce7935ace810da5581420333bbd0286d8b1b1a5fd27f80">USBUS_DESCR_LEN_FIXED</a>, 
+<a class="el" href="group__usb__usbus.html#gga316b8d32cac7eb21446ce7935ace810dafc90097493eff16750687d5f70af773e">USBUS_DESCR_LEN_FUNC</a>
+ }</td></tr>
+<tr class="memdesc:ga316b8d32cac7eb21446ce7935ace810d"><td class="mdescLeft">&#160;</td><td class="mdescRight">descriptor length types for USB descriptor generators  <a href="group__usb__usbus.html#ga316b8d32cac7eb21446ce7935ace810d">More...</a><br /></td></tr>
+<tr class="separator:ga316b8d32cac7eb21446ce7935ace810d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga63f20e1d88b109ade0d31934358390ac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga63f20e1d88b109ade0d31934358390ac">usbus_event_post</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__sys__event.html#gad0c066ffb009d3286186a124d37a0c2d">event_t</a> *<a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:ga63f20e1d88b109ade0d31934358390ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit an event to the usbus thread.  <a href="group__usb__usbus.html#ga63f20e1d88b109ade0d31934358390ac">More...</a><br /></td></tr>
+<tr class="separator:ga63f20e1d88b109ade0d31934358390ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1fb60fd43db5b98b7049fd1fee967c8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gaa1fb60fd43db5b98b7049fd1fee967c8">usbus_add_string_descriptor</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#ga119a3b2afeccae5f38df3564679ba4f9">usbus_string_t</a> *desc, const char *str)</td></tr>
+<tr class="memdesc:gaa1fb60fd43db5b98b7049fd1fee967c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a string descriptor to the USBUS thread context.  <a href="group__usb__usbus.html#gaa1fb60fd43db5b98b7049fd1fee967c8">More...</a><br /></td></tr>
+<tr class="separator:gaa1fb60fd43db5b98b7049fd1fee967c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cc3c30c6e682aa118f3c4a269d2aa43"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga5cc3c30c6e682aa118f3c4a269d2aa43">usbus_add_interface</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#gac92adf9487ad4a048ed40bc58ef9f502">usbus_interface_t</a> *iface)</td></tr>
+<tr class="memdesc:ga5cc3c30c6e682aa118f3c4a269d2aa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an interface to the USBUS thread context.  <a href="group__usb__usbus.html#ga5cc3c30c6e682aa118f3c4a269d2aa43">More...</a><br /></td></tr>
+<tr class="separator:ga5cc3c30c6e682aa118f3c4a269d2aa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e3513999784ac8bca15e22e932c7caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga0e3513999784ac8bca15e22e932c7caa">usbus_add_interface_alt</a> (<a class="el" href="group__usb__usbus.html#gac92adf9487ad4a048ed40bc58ef9f502">usbus_interface_t</a> *iface, <a class="el" href="group__usb__usbus.html#ga393ca4068f63feec578de870d2380116">usbus_interface_alt_t</a> *alt)</td></tr>
+<tr class="memdesc:ga0e3513999784ac8bca15e22e932c7caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add alternate settings to a given interface.  <a href="group__usb__usbus.html#ga0e3513999784ac8bca15e22e932c7caa">More...</a><br /></td></tr>
+<tr class="separator:ga0e3513999784ac8bca15e22e932c7caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74ea201634e796cab561072cf165caf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga74ea201634e796cab561072cf165caf4">usbus_interface_find_endpoint</a> (<a class="el" href="group__usb__usbus.html#gac92adf9487ad4a048ed40bc58ef9f502">usbus_interface_t</a> *interface, <a class="el" href="group__usb.html#ga23fe3d087b4533eabd8cff2e3371716f">usb_ep_type_t</a> type, <a class="el" href="group__usb.html#ga1f43c18c4881219e5578ade7dec43afe">usb_ep_dir_t</a> dir)</td></tr>
+<tr class="memdesc:ga74ea201634e796cab561072cf165caf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find an endpoint from an interface based on the endpoint properties.  <a href="group__usb__usbus.html#ga74ea201634e796cab561072cf165caf4">More...</a><br /></td></tr>
+<tr class="separator:ga74ea201634e796cab561072cf165caf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7207ad5465fb584757cddb3ba57171dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga7207ad5465fb584757cddb3ba57171dd">usbus_add_endpoint</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#gac92adf9487ad4a048ed40bc58ef9f502">usbus_interface_t</a> *iface, <a class="el" href="group__usb.html#ga23fe3d087b4533eabd8cff2e3371716f">usb_ep_type_t</a> type, <a class="el" href="group__usb.html#ga1f43c18c4881219e5578ade7dec43afe">usb_ep_dir_t</a> dir, size_t len)</td></tr>
+<tr class="memdesc:ga7207ad5465fb584757cddb3ba57171dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an endpoint to the specified interface.  <a href="group__usb__usbus.html#ga7207ad5465fb584757cddb3ba57171dd">More...</a><br /></td></tr>
+<tr class="separator:ga7207ad5465fb584757cddb3ba57171dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae723a8172357a628e322c2b9f878615f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gae723a8172357a628e322c2b9f878615f">usbus_add_conf_descriptor</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#ga6dcd222871354dac1687b5c9bccabafc">usbus_descr_gen_t</a> *descr_gen)</td></tr>
+<tr class="memdesc:gae723a8172357a628e322c2b9f878615f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a generator for generating additional top level USB descriptor content.  <a href="group__usb__usbus.html#gae723a8172357a628e322c2b9f878615f">More...</a><br /></td></tr>
+<tr class="separator:gae723a8172357a628e322c2b9f878615f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdee0ccc89875478b524a4b838541569"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gafdee0ccc89875478b524a4b838541569">usbus_register_event_handler</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a> *handler)</td></tr>
+<tr class="memdesc:gafdee0ccc89875478b524a4b838541569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an event handler to the USBUS context.  <a href="group__usb__usbus.html#gafdee0ccc89875478b524a4b838541569">More...</a><br /></td></tr>
+<tr class="separator:gafdee0ccc89875478b524a4b838541569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4617c50d18cf14e72d49fdca4dd45723"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga4617c50d18cf14e72d49fdca4dd45723">usbus_init</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__drivers__periph__usbdev.html#gaa82d08eb9deca939f11869d69c65e63e">usbdev_t</a> *<a class="el" href="structusbdev.html">usbdev</a>)</td></tr>
+<tr class="memdesc:ga4617c50d18cf14e72d49fdca4dd45723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an USBUS context.  <a href="group__usb__usbus.html#ga4617c50d18cf14e72d49fdca4dd45723">More...</a><br /></td></tr>
+<tr class="separator:ga4617c50d18cf14e72d49fdca4dd45723"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64dde196d317f4bd34182b5030ccb2f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga64dde196d317f4bd34182b5030ccb2f9">usbus_max_bulk_endpoint_size</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>)</td></tr>
+<tr class="memdesc:ga64dde196d317f4bd34182b5030ccb2f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum supported bulk endpoint transfer size based on the enumeration speed.  <a href="group__usb__usbus.html#ga64dde196d317f4bd34182b5030ccb2f9">More...</a><br /></td></tr>
+<tr class="separator:ga64dde196d317f4bd34182b5030ccb2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b14c3c0563952a0a1ed6646cfd94278"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga5b14c3c0563952a0a1ed6646cfd94278">usbus_max_interrupt_endpoint_size</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>)</td></tr>
+<tr class="memdesc:ga5b14c3c0563952a0a1ed6646cfd94278"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum supported interrupt endpoint transfer size based on the enumeration speed.  <a href="group__usb__usbus.html#ga5b14c3c0563952a0a1ed6646cfd94278">More...</a><br /></td></tr>
+<tr class="separator:ga5b14c3c0563952a0a1ed6646cfd94278"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9bdd47cc43ec54f05d6431f0778a2fa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga9bdd47cc43ec54f05d6431f0778a2fa1">usbus_create</a> (char *stack, int stacksize, char priority, const char *name, <a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>)</td></tr>
+<tr class="memdesc:ga9bdd47cc43ec54f05d6431f0778a2fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and start the USBUS thread.  <a href="group__usb__usbus.html#ga9bdd47cc43ec54f05d6431f0778a2fa1">More...</a><br /></td></tr>
+<tr class="separator:ga9bdd47cc43ec54f05d6431f0778a2fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga361ee16cbb24079c89ddd4c758d25dc5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga361ee16cbb24079c89ddd4c758d25dc5">usbus_urb_init</a> (<a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb, uint8_t *buf, size_t len, uint32_t flags)</td></tr>
+<tr class="memdesc:ga361ee16cbb24079c89ddd4c758d25dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a new URB.  <a href="group__usb__usbus.html#ga361ee16cbb24079c89ddd4c758d25dc5">More...</a><br /></td></tr>
+<tr class="separator:ga361ee16cbb24079c89ddd4c758d25dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7470a25e5890b8511ca8ad4dd3a9687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gaf7470a25e5890b8511ca8ad4dd3a9687">usbus_urb_submit</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *endpoint, <a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb)</td></tr>
+<tr class="memdesc:gaf7470a25e5890b8511ca8ad4dd3a9687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit an URB to an endpoint.  <a href="group__usb__usbus.html#gaf7470a25e5890b8511ca8ad4dd3a9687">More...</a><br /></td></tr>
+<tr class="separator:gaf7470a25e5890b8511ca8ad4dd3a9687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c8576af57af938731a6031319c9f654"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga4c8576af57af938731a6031319c9f654">usbus_urb_cancel</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *endpoint, <a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb)</td></tr>
+<tr class="memdesc:ga4c8576af57af938731a6031319c9f654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel and already queued URB.  <a href="group__usb__usbus.html#ga4c8576af57af938731a6031319c9f654">More...</a><br /></td></tr>
+<tr class="separator:ga4c8576af57af938731a6031319c9f654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2f66f1937d9fc14b5f78bcb8a89ce54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac2f66f1937d9fc14b5f78bcb8a89ce54">usbus_endpoint_halt</a> (<a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *ep)</td></tr>
+<tr class="memdesc:gac2f66f1937d9fc14b5f78bcb8a89ce54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the halt condition on an endpoint.  <a href="group__usb__usbus.html#gac2f66f1937d9fc14b5f78bcb8a89ce54">More...</a><br /></td></tr>
+<tr class="separator:gac2f66f1937d9fc14b5f78bcb8a89ce54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4a34894f930305a566fe5012e48a9ace"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga4a34894f930305a566fe5012e48a9ace">usbus_endpoint_clear_halt</a> (<a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *ep)</td></tr>
+<tr class="memdesc:ga4a34894f930305a566fe5012e48a9ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the halt condition on an endpoint.  <a href="group__usb__usbus.html#ga4a34894f930305a566fe5012e48a9ace">More...</a><br /></td></tr>
+<tr class="separator:ga4a34894f930305a566fe5012e48a9ace"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4071f38c17eb816c961d4969e3d3657"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gae4071f38c17eb816c961d4969e3d3657">usbus_enable_endpoint</a> (<a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *ep)</td></tr>
+<tr class="memdesc:gae4071f38c17eb816c961d4969e3d3657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable an endpoint.  <a href="group__usb__usbus.html#gae4071f38c17eb816c961d4969e3d3657">More...</a><br /></td></tr>
+<tr class="separator:gae4071f38c17eb816c961d4969e3d3657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafafd66d90201d12e56f93bf4d2898a11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gafafd66d90201d12e56f93bf4d2898a11">usbus_disable_endpoint</a> (<a class="el" href="group__usb__usbus.html#ga515805747848536dee691f658ed3dad4">usbus_endpoint_t</a> *ep)</td></tr>
+<tr class="memdesc:gafafd66d90201d12e56f93bf4d2898a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable an endpoint.  <a href="group__usb__usbus.html#gafafd66d90201d12e56f93bf4d2898a11">More...</a><br /></td></tr>
+<tr class="separator:gafafd66d90201d12e56f93bf4d2898a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga736fc91ba1547bb71ff0c74bc880b5d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga736fc91ba1547bb71ff0c74bc880b5d6">usbus_handler_set_flag</a> (<a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a> *handler, uint32_t flag)</td></tr>
+<tr class="memdesc:ga736fc91ba1547bb71ff0c74bc880b5d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable a specific handler flag  <a href="group__usb__usbus.html#ga736fc91ba1547bb71ff0c74bc880b5d6">More...</a><br /></td></tr>
+<tr class="separator:ga736fc91ba1547bb71ff0c74bc880b5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10a1e5371d5aeca04fd8d0dd0980b94e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga10a1e5371d5aeca04fd8d0dd0980b94e">usbus_handler_remove_flag</a> (<a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a> *handler, uint32_t flag)</td></tr>
+<tr class="memdesc:ga10a1e5371d5aeca04fd8d0dd0980b94e"><td class="mdescLeft">&#160;</td><td class="mdescRight">disable a specific handler flag  <a href="group__usb__usbus.html#ga10a1e5371d5aeca04fd8d0dd0980b94e">More...</a><br /></td></tr>
+<tr class="separator:ga10a1e5371d5aeca04fd8d0dd0980b94e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3dc46d0a731c7e5d0dc4d637af9a4c5d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga3dc46d0a731c7e5d0dc4d637af9a4c5d">usbus_handler_isset_flag</a> (<a class="el" href="group__usb__usbus.html#gac1b5cc2688623f80e0104149531bb098">usbus_handler_t</a> *handler, uint32_t flag)</td></tr>
+<tr class="memdesc:ga3dc46d0a731c7e5d0dc4d637af9a4c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if a specific handler flag is set  <a href="group__usb__usbus.html#ga3dc46d0a731c7e5d0dc4d637af9a4c5d">More...</a><br /></td></tr>
+<tr class="separator:ga3dc46d0a731c7e5d0dc4d637af9a4c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d034a6dfbfe65dd5c856a9c6c17ba84"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga4d034a6dfbfe65dd5c856a9c6c17ba84">usbus_urb_set_flag</a> (<a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb, uint32_t flag)</td></tr>
+<tr class="memdesc:ga4d034a6dfbfe65dd5c856a9c6c17ba84"><td class="mdescLeft">&#160;</td><td class="mdescRight">enable an URB flag  <a href="group__usb__usbus.html#ga4d034a6dfbfe65dd5c856a9c6c17ba84">More...</a><br /></td></tr>
+<tr class="separator:ga4d034a6dfbfe65dd5c856a9c6c17ba84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga070ef2744aa5dbd3ccc8583e0ec36e18"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga070ef2744aa5dbd3ccc8583e0ec36e18">usbus_urb_remove_flag</a> (<a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb, uint32_t flag)</td></tr>
+<tr class="memdesc:ga070ef2744aa5dbd3ccc8583e0ec36e18"><td class="mdescLeft">&#160;</td><td class="mdescRight">disable an URB flag  <a href="group__usb__usbus.html#ga070ef2744aa5dbd3ccc8583e0ec36e18">More...</a><br /></td></tr>
+<tr class="separator:ga070ef2744aa5dbd3ccc8583e0ec36e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac85f0b690ac5ff9787aeb8dd505c1b00"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac85f0b690ac5ff9787aeb8dd505c1b00">usbus_urb_isset_flag</a> (<a class="el" href="group__usb__usbus.html#ga7cc53d82bc7190ba2684e6444431297d">usbus_urb_t</a> *urb, uint32_t flag)</td></tr>
+<tr class="memdesc:gac85f0b690ac5ff9787aeb8dd505c1b00"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if an URB flag is set  <a href="group__usb__usbus.html#gac85f0b690ac5ff9787aeb8dd505c1b00">More...</a><br /></td></tr>
+<tr class="separator:gac85f0b690ac5ff9787aeb8dd505c1b00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+USBUS thread flags</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpcfa9272d7f77a2d6ac91d1ecda118565"></a><a class="el" href="structThread.html" title="Thread struct within mqtt paho. ">Thread</a> flags used by the USBUS thread.</p>
+<p><a class="el" href="group__sys__event.html#gaafa9b96ad0e2d68d166b6ba394660a4b">THREAD_FLAG_EVENT</a> is also used, but defined elsewhere </p>
+</td></tr>
+<tr class="memitem:ga6e29d4fecd078827ac7d4d8b06867451"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga6e29d4fecd078827ac7d4d8b06867451">USBUS_THREAD_FLAG_USBDEV</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:ga6e29d4fecd078827ac7d4d8b06867451"><td class="mdescLeft">&#160;</td><td class="mdescRight">usbdev esr needs handling <br /></td></tr>
+<tr class="separator:ga6e29d4fecd078827ac7d4d8b06867451"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b5734ec9499391c0849d8be4972c7a0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga9b5734ec9499391c0849d8be4972c7a0">USBUS_THREAD_FLAG_USBDEV_EP</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:ga9b5734ec9499391c0849d8be4972c7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">One or more endpoints requires servicing. <br /></td></tr>
+<tr class="separator:ga9b5734ec9499391c0849d8be4972c7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+USBUS handler subscription flags</h2></td></tr>
+<tr class="memitem:gac8c7ff89d5a3d613ef2718f2ac7eac61"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#gac8c7ff89d5a3d613ef2718f2ac7eac61">USBUS_HANDLER_FLAG_RESET</a>&#160;&#160;&#160;(0x0001)</td></tr>
+<tr class="memdesc:gac8c7ff89d5a3d613ef2718f2ac7eac61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report reset event. <br /></td></tr>
+<tr class="separator:gac8c7ff89d5a3d613ef2718f2ac7eac61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e628220174030601f511ec71b1e2fd6"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga7e628220174030601f511ec71b1e2fd6">USBUS_HANDLER_FLAG_SOF</a>&#160;&#160;&#160;(0x0002)</td></tr>
+<tr class="memdesc:ga7e628220174030601f511ec71b1e2fd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report SOF events. <br /></td></tr>
+<tr class="separator:ga7e628220174030601f511ec71b1e2fd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7036524d49ee927dfe1407cc511c8c9b"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga7036524d49ee927dfe1407cc511c8c9b">USBUS_HANDLER_FLAG_SUSPEND</a>&#160;&#160;&#160;(0x0004)</td></tr>
+<tr class="memdesc:ga7036524d49ee927dfe1407cc511c8c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report suspend events. <br /></td></tr>
+<tr class="separator:ga7036524d49ee927dfe1407cc511c8c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87d2ba39f6cab2cfed27ec0850a762cb"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga87d2ba39f6cab2cfed27ec0850a762cb">USBUS_HANDLER_FLAG_RESUME</a>&#160;&#160;&#160;(0x0008)</td></tr>
+<tr class="memdesc:ga87d2ba39f6cab2cfed27ec0850a762cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report resume from suspend. <br /></td></tr>
+<tr class="separator:ga87d2ba39f6cab2cfed27ec0850a762cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08554321aaa6065ba56aa556acd1d8f1"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga08554321aaa6065ba56aa556acd1d8f1">USBUS_HANDLER_FLAG_TR_STALL</a>&#160;&#160;&#160;(0x0020)</td></tr>
+<tr class="memdesc:ga08554321aaa6065ba56aa556acd1d8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Report transfer stall complete. <br /></td></tr>
+<tr class="separator:ga08554321aaa6065ba56aa556acd1d8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+USBUS URB flags</h2></td></tr>
+<tr class="memitem:ga2376c90557b86154f07030b41069053a"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga2376c90557b86154f07030b41069053a">USBUS_URB_FLAG_AUTO_ZLP</a>&#160;&#160;&#160;(0x0001)</td></tr>
+<tr class="memdesc:ga2376c90557b86154f07030b41069053a"><td class="mdescLeft">&#160;</td><td class="mdescRight">End the URB with a zero length packet if the URB is a full number of USB transfers in length. <br /></td></tr>
+<tr class="separator:ga2376c90557b86154f07030b41069053a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga106bb3bf2172f02274b0af261c16efab"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga106bb3bf2172f02274b0af261c16efab">USBUS_URB_FLAG_NEEDS_ZLP</a>&#160;&#160;&#160;(0x1000)</td></tr>
+<tr class="memdesc:ga106bb3bf2172f02274b0af261c16efab"><td class="mdescLeft">&#160;</td><td class="mdescRight">URB needs a zero length packet and it is requested. <br /></td></tr>
+<tr class="separator:ga106bb3bf2172f02274b0af261c16efab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fe745e5631eaeed5eb4db32e606e34e"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__usbus.html#ga4fe745e5631eaeed5eb4db32e606e34e">USBUS_URB_FLAG_CANCELLED</a>&#160;&#160;&#160;(0x2000)</td></tr>
+<tr class="memdesc:ga4fe745e5631eaeed5eb4db32e606e34e"><td class="mdescLeft">&#160;</td><td class="mdescRight">URB must be cancelled after the next finished xmit. <br /></td></tr>
+<tr class="separator:ga4fe745e5631eaeed5eb4db32e606e34e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

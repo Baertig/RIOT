@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DHCPv6 compile configurations</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__dhcpv6__conf.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">DHCPv6 compile configurations<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__dhcpv6.html">Dynamic Host Configuration Protocol for IPv6 (DHCPv6)</a> &#124; <a class="el" href="group__pseudomodules.html">Generic pseudomodules</a> &raquo; <a class="el" href="group__net__dhcpv6__client.html">DHCPv6 client</a> &#124; <a class="el" href="group__config.html">Compile time configurations</a><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__dhcpv6.html">Dynamic Host Configuration Protocol for IPv6 (DHCPv6)</a> &raquo;  &#124; <a class="el" href="group__net__dhcpv6__relay.html">DHCPv6 relay agent</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gad39ff5a80a62c0b99af9a87b826a1507"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#gad39ff5a80a62c0b99af9a87b826a1507">CONFIG_DHCPV6_CLIENT_PFX_LEASE_MAX</a>&#160;&#160;&#160;(1U)</td></tr>
+<tr class="memdesc:gad39ff5a80a62c0b99af9a87b826a1507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of prefix leases to be stored.  <a href="#gad39ff5a80a62c0b99af9a87b826a1507">More...</a><br /></td></tr>
+<tr class="separator:gad39ff5a80a62c0b99af9a87b826a1507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada7cdba0d6c188add01b356bd7fa0aea"><td class="memItemLeft" align="right" valign="top"><a id="gada7cdba0d6c188add01b356bd7fa0aea"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#gada7cdba0d6c188add01b356bd7fa0aea">CONFIG_DHCPV6_CLIENT_ADDR_LEASE_MAX</a>&#160;&#160;&#160;(1U)</td></tr>
+<tr class="memdesc:gada7cdba0d6c188add01b356bd7fa0aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of address leases to be stored. <br /></td></tr>
+<tr class="separator:gada7cdba0d6c188add01b356bd7fa0aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e542737c714f0fc1efa488c4ae69f75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#ga3e542737c714f0fc1efa488c4ae69f75">DHCPV6_CLIENT_ADDRS_NUMOF</a>&#160;&#160;&#160;((int)(<a class="el" href="group__net__dhcpv6__conf.html#gada7cdba0d6c188add01b356bd7fa0aea">CONFIG_DHCPV6_CLIENT_ADDR_LEASE_MAX</a>))</td></tr>
+<tr class="memdesc:ga3e542737c714f0fc1efa488c4ae69f75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of addresses needed for using DHCPv6 IA_NA.  <a href="#ga3e542737c714f0fc1efa488c4ae69f75">More...</a><br /></td></tr>
+<tr class="separator:ga3e542737c714f0fc1efa488c4ae69f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga92a42812f1c6693f2654a88329833c07"><td class="memItemLeft" align="right" valign="top"><a id="ga92a42812f1c6693f2654a88329833c07"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#ga92a42812f1c6693f2654a88329833c07">CONFIG_DHCPV6_CLIENT_MUD_URL</a>&#160;&#160;&#160;&quot;https://example.org&quot;</td></tr>
+<tr class="memdesc:ga92a42812f1c6693f2654a88329833c07"><td class="mdescLeft">&#160;</td><td class="mdescRight">MUD URL (must use the <a href="https://">https://</a> scheme) For more info, see the <a class="el" href="client_8h.html#net_dhcpv6_mud_url_option">definitions</a> below. <br /></td></tr>
+<tr class="separator:ga92a42812f1c6693f2654a88329833c07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac760a078ffd34eb2ad0e8b1c2110fa8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#gac760a078ffd34eb2ad0e8b1c2110fa8c">CONFIG_DHCPV6_RELAY_HOP_LIMIT</a>&#160;&#160;&#160;(8U)</td></tr>
+<tr class="memdesc:gac760a078ffd34eb2ad0e8b1c2110fa8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum hop count in a relay-forward message (HOP_COUNT_LIMIT)  <a href="#gac760a078ffd34eb2ad0e8b1c2110fa8c">More...</a><br /></td></tr>
+<tr class="separator:gac760a078ffd34eb2ad0e8b1c2110fa8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90ae4f32a69a57d9087ba61785978405"><td class="memItemLeft" align="right" valign="top"><a id="ga90ae4f32a69a57d9087ba61785978405"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html#ga90ae4f32a69a57d9087ba61785978405">CONFIG_DHCPV6_RELAY_BUFLEN</a>&#160;&#160;&#160;(256U)</td></tr>
+<tr class="memdesc:ga90ae4f32a69a57d9087ba61785978405"><td class="mdescLeft">&#160;</td><td class="mdescRight">default length for send and receive buffer <br /></td></tr>
+<tr class="separator:ga90ae4f32a69a57d9087ba61785978405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gad39ff5a80a62c0b99af9a87b826a1507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad39ff5a80a62c0b99af9a87b826a1507">&#9670;&nbsp;</a></span>CONFIG_DHCPV6_CLIENT_PFX_LEASE_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_DHCPV6_CLIENT_PFX_LEASE_MAX&#160;&#160;&#160;(1U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of prefix leases to be stored. </p>
+<p>Should be equal to the number of downstream interfaces that are to be configured via DHCPv6 </p>
+
+<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00063">63</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
+
+</div>
+</div>
+<a id="gac760a078ffd34eb2ad0e8b1c2110fa8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac760a078ffd34eb2ad0e8b1c2110fa8c">&#9670;&nbsp;</a></span>CONFIG_DHCPV6_RELAY_HOP_LIMIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_DHCPV6_RELAY_HOP_LIMIT&#160;&#160;&#160;(8U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum hop count in a relay-forward message (HOP_COUNT_LIMIT) </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc8415#section-7.6">RFC 8415, section 7.6</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="relay_8h_source.html#l00041">41</a> of file <a class="el" href="relay_8h_source.html">relay.h</a>.</p>
+
+</div>
+</div>
+<a id="ga3e542737c714f0fc1efa488c4ae69f75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e542737c714f0fc1efa488c4ae69f75">&#9670;&nbsp;</a></span>DHCPV6_CLIENT_ADDRS_NUMOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DHCPV6_CLIENT_ADDRS_NUMOF&#160;&#160;&#160;((int)(<a class="el" href="group__net__dhcpv6__conf.html#gada7cdba0d6c188add01b356bd7fa0aea">CONFIG_DHCPV6_CLIENT_ADDR_LEASE_MAX</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of addresses needed for using DHCPv6 IA_NA. </p>
+<dl class="section note"><dt>Note</dt><dd>Used for calculation of <a class="el" href="group__net__gnrc__netif__conf.html#ga366596e311b4a450887a1a180ae66fb3">CONFIG_GNRC_NETIF_IPV6_ADDRS_NUMOF</a>. Set to 0 if <code>dhcpv6_client_ia_na</code> is not included. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="client_8h_source.html#l00080">80</a> of file <a class="el" href="client_8h_source.html">client.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

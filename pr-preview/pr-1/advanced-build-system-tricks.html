@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Advanced build system tricks</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('advanced-build-system-tricks.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Advanced build system tricks </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#introduction">Introduction                                                    </a></li>
+<li class="level1"><a href="#customize-build-system">Customize the build system                            </a><ul><li class="level2"><a href="#autotoc_md2452">Usage</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#ccache">Speed-up builds with ccache                                           </a><ul><li class="level2"><a href="#autotoc_md2453">Setup</a></li>
+<li class="level2"><a href="#autotoc_md2454">Result</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#analyze-depedency-resolution">Analyze dependency resolution                   </a></li>
+<li class="level1"><a href="#generate-makefileci">Generate Makefile.ci content                             </a></li>
+<li class="level1"><a href="#out-of-tree-cache-dir">Out of Tree Cache Directory                            </a></li>
+<li class="level1"><a href="#comparing-build-sizes">Comparing Build Sizes                                  </a></li>
+<li class="level1"><a href="#zsh-completion-for-riot">RIOT-aware Completion in zsh                         </a></li>
+</ul>
+</div>
+<div class="textblock"><h1><a class="anchor" id="introduction"></a>
+Introduction                                                    </h1>
+<p>This page describes some build systems tricks that can help developers but are not part of the standard workflow.</p>
+<p>They are low level commands that should not be taken as part of a stable API but better have a documentation than only having a description in the build system code.</p>
+<h1><a class="anchor" id="customize-build-system"></a>
+Customize the build system                            </h1>
+<ul>
+<li><code>RIOT_MAKEFILES_GLOBAL_PRE</code>: files parsed before the body of <code>$RIOTBASE/Makefile.include</code></li>
+<li><code>RIOT_MAKEFILES_GLOBAL_POST</code>: files parsed after the body of <code>$RIOTBASE/Makefile.include</code></li>
+</ul>
+<p>The variables are a list of files that will be included by <code>$RIOTBASE/Makefile.include</code>. They will be handled as relative to the application directory if the path is relative.</p>
+<h2><a class="anchor" id="autotoc_md2452"></a>
+Usage</h2>
+<p>You can configure your own files that will be parsed by the build system main <code>Makefile.include</code> file before or after its main body, examples usages can be:</p>
+<ul>
+<li>Globally overwrite a variable, like <code>TERMPROG</code></li>
+<li>Specify a hard written <code>PORT</code> / <code>DEBUG_ADAPTER_ID</code> for some BOARD values</li>
+<li>Define your custom targets</li>
+<li>Override default targets</li>
+</ul>
+<h1><a class="anchor" id="ccache"></a>
+Speed-up builds with ccache                                           </h1>
+<p><a href="https://ccache.samba.org/"><code>ccache</code></a> is a compiler cache. It speeds up recompilation by caching previous compilations and detecting when the same compilation is being done again.</p>
+<p>Usually, the initial build takes a little (5% - 20%) longer, but repeated builds are up to ten times faster. Using <code>ccache</code> is safe, as <code>ccache</code> tries very hard to not mess up things and falls back to a normal compile if it cannot ensure correct output.</p>
+<p>There's one drawback: without further tweaking, <code>gcc</code> stops emitting colored output.</p>
+<h2><a class="anchor" id="autotoc_md2453"></a>
+Setup</h2>
+<ul>
+<li>Install using the package manager of your distribution, e.g., on Ubuntu or Debian:</li>
+</ul>
+<div class="fragment"><div class="line"># sudo apt-get install ccache</div></div><!-- fragment --><ul>
+<li>Set <code>CCACHE</code> variable to <code>ccache</code>:</li>
+</ul>
+<div class="fragment"><div class="line"># export CCACHE=ccache</div></div><!-- fragment --><ul>
+<li>(Optionally) add the above export line to your <code>~/.profile</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2454"></a>
+Result</h2>
+<p>Build without <code>ccache</code>:</p>
+<div class="fragment"><div class="line">[kaspar@booze default (master)]$ time BOARD=samr21-xpro make clean all</div><div class="line">Building application &quot;default&quot; for &quot;samr21-xpro&quot; with MCU &quot;samd21&quot;.</div><div class="line"></div><div class="line">[...]</div><div class="line"></div><div class="line">   text    data     bss     dec     hex filename</div><div class="line">  37016     180    6008   43204    a8c4 /home/kaspar/src/riot/examples/basic/default/bin/samr21-xpro/default.elf</div><div class="line"></div><div class="line">real    0m12.321s</div><div class="line">user    0m10.317s</div><div class="line">sys     0m1.170s</div><div class="line">[kaspar@booze default (master)]$</div></div><!-- fragment --><p>First build with <code>ccache</code> enabled:</p>
+<div class="fragment"><div class="line">[kaspar@booze default (master)]$ time BOARD=samr21-xpro make clean all</div><div class="line">Building application &quot;default&quot; for &quot;samr21-xpro&quot; with MCU &quot;samd21&quot;.</div><div class="line"></div><div class="line">[...]</div><div class="line"></div><div class="line">text    data     bss     dec     hex filename</div><div class="line">37016     180    6008   43204    a8c4 /home/kaspar/src/riot/examples/basic/default/bin/samr21-xpro/default.elf</div><div class="line"></div><div class="line">real    0m15.462s</div><div class="line">user    0m12.410s</div><div class="line">sys     0m1.597s</div><div class="line">[kaspar@booze default (master)]$</div></div><!-- fragment --><p>Subsequent build with <code>ccache</code> enabled:</p>
+<div class="fragment"><div class="line">[kaspar@booze default (master)]$ time BOARD=samr21-xpro make clean all</div><div class="line">Building application &quot;default&quot; for &quot;samr21-xpro&quot; with MCU &quot;samd21&quot;.</div><div class="line"></div><div class="line">[...]</div><div class="line"></div><div class="line">   text    data     bss     dec     hex filename</div><div class="line">  37016     180    6008   43204    a8c4 /home/kaspar/src/riot/examples/basic/default/bin/samr21-xpro/default.elf</div><div class="line"></div><div class="line">real    0m2.157s</div><div class="line">user    0m1.213s</div><div class="line">sys     0m0.327s</div><div class="line">[kaspar@booze default (master)]$</div></div><!-- fragment --><h1><a class="anchor" id="analyze-depedency-resolution"></a>
+Analyze dependency resolution                   </h1>
+<p>When refactoring dependency handling or modifying variables used for dependency resolution, one may want to evaluate the impact on the existing applications. This describe some debug targets to dump variables used during dependency resolution.</p>
+<p>To analyze one board and application run the following commands in an application directory.</p>
+<p>Generate the variables dump with the normal dependency resolution to a <code>dependencies_info_board_name</code> file:</p>
+<div class="fragment"><div class="line">BOARD=board_name make dependency-debug</div></div><!-- fragment --><p>Or with the "quick" version used by murdock to know supported boards (this is an incomplete resolution, details in <code>makefiles/dependencies_debug.inc.mk</code>) to a <code>dependencies_info-boards-supported_board_name</code> file:</p>
+<div class="fragment"><div class="line">BOARDS=board_name DEPENDENCY_DEBUG=1 make info-boards-supported</div></div><!-- fragment --><p>For more configuration and usage details, see in the file defining the targets <code>makefiles/dependencies_debug.inc.mk</code></p>
+<p>To do a repository wide analysis, you can use the script <code>dist/tools/buildsystem_sanity_check/save_all_dependencies_resolution_variables.sh</code> that will generate the output for all boards and applications. It currently take around 2 hours on an 8 cores machine with ssd.</p>
+<h1><a class="anchor" id="generate-makefileci"></a>
+Generate Makefile.ci content                             </h1>
+<p>Most applications and tests include a <code>Makefile.ci</code> to indicate which boards can not compile the application or test. The content for these files can be generated via the script in </p><div class="fragment"><div class="line">make -C $APPLICATION_DIRECTORY generate-Makefile.ci</div></div><!-- fragment --><p> This will compile and link the application for every board available and record the result in the Makefile.ci. This requires the toolchain for every target to be available. The target supports using docker via the <code>BUILD_IN_DOCKER=1</code> variable.</p>
+<h1><a class="anchor" id="out-of-tree-cache-dir"></a>
+Out of Tree Cache Directory                            </h1>
+<p>By exporting the <code>BUILD_DIR</code> environment variable, a custom build / clone cache directory can be created. This can be particularly useful when working with multiple git work trees or clones of the RIOT repository.</p>
+<h1><a class="anchor" id="comparing-build-sizes"></a>
+Comparing Build Sizes                                  </h1>
+<p>There is a make target for build size comparison. You can use it like that:</p>
+<div class="fragment"><div class="line">$ cd RIOT/test/test_something</div><div class="line"></div><div class="line">$ git checkout master</div><div class="line">$ BINDIRBASE=master-bin make buildtest</div><div class="line"></div><div class="line">$ git checkout my-branch</div><div class="line">$ BINDIRBASE=my-branch-bin make buildtest</div><div class="line"></div><div class="line">$ OLDBIN=master-bin NEWBIN=my-branch-bin make info-buildsizes-diff</div><div class="line">text    data    bss     dec     BOARD/BINDIRBASE</div><div class="line"></div><div class="line">0       0       0       0       avsextrem    **← this line contains the diff**</div><div class="line">57356   1532    96769   155657  master-bin</div><div class="line">57356   1532    96769   155657  my-branch-bin</div><div class="line"></div><div class="line">...</div></div><!-- fragment --><p>Check it out, the output contains colors. ;)</p>
+<h1><a class="anchor" id="zsh-completion-for-riot"></a>
+RIOT-aware Completion in zsh                         </h1>
+<p>For zsh users a RIOT-aware completion is provided in <code>dist/tools/zsh-completion</code>. Refer to the <code><a class="el" href="README_8md_source.html">README.md</a></code> in there for more details and installation instructions. </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

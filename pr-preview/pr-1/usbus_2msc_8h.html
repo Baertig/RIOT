@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/usb/usbus/msc.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('usbus_2msc_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">msc.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usbus__msc.html">USBUS Mass Storage Class functions</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS Mass Storage Class functions definitions.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USBUS Mass Storage Class functions definitions. </p>
+<dl class="section author"><dt>Author</dt><dd>Dylan Laduranty <a href="#" onclick="location.href='mai'+'lto:'+'dyl'+'an'+'.la'+'du'+'ran'+'ty'+'@me'+'so'+'tic'+'.c'+'om'; return false;">dylan<span style="display: none;">.nosp@m.</span>.lad<span style="display: none;">.nosp@m.</span>urant<span style="display: none;">.nosp@m.</span>y@me<span style="display: none;">.nosp@m.</span>sotic<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="usbus_2msc_8h_source.html">msc.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="usbus_8h_source.html">usb/usbus.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scsi_8h_source.html">usb/usbus/msc/scsi.h</a>&quot;</code><br />
+<code>#include &quot;mtd.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for msc.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usbus_2msc_8h__incl.svg" width="1584" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="usbus_2msc_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__msc__lun.html">usbus_msc_lun</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC Logical Unit descriptor.  <a href="structusbus__msc__lun.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__msc__device.html">usbus_msc_device</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC device interface context.  <a href="structusbus__msc__device.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bb39a0a8f63f6b3e97efe17a640590a"><td class="memItemLeft" align="right" valign="top"><a id="a5bb39a0a8f63f6b3e97efe17a640590a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a5bb39a0a8f63f6b3e97efe17a640590a">USBUS_MSC_EP_DATA_SIZE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:a5bb39a0a8f63f6b3e97efe17a640590a"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC bulk data endpoint size. <br /></td></tr>
+<tr class="separator:a5bb39a0a8f63f6b3e97efe17a640590a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2d355cd9d0652e79c72844aa2a73c5"><td class="memItemLeft" align="right" valign="top"><a id="a0e2d355cd9d0652e79c72844aa2a73c5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a0e2d355cd9d0652e79c72844aa2a73c5">USBUS_MSC_EP_IN_REQUIRED_NUMOF</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:a0e2d355cd9d0652e79c72844aa2a73c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of IN EPs required for the MSC interface. <br /></td></tr>
+<tr class="separator:a0e2d355cd9d0652e79c72844aa2a73c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c343612b175caf3810af66c5b807b6"><td class="memItemLeft" align="right" valign="top"><a id="aa7c343612b175caf3810af66c5b807b6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#aa7c343612b175caf3810af66c5b807b6">USBUS_MSC_EP_OUT_REQUIRED_NUMOF</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:aa7c343612b175caf3810af66c5b807b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Out EPs required for the MSC interface. <br /></td></tr>
+<tr class="separator:aa7c343612b175caf3810af66c5b807b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa05b9f210922d2723bb9ac8638eb909a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909a">usbus_msc_state_t</a> { <br />
+&#160;&#160;<a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909aa757971c0bc5a1972d5f1b1be2c0e2087">WAITING</a>, 
+<a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909aa1ec43b061ae809736bddc74cdad52bac">WAIT_FOR_TRANSFER</a>, 
+<a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909aafa1e3625bbc1301285db059f2644e2e0">DATA_TRANSFER_IN</a>, 
+<a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909aa1c539d5b9a9574c8dabd545f1a9e7e4a">DATA_TRANSFER_OUT</a>, 
+<br />
+&#160;&#160;<a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909aa0ae03286322812661ceb44c549752792">GEN_CSW</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:aa05b9f210922d2723bb9ac8638eb909a"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC internal state machine enum.  <a href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909a">More...</a><br /></td></tr>
+<tr class="separator:aa05b9f210922d2723bb9ac8638eb909a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc0bf5412c1167230a2f1f04ef62808"><td class="memItemLeft" align="right" valign="top"><a id="a0fc0bf5412c1167230a2f1f04ef62808"></a>
+typedef struct <a class="el" href="structusbus__msc__lun.html">usbus_msc_lun</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a0fc0bf5412c1167230a2f1f04ef62808">usbus_msc_lun_t</a></td></tr>
+<tr class="memdesc:a0fc0bf5412c1167230a2f1f04ef62808"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC Logical Unit descriptor. <br /></td></tr>
+<tr class="separator:a0fc0bf5412c1167230a2f1f04ef62808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c67fd076041c35cb4670e4cc0a106b"><td class="memItemLeft" align="right" valign="top"><a id="a46c67fd076041c35cb4670e4cc0a106b"></a>
+typedef struct <a class="el" href="structusbus__msc__device.html">usbus_msc_device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a46c67fd076041c35cb4670e4cc0a106b">usbus_msc_device_t</a></td></tr>
+<tr class="memdesc:a46c67fd076041c35cb4670e4cc0a106b"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS MSC device interface context. <br /></td></tr>
+<tr class="separator:a46c67fd076041c35cb4670e4cc0a106b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a1801bd83c4b5b02aad4a9497b37050"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a8a1801bd83c4b5b02aad4a9497b37050">usbus_msc_init</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="usbus_2msc_8h.html#a46c67fd076041c35cb4670e4cc0a106b">usbus_msc_device_t</a> *handler)</td></tr>
+<tr class="memdesc:a8a1801bd83c4b5b02aad4a9497b37050"><td class="mdescLeft">&#160;</td><td class="mdescRight">MSC initialization function.  <a href="#a8a1801bd83c4b5b02aad4a9497b37050">More...</a><br /></td></tr>
+<tr class="separator:a8a1801bd83c4b5b02aad4a9497b37050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfb1f1aa0e779ce45e3822227e79b3b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#abcfb1f1aa0e779ce45e3822227e79b3b">usbus_msc_add_lun</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *dev)</td></tr>
+<tr class="memdesc:abcfb1f1aa0e779ce45e3822227e79b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a MTD device as a MSC LUN (Logical Unit Number)  <a href="#abcfb1f1aa0e779ce45e3822227e79b3b">More...</a><br /></td></tr>
+<tr class="separator:abcfb1f1aa0e779ce45e3822227e79b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831c971c68a5bfd03990d86422f955d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbus_2msc_8h.html#a831c971c68a5bfd03990d86422f955d6">usbus_msc_remove_lun</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *dev)</td></tr>
+<tr class="memdesc:a831c971c68a5bfd03990d86422f955d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister a MTD device as a MSC LUN.  <a href="#a831c971c68a5bfd03990d86422f955d6">More...</a><br /></td></tr>
+<tr class="separator:a831c971c68a5bfd03990d86422f955d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aa05b9f210922d2723bb9ac8638eb909a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa05b9f210922d2723bb9ac8638eb909a">&#9670;&nbsp;</a></span>usbus_msc_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="usbus_2msc_8h.html#aa05b9f210922d2723bb9ac8638eb909a">usbus_msc_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USBUS MSC internal state machine enum. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa05b9f210922d2723bb9ac8638eb909aa757971c0bc5a1972d5f1b1be2c0e2087"></a>WAITING&#160;</td><td class="fielddoc"><p>Initial state, wait for USB setup. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa05b9f210922d2723bb9ac8638eb909aa1ec43b061ae809736bddc74cdad52bac"></a>WAIT_FOR_TRANSFER&#160;</td><td class="fielddoc"><p>Wait for a single packet transfer before sending CSW. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa05b9f210922d2723bb9ac8638eb909aafa1e3625bbc1301285db059f2644e2e0"></a>DATA_TRANSFER_IN&#160;</td><td class="fielddoc"><p>Ongoing transfer on USB MSC IN endpoint. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa05b9f210922d2723bb9ac8638eb909aa1c539d5b9a9574c8dabd545f1a9e7e4a"></a>DATA_TRANSFER_OUT&#160;</td><td class="fielddoc"><p>Ongoing transfer on USB MSC OUT endpoint. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa05b9f210922d2723bb9ac8638eb909aa0ae03286322812661ceb44c549752792"></a>GEN_CSW&#160;</td><td class="fielddoc"><p>Generate CSW response to host w/ the current transfer status. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="usbus_2msc_8h_source.html#l00056">56</a> of file <a class="el" href="usbus_2msc_8h_source.html">msc.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abcfb1f1aa0e779ce45e3822227e79b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcfb1f1aa0e779ce45e3822227e79b3b">&#9670;&nbsp;</a></span>usbus_msc_add_lun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int usbus_msc_add_lun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td>
+          <td class="paramname"><em>usbus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a MTD device as a MSC LUN (Logical Unit Number) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>pointer to the MTD device to export</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success -ENOMEM, if the selected MTD device doesn't have enough memory -EAGAIN, if no more MTD devices can be exported -EBUSY, if the MTD device is already exported </dd></dl>
+
+</div>
+</div>
+<a id="a8a1801bd83c4b5b02aad4a9497b37050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a1801bd83c4b5b02aad4a9497b37050">&#9670;&nbsp;</a></span>usbus_msc_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int usbus_msc_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td>
+          <td class="paramname"><em>usbus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="usbus_2msc_8h.html#a46c67fd076041c35cb4670e4cc0a106b">usbus_msc_device_t</a> *&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MSC initialization function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS thread to use </td></tr>
+    <tr><td class="paramname">handler</td><td>MSC device struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a831c971c68a5bfd03990d86422f955d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831c971c68a5bfd03990d86422f955d6">&#9670;&nbsp;</a></span>usbus_msc_remove_lun()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int usbus_msc_remove_lun </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td>
+          <td class="paramname"><em>usbus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unregister a MTD device as a MSC LUN. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>pointer to the MTD device to export</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success -ENODEV, if no matching MTD device was found </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

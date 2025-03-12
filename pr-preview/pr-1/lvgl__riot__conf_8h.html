@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/lvgl/include/lvgl_riot_conf.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('lvgl__riot__conf_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">lvgl_riot_conf.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &raquo; <a class="el" href="group__pkg__lvgl.html">LVGL - Open-Source Embedded GUI Library</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Definitions specific to RIOT for the LVGL engine.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Definitions specific to RIOT for the LVGL engine. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span style="display: none;">.nosp@m.</span>ndre<span style="display: none;">.nosp@m.</span>.abad<span style="display: none;">.nosp@m.</span>ie@i<span style="display: none;">.nosp@m.</span>nria.<span style="display: none;">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="lvgl__riot__conf_8h_source.html">lvgl_riot_conf.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="kernel__defines_8h_source.html">kernel_defines.h</a>&quot;</code><br />
+<code>#include &quot;board.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for lvgl_riot_conf.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lvgl__riot__conf_8h__incl.svg" width="483" height="351"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="lvgl__riot__conf_8h__dep__incl.svg" width="328" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="lvgl__riot__conf_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:abbfac4b79524137bb1386b9fff5eb8ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lvgl__riot__conf_8h.html#abbfac4b79524137bb1386b9fff5eb8ad">LV_HOR_RES_MAX</a>&#160;&#160;&#160;(320)</td></tr>
+<tr class="memdesc:abbfac4b79524137bb1386b9fff5eb8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximal horizontal resolution to support by the library.  <a href="#abbfac4b79524137bb1386b9fff5eb8ad">More...</a><br /></td></tr>
+<tr class="separator:abbfac4b79524137bb1386b9fff5eb8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a2c2ff7418ceb92b608cab9825ef939"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lvgl__riot__conf_8h.html#a2a2c2ff7418ceb92b608cab9825ef939">LV_VER_RES_MAX</a>&#160;&#160;&#160;(240)</td></tr>
+<tr class="memdesc:a2a2c2ff7418ceb92b608cab9825ef939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximal vertical resolution to support by the library.  <a href="#a2a2c2ff7418ceb92b608cab9825ef939">More...</a><br /></td></tr>
+<tr class="separator:a2a2c2ff7418ceb92b608cab9825ef939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b77dcb22fcdc624952dc307331e5db6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lvgl__riot__conf_8h.html#a6b77dcb22fcdc624952dc307331e5db6">LV_ATTRIBUTE_MEM_ALIGN</a>&#160;&#160;&#160;__attribute__((aligned(4)))</td></tr>
+<tr class="memdesc:a6b77dcb22fcdc624952dc307331e5db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will be added where memories needs to be aligned (with -Os data might not be aligned to boundary by default).  <a href="#a6b77dcb22fcdc624952dc307331e5db6">More...</a><br /></td></tr>
+<tr class="separator:a6b77dcb22fcdc624952dc307331e5db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244b19e028c500d10572872fa00dd995"><td class="memItemLeft" align="right" valign="top"><a id="a244b19e028c500d10572872fa00dd995"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LV_TICK_CUSTOM</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a244b19e028c500d10572872fa00dd995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac187cce8443f66c7c451794679354804"><td class="memItemLeft" align="right" valign="top"><a id="ac187cce8443f66c7c451794679354804"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LV_TICK_CUSTOM_INCLUDE</b>&#160;&#160;&#160;&quot;ztimer.h&quot;       /*Header for the sys time function*/</td></tr>
+<tr class="separator:ac187cce8443f66c7c451794679354804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c7c9bcaf7b3edf752664c8438ee3d6"><td class="memItemLeft" align="right" valign="top"><a id="aa9c7c9bcaf7b3edf752664c8438ee3d6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LV_TICK_CUSTOM_SYS_TIME_EXPR</b>&#160;&#160;&#160;(<a class="el" href="group__sys__ztimer.html#gabcd8174ea28626e102b40143075ed9c8">ztimer_now</a>(<a class="el" href="group__sys__ztimer.html#gaf89aa36047e5e6859e5b08c9bacd1c3e">ZTIMER_MSEC</a>))     /*Expression evaluating to current systime in ms*/</td></tr>
+<tr class="separator:aa9c7c9bcaf7b3edf752664c8438ee3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98932f5017f20988532bb68b32a6d76"><td class="memItemLeft" align="right" valign="top"><a id="ad98932f5017f20988532bb68b32a6d76"></a>
+typedef int16_t&#160;</td><td class="memItemRight" valign="bottom"><b>lv_coord_t</b></td></tr>
+<tr class="separator:ad98932f5017f20988532bb68b32a6d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6b77dcb22fcdc624952dc307331e5db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b77dcb22fcdc624952dc307331e5db6">&#9670;&nbsp;</a></span>LV_ATTRIBUTE_MEM_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_ATTRIBUTE_MEM_ALIGN&#160;&#160;&#160;__attribute__((aligned(4)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Will be added where memories needs to be aligned (with -Os data might not be aligned to boundary by default). </p>
+<p>E.g. <b>attribute</b>((aligned(4))) </p>
+
+<p class="definition">Definition at line <a class="el" href="lvgl__riot__conf_8h_source.html#l00052">52</a> of file <a class="el" href="lvgl__riot__conf_8h_source.html">lvgl_riot_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="abbfac4b79524137bb1386b9fff5eb8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbfac4b79524137bb1386b9fff5eb8ad">&#9670;&nbsp;</a></span>LV_HOR_RES_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_HOR_RES_MAX&#160;&#160;&#160;(320)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximal horizontal resolution to support by the library. </p>
+
+<p class="definition">Definition at line <a class="el" href="lvgl__riot__conf_8h_source.html#l00037">37</a> of file <a class="el" href="lvgl__riot__conf_8h_source.html">lvgl_riot_conf.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a2c2ff7418ceb92b608cab9825ef939"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a2c2ff7418ceb92b608cab9825ef939">&#9670;&nbsp;</a></span>LV_VER_RES_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LV_VER_RES_MAX&#160;&#160;&#160;(240)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximal vertical resolution to support by the library. </p>
+
+<p class="definition">Definition at line <a class="el" href="lvgl__riot__conf_8h_source.html#l00046">46</a> of file <a class="el" href="lvgl__riot__conf_8h_source.html">lvgl_riot_conf.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

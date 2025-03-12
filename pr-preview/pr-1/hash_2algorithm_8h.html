@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/hash/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('hash_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Hash algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Hash algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hash_2algorithm_8h__incl.svg" width="174" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hash_2algorithm_8h__dep__incl.svg" width="2546" height="811"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="hash_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:afd048e1835b80e6daaff7fddce699757"><td class="memItemLeft" align="right" valign="top"><a id="afd048e1835b80e6daaff7fddce699757"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000000)</td></tr>
+<tr class="memdesc:afd048e1835b80e6daaff7fddce699757"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for hash algorithms. <br /></td></tr>
+<tr class="separator:afd048e1835b80e6daaff7fddce699757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41a7077aef55bb20c629c8949d43c57"><td class="memItemLeft" align="right" valign="top"><a id="ac41a7077aef55bb20c629c8949d43c57"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>&#160;&#160;&#160;((psa_algorithm_t)0x000000ff)</td></tr>
+<tr class="memdesc:ac41a7077aef55bb20c629c8949d43c57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash algorithm mask. <br /></td></tr>
+<tr class="separator:ac41a7077aef55bb20c629c8949d43c57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9280662bb482590b4b33d1dcd32930f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a>)</td></tr>
+<tr class="memdesc:ac9280662bb482590b4b33d1dcd32930f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a hash algorithm.  <a href="#ac9280662bb482590b4b33d1dcd32930f">More...</a><br /></td></tr>
+<tr class="separator:ac9280662bb482590b4b33d1dcd32930f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181b0fe4619c1a70c5ef82f28eea09f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a181b0fe4619c1a70c5ef82f28eea09f5">PSA_ALG_GET_HASH</a>(alg)</td></tr>
+<tr class="memdesc:a181b0fe4619c1a70c5ef82f28eea09f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hash used by a composite algorithm.  <a href="#a181b0fe4619c1a70c5ef82f28eea09f5">More...</a><br /></td></tr>
+<tr class="separator:a181b0fe4619c1a70c5ef82f28eea09f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee84269106a947cb6ac353e15e6c4687"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#aee84269106a947cb6ac353e15e6c4687">PSA_ALG_HMAC_GET_HASH</a>(hmac_alg)&#160;&#160;&#160;(<a class="el" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a> | ((hmac_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>))</td></tr>
+<tr class="memdesc:aee84269106a947cb6ac353e15e6c4687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hash operation of a hmac algorithm.  <a href="#aee84269106a947cb6ac353e15e6c4687">More...</a><br /></td></tr>
+<tr class="separator:aee84269106a947cb6ac353e15e6c4687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab076ca67238cb4ebd81556db8f3dbac1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#ab076ca67238cb4ebd81556db8f3dbac1">PSA_ALG_MD2</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000001)</td></tr>
+<tr class="memdesc:ab076ca67238cb4ebd81556db8f3dbac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MD2 message-digest algorithm.  <a href="#ab076ca67238cb4ebd81556db8f3dbac1">More...</a><br /></td></tr>
+<tr class="separator:ab076ca67238cb4ebd81556db8f3dbac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac7ab8c28c117ef4ddf01affc8d3ceb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#aac7ab8c28c117ef4ddf01affc8d3ceb2">PSA_ALG_MD4</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000002)</td></tr>
+<tr class="memdesc:aac7ab8c28c117ef4ddf01affc8d3ceb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MD4 message-digest algorithm.  <a href="#aac7ab8c28c117ef4ddf01affc8d3ceb2">More...</a><br /></td></tr>
+<tr class="separator:aac7ab8c28c117ef4ddf01affc8d3ceb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade591d9286d23382eb5cec099c84180d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#ade591d9286d23382eb5cec099c84180d">PSA_ALG_MD5</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000003)</td></tr>
+<tr class="memdesc:ade591d9286d23382eb5cec099c84180d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The MD5 message-digest algorithm.  <a href="#ade591d9286d23382eb5cec099c84180d">More...</a><br /></td></tr>
+<tr class="separator:ade591d9286d23382eb5cec099c84180d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5d3a32cda59086f07b85ef007033dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a6c5d3a32cda59086f07b85ef007033dd">PSA_ALG_RIPEMD160</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000004)</td></tr>
+<tr class="memdesc:a6c5d3a32cda59086f07b85ef007033dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RIPEMD-160 message-digest algorithm.  <a href="#a6c5d3a32cda59086f07b85ef007033dd">More...</a><br /></td></tr>
+<tr class="separator:a6c5d3a32cda59086f07b85ef007033dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fca4e9f9ad4a1158817d1850dee82e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a3fca4e9f9ad4a1158817d1850dee82e5">PSA_ALG_SHA_1</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000005)</td></tr>
+<tr class="memdesc:a3fca4e9f9ad4a1158817d1850dee82e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-1 message-digest algorithm.  <a href="#a3fca4e9f9ad4a1158817d1850dee82e5">More...</a><br /></td></tr>
+<tr class="separator:a3fca4e9f9ad4a1158817d1850dee82e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d6a3244d10a7148fe6b026d1979f7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a25d6a3244d10a7148fe6b026d1979f7b">PSA_ALG_SHA_224</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000008) /** SHA-224 */</td></tr>
+<tr class="memdesc:a25d6a3244d10a7148fe6b026d1979f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-224 message-digest algorithm.  <a href="#a25d6a3244d10a7148fe6b026d1979f7b">More...</a><br /></td></tr>
+<tr class="separator:a25d6a3244d10a7148fe6b026d1979f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a619471f978e13cdd0a1e37145e4bf341"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a619471f978e13cdd0a1e37145e4bf341">PSA_ALG_SHA_256</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000009) /** SHA-256 */</td></tr>
+<tr class="memdesc:a619471f978e13cdd0a1e37145e4bf341"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-256 message-digest algorithm.  <a href="#a619471f978e13cdd0a1e37145e4bf341">More...</a><br /></td></tr>
+<tr class="separator:a619471f978e13cdd0a1e37145e4bf341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58af64dd9a86a287e8da9ed7739eead4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a58af64dd9a86a287e8da9ed7739eead4">PSA_ALG_SHA_384</a>&#160;&#160;&#160;((psa_algorithm_t)0x0200000a) /** SHA-384 */</td></tr>
+<tr class="memdesc:a58af64dd9a86a287e8da9ed7739eead4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-384 message-digest algorithm.  <a href="#a58af64dd9a86a287e8da9ed7739eead4">More...</a><br /></td></tr>
+<tr class="separator:a58af64dd9a86a287e8da9ed7739eead4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba3ae409f46d3dd7f37a0910660c3e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#afba3ae409f46d3dd7f37a0910660c3e9">PSA_ALG_SHA_512</a>&#160;&#160;&#160;((psa_algorithm_t)0x0200000b) /** SHA-512 */</td></tr>
+<tr class="memdesc:afba3ae409f46d3dd7f37a0910660c3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-512 message-digest algorithm.  <a href="#afba3ae409f46d3dd7f37a0910660c3e9">More...</a><br /></td></tr>
+<tr class="separator:afba3ae409f46d3dd7f37a0910660c3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe2d7c3c80e3186ca78d16a35d5d931"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a3fe2d7c3c80e3186ca78d16a35d5d931">PSA_ALG_SHA_512_224</a>&#160;&#160;&#160;((psa_algorithm_t)0x0200000c) /** SHA-512/224 */</td></tr>
+<tr class="memdesc:a3fe2d7c3c80e3186ca78d16a35d5d931"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-512/224 message-digest algorithm.  <a href="#a3fe2d7c3c80e3186ca78d16a35d5d931">More...</a><br /></td></tr>
+<tr class="separator:a3fe2d7c3c80e3186ca78d16a35d5d931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5910b3964c14e9613e8643a45b09c2d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a5910b3964c14e9613e8643a45b09c2d4">PSA_ALG_SHA_512_256</a>&#160;&#160;&#160;((psa_algorithm_t)0x0200000d) /** SHA-512/256 */</td></tr>
+<tr class="memdesc:a5910b3964c14e9613e8643a45b09c2d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA-512/256 message-digest algorithm.  <a href="#a5910b3964c14e9613e8643a45b09c2d4">More...</a><br /></td></tr>
+<tr class="separator:a5910b3964c14e9613e8643a45b09c2d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f5fe34ccce68c2fada1224c054a999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a16f5fe34ccce68c2fada1224c054a999">PSA_ALG_SHA3_224</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000010) /** SHA-3-224 */</td></tr>
+<tr class="memdesc:a16f5fe34ccce68c2fada1224c054a999"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA3-224 message-digest algorithm.  <a href="#a16f5fe34ccce68c2fada1224c054a999">More...</a><br /></td></tr>
+<tr class="separator:a16f5fe34ccce68c2fada1224c054a999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aace70d9515489bbe3c5e7ac1b7d9155b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#aace70d9515489bbe3c5e7ac1b7d9155b">PSA_ALG_SHA3_256</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000011) /** SHA-3-256 */</td></tr>
+<tr class="memdesc:aace70d9515489bbe3c5e7ac1b7d9155b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA3-256 message-digest algorithm.  <a href="#aace70d9515489bbe3c5e7ac1b7d9155b">More...</a><br /></td></tr>
+<tr class="separator:aace70d9515489bbe3c5e7ac1b7d9155b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f079257ea75e2acfe2fc3b38c78cd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#ab0f079257ea75e2acfe2fc3b38c78cd8">PSA_ALG_SHA3_384</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000012) /** SHA-3-384 */</td></tr>
+<tr class="memdesc:ab0f079257ea75e2acfe2fc3b38c78cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA3-384 message-digest algorithm.  <a href="#ab0f079257ea75e2acfe2fc3b38c78cd8">More...</a><br /></td></tr>
+<tr class="separator:ab0f079257ea75e2acfe2fc3b38c78cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e5dbe936dddb155e76f2997de27188"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#a37e5dbe936dddb155e76f2997de27188">PSA_ALG_SHA3_512</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000013) /** SHA-3-512 */</td></tr>
+<tr class="memdesc:a37e5dbe936dddb155e76f2997de27188"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SHA3-512 message-digest algorithm.  <a href="#a37e5dbe936dddb155e76f2997de27188">More...</a><br /></td></tr>
+<tr class="separator:a37e5dbe936dddb155e76f2997de27188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa90232ca70c2a6f1d4c59a1b4af16ae5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#aa90232ca70c2a6f1d4c59a1b4af16ae5">PSA_ALG_SM3</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000014) /** SM3 */</td></tr>
+<tr class="memdesc:aa90232ca70c2a6f1d4c59a1b4af16ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The SM3 message-digest algorithm.  <a href="#aa90232ca70c2a6f1d4c59a1b4af16ae5">More...</a><br /></td></tr>
+<tr class="separator:aa90232ca70c2a6f1d4c59a1b4af16ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec67f81d5b80b765702efb4b3d6e202c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hash_2algorithm_8h.html#aec67f81d5b80b765702efb4b3d6e202c">PSA_ALG_SHAKE256_512</a>&#160;&#160;&#160;((psa_algorithm_t)0x02000015)</td></tr>
+<tr class="memdesc:aec67f81d5b80b765702efb4b3d6e202c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The first 512 bits (64 bytes) of the SHAKE256 output.  <a href="#aec67f81d5b80b765702efb4b3d6e202c">More...</a><br /></td></tr>
+<tr class="separator:aec67f81d5b80b765702efb4b3d6e202c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a181b0fe4619c1a70c5ef82f28eea09f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181b0fe4619c1a70c5ef82f28eea09f5">&#9670;&nbsp;</a></span>PSA_ALG_GET_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_GET_HASH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(((alg) &amp; <a class="code" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>) == \</div><div class="line">     0 ? ((psa_algorithm_t)0) : <a class="code" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a> | ((alg) &amp; <a class="code" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>))</div><div class="ttc" id="hash_2algorithm_8h_html_afd048e1835b80e6daaff7fddce699757"><div class="ttname"><a href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a></div><div class="ttdeci">#define PSA_ALG_CATEGORY_HASH</div><div class="ttdoc">Category for hash algorithms. </div><div class="ttdef"><b>Definition:</b> <a href="hash_2algorithm_8h_source.html#l00034">algorithm.h:34</a></div></div>
+<div class="ttc" id="hash_2algorithm_8h_html_ac41a7077aef55bb20c629c8949d43c57"><div class="ttname"><a href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a></div><div class="ttdeci">#define PSA_ALG_HASH_MASK</div><div class="ttdoc">Hash algorithm mask. </div><div class="ttdef"><b>Definition:</b> <a href="hash_2algorithm_8h_source.html#l00039">algorithm.h:39</a></div></div>
+</div><!-- fragment -->
+<p>Get the hash used by a composite algorithm. </p>
+<p>The following composite algorithms require a hash algorithm:</p><ul>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a7e3ce9f514a227d5ba5d8318870452e3">PSA_ALG_ECDSA()</a></li>
+<li><a class="el" href="key__derivation_2algorithm_8h.html#a32a888fb360e6e25cab8a343772c4a82">PSA_ALG_HKDF()</a></li>
+<li><a class="el" href="mac_2algorithm_8h.html#a70f397425684b3efcde1e0e34c28261f">PSA_ALG_HMAC()</a></li>
+<li><a class="el" href="asymmetric__encryption_2algorithm_8h.html#aa1235dc3fdd9839c6c1b1a9857344c76">PSA_ALG_RSA_OAEP()</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a9d545279f23d43b1b2a744d0dd6826d0">PSA_ALG_IS_RSA_PKCS1V15_SIGN()</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a62152bf4cb4bf6aace5e1be8f143564d">PSA_ALG_RSA_PSS()</a></li>
+<li><a class="el" href="asymmetric__signature_2algorithm_8h.html#a9b7355a2cd6bde88177634d539127f2b">PSA_ALG_RSA_PSS_ANY_SALT()</a></li>
+<li><a class="el" href="key__derivation_2algorithm_8h.html#a6d5623c2ccda1d4a84e34351af8382d5">PSA_ALG_TLS12_PRF()</a></li>
+<li><a class="el" href="key__derivation_2algorithm_8h.html#a039ec797f15d1635d9b2e09a611f8a68">PSA_ALG_TLS12_PSK_TO_MS()</a></li>
+<li><a class="el" href="key__derivation_2algorithm_8h.html#a67ad00bf6421d52f2905b7ef860d6e99">PSA_ALG_PBKDF2_HMAC()</a></li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The underlying hash algorithm if alg is a composite algorithm that uses a hash algorithm PSA_ALG_NONE if alg is not a composite algorithm that uses a hash. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00071">71</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aee84269106a947cb6ac353e15e6c4687"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee84269106a947cb6ac353e15e6c4687">&#9670;&nbsp;</a></span>PSA_ALG_HMAC_GET_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_HMAC_GET_HASH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hmac_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a> | ((hmac_alg) &amp; <a class="el" href="hash_2algorithm_8h.html#ac41a7077aef55bb20c629c8949d43c57">PSA_ALG_HASH_MASK</a>))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the hash operation of a hmac algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hmac_alg</td><td>HMAC algorithm </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00080">80</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9280662bb482590b4b33d1dcd32930f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9280662bb482590b4b33d1dcd32930f">&#9670;&nbsp;</a></span>PSA_ALG_IS_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_HASH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="hash_2algorithm_8h.html#afd048e1835b80e6daaff7fddce699757">PSA_ALG_CATEGORY_HASH</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a hash algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a hash algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00049">49</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab076ca67238cb4ebd81556db8f3dbac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab076ca67238cb4ebd81556db8f3dbac1">&#9670;&nbsp;</a></span>PSA_ALG_MD2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_MD2&#160;&#160;&#160;((psa_algorithm_t)0x02000001)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MD2 message-digest algorithm. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The MD2 hash is weak and deprecated and is only recommended for use in legacy protocols.</dd></dl>
+<p>MD2 is defined in <em>The MD2 Message-Digest Algorithm <a href="https://tools.ietf.org/html/rfc1319.html">RFC1319</a></em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00092">92</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aac7ab8c28c117ef4ddf01affc8d3ceb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac7ab8c28c117ef4ddf01affc8d3ceb2">&#9670;&nbsp;</a></span>PSA_ALG_MD4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_MD4&#160;&#160;&#160;((psa_algorithm_t)0x02000002)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MD4 message-digest algorithm. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The MD4 hash is weak and deprecated and is only recommended for use in legacy protocols.</dd></dl>
+<p>MD4 is defined in <em>The MD4 Message-Digest Algorithm <a href="https://tools.ietf.org/html/rfc1320.html">RFC1320</a></em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00103">103</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ade591d9286d23382eb5cec099c84180d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade591d9286d23382eb5cec099c84180d">&#9670;&nbsp;</a></span>PSA_ALG_MD5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_MD5&#160;&#160;&#160;((psa_algorithm_t)0x02000003)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The MD5 message-digest algorithm. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The MD5 hash is weak and deprecated and is only recommended for use in legacy protocols.</dd></dl>
+<p>MD5 is defined in <em>The MD5 Message-Digest Algorithm <a href="https://tools.ietf.org/html/rfc1321.html">RFC1321</a></em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00114">114</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a6c5d3a32cda59086f07b85ef007033dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5d3a32cda59086f07b85ef007033dd">&#9670;&nbsp;</a></span>PSA_ALG_RIPEMD160</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RIPEMD160&#160;&#160;&#160;((psa_algorithm_t)0x02000004)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RIPEMD-160 message-digest algorithm. </p>
+<p>RIPEMD-160 is defined in <em>RIPEMD-160: A Strengthened Version of RIPEMD</em>, and also in <em>ISO/IEC 10118-3:2018 IT Security techniques — Hash-functions — Part 3: Dedicated hash-functions <a href="https://www.iso.org/standard/67116.html">ISO10118</a></em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00123">123</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a16f5fe34ccce68c2fada1224c054a999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f5fe34ccce68c2fada1224c054a999">&#9670;&nbsp;</a></span>PSA_ALG_SHA3_224</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA3_224&#160;&#160;&#160;((psa_algorithm_t)0x02000010) /** SHA-3-224 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA3-224 message-digest algorithm. </p>
+<p>SHA3-224 is defined in FIPS Publication 202: <em>SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions <a href="https://doi.org/10.6028/NIST.FIPS.202">FIPS202</a></em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00190">190</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aace70d9515489bbe3c5e7ac1b7d9155b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aace70d9515489bbe3c5e7ac1b7d9155b">&#9670;&nbsp;</a></span>PSA_ALG_SHA3_256</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA3_256&#160;&#160;&#160;((psa_algorithm_t)0x02000011) /** SHA-3-256 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA3-256 message-digest algorithm. </p>
+<p>SHA3-256 is defined in <a href="https://doi.org/10.6028/NIST.FIPS.202">FIPS202</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00197">197</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab0f079257ea75e2acfe2fc3b38c78cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f079257ea75e2acfe2fc3b38c78cd8">&#9670;&nbsp;</a></span>PSA_ALG_SHA3_384</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA3_384&#160;&#160;&#160;((psa_algorithm_t)0x02000012) /** SHA-3-384 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA3-384 message-digest algorithm. </p>
+<p>SHA3-384 is defined in <a href="https://doi.org/10.6028/NIST.FIPS.202">FIPS202</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00204">204</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a37e5dbe936dddb155e76f2997de27188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37e5dbe936dddb155e76f2997de27188">&#9670;&nbsp;</a></span>PSA_ALG_SHA3_512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA3_512&#160;&#160;&#160;((psa_algorithm_t)0x02000013) /** SHA-3-512 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA3-512 message-digest algorithm. </p>
+<p>SHA3-512 is defined in <a href="https://doi.org/10.6028/NIST.FIPS.202">FIPS202</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00211">211</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fca4e9f9ad4a1158817d1850dee82e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fca4e9f9ad4a1158817d1850dee82e5">&#9670;&nbsp;</a></span>PSA_ALG_SHA_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_1&#160;&#160;&#160;((psa_algorithm_t)0x02000005)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-1 message-digest algorithm. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The SHA-1 hash is weak and deprecated and is only recommended for use in legacy protocols.</dd></dl>
+<p>SHA-1 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00134">134</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a25d6a3244d10a7148fe6b026d1979f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d6a3244d10a7148fe6b026d1979f7b">&#9670;&nbsp;</a></span>PSA_ALG_SHA_224</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_224&#160;&#160;&#160;((psa_algorithm_t)0x02000008) /** SHA-224 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-224 message-digest algorithm. </p>
+<p>SHA-224 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00142">142</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a619471f978e13cdd0a1e37145e4bf341"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a619471f978e13cdd0a1e37145e4bf341">&#9670;&nbsp;</a></span>PSA_ALG_SHA_256</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_256&#160;&#160;&#160;((psa_algorithm_t)0x02000009) /** SHA-256 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-256 message-digest algorithm. </p>
+<p>SHA-256 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00150">150</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a58af64dd9a86a287e8da9ed7739eead4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58af64dd9a86a287e8da9ed7739eead4">&#9670;&nbsp;</a></span>PSA_ALG_SHA_384</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_384&#160;&#160;&#160;((psa_algorithm_t)0x0200000a) /** SHA-384 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-384 message-digest algorithm. </p>
+<p>SHA-384 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00158">158</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="afba3ae409f46d3dd7f37a0910660c3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba3ae409f46d3dd7f37a0910660c3e9">&#9670;&nbsp;</a></span>PSA_ALG_SHA_512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_512&#160;&#160;&#160;((psa_algorithm_t)0x0200000b) /** SHA-512 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-512 message-digest algorithm. </p>
+<p>SHA-512 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00166">166</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a3fe2d7c3c80e3186ca78d16a35d5d931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe2d7c3c80e3186ca78d16a35d5d931">&#9670;&nbsp;</a></span>PSA_ALG_SHA_512_224</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_512_224&#160;&#160;&#160;((psa_algorithm_t)0x0200000c) /** SHA-512/224 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-512/224 message-digest algorithm. </p>
+<p>SHA-512-224 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00174">174</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a5910b3964c14e9613e8643a45b09c2d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5910b3964c14e9613e8643a45b09c2d4">&#9670;&nbsp;</a></span>PSA_ALG_SHA_512_256</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHA_512_256&#160;&#160;&#160;((psa_algorithm_t)0x0200000d) /** SHA-512/256 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SHA-512/256 message-digest algorithm. </p>
+<p>SHA-512-256 is defined in FIPS Publication 180-4: Secure Hash Standard (SHS) <a href="https://doi.org/10.6028/NIST.FIPS.180-4">FIPS180-4</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00182">182</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aec67f81d5b80b765702efb4b3d6e202c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec67f81d5b80b765702efb4b3d6e202c">&#9670;&nbsp;</a></span>PSA_ALG_SHAKE256_512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SHAKE256_512&#160;&#160;&#160;((psa_algorithm_t)0x02000015)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The first 512 bits (64 bytes) of the SHAKE256 output. </p>
+<p>This is the prehashing for Ed448ph (see <a class="el" href="asymmetric__signature_2algorithm_8h.html#a1c632df795535af4334d37a08a01481b">PSA_ALG_ED448PH</a>). </p><pre class="fragment">     SHAKE256 is defined in [FIPS202](https://doi.org/10.6028/NIST.FIPS.202).
+</pre><dl class="section note"><dt>Note</dt><dd>For other scenarios where a hash function based on SHA3 or SHAKE is required, SHA3-512 is recommended. SHA3-512 has the same output size, and a theoretically higher security strength. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00236">236</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa90232ca70c2a6f1d4c59a1b4af16ae5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa90232ca70c2a6f1d4c59a1b4af16ae5">&#9670;&nbsp;</a></span>PSA_ALG_SM3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_SM3&#160;&#160;&#160;((psa_algorithm_t)0x02000014) /** SM3 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The SM3 message-digest algorithm. </p>
+<p>SM3 is defined in <em>ISO/IEC 10118-3:2018 IT Security techniques — Hash-functions — Part 3: Dedicated hash-functions <a href="https://www.iso.org/standard/67116.html">ISO10118</a></em>, and also in <em>GM/T 0004-2012: SM3 cryptographic hash algorithm <a href="http://www.gmbz.org.cn/main/viewfile/20180108023812835219.html">CSTC0004</a> (English version <a href="http://www.gmbz.org.cn/main/postDetail.html?id=20180724105928">CSTC0004/E</a>)</em>. </p>
+
+<p class="definition">Definition at line <a class="el" href="hash_2algorithm_8h_source.html#l00223">223</a> of file <a class="el" href="hash_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

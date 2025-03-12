@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/mfrc522/include/mfrc522_params.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mfrc522__params_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">mfrc522_params.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__actuators.html">Actuator Device Drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Default configuration for the MFRC522 controller.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for the MFRC522 controller. </p>
+<dl class="section author"><dt>Author</dt><dd>Hendrik van Essen <a href="#" onclick="location.href='mai'+'lto:'+'hen'+'dr'+'ik.'+'ve'+'@fu'+'-b'+'erl'+'in'+'.de'; return false;">hendr<span style="display: none;">.nosp@m.</span>ik.v<span style="display: none;">.nosp@m.</span>e@fu-<span style="display: none;">.nosp@m.</span>berl<span style="display: none;">.nosp@m.</span>in.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="mfrc522__params_8h_source.html">mfrc522_params.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">periph/spi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mfrc522__regs_8h_source.html">mfrc522_regs.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for mfrc522_params.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mfrc522__params_8h__incl.svg" width="851" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mfrc522__params_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a08663f84fd7d9a64e4513775d333cba1"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structmfrc522__params__t.html">mfrc522_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#a08663f84fd7d9a64e4513775d333cba1">mfrc522_params</a> []</td></tr>
+<tr class="memdesc:a08663f84fd7d9a64e4513775d333cba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate some memory to store the actual configuration.  <a href="#a08663f84fd7d9a64e4513775d333cba1">More...</a><br /></td></tr>
+<tr class="separator:a08663f84fd7d9a64e4513775d333cba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Default configuration parameters for MFRC522 driver</h2></td></tr>
+<tr class="memitem:a245235e7f2eb7149b672a3dde75624b0"><td class="memItemLeft" align="right" valign="top"><a id="a245235e7f2eb7149b672a3dde75624b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#a245235e7f2eb7149b672a3dde75624b0">MFRC522_PARAM_SPI_DEV</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9">SPI_DEV</a>(0)</td></tr>
+<tr class="memdesc:a245235e7f2eb7149b672a3dde75624b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default SPI device. <br /></td></tr>
+<tr class="separator:a245235e7f2eb7149b672a3dde75624b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1676e65a506d93afe49f861d047939cc"><td class="memItemLeft" align="right" valign="top"><a id="a1676e65a506d93afe49f861d047939cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#a1676e65a506d93afe49f861d047939cc">MFRC522_PARAM_SPI_CLK</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__spi.html#ggae81cec9f03084065c25089e514a57337a4105210aa902203502e4392d4a3fbe58">SPI_CLK_5MHZ</a></td></tr>
+<tr class="memdesc:a1676e65a506d93afe49f861d047939cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default SPI speed. <br /></td></tr>
+<tr class="separator:a1676e65a506d93afe49f861d047939cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab619a010835f2039a2a5d23135346b5e"><td class="memItemLeft" align="right" valign="top"><a id="ab619a010835f2039a2a5d23135346b5e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#ab619a010835f2039a2a5d23135346b5e">MFRC522_PARAM_SCK_PIN</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 18)</td></tr>
+<tr class="memdesc:ab619a010835f2039a2a5d23135346b5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default SCK pin. <br /></td></tr>
+<tr class="separator:ab619a010835f2039a2a5d23135346b5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a691cda1d56881cbdd14d030c234a7d1b"><td class="memItemLeft" align="right" valign="top"><a id="a691cda1d56881cbdd14d030c234a7d1b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#a691cda1d56881cbdd14d030c234a7d1b">MFRC522_PARAM_MISO_PIN</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 19)</td></tr>
+<tr class="memdesc:a691cda1d56881cbdd14d030c234a7d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default MISO pin. <br /></td></tr>
+<tr class="separator:a691cda1d56881cbdd14d030c234a7d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a82ab50ae07739cbfd3b139074fe30"><td class="memItemLeft" align="right" valign="top"><a id="ad6a82ab50ae07739cbfd3b139074fe30"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#ad6a82ab50ae07739cbfd3b139074fe30">MFRC522_PARAM_MOSI_PIN</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 23)</td></tr>
+<tr class="memdesc:ad6a82ab50ae07739cbfd3b139074fe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default MOSI pin. <br /></td></tr>
+<tr class="separator:ad6a82ab50ae07739cbfd3b139074fe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cc50e560b41be784a0be9a7e71ef3b"><td class="memItemLeft" align="right" valign="top"><a id="ac9cc50e560b41be784a0be9a7e71ef3b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#ac9cc50e560b41be784a0be9a7e71ef3b">MFRC522_PARAM_CS_PIN</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 5)</td></tr>
+<tr class="memdesc:ac9cc50e560b41be784a0be9a7e71ef3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default CS pin. <br /></td></tr>
+<tr class="separator:ac9cc50e560b41be784a0be9a7e71ef3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae14b4981748ab2b69ab352d116b553d1"><td class="memItemLeft" align="right" valign="top"><a id="ae14b4981748ab2b69ab352d116b553d1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#ae14b4981748ab2b69ab352d116b553d1">MFRC522_PARAM_RST_PIN</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 17)</td></tr>
+<tr class="memdesc:ae14b4981748ab2b69ab352d116b553d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RST pin. <br /></td></tr>
+<tr class="separator:ae14b4981748ab2b69ab352d116b553d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27a79804e08eadfd6da5c0558b2b96e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mfrc522__params_8h.html#ad27a79804e08eadfd6da5c0558b2b96e">MFRC522_PARAMS</a></td></tr>
+<tr class="memdesc:ad27a79804e08eadfd6da5c0558b2b96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct with default configuration parameters.  <a href="#ad27a79804e08eadfd6da5c0558b2b96e">More...</a><br /></td></tr>
+<tr class="separator:ad27a79804e08eadfd6da5c0558b2b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad27a79804e08eadfd6da5c0558b2b96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad27a79804e08eadfd6da5c0558b2b96e">&#9670;&nbsp;</a></span>MFRC522_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MFRC522_PARAMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{                                       \</div><div class="line">        .spi_dev  = <a class="code" href="mfrc522__params_8h.html#a245235e7f2eb7149b672a3dde75624b0">MFRC522_PARAM_SPI_DEV</a>,  \</div><div class="line">        .spi_clk  = <a class="code" href="mfrc522__params_8h.html#a1676e65a506d93afe49f861d047939cc">MFRC522_PARAM_SPI_CLK</a>,  \</div><div class="line">        .sck_pin  = <a class="code" href="mfrc522__params_8h.html#ab619a010835f2039a2a5d23135346b5e">MFRC522_PARAM_SCK_PIN</a>,  \</div><div class="line">        .miso_pin = <a class="code" href="mfrc522__params_8h.html#a691cda1d56881cbdd14d030c234a7d1b">MFRC522_PARAM_MISO_PIN</a>, \</div><div class="line">        .mosi_pin = <a class="code" href="mfrc522__params_8h.html#ad6a82ab50ae07739cbfd3b139074fe30">MFRC522_PARAM_MOSI_PIN</a>, \</div><div class="line">        .cs_pin   = <a class="code" href="mfrc522__params_8h.html#ac9cc50e560b41be784a0be9a7e71ef3b">MFRC522_PARAM_CS_PIN</a>,   \</div><div class="line">        .rst_pin  = <a class="code" href="mfrc522__params_8h.html#ae14b4981748ab2b69ab352d116b553d1">MFRC522_PARAM_RST_PIN</a>,  \</div><div class="line">    }</div><div class="ttc" id="mfrc522__params_8h_html_a1676e65a506d93afe49f861d047939cc"><div class="ttname"><a href="mfrc522__params_8h.html#a1676e65a506d93afe49f861d047939cc">MFRC522_PARAM_SPI_CLK</a></div><div class="ttdeci">#define MFRC522_PARAM_SPI_CLK</div><div class="ttdoc">Default SPI speed. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00040">mfrc522_params.h:40</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_ac9cc50e560b41be784a0be9a7e71ef3b"><div class="ttname"><a href="mfrc522__params_8h.html#ac9cc50e560b41be784a0be9a7e71ef3b">MFRC522_PARAM_CS_PIN</a></div><div class="ttdeci">#define MFRC522_PARAM_CS_PIN</div><div class="ttdoc">Default CS pin. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00052">mfrc522_params.h:52</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_a245235e7f2eb7149b672a3dde75624b0"><div class="ttname"><a href="mfrc522__params_8h.html#a245235e7f2eb7149b672a3dde75624b0">MFRC522_PARAM_SPI_DEV</a></div><div class="ttdeci">#define MFRC522_PARAM_SPI_DEV</div><div class="ttdoc">Default SPI device. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00037">mfrc522_params.h:37</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_ae14b4981748ab2b69ab352d116b553d1"><div class="ttname"><a href="mfrc522__params_8h.html#ae14b4981748ab2b69ab352d116b553d1">MFRC522_PARAM_RST_PIN</a></div><div class="ttdeci">#define MFRC522_PARAM_RST_PIN</div><div class="ttdoc">Default RST pin. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00055">mfrc522_params.h:55</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_a691cda1d56881cbdd14d030c234a7d1b"><div class="ttname"><a href="mfrc522__params_8h.html#a691cda1d56881cbdd14d030c234a7d1b">MFRC522_PARAM_MISO_PIN</a></div><div class="ttdeci">#define MFRC522_PARAM_MISO_PIN</div><div class="ttdoc">Default MISO pin. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00046">mfrc522_params.h:46</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_ad6a82ab50ae07739cbfd3b139074fe30"><div class="ttname"><a href="mfrc522__params_8h.html#ad6a82ab50ae07739cbfd3b139074fe30">MFRC522_PARAM_MOSI_PIN</a></div><div class="ttdeci">#define MFRC522_PARAM_MOSI_PIN</div><div class="ttdoc">Default MOSI pin. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00049">mfrc522_params.h:49</a></div></div>
+<div class="ttc" id="mfrc522__params_8h_html_ab619a010835f2039a2a5d23135346b5e"><div class="ttname"><a href="mfrc522__params_8h.html#ab619a010835f2039a2a5d23135346b5e">MFRC522_PARAM_SCK_PIN</a></div><div class="ttdeci">#define MFRC522_PARAM_SCK_PIN</div><div class="ttdoc">Default SCK pin. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00043">mfrc522_params.h:43</a></div></div>
+</div><!-- fragment -->
+<p>Struct with default configuration parameters. </p>
+
+<p class="definition">Definition at line <a class="el" href="mfrc522__params_8h_source.html#l00059">59</a> of file <a class="el" href="mfrc522__params_8h_source.html">mfrc522_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a08663f84fd7d9a64e4513775d333cba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08663f84fd7d9a64e4513775d333cba1">&#9670;&nbsp;</a></span>mfrc522_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structmfrc522__params__t.html">mfrc522_params_t</a> mfrc522_params[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">    <a class="code" href="mfrc522__params_8h.html#ad27a79804e08eadfd6da5c0558b2b96e">MFRC522_PARAMS</a></div><div class="line">}</div><div class="ttc" id="mfrc522__params_8h_html_ad27a79804e08eadfd6da5c0558b2b96e"><div class="ttname"><a href="mfrc522__params_8h.html#ad27a79804e08eadfd6da5c0558b2b96e">MFRC522_PARAMS</a></div><div class="ttdeci">#define MFRC522_PARAMS</div><div class="ttdoc">Struct with default configuration parameters. </div><div class="ttdef"><b>Definition:</b> <a href="mfrc522__params_8h_source.html#l00059">mfrc522_params.h:59</a></div></div>
+</div><!-- fragment -->
+<p>Allocate some memory to store the actual configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="mfrc522__params_8h_source.html#l00075">75</a> of file <a class="el" href="mfrc522__params_8h_source.html">mfrc522_params.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

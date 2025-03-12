@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/psa_crypto/include/psa_ciphers.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('psa__ciphers_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">psa_ciphers.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="psa__ciphers_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2021 HAW Hamburg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef PSA_CIPHERS_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define PSA_CIPHERS_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crypto_8h.html">psa/crypto.h</a>&quot;</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="crypto__contexts_8h.html">psa/crypto_contexts.h</a>&quot;</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if IS_USED(MODULE_PSA_CIPHER_AES_128_CBC) || defined(DOXYGEN)</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#ga6cdc5ae6e564b047ef8a8a9bc41a8150">psa_cipher_cbc_aes_128_encrypt</a>(<span class="keyword">const</span> <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> *attributes,</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                            <span class="keyword">const</span> uint8_t *key_buffer,</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                            <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                            psa_algorithm_t alg,</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                            <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                            <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                            uint8_t *output,</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                            <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#gab858b1487f90e5d7b1dad739981dd73c">psa_cipher_cbc_aes_128_decrypt</a>(<span class="keyword">const</span> <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> *attributes,</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                            <span class="keyword">const</span> uint8_t *key_buffer,</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                            <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                                            psa_algorithm_t alg,</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                                            <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                            <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                            uint8_t *output,</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                            <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                            <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_PSA_CIPHER_AES_128_CBC */</span><span class="preprocessor"></span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#if IS_USED(MODULE_PSA_CIPHER_AES_192_CBC) || defined(DOXYGEN)</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#ga2a69df4a7c0f4b539865a3c827d45181">psa_cipher_cbc_aes_192_encrypt</a>(<span class="keyword">const</span> <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> *attributes,</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                                            <span class="keyword">const</span> uint8_t *key_buffer,</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                                            <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                                            psa_algorithm_t alg,</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                                            <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                            <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                                            uint8_t *output,</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                                            <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                            <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_PSA_CIPHER_AES_192_CBC */</span><span class="preprocessor"></span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#if IS_USED(MODULE_PSA_CIPHER_AES_256_CBC) || defined(DOXYGEN)</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#gaf9ebbaf380d000811e9581c0e68659a8">psa_cipher_cbc_aes_256_encrypt</a>(<span class="keyword">const</span> <a class="code" href="structpsa__key__attributes__s.html">psa_key_attributes_t</a> *attributes,</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                                            <span class="keyword">const</span> uint8_t *key_buffer,</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                            <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                            psa_algorithm_t alg,</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                            <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                            <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                            uint8_t *output,</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                            <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                            <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_PSA_CIPHER_AES_256_CBC */</span><span class="preprocessor"></span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#if IS_USED(MODULE_PSA_CIPHER_CHACHA20) || defined(DOXYGEN)</span></div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#ga26a5b33b1ba6477b08fca693c45bdf55">psa_cipher_chacha20_encrypt</a>(uint8_t *key_buffer,</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                         <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                         <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                                         <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                         uint8_t *output,</div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                         <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                         <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;psa_status_t <a class="code" href="group__sys__psa__crypto__cipher.html#ga22e9ef416995405d3ccc8c4081969da0">psa_cipher_chacha20_decrypt</a>(uint8_t *key_buffer,</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                         <span class="keywordtype">size_t</span> key_buffer_size,</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                                         <span class="keyword">const</span> uint8_t *input,</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                         <span class="keywordtype">size_t</span> input_length,</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                         uint8_t *output,</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                         <span class="keywordtype">size_t</span> output_size,</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                                         <span class="keywordtype">size_t</span> *output_length);</div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_PSA_CIPHER_CHACHA20 */</span><span class="preprocessor"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* PSA_CIPHERS_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div><div class="ttc" id="structpsa__key__attributes__s_html"><div class="ttname"><a href="structpsa__key__attributes__s.html">psa_key_attributes_s</a></div><div class="ttdoc">Structure storing key attributes. </div><div class="ttdef"><b>Definition:</b> <a href="attributes_8h_source.html#l00052">attributes.h:52</a></div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_ga22e9ef416995405d3ccc8c4081969da0"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#ga22e9ef416995405d3ccc8c4081969da0">psa_cipher_chacha20_decrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_chacha20_decrypt(uint8_t *key_buffer, size_t key_buffer_size, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for ChaCha20 decryption. </div></div>
+<div class="ttc" id="crypto_8h_html"><div class="ttname"><a href="crypto_8h.html">crypto.h</a></div><div class="ttdoc">Function declarations for PSA Crypto. </div></div>
+<div class="ttc" id="crypto__contexts_8h_html"><div class="ttname"><a href="crypto__contexts_8h.html">crypto_contexts.h</a></div><div class="ttdoc">Context definitions for PSA Crypto. </div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_ga2a69df4a7c0f4b539865a3c827d45181"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#ga2a69df4a7c0f4b539865a3c827d45181">psa_cipher_cbc_aes_192_encrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_cbc_aes_192_encrypt(const psa_key_attributes_t *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for an AES 192 CBC encryption. </div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_ga6cdc5ae6e564b047ef8a8a9bc41a8150"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#ga6cdc5ae6e564b047ef8a8a9bc41a8150">psa_cipher_cbc_aes_128_encrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_cbc_aes_128_encrypt(const psa_key_attributes_t *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for an AES 128 CBC encryption. </div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_ga26a5b33b1ba6477b08fca693c45bdf55"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#ga26a5b33b1ba6477b08fca693c45bdf55">psa_cipher_chacha20_encrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_chacha20_encrypt(uint8_t *key_buffer, size_t key_buffer_size, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for ChaCha20 encryption/decryption. </div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_gab858b1487f90e5d7b1dad739981dd73c"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#gab858b1487f90e5d7b1dad739981dd73c">psa_cipher_cbc_aes_128_decrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_cbc_aes_128_decrypt(const psa_key_attributes_t *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for an AES 128 CBC decryption. </div></div>
+<div class="ttc" id="group__sys__psa__crypto__cipher_html_gaf9ebbaf380d000811e9581c0e68659a8"><div class="ttname"><a href="group__sys__psa__crypto__cipher.html#gaf9ebbaf380d000811e9581c0e68659a8">psa_cipher_cbc_aes_256_encrypt</a></div><div class="ttdeci">psa_status_t psa_cipher_cbc_aes_256_encrypt(const psa_key_attributes_t *attributes, const uint8_t *key_buffer, size_t key_buffer_size, psa_algorithm_t alg, const uint8_t *input, size_t input_length, uint8_t *output, size_t output_size, size_t *output_length)</div><div class="ttdoc">Low level wrapper function to call a driver for an AES 256 CBC encryption. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

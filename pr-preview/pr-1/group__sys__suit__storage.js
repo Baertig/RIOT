@@ -1,0 +1,48 @@
+var group__sys__suit__storage =
+[
+    [ "ram storage backend", "group__sys__suit__storage__ram.html", "group__sys__suit__storage__ram" ],
+    [ "riotboot flashwrite storage backend", "group__sys__suit__storage__flashwrite.html", "group__sys__suit__storage__flashwrite" ],
+    [ "riotboot vfs storage backend", "group__sys__suit__storage__vfs.html", "group__sys__suit__storage__vfs" ],
+    [ "suit_storage_driver", "structsuit__storage__driver.html", [
+      [ "erase", "structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52", null ],
+      [ "finish", "structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2", null ],
+      [ "get_seq_no", "structsuit__storage__driver.html#a1b00d856f2ce0ceadddd4e09dbea8b63", null ],
+      [ "has_location", "structsuit__storage__driver.html#a83d3abb9e1df010ce91a8a412fe07183", null ],
+      [ "init", "structsuit__storage__driver.html#ab884ee1d6c260334b603c70851c0dddb", null ],
+      [ "install", "structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c", null ],
+      [ "match_offset", "structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee", null ],
+      [ "read", "structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f", null ],
+      [ "read_ptr", "structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc", null ],
+      [ "separator", "structsuit__storage__driver.html#acfc32fb546fdf9e6f0c778effd417670", null ],
+      [ "set_active_location", "structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5", null ],
+      [ "set_seq_no", "structsuit__storage__driver.html#a4f5912a0eebefb273b3405d3d0ed64ec", null ],
+      [ "start", "structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71", null ],
+      [ "write", "structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5", null ]
+    ] ],
+    [ "suit_storage", "structsuit__storage.html", [
+      [ "driver", "structsuit__storage.html#a22d8adb8cf3b6077922cbdcb7f7d6d02", null ]
+    ] ],
+    [ "suit_storage_driver_t", "group__sys__suit__storage.html#gabe22e9b00cbc7406fcfbace006a7bffd", null ],
+    [ "suit_storage_t", "group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0", null ],
+    [ "suit_storage_erase", "group__sys__suit__storage.html#ga7b89ef497bfbf0b587e8e8257f19d1d4", null ],
+    [ "suit_storage_find_by_component", "group__sys__suit__storage.html#ga142aa0b39c94fe336d98a36e50a21cae", null ],
+    [ "suit_storage_find_by_id", "group__sys__suit__storage.html#ga1833e6420ae9aaee737828acc333cac9", null ],
+    [ "suit_storage_finish", "group__sys__suit__storage.html#gae0dca4a1008dbdf95931eff8ad5f0433", null ],
+    [ "suit_storage_get_highest_seq_no", "group__sys__suit__storage.html#gaecf213a95a178c5fa26dcfcdc84b6faa", null ],
+    [ "suit_storage_get_separator", "group__sys__suit__storage.html#ga44617abc09407f99eaed17c7cd91d2ad", null ],
+    [ "suit_storage_get_seq_no", "group__sys__suit__storage.html#ga271f11f9f668e3bd27e25caaef45ea04", null ],
+    [ "suit_storage_has_location", "group__sys__suit__storage.html#ga262c18e832469e76076f19702174e07b", null ],
+    [ "suit_storage_has_offset", "group__sys__suit__storage.html#ga737ca14e3e5218a21fd0454ec436da64", null ],
+    [ "suit_storage_has_readptr", "group__sys__suit__storage.html#ga53273de844ef3ffdcbc1309dbd305cdf", null ],
+    [ "suit_storage_init", "group__sys__suit__storage.html#gaaeae219414ea0bb3be68afdf6c3835ce", null ],
+    [ "suit_storage_init_all", "group__sys__suit__storage.html#ga93940a17686ac8318ece243710686ef2", null ],
+    [ "suit_storage_install", "group__sys__suit__storage.html#ga45bff4398d5c8108bd4c5accca1967d9", null ],
+    [ "suit_storage_match_offset", "group__sys__suit__storage.html#ga28a98359197e7bf9756359225bbe89e4", null ],
+    [ "suit_storage_read", "group__sys__suit__storage.html#ga056c950556409fd8735c0aab93d5c57a", null ],
+    [ "suit_storage_read_ptr", "group__sys__suit__storage.html#ga4e672e0dfee03c8829791827145fb7b4", null ],
+    [ "suit_storage_set_active_location", "group__sys__suit__storage.html#gae1f18d18951f32bf5070c0ab966e5482", null ],
+    [ "suit_storage_set_seq_no", "group__sys__suit__storage.html#ga8f130af051b232e6f14041b11da84ee2", null ],
+    [ "suit_storage_set_seq_no_all", "group__sys__suit__storage.html#gaf373ba1389f7b2515655507b265e6fbb", null ],
+    [ "suit_storage_start", "group__sys__suit__storage.html#ga9127bcef40eb261be32c3d7727e39ae7", null ],
+    [ "suit_storage_write", "group__sys__suit__storage.html#gafdc45341030f88e58780b64a02c14599", null ]
+];

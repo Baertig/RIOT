@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>STDIO abstraction</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__stdio.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">STDIO abstraction<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Simple standard input/output (STDIO) abstraction for RIOT.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Simple standard input/output (STDIO) abstraction for RIOT. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__cpu__native__stdio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__native__stdio.html">STDIO for native</a></td></tr>
+<tr class="memdesc:group__cpu__native__stdio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Native CPU internal declarations. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__null"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__null.html">STDIO null driver</a></td></tr>
+<tr class="memdesc:group__sys__stdio__null"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy implementation of the stdio interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__usbus__cdc__acm__stdio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm__stdio.html">STDIO over CDC ACM (usbus)</a></td></tr>
+<tr class="memdesc:group__usbus__cdc__acm__stdio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend using usbus CDC ACM. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__stdio__usb__serial__jtag"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__stdio__usb__serial__jtag.html">STDIO over ESP32 Debug Serial/JTAG</a></td></tr>
+<tr class="memdesc:group__stdio__usb__serial__jtag"><td class="mdescLeft">&#160;</td><td class="mdescRight">STDIO via the USB Serial/JTAG debug interface found on some ESP32 SoCs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__nimble"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__nimble.html">STDIO over NimBLE</a></td></tr>
+<tr class="memdesc:group__sys__stdio__nimble"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend using NimBLE. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__rtt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__rtt.html">STDIO over SEGGER RTT</a></td></tr>
+<tr class="memdesc:group__sys__stdio__rtt"><td class="mdescLeft">&#160;</td><td class="mdescRight">STDIO mapping for running the STDIO over SEGGER's RTT interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__semihosting"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__semihosting.html">STDIO over Semihosting</a></td></tr>
+<tr class="memdesc:group__sys__stdio__semihosting"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend using ARM Semihosting. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__uart"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__uart.html">STDIO over UART</a></td></tr>
+<tr class="memdesc:group__sys__stdio__uart"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend using UART. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__stdio__udp"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__udp.html">STDIO over UDP</a></td></tr>
+<tr class="memdesc:group__sys__stdio__udp"><td class="mdescLeft">&#160;</td><td class="mdescRight">STDIO over UDP implementation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinyusb__stdio__cdc__acm"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinyusb__stdio__cdc__acm.html">STDIO over USB CDC-ACM (tinyUSB)</a></td></tr>
+<tr class="memdesc:group__pkg__tinyusb__stdio__cdc__acm"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend using tinyUSB CDC ACM. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__telnet__stdio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__telnet__stdio.html">STDIO over telnet</a></td></tr>
+<tr class="memdesc:group__net__telnet__stdio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output via telnet. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__slipdev__stdio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__slipdev__stdio.html">STDIO via SLIP</a></td></tr>
+<tr class="memdesc:group__drivers__slipdev__stdio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend multiplexed via SLIP. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ethos__stdio"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ethos__stdio.html">STDIO via ethos</a></td></tr>
+<tr class="memdesc:group__drivers__ethos__stdio"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard input/output backend multiplexed via ethernet-over-serial. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:stdio__base_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio__base_8h.html">stdio_base.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstdio__provider__t.html">stdio_provider_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">stdio provider struct  <a href="structstdio__provider__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga0435de87ff46b82a46f4007b2a462237"><td class="memItemLeft" align="right" valign="top"><a id="ga0435de87ff46b82a46f4007b2a462237"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga0435de87ff46b82a46f4007b2a462237">STDIO_RX_BUFSIZE</a>&#160;&#160;&#160;(64)</td></tr>
+<tr class="memdesc:ga0435de87ff46b82a46f4007b2a462237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size for STDIO. <br /></td></tr>
+<tr class="separator:ga0435de87ff46b82a46f4007b2a462237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6dc1bcd5be8789a283eb14d4bee92425"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga6dc1bcd5be8789a283eb14d4bee92425">STDIO_PROVIDER</a>(_type,  _open,  _close,  _write)</td></tr>
+<tr class="memdesc:ga6dc1bcd5be8789a283eb14d4bee92425"><td class="mdescLeft">&#160;</td><td class="mdescRight">stdio implementation methods  <a href="#ga6dc1bcd5be8789a283eb14d4bee92425">More...</a><br /></td></tr>
+<tr class="separator:ga6dc1bcd5be8789a283eb14d4bee92425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga464e2131a90240a4449f24135e8e3ca3"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3ae0bc4a95da8c9470f633b43b804d3753">STDIO_NULL</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3a8aeda204ff171372a5e20139371188de">STDIO_UART</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3a907c26e601b54eec369963e22e78ec3c">STDIO_RTT</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3acb757239b161cd6548bb14d4b0e19f47">STDIO_SEMIHOSTING</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3a69c07c2399ce878609c5ad53f5ae551f">STDIO_USBUS_CDC_ACM</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3a99e5cd73a0d4096c6eaa86b392379b64">STDIO_TINYUSB_CDC_ACM</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3a540ddbe131c45a22129c7919c9acb011">STDIO_ESP32_SERIAL_JTAG</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3aca3662ed814c28857fba6a73defedd3f">STDIO_NIMBLE</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3ae99a4c4071e617a7a48f96881f7b34e0">STDIO_UDP</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3ab7884021847343e0ebe47135575af5e7">STDIO_TELNET</a>, 
+<a class="el" href="group__sys__stdio.html#gga464e2131a90240a4449f24135e8e3ca3ab9a10190cb6edd25dfbc8be96a779df6">STDIO_ETHOS</a>, 
+<b>STDIO_SLIP</b>
+<br />
+ }</td></tr>
+<tr class="separator:ga464e2131a90240a4449f24135e8e3ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga564258b529946cb61177bc649b83c6be"><td class="memItemLeft" align="right" valign="top"><a id="ga564258b529946cb61177bc649b83c6be"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga564258b529946cb61177bc649b83c6be">stdio_init</a> (void)</td></tr>
+<tr class="memdesc:ga564258b529946cb61177bc649b83c6be"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the module <br /></td></tr>
+<tr class="separator:ga564258b529946cb61177bc649b83c6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9158efc70474ad369c5ea17f4eed2baf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga9158efc70474ad369c5ea17f4eed2baf">stdio_available</a> (void)</td></tr>
+<tr class="memdesc:ga9158efc70474ad369c5ea17f4eed2baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of bytes available for reading from stdio.  <a href="#ga9158efc70474ad369c5ea17f4eed2baf">More...</a><br /></td></tr>
+<tr class="separator:ga9158efc70474ad369c5ea17f4eed2baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf41a8ce756c62fbd90d60ec9d4076541"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#gaf41a8ce756c62fbd90d60ec9d4076541">stdio_clear_stdin</a> (void)</td></tr>
+<tr class="memdesc:gaf41a8ce756c62fbd90d60ec9d4076541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the input buffer.  <a href="#gaf41a8ce756c62fbd90d60ec9d4076541">More...</a><br /></td></tr>
+<tr class="separator:gaf41a8ce756c62fbd90d60ec9d4076541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5914592cd666147d93a856a66e0743f0"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga5914592cd666147d93a856a66e0743f0">stdio_read</a> (void *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:ga5914592cd666147d93a856a66e0743f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">read <code>len</code> bytes from stdio uart into <code>buffer</code>  <a href="#ga5914592cd666147d93a856a66e0743f0">More...</a><br /></td></tr>
+<tr class="separator:ga5914592cd666147d93a856a66e0743f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga976c9a6e5790244bf3bcbbe6bcdc1c78"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga976c9a6e5790244bf3bcbbe6bcdc1c78">stdio_write</a> (const void *buffer, size_t len)</td></tr>
+<tr class="memdesc:ga976c9a6e5790244bf3bcbbe6bcdc1c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">write <code>len</code> bytes from <code>buffer</code> into STDOUT  <a href="#ga976c9a6e5790244bf3bcbbe6bcdc1c78">More...</a><br /></td></tr>
+<tr class="separator:ga976c9a6e5790244bf3bcbbe6bcdc1c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga150896c17fb2f6d3d96e639016fad793"><td class="memItemLeft" align="right" valign="top"><a id="ga150896c17fb2f6d3d96e639016fad793"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga150896c17fb2f6d3d96e639016fad793">stdio_close</a> (void)</td></tr>
+<tr class="memdesc:ga150896c17fb2f6d3d96e639016fad793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable stdio and detach stdio providers. <br /></td></tr>
+<tr class="separator:ga150896c17fb2f6d3d96e639016fad793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga3ba4a00e997f882f94306fdd48f4a9a1"><td class="memItemLeft" align="right" valign="top"><a id="ga3ba4a00e997f882f94306fdd48f4a9a1"></a>
+<a class="el" href="structisrpipe__t.html">isrpipe_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio.html#ga3ba4a00e997f882f94306fdd48f4a9a1">stdin_isrpipe</a></td></tr>
+<tr class="memdesc:ga3ba4a00e997f882f94306fdd48f4a9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">isrpipe for writing stdin input to <br /></td></tr>
+<tr class="separator:ga3ba4a00e997f882f94306fdd48f4a9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga6dc1bcd5be8789a283eb14d4bee92425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6dc1bcd5be8789a283eb14d4bee92425">&#9670;&nbsp;</a></span>STDIO_PROVIDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STDIO_PROVIDER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_open, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_close, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">_write&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line"><a class="code" href="xfa_8h.html#a9b3e8f506ebeefc418799a13904fec38">XFA_CONST</a>(<a class="code" href="structstdio__provider__t.html">stdio_provider_t</a>, stdio_provider_xfa, 0) stdio_ <span class="preprocessor">##_type = { \</span></div><div class="line"><span class="preprocessor">        .open = _open,                                      \</span></div><div class="line"><span class="preprocessor">        .close = _close,                                    \</span></div><div class="line"><span class="preprocessor">        .write = _write,                                    \</span></div><div class="line"><span class="preprocessor">    };</span></div><div class="ttc" id="structstdio__provider__t_html"><div class="ttname"><a href="structstdio__provider__t.html">stdio_provider_t</a></div><div class="ttdoc">stdio provider struct </div><div class="ttdef"><b>Definition:</b> <a href="stdio__base_8h_source.html#l00062">stdio_base.h:62</a></div></div>
+<div class="ttc" id="xfa_8h_html_a9b3e8f506ebeefc418799a13904fec38"><div class="ttname"><a href="xfa_8h.html#a9b3e8f506ebeefc418799a13904fec38">XFA_CONST</a></div><div class="ttdeci">#define XFA_CONST(type, xfa_name, prio)</div><div class="ttdoc">Define variable in read-only cross-file array. </div><div class="ttdef"><b>Definition:</b> <a href="xfa_8h_source.html#l00160">xfa.h:160</a></div></div>
+</div><!-- fragment -->
+<p>stdio implementation methods </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_type</td><td>stdio provider type, for identification </td></tr>
+    <tr><td class="paramname">_open</td><td>attach / init function </td></tr>
+    <tr><td class="paramname">_close</td><td>close / disable function </td></tr>
+    <tr><td class="paramname">_write</td><td>write function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="stdio__base_8h_source.html#l00154">154</a> of file <a class="el" href="stdio__base_8h_source.html">stdio_base.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga464e2131a90240a4449f24135e8e3ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga464e2131a90240a4449f24135e8e3ca3">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3ae0bc4a95da8c9470f633b43b804d3753"></a>STDIO_NULL&#160;</td><td class="fielddoc"><p>dummy stdio </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3a8aeda204ff171372a5e20139371188de"></a>STDIO_UART&#160;</td><td class="fielddoc"><p>stdio via UART </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3a907c26e601b54eec369963e22e78ec3c"></a>STDIO_RTT&#160;</td><td class="fielddoc"><p>stdio via Segger RTT </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3acb757239b161cd6548bb14d4b0e19f47"></a>STDIO_SEMIHOSTING&#160;</td><td class="fielddoc"><p>stdio via Semihosting </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3a69c07c2399ce878609c5ad53f5ae551f"></a>STDIO_USBUS_CDC_ACM&#160;</td><td class="fielddoc"><p>stdio via USB CDC ACM (usbus) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3a99e5cd73a0d4096c6eaa86b392379b64"></a>STDIO_TINYUSB_CDC_ACM&#160;</td><td class="fielddoc"><p>tdio via USB CDC ACM (TinyUSB) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3a540ddbe131c45a22129c7919c9acb011"></a>STDIO_ESP32_SERIAL_JTAG&#160;</td><td class="fielddoc"><p>stdio via ESP32 debug Serial/JTAG </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3aca3662ed814c28857fba6a73defedd3f"></a>STDIO_NIMBLE&#160;</td><td class="fielddoc"><p>stdio via BLE (NimBLE) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3ae99a4c4071e617a7a48f96881f7b34e0"></a>STDIO_UDP&#160;</td><td class="fielddoc"><p>stdio via UDP </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3ab7884021847343e0ebe47135575af5e7"></a>STDIO_TELNET&#160;</td><td class="fielddoc"><p>stdio via telnet </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga464e2131a90240a4449f24135e8e3ca3ab9a10190cb6edd25dfbc8be96a779df6"></a>STDIO_ETHOS&#160;</td><td class="fielddoc"><p>stdio via ethos (mutiplex) </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="stdio__base_8h_source.html#l00044">44</a> of file <a class="el" href="stdio__base_8h_source.html">stdio_base.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga9158efc70474ad369c5ea17f4eed2baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9158efc70474ad369c5ea17f4eed2baf">&#9670;&nbsp;</a></span>stdio_available()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int stdio_available </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of bytes available for reading from stdio. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function is only available if the implementation supports it and the <code>stdio_available</code> module is enabled.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>number of available bytes </dd></dl>
+
+</div>
+</div>
+<a id="gaf41a8ce756c62fbd90d60ec9d4076541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf41a8ce756c62fbd90d60ec9d4076541">&#9670;&nbsp;</a></span>stdio_clear_stdin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void stdio_clear_stdin </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear the input buffer. </p>
+<dl class="section note"><dt>Note</dt><dd>Requires 'USEMODULE += stdin'</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This function does only work if the stdio implementation supports it. </dd></dl>
+
+</div>
+</div>
+<a id="ga5914592cd666147d93a856a66e0743f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5914592cd666147d93a856a66e0743f0">&#9670;&nbsp;</a></span>stdio_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t stdio_read </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>max_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>read <code>len</code> bytes from stdio uart into <code>buffer</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">buffer</td><td>buffer to read into </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_len</td><td>nr of bytes to read</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nr of bytes read </dd>
+<dd>
+&lt;0 on error </dd></dl>
+
+</div>
+</div>
+<a id="ga976c9a6e5790244bf3bcbbe6bcdc1c78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga976c9a6e5790244bf3bcbbe6bcdc1c78">&#9670;&nbsp;</a></span>stdio_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t stdio_write </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>write <code>len</code> bytes from <code>buffer</code> into STDOUT </p>
+<dl class="section note"><dt>Note</dt><dd>Depending on the stdio backend(s) used, not all bytes might be written to stdout and accounted for if multiple backends are active, as not all stdout backends will do a blocking write.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>buffer to read from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>nr of bytes to write</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nr of bytes written </dd>
+<dd>
+&lt;0 on error </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

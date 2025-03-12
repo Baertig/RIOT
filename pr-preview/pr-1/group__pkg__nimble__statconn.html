@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Statconn</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__pkg__nimble__statconn.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Statconn<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a><a class="el" href="group__net.html">Networking</a> &raquo;  &#124; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Static connection manager for NimBLE netif that keeps opens connections on demand and takes care of keeping them open. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br />
+ </dd></dl>
+<h1><a class="anchor" id="autotoc_md1889"></a>
+WARNING</h1>
+<p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
+<h1><a class="anchor" id="autotoc_md1890"></a>
+About</h1>
+<p>Statconn is the implementation of a static connection manager for the NimBLE netif module. It initiates new connections when told and additionally takes care of reopening connections in case of connection loss.</p>
+<h1><a class="anchor" id="autotoc_md1891"></a>
+Usage</h1>
+<p>A node can either be a master, the one initiating the connection, or a slave, the one advertising its presence, w.r.t. to BLE connections. To open a connection between two nodes, call <a class="el" href="group__pkg__nimble__statconn.html#ga52f36085ab5d1de08b2ad33cc35364f3" title="Connect to a peer (slave) with a given address as master. ">nimble_statconn_add_slave()</a> with the BLE address of the slave node on the designated master node and call <a class="el" href="group__pkg__nimble__statconn.html#ga4bc4dbf8957fbba42be1c1e87986e145" title="Connect to peer (master) with a given address as slave. ">nimble_statconn_add_master()</a> with the address of the master node on the designated slave node. From that point on, statconn will take care of opening and maintaining the connection between these two nodes.</p>
+<h1><a class="anchor" id="autotoc_md1892"></a>
+Configuration</h1>
+<p>This module is configured completely statically. All relevant configuration options are set at compile time using a couple of macros. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:nimble__statconn_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nimble__statconn_8h.html">nimble_statconn.h</a></td></tr>
+<tr class="memdesc:nimble__statconn_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple static connection manager for NimBLE netif. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnimble__statconn__cfg__t.html">nimble_statconn_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Statconn connection parameters.  <a href="structnimble__statconn__cfg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaca92db297a62148a097382263da24825"><td class="memItemLeft" align="right" valign="top"><a id="gaca92db297a62148a097382263da24825"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gaca92db297a62148a097382263da24825">NIMBLE_STATCONN_ADV_ITVL_MS</a>&#160;&#160;&#160;(90U)</td></tr>
+<tr class="memdesc:gaca92db297a62148a097382263da24825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advertising interval used when in advertising mode [in ms]. <br /></td></tr>
+<tr class="separator:gaca92db297a62148a097382263da24825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2e76df9bdda898ba393a82085865fca"><td class="memItemLeft" align="right" valign="top"><a id="gac2e76df9bdda898ba393a82085865fca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gac2e76df9bdda898ba393a82085865fca">NIMBLE_STATCONN_CONN_WIN_MS</a>&#160;&#160;&#160;(100U)</td></tr>
+<tr class="memdesc:gac2e76df9bdda898ba393a82085865fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scan window used when opening new connections [in ms]. <br /></td></tr>
+<tr class="separator:gac2e76df9bdda898ba393a82085865fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b9e878d692ba62498387fd85515aff1"><td class="memItemLeft" align="right" valign="top"><a id="ga2b9e878d692ba62498387fd85515aff1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga2b9e878d692ba62498387fd85515aff1">NIMBLE_STATCONN_CONN_TIMEOUT_MS</a>&#160;&#160;&#160;(600U)</td></tr>
+<tr class="memdesc:ga2b9e878d692ba62498387fd85515aff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opening a new connection is aborted after this time [in ms]. <br /></td></tr>
+<tr class="separator:ga2b9e878d692ba62498387fd85515aff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d45c2d36e7395fd3107b42ba5e18bfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga4d45c2d36e7395fd3107b42ba5e18bfb">NIMBLE_STATCONN_CONN_ITVL_MIN_MS</a>&#160;&#160;&#160;(75U)</td></tr>
+<tr class="memdesc:ga4d45c2d36e7395fd3107b42ba5e18bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum connection interval used when opening a new connection.  <a href="#ga4d45c2d36e7395fd3107b42ba5e18bfb">More...</a><br /></td></tr>
+<tr class="separator:ga4d45c2d36e7395fd3107b42ba5e18bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b93bb27c8af48e17079c041b7eb2bbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga7b93bb27c8af48e17079c041b7eb2bbd">NIMBLE_STATCONN_CONN_ITVL_MAX_MS</a>&#160;&#160;&#160;(75U)</td></tr>
+<tr class="memdesc:ga7b93bb27c8af48e17079c041b7eb2bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum connection interval to use.  <a href="#ga7b93bb27c8af48e17079c041b7eb2bbd">More...</a><br /></td></tr>
+<tr class="separator:ga7b93bb27c8af48e17079c041b7eb2bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7eae8602cf1dbc37a9114fd2e6b451d3"><td class="memItemLeft" align="right" valign="top"><a id="ga7eae8602cf1dbc37a9114fd2e6b451d3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga7eae8602cf1dbc37a9114fd2e6b451d3">NIMBLE_STATCONN_CONN_LATENCY</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga7eae8602cf1dbc37a9114fd2e6b451d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slave latency used for new connections [# of connection events]. <br /></td></tr>
+<tr class="separator:ga7eae8602cf1dbc37a9114fd2e6b451d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8208cab13286d6f8e75389c45198a8b"><td class="memItemLeft" align="right" valign="top"><a id="gaa8208cab13286d6f8e75389c45198a8b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gaa8208cab13286d6f8e75389c45198a8b">NIMBLE_STATCONN_CONN_SUPERTO_MS</a>&#160;&#160;&#160;(2500U)</td></tr>
+<tr class="memdesc:gaa8208cab13286d6f8e75389c45198a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supervision timeout used for new connections [in ms]. <br /></td></tr>
+<tr class="separator:gaa8208cab13286d6f8e75389c45198a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga75fffe9d6038e8fe5214377093f054dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga75fffe9d6038e8fe5214377093f054dc">NIMBLE_STATCONN_PHY_MODE</a>&#160;&#160;&#160;<a class="el" href="group__pkg__nimble__contrib.html#gga9eaf9a1a15ec72187da22a550f368416a27532513ae44c5e3f5534c6af40fac93">NIMBLE_PHY_1M</a></td></tr>
+<tr class="memdesc:ga75fffe9d6038e8fe5214377093f054dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE PHY mode used by statconn.  <a href="#ga75fffe9d6038e8fe5214377093f054dc">More...</a><br /></td></tr>
+<tr class="separator:ga75fffe9d6038e8fe5214377093f054dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaf7f64cab376c1eb38eb937aeeb271593"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gaf7f64cab376c1eb38eb937aeeb271593">nimble_statconn_init</a> (void)</td></tr>
+<tr class="memdesc:gaf7f64cab376c1eb38eb937aeeb271593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the statconn module.  <a href="#gaf7f64cab376c1eb38eb937aeeb271593">More...</a><br /></td></tr>
+<tr class="separator:gaf7f64cab376c1eb38eb937aeeb271593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafb7c3ad1071e9bfc19e8496f08e5acd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gafb7c3ad1071e9bfc19e8496f08e5acd9">nimble_statconn_eventcb</a> (<a class="el" href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a> cb)</td></tr>
+<tr class="memdesc:gafb7c3ad1071e9bfc19e8496f08e5acd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback that is called on netif events.  <a href="#gafb7c3ad1071e9bfc19e8496f08e5acd9">More...</a><br /></td></tr>
+<tr class="separator:gafb7c3ad1071e9bfc19e8496f08e5acd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4bc4dbf8957fbba42be1c1e87986e145"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga4bc4dbf8957fbba42be1c1e87986e145">nimble_statconn_add_master</a> (const uint8_t *addr, const <a class="el" href="structnimble__statconn__cfg__t.html">nimble_statconn_cfg_t</a> *cfg)</td></tr>
+<tr class="memdesc:ga4bc4dbf8957fbba42be1c1e87986e145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to peer (master) with a given address as slave.  <a href="#ga4bc4dbf8957fbba42be1c1e87986e145">More...</a><br /></td></tr>
+<tr class="separator:ga4bc4dbf8957fbba42be1c1e87986e145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52f36085ab5d1de08b2ad33cc35364f3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#ga52f36085ab5d1de08b2ad33cc35364f3">nimble_statconn_add_slave</a> (const uint8_t *addr, const <a class="el" href="structnimble__statconn__cfg__t.html">nimble_statconn_cfg_t</a> *cfg)</td></tr>
+<tr class="memdesc:ga52f36085ab5d1de08b2ad33cc35364f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect to a peer (slave) with a given address as master.  <a href="#ga52f36085ab5d1de08b2ad33cc35364f3">More...</a><br /></td></tr>
+<tr class="separator:ga52f36085ab5d1de08b2ad33cc35364f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa7af88c59698176666109a4b55ca1ee4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__statconn.html#gaa7af88c59698176666109a4b55ca1ee4">nimble_statconn_rm</a> (const uint8_t *addr)</td></tr>
+<tr class="memdesc:gaa7af88c59698176666109a4b55ca1ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the connection to the given peer.  <a href="#gaa7af88c59698176666109a4b55ca1ee4">More...</a><br /></td></tr>
+<tr class="separator:gaa7af88c59698176666109a4b55ca1ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga7b93bb27c8af48e17079c041b7eb2bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b93bb27c8af48e17079c041b7eb2bbd">&#9670;&nbsp;</a></span>NIMBLE_STATCONN_CONN_ITVL_MAX_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIMBLE_STATCONN_CONN_ITVL_MAX_MS&#160;&#160;&#160;(75U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum connection interval to use. </p>
+<p>See <a class="el" href="group__pkg__nimble__statconn.html#ga4d45c2d36e7395fd3107b42ba5e18bfb">NIMBLE_STATCONN_CONN_ITVL_MIN_MS</a> for more information. [in ms] </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__statconn_8h_source.html#l00099">99</a> of file <a class="el" href="nimble__statconn_8h_source.html">nimble_statconn.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4d45c2d36e7395fd3107b42ba5e18bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4d45c2d36e7395fd3107b42ba5e18bfb">&#9670;&nbsp;</a></span>NIMBLE_STATCONN_CONN_ITVL_MIN_MS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIMBLE_STATCONN_CONN_ITVL_MIN_MS&#160;&#160;&#160;(75U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimum connection interval used when opening a new connection. </p>
+<p>The actual used connection interval will be a random value ranging from <a class="el" href="group__pkg__nimble__statconn.html#ga4d45c2d36e7395fd3107b42ba5e18bfb">NIMBLE_STATCONN_CONN_ITVL_MIN_MS</a> to <a class="el" href="group__pkg__nimble__statconn.html#ga7b93bb27c8af48e17079c041b7eb2bbd">NIMBLE_STATCONN_CONN_ITVL_MAX_MS</a>. Set both variables to the same value to use a fixed connection interval. [in ms] </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__statconn_8h_source.html#l00091">91</a> of file <a class="el" href="nimble__statconn_8h_source.html">nimble_statconn.h</a>.</p>
+
+</div>
+</div>
+<a id="ga75fffe9d6038e8fe5214377093f054dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga75fffe9d6038e8fe5214377093f054dc">&#9670;&nbsp;</a></span>NIMBLE_STATCONN_PHY_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIMBLE_STATCONN_PHY_MODE&#160;&#160;&#160;<a class="el" href="group__pkg__nimble__contrib.html#gga9eaf9a1a15ec72187da22a550f368416a27532513ae44c5e3f5534c6af40fac93">NIMBLE_PHY_1M</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BLE PHY mode used by statconn. </p>
+<p>This value is only used if statconn is used in its extended mode (module <code>nimble_statconn_ext</code>) </p>
+
+<p class="definition">Definition at line <a class="el" href="nimble__statconn_8h_source.html#l00121">121</a> of file <a class="el" href="nimble__statconn_8h_source.html">nimble_statconn.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga4bc4dbf8957fbba42be1c1e87986e145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4bc4dbf8957fbba42be1c1e87986e145">&#9670;&nbsp;</a></span>nimble_statconn_add_master()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nimble_statconn_add_master </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structnimble__statconn__cfg__t.html">nimble_statconn_cfg_t</a> *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect to peer (master) with a given address as slave. </p>
+<p>Adding a master will make this node advertise itself to wait for an incoming connection by that master.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>BLE address of the peer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cfg</td><td>additional connection parameters, set to NULL to apply default values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if peer was successfully added </dd>
+<dd>
+-EALREADY if the peer address is already in use </dd>
+<dd>
+-ENOMEM if no empty connection slot is available </dd>
+<dd>
+-EINVAL if invalid configuration parameters are given </dd></dl>
+
+</div>
+</div>
+<a id="ga52f36085ab5d1de08b2ad33cc35364f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52f36085ab5d1de08b2ad33cc35364f3">&#9670;&nbsp;</a></span>nimble_statconn_add_slave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nimble_statconn_add_slave </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structnimble__statconn__cfg__t.html">nimble_statconn_cfg_t</a> *&#160;</td>
+          <td class="paramname"><em>cfg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connect to a peer (slave) with a given address as master. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>BLE address of the peer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cfg</td><td>additional connection parameters, set to NULL to apply default values</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if peer was successfully added </dd>
+<dd>
+-EALREADY if the peer address is already in use </dd>
+<dd>
+-ENOMEM if no empty connection slot is available </dd>
+<dd>
+-EINVAL if invalid configuration parameters are given </dd></dl>
+
+</div>
+</div>
+<a id="gafb7c3ad1071e9bfc19e8496f08e5acd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafb7c3ad1071e9bfc19e8496f08e5acd9">&#9670;&nbsp;</a></span>nimble_statconn_eventcb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nimble_statconn_eventcb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a callback that is called on netif events. </p>
+<p>The registered callback function is a simple pass-through of nimble_netif events. The callback is executed in the context of NimBLE's host thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>event callback to register, may be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf7f64cab376c1eb38eb937aeeb271593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf7f64cab376c1eb38eb937aeeb271593">&#9670;&nbsp;</a></span>nimble_statconn_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nimble_statconn_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the statconn module. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function <b>must</b> only be called once. Typically this is done during system initialization via auto-init. </dd></dl>
+
+</div>
+</div>
+<a id="gaa7af88c59698176666109a4b55ca1ee4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa7af88c59698176666109a4b55ca1ee4">&#9670;&nbsp;</a></span>nimble_statconn_rm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nimble_statconn_rm </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>addr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove the connection to the given peer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>BLE address of the peer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if peer was successfully removed </dd>
+<dd>
+-ENOTCONN if given address is not managed </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

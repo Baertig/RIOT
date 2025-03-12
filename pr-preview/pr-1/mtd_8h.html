@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/mtd.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mtd_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">mtd.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__storage.html">Storage Device Drivers</a> &raquo; <a class="el" href="group__drivers__mtd.html">Memory Technology Device</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Aurelien Gonce <a href="#" onclick="location.href='mai'+'lto:'+'aur'+'el'+'ien'+'.g'+'onc'+'e@'+'alt'+'ra'+'n.c'+'om'; return false;">aurel<span style="display: none;">.nosp@m.</span>ien.<span style="display: none;">.nosp@m.</span>gonce<span style="display: none;">.nosp@m.</span>@alt<span style="display: none;">.nosp@m.</span>ran.c<span style="display: none;">.nosp@m.</span>om</a> </dd>
+<dd>
+Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span style="display: none;">.nosp@m.</span>nt@o<span style="display: none;">.nosp@m.</span>takey<span style="display: none;">.nosp@m.</span>s.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="mtd_8h_source.html">mtd.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stddef.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="xfa_8h_source.html">xfa.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for mtd.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mtd_8h__incl.svg" width="498" height="336"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mtd_8h__dep__incl.svg" width="3876" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mtd_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__dev__t.html">mtd_dev_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD device descriptor.  <a href="structmtd__dev__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmtd__desc.html">mtd_desc</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD driver interface.  <a href="structmtd__desc.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaf0ba0e302d3f3711c691fdfbda1461ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gaf0ba0e302d3f3711c691fdfbda1461ac">MTD_XFA_ADD</a>(dev,  idx)&#160;&#160;&#160;<a class="el" href="xfa_8h.html#a9b3e8f506ebeefc418799a13904fec38">XFA_CONST</a>(<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a>, <a class="el" href="group__drivers__mtd.html#ga290552e29a4074f1b34c0067e39886df">mtd_dev_xfa</a>, idx) *mtd ## idx = (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *)&amp;(dev)</td></tr>
+<tr class="memdesc:gaf0ba0e302d3f3711c691fdfbda1461ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define MTD device pointer variable <code>mtd&lt;idx&gt;</code>  <a href="group__drivers__mtd.html#gaf0ba0e302d3f3711c691fdfbda1461ac">More...</a><br /></td></tr>
+<tr class="separator:gaf0ba0e302d3f3711c691fdfbda1461ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaed6dda925a94ee38ebfa0b6105461893"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gaed6dda925a94ee38ebfa0b6105461893">MTD_NUMOF</a>&#160;&#160;&#160;<a class="el" href="xfa_8h.html#ad15d5dae13c2d1ffdab3fd64d78e1b4b">XFA_LEN</a>(<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *, <a class="el" href="group__drivers__mtd.html#ga290552e29a4074f1b34c0067e39886df">mtd_dev_xfa</a>)</td></tr>
+<tr class="memdesc:gaed6dda925a94ee38ebfa0b6105461893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of MTDs defined in the MTD device array in XFA. <br /></td></tr>
+<tr class="separator:gaed6dda925a94ee38ebfa0b6105461893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd32ebfc4ee09f64d7e2490c4f5504fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gacd32ebfc4ee09f64d7e2490c4f5504fb">MTD_DRIVER_FLAG_DIRECT_WRITE</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:gacd32ebfc4ee09f64d7e2490c4f5504fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD driver can write any data to the storage without erasing it first.  <a href="group__drivers__mtd.html#gacd32ebfc4ee09f64d7e2490c4f5504fb">More...</a><br /></td></tr>
+<tr class="separator:gacd32ebfc4ee09f64d7e2490c4f5504fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08bad3026290086a5215b85bd1c62f51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga08bad3026290086a5215b85bd1c62f51">MTD_DRIVER_FLAG_CLEARING_OVERWRITE</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memdesc:ga08bad3026290086a5215b85bd1c62f51"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD driver supports arbitrary clearing overwrites.  <a href="group__drivers__mtd.html#ga08bad3026290086a5215b85bd1c62f51">More...</a><br /></td></tr>
+<tr class="separator:ga08bad3026290086a5215b85bd1c62f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga016431acc3cc8d6f5a40149225dabc05"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structmtd__desc.html">mtd_desc</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga016431acc3cc8d6f5a40149225dabc05">mtd_desc_t</a></td></tr>
+<tr class="memdesc:ga016431acc3cc8d6f5a40149225dabc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD driver interface.  <a href="group__drivers__mtd.html#ga016431acc3cc8d6f5a40149225dabc05">More...</a><br /></td></tr>
+<tr class="separator:ga016431acc3cc8d6f5a40149225dabc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga2e588df22ed1a520ba154adbd93b1455"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga2e588df22ed1a520ba154adbd93b1455">mtd_power_state</a> { <a class="el" href="group__drivers__mtd.html#gga2e588df22ed1a520ba154adbd93b1455a860be5ff4a3cfb933b479391d2538939">MTD_POWER_UP</a>, 
+<a class="el" href="group__drivers__mtd.html#gga2e588df22ed1a520ba154adbd93b1455a81eb56a249bbf2eebd5cfbd8ef2c7ce8">MTD_POWER_DOWN</a>
+ }</td></tr>
+<tr class="memdesc:ga2e588df22ed1a520ba154adbd93b1455"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD power states.  <a href="group__drivers__mtd.html#ga2e588df22ed1a520ba154adbd93b1455">More...</a><br /></td></tr>
+<tr class="separator:ga2e588df22ed1a520ba154adbd93b1455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6bcf582eaf56330ea31c1162ea535076"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga6bcf582eaf56330ea31c1162ea535076">mtd_init</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd)</td></tr>
+<tr class="memdesc:ga6bcf582eaf56330ea31c1162ea535076"><td class="mdescLeft">&#160;</td><td class="mdescRight">mtd_init Initialize a MTD device  <a href="group__drivers__mtd.html#ga6bcf582eaf56330ea31c1162ea535076">More...</a><br /></td></tr>
+<tr class="separator:ga6bcf582eaf56330ea31c1162ea535076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74ffca1da0436aada58ef3f18f469e36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga74ffca1da0436aada58ef3f18f469e36">mtd_read</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, void *dest, uint32_t addr, uint32_t count)</td></tr>
+<tr class="memdesc:ga74ffca1da0436aada58ef3f18f469e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from a MTD device.  <a href="group__drivers__mtd.html#ga74ffca1da0436aada58ef3f18f469e36">More...</a><br /></td></tr>
+<tr class="separator:ga74ffca1da0436aada58ef3f18f469e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b72c0b58ed1f5a3ff4cc7cd4965dd83"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga8b72c0b58ed1f5a3ff4cc7cd4965dd83">mtd_read_page</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, void *dest, uint32_t page, uint32_t offset, uint32_t size)</td></tr>
+<tr class="memdesc:ga8b72c0b58ed1f5a3ff4cc7cd4965dd83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data from a MTD device with pagewise addressing.  <a href="group__drivers__mtd.html#ga8b72c0b58ed1f5a3ff4cc7cd4965dd83">More...</a><br /></td></tr>
+<tr class="separator:ga8b72c0b58ed1f5a3ff4cc7cd4965dd83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f36fb25e0daada2e9a873475c532d94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga5f36fb25e0daada2e9a873475c532d94">mtd_write</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, const void *src, uint32_t addr, uint32_t count)</td></tr>
+<tr class="memdesc:ga5f36fb25e0daada2e9a873475c532d94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a MTD device.  <a href="group__drivers__mtd.html#ga5f36fb25e0daada2e9a873475c532d94">More...</a><br /></td></tr>
+<tr class="separator:ga5f36fb25e0daada2e9a873475c532d94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cb5d1eed19f88f4e4b970541f7dcbf6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga6cb5d1eed19f88f4e4b970541f7dcbf6">mtd_write_page_raw</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, const void *src, uint32_t page, uint32_t offset, uint32_t size)</td></tr>
+<tr class="memdesc:ga6cb5d1eed19f88f4e4b970541f7dcbf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a MTD device with pagewise addressing.  <a href="group__drivers__mtd.html#ga6cb5d1eed19f88f4e4b970541f7dcbf6">More...</a><br /></td></tr>
+<tr class="separator:ga6cb5d1eed19f88f4e4b970541f7dcbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad52a5002206227b278f6cbb1efb605d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gad52a5002206227b278f6cbb1efb605d3">mtd_write_page</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, const void *src, uint32_t page, uint32_t offset, uint32_t size)</td></tr>
+<tr class="memdesc:gad52a5002206227b278f6cbb1efb605d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a MTD device with pagewise addressing.  <a href="group__drivers__mtd.html#gad52a5002206227b278f6cbb1efb605d3">More...</a><br /></td></tr>
+<tr class="separator:gad52a5002206227b278f6cbb1efb605d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7">mtd_erase</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, uint32_t addr, uint32_t count)</td></tr>
+<tr class="memdesc:gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase sectors of a MTD device.  <a href="group__drivers__mtd.html#gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7">More...</a><br /></td></tr>
+<tr class="separator:gaabab7f7b0b1cfcdbe2b32d2e26bbf4d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9c761bda55271360e1797491ef2ef7f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gaf9c761bda55271360e1797491ef2ef7f">mtd_erase_sector</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, uint32_t sector, uint32_t num)</td></tr>
+<tr class="memdesc:gaf9c761bda55271360e1797491ef2ef7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase sectors of a MTD device.  <a href="group__drivers__mtd.html#gaf9c761bda55271360e1797491ef2ef7f">More...</a><br /></td></tr>
+<tr class="separator:gaf9c761bda55271360e1797491ef2ef7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40c7db24bb97158581694edc4eaf20aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga40c7db24bb97158581694edc4eaf20aa">mtd_write_sector</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, const void *src, uint32_t sector, uint32_t num)</td></tr>
+<tr class="memdesc:ga40c7db24bb97158581694edc4eaf20aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write data to a MTD device with whole sector writes.  <a href="group__drivers__mtd.html#ga40c7db24bb97158581694edc4eaf20aa">More...</a><br /></td></tr>
+<tr class="separator:ga40c7db24bb97158581694edc4eaf20aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf44f35470c2180ebd4b772f3b25d31fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#gaf44f35470c2180ebd4b772f3b25d31fc">mtd_power</a> (<a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *mtd, enum <a class="el" href="group__drivers__mtd.html#ga2e588df22ed1a520ba154adbd93b1455">mtd_power_state</a> power)</td></tr>
+<tr class="memdesc:gaf44f35470c2180ebd4b772f3b25d31fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set power mode on a MTD device.  <a href="group__drivers__mtd.html#gaf44f35470c2180ebd4b772f3b25d31fc">More...</a><br /></td></tr>
+<tr class="separator:gaf44f35470c2180ebd4b772f3b25d31fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1bc58d81d002e150ccb418701d38b43e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga1bc58d81d002e150ccb418701d38b43e">mtd_dev_get</a> (unsigned idx)</td></tr>
+<tr class="memdesc:ga1bc58d81d002e150ccb418701d38b43e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an MTD device by index.  <a href="group__drivers__mtd.html#ga1bc58d81d002e150ccb418701d38b43e">More...</a><br /></td></tr>
+<tr class="separator:ga1bc58d81d002e150ccb418701d38b43e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga290552e29a4074f1b34c0067e39886df"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmtd__dev__t.html">mtd_dev_t</a> *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mtd.html#ga290552e29a4074f1b34c0067e39886df">mtd_dev_xfa</a> []</td></tr>
+<tr class="memdesc:ga290552e29a4074f1b34c0067e39886df"><td class="mdescLeft">&#160;</td><td class="mdescRight">MTD device array as XFA.  <a href="group__drivers__mtd.html#ga290552e29a4074f1b34c0067e39886df">More...</a><br /></td></tr>
+<tr class="separator:ga290552e29a4074f1b34c0067e39886df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

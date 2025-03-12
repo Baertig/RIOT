@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/gnrc/sixlowpan/config.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sys_2include_2net_2gnrc_2sixlowpan_2config_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">config.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a><a class="el" href="group__config.html">Compile time configurations</a> &raquo;  &#124; <a class="el" href="group__net__gnrc__conf.html">GNRC compile configurations</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__config.html">GNRC 6LoWPAN compile configurations</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Configuration macros for <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a>.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Configuration macros for <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a>. </p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span style="display: none;">.nosp@m.</span>ders<span style="display: none;">.nosp@m.</span>@fu-b<span style="display: none;">.nosp@m.</span>erli<span style="display: none;">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sys_2include_2net_2gnrc_2sixlowpan_2config_8h_source.html">config.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="modules_8h_source.html">modules.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timex_8h_source.html">timex.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sys_2include_2net_2gnrc_2sixlowpan_2config_8h__incl.svg" width="323" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sys_2include_2net_2gnrc_2sixlowpan_2config_8h__dep__incl.svg" width="875" height="588"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="sys_2include_2net_2gnrc_2sixlowpan_2config_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gafda0f30679301e03fd3035e24497b05c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gafda0f30679301e03fd3035e24497b05c">GNRC_SIXLOWPAN_STACK_SIZE</a>&#160;&#160;&#160;((<a class="el" href="native_2include_2cpu__conf_8h.html#a713ebddc00581f4d415095cdbfd8791f">THREAD_STACKSIZE_DEFAULT</a>) - 64)</td></tr>
+<tr class="memdesc:gafda0f30679301e03fd3035e24497b05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default stack size to use for the 6LoWPAN thread.  <a href="group__net__gnrc__sixlowpan__config.html#gafda0f30679301e03fd3035e24497b05c">More...</a><br /></td></tr>
+<tr class="separator:gafda0f30679301e03fd3035e24497b05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga394abb39f199270051899ec29ec1a3da"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga394abb39f199270051899ec29ec1a3da">GNRC_SIXLOWPAN_PRIO</a>&#160;&#160;&#160;(<a class="el" href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a> - 4)</td></tr>
+<tr class="memdesc:ga394abb39f199270051899ec29ec1a3da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default priority for the 6LoWPAN thread. <br /></td></tr>
+<tr class="separator:ga394abb39f199270051899ec29ec1a3da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1219804b3c712e48de4908355fb82aea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga1219804b3c712e48de4908355fb82aea">CONFIG_GNRC_SIXLOWPAN_MSG_QUEUE_SIZE_EXP</a>&#160;&#160;&#160;(3U)</td></tr>
+<tr class="memdesc:ga1219804b3c712e48de4908355fb82aea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default message queue size to use for the 6LoWPAN thread (as exponent of 2^n).  <a href="group__net__gnrc__sixlowpan__config.html#ga1219804b3c712e48de4908355fb82aea">More...</a><br /></td></tr>
+<tr class="separator:ga1219804b3c712e48de4908355fb82aea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ba6c4be8d7c93d505ed6e10106f211e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga5ba6c4be8d7c93d505ed6e10106f211e">CONFIG_GNRC_SIXLOWPAN_FRAG_FB_SIZE</a>&#160;&#160;&#160;(1U)</td></tr>
+<tr class="memdesc:ga5ba6c4be8d7c93d505ed6e10106f211e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of datagrams that can be fragmented simultaneously.  <a href="group__net__gnrc__sixlowpan__config.html#ga5ba6c4be8d7c93d505ed6e10106f211e">More...</a><br /></td></tr>
+<tr class="separator:ga5ba6c4be8d7c93d505ed6e10106f211e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7b60cbdad319a842372ed2ebb2d106c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaf7b60cbdad319a842372ed2ebb2d106c">CONFIG_GNRC_SIXLOWPAN_FRAG_RBUF_SIZE</a>&#160;&#160;&#160;(4U)</td></tr>
+<tr class="memdesc:gaf7b60cbdad319a842372ed2ebb2d106c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the reassembly buffer.  <a href="group__net__gnrc__sixlowpan__config.html#gaf7b60cbdad319a842372ed2ebb2d106c">More...</a><br /></td></tr>
+<tr class="separator:gaf7b60cbdad319a842372ed2ebb2d106c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8bad8e0e4b8f49baec22202ce3bfc63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gae8bad8e0e4b8f49baec22202ce3bfc63">CONFIG_GNRC_SIXLOWPAN_FRAG_RBUF_TIMEOUT_US</a>&#160;&#160;&#160;(3U * US_PER_SEC)</td></tr>
+<tr class="memdesc:gae8bad8e0e4b8f49baec22202ce3bfc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for reassembly buffer entries in microseconds.  <a href="group__net__gnrc__sixlowpan__config.html#gae8bad8e0e4b8f49baec22202ce3bfc63">More...</a><br /></td></tr>
+<tr class="separator:gae8bad8e0e4b8f49baec22202ce3bfc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6cec9c28d972913ac6810b8d44e26690"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga6cec9c28d972913ac6810b8d44e26690">CONFIG_GNRC_SIXLOWPAN_FRAG_RBUF_DO_NOT_OVERRIDE</a></td></tr>
+<tr class="memdesc:ga6cec9c28d972913ac6810b8d44e26690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do not override oldest datagram when reassembly buffer is full.  <a href="group__net__gnrc__sixlowpan__config.html#ga6cec9c28d972913ac6810b8d44e26690">More...</a><br /></td></tr>
+<tr class="separator:ga6cec9c28d972913ac6810b8d44e26690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d97583d18fef7abe0cfff8ad0a848b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga4d97583d18fef7abe0cfff8ad0a848b0">CONFIG_GNRC_SIXLOWPAN_FRAG_RBUF_DEL_TIMER</a>&#160;&#160;&#160;(0U)</td></tr>
+<tr class="memdesc:ga4d97583d18fef7abe0cfff8ad0a848b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletion timer for reassembly buffer entries in microseconds.  <a href="group__net__gnrc__sixlowpan__config.html#ga4d97583d18fef7abe0cfff8ad0a848b0">More...</a><br /></td></tr>
+<tr class="separator:ga4d97583d18fef7abe0cfff8ad0a848b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15dd2e19541dd74baf294e9c22f47c7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga15dd2e19541dd74baf294e9c22f47c7e">CONFIG_GNRC_SIXLOWPAN_ND_AR_LTIME</a>&#160;&#160;&#160;(15U)</td></tr>
+<tr class="memdesc:ga15dd2e19541dd74baf294e9c22f47c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registration lifetime in minutes for the address registration option.  <a href="group__net__gnrc__sixlowpan__config.html#ga15dd2e19541dd74baf294e9c22f47c7e">More...</a><br /></td></tr>
+<tr class="separator:ga15dd2e19541dd74baf294e9c22f47c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga194b309b611687ad86cf094b1c763d23"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga194b309b611687ad86cf094b1c763d23">CONFIG_GNRC_SIXLOWPAN_FRAG_VRB_SIZE</a>&#160;&#160;&#160;(16U)</td></tr>
+<tr class="memdesc:ga194b309b611687ad86cf094b1c763d23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the virtual reassembly buffer.  <a href="group__net__gnrc__sixlowpan__config.html#ga194b309b611687ad86cf094b1c763d23">More...</a><br /></td></tr>
+<tr class="separator:ga194b309b611687ad86cf094b1c763d23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57dbb6eb24c259bc461ab168c4630a63"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga57dbb6eb24c259bc461ab168c4630a63">CONFIG_GNRC_SIXLOWPAN_FRAG_VRB_TIMEOUT_US</a>&#160;&#160;&#160;(<a class="el" href="group__net__gnrc__sixlowpan__config.html#gae8bad8e0e4b8f49baec22202ce3bfc63">CONFIG_GNRC_SIXLOWPAN_FRAG_RBUF_TIMEOUT_US</a>)</td></tr>
+<tr class="memdesc:ga57dbb6eb24c259bc461ab168c4630a63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout for a VRB entry in microseconds.  <a href="group__net__gnrc__sixlowpan__config.html#ga57dbb6eb24c259bc461ab168c4630a63">More...</a><br /></td></tr>
+<tr class="separator:ga57dbb6eb24c259bc461ab168c4630a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7823a7ea8ee8c89c95f67df6cf0aa347"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga7823a7ea8ee8c89c95f67df6cf0aa347">GNRC_SIXLOWPAN_MSG_QUEUE_SIZE</a>&#160;&#160;&#160;(1 &lt;&lt; <a class="el" href="group__net__gnrc__sixlowpan__config.html#ga1219804b3c712e48de4908355fb82aea">CONFIG_GNRC_SIXLOWPAN_MSG_QUEUE_SIZE_EXP</a>)</td></tr>
+<tr class="memdesc:ga7823a7ea8ee8c89c95f67df6cf0aa347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message queue size to use for the 6LoWPAN thread. <br /></td></tr>
+<tr class="separator:ga7823a7ea8ee8c89c95f67df6cf0aa347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Selective fragment recovery configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpbe62dcebcdce2cbc160f6617e86b1016"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc8931#section-7.1">RFC 8931, section 7.1</a> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Only applicable with gnrc_sixlowpan_frag_sfr module </dd></dl>
+</td></tr>
+<tr class="memitem:gaa57988e48cbbe73b7e1268a9ccf9d7b3"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaa57988e48cbbe73b7e1268a9ccf9d7b3">CONFIG_GNRC_SIXLOWPAN_SFR_MIN_FRAG_SIZE</a>&#160;&#160;&#160;96U</td></tr>
+<tr class="memdesc:gaa57988e48cbbe73b7e1268a9ccf9d7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default minimum value for fragment size (MinFragmentSize) <br /></td></tr>
+<tr class="separator:gaa57988e48cbbe73b7e1268a9ccf9d7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63a4399c8bd7dad1a2d72f5d5e99e9cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga63a4399c8bd7dad1a2d72f5d5e99e9cb">CONFIG_GNRC_SIXLOWPAN_SFR_MAX_FRAG_SIZE</a>&#160;&#160;&#160;112U</td></tr>
+<tr class="memdesc:ga63a4399c8bd7dad1a2d72f5d5e99e9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default maximum value for fragment size (MaxFragmentSize)  <a href="group__net__gnrc__sixlowpan__config.html#ga63a4399c8bd7dad1a2d72f5d5e99e9cb">More...</a><br /></td></tr>
+<tr class="separator:ga63a4399c8bd7dad1a2d72f5d5e99e9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa473cb6e06de56f066532b4fa28379bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaa473cb6e06de56f066532b4fa28379bb">CONFIG_GNRC_SIXLOWPAN_SFR_OPT_FRAG_SIZE</a>&#160;&#160;&#160;<a class="el" href="group__net__gnrc__sixlowpan__config.html#ga63a4399c8bd7dad1a2d72f5d5e99e9cb">CONFIG_GNRC_SIXLOWPAN_SFR_MAX_FRAG_SIZE</a></td></tr>
+<tr class="memdesc:gaa473cb6e06de56f066532b4fa28379bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value for fragment size that the sender should use to start with (OptFragmentSize)  <a href="group__net__gnrc__sixlowpan__config.html#gaa473cb6e06de56f066532b4fa28379bb">More...</a><br /></td></tr>
+<tr class="separator:gaa473cb6e06de56f066532b4fa28379bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadee3104e24d038fdc2fea95a995ffe7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gadee3104e24d038fdc2fea95a995ffe7b">CONFIG_GNRC_SIXLOWPAN_SFR_MIN_WIN_SIZE</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gadee3104e24d038fdc2fea95a995ffe7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the sender should react to Explicit Congestion Notification (UseECN)  <a href="group__net__gnrc__sixlowpan__config.html#gadee3104e24d038fdc2fea95a995ffe7b">More...</a><br /></td></tr>
+<tr class="separator:gadee3104e24d038fdc2fea95a995ffe7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf2484f6d6a3384f5d8ddd3bf18beb7f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaf2484f6d6a3384f5d8ddd3bf18beb7f2">CONFIG_GNRC_SIXLOWPAN_SFR_MAX_WIN_SIZE</a>&#160;&#160;&#160;16U</td></tr>
+<tr class="memdesc:gaf2484f6d6a3384f5d8ddd3bf18beb7f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default maximum value of window size that the sender can use (MaxWindowSize)  <a href="group__net__gnrc__sixlowpan__config.html#gaf2484f6d6a3384f5d8ddd3bf18beb7f2">More...</a><br /></td></tr>
+<tr class="separator:gaf2484f6d6a3384f5d8ddd3bf18beb7f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c13176cabc5dc17b93dadc0f54efd1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga5c13176cabc5dc17b93dadc0f54efd1f">CONFIG_GNRC_SIXLOWPAN_SFR_OPT_WIN_SIZE</a>&#160;&#160;&#160;16U</td></tr>
+<tr class="memdesc:ga5c13176cabc5dc17b93dadc0f54efd1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default value of window size that the sender should start with (OptWindowSize)  <a href="group__net__gnrc__sixlowpan__config.html#ga5c13176cabc5dc17b93dadc0f54efd1f">More...</a><br /></td></tr>
+<tr class="separator:ga5c13176cabc5dc17b93dadc0f54efd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d0316ef279f1a8749352e56d81fba16"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga8d0316ef279f1a8749352e56d81fba16">CONFIG_GNRC_SIXLOWPAN_SFR_INTER_FRAME_GAP_US</a>&#160;&#160;&#160;100U</td></tr>
+<tr class="memdesc:ga8d0316ef279f1a8749352e56d81fba16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default minimum amount of time between transmissions in microseconds (InterFrameGap)  <a href="group__net__gnrc__sixlowpan__config.html#ga8d0316ef279f1a8749352e56d81fba16">More...</a><br /></td></tr>
+<tr class="separator:ga8d0316ef279f1a8749352e56d81fba16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ca85f4953aee1b68626fd77685fe9bf"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga8ca85f4953aee1b68626fd77685fe9bf">CONFIG_GNRC_SIXLOWPAN_SFR_MIN_ARQ_TIMEOUT_MS</a>&#160;&#160;&#160;350U</td></tr>
+<tr class="memdesc:ga8ca85f4953aee1b68626fd77685fe9bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum RFRAG-ACK timeout in msec before a node takes a next action (MinARQTimeOut) <br /></td></tr>
+<tr class="separator:ga8ca85f4953aee1b68626fd77685fe9bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad726f2edb32140a52658a66b27c0c9c4"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gad726f2edb32140a52658a66b27c0c9c4">CONFIG_GNRC_SIXLOWPAN_SFR_MAX_ARQ_TIMEOUT_MS</a>&#160;&#160;&#160;700U</td></tr>
+<tr class="memdesc:gad726f2edb32140a52658a66b27c0c9c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum RFRAG-ACK timeout in msec before a node takes a next action (MaxARQTimeOut) <br /></td></tr>
+<tr class="separator:gad726f2edb32140a52658a66b27c0c9c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae02d8f64466283537e41ba350badb1d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gae02d8f64466283537e41ba350badb1d4">CONFIG_GNRC_SIXLOWPAN_SFR_OPT_ARQ_TIMEOUT_MS</a>&#160;&#160;&#160;<a class="el" href="group__net__gnrc__sixlowpan__config.html#gad726f2edb32140a52658a66b27c0c9c4">CONFIG_GNRC_SIXLOWPAN_SFR_MAX_ARQ_TIMEOUT_MS</a></td></tr>
+<tr class="memdesc:gae02d8f64466283537e41ba350badb1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default RFRAG-ACK timeout in msec before a node takes a next action (OptARQTimeOut)  <a href="group__net__gnrc__sixlowpan__config.html#gae02d8f64466283537e41ba350badb1d4">More...</a><br /></td></tr>
+<tr class="separator:gae02d8f64466283537e41ba350badb1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf71a4667abf9651d3db60847e6ca8797"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaf71a4667abf9651d3db60847e6ca8797">CONFIG_GNRC_SIXLOWPAN_SFR_FRAG_RETRIES</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="memdesc:gaf71a4667abf9651d3db60847e6ca8797"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of retries for a particular fragment (MaxFragRetries) <br /></td></tr>
+<tr class="separator:gaf71a4667abf9651d3db60847e6ca8797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga814864854314be2aab1e17495ed87658"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga814864854314be2aab1e17495ed87658">CONFIG_GNRC_SIXLOWPAN_SFR_DG_RETRIES</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:ga814864854314be2aab1e17495ed87658"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of retries from scratch for a particular datagram (MaxDatagramRetries) <br /></td></tr>
+<tr class="separator:ga814864854314be2aab1e17495ed87658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae40df851217f782ddbeb3f75bb3fc19a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gae40df851217f782ddbeb3f75bb3fc19a">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_IF_IN_NUM</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gae40df851217f782ddbeb3f75bb3fc19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The numerator for the factor for when to mark ECN on incoming <code>netif</code> queue state.  <a href="group__net__gnrc__sixlowpan__config.html#gae40df851217f782ddbeb3f75bb3fc19a">More...</a><br /></td></tr>
+<tr class="separator:gae40df851217f782ddbeb3f75bb3fc19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga01e63a68c97263a306aa539933ff70d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga01e63a68c97263a306aa539933ff70d8">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_IF_IN_DEN</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="memdesc:ga01e63a68c97263a306aa539933ff70d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The denominator for the factor for when to mark ECN on incoming <code>netif</code> queue state.  <a href="group__net__gnrc__sixlowpan__config.html#ga01e63a68c97263a306aa539933ff70d8">More...</a><br /></td></tr>
+<tr class="separator:ga01e63a68c97263a306aa539933ff70d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf3e5f12ce077af41106efe48c78048ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaf3e5f12ce077af41106efe48c78048ee">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_IF_OUT_NUM</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gaf3e5f12ce077af41106efe48c78048ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">The numerator for the factor for when to mark ECN on the outgoing <code>netif</code>'s output queue state.  <a href="group__net__gnrc__sixlowpan__config.html#gaf3e5f12ce077af41106efe48c78048ee">More...</a><br /></td></tr>
+<tr class="separator:gaf3e5f12ce077af41106efe48c78048ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga775aa185665450bc7db4dcdc355fff95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#ga775aa185665450bc7db4dcdc355fff95">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_IF_OUT_DEN</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="memdesc:ga775aa185665450bc7db4dcdc355fff95"><td class="mdescLeft">&#160;</td><td class="mdescRight">The denominator for the factor for when to mark ECN on the outgoing <code>netif</code> output queue state.  <a href="group__net__gnrc__sixlowpan__config.html#ga775aa185665450bc7db4dcdc355fff95">More...</a><br /></td></tr>
+<tr class="separator:ga775aa185665450bc7db4dcdc355fff95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc9f2218cf6113b97bfcc1dc026cee2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gacc9f2218cf6113b97bfcc1dc026cee2f">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_FQUEUE_NUM</a>&#160;&#160;&#160;1U</td></tr>
+<tr class="memdesc:gacc9f2218cf6113b97bfcc1dc026cee2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The numerator for the factor for when to mark ECN on frame queue state.  <a href="group__net__gnrc__sixlowpan__config.html#gacc9f2218cf6113b97bfcc1dc026cee2f">More...</a><br /></td></tr>
+<tr class="separator:gacc9f2218cf6113b97bfcc1dc026cee2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf0d6b33906729a2424c6352c52b12d1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gacf0d6b33906729a2424c6352c52b12d1">CONFIG_GNRC_SIXLOWPAN_SFR_ECN_FQUEUE_DEN</a>&#160;&#160;&#160;2U</td></tr>
+<tr class="memdesc:gacf0d6b33906729a2424c6352c52b12d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The denominator for the factor for when to mark ECN on frame queue state.  <a href="group__net__gnrc__sixlowpan__config.html#gacf0d6b33906729a2424c6352c52b12d1">More...</a><br /></td></tr>
+<tr class="separator:gacf0d6b33906729a2424c6352c52b12d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaceb947f04d2ff1723752198c44e62504"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__config.html#gaceb947f04d2ff1723752198c44e62504">CONFIG_GNRC_SIXLOWPAN_SFR_MOCK_ARQ_TIMER</a>&#160;&#160;&#160;0U</td></tr>
+<tr class="memdesc:gaceb947f04d2ff1723752198c44e62504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deactivate automatic handling of ARQ timer.  <a href="group__net__gnrc__sixlowpan__config.html#gaceb947f04d2ff1723752198c44e62504">More...</a><br /></td></tr>
+<tr class="separator:gaceb947f04d2ff1723752198c44e62504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

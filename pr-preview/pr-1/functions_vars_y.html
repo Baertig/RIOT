@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Data Fields - Variables</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_vars_y.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_y"></a>- y -</h3><ul>
+<li>y
+: <a class="el" href="structadxl345__data__t.html#a21a3d04d4930a0d884be0155ff0bb8da">adxl345_data_t</a>
+, <a class="el" href="structcst816s__touch__data__t.html#ae6ecf508bbf25f5a74a3805b5dff62f3">cst816s_touch_data_t</a>
+, <a class="el" href="structctap__crypto__pub__key__t.html#a03d5c7b9fecf0679a3f9166f40a4cba2">ctap_crypto_pub_key_t</a>
+, <a class="el" href="structecdsa__public__key__t.html#acc416a62a8a43e689f618e7c3b264f3a">ecdsa_public_key_t</a>
+, <a class="el" href="structft5x06__touch__position__t.html#acf11bfb886a3d973af2ea69b98e8d6b9">ft5x06_touch_position_t</a>
+, <a class="el" href="structfxos8700__measurement__t.html#a437fbc98b29ac5b61503166a87fd8ed2">fxos8700_measurement_t</a>
+, <a class="el" href="structhmc5883l__data__t.html#a9cd0553d57bf3d7d6630b63b0e0759e8">hmc5883l_data_t</a>
+, <a class="el" href="structhmc5883l__raw__data__t.html#aa602ad1b0c42584397808850196d6526">hmc5883l_raw_data_t</a>
+, <a class="el" href="structitg320x__data__t.html#ab65ca38ca3cbdc2231a376e4168ceea8">itg320x_data_t</a>
+, <a class="el" href="structitg320x__raw__data__t.html#a7b905eb78702b25f27e6cb982a1d063f">itg320x_raw_data_t</a>
+, <a class="el" href="structl3gxxxx__data__t.html#a68b62fbb638f282d6e46d3a4de1445d9">l3gxxxx_data_t</a>
+, <a class="el" href="structl3gxxxx__raw__data__t.html#ae9b8e625449a31b42003d0f1ccecf607">l3gxxxx_raw_data_t</a>
+, <a class="el" href="unionlis2dh12__fifo__data__t.html#a3c3b0eedb0599f074816bf73758a7967">lis2dh12_fifo_data_t</a>
+, <a class="el" href="structlsm6dsxx__3d__data__t.html#a4aa47863e93211d4823467f8fb0e5df2">lsm6dsxx_3d_data_t</a>
+, <a class="el" href="structmag3110__data__t.html#a61518c49eb3d89077794f8054165a99a">mag3110_data_t</a>
+, <a class="el" href="structmma7660__data__t.html#a63c520f45d9598e64ae7e5f4d63e4f2e">mma7660_data_t</a>
+, <a class="el" href="structmma8x5x__data__t.html#a5724de837d1b730560449d112ac0b0af">mma8x5x_data_t</a>
+, <a class="el" href="structstmpe811__touch__position__t.html#ac8a7566a6722a433cd692eb7f683001b">stmpe811_touch_position_t</a>
+, <a class="el" href="structtouch__t.html#a017f96e749b91f80740a35f5da77edeb">touch_t</a>
+</li>
+<li>y1
+: <a class="el" href="structdisp__dev__area__t.html#a229069932b3d6e044ccc3d90a3892c47">disp_dev_area_t</a>
+</li>
+<li>y2
+: <a class="el" href="structdisp__dev__area__t.html#a401dd06e6c222a70c41b621a50649af2">disp_dev_area_t</a>
+</li>
+<li>Y_AXIS
+: <a class="el" href="unionLIS2DH12__CLICK__SRC__t.html#a9ab1051ba7ad9c2121c0af7cc6f34e17">LIS2DH12_CLICK_SRC_t</a>
+</li>
+<li>y_axis
+: <a class="el" href="structlis3mdl__3d__data__t.html#a6d55b0e4f2d9f45d6703c6d84275f2cf">lis3mdl_3d_data_t</a>
+, <a class="el" href="structlsm303dlhc__3d__data__t.html#a87f6b92402cc223ac3269abb868f4567">lsm303dlhc_3d_data_t</a>
+, <a class="el" href="structmpu9x50__results__t.html#accb9d4d3079e1352ccaf8cd3e8e35ef3">mpu9x50_results_t</a>
+</li>
+<li>y_high
+: <a class="el" href="unionl3gxxxx__int__event__src__t.html#a52e5ba5b6f522b2cb56129284cb79371">l3gxxxx_int_event_src_t</a>
+</li>
+<li>y_high_enabled
+: <a class="el" href="structl3gxxxx__int__event__cfg__t.html#a6d6130f51071055987d600868d60b970">l3gxxxx_int_event_cfg_t</a>
+</li>
+<li>y_low
+: <a class="el" href="unionl3gxxxx__int__event__src__t.html#a352f6f45f512343765a7c83766d97f77">l3gxxxx_int_event_src_t</a>
+</li>
+<li>y_low_enabled
+: <a class="el" href="structl3gxxxx__int__event__cfg__t.html#a09afc2382e727200ea66b1b66f225c33">l3gxxxx_int_event_cfg_t</a>
+</li>
+<li>y_threshold
+: <a class="el" href="structl3gxxxx__int__event__cfg__t.html#ad38cd1d517332d1459277a5a7617d31c">l3gxxxx_int_event_cfg_t</a>
+</li>
+<li>YD
+: <a class="el" href="unionLIS2DH12__CLICK__CFG__t.html#a5020c67a3b1a4fe89cf38ef462f42cd5">LIS2DH12_CLICK_CFG_t</a>
+</li>
+<li>year_h
+: <a class="el" href="structdcf77__bits__t_1_1values.html#a31b166200549d7e3db7e57440b37cffa">dcf77_bits_t::values</a>
+</li>
+<li>year_l
+: <a class="el" href="structdcf77__bits__t_1_1values.html#a8191eb4429aab8eec04a3803a1f0e20c">dcf77_bits_t::values</a>
+</li>
+<li>Yen
+: <a class="el" href="unionLIS2DH12__CTRL__REG1__t.html#ae7cbff758177575f17b101d5d51f4cdd">LIS2DH12_CTRL_REG1_t</a>
+</li>
+<li>YHIE
+: <a class="el" href="unionLIS2DH12__INT1__CFG__t.html#a80b370f22fc055521a5d694dabde9837">LIS2DH12_INT1_CFG_t</a>
+, <a class="el" href="unionLIS2DH12__INT2__CFG__t.html#a2dfce85082d43864072a7f1c3e6354f1">LIS2DH12_INT2_CFG_t</a>
+</li>
+<li>YLIE
+: <a class="el" href="unionLIS2DH12__INT1__CFG__t.html#a09c91840b8a658153eca153ef1c68c69">LIS2DH12_INT1_CFG_t</a>
+, <a class="el" href="unionLIS2DH12__INT2__CFG__t.html#a482c2075dda678df36b120205d5f7316">LIS2DH12_INT2_CFG_t</a>
+</li>
+<li>ymax
+: <a class="el" href="structft5x06__params__t.html#a10629080acfd06a2e048fdbf83d3121c">ft5x06_params_t</a>
+, <a class="el" href="structstmpe811__params__t.html#a0d9f93cf432369f1b4839f4d79cbc3f3">stmpe811_params_t</a>
+</li>
+<li>YS
+: <a class="el" href="unionLIS2DH12__CLICK__CFG__t.html#abaa4a3d312bf47d9378e24f84c69447f">LIS2DH12_CLICK_CFG_t</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:38 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

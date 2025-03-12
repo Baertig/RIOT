@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Heap Memory Usage Monitor</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__malloc__monitor.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
+  <div class="headertitle">
+<div class="title">Heap Memory Usage Monitor<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__memory__management.html">Memory management</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This module allows to monitor the dynamic memory usage of a certain piece of code.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This module allows to monitor the dynamic memory usage of a certain piece of code. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This module automatically selects <a class="el" href="group__sys__malloc__ts.html">Thread-safe wrappers for malloc and friends</a> and naturally incurs a certain runtime overhead. It is not meant for production usage. </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Mikolai Gütschow <a href="#" onclick="location.href='mai'+'lto:'+'mik'+'ol'+'ai.'+'gu'+'ets'+'ch'+'ow@'+'tu'+'-dr'+'es'+'den'+'.d'+'e'; return false;">mikol<span style="display: none;">.nosp@m.</span>ai.g<span style="display: none;">.nosp@m.</span>uetsc<span style="display: none;">.nosp@m.</span>how@<span style="display: none;">.nosp@m.</span>tu-dr<span style="display: none;">.nosp@m.</span>esde<span style="display: none;">.nosp@m.</span>n.de</a></dd></dl>
+<h1><a class="anchor" id="autotoc_md2153"></a>
+Description</h1>
+<p>This module allows to monitor the dynamic memory usage of a certain piece of code. It works by hooking into (wrappers to) <a class="el" href="group__oneway__malloc.html#ga7ac38fce3243a7dcf448301ee9ffd392">malloc()</a>, <a class="el" href="group__oneway__malloc.html#ga57ec1f2580107f2f42684e77bf2a6d7c">calloc()</a>, <a class="el" href="group__oneway__malloc.html#ga1a6b5e8d2f1c37e5b43e4345586075be">realloc()</a>, and <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a> calls to internally record the current and all-time maximum heap memory usage.</p>
+<p>Note that in general dynamic memory management is a bad idea on the constrained devices RIOT is targeting. So maybe it is better to just adapt your code to use static memory management instead.</p>
+<h1><a class="anchor" id="autotoc_md2154"></a>
+Usage</h1>
+<p>Enable the module with <code>USEMODULE += malloc_monitor</code>.</p>
+<p>Add <code>#include "malloc_monitor.h"</code> to the file in which you want to monitor dynamic memory usage. Use <a class="el" href="group__sys__malloc__monitor.html#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current()</a> to retrieve the size of the currently allocated heap memory in bytes. <a class="el" href="group__sys__malloc__monitor.html#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark()</a> returns the all-time maximum since startup or the last call to <a class="el" href="group__sys__malloc__monitor.html#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark()</a>.</p>
+<p>Note that <code>malloc_monitor</code> currently has no notion of threads and will at any point in time report the global dynamic memory usage, not the one used by the currently running thread. Thread-safety is achieved through usage of <a class="el" href="group__sys__malloc__ts.html">Thread-safe wrappers for malloc and friends</a>, though.</p>
+<h2><a class="anchor" id="autotoc_md2155"></a>
+Example</h2>
+<p>Imagine you want to investigate the dynamic memory consumption of a certain function <code>func()</code>. The following snippet could get you started:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stddef.h&gt;</span></div><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="stdio_8h.html">stdio.h</a>&gt;</span></div><div class="line"></div><div class="line"><span class="preprocessor">#include &quot;malloc_monitor.h&quot;</span></div><div class="line"></div><div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div><div class="line">{</div><div class="line">    <span class="keywordtype">size_t</span> before = <a class="code" href="group__sys__malloc__monitor.html#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current</a>();</div><div class="line">    <span class="keywordtype">size_t</span> before_max = <a class="code" href="group__sys__malloc__monitor.html#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark</a>();</div><div class="line">    func();</div><div class="line">    <span class="keywordtype">size_t</span> after = <a class="code" href="group__sys__malloc__monitor.html#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current</a>();</div><div class="line">    <span class="keywordtype">size_t</span> after_max = <a class="code" href="group__sys__malloc__monitor.html#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark</a>();</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span> (after != before) {</div><div class="line">        puts(<span class="stringliteral">&quot;func() &quot;</span> (after &lt; before ? <span class="stringliteral">&quot;decreased&quot;</span> : <span class="stringliteral">&quot;increased&quot;</span>) <span class="stringliteral">&quot; global dynamic memory usage.&quot;</span>);</div><div class="line">    }</div><div class="line">    <a class="code" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;The maximal dynamic memory usage of func() was %d bytes.&quot;</span>, after_max - before_max);</div><div class="line">}</div></div><!-- fragment --><p>For further usage examples, refer to the corresponding tests in <code>tests/sys/malloc_monitor</code>.</p>
+<h1><a class="anchor" id="autotoc_md2156"></a>
+Configuration</h1>
+<p>The maximum number of pointers that can be monitored at once can be set with Kconfig in System &gt; Heap Memory Usage Monitor &gt; Monitor Size or by setting the corresponding CFlag in your application's Makefile as <code>CFLAGS += CONFIG_MODULE_SYS_MALLOC_MONITOR_SIZE=42</code>. It defaults to 100.</p>
+<p>For more fine-grained debugging of invalid calls to <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a>, duplicated calls to <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a>, or memory leaks, the module can be configured to print information on every call to <a class="el" href="group__oneway__malloc.html#ga7ac38fce3243a7dcf448301ee9ffd392">malloc()</a>, <a class="el" href="group__oneway__malloc.html#ga57ec1f2580107f2f42684e77bf2a6d7c">calloc()</a>, <a class="el" href="group__oneway__malloc.html#ga1a6b5e8d2f1c37e5b43e4345586075be">realloc()</a>, or <a class="el" href="group__oneway__malloc.html#gafbedc913aa4651b3c3b4b3aecd9b4711">free()</a> by setting System &gt; Heap Memory Usage Monitor &gt; Verbose or adding <code>CFLAGS += CONFIG_MODULE_SYS_MALLOC_MONITOR_VERBOSE=1</code> to your Makefile. <code>malloc_monitor</code> defaults to be non-verbose. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__sys__malloc__monitor__internals"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor__internals.html">Heap Memory Usage Monitor internals</a></td></tr>
+<tr class="memdesc:group__sys__malloc__monitor__internals"><td class="mdescLeft">&#160;</td><td class="mdescRight">internals for monitoring heap memory usage (calls to malloc/calloc/realloc/free) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9f58450ed54755a5235860a5dab4404"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor.html#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current</a> (void)</td></tr>
+<tr class="memdesc:gab9f58450ed54755a5235860a5dab4404"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain current heap memory usage.  <a href="#gab9f58450ed54755a5235860a5dab4404">More...</a><br /></td></tr>
+<tr class="separator:gab9f58450ed54755a5235860a5dab4404"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga743882f0584698616b02c30ae735f6b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor.html#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark</a> (void)</td></tr>
+<tr class="memdesc:ga743882f0584698616b02c30ae735f6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain maximum heap memory usage since last call to <a class="el" href="group__sys__malloc__monitor.html#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark()</a>.  <a href="#ga743882f0584698616b02c30ae735f6b7">More...</a><br /></td></tr>
+<tr class="separator:ga743882f0584698616b02c30ae735f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__malloc__monitor.html#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark</a> (void)</td></tr>
+<tr class="memdesc:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset maximum heap memory usage.  <a href="#gaa09f0da764e5c7f1de4db627c8b427b4">More...</a><br /></td></tr>
+<tr class="separator:gaa09f0da764e5c7f1de4db627c8b427b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gab9f58450ed54755a5235860a5dab4404"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab9f58450ed54755a5235860a5dab4404">&#9670;&nbsp;</a></span>malloc_monitor_get_usage_current()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t malloc_monitor_get_usage_current </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain current heap memory usage. </p>
+<dl class="section return"><dt>Returns</dt><dd>current heap memory usage in bytes </dd></dl>
+
+</div>
+</div>
+<a id="ga743882f0584698616b02c30ae735f6b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga743882f0584698616b02c30ae735f6b7">&#9670;&nbsp;</a></span>malloc_monitor_get_usage_high_watermark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t malloc_monitor_get_usage_high_watermark </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Obtain maximum heap memory usage since last call to <a class="el" href="group__sys__malloc__monitor.html#gaa09f0da764e5c7f1de4db627c8b427b4">malloc_monitor_reset_high_watermark()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>maximum heap memory usage in bytes </dd></dl>
+
+</div>
+</div>
+<a id="gaa09f0da764e5c7f1de4db627c8b427b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa09f0da764e5c7f1de4db627c8b427b4">&#9670;&nbsp;</a></span>malloc_monitor_reset_high_watermark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void malloc_monitor_reset_high_watermark </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset maximum heap memory usage. </p>
+<p>After calling this function, <a class="el" href="group__sys__malloc__monitor.html#ga743882f0584698616b02c30ae735f6b7">malloc_monitor_get_usage_high_watermark()</a> will return <a class="el" href="group__sys__malloc__monitor.html#gab9f58450ed54755a5235860a5dab4404">malloc_monitor_get_usage_current()</a> until further changes to heap memory usage. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

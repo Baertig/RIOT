@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/sm_pwm_01c/include/sm_pwm_01c_params.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sm__pwm__01c__params_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle">
+<div class="title">sm_pwm_01c_params.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__sm__pwm__01c.html">SM_PWM_01C dust sensor</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Default configuration for SM_PWM_01C driver.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Default configuration for SM_PWM_01C driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span style="display: none;">.nosp@m.</span>ois-<span style="display: none;">.nosp@m.</span>xavie<span style="display: none;">.nosp@m.</span>r.mo<span style="display: none;">.nosp@m.</span>lina@<span style="display: none;">.nosp@m.</span>inri<span style="display: none;">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sm__pwm__01c__params_8h_source.html">sm_pwm_01c_params.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="saul__reg_8h_source.html">saul_reg.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sm__pwm__01c_8h_source.html">sm_pwm_01c.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sm_pwm_01c_params.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sm__pwm__01c__params_8h__incl.svg" width="2142" height="888"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="sm__pwm__01c__params_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ab3640f871105794b70f5f811b423e9e2"><td class="memItemLeft" align="right" valign="top"><a id="ab3640f871105794b70f5f811b423e9e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sm__pwm__01c__params_8h.html#ab3640f871105794b70f5f811b423e9e2">SM_PWM_01C_NUMOF</a>&#160;&#160;&#160;<a class="el" href="container_8h.html#a25f003de16c08a4888b69f619d70f427">ARRAY_SIZE</a>(<a class="el" href="sm__pwm__01c__params_8h.html#ae56d0b937aff6b76d3ae8ac145a74ac6">sm_pwm_01c_params</a>)</td></tr>
+<tr class="memdesc:ab3640f871105794b70f5f811b423e9e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of configured sensors. <br /></td></tr>
+<tr class="separator:ab3640f871105794b70f5f811b423e9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae56d0b937aff6b76d3ae8ac145a74ac6"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structsm__pwm__01c__params__t.html">sm_pwm_01c_params_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sm__pwm__01c__params_8h.html#ae56d0b937aff6b76d3ae8ac145a74ac6">sm_pwm_01c_params</a> []</td></tr>
+<tr class="memdesc:ae56d0b937aff6b76d3ae8ac145a74ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure SM_PWM_01C.  <a href="#ae56d0b937aff6b76d3ae8ac145a74ac6">More...</a><br /></td></tr>
+<tr class="separator:ae56d0b937aff6b76d3ae8ac145a74ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6444e867a91205ced559303dd0567d46"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structsaul__reg__info__t.html">saul_reg_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sm__pwm__01c__params_8h.html#a6444e867a91205ced559303dd0567d46">sm_pwm_01c_saul_info</a> []</td></tr>
+<tr class="memdesc:a6444e867a91205ced559303dd0567d46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Additional meta information to keep in the SAUL registry.  <a href="#a6444e867a91205ced559303dd0567d46">More...</a><br /></td></tr>
+<tr class="separator:a6444e867a91205ced559303dd0567d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Set default configuration parameters for the SM_PWM_01C</h2></td></tr>
+<tr class="memitem:a2def4309269fd270395f9221a1b640f6"><td class="memItemLeft" align="right" valign="top"><a id="a2def4309269fd270395f9221a1b640f6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SM_PWM_01C_TSP_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 13)</td></tr>
+<tr class="separator:a2def4309269fd270395f9221a1b640f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c8d33c72f9c454d9effcec978d1730"><td class="memItemLeft" align="right" valign="top"><a id="a12c8d33c72f9c454d9effcec978d1730"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SM_PWM_01C_TLP_PIN</b>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1">GPIO_PIN</a>(0, 28)</td></tr>
+<tr class="separator:a12c8d33c72f9c454d9effcec978d1730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd89feb5d5ed0bca98afa2838c29eeb7"><td class="memItemLeft" align="right" valign="top"><a id="abd89feb5d5ed0bca98afa2838c29eeb7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>SM_PWM_01C_SAUL_INFO</b>&#160;&#160;&#160;{ .name = &quot;sm-pwm-01c&quot; }</td></tr>
+<tr class="separator:abd89feb5d5ed0bca98afa2838c29eeb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0421f782ade4fdb158e21a5c584648"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><b>SM_PWM_01C_PARAMS_DEFAULT</b></td></tr>
+<tr class="separator:a4d0421f782ade4fdb158e21a5c584648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4d0421f782ade4fdb158e21a5c584648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0421f782ade4fdb158e21a5c584648">&#9670;&nbsp;</a></span>SM_PWM_01C_PARAMS_DEFAULT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SM_PWM_01C_PARAMS_DEFAULT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">{ .tsp_pin = SM_PWM_01C_TSP_PIN, \</div><div class="line">                                           .tlp_pin = SM_PWM_01C_TLP_PIN }</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="sm__pwm__01c__params_8h_source.html#l00045">45</a> of file <a class="el" href="sm__pwm__01c__params_8h_source.html">sm_pwm_01c_params.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ae56d0b937aff6b76d3ae8ac145a74ac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae56d0b937aff6b76d3ae8ac145a74ac6">&#9670;&nbsp;</a></span>sm_pwm_01c_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structsm__pwm__01c__params__t.html">sm_pwm_01c_params_t</a> sm_pwm_01c_params[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">    SM_PWM_01C_PARAMS_DEFAULT</div><div class="line"></div><div class="line">}</div></div><!-- fragment -->
+<p>Configure SM_PWM_01C. </p>
+
+<p class="definition">Definition at line <a class="el" href="sm__pwm__01c__params_8h_source.html#l00053">53</a> of file <a class="el" href="sm__pwm__01c__params_8h_source.html">sm_pwm_01c_params.h</a>.</p>
+
+</div>
+</div>
+<a id="a6444e867a91205ced559303dd0567d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6444e867a91205ced559303dd0567d46">&#9670;&nbsp;</a></span>sm_pwm_01c_saul_info</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="structsaul__reg__info__t.html">saul_reg_info_t</a> sm_pwm_01c_saul_info[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div><div class="line">{</div><div class="line">    SM_PWM_01C_SAUL_INFO</div><div class="line">}</div></div><!-- fragment -->
+<p>Additional meta information to keep in the SAUL registry. </p>
+
+<p class="definition">Definition at line <a class="el" href="sm__pwm__01c__params_8h_source.html#l00065">65</a> of file <a class="el" href="sm__pwm__01c__params_8h_source.html">sm_pwm_01c_params.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

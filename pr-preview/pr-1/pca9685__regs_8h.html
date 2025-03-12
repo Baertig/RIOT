@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/pca9685/include/pca9685_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pca9685__regs_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">pca9685_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__actuators.html">Actuator Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__pca9685.html">PCA9685 I2C PWM controller</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Register definitions for the PCA9685 I2C PWM controller.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for the PCA9685 I2C PWM controller. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="pca9685__regs_8h_source.html">pca9685_regs.h</a>.</p>
+</div>
+<p><a href="pca9685__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Register addresses</h2></td></tr>
+<tr class="memitem:a82820ff83c1fd597861374d9beffcf05"><td class="memItemLeft" align="right" valign="top"><a id="a82820ff83c1fd597861374d9beffcf05"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a82820ff83c1fd597861374d9beffcf05">PCA9685_REG_MODE1</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="memdesc:a82820ff83c1fd597861374d9beffcf05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode1 register. <br /></td></tr>
+<tr class="separator:a82820ff83c1fd597861374d9beffcf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70cf4411f341c0bcfd3e9342a4af0f54"><td class="memItemLeft" align="right" valign="top"><a id="a70cf4411f341c0bcfd3e9342a4af0f54"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a70cf4411f341c0bcfd3e9342a4af0f54">PCA9685_REG_MODE2</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a70cf4411f341c0bcfd3e9342a4af0f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode2 register. <br /></td></tr>
+<tr class="separator:a70cf4411f341c0bcfd3e9342a4af0f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74780dea84c5db56104a90a219449d0d"><td class="memItemLeft" align="right" valign="top"><a id="a74780dea84c5db56104a90a219449d0d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a74780dea84c5db56104a90a219449d0d">PCA9685_REG_SUBADR1</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:a74780dea84c5db56104a90a219449d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus subaddress 1 register. <br /></td></tr>
+<tr class="separator:a74780dea84c5db56104a90a219449d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e6f5122f0c6163346e0fb4db6455b77"><td class="memItemLeft" align="right" valign="top"><a id="a9e6f5122f0c6163346e0fb4db6455b77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a9e6f5122f0c6163346e0fb4db6455b77">PCA9685_REG_SUBADR2</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="memdesc:a9e6f5122f0c6163346e0fb4db6455b77"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus subaddress 2 register. <br /></td></tr>
+<tr class="separator:a9e6f5122f0c6163346e0fb4db6455b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159e7bdf3c61f3a918f8cfa334a850b2"><td class="memItemLeft" align="right" valign="top"><a id="a159e7bdf3c61f3a918f8cfa334a850b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a159e7bdf3c61f3a918f8cfa334a850b2">PCA9685_REG_SUBADR3</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:a159e7bdf3c61f3a918f8cfa334a850b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus subaddress 3 register. <br /></td></tr>
+<tr class="separator:a159e7bdf3c61f3a918f8cfa334a850b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f8e1b8e7054e85104c8b44d674fc8d6"><td class="memItemLeft" align="right" valign="top"><a id="a5f8e1b8e7054e85104c8b44d674fc8d6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a5f8e1b8e7054e85104c8b44d674fc8d6">PCA9685_REG_ALLCALLADDR</a>&#160;&#160;&#160;(0x05)</td></tr>
+<tr class="memdesc:a5f8e1b8e7054e85104c8b44d674fc8d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED All Call I 2 C-bus address. <br /></td></tr>
+<tr class="separator:a5f8e1b8e7054e85104c8b44d674fc8d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac212eb6e0601752c9baf0cc2f566109a"><td class="memItemLeft" align="right" valign="top"><a id="ac212eb6e0601752c9baf0cc2f566109a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ac212eb6e0601752c9baf0cc2f566109a">PCA9685_REG_LED0_ON_L</a>&#160;&#160;&#160;(0x06)</td></tr>
+<tr class="memdesc:ac212eb6e0601752c9baf0cc2f566109a"><td class="mdescLeft">&#160;</td><td class="mdescRight">LED0 ON control low byte. <br /></td></tr>
+<tr class="separator:ac212eb6e0601752c9baf0cc2f566109a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6590ff7e34c75c73ef9615495cd5a507"><td class="memItemLeft" align="right" valign="top"><a id="a6590ff7e34c75c73ef9615495cd5a507"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a6590ff7e34c75c73ef9615495cd5a507">PCA9685_REG_ALL_LED_ON_L</a>&#160;&#160;&#160;(0xfa)</td></tr>
+<tr class="memdesc:a6590ff7e34c75c73ef9615495cd5a507"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register low byte. <br /></td></tr>
+<tr class="separator:a6590ff7e34c75c73ef9615495cd5a507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a74767a9bb779b15a3e51cd88f58903"><td class="memItemLeft" align="right" valign="top"><a id="a9a74767a9bb779b15a3e51cd88f58903"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a9a74767a9bb779b15a3e51cd88f58903">PCA9685_REG_ALL_LED_ON_H</a>&#160;&#160;&#160;(0xfb)</td></tr>
+<tr class="memdesc:a9a74767a9bb779b15a3e51cd88f58903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register high byte. <br /></td></tr>
+<tr class="separator:a9a74767a9bb779b15a3e51cd88f58903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa62579ed4707ee6da04c18b79906fc0e"><td class="memItemLeft" align="right" valign="top"><a id="aa62579ed4707ee6da04c18b79906fc0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#aa62579ed4707ee6da04c18b79906fc0e">PCA9685_REG_ALL_LED_OFF_L</a>&#160;&#160;&#160;(0xfc)</td></tr>
+<tr class="memdesc:aa62579ed4707ee6da04c18b79906fc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register low byte. <br /></td></tr>
+<tr class="separator:aa62579ed4707ee6da04c18b79906fc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeacb93b0641c1632828dae987eeb0db6"><td class="memItemLeft" align="right" valign="top"><a id="aeacb93b0641c1632828dae987eeb0db6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#aeacb93b0641c1632828dae987eeb0db6">PCA9685_REG_ALL_LED_OFF_H</a>&#160;&#160;&#160;(0xfd)</td></tr>
+<tr class="memdesc:aeacb93b0641c1632828dae987eeb0db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register high byte. <br /></td></tr>
+<tr class="separator:aeacb93b0641c1632828dae987eeb0db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf76c224e82bc0c6aa32aebe349f4e6"><td class="memItemLeft" align="right" valign="top"><a id="a0cf76c224e82bc0c6aa32aebe349f4e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a0cf76c224e82bc0c6aa32aebe349f4e6">PCA9685_REG_ALL_LED_ON</a>&#160;&#160;&#160;(0xfa)</td></tr>
+<tr class="memdesc:a0cf76c224e82bc0c6aa32aebe349f4e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register word. <br /></td></tr>
+<tr class="separator:a0cf76c224e82bc0c6aa32aebe349f4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6dcb43d399b68f9aa422e1a3edb7d99"><td class="memItemLeft" align="right" valign="top"><a id="ab6dcb43d399b68f9aa422e1a3edb7d99"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ab6dcb43d399b68f9aa422e1a3edb7d99">PCA9685_REG_ALL_LED_OFF</a>&#160;&#160;&#160;(0xfc)</td></tr>
+<tr class="memdesc:ab6dcb43d399b68f9aa422e1a3edb7d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all LEDn_OFF register word. <br /></td></tr>
+<tr class="separator:ab6dcb43d399b68f9aa422e1a3edb7d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6795f16ec45fa90f32ed58510ab761e"><td class="memItemLeft" align="right" valign="top"><a id="aa6795f16ec45fa90f32ed58510ab761e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#aa6795f16ec45fa90f32ed58510ab761e">PCA9685_REG_PRE_SCALE</a>&#160;&#160;&#160;(0xfe)</td></tr>
+<tr class="memdesc:aa6795f16ec45fa90f32ed58510ab761e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prescaler for PWM output frequency. <br /></td></tr>
+<tr class="separator:aa6795f16ec45fa90f32ed58510ab761e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae32a17d937bfdc7875d7e7cce10928a4"><td class="memItemLeft" align="right" valign="top"><a id="ae32a17d937bfdc7875d7e7cce10928a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ae32a17d937bfdc7875d7e7cce10928a4">PCA9685_REG_TEST_MODE</a>&#160;&#160;&#160;(0xff)</td></tr>
+<tr class="memdesc:ae32a17d937bfdc7875d7e7cce10928a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter test mode register. <br /></td></tr>
+<tr class="separator:ae32a17d937bfdc7875d7e7cce10928a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1243c7e1e3891517e5818b725bf5b2e3"><td class="memItemLeft" align="right" valign="top"><a id="a1243c7e1e3891517e5818b725bf5b2e3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a1243c7e1e3891517e5818b725bf5b2e3">PCA9685_REG_LED_ON</a>(n)&#160;&#160;&#160;(0x06 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:a1243c7e1e3891517e5818b725bf5b2e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn ON control word. <br /></td></tr>
+<tr class="separator:a1243c7e1e3891517e5818b725bf5b2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac890544012ec5144c2c7368ddec7395f"><td class="memItemLeft" align="right" valign="top"><a id="ac890544012ec5144c2c7368ddec7395f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ac890544012ec5144c2c7368ddec7395f">PCA9685_REG_LED_OFF</a>(n)&#160;&#160;&#160;(0x08 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:ac890544012ec5144c2c7368ddec7395f"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn OFF control word. <br /></td></tr>
+<tr class="separator:ac890544012ec5144c2c7368ddec7395f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21a95ec4b1e017401bbfcca503ede053"><td class="memItemLeft" align="right" valign="top"><a id="a21a95ec4b1e017401bbfcca503ede053"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a21a95ec4b1e017401bbfcca503ede053">PCA9685_REG_LED_ON_L</a>(n)&#160;&#160;&#160;(0x06 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:a21a95ec4b1e017401bbfcca503ede053"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn ON control low byte. <br /></td></tr>
+<tr class="separator:a21a95ec4b1e017401bbfcca503ede053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ba3313947e27312141db12691cbe62"><td class="memItemLeft" align="right" valign="top"><a id="a26ba3313947e27312141db12691cbe62"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a26ba3313947e27312141db12691cbe62">PCA9685_REG_LED_ON_H</a>(n)&#160;&#160;&#160;(0x07 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:a26ba3313947e27312141db12691cbe62"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn ON control high byte. <br /></td></tr>
+<tr class="separator:a26ba3313947e27312141db12691cbe62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d656cd72223bb86af9eec7c8f3a9cb8"><td class="memItemLeft" align="right" valign="top"><a id="a0d656cd72223bb86af9eec7c8f3a9cb8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a0d656cd72223bb86af9eec7c8f3a9cb8">PCA9685_REG_LED_OFF_L</a>(n)&#160;&#160;&#160;(0x08 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:a0d656cd72223bb86af9eec7c8f3a9cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn OFF control low byte. <br /></td></tr>
+<tr class="separator:a0d656cd72223bb86af9eec7c8f3a9cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eed3cf2faafbd242d0ebe6ba90ddfba"><td class="memItemLeft" align="right" valign="top"><a id="a2eed3cf2faafbd242d0ebe6ba90ddfba"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a2eed3cf2faafbd242d0ebe6ba90ddfba">PCA9685_REG_LED_OFF_H</a>(n)&#160;&#160;&#160;(0x09 + (n &lt;&lt; 2))</td></tr>
+<tr class="memdesc:a2eed3cf2faafbd242d0ebe6ba90ddfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">LEDn OFF control high byte. <br /></td></tr>
+<tr class="separator:a2eed3cf2faafbd242d0ebe6ba90ddfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Register structures</h2></td></tr>
+<tr class="memitem:acc7e2fd093f5c2d53b39f5a99d0d4308"><td class="memItemLeft" align="right" valign="top"><a id="acc7e2fd093f5c2d53b39f5a99d0d4308"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#acc7e2fd093f5c2d53b39f5a99d0d4308">PCA9685_MODE1_RESTART</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:acc7e2fd093f5c2d53b39f5a99d0d4308"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of restart logic, write 1 to clear. <br /></td></tr>
+<tr class="separator:acc7e2fd093f5c2d53b39f5a99d0d4308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5d45f72d44f9823c8ecd8f020dc3dfa"><td class="memItemLeft" align="right" valign="top"><a id="ab5d45f72d44f9823c8ecd8f020dc3dfa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ab5d45f72d44f9823c8ecd8f020dc3dfa">PCA9685_MODE1_EXTCLK</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:ab5d45f72d44f9823c8ecd8f020dc3dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use EXTCLK pin. <br /></td></tr>
+<tr class="separator:ab5d45f72d44f9823c8ecd8f020dc3dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb8e02b836c5427aab5b8ffcd39271d4"><td class="memItemLeft" align="right" valign="top"><a id="afb8e02b836c5427aab5b8ffcd39271d4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#afb8e02b836c5427aab5b8ffcd39271d4">PCA9685_MODE1_AI</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:afb8e02b836c5427aab5b8ffcd39271d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable register auto-increment. <br /></td></tr>
+<tr class="separator:afb8e02b836c5427aab5b8ffcd39271d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc87b2b0f19488969f31f7cda1d74db"><td class="memItemLeft" align="right" valign="top"><a id="a5fc87b2b0f19488969f31f7cda1d74db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a5fc87b2b0f19488969f31f7cda1d74db">PCA9685_MODE1_SLEEP</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:a5fc87b2b0f19488969f31f7cda1d74db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enter low power mode, PWM is off. <br /></td></tr>
+<tr class="separator:a5fc87b2b0f19488969f31f7cda1d74db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac33d14f4aa61d3bb99f9f93238b7e14d"><td class="memItemLeft" align="right" valign="top"><a id="ac33d14f4aa61d3bb99f9f93238b7e14d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ac33d14f4aa61d3bb99f9f93238b7e14d">PCA9685_MODE1_SUB1</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:ac33d14f4aa61d3bb99f9f93238b7e14d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable I2C subaddress 1. <br /></td></tr>
+<tr class="separator:ac33d14f4aa61d3bb99f9f93238b7e14d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b22a3b767c5ace66b23e83395db5c7"><td class="memItemLeft" align="right" valign="top"><a id="af8b22a3b767c5ace66b23e83395db5c7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#af8b22a3b767c5ace66b23e83395db5c7">PCA9685_MODE1_SUB2</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:af8b22a3b767c5ace66b23e83395db5c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable I2C subaddress 2. <br /></td></tr>
+<tr class="separator:af8b22a3b767c5ace66b23e83395db5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa119139a41b9123d9564320f994e24ea"><td class="memItemLeft" align="right" valign="top"><a id="aa119139a41b9123d9564320f994e24ea"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#aa119139a41b9123d9564320f994e24ea">PCA9685_MODE1_SUB3</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:aa119139a41b9123d9564320f994e24ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable I2C subaddress 3. <br /></td></tr>
+<tr class="separator:aa119139a41b9123d9564320f994e24ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a1b679752f9ddbb92562ec2043a278b"><td class="memItemLeft" align="right" valign="top"><a id="a0a1b679752f9ddbb92562ec2043a278b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a0a1b679752f9ddbb92562ec2043a278b">PCA9685_MODE1_ALLCALL</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:a0a1b679752f9ddbb92562ec2043a278b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable I2C all call address. <br /></td></tr>
+<tr class="separator:a0a1b679752f9ddbb92562ec2043a278b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1d7a780f125ecfb414dbe27767661b"><td class="memItemLeft" align="right" valign="top"><a id="adc1d7a780f125ecfb414dbe27767661b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#adc1d7a780f125ecfb414dbe27767661b">PCA9685_MODE2_INVERT</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:adc1d7a780f125ecfb414dbe27767661b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert outputs. <br /></td></tr>
+<tr class="separator:adc1d7a780f125ecfb414dbe27767661b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac550f4a49dab76de6f547c7bf14b9e9b"><td class="memItemLeft" align="right" valign="top"><a id="ac550f4a49dab76de6f547c7bf14b9e9b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#ac550f4a49dab76de6f547c7bf14b9e9b">PCA9685_MODE2_OCH</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:ac550f4a49dab76de6f547c7bf14b9e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output change change configuration. <br /></td></tr>
+<tr class="separator:ac550f4a49dab76de6f547c7bf14b9e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a015feeb9e0ead6518633b4fe213ee206"><td class="memItemLeft" align="right" valign="top"><a id="a015feeb9e0ead6518633b4fe213ee206"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#a015feeb9e0ead6518633b4fe213ee206">PCA9685_MODE2_OUTDRV</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:a015feeb9e0ead6518633b4fe213ee206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output driver configuration. <br /></td></tr>
+<tr class="separator:a015feeb9e0ead6518633b4fe213ee206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4283c6cb95b94bd2b69c1fa3b9db24c"><td class="memItemLeft" align="right" valign="top"><a id="aa4283c6cb95b94bd2b69c1fa3b9db24c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pca9685__regs_8h.html#aa4283c6cb95b94bd2b69c1fa3b9db24c">PCA9685_MODE2_OUTNE</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="memdesc:aa4283c6cb95b94bd2b69c1fa3b9db24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output enabled configuration. <br /></td></tr>
+<tr class="separator:aa4283c6cb95b94bd2b69c1fa3b9db24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Register value definitions</h2></td></tr>
+<tr class="memitem:a593b602c3b7773e251f47aecdb0210db"><td class="memItemLeft" align="right" valign="top"><a id="a593b602c3b7773e251f47aecdb0210db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_LED_ON</b>&#160;&#160;&#160;(0x1000)    /* LEDs on word */</td></tr>
+<tr class="separator:a593b602c3b7773e251f47aecdb0210db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac76c33ef878f4cee62e069097b99c0b"><td class="memItemLeft" align="right" valign="top"><a id="aac76c33ef878f4cee62e069097b99c0b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_LED_OFF</b>&#160;&#160;&#160;(0x1000)    /* LEDs off word */</td></tr>
+<tr class="separator:aac76c33ef878f4cee62e069097b99c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53cd7b84e2d5796bfd29f658eebc067e"><td class="memItemLeft" align="right" valign="top"><a id="a53cd7b84e2d5796bfd29f658eebc067e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_LED_ON_H</b>&#160;&#160;&#160;(0x10)      /* LEDs on high byte */</td></tr>
+<tr class="separator:a53cd7b84e2d5796bfd29f658eebc067e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce08804d0dafe51d684a9810aa17e4c"><td class="memItemLeft" align="right" valign="top"><a id="a7ce08804d0dafe51d684a9810aa17e4c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_LED_OFF_H</b>&#160;&#160;&#160;(0x10)      /* LEDs off high byte */</td></tr>
+<tr class="separator:a7ce08804d0dafe51d684a9810aa17e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2031d1ebdb67eceeabbee5d845df766b"><td class="memItemLeft" align="right" valign="top"><a id="a2031d1ebdb67eceeabbee5d845df766b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_ALL_LED_ON</b>&#160;&#160;&#160;(0x1000)    /* All LEDs on word */</td></tr>
+<tr class="separator:a2031d1ebdb67eceeabbee5d845df766b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42642ea01c38cbab49fc4750d745126e"><td class="memItemLeft" align="right" valign="top"><a id="a42642ea01c38cbab49fc4750d745126e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_ALL_LED_OFF</b>&#160;&#160;&#160;(0x1000)    /* All LEDs off word */</td></tr>
+<tr class="separator:a42642ea01c38cbab49fc4750d745126e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd034ced540b94f4d24f28942a752632"><td class="memItemLeft" align="right" valign="top"><a id="acd034ced540b94f4d24f28942a752632"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_ALL_LED_ON_H</b>&#160;&#160;&#160;(0x10)      /* All LEDs on high byte */</td></tr>
+<tr class="separator:acd034ced540b94f4d24f28942a752632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cdb1af1e8f890214b6d513874fa7c2"><td class="memItemLeft" align="right" valign="top"><a id="ac9cdb1af1e8f890214b6d513874fa7c2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PCA9685_ALL_LED_OFF_H</b>&#160;&#160;&#160;(0x10)      /* All LEDs off word */</td></tr>
+<tr class="separator:ac9cdb1af1e8f890214b6d513874fa7c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

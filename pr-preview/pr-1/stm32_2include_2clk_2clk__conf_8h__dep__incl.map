@@ -1,0 +1,116 @@
+<map id="cpu/stm32/include/clk/clk_conf.h" name="cpu/stm32/include/clk/clk_conf.h">
+<area shape="rect" id="node2" href="$boards_2alientek-pandora_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the Alientek Pandora board. " alt="" coords="5,102,180,143"/>
+<area shape="rect" id="node3" href="$boards_2b-l072z-lrwan1_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the ST B&#45;L072Z&#45;LRWAN1 board. " alt="" coords="205,102,367,143"/>
+<area shape="rect" id="node4" href="$boards_2b-l475e-iot01a_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the B&#45;L475E&#45;IOT01A board. " alt="" coords="391,102,554,143"/>
+<area shape="rect" id="node5" href="$boards_2b-u585i-iot02a_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the ST B&#45;U585I&#45;IOT02A board. " alt="" coords="578,102,741,143"/>
+<area shape="rect" id="node6" href="$boards_2bluepill-stm32f030c8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the bluepill&#45;stm32f030c8 board. " alt="" coords="765,102,965,143"/>
+<area shape="rect" id="node7" href="$boards_2common_2blxxxpill_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the bluepill/blackpill boards. " alt="" coords="989,102,1167,143"/>
+<area shape="rect" id="node8" href="$iotlab_2include_2periph__conf__common_8h.html" title="Peripheral MCU configuration for the iotlab&#45;m3 board. " alt="" coords="1191,95,1354,151"/>
+<area shape="rect" id="node10" href="$boards_2common_2weact-f4x1cx_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the WeAct&#45;F4X1CX Board. " alt="" coords="1378,95,1543,151"/>
+<area shape="rect" id="node11" href="$boards_2f4vi1_2include_2periph__conf_8h.html" title="boards/f4vi1/include\l/periph_conf.h" alt="" coords="1568,102,1719,143"/>
+<area shape="rect" id="node13" href="$boards_2hifive1_2include_2periph__conf_8h.html" title="Peripheral specific definitions for the HiFive1 RISC&#45;V board. " alt="" coords="1743,102,1904,143"/>
+<area shape="rect" id="node14" href="$boards_2hifive1b_2include_2periph__conf_8h.html" title="Peripheral specific definitions for the HiFive1b RISC&#45;V board. " alt="" coords="1928,102,2097,143"/>
+<area shape="rect" id="node15" href="$boards_2i-nucleo-lrwan1_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the ST I&#45;NUCLEO&#45;LRWAN1 board. " alt="" coords="2121,102,2285,143"/>
+<area shape="rect" id="node16" href="$boards_2im880b_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the im808b board. " alt="" coords="2309,102,2476,143"/>
+<area shape="rect" id="node18" href="$boards_2limifrog-v1_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the limifrog&#45;v1 board. " alt="" coords="2501,102,2663,143"/>
+<area shape="rect" id="node20" href="$boards_2lobaro-lorabox_2include_2periph__conf_8h.html" title="Support for the Lobaro lorabox with stm32l151cb. " alt="" coords="2687,102,2850,143"/>
+<area shape="rect" id="node21" href="$boards_2lora-e5-dev_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the LoRa&#45;E5 Development Board. " alt="" coords="2874,102,3037,143"/>
+<area shape="rect" id="node22" href="$boards_2lsn50_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the LSN50 board. " alt="" coords="3061,102,3213,143"/>
+<area shape="rect" id="node23" href="$boards_2maple-mini_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the maple&#45;mini board. " alt="" coords="3237,102,3423,143"/>
+<area shape="rect" id="node24" href="$boards_2msbiot_2include_2periph__conf_8h.html" title="boards/msbiot/include\l/periph_conf.h" alt="" coords="3448,102,3609,143"/>
+<area shape="rect" id="node27" href="$boards_2nucleo-c031c6_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;c031c6 board. " alt="" coords="3634,102,3797,143"/>
+<area shape="rect" id="node28" href="$boards_2nucleo-f030r8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f030r8 board. " alt="" coords="3821,102,3983,143"/>
+<area shape="rect" id="node29" href="$boards_2nucleo-f031k6_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f031k6 board. " alt="" coords="4007,102,4170,143"/>
+<area shape="rect" id="node30" href="$boards_2nucleo-f042k6_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f042k6 board. " alt="" coords="4194,102,4357,143"/>
+<area shape="rect" id="node31" href="$boards_2nucleo-f070rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f070rb board. " alt="" coords="4381,102,4543,143"/>
+<area shape="rect" id="node32" href="$boards_2nucleo-f072rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f072rb board. " alt="" coords="4567,102,4730,143"/>
+<area shape="rect" id="node33" href="$boards_2nucleo-f091rc_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f091rc board. " alt="" coords="4754,102,4917,143"/>
+<area shape="rect" id="node34" href="$boards_2nucleo-f103rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f103rb board. " alt="" coords="4941,102,5103,143"/>
+<area shape="rect" id="node35" href="$boards_2nucleo-f207zg_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f207zg\l/include/periph_conf.h" alt="" coords="5127,102,5290,143"/>
+<area shape="rect" id="node36" href="$boards_2nucleo-f302r8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f302r8 board. " alt="" coords="5314,102,5477,143"/>
+<area shape="rect" id="node37" href="$boards_2nucleo-f303k8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f303k8 board. " alt="" coords="5501,102,5663,143"/>
+<area shape="rect" id="node38" href="$boards_2nucleo-f303re_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f303re board. " alt="" coords="5687,102,5850,143"/>
+<area shape="rect" id="node39" href="$boards_2nucleo-f303ze_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f303ze\l/include/periph_conf.h" alt="" coords="5874,102,6037,143"/>
+<area shape="rect" id="node40" href="$boards_2nucleo-f334r8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f334r8 board. " alt="" coords="6061,102,6223,143"/>
+<area shape="rect" id="node41" href="$boards_2nucleo-f401re_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f401re\l/include/periph_conf.h" alt="" coords="6247,102,6410,143"/>
+<area shape="rect" id="node42" href="$boards_2nucleo-f410rb_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f410rb\l/include/periph_conf.h" alt="" coords="6434,102,6597,143"/>
+<area shape="rect" id="node43" href="$boards_2nucleo-f411re_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f411re\l/include/periph_conf.h" alt="" coords="6621,102,6783,143"/>
+<area shape="rect" id="node44" href="$boards_2nucleo-f412zg_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f412zg\l/include/periph_conf.h" alt="" coords="6807,102,6970,143"/>
+<area shape="rect" id="node45" href="$boards_2nucleo-f413zh_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f413zh\l/include/periph_conf.h" alt="" coords="6994,102,7157,143"/>
+<area shape="rect" id="node46" href="$boards_2nucleo-f429zi_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f429zi\l/include/periph_conf.h" alt="" coords="7181,102,7343,143"/>
+<area shape="rect" id="node47" href="$boards_2nucleo-f439zi_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f439zi\l/include/periph_conf.h" alt="" coords="7367,102,7530,143"/>
+<area shape="rect" id="node48" href="$boards_2nucleo-f446re_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f446re\l/include/periph_conf.h" alt="" coords="7554,102,7717,143"/>
+<area shape="rect" id="node49" href="$boards_2nucleo-f446ze_2include_2periph__conf_8h.html" title="boards/nucleo&#45;f446ze\l/include/periph_conf.h" alt="" coords="7741,102,7903,143"/>
+<area shape="rect" id="node50" href="$boards_2nucleo-f722ze_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f722ze board. " alt="" coords="7927,102,8090,143"/>
+<area shape="rect" id="node51" href="$boards_2nucleo-f746zg_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f746zg board. " alt="" coords="8114,102,8277,143"/>
+<area shape="rect" id="node52" href="$boards_2nucleo-f767zi_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;f767zi board. " alt="" coords="8301,102,8463,143"/>
+<area shape="rect" id="node53" href="$boards_2nucleo-g070rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;g070rb board. " alt="" coords="8487,102,8650,143"/>
+<area shape="rect" id="node54" href="$boards_2nucleo-g071rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;g071rb board. " alt="" coords="8674,102,8837,143"/>
+<area shape="rect" id="node55" href="$boards_2nucleo-g431rb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;g431rb board. " alt="" coords="8861,102,9023,143"/>
+<area shape="rect" id="node56" href="$boards_2nucleo-g474re_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;g474re board. " alt="" coords="9047,102,9210,143"/>
+<area shape="rect" id="node57" href="$boards_2nucleo-l011k4_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l011k4 board. " alt="" coords="9234,102,9397,143"/>
+<area shape="rect" id="node58" href="$boards_2nucleo-l031k6_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l031k6 board. " alt="" coords="9421,102,9583,143"/>
+<area shape="rect" id="node59" href="$boards_2nucleo-l053r8_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l053r8 board. " alt="" coords="9607,102,9770,143"/>
+<area shape="rect" id="node60" href="$boards_2nucleo-l073rz_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l073rz board. " alt="" coords="9794,102,9957,143"/>
+<area shape="rect" id="node61" href="$boards_2nucleo-l152re_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l152re board. " alt="" coords="9981,102,10143,143"/>
+<area shape="rect" id="node62" href="$boards_2nucleo-l412kb_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l412kb board. " alt="" coords="10167,102,10330,143"/>
+<area shape="rect" id="node63" href="$boards_2nucleo-l432kc_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l432kc board. " alt="" coords="10354,102,10517,143"/>
+<area shape="rect" id="node64" href="$boards_2nucleo-l433rc_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l433rc board. " alt="" coords="10541,102,10703,143"/>
+<area shape="rect" id="node65" href="$boards_2nucleo-l452re_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l452re board. " alt="" coords="10727,102,10890,143"/>
+<area shape="rect" id="node66" href="$boards_2nucleo-l476rg_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l476rg board. " alt="" coords="10914,102,11077,143"/>
+<area shape="rect" id="node67" href="$boards_2nucleo-l496zg_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo144&#45;l496 board. " alt="" coords="11101,102,11263,143"/>
+<area shape="rect" id="node68" href="$boards_2nucleo-l4r5zi_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l4r5zi board. " alt="" coords="11287,102,11450,143"/>
+<area shape="rect" id="node69" href="$boards_2nucleo-l552ze-q_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;l552ze&#45;q board. " alt="" coords="11475,102,11649,143"/>
+<area shape="rect" id="node70" href="$boards_2nucleo-u575zi-q_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;u575zi&#45;q board. " alt="" coords="11673,102,11848,143"/>
+<area shape="rect" id="node71" href="$boards_2nucleo-wl55jc_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the nucleo&#45;wl55jc board. " alt="" coords="11873,102,12035,143"/>
+<area shape="rect" id="node72" href="$boards_2nz32-sc151_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the limifrog&#45;v1 board. " alt="" coords="12059,102,12249,143"/>
+<area shape="rect" id="node75" href="$boards_2olimexino-stm32_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the OLIMEXINO STM32 board. " alt="" coords="12273,102,12446,143"/>
+<area shape="rect" id="node78" href="$boards_2opencm904_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the opencm904 board. " alt="" coords="12471,102,12664,143"/>
+<area shape="rect" id="node79" href="$boards_2p-l496g-cell02_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the P&#45;L496G&#45;CELL02 board. " alt="" coords="12689,102,12851,143"/>
+<area shape="rect" id="node80" href="$boards_2p-nucleo-wb55_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the p&#45;nucleo&#45;wb55 board. " alt="" coords="12875,102,13038,143"/>
+<area shape="rect" id="node81" href="$boards_2pyboard_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the pyboard board. " alt="" coords="13062,102,13233,143"/>
+<area shape="rect" id="node82" href="$boards_2spark-core_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the spark&#45;core board. " alt="" coords="13257,102,13443,143"/>
+<area shape="rect" id="node84" href="$boards_2stm32f030f4-demo_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the stm32f030f4&#45;demo board. " alt="" coords="13467,95,13625,151"/>
+<area shape="rect" id="node85" href="$boards_2stm32f0discovery_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F0discovery board. " alt="" coords="13649,102,13830,143"/>
+<area shape="rect" id="node86" href="$boards_2stm32f3discovery_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F3discovery board. " alt="" coords="13854,102,14035,143"/>
+<area shape="rect" id="node87" href="$boards_2stm32f429i-disc1_2include_2periph__conf_8h.html" title="boards/stm32f429i&#45;disc1\l/include/periph_conf.h" alt="" coords="14059,102,14235,143"/>
+<area shape="rect" id="node90" href="$boards_2stm32f469i-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F469I&#45;DISCO. " alt="" coords="14259,102,14435,143"/>
+<area shape="rect" id="node93" href="$boards_2stm32f4discovery_2include_2periph__conf_8h.html" title="boards/stm32f4discovery\l/include/periph_conf.h" alt="" coords="14459,102,14641,143"/>
+<area shape="rect" id="node96" href="$boards_2stm32f723e-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F723E&#45;DISCO board. " alt="" coords="14665,102,14846,143"/>
+<area shape="rect" id="node99" href="$boards_2stm32f746g-disco_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for STM32F746G&#45;DISCO board. " alt="" coords="14870,102,15051,143"/>
+<area shape="rect" id="node102" href="$boards_2stm32f769i-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32F769I&#45;DISCO board. " alt="" coords="15075,102,15251,143"/>
+<area shape="rect" id="node105" href="$boards_2stm32g0316-disco_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for STM32G0316&#45;DISCO board. " alt="" coords="15275,102,15459,143"/>
+<area shape="rect" id="node107" href="$boards_2stm32l0538-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32L0538&#45;DISCO board. " alt="" coords="15483,102,15662,143"/>
+<area shape="rect" id="node108" href="$boards_2stm32l476g-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32L476G&#45;DISCO board. " alt="" coords="15686,102,15865,143"/>
+<area shape="rect" id="node109" href="$boards_2stm32l496g-disco_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the STM32L496G&#45;DISCO board. " alt="" coords="15889,102,16067,143"/>
+<area shape="rect" id="node110" href="$boards_2stm32mp157c-dk2_2include_2periph__conf_8h.html" title="Board specific implementations for the STM32MP157C&#45;DK2 board. " alt="" coords="16092,95,16251,151"/>
+<area shape="rect" id="node112" href="$boards_2ublox-c030-u201_2include_2periph__conf_8h.html" title="Peripheral MCU configuration for the Ublox C030&#45;U201 board. " alt="" coords="16275,102,16449,143"/>
+<area shape="rect" id="node113" href="$boards_2weact-g030f6_2include_2periph__conf_8h.html" title="Configuration of CPU peripherals for WeAct&#45;G030F6. " alt="" coords="16474,102,16637,143"/>
+<area shape="rect" id="node9" href="$iotlab_2include_2board__common_8h.html" title="Board specific definitions for the iotlab&#45;m3 board. " alt="" coords="1180,199,1365,240"/>
+<area shape="rect" id="node12" href="$f4vi1_2include_2board_8h.html" title="Board specific definitions for the f4vi1 board. " alt="" coords="1568,199,1719,240"/>
+<area shape="rect" id="node17" href="$im880b_2include_2board_8h.html" title="Support for im880b. " alt="" coords="2309,199,2476,240"/>
+<area shape="rect" id="node19" href="$limifrog-v1_2include_2board_8h.html" title="Board specific definitions for the limifrog&#45;v1 board. " alt="" coords="2513,199,2651,240"/>
+<area shape="rect" id="node25" href="$msbiot_2include_2board_8h.html" title="Board specific definitions for the MSB&#45;IoT board. " alt="" coords="3448,199,3609,240"/>
+<area shape="rect" id="node26" href="$msbiot_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="3448,288,3609,329"/>
+<area shape="rect" id="node73" href="$nz32-sc151_2include_2board_8h.html" title="Board specific definitions for the nz32&#45;sc151 board. " alt="" coords="12059,199,12249,240"/>
+<area shape="rect" id="node74" href="$nz32-sc151_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="12059,288,12249,329"/>
+<area shape="rect" id="node76" href="$olimexino-stm32_2include_2board_8h.html" title="Board specific definitions for the OLIMEXINO STM32 board. " alt="" coords="12273,199,12446,240"/>
+<area shape="rect" id="node77" href="$olimexino-stm32_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="12273,288,12446,329"/>
+<area shape="rect" id="node83" href="$spark-core_2include_2board_8h.html" title="Board specific definitions for the spark&#45;core board. " alt="" coords="13257,199,13443,240"/>
+<area shape="rect" id="node88" href="$stm32f429i-disc1_2include_2board_8h.html" title="Board specific definitions for the STM32F429I&#45;DISC1 evaluation board. " alt="" coords="14059,199,14235,240"/>
+<area shape="rect" id="node89" href="$stm32f429i-disc1_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="14059,288,14235,329"/>
+<area shape="rect" id="node91" href="$stm32f469i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F469I&#45;DISCO board. " alt="" coords="14259,199,14435,240"/>
+<area shape="rect" id="node92" href="$stm32f469i-disco_2include_2gpio__params_8h_source.html" title="boards/stm32f469i&#45;disco\l/include/gpio_params.h" alt="" coords="14259,288,14435,329"/>
+<area shape="rect" id="node94" href="$stm32f4discovery_2include_2board_8h.html" title="Board specific definitions for the STM32F4Discovery evaluation board. " alt="" coords="14459,199,14641,240"/>
+<area shape="rect" id="node95" href="$stm32f4discovery_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="14459,288,14641,329"/>
+<area shape="rect" id="node97" href="$stm32f723e-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F723E&#45;DISCO board. " alt="" coords="14665,199,14846,240"/>
+<area shape="rect" id="node98" href="$stm32f723e-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="14665,288,14846,329"/>
+<area shape="rect" id="node100" href="$stm32f746g-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F746G&#45;DISCO. " alt="" coords="14870,199,15051,240"/>
+<area shape="rect" id="node101" href="$stm32f746g-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="14870,288,15051,329"/>
+<area shape="rect" id="node103" href="$stm32f769i-disco_2include_2board_8h.html" title="Board specific definitions for the STM32F769I&#45;DISCO board. " alt="" coords="15075,199,15251,240"/>
+<area shape="rect" id="node104" href="$stm32f769i-disco_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="15075,288,15251,329"/>
+<area shape="rect" id="node106" href="$stm32g0316-disco_2include_2board_8h.html" title="Board specific definitions for the STM32G0316&#45;DISCO. " alt="" coords="15275,199,15459,240"/>
+<area shape="rect" id="node111" href="$stm32mp157c-dk2_2include_2board_8h.html" title="Board specific definitions for the STM32MP157C&#45;DK2 board. " alt="" coords="16092,199,16251,240"/>
+<area shape="rect" id="node114" href="$weact-g030f6_2include_2board_8h.html" title="Board specific definitions for WeAct&#45;G030F6. " alt="" coords="16478,199,16633,240"/>
+<area shape="rect" id="node115" href="$weact-g030f6_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="16472,288,16639,329"/>
+</map>

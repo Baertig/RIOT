@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>imath: Integer Math functions</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__imath.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">imath: Integer Math functions<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This modules provides some integer-only math functions.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This modules provides some integer-only math functions. </p>
+<p>They can be used when no FPU is available or no exact precision is needed.</p>
+<dl class="section author"><dt>Author</dt><dd>Karl Fessel <a href="#" onclick="location.href='mai'+'lto:'+'kar'+'l.'+'fes'+'se'+'l@o'+'vg'+'u.d'+'e'; return false;">karl.<span style="display: none;">.nosp@m.</span>fess<span style="display: none;">.nosp@m.</span>el@ov<span style="display: none;">.nosp@m.</span>gu.d<span style="display: none;">.nosp@m.</span>e</a> </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaebacd65e71872233b9b23524cfc68636"><td class="memItemLeft" align="right" valign="top"><a id="gaebacd65e71872233b9b23524cfc68636"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#gaebacd65e71872233b9b23524cfc68636">SINI_PERIOD</a>&#160;&#160;&#160;0x8000</td></tr>
+<tr class="memdesc:gaebacd65e71872233b9b23524cfc68636"><td class="mdescLeft">&#160;</td><td class="mdescRight">Period of the <a class="el" href="group__sys__imath.html#ga21b234bb3e19d2adb0ae9bc2aecc6857" title="A sine approximation via a fourth-order cosine approx. ">fast_sini()</a> function. <br /></td></tr>
+<tr class="separator:gaebacd65e71872233b9b23524cfc68636"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12dccb11b26d5dda58ce88d1fab1be90"><td class="memItemLeft" align="right" valign="top"><a id="ga12dccb11b26d5dda58ce88d1fab1be90"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga12dccb11b26d5dda58ce88d1fab1be90">SINI_MAX</a>&#160;&#160;&#160;0x1000</td></tr>
+<tr class="memdesc:ga12dccb11b26d5dda58ce88d1fab1be90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max value of the <a class="el" href="group__sys__imath.html#ga21b234bb3e19d2adb0ae9bc2aecc6857" title="A sine approximation via a fourth-order cosine approx. ">fast_sini()</a> function. <br /></td></tr>
+<tr class="separator:ga12dccb11b26d5dda58ce88d1fab1be90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08d8f3ce500c16595f23f39358588c2e"><td class="memItemLeft" align="right" valign="top"><a id="ga08d8f3ce500c16595f23f39358588c2e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga08d8f3ce500c16595f23f39358588c2e">SINI_MIN</a>&#160;&#160;&#160;-0x1000</td></tr>
+<tr class="memdesc:ga08d8f3ce500c16595f23f39358588c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Min value of the <a class="el" href="group__sys__imath.html#ga21b234bb3e19d2adb0ae9bc2aecc6857" title="A sine approximation via a fourth-order cosine approx. ">fast_sini()</a> function. <br /></td></tr>
+<tr class="separator:ga08d8f3ce500c16595f23f39358588c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga976926d90a6696ce373265b7f00ccb12"><td class="memItemLeft" align="right" valign="top"><a id="ga976926d90a6696ce373265b7f00ccb12"></a>
+static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga976926d90a6696ce373265b7f00ccb12">_ihelp</a> (int32_t x)</td></tr>
+<tr class="memdesc:ga976926d90a6696ce373265b7f00ccb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal fast_sini/fast_cosi helper function. <br /></td></tr>
+<tr class="separator:ga976926d90a6696ce373265b7f00ccb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21b234bb3e19d2adb0ae9bc2aecc6857"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga21b234bb3e19d2adb0ae9bc2aecc6857">fast_sini</a> (int32_t x)</td></tr>
+<tr class="memdesc:ga21b234bb3e19d2adb0ae9bc2aecc6857"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sine approximation via a fourth-order cosine approx.  <a href="#ga21b234bb3e19d2adb0ae9bc2aecc6857">More...</a><br /></td></tr>
+<tr class="separator:ga21b234bb3e19d2adb0ae9bc2aecc6857"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9238948bb52056923e603390885dd39"><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#gaf9238948bb52056923e603390885dd39">fast_cosi</a> (int32_t x)</td></tr>
+<tr class="memdesc:gaf9238948bb52056923e603390885dd39"><td class="mdescLeft">&#160;</td><td class="mdescRight">A a fourth-order cosine approx.  <a href="#gaf9238948bb52056923e603390885dd39">More...</a><br /></td></tr>
+<tr class="separator:gaf9238948bb52056923e603390885dd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8219dbc9fd66507e026394a68061a08a"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga8219dbc9fd66507e026394a68061a08a">sqrti</a> (unsigned x)</td></tr>
+<tr class="memdesc:ga8219dbc9fd66507e026394a68061a08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square root of an integer.  <a href="#ga8219dbc9fd66507e026394a68061a08a">More...</a><br /></td></tr>
+<tr class="separator:ga8219dbc9fd66507e026394a68061a08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35c44282a3d1d52a9785252170d4c686"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__imath.html#ga35c44282a3d1d52a9785252170d4c686">powi</a> (unsigned x, unsigned y)</td></tr>
+<tr class="memdesc:ga35c44282a3d1d52a9785252170d4c686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the value of x to the power of y.  <a href="#ga35c44282a3d1d52a9785252170d4c686">More...</a><br /></td></tr>
+<tr class="separator:ga35c44282a3d1d52a9785252170d4c686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaf9238948bb52056923e603390885dd39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf9238948bb52056923e603390885dd39">&#9670;&nbsp;</a></span>fast_cosi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t fast_cosi </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A a fourth-order cosine approx. </p>
+<p>source: <a href="https://www.coranac.com/2009/07/sines/">https://www.coranac.com/2009/07/sines/</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>angle (with 2^15 units/circle) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>sine value (-2^12 ≤ y ≤ 2^12) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="imath_8h_source.html#l00086">86</a> of file <a class="el" href="imath_8h_source.html">imath.h</a>.</p>
+
+</div>
+</div>
+<a id="ga21b234bb3e19d2adb0ae9bc2aecc6857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21b234bb3e19d2adb0ae9bc2aecc6857">&#9670;&nbsp;</a></span>fast_sini()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int32_t fast_sini </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>A sine approximation via a fourth-order cosine approx. </p>
+<p>source: <a href="https://www.coranac.com/2009/07/sines/">https://www.coranac.com/2009/07/sines/</a></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>angle (with 2^15 units/circle) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>sine value (-2^12 ≤ y ≤ 2^12) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="imath_8h_source.html#l00069">69</a> of file <a class="el" href="imath_8h_source.html">imath.h</a>.</p>
+
+</div>
+</div>
+<a id="ga35c44282a3d1d52a9785252170d4c686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35c44282a3d1d52a9785252170d4c686">&#9670;&nbsp;</a></span>powi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t powi </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the value of x to the power of y. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>base </td></tr>
+    <tr><td class="paramname">y</td><td>exponent</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>x^y </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="imath_8h_source.html#l00128">128</a> of file <a class="el" href="imath_8h_source.html">imath.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8219dbc9fd66507e026394a68061a08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8219dbc9fd66507e026394a68061a08a">&#9670;&nbsp;</a></span>sqrti()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned sqrti </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Square root of an integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>unsigned integer value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>square root of <code>x</code> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="imath_8h_source.html#l00102">102</a> of file <a class="el" href="imath_8h_source.html">imath.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

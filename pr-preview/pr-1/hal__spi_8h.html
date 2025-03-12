@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/mynewt-core/include/hal/hal_spi.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('hal__spi_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">hal_spi.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &raquo; <a class="el" href="group__pkg__uwb__dw1000.html">Driver implementation for the uwb-core driver for Decawave DW1000 transceiver</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>SPI abstraction layer RIOT adaption.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SPI abstraction layer RIOT adaption. </p>
+<dl class="section author"><dt>Author</dt><dd>Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span style="display: none;">.nosp@m.</span>ois-<span style="display: none;">.nosp@m.</span>xavie<span style="display: none;">.nosp@m.</span>r.mo<span style="display: none;">.nosp@m.</span>lina@<span style="display: none;">.nosp@m.</span>inri<span style="display: none;">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="hal__spi_8h_source.html">hal_spi.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="spi_8h_source.html">periph/spi.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for hal_spi.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hal__spi_8h__incl.svg" width="598" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="hal__spi_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhal__spi__settings.html">hal_spi_settings</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">since one spi device can control multiple devices, some configuration can be changed on the fly from the hal  <a href="structhal__spi__settings.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af269bbeaf787deae7de03b7e1c8ede4f"><td class="memItemLeft" align="right" valign="top"><a id="af269bbeaf787deae7de03b7e1c8ede4f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#af269bbeaf787deae7de03b7e1c8ede4f">HAL_SPI_MODE0</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#ggac4b206a51636d91c5cffcbcee458c3cba152359b11fb4b43ed0c5485eb0ab0673">SPI_MODE_0</a>)</td></tr>
+<tr class="memdesc:af269bbeaf787deae7de03b7e1c8ede4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI mode 0. <br /></td></tr>
+<tr class="separator:af269bbeaf787deae7de03b7e1c8ede4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fae1c5b56c54e8bb905d4774b6c21e"><td class="memItemLeft" align="right" valign="top"><a id="aa4fae1c5b56c54e8bb905d4774b6c21e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#aa4fae1c5b56c54e8bb905d4774b6c21e">HAL_SPI_MODE1</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#ggac4b206a51636d91c5cffcbcee458c3cba7c1990cc15e9d69621be8e0e757e634c">SPI_MODE_1</a>)</td></tr>
+<tr class="memdesc:aa4fae1c5b56c54e8bb905d4774b6c21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI mode 1. <br /></td></tr>
+<tr class="separator:aa4fae1c5b56c54e8bb905d4774b6c21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4f7a6b535bf91c6d9eadc94876b3ab"><td class="memItemLeft" align="right" valign="top"><a id="a9a4f7a6b535bf91c6d9eadc94876b3ab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#a9a4f7a6b535bf91c6d9eadc94876b3ab">HAL_SPI_MODE2</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#ggac4b206a51636d91c5cffcbcee458c3cba4d350945d895a4acdc45ae96b0b82fc3">SPI_MODE_2</a>)</td></tr>
+<tr class="memdesc:a9a4f7a6b535bf91c6d9eadc94876b3ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI mode 2. <br /></td></tr>
+<tr class="separator:a9a4f7a6b535bf91c6d9eadc94876b3ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d553cb6ad796c81cf8da03fd162410"><td class="memItemLeft" align="right" valign="top"><a id="ab3d553cb6ad796c81cf8da03fd162410"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#ab3d553cb6ad796c81cf8da03fd162410">HAL_SPI_MODE3</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__spi.html#ggac4b206a51636d91c5cffcbcee458c3cbaf06ec36087996d6f328df39866ff5de6">SPI_MODE_3</a>)</td></tr>
+<tr class="memdesc:ab3d553cb6ad796c81cf8da03fd162410"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI mode 3. <br /></td></tr>
+<tr class="separator:ab3d553cb6ad796c81cf8da03fd162410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a2eaa9ef4b5bdf3048b6a942462ad1ec1"><td class="memItemLeft" align="right" valign="top"><a id="a2eaa9ef4b5bdf3048b6a942462ad1ec1"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a>) (void *arg, int len)</td></tr>
+<tr class="memdesc:a2eaa9ef4b5bdf3048b6a942462ad1ec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prototype for tx/rx callback. <br /></td></tr>
+<tr class="separator:a2eaa9ef4b5bdf3048b6a942462ad1ec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8546bc1ec3e14eabc80bb56319d6628e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#a8546bc1ec3e14eabc80bb56319d6628e">hal_spi_config</a> (int spi_num, struct <a class="el" href="structhal__spi__settings.html">hal_spi_settings</a> *psettings)</td></tr>
+<tr class="memdesc:a8546bc1ec3e14eabc80bb56319d6628e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the spi.  <a href="#a8546bc1ec3e14eabc80bb56319d6628e">More...</a><br /></td></tr>
+<tr class="separator:a8546bc1ec3e14eabc80bb56319d6628e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa87db99ce986ed1b1385590cea1f32a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#aa87db99ce986ed1b1385590cea1f32a8">hal_spi_set_txrx_cb</a> (int spi_num, <a class="el" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a> txrx_cb, void *arg)</td></tr>
+<tr class="memdesc:aa87db99ce986ed1b1385590cea1f32a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the txrx callback (executed at interrupt context) when the buffer is transferred by the master or the slave using the non-blocking API.  <a href="#aa87db99ce986ed1b1385590cea1f32a8">More...</a><br /></td></tr>
+<tr class="separator:aa87db99ce986ed1b1385590cea1f32a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac20b051b9e98152804dd0801a57f1360"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#ac20b051b9e98152804dd0801a57f1360">hal_spi_enable</a> (int spi_num)</td></tr>
+<tr class="memdesc:ac20b051b9e98152804dd0801a57f1360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the SPI.  <a href="#ac20b051b9e98152804dd0801a57f1360">More...</a><br /></td></tr>
+<tr class="separator:ac20b051b9e98152804dd0801a57f1360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2fca841a1ac4dd055e6247449bf45ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#ae2fca841a1ac4dd055e6247449bf45ab">hal_spi_disable</a> (int spi_num)</td></tr>
+<tr class="memdesc:ae2fca841a1ac4dd055e6247449bf45ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the SPI.  <a href="#ae2fca841a1ac4dd055e6247449bf45ab">More...</a><br /></td></tr>
+<tr class="separator:ae2fca841a1ac4dd055e6247449bf45ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553da06a116ddadf0df93343f51f1432"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#a553da06a116ddadf0df93343f51f1432">hal_spi_txrx</a> (int spi_num, void *txbuf, void *rxbuf, int cnt)</td></tr>
+<tr class="memdesc:a553da06a116ddadf0df93343f51f1432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocking interface to send a buffer and store the received values from the slave.  <a href="#a553da06a116ddadf0df93343f51f1432">More...</a><br /></td></tr>
+<tr class="separator:a553da06a116ddadf0df93343f51f1432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af63f67ca8a93d7c93061565e9be1385b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hal__spi_8h.html#af63f67ca8a93d7c93061565e9be1385b">hal_spi_txrx_noblock</a> (int spi_num, void *txbuf, void *rxbuf, int cnt)</td></tr>
+<tr class="memdesc:af63f67ca8a93d7c93061565e9be1385b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-blocking interface to send a buffer and store received values.  <a href="#af63f67ca8a93d7c93061565e9be1385b">More...</a><br /></td></tr>
+<tr class="separator:af63f67ca8a93d7c93061565e9be1385b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8546bc1ec3e14eabc80bb56319d6628e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8546bc1ec3e14eabc80bb56319d6628e">&#9670;&nbsp;</a></span>hal_spi_config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_config </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structhal__spi__settings.html">hal_spi_settings</a> *&#160;</td>
+          <td class="paramname"><em>psettings</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the spi. </p>
+<p>Must be called after the spi is initialized (after hal_spi_init is called) and when the spi is disabled (user must call hal_spi_disable if the spi has been enabled through hal_spi_enable prior to calling this function). Can also be used to reconfigure an initialized SPI (assuming it is disabled as described previously).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td>The number of the SPI to configure. </td></tr>
+    <tr><td class="paramname">psettings</td><td>The settings to configure this SPI with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ae2fca841a1ac4dd055e6247449bf45ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2fca841a1ac4dd055e6247449bf45ab">&#9670;&nbsp;</a></span>hal_spi_disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_disable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disables the SPI. </p>
+<p>Used for power mgmt. It will halt any current SPI transfers in progress.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+<a id="ac20b051b9e98152804dd0801a57f1360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac20b051b9e98152804dd0801a57f1360">&#9670;&nbsp;</a></span>hal_spi_enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_enable </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables the SPI. </p>
+<p>This does not start a transmit or receive operation; it is used for power mgmt. Cannot be called when a SPI transfer is in progress.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+<a id="aa87db99ce986ed1b1385590cea1f32a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87db99ce986ed1b1385590cea1f32a8">&#9670;&nbsp;</a></span>hal_spi_set_txrx_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_set_txrx_cb </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a>&#160;</td>
+          <td class="paramname"><em>txrx_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>arg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the txrx callback (executed at interrupt context) when the buffer is transferred by the master or the slave using the non-blocking API. </p>
+<p>Cannot be called when the spi is enabled. This callback will also be called when chip select is de-asserted on the slave.</p>
+<p>NOTE: This callback is only used for the non-blocking interface and must be called prior to using the non-blocking API.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td>SPI interface on which to set callback </td></tr>
+    <tr><td class="paramname">txrx_cb</td><td>Callback function </td></tr>
+    <tr><td class="paramname">arg</td><td>Argument to be passed to callback function</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+<a id="a553da06a116ddadf0df93343f51f1432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553da06a116ddadf0df93343f51f1432">&#9670;&nbsp;</a></span>hal_spi_txrx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_txrx </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>txbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>rxbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Blocking interface to send a buffer and store the received values from the slave. </p>
+<p>The transmit and receive buffers are either arrays of 8-bit (uint8_t) values or 16-bit values depending on whether the spi is configured for 8 bit data or more than 8 bits per value. The 'cnt' parameter is the number of 8-bit or 16-bit values. Thus, if 'cnt' is 10, txbuf/rxbuf would point to an array of size 10 (in bytes) if the SPI is using 8-bit data; otherwise txbuf/rxbuf would point to an array of size 20 bytes (ten, uint16_t values).</p>
+<p>NOTE: these buffers are in the native endian-ness of the platform. </p><pre class="fragment">MASTER: master sends all the values in the buffer and stores the
+        stores the values in the receive buffer if rxbuf is not NULL.
+        The txbuf parameter cannot be NULL.
+SLAVE: cannot be called for a slave; returns -1
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td>SPI interface to use </td></tr>
+    <tr><td class="paramname">txbuf</td><td>Pointer to buffer where values to transmit are stored. </td></tr>
+    <tr><td class="paramname">rxbuf</td><td>Pointer to buffer to store values received from peer. </td></tr>
+    <tr><td class="paramname">cnt</td><td>Number of 8-bit or 16-bit values to be transferred.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+<a id="af63f67ca8a93d7c93061565e9be1385b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af63f67ca8a93d7c93061565e9be1385b">&#9670;&nbsp;</a></span>hal_spi_txrx_noblock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int hal_spi_txrx_noblock </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>spi_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>txbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>rxbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cnt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Non-blocking interface to send a buffer and store received values. </p>
+<p>Can be used for both master and slave SPI types. The user must configure the callback (using hal_spi_set_txrx_cb); the txrx callback is executed at interrupt context when the buffer is sent.</p>
+<p>The transmit and receive buffers are either arrays of 8-bit (uint8_t) values or 16-bit values depending on whether the spi is configured for 8 bit data or more than 8 bits per value. The 'cnt' parameter is the number of 8-bit or 16-bit values. Thus, if 'cnt' is 10, txbuf/rxbuf would point to an array of size 10 (in bytes) if the SPI is using 8-bit data; otherwise txbuf/rxbuf would point to an array of size 20 bytes (ten, uint16_t values).</p>
+<p>NOTE: these buffers are in the native endian-ness of the platform. </p><pre class="fragment">MASTER: master sends all the values in the buffer and stores the
+        stores the values in the receive buffer if rxbuf is not NULL.
+        The txbuf parameter cannot be NULL
+SLAVE: Slave "preloads" the data to be sent to the master (values
+       stored in txbuf) and places received data from master in rxbuf
+       (if not NULL). The txrx callback occurs when len values are
+       transferred or master de-asserts chip select. If txbuf is NULL,
+       the slave transfers its default byte. Both rxbuf and txbuf cannot
+       be NULL.
+</pre><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">spi_num</td><td>SPI interface to use </td></tr>
+    <tr><td class="paramname">txbuf</td><td>Pointer to buffer where values to transmit are stored. </td></tr>
+    <tr><td class="paramname">rxbuf</td><td>Pointer to buffer to store values received from peer. </td></tr>
+    <tr><td class="paramname">cnt</td><td>Number of 8-bit or 16-bit values to be transferred.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 0 on success, non-zero error code on failure. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

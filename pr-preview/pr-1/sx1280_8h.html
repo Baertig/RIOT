@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/sx1280.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sx1280_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">sx1280.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__sx1280.html">LoRa radio driver</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span style="display: none;">.nosp@m.</span>ois-<span style="display: none;">.nosp@m.</span>xavie<span style="display: none;">.nosp@m.</span>r.mo<span style="display: none;">.nosp@m.</span>lina@<span style="display: none;">.nosp@m.</span>inri<span style="display: none;">.nosp@m.</span>a.fr</a> </dd>
+<dd>
+Aymeric Brochier <a href="#" onclick="location.href='mai'+'lto:'+'aym'+'er'+'ic.'+'br'+'och'+'ie'+'r@u'+'ni'+'v-g'+'re'+'nob'+'le'+'-al'+'pe'+'s.f'+'r'; return false;">aymer<span style="display: none;">.nosp@m.</span>ic.b<span style="display: none;">.nosp@m.</span>rochi<span style="display: none;">.nosp@m.</span>er@u<span style="display: none;">.nosp@m.</span>niv-g<span style="display: none;">.nosp@m.</span>reno<span style="display: none;">.nosp@m.</span>ble-a<span style="display: none;">.nosp@m.</span>lpes<span style="display: none;">.nosp@m.</span>.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sx1280_8h_source.html">sx1280.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
+<code>#include &quot;sx1280_driver/src/sx1280_hal.h&quot;</code><br />
+<code>#include &quot;sx1280_driver/src/sx1280.h&quot;</code><br />
+<code>#include &quot;smtc_ral/src/ral.h&quot;</code><br />
+<code>#include &quot;smtc_ral/src/ral_defs.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h_source.html">net/netdev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">periph/spi.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sx1280.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280_8h__incl.svg" width="1394" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sx1280_8h__dep__incl.svg" width="188" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="sx1280_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsx1280__params__t.html">sx1280_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device initialization parameters.  <a href="structsx1280__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsx1280.html">sx1280</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for the driver.  <a href="structsx1280.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga110541846354c09ca5175f24dc2ce70f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structsx1280.html">sx1280</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a></td></tr>
+<tr class="separator:ga110541846354c09ca5175f24dc2ce70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga1763e828a432796cf1ea1472107d65ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga1763e828a432796cf1ea1472107d65ab">sx1280_setup</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, const <a class="el" href="structsx1280__params__t.html">sx1280_params_t</a> *params, uint8_t index)</td></tr>
+<tr class="memdesc:ga1763e828a432796cf1ea1472107d65ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the radio device.  <a href="group__drivers__sx1280.html#ga1763e828a432796cf1ea1472107d65ab">More...</a><br /></td></tr>
+<tr class="separator:ga1763e828a432796cf1ea1472107d65ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab5eec7782ab77c1d0806af7b1fac5eb7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gab5eec7782ab77c1d0806af7b1fac5eb7">sx1280_init</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:gab5eec7782ab77c1d0806af7b1fac5eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the given device.  <a href="group__drivers__sx1280.html#gab5eec7782ab77c1d0806af7b1fac5eb7">More...</a><br /></td></tr>
+<tr class="separator:gab5eec7782ab77c1d0806af7b1fac5eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e4f87d095278d9a959e1393f1ef00ac"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga0e4f87d095278d9a959e1393f1ef00ac">sx1280_get_channel</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga0e4f87d095278d9a959e1393f1ef00ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the channel RF frequency.  <a href="group__drivers__sx1280.html#ga0e4f87d095278d9a959e1393f1ef00ac">More...</a><br /></td></tr>
+<tr class="separator:ga0e4f87d095278d9a959e1393f1ef00ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2409604d3c5214bffee625ffce8cb24a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga2409604d3c5214bffee625ffce8cb24a">sx1280_random</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga2409604d3c5214bffee625ffce8cb24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a random number.  <a href="group__drivers__sx1280.html#ga2409604d3c5214bffee625ffce8cb24a">More...</a><br /></td></tr>
+<tr class="separator:ga2409604d3c5214bffee625ffce8cb24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2017d768d2b55b8561453442dd7a75db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga2017d768d2b55b8561453442dd7a75db">sx1280_set_channel</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint32_t freq)</td></tr>
+<tr class="memdesc:ga2017d768d2b55b8561453442dd7a75db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channel RF frequency.  <a href="group__drivers__sx1280.html#ga2017d768d2b55b8561453442dd7a75db">More...</a><br /></td></tr>
+<tr class="separator:ga2017d768d2b55b8561453442dd7a75db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0b8c4ac14b8fc5c76de2f2bd723285db"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga0b8c4ac14b8fc5c76de2f2bd723285db">sx1280_get_bandwidth</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga0b8c4ac14b8fc5c76de2f2bd723285db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the LoRa bandwidth.  <a href="group__drivers__sx1280.html#ga0b8c4ac14b8fc5c76de2f2bd723285db">More...</a><br /></td></tr>
+<tr class="separator:ga0b8c4ac14b8fc5c76de2f2bd723285db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga541224d8562376ce9b9d94c34ca12c8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga541224d8562376ce9b9d94c34ca12c8a">sx1280_set_bandwidth</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint16_t bandwidth)</td></tr>
+<tr class="memdesc:ga541224d8562376ce9b9d94c34ca12c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LoRa bandwidth.  <a href="group__drivers__sx1280.html#ga541224d8562376ce9b9d94c34ca12c8a">More...</a><br /></td></tr>
+<tr class="separator:ga541224d8562376ce9b9d94c34ca12c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b7507cca6c2fb929e9e2f5efbaccd15"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga9b7507cca6c2fb929e9e2f5efbaccd15">sx1280_get_spreading_factor</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga9b7507cca6c2fb929e9e2f5efbaccd15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the LoRa spreading factor.  <a href="group__drivers__sx1280.html#ga9b7507cca6c2fb929e9e2f5efbaccd15">More...</a><br /></td></tr>
+<tr class="separator:ga9b7507cca6c2fb929e9e2f5efbaccd15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab82fadcf819462e9f8ff3ffbc472c383"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gab82fadcf819462e9f8ff3ffbc472c383">sx1280_set_spreading_factor</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint8_t sf)</td></tr>
+<tr class="memdesc:gab82fadcf819462e9f8ff3ffbc472c383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LoRa spreading factor.  <a href="group__drivers__sx1280.html#gab82fadcf819462e9f8ff3ffbc472c383">More...</a><br /></td></tr>
+<tr class="separator:gab82fadcf819462e9f8ff3ffbc472c383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8b409e03cddea2a3443e45eb040f174b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga8b409e03cddea2a3443e45eb040f174b">sx1280_get_coding_rate</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga8b409e03cddea2a3443e45eb040f174b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the LoRa coding rate.  <a href="group__drivers__sx1280.html#ga8b409e03cddea2a3443e45eb040f174b">More...</a><br /></td></tr>
+<tr class="separator:ga8b409e03cddea2a3443e45eb040f174b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc22b0ad1ca034195c2f7b9c123e8085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gadc22b0ad1ca034195c2f7b9c123e8085">sx1280_set_coding_rate</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint8_t cr)</td></tr>
+<tr class="memdesc:gadc22b0ad1ca034195c2f7b9c123e8085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LoRa coding rate.  <a href="group__drivers__sx1280.html#gadc22b0ad1ca034195c2f7b9c123e8085">More...</a><br /></td></tr>
+<tr class="separator:gadc22b0ad1ca034195c2f7b9c123e8085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28a0385115ba32b77720eaadddbbedd2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga28a0385115ba32b77720eaadddbbedd2">sx1280_get_lora_payload_length</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga28a0385115ba32b77720eaadddbbedd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the payload length.  <a href="group__drivers__sx1280.html#ga28a0385115ba32b77720eaadddbbedd2">More...</a><br /></td></tr>
+<tr class="separator:ga28a0385115ba32b77720eaadddbbedd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d8d85aa69d43c8f58e144c09fe0f742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga3d8d85aa69d43c8f58e144c09fe0f742">sx1280_set_lora_payload_length</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint8_t len)</td></tr>
+<tr class="memdesc:ga3d8d85aa69d43c8f58e144c09fe0f742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the payload length.  <a href="group__drivers__sx1280.html#ga3d8d85aa69d43c8f58e144c09fe0f742">More...</a><br /></td></tr>
+<tr class="separator:ga3d8d85aa69d43c8f58e144c09fe0f742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1dee78ce376382d7bc71fa5dc8678743"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga1dee78ce376382d7bc71fa5dc8678743">sx1280_get_lora_crc</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga1dee78ce376382d7bc71fa5dc8678743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if CRC verification mode is enabled.  <a href="group__drivers__sx1280.html#ga1dee78ce376382d7bc71fa5dc8678743">More...</a><br /></td></tr>
+<tr class="separator:ga1dee78ce376382d7bc71fa5dc8678743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabd0438b00cbe6f09454e6f8668ae4413"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gabd0438b00cbe6f09454e6f8668ae4413">sx1280_set_lora_crc</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, bool crc)</td></tr>
+<tr class="memdesc:gabd0438b00cbe6f09454e6f8668ae4413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable CRC verification mode.  <a href="group__drivers__sx1280.html#gabd0438b00cbe6f09454e6f8668ae4413">More...</a><br /></td></tr>
+<tr class="separator:gabd0438b00cbe6f09454e6f8668ae4413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65799fb87c2e05da4e2cf12450fbee16"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga65799fb87c2e05da4e2cf12450fbee16">sx1280_get_lora_implicit_header</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga65799fb87c2e05da4e2cf12450fbee16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the LoRa implicit header mode.  <a href="group__drivers__sx1280.html#ga65799fb87c2e05da4e2cf12450fbee16">More...</a><br /></td></tr>
+<tr class="separator:ga65799fb87c2e05da4e2cf12450fbee16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac3cb28d45b0c7f4f244ca2ea55bfce88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gac3cb28d45b0c7f4f244ca2ea55bfce88">sx1280_set_lora_implicit_header</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, bool mode)</td></tr>
+<tr class="memdesc:gac3cb28d45b0c7f4f244ca2ea55bfce88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets LoRa implicit header mode.  <a href="group__drivers__sx1280.html#gac3cb28d45b0c7f4f244ca2ea55bfce88">More...</a><br /></td></tr>
+<tr class="separator:gac3cb28d45b0c7f4f244ca2ea55bfce88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfb2862b1c5f93b1ceb18bc19685ec4d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gadfb2862b1c5f93b1ceb18bc19685ec4d">sx1280_get_lora_preamble_length</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:gadfb2862b1c5f93b1ceb18bc19685ec4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the LoRa preamble length.  <a href="group__drivers__sx1280.html#gadfb2862b1c5f93b1ceb18bc19685ec4d">More...</a><br /></td></tr>
+<tr class="separator:gadfb2862b1c5f93b1ceb18bc19685ec4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga88beab9fae3c69089af7ac07a8cc36ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga88beab9fae3c69089af7ac07a8cc36ca">sx1280_set_lora_preamble_length</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, uint16_t preamble)</td></tr>
+<tr class="memdesc:ga88beab9fae3c69089af7ac07a8cc36ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the LoRa preamble length.  <a href="group__drivers__sx1280.html#ga88beab9fae3c69089af7ac07a8cc36ca">More...</a><br /></td></tr>
+<tr class="separator:ga88beab9fae3c69089af7ac07a8cc36ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fdf0cdc0010deaa633556dc663698bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga0fdf0cdc0010deaa633556dc663698bb">sx1280_get_lora_iq_invert</a> (const <a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev)</td></tr>
+<tr class="memdesc:ga0fdf0cdc0010deaa633556dc663698bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the LoRa inverted IQ mode is enabled/disabled.  <a href="group__drivers__sx1280.html#ga0fdf0cdc0010deaa633556dc663698bb">More...</a><br /></td></tr>
+<tr class="separator:ga0fdf0cdc0010deaa633556dc663698bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf0785f37f8f219ee35cb99e7409e893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gaaf0785f37f8f219ee35cb99e7409e893">sx1280_set_lora_iq_invert</a> (<a class="el" href="group__drivers__sx1280.html#ga110541846354c09ca5175f24dc2ce70f">sx1280_t</a> *dev, bool iq_invert)</td></tr>
+<tr class="memdesc:gaaf0785f37f8f219ee35cb99e7409e893"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/disable the LoRa IQ inverted mode.  <a href="group__drivers__sx1280.html#gaaf0785f37f8f219ee35cb99e7409e893">More...</a><br /></td></tr>
+<tr class="separator:gaaf0785f37f8f219ee35cb99e7409e893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+SX1280 device default configuration</h2></td></tr>
+<tr class="memitem:gaf8a2b28c6961fb5a01a431e18ea37fe5"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#gaf8a2b28c6961fb5a01a431e18ea37fe5">SX1280_CHANNEL_DEFAULT</a>&#160;&#160;&#160;(2403000000UL)</td></tr>
+<tr class="memdesc:gaf8a2b28c6961fb5a01a431e18ea37fe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default channel frequency, 2403MHz. <br /></td></tr>
+<tr class="separator:gaf8a2b28c6961fb5a01a431e18ea37fe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57d67ea4d3d414ee1f44e639cde7ce1c"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sx1280.html#ga57d67ea4d3d414ee1f44e639cde7ce1c">SX1280_RADIO_TX_POWER</a>&#160;&#160;&#160;(SX1280_PWR_MAX)</td></tr>
+<tr class="memdesc:ga57d67ea4d3d414ee1f44e639cde7ce1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Radio power in dBm. <br /></td></tr>
+<tr class="separator:ga57d67ea4d3d414ee1f44e639cde7ce1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

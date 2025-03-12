@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>uri_parser_result_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structuri__parser__result__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">uri_parser_result_t Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__uri__parser.html">A minimal, non-destructive URI parser</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>container that holds all results  
+ <a href="structuri__parser__result__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>container that holds all results </p>
+
+<p class="definition">Definition at line <a class="el" href="uri__parser_8h_source.html#l00041">41</a> of file <a class="el" href="uri__parser_8h_source.html">uri_parser.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="uri__parser_8h_source.html">uri_parser.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a017d5ff36127167ec60ee6ee254ee2fa"><td class="memItemLeft" align="right" valign="top"><a id="a017d5ff36127167ec60ee6ee254ee2fa"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a017d5ff36127167ec60ee6ee254ee2fa">scheme</a></td></tr>
+<tr class="memdesc:a017d5ff36127167ec60ee6ee254ee2fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">scheme <br /></td></tr>
+<tr class="separator:a017d5ff36127167ec60ee6ee254ee2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a963c5b4fc56996e2c1024f3c68f361"><td class="memItemLeft" align="right" valign="top"><a id="a2a963c5b4fc56996e2c1024f3c68f361"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a2a963c5b4fc56996e2c1024f3c68f361">userinfo</a></td></tr>
+<tr class="memdesc:a2a963c5b4fc56996e2c1024f3c68f361"><td class="mdescLeft">&#160;</td><td class="mdescRight">userinfo <br /></td></tr>
+<tr class="separator:a2a963c5b4fc56996e2c1024f3c68f361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257ca5000f0dafa9449a2b9bb2aa533e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a></td></tr>
+<tr class="memdesc:a257ca5000f0dafa9449a2b9bb2aa533e"><td class="mdescLeft">&#160;</td><td class="mdescRight">host part  <a href="#a257ca5000f0dafa9449a2b9bb2aa533e">More...</a><br /></td></tr>
+<tr class="separator:a257ca5000f0dafa9449a2b9bb2aa533e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8cf38311f4582d339524603fe0f4105"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">ipv6addr</a></td></tr>
+<tr class="memdesc:ae8cf38311f4582d339524603fe0f4105"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the start of the address, if <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> is an IPv6 address and NULL otherwise.  <a href="#ae8cf38311f4582d339524603fe0f4105">More...</a><br /></td></tr>
+<tr class="separator:ae8cf38311f4582d339524603fe0f4105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f9b1556af4806f15a9a85a4beea761"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#ac0f9b1556af4806f15a9a85a4beea761">zoneid</a></td></tr>
+<tr class="memdesc:ac0f9b1556af4806f15a9a85a4beea761"><td class="mdescLeft">&#160;</td><td class="mdescRight">zoneid if <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> is IPv6 address, NULL otherwise  <a href="#ac0f9b1556af4806f15a9a85a4beea761">More...</a><br /></td></tr>
+<tr class="separator:ac0f9b1556af4806f15a9a85a4beea761"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a875ed730e095223aaae4cb786bced5ca"><td class="memItemLeft" align="right" valign="top"><a id="a875ed730e095223aaae4cb786bced5ca"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a875ed730e095223aaae4cb786bced5ca">port_str</a></td></tr>
+<tr class="memdesc:a875ed730e095223aaae4cb786bced5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">port as str <br /></td></tr>
+<tr class="separator:a875ed730e095223aaae4cb786bced5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95f3a39b5110a9d318b435206a8c2bf"><td class="memItemLeft" align="right" valign="top"><a id="ab95f3a39b5110a9d318b435206a8c2bf"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#ab95f3a39b5110a9d318b435206a8c2bf">path</a></td></tr>
+<tr class="memdesc:ab95f3a39b5110a9d318b435206a8c2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">path <br /></td></tr>
+<tr class="separator:ab95f3a39b5110a9d318b435206a8c2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a2b6ca48518b155deb9d8dc51e719c"><td class="memItemLeft" align="right" valign="top"><a id="a39a2b6ca48518b155deb9d8dc51e719c"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a39a2b6ca48518b155deb9d8dc51e719c">query</a></td></tr>
+<tr class="memdesc:a39a2b6ca48518b155deb9d8dc51e719c"><td class="mdescLeft">&#160;</td><td class="mdescRight">query <br /></td></tr>
+<tr class="separator:a39a2b6ca48518b155deb9d8dc51e719c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999d3641eb320b3714f8a383d97adc5a"><td class="memItemLeft" align="right" valign="top"><a id="a999d3641eb320b3714f8a383d97adc5a"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a999d3641eb320b3714f8a383d97adc5a">port</a></td></tr>
+<tr class="memdesc:a999d3641eb320b3714f8a383d97adc5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">port as uint16_t <br /></td></tr>
+<tr class="separator:a999d3641eb320b3714f8a383d97adc5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0102a05b60801ee5f03f8cc7fbc960f9"><td class="memItemLeft" align="right" valign="top"><a id="a0102a05b60801ee5f03f8cc7fbc960f9"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a0102a05b60801ee5f03f8cc7fbc960f9">scheme_len</a></td></tr>
+<tr class="memdesc:a0102a05b60801ee5f03f8cc7fbc960f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#a017d5ff36127167ec60ee6ee254ee2fa">scheme</a> <br /></td></tr>
+<tr class="separator:a0102a05b60801ee5f03f8cc7fbc960f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36f00aa15d0ad2d995a817db208fe7a3"><td class="memItemLeft" align="right" valign="top"><a id="a36f00aa15d0ad2d995a817db208fe7a3"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a36f00aa15d0ad2d995a817db208fe7a3">userinfo_len</a></td></tr>
+<tr class="memdesc:a36f00aa15d0ad2d995a817db208fe7a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#a2a963c5b4fc56996e2c1024f3c68f361">userinfo</a> <br /></td></tr>
+<tr class="separator:a36f00aa15d0ad2d995a817db208fe7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae89f1b565ff75a1406d4071ca17a8b35"><td class="memItemLeft" align="right" valign="top"><a id="ae89f1b565ff75a1406d4071ca17a8b35"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#ae89f1b565ff75a1406d4071ca17a8b35">host_len</a></td></tr>
+<tr class="memdesc:ae89f1b565ff75a1406d4071ca17a8b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> <br /></td></tr>
+<tr class="separator:ae89f1b565ff75a1406d4071ca17a8b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8595922ba848a921442d72fb29940fc5"><td class="memItemLeft" align="right" valign="top"><a id="a8595922ba848a921442d72fb29940fc5"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a8595922ba848a921442d72fb29940fc5">ipv6addr_len</a></td></tr>
+<tr class="memdesc:a8595922ba848a921442d72fb29940fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">ipv6addr</a> <br /></td></tr>
+<tr class="separator:a8595922ba848a921442d72fb29940fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062814ef7261afd64007aad39f2d68da"><td class="memItemLeft" align="right" valign="top"><a id="a062814ef7261afd64007aad39f2d68da"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a062814ef7261afd64007aad39f2d68da">zoneid_len</a></td></tr>
+<tr class="memdesc:a062814ef7261afd64007aad39f2d68da"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#ac0f9b1556af4806f15a9a85a4beea761">zoneid</a> <br /></td></tr>
+<tr class="separator:a062814ef7261afd64007aad39f2d68da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a540b59383376bb2dd13b3fff838dc68f"><td class="memItemLeft" align="right" valign="top"><a id="a540b59383376bb2dd13b3fff838dc68f"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a540b59383376bb2dd13b3fff838dc68f">port_str_len</a></td></tr>
+<tr class="memdesc:a540b59383376bb2dd13b3fff838dc68f"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#a875ed730e095223aaae4cb786bced5ca">port_str</a> <br /></td></tr>
+<tr class="separator:a540b59383376bb2dd13b3fff838dc68f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228b45249254745ecf61e6d5f0c6850d"><td class="memItemLeft" align="right" valign="top"><a id="a228b45249254745ecf61e6d5f0c6850d"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a228b45249254745ecf61e6d5f0c6850d">path_len</a></td></tr>
+<tr class="memdesc:a228b45249254745ecf61e6d5f0c6850d"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#ab95f3a39b5110a9d318b435206a8c2bf">path</a> <br /></td></tr>
+<tr class="separator:a228b45249254745ecf61e6d5f0c6850d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f155d5a5a202c097a5014edacf043fc"><td class="memItemLeft" align="right" valign="top"><a id="a4f155d5a5a202c097a5014edacf043fc"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuri__parser__result__t.html#a4f155d5a5a202c097a5014edacf043fc">query_len</a></td></tr>
+<tr class="memdesc:a4f155d5a5a202c097a5014edacf043fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">length of <a class="el" href="structuri__parser__result__t.html#a39a2b6ca48518b155deb9d8dc51e719c">query</a> <br /></td></tr>
+<tr class="separator:a4f155d5a5a202c097a5014edacf043fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="a257ca5000f0dafa9449a2b9bb2aa533e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257ca5000f0dafa9449a2b9bb2aa533e">&#9670;&nbsp;</a></span>host</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* uri_parser_result_t::host</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>host part </p>
+<dl class="section note"><dt>Note</dt><dd>for IPv6 addresses, <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> also includes the brackets '[' and ']' as well as the zoneid (with leading ''), if present. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="uri__parser_8h_source.html#l00052">52</a> of file <a class="el" href="uri__parser_8h_source.html">uri_parser.h</a>.</p>
+
+</div>
+</div>
+<a id="ae8cf38311f4582d339524603fe0f4105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8cf38311f4582d339524603fe0f4105">&#9670;&nbsp;</a></span>ipv6addr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* uri_parser_result_t::ipv6addr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pointer to the start of the address, if <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> is an IPv6 address and NULL otherwise. </p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">ipv6addr</a> does not include the brackets '[' and ']' and the zoneid part. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="uri__parser_8h_source.html#l00061">61</a> of file <a class="el" href="uri__parser_8h_source.html">uri_parser.h</a>.</p>
+
+</div>
+</div>
+<a id="ac0f9b1556af4806f15a9a85a4beea761"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f9b1556af4806f15a9a85a4beea761">&#9670;&nbsp;</a></span>zoneid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* uri_parser_result_t::zoneid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>zoneid if <a class="el" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a> is IPv6 address, NULL otherwise </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc6874">https://tools.ietf.org/html/rfc6874</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="uri__parser_8h_source.html#l00068">68</a> of file <a class="el" href="uri__parser_8h_source.html">uri_parser.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/<a class="el" href="uri__parser_8h_source.html">uri_parser.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:36 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

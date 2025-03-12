@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/progress_bar.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('progress__bar_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">progress_bar.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__progress__bar.html">A terminal progress bar</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>A simple CLI progress bar.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A simple CLI progress bar. </p>
+<dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span style="display: none;">.nosp@m.</span>ndre<span style="display: none;">.nosp@m.</span>.abad<span style="display: none;">.nosp@m.</span>ie@i<span style="display: none;">.nosp@m.</span>nria.<span style="display: none;">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="progress__bar_8h_source.html">progress_bar.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="inttypes_8h_source.html">inttypes.h</a>&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for progress_bar.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="progress__bar_8h__incl.svg" width="187" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="progress__bar_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structprogress__bar__t.html">progress_bar_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar descriptor.  <a href="structprogress__bar__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf74ce6f877a13c93562dc12892dfa2"><td class="memItemLeft" align="right" valign="top"><a id="a2bf74ce6f877a13c93562dc12892dfa2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a2bf74ce6f877a13c93562dc12892dfa2">CONFIG_PROGRESS_BAR_LENGTH</a>&#160;&#160;&#160;(25U)</td></tr>
+<tr class="memdesc:a2bf74ce6f877a13c93562dc12892dfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar maximum characters length. <br /></td></tr>
+<tr class="separator:a2bf74ce6f877a13c93562dc12892dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ecab807b85bd18e6572f9bb740da6e"><td class="memItemLeft" align="right" valign="top"><a id="aa6ecab807b85bd18e6572f9bb740da6e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#aa6ecab807b85bd18e6572f9bb740da6e">CONFIG_PROGRESS_BAR_FULL_CHARACTER</a>&#160;&#160;&#160;&quot;█&quot;</td></tr>
+<tr class="memdesc:aa6ecab807b85bd18e6572f9bb740da6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar character. <br /></td></tr>
+<tr class="separator:aa6ecab807b85bd18e6572f9bb740da6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0715ba75d340ecae50fc7003f6ec7356"><td class="memItemLeft" align="right" valign="top"><a id="a0715ba75d340ecae50fc7003f6ec7356"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a0715ba75d340ecae50fc7003f6ec7356">CONFIG_PROGRESS_BAR_EMPTY_CHARACTER</a>&#160;&#160;&#160;&quot; &quot;</td></tr>
+<tr class="memdesc:a0715ba75d340ecae50fc7003f6ec7356"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar empty character. <br /></td></tr>
+<tr class="separator:a0715ba75d340ecae50fc7003f6ec7356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac513f62bb9f365909c864759607b0ed8"><td class="memItemLeft" align="right" valign="top"><a id="ac513f62bb9f365909c864759607b0ed8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#ac513f62bb9f365909c864759607b0ed8">CONFIG_PROGRESS_BAR_PREFIX_CHARACTER</a>&#160;&#160;&#160;&quot;|&quot;</td></tr>
+<tr class="memdesc:ac513f62bb9f365909c864759607b0ed8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character displayed on the left of the progress bar. <br /></td></tr>
+<tr class="separator:ac513f62bb9f365909c864759607b0ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf0bc922f00285114c5b58cf866c0083"><td class="memItemLeft" align="right" valign="top"><a id="adf0bc922f00285114c5b58cf866c0083"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#adf0bc922f00285114c5b58cf866c0083">CONFIG_PROGRESS_BAR_SUFFIX_CHARACTER</a>&#160;&#160;&#160;&quot;|&quot;</td></tr>
+<tr class="memdesc:adf0bc922f00285114c5b58cf866c0083"><td class="mdescLeft">&#160;</td><td class="mdescRight">Character displayed on the left of the progress bar. <br /></td></tr>
+<tr class="separator:adf0bc922f00285114c5b58cf866c0083"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a394566ccf32c6a9faebf339a11baf4a6"><td class="memItemLeft" align="right" valign="top"><a id="a394566ccf32c6a9faebf339a11baf4a6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a394566ccf32c6a9faebf339a11baf4a6">CONFIG_PROGRESS_BAR_PREFIX_MAX_LENGTH</a>&#160;&#160;&#160;(32U)</td></tr>
+<tr class="memdesc:a394566ccf32c6a9faebf339a11baf4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar prefix max length. <br /></td></tr>
+<tr class="separator:a394566ccf32c6a9faebf339a11baf4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ade499271197b1345c29d1998c9720d"><td class="memItemLeft" align="right" valign="top"><a id="a8ade499271197b1345c29d1998c9720d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a8ade499271197b1345c29d1998c9720d">CONFIG_PROGRESS_BAR_SUFFIX_MAX_LENGTH</a>&#160;&#160;&#160;(32U)</td></tr>
+<tr class="memdesc:a8ade499271197b1345c29d1998c9720d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Progress bar suffix max length. <br /></td></tr>
+<tr class="separator:a8ade499271197b1345c29d1998c9720d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27a44b1dca01bb881f6b2aef829dffb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a27a44b1dca01bb881f6b2aef829dffb2">progress_bar_print</a> (char *prefix, char *suffix, uint8_t value)</td></tr>
+<tr class="memdesc:a27a44b1dca01bb881f6b2aef829dffb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a progress bar in the terminal.  <a href="#a27a44b1dca01bb881f6b2aef829dffb2">More...</a><br /></td></tr>
+<tr class="separator:a27a44b1dca01bb881f6b2aef829dffb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ef0151657c7875871835b05822ffcbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a7ef0151657c7875871835b05822ffcbf">progress_bar_update</a> (<a class="el" href="structprogress__bar__t.html">progress_bar_t</a> *progress_bar)</td></tr>
+<tr class="memdesc:a7ef0151657c7875871835b05822ffcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the progress bar display in the terminal.  <a href="#a7ef0151657c7875871835b05822ffcbf">More...</a><br /></td></tr>
+<tr class="separator:a7ef0151657c7875871835b05822ffcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33a6a49caef2bde72218b8fc60c25a22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#a33a6a49caef2bde72218b8fc60c25a22">progress_bar_prepare_multi</a> (uint8_t len)</td></tr>
+<tr class="memdesc:a33a6a49caef2bde72218b8fc60c25a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the output for displaying multiple progress bars.  <a href="#a33a6a49caef2bde72218b8fc60c25a22">More...</a><br /></td></tr>
+<tr class="separator:a33a6a49caef2bde72218b8fc60c25a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaaee03fa916991a2cdbaffb87fd47f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="progress__bar_8h.html#abeaaee03fa916991a2cdbaffb87fd47f">progress_bar_update_multi</a> (<a class="el" href="structprogress__bar__t.html">progress_bar_t</a> *progress_bar_list, uint8_t len)</td></tr>
+<tr class="memdesc:abeaaee03fa916991a2cdbaffb87fd47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update all progress bar displays of the given progress bars list.  <a href="#abeaaee03fa916991a2cdbaffb87fd47f">More...</a><br /></td></tr>
+<tr class="separator:abeaaee03fa916991a2cdbaffb87fd47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a33a6a49caef2bde72218b8fc60c25a22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33a6a49caef2bde72218b8fc60c25a22">&#9670;&nbsp;</a></span>progress_bar_prepare_multi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void progress_bar_prepare_multi </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>len</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prepare the output for displaying multiple progress bars. </p>
+<p>This function is just adding enough empty lines to give enough space to print the list of progress bars.</p>
+<p>This function must be called only once and before starting the progress bar list updates with.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The length of the progress bar array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a27a44b1dca01bb881f6b2aef829dffb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27a44b1dca01bb881f6b2aef829dffb2">&#9670;&nbsp;</a></span>progress_bar_print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void progress_bar_print </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>prefix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>suffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print a progress bar in the terminal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">prefix</td><td>String displayed on the left of the progress bar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">suffix</td><td>String displayed on the right of the progress bar </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value of the progress bar </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7ef0151657c7875871835b05822ffcbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ef0151657c7875871835b05822ffcbf">&#9670;&nbsp;</a></span>progress_bar_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void progress_bar_update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structprogress__bar__t.html">progress_bar_t</a> *&#160;</td>
+          <td class="paramname"><em>progress_bar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the progress bar display in the terminal. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">progress_bar</td><td>Pointer to the progress bar descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abeaaee03fa916991a2cdbaffb87fd47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeaaee03fa916991a2cdbaffb87fd47f">&#9670;&nbsp;</a></span>progress_bar_update_multi()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void progress_bar_update_multi </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structprogress__bar__t.html">progress_bar_t</a> *&#160;</td>
+          <td class="paramname"><em>progress_bar_list</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update all progress bar displays of the given progress bars list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">progress_bar_list</td><td>An array of progress bars </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The length of the progress bar array </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

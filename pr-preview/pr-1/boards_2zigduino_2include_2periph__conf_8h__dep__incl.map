@@ -1,0 +1,276 @@
+<map id="boards/zigduino/include/periph_conf.h" name="boards/zigduino/include/periph_conf.h">
+<area shape="rect" id="node2" href="$atmega1281_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="7853,95,8031,136"/>
+<area shape="rect" id="node3" href="$atmega1284p_2include_2default__timer__config_8h.html" title="Default timer configuration. " alt="" coords="8055,95,8240,136"/>
+<area shape="rect" id="node4" href="$atmega1284p_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="5,191,191,233"/>
+<area shape="rect" id="node5" href="$atmega128rfa1_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="8315,95,8510,136"/>
+<area shape="rect" id="node6" href="$atmega2560_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="8535,95,8712,136"/>
+<area shape="rect" id="node7" href="$atmega256rfr2_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="8737,95,8931,136"/>
+<area shape="rect" id="node8" href="$atmega328p_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="8956,95,9133,136"/>
+<area shape="rect" id="node9" href="$atmega32u4_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="9157,95,9335,136"/>
+<area shape="rect" id="node10" href="$atmega8_2include_2periph__cpu_8h.html" title="CPU specific definitions for internal peripheral handling. " alt="" coords="9359,95,9512,136"/>
+<area shape="rect" id="node11" href="$atmega__gpio_8h.html" title="Macros and inline functions for accessing GPIOs of the ATmega family. " alt="" coords="17749,191,17954,233"/>
+<area shape="rect" id="node12" href="$mcg_8h.html" title="Interface definition for the Kinetis MCG driver. " alt="" coords="9733,95,9871,136"/>
+<area shape="rect" id="node13" href="$nrfx__riot_8h.html" title="nrfx compatibility layer " alt="" coords="9895,95,10087,136"/>
+<area shape="rect" id="node14" href="$cpu_2rpx0xx_2include_2pio_2pio_8h.html" title="Internal PIO interface. " alt="" coords="17978,191,18119,233"/>
+<area shape="rect" id="node15" href="$cpu_2stm32_2include_2tinyusb__hw__defaults_8h.html" title="STM32 specific default configurations for tinyUSB. " alt="" coords="16635,95,16822,136"/>
+<area shape="rect" id="node16" href="$arduino-mkr1000_2include_2board_8h.html" title="Board specific definitions for the Arduino MKR1000 board. " alt="" coords="18143,191,18322,233"/>
+<area shape="rect" id="node17" href="$arduino-mkrfox1200_2include_2board_8h.html" title="Board specific definitions for the Arduino MKRFOX1200 board. " alt="" coords="18347,191,18545,233"/>
+<area shape="rect" id="node18" href="$arduino-mkrzero_2include_2board_8h.html" title="Board specific definitions for the Arduino MKRZERO board. " alt="" coords="18569,191,18744,233"/>
+<area shape="rect" id="node19" href="$esp32x_2include_2board__common_8h.html" title="Board definitions that are common for all ESP32x boards. " alt="" coords="18768,191,18953,233"/>
+<area shape="rect" id="node20" href="$esp8266_2include_2board__common_8h.html" title="Board definitions that are common for all ESP8266 boards. " alt="" coords="18977,191,19163,233"/>
+<area shape="rect" id="node21" href="$iotlab_2include_2board__common_8h.html" title="Board specific definitions for the iotlab&#45;m3 board. " alt="" coords="18161,95,18347,136"/>
+<area shape="rect" id="node22" href="$kw41z_2include_2board__common_8h.html" title="Shared configuration for some kw41z&#45;based boards. " alt="" coords="18371,95,18556,136"/>
+<area shape="rect" id="node23" href="$board__nucleo_8h.html" title="Global common Nucleo board configuration. " alt="" coords="9536,95,9708,136"/>
+<area shape="rect" id="node29" href="$common_2nucleo64_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="42429,191,42615,233"/>
+<area shape="rect" id="node30" href="$i2c_8h.html" title="Low&#45;level I2C peripheral driver interface definition. " alt="" coords="10112,95,10273,136"/>
+<area shape="rect" id="node119" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions. " alt="" coords="26976,95,27137,136"/>
+<area shape="rect" id="node245" href="$spi_8h.html" title="Low&#45;level SPI peripheral driver interface definition. " alt="" coords="19391,191,19552,233"/>
+<area shape="rect" id="node255" href="$mtd__spi__nor_8h.html" title="Interface definition for the serial flash memory driver. " alt="" coords="19217,295,19363,337"/>
+<area shape="rect" id="node256" href="$kw2xrf__spi_8h.html" title="Definition of KW2XRF SPI functions. " alt="" coords="43415,295,43578,337"/>
+<area shape="rect" id="node258" href="$drivers_2include_2periph_2uart_8h.html" title="Low&#45;level UART peripheral driver interface definition. " alt="" coords="43501,191,43663,233"/>
+<area shape="rect" id="node259" href="$adc_8h.html" title="Low&#45;level ADC peripheral driver interface definitions. " alt="" coords="38569,95,38731,136"/>
+<area shape="rect" id="node260" href="$dac_8h.html" title="DAC peripheral driver interface definition. " alt="" coords="17519,95,17680,136"/>
+<area shape="rect" id="node261" href="$drivers_2include_2periph_2timer_8h.html" title="Low&#45;level timer peripheral driver interface definitions. " alt="" coords="38992,95,39153,136"/>
+<area shape="rect" id="node262" href="$pwm_8h.html" title="Low&#45;level PWM peripheral driver interface definitions. " alt="" coords="38807,95,38968,136"/>
+<area shape="rect" id="node263" href="$sdmmc_8h.html" title="SDIO/SD/MMC device API using a low&#45;level peripheral driver. " alt="" coords="39229,95,39393,136"/>
+<area shape="rect" id="node264" href="$qdec_8h.html" title="Low&#45;level QDEC peripheral driver interface definitions. " alt="" coords="39417,95,39579,136"/>
+<area shape="rect" id="node265" href="$rtc_8h.html" title="Low&#45;level RTC peripheral driver interface definitions. " alt="" coords="39603,95,39764,136"/>
+<area shape="rect" id="node266" href="$rtt_8h.html" title="Low&#45;level RTT (Real Time Timer) peripheral driver interface definitions. " alt="" coords="39788,95,39949,136"/>
+<area shape="rect" id="node267" href="$usbdev_8h.html" title="Definitions low&#45;level USB driver interface. " alt="" coords="39973,95,40135,136"/>
+<area shape="rect" id="node268" href="$board__info_8h.html" title="pkg/openwsn/include\l/board_info.h" alt="" coords="40159,95,40314,136"/>
+<area shape="rect" id="node269" href="$openwsn__uart_8h.html" title="For details on the implementation check pkg/openwsn/doc.txt. " alt="" coords="40338,95,40493,136"/>
+<area shape="rect" id="node270" href="$tinyusb_8h.html" title="TinyUSB API. " alt="" coords="40517,95,40661,136"/>
+<area shape="rect" id="node271" href="$busy__wait_8h_source.html" title="sys/include/busy_wait.h" alt="" coords="40685,102,40852,129"/>
+<area shape="rect" id="node272" href="$clk_8h.html" title="System core clock utility functions. " alt="" coords="40877,102,40999,129"/>
+<area shape="rect" id="node273" href="$eepreg_8h.html" title="eepreg interface definitions " alt="" coords="41024,102,41177,129"/>
+<area shape="rect" id="node274" href="$xtimer_8h.html" title="xtimer interface definitions " alt="" coords="17022,102,17169,129"/>
+<area shape="rect" id="node275" href="$sys_2include_2ztimer_2config_8h.html" title="ztimer default configuration " alt="" coords="43789,95,43924,136"/>
+<area shape="rect" id="node24" href="$common_2nucleo144_2include_2board_8h.html" title="Common pin definitions and board configuration options. " alt="" coords="790,191,985,233"/>
+<area shape="rect" id="node25" href="$common_2nucleo32_2include_2board_8h.html" title="Common pin definitions and board configuration options. " alt="" coords="1009,191,1195,233"/>
+<area shape="rect" id="node26" href="$common_2nucleo64_2include_2board_8h.html" title="Common pin definitions and board configuration options. " alt="" coords="215,191,402,233"/>
+<area shape="rect" id="node27" href="$nucleo-wl55jc_2include_2board_8h.html" title="Pin definitions and board configuration options. " alt="" coords="427,191,580,233"/>
+<area shape="rect" id="node28" href="$p-nucleo-wb55_2include_2board_8h.html" title="Pin definitions and board configuration options. " alt="" coords="604,191,765,233"/>
+<area shape="rect" id="node31" href="$common_2arduino-atmega_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for Arduino Atmega boards. " alt="" coords="40504,288,40681,344"/>
+<area shape="rect" id="node32" href="$common_2arduino-due_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="28544,288,28721,344"/>
+<area shape="rect" id="node33" href="$common_2arduino-zero_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="42027,288,42204,344"/>
+<area shape="rect" id="node34" href="$aip31068__params_8h.html" title="Default configuration for the AIP31068 I2C LCD controller. " alt="" coords="2486,191,2665,233"/>
+<area shape="rect" id="node35" href="$ad7746_8h.html" title="AD7746 Capacitance&#45;to&#45;digital converter with temperature sensor driver. " alt="" coords="12497,199,12675,225"/>
+<area shape="rect" id="node36" href="$adcxx1c_8h.html" title="ADCXX1C ADC device driver. " alt="" coords="12699,199,12881,225"/>
+<area shape="rect" id="node37" href="$ads101x_8h.html" title="ADS101x/111x ADC device driver. " alt="" coords="17541,199,17725,225"/>
+<area shape="rect" id="node38" href="$adxl345_8h.html" title="Interface definition for the ADXL345. " alt="" coords="12905,199,13086,225"/>
+<area shape="rect" id="node39" href="$aip31068_8h.html" title="drivers/include/aip31068.h" alt="" coords="2689,199,2880,225"/>
+<area shape="rect" id="node40" href="$apds99xx_8h.html" title="drivers/include/apds99xx.h" alt="" coords="13111,199,13301,225"/>
+<area shape="rect" id="node41" href="$at24cxxx_8h.html" title="Device driver interface for AT24CXXX EEPROM units. " alt="" coords="13326,199,13513,225"/>
+<area shape="rect" id="node42" href="$at24mac_8h.html" title="drivers/include/at24mac.h" alt="" coords="2904,199,3089,225"/>
+<area shape="rect" id="node43" href="$at30tse75x_8h.html" title="Driver for the AT30TSE75x temperature sensor with serial EEPROM. " alt="" coords="3114,199,3317,225"/>
+<area shape="rect" id="node44" href="$bh1750fvi_8h.html" title="Interface definition for the Rohm BH1750FVI ambient light sensor. " alt="" coords="3341,199,3535,225"/>
+<area shape="rect" id="node45" href="$bh1900nux_8h.html" title="Interface definition for the BH1900NUX temperature sensor. " alt="" coords="3559,199,3762,225"/>
+<area shape="rect" id="node46" href="$bme680_8h.html" title="Interface definition for the Bosch BME680 sensor. " alt="" coords="10134,303,10318,329"/>
+<area shape="rect" id="node47" href="$bmp180_8h.html" title="Device driver interface for the BMP180 sensor. " alt="" coords="3837,199,4021,225"/>
+<area shape="rect" id="node48" href="$bmx055_8h.html" title="Device driver interface for the Bosch BMX055 9&#45;axis sensor. " alt="" coords="13537,199,13720,225"/>
+<area shape="rect" id="node49" href="$bmx280_8h.html" title="Device driver interface for the BMP280 and BME280 sensors. " alt="" coords="4045,199,4228,225"/>
+<area shape="rect" id="node50" href="$bq2429x_8h.html" title="Device driver interface for the BQ2429x Single&#45;Cell USB Charger. " alt="" coords="13745,199,13931,225"/>
+<area shape="rect" id="node51" href="$ccs811_8h.html" title="Device Driver for AMS CCS811 digital gas sensor. " alt="" coords="13956,199,14131,225"/>
+<area shape="rect" id="node52" href="$cst816s_8h.html" title="Device driver interface for the CST816S touch screen. " alt="" coords="14155,199,14334,225"/>
+<area shape="rect" id="node53" href="$ds1307_8h.html" title="DS1307 definitions. " alt="" coords="14358,199,14537,225"/>
+<area shape="rect" id="node54" href="$ds3231_8h.html" title="Interface definition for the Maxim DS3231 RTC. " alt="" coords="14561,199,14739,225"/>
+<area shape="rect" id="node55" href="$ds75lx_8h.html" title="drivers/include/ds75lx.h" alt="" coords="4252,199,4424,225"/>
+<area shape="rect" id="node56" href="$ft5x06_8h.html" title="drivers/include/ft5x06.h" alt="" coords="14763,199,14937,225"/>
+<area shape="rect" id="node57" href="$fxos8700_8h.html" title="Interface definition for the FXOS8700 sensor driver. " alt="" coords="4448,199,4639,225"/>
+<area shape="rect" id="node58" href="$hdc1000_8h.html" title="Interface definition for the HDC1000 sensor driver. " alt="" coords="4663,199,4850,225"/>
+<area shape="rect" id="node59" href="$hih6130_8h.html" title="Device driver for Honeywell HumidIcon Digital Humidity/Temperature Sensors: HIH&#45;6130/6131 Series..." alt="" coords="4875,199,5057,225"/>
+<area shape="rect" id="node60" href="$hm330x_8h.html" title="drivers/include/hm330x.h" alt="" coords="14961,199,15144,225"/>
+<area shape="rect" id="node61" href="$hmc5883l_8h.html" title="drivers/include/hmc5883l.h" alt="" coords="15168,199,15361,225"/>
+<area shape="rect" id="node62" href="$hsc_8h.html" title="Device driver interface for the HSC sensor. " alt="" coords="5082,199,5234,225"/>
+<area shape="rect" id="node63" href="$hts221_8h.html" title="Interface definition for the ST HTS221 driver. " alt="" coords="5259,199,5433,225"/>
+<area shape="rect" id="node64" href="$ina2xx_8h.html" title="Device driver interface for Texas Instruments INA219/INA2XX Bi&#45;Directional CURRENT/POWER MONITOR with..." alt="" coords="5457,199,5629,225"/>
+<area shape="rect" id="node65" href="$ina3221_8h.html" title="Device driver interface for Texas Instruments INA3221 three&#45;channel, high&#45;side current and bus voltag..." alt="" coords="15385,199,15568,225"/>
+<area shape="rect" id="node66" href="$isl29020_8h.html" title="Device driver interface for the ISL29020 light sensor. " alt="" coords="5654,199,5838,225"/>
+<area shape="rect" id="node67" href="$isl29125_8h.html" title="Device driver interface for the ISL29125 RGB light sensor. " alt="" coords="15593,199,15777,225"/>
+<area shape="rect" id="node68" href="$itg320x_8h.html" title="Device driver for InvenSense ITG320X 3&#45;axis gyroscope. " alt="" coords="15801,199,15979,225"/>
+<area shape="rect" id="node69" href="$jc42_8h.html" title="Driver for jc42 compliant temperature sensors. " alt="" coords="2305,199,2462,225"/>
+<area shape="rect" id="node70" href="$jc42__params_8h.html" title="Default configuration for jc42. " alt="" coords="3019,295,3164,337"/>
+<area shape="rect" id="node71" href="$l3g4200d_8h.html" title="Device driver interface for the L3G4200D gyroscope. " alt="" coords="16004,199,16195,225"/>
+<area shape="rect" id="node72" href="$l3gxxxx_8h.html" title="Device Driver for ST L3Gxxxx 3&#45;axis gyroscope sensor family. " alt="" coords="19014,303,19193,329"/>
+<area shape="rect" id="node73" href="$lc709203f_8h.html" title="Device driver interface for the LC709203F Battery Fuel Gauge. " alt="" coords="16219,199,16414,225"/>
+<area shape="rect" id="node74" href="$lis2dh12_8h.html" title="Interface definition for the STM LIS2DH12 accelerometer. " alt="" coords="16438,199,16622,225"/>
+<area shape="rect" id="node75" href="$lis3mdl_8h.html" title="Device driver interface for the LIS3MDL 3&#45;axis magnetometer. " alt="" coords="16647,199,16821,225"/>
+<area shape="rect" id="node76" href="$lm75_8h.html" title="Driver for the LM75 temperature sensor. " alt="" coords="16947,199,17110,225"/>
+<area shape="rect" id="node77" href="$lpsxxx_8h.html" title="drivers/include/lpsxxx.h" alt="" coords="5862,199,6033,225"/>
+<area shape="rect" id="node78" href="$lsm303dlhc_8h.html" title="Device driver interface for the LSM303DLHC 3D accelerometer/magnetometer. " alt="" coords="11067,199,11270,225"/>
+<area shape="rect" id="node79" href="$lsm6dsxx_8h.html" title="Device driver interface for the LSM6DSXX 3D accelerometer/gyroscope. " alt="" coords="6057,199,6246,225"/>
+<area shape="rect" id="node80" href="$mag3110_8h.html" title="Interface definition for the MAG3110 magnetometer driver. " alt="" coords="6271,199,6461,225"/>
+<area shape="rect" id="node81" href="$mcp47xx_8h.html" title="drivers/include/mcp47xx.h" alt="" coords="17328,199,17516,225"/>
+<area shape="rect" id="node82" href="$mma7660_8h.html" title="Interface definition for the MMA7660 accelerometer driver. " alt="" coords="6486,199,6681,225"/>
+<area shape="rect" id="node83" href="$mma8x5x_8h.html" title="Interface definition for the MMA8x5x accelerometer driver. " alt="" coords="6705,199,6899,225"/>
+<area shape="rect" id="node84" href="$mpl3115a2_8h.html" title="Interface definition for the MPL3115A2 sensor driver. " alt="" coords="6923,199,7126,225"/>
+<area shape="rect" id="node85" href="$mpu9x50_8h.html" title="Device driver interface for the MPU&#45;9X50 (MPU9150 and MPU9250) " alt="" coords="7151,199,7341,225"/>
+<area shape="rect" id="node86" href="$opt3001_8h.html" title="Interface definition for the OPT3001 sensor driver. " alt="" coords="7365,199,7551,225"/>
+<area shape="rect" id="node87" href="$pca9633_8h.html" title="drivers/include/pca9633.h" alt="" coords="7575,199,7760,225"/>
+<area shape="rect" id="node88" href="$pca9685_8h.html" title="drivers/include/pca9685.h" alt="" coords="23613,199,23799,225"/>
+<area shape="rect" id="node89" href="$pcf857x_8h.html" title="drivers/include/pcf857x.h" alt="" coords="11295,199,11477,225"/>
+<area shape="rect" id="node90" href="$pio_2i2c_8h.html" title="PIO I2C program interface. " alt="" coords="7784,191,7945,233"/>
+<area shape="rect" id="node91" href="$ph__oem_8h.html" title="Device driver for Atlas Scientific pH OEM Sensor with SMBus/I2C interface. " alt="" coords="11502,191,11638,233"/>
+<area shape="rect" id="node92" href="$pn532_8h.html" title="PN532 driver. " alt="" coords="18817,303,18989,329"/>
+<area shape="rect" id="node93" href="$qmc5883l_8h.html" title="API definition for the QMC5883L device driver. " alt="" coords="11663,199,11856,225"/>
+<area shape="rect" id="node94" href="$scd30_8h.html" title="Device driver interface for the SCD30 sensor. " alt="" coords="10875,199,11043,225"/>
+<area shape="rect" id="node95" href="$scd30__params_8h.html" title="Device driver params interface for the SCD30 sensor. " alt="" coords="9643,295,9799,337"/>
+<area shape="rect" id="node96" href="$sdp3x_8h.html" title="Device driver interface for the SDP3x sensor. " alt="" coords="17135,199,17304,225"/>
+<area shape="rect" id="node97" href="$seesaw__soil_8h.html" title="Interface definition for the Adafruit Seesaw Soil sensor. " alt="" coords="7970,191,8135,233"/>
+<area shape="rect" id="node98" href="$sgp30_8h.html" title="drivers/include/sgp30.h" alt="" coords="8210,199,8381,225"/>
+<area shape="rect" id="node99" href="$sht2x_8h.html" title="Device driver implementation for the SHT2x humidity and temperature humidity sensor. " alt="" coords="8405,199,8572,225"/>
+<area shape="rect" id="node100" href="$sht3x_8h.html" title="Device Driver for Sensirion SHT30/SHT31/SHT35 Humidity and Temperature Sensors. " alt="" coords="8596,199,8763,225"/>
+<area shape="rect" id="node101" href="$shtcx_8h.html" title="Device driver interface for the SHTCX Temperature and humidity sensor. " alt="" coords="8787,199,8951,225"/>
+<area shape="rect" id="node102" href="$si1133_8h.html" title="Device driver interface for the Si1133 sensor. " alt="" coords="9026,199,9199,225"/>
+<area shape="rect" id="node103" href="$si114x_8h.html" title="Device driver interface for the Si114x sensors family. " alt="" coords="9224,199,9396,225"/>
+<area shape="rect" id="node104" href="$si70xx_8h.html" title="Interface definition of the Si70xx driver. " alt="" coords="9421,199,9591,225"/>
+<area shape="rect" id="node105" href="$sps30_8h.html" title="Driver for the Sensirion SPS30 Particulate Matter Sensor. " alt="" coords="11881,199,12049,225"/>
+<area shape="rect" id="node106" href="$srf02_8h.html" title="Driver definitions for the SRF02 ultrasonic ranger. " alt="" coords="9615,199,9781,225"/>
+<area shape="rect" id="node107" href="$srf08_8h.html" title="Driver definitions for the SRF02 ultrasonic ranger. " alt="" coords="9805,199,9970,225"/>
+<area shape="rect" id="node108" href="$stmpe811_8h.html" title="drivers/include/stmpe811.h" alt="" coords="12073,199,12267,225"/>
+<area shape="rect" id="node109" href="$tcs37727_8h.html" title="Interface definition for the TCS37727 sensor driver. " alt="" coords="9994,199,10183,225"/>
+<area shape="rect" id="node110" href="$tmp00x_8h.html" title="Interface definition for the TMP00X sensor driver. " alt="" coords="10208,199,10388,225"/>
+<area shape="rect" id="node111" href="$tsl2561_8h.html" title="Device driver interface for the illuminance TSL2561 sensor. " alt="" coords="2102,199,2281,225"/>
+<area shape="rect" id="node112" href="$tsl4531x_8h.html" title="Device driver for the AMS TSL4531 sensor. " alt="" coords="10412,199,10597,225"/>
+<area shape="rect" id="node113" href="$vcnl40x0_8h.html" title="Device driver interface for the VCNL40X0 sensors family. " alt="" coords="1425,199,1611,225"/>
+<area shape="rect" id="node114" href="$veml6070_8h.html" title="Device driver interface for the VEML6070 UV sensor. " alt="" coords="1635,199,1830,225"/>
+<area shape="rect" id="node115" href="$vl6180x_8h.html" title="drivers/include/vl6180x.h" alt="" coords="12291,199,12473,225"/>
+<area shape="rect" id="node116" href="$pca9633__params_8h.html" title="Default configuration for the PCA9633 I2C PWM controller. " alt="" coords="1854,191,2027,233"/>
+<area shape="rect" id="node117" href="$atca_8h.html" title="Default addresses and device descriptor for CryptoAuth devices. " alt="" coords="1219,191,1401,233"/>
+<area shape="rect" id="node118" href="$atca__params_8h.html" title="Default configuration for Microchip CryptoAuth devices. " alt="" coords="1597,295,1778,337"/>
+<area shape="rect" id="node120" href="$adc__arch_8h.html" title="Architecture specific ADC definitions and functions for ESP32. " alt="" coords="41546,191,41709,233"/>
+<area shape="rect" id="node121" href="$adc__arch__private_8h.html" title="Architecture specific internal ADC functions for ESP32. " alt="" coords="29937,191,30099,233"/>
+<area shape="rect" id="node122" href="$can__esp_8h.html" title="cpu/esp32/include/can\l_esp.h" alt="" coords="30123,191,30286,233"/>
+<area shape="rect" id="node123" href="$esp32_2include_2gpio__arch_8h.html" title="Architecture specific GPIO functions for ESP32. " alt="" coords="29535,295,29703,337"/>
+<area shape="rect" id="node124" href="$gpio__arch__common_8h.html" title="Architecture specific GPIO functions for ESP SoCs. " alt="" coords="29248,191,29428,233"/>
+<area shape="rect" id="node125" href="$sdhc_8h.html" title="SD card interface functions for sam0 class devices. " alt="" coords="30311,191,30501,233"/>
+<area shape="rect" id="node126" href="$adafruit-grand-central-m4-express_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="41957,184,42151,240"/>
+<area shape="rect" id="node127" href="$adafruit-grand-central-m4-express_2include_2board_8h.html" title="Board specific definitions for the Adafruit Grand Central M4 Express. " alt="" coords="30526,184,30721,240"/>
+<area shape="rect" id="node128" href="$adafruit-itsybitsy-m4_2include_2board_8h.html" title="Board specific definitions for the Adafruit ItsyBitsy M4. " alt="" coords="30745,191,30918,233"/>
+<area shape="rect" id="node129" href="$adafruit-itsybitsy-nrf52_2include_2board_8h.html" title="Board specific configuration for Adafruit ItsyBitsy nRF52840. " alt="" coords="30942,191,31115,233"/>
+<area shape="rect" id="node130" href="$adafruit-metro-m4-express_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="40705,184,40907,240"/>
+<area shape="rect" id="node131" href="$adafruit-metro-m4-express_2include_2board_8h.html" title="Board specific definitions for the Adafruit Metro M4 Express. " alt="" coords="37634,295,37837,337"/>
+<area shape="rect" id="node132" href="$adafruit-pybadge_2include_2board_8h.html" title="Board specific definitions for the Adafruit PyBadge. " alt="" coords="31140,191,31317,233"/>
+<area shape="rect" id="node133" href="$arduino-mkrwan1300_2include_2board_8h.html" title="Support for the Arduino MKRWAN1300 board. " alt="" coords="31341,191,31545,233"/>
+<area shape="rect" id="node134" href="$arduino-nano-33-iot_2include_2board_8h.html" title="Board specific definitions for the Arduino Nano 33 IoT. " alt="" coords="31975,191,32141,233"/>
+<area shape="rect" id="node135" href="$atmega256rfr2-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmega256RFR2 Xplained Pro. " alt="" coords="32165,191,32332,233"/>
+<area shape="rect" id="node136" href="$avr-rss2_2include_2board_8h.html" title="Board definitions for the rss2 256rfr2 board. " alt="" coords="32356,191,32525,233"/>
+<area shape="rect" id="node137" href="$bastwan_2include_2board_8h.html" title="Support for the BASTWAN SAM R34 board. " alt="" coords="32550,191,32721,233"/>
+<area shape="rect" id="node138" href="$cc1312-launchpad_2include_2board_8h.html" title="Board specific definitions for TI CC1352 LaunchPad. " alt="" coords="32745,191,32926,233"/>
+<area shape="rect" id="node139" href="$cc1350-launchpad_2include_2board_8h.html" title="Board specific definitions for TI CC1350 LaunchPad. " alt="" coords="32950,191,33131,233"/>
+<area shape="rect" id="node140" href="$cc1352-launchpad_2include_2board_8h.html" title="Board specific definitions for TI CC1352 LaunchPad. " alt="" coords="33155,191,33337,233"/>
+<area shape="rect" id="node141" href="$cc1352p-launchpad_2include_2board_8h.html" title="Board specific definitions for TI CC1352P LaunchPad. " alt="" coords="33361,191,33550,233"/>
+<area shape="rect" id="node142" href="$cc2538dk_2include_2board_8h.html" title="boards/cc2538dk/include\l/board.h" alt="" coords="33574,191,33753,233"/>
+<area shape="rect" id="node143" href="$cc2650-launchpad_2include_2board_8h.html" title="Board specific definitions for TI CC2650 LaunchPad. " alt="" coords="33827,191,34009,233"/>
+<area shape="rect" id="node144" href="$cc2650stk_2include_2board_8h.html" title="Board configuration for the CC2650STK. " alt="" coords="34033,191,34214,233"/>
+<area shape="rect" id="node145" href="$common_2arduino-due_2include_2board_8h.html" title="Board specific definitions for the Arduino Due based boards. " alt="" coords="19576,191,19753,233"/>
+<area shape="rect" id="node146" href="$common_2arduino-mkr_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="34543,184,34720,240"/>
+<area shape="rect" id="node147" href="$common_2arduino-zero_2include_2board_8h.html" title="Board specific definitions for the Arduino Zero board and clones. " alt="" coords="19777,191,19955,233"/>
+<area shape="rect" id="node148" href="$common_2nucleo144_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="34745,191,34939,233"/>
+<area shape="rect" id="node149" href="$common_2nucleo32_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="34963,191,35150,233"/>
+<area shape="rect" id="node150" href="$remote_2include_2board__common_8h.html" title="Board specific definitions for the RE&#45;Mote boards. " alt="" coords="22769,295,22955,337"/>
+<area shape="rect" id="node151" href="$common_2saml1x_2include_2board_8h.html" title="Board specific definitions for the Microchip SAML10 &amp; SAML11 Xplained Pro board. " alt="" coords="19979,191,20151,233"/>
+<area shape="rect" id="node152" href="$common_2slwstk6000b_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6000B starter kit. " alt="" coords="31711,295,31917,337"/>
+<area shape="rect" id="node153" href="$slwrb4150a_2include_2board__module_8h.html" title="Specific definitions for SLWRB4150A module. " alt="" coords="20379,184,20585,240"/>
+<area shape="rect" id="node154" href="$slwrb4162a_2include_2board__module_8h.html" title="Specific definitions for SLWRB4162A module. " alt="" coords="20609,184,20816,240"/>
+<area shape="rect" id="node155" href="$e180-zg120b-tb_2include_2board_8h.html" title="Board specific definitions for the E180&#45;ZG120B&#45;TB starter kit. " alt="" coords="24930,295,25082,337"/>
+<area shape="rect" id="node156" href="$esp32-heltec-lora32-v2_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="35174,184,35361,240"/>
+<area shape="rect" id="node157" href="$esp32-mh-et-live-minikit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="35385,184,35534,240"/>
+<area shape="rect" id="node158" href="$esp32-olimex-evb_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="35559,184,35712,240"/>
+<area shape="rect" id="node159" href="$esp32-ttgo-t-beam_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="35737,184,35899,240"/>
+<area shape="rect" id="node160" href="$esp32-wemos-lolin-d32-pro_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="35924,184,36080,240"/>
+<area shape="rect" id="node161" href="$esp32-wroom-32_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="36104,184,36260,240"/>
+<area shape="rect" id="node162" href="$esp32-wrover-kit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="36285,184,36442,240"/>
+<area shape="rect" id="node163" href="$esp32c3-devkit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="36467,191,36647,233"/>
+<area shape="rect" id="node164" href="$esp32c3-wemos-mini_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="36671,184,36842,240"/>
+<area shape="rect" id="node165" href="$esp32s2-devkit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="36867,191,37047,233"/>
+<area shape="rect" id="node166" href="$esp32s2-lilygo-ttgo-t8_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="37071,184,37242,240"/>
+<area shape="rect" id="node167" href="$esp32s3-devkit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="37267,191,37447,233"/>
+<area shape="rect" id="node168" href="$esp32s3-pros3_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="37471,191,37651,233"/>
+<area shape="rect" id="node169" href="$esp8266-esp-12x_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="37675,184,37825,240"/>
+<area shape="rect" id="node170" href="$esp8266-olimex-mod_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="37849,184,38019,240"/>
+<area shape="rect" id="node171" href="$esp8266-sparkfun-thing_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="38043,184,38225,240"/>
+<area shape="rect" id="node172" href="$feather-m0_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="38453,191,38644,233"/>
+<area shape="rect" id="node173" href="$feather-m0_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather M0. " alt="" coords="20892,191,21083,233"/>
+<area shape="rect" id="node174" href="$feather-nrf52840_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather nRF52840 Express. " alt="" coords="21107,191,21287,233"/>
+<area shape="rect" id="node175" href="$feather-nrf52840-sense_2include_2board_8h.html" title="Board specific configuration for the Adafruit Feather nRF52840 Sense. " alt="" coords="21311,191,21491,233"/>
+<area shape="rect" id="node176" href="$gd32vf103c-start_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="42640,191,42820,233"/>
+<area shape="rect" id="node177" href="$gd32vf103c-start_2include_2board_8h.html" title="Board specific definitions for the GD32VF103C&#45;START board. " alt="" coords="21515,191,21692,233"/>
+<area shape="rect" id="node178" href="$generic-cc2538-cc2592-dk_2include_2board_8h.html" title="Definitions for the Generic CC2538&#45;CC2592&#45;DK Board. " alt="" coords="21717,191,21909,233"/>
+<area shape="rect" id="node179" href="$hamilton_2include_2board_8h.html" title="Support for the HamiltonIoT Hamilton board. " alt="" coords="21933,191,22106,233"/>
+<area shape="rect" id="node180" href="$hifive1_2include_2board_8h.html" title="Board specific definitions for the SiFive HiFive1 RISC&#45;V board. " alt="" coords="22131,191,22292,233"/>
+<area shape="rect" id="node181" href="$hifive1b_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for the SiFive HiFive1b board. " alt="" coords="22316,191,22485,233"/>
+<area shape="rect" id="node182" href="$ikea-tradfri_2include_2board_8h.html" title="Board specific definitions for the IKEA TRÅDFRI modules. " alt="" coords="31942,295,32081,337"/>
+<area shape="rect" id="node183" href="$lora-e5-dev_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="22509,191,22689,233"/>
+<area shape="rect" id="node184" href="$mbed__lpc1768_2include_2board_8h.html" title="Board specific definitions for the mbed_lpc1768 board. " alt="" coords="22713,191,22875,233"/>
+<area shape="rect" id="node185" href="$nrf51dk_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="38668,191,38837,233"/>
+<area shape="rect" id="node186" href="$nrf52840-mdk-dongle_2include_2board_8h.html" title="Board specific configuration for the nRF52840 MDK USB Dongle. " alt="" coords="22899,191,23071,233"/>
+<area shape="rect" id="node187" href="$nrf52840dk_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="38861,191,39055,233"/>
+<area shape="rect" id="node188" href="$nrf52840dongle_2include_2board_8h.html" title="Board specific configuration for the nRF52840&#45;Dongle. " alt="" coords="23095,191,23267,233"/>
+<area shape="rect" id="node189" href="$nrf52dk_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="39079,191,39248,233"/>
+<area shape="rect" id="node190" href="$nucleo-wl55jc_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="39272,191,39452,233"/>
+<area shape="rect" id="node191" href="$omote_2include_2board_8h.html" title="Board specific definitions for the omote board. " alt="" coords="20154,295,20314,337"/>
+<area shape="rect" id="node192" href="$openmote-b_2include_2board_8h.html" title="Board specific definitions for the OpenMote&#45;B board. " alt="" coords="23393,191,23589,233"/>
+<area shape="rect" id="node193" href="$openmote-cc2538_2include_2board_8h.html" title="Board specific definitions for the OpenMote&#45;cc2538 board. " alt="" coords="23823,191,24005,233"/>
+<area shape="rect" id="node194" href="$p-nucleo-wb55_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="38249,191,38429,233"/>
+<area shape="rect" id="node195" href="$remote-revb_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for Remote revision B board. " alt="" coords="39476,191,39656,233"/>
+<area shape="rect" id="node196" href="$rpi-pico_2include_2board_8h.html" title="Board specific definitions for the Raspberry Pi Pico. " alt="" coords="24030,191,24195,233"/>
+<area shape="rect" id="node197" href="$sam4s-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM 4S Xplained Pro board. " alt="" coords="24220,191,24411,233"/>
+<area shape="rect" id="node198" href="$samd10-xmini_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D10 Xplained Mini board. " alt="" coords="24435,191,24591,233"/>
+<area shape="rect" id="node199" href="$samd20-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D20 Xplained Pro board. " alt="" coords="24615,191,24767,233"/>
+<area shape="rect" id="node200" href="$samd21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM D21 Xplained Pro board. " alt="" coords="24791,191,24943,233"/>
+<area shape="rect" id="node201" href="$same51-curiosity-nano_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM E51 Curiosity Nano board. " alt="" coords="24968,191,25143,233"/>
+<area shape="rect" id="node202" href="$same54-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM E54 Xplained Pro board. " alt="" coords="25218,191,25370,233"/>
+<area shape="rect" id="node203" href="$saml21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM L21 Xplained Pro board. " alt="" coords="25394,191,25541,233"/>
+<area shape="rect" id="node204" href="$samr21-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM R21 Xplained Pro board. " alt="" coords="25971,191,26121,233"/>
+<area shape="rect" id="node205" href="$samr30-xpro_2include_2board_8h.html" title="Board specific definitions for the Atmel SAM R30 Xplained Pro board. " alt="" coords="26145,191,26296,233"/>
+<area shape="rect" id="node206" href="$samr34-xpro_2include_2board_8h.html" title="Board specific definitions for the Microchip SAM R34 Xplained Pro board. " alt="" coords="26320,191,26471,233"/>
+<area shape="rect" id="node207" href="$seeedstudio-gd32_2include_2board_8h.html" title="Board specific definitions for the SeeedStudio GD32 RISC&#45;V board. " alt="" coords="26495,191,26656,233"/>
+<area shape="rect" id="node208" href="$seeeduino__arch-pro_2include_2board_8h.html" title="Board specific definitions for the Seeduino Arch Pro board. " alt="" coords="26681,191,26849,233"/>
+<area shape="rect" id="node209" href="$seeeduino__xiao_2include_2board_8h.html" title="Support for the Seeeduino XIAO board. " alt="" coords="26873,191,27040,233"/>
+<area shape="rect" id="node210" href="$sensebox__samd21_2include_2board_8h.html" title="Support for the SenseBox MCU with SAMD21 board. " alt="" coords="27065,191,27249,233"/>
+<area shape="rect" id="node211" href="$serpente_2include_2board_8h.html" title="Support for the Serpente board. " alt="" coords="27273,191,27449,233"/>
+<area shape="rect" id="node212" href="$sipeed-longan-nano_2include_2board_8h.html" title="Board specific definitions for the Sipeed Longan Nano board. " alt="" coords="27473,191,27633,233"/>
+<area shape="rect" id="node213" href="$slstk3400a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3400A starter kit. " alt="" coords="20533,295,20719,337"/>
+<area shape="rect" id="node214" href="$slstk3401a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3401A starter kit. " alt="" coords="33697,295,33883,337"/>
+<area shape="rect" id="node215" href="$slstk3402a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3402A starter kit. " alt="" coords="34083,295,34268,337"/>
+<area shape="rect" id="node216" href="$slstk3701a_2include_2board_8h.html" title="Board specific definitions for the SLSTK3701A starter kit. " alt="" coords="21872,295,22057,337"/>
+<area shape="rect" id="node217" href="$sltb001a_2include_2board_8h.html" title="Board specific definitions for the SLTB001A starter kit. " alt="" coords="34292,295,34464,337"/>
+<area shape="rect" id="node218" href="$sltb009a_2include_2board_8h.html" title="Board specific definitions for the SLTB009A starter kit. " alt="" coords="22572,295,22744,337"/>
+<area shape="rect" id="node219" href="$slwstk6220a_2include_2board_8h.html" title="Board specific definitions for the SLWSTK6220A starter kit. " alt="" coords="25107,295,25254,337"/>
+<area shape="rect" id="node220" href="$sodaq-autonomo_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for the sodaq&#45;autonomo. " alt="" coords="39680,191,39860,233"/>
+<area shape="rect" id="node221" href="$sodaq-autonomo_2include_2board_8h.html" title="Board specific definitions for the SODAQ Autonomo board. " alt="" coords="27657,191,27832,233"/>
+<area shape="rect" id="node222" href="$sodaq-explorer_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="39884,191,40064,233"/>
+<area shape="rect" id="node223" href="$sodaq-explorer_2include_2board_8h.html" title="Board specific definitions for the SODAQ ExpLoRer board. " alt="" coords="27857,191,28022,233"/>
+<area shape="rect" id="node224" href="$sodaq-one_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="40089,191,40273,233"/>
+<area shape="rect" id="node225" href="$sodaq-one_2include_2board_8h.html" title="Board specific definitions for the SODAQ ONE board. " alt="" coords="28046,191,28230,233"/>
+<area shape="rect" id="node226" href="$sodaq-sara-aff_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="40297,191,40477,233"/>
+<area shape="rect" id="node227" href="$sodaq-sara-aff_2include_2board_8h.html" title="Board specific definitions for the SODAQ SARA AFF boards. " alt="" coords="28255,191,28413,233"/>
+<area shape="rect" id="node228" href="$sodaq-sara-sff_2include_2arduino__iomap_8h.html" title="Board specific configuration for the Arduino API. " alt="" coords="40501,191,40681,233"/>
+<area shape="rect" id="node229" href="$sodaq-sara-sff_2include_2board_8h.html" title="Board specific definitions for the SODAQ SARA SFF board. " alt="" coords="28438,191,28595,233"/>
+<area shape="rect" id="node230" href="$stk3200_2include_2board_8h.html" title="Board specific definitions for the STK3200 starter kit. " alt="" coords="25411,295,25580,337"/>
+<area shape="rect" id="node231" href="$stk3600_2include_2board_8h.html" title="Board specific definitions for the STK3600 starter kit. " alt="" coords="25604,295,25773,337"/>
+<area shape="rect" id="node232" href="$stk3700_2include_2board_8h.html" title="Board specific definitions for the STK3700 starter kit. " alt="" coords="25797,295,25967,337"/>
+<area shape="rect" id="node233" href="$stm32f4discovery_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="40931,191,41113,233"/>
+<area shape="rect" id="node234" href="$stm32l496g-disco_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins for the STM32L496G&#45;DISCO board. " alt="" coords="41137,191,41317,233"/>
+<area shape="rect" id="node235" href="$ublox-c030-u201_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="41341,191,41521,233"/>
+<area shape="rect" id="node236" href="$waveshare-nrf52840-eval-kit_2include_2arduino__iomap_8h.html" title="Mapping from MCU pins to Arduino pins. " alt="" coords="41733,184,41933,240"/>
+<area shape="rect" id="node237" href="$xg23-pk6068a_2include_2board_8h.html" title="Board specific definitions for the xG23&#45;PK6068A. " alt="" coords="28671,191,28829,233"/>
+<area shape="rect" id="node238" href="$at24cxxx__params_8h.html" title="Default configuration for the AT24CXXX driver. " alt="" coords="28853,191,29028,233"/>
+<area shape="rect" id="node239" href="$cc110x__communication_8h.html" title="Functions to communicate with the CC1100/CC1101 transceiver. " alt="" coords="20763,392,20945,433"/>
+<area shape="rect" id="node240" href="$dfplayer__constants_8h.html" title="Constants used in the DFPlayer Mini Driver. " alt="" coords="29052,191,29224,233"/>
+<area shape="rect" id="node241" href="$dfplayer__types_8h.html" title="Types used in the DFPlayer Mini Device Driver. " alt="" coords="42888,295,43060,337"/>
+<area shape="rect" id="node242" href="$dsp0401__params_8h.html" title="Default configuration for DSP0401. " alt="" coords="42947,191,43121,233"/>
+<area shape="rect" id="node243" href="$grove__ledbar__params_8h.html" title="Config for the Grove LED bar based on MY9221 LED controller. " alt="" coords="29452,184,29611,240"/>
+<area shape="rect" id="node244" href="$hd44780__params_8h.html" title="Pinout config for the HD44780 display. " alt="" coords="29635,191,29811,233"/>
+<area shape="rect" id="node246" href="$adt7310_8h.html" title="Interface definition for the ADT7310 sensor driver. " alt="" coords="22981,303,23165,329"/>
+<area shape="rect" id="node247" href="$at25xxx_8h.html" title="Driver for the AT25xxx series of EEPROMs. " alt="" coords="23434,303,23615,329"/>
+<area shape="rect" id="node248" href="$at86rf215_8h.html" title="Interface definition for AT86RF215 based drivers. " alt="" coords="19387,303,19582,329"/>
+<area shape="rect" id="node249" href="$at86rf2xx_8h.html" title="Interface definition for AT86RF2xx based drivers. " alt="" coords="23763,303,23956,329"/>
+<area shape="rect" id="node250" href="$ata8520e_8h.html" title="Device driver for Microchip ATA8520E transceiver (Sigfox) " alt="" coords="24041,303,24232,329"/>
+<area shape="rect" id="node251" href="$atwinc15x0_8h.html" title="Netdev Driver for the Microchip ATWINC15x0 WiFi Module. " alt="" coords="24287,303,24490,329"/>
+<area shape="rect" id="node252" href="$candev__mcp2515_8h.html" title="Definition of the implementation of the CAN controller driver. " alt="" coords="24529,295,24693,337"/>
+<area shape="rect" id="node253" href="$cc110x_8h.html" title="Interface definition for the CC1100/CC1101 driver. " alt="" coords="25991,303,26165,329"/>
+<area shape="rect" id="node254" href="$cc2420_8h.html" title="Interface definition for the CC2420 driver. " alt="" coords="24726,303,24902,329"/>
+<area shape="rect" id="node257" href="$apa102_8h.html" title="Interface for controlling APA102 LEDs. " alt="" coords="20175,199,20354,225"/>
+</map>

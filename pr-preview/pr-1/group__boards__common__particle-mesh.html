@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Particle Mesh common</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__boards__common__particle-mesh.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">Particle Mesh common<div class="ingroups"><a class="el" href="group__boards.html">Boards</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+Common support for the Particle Mesh boards family (Xenon, Argon, Boron)  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><br />
+</p>
+<p>Common support for the Particle Mesh boards family (Xenon, Argon, Boron) </p>
+<p><a href="https://www.particle.io/mesh/">Particle Mesh</a> are mesh-ready development kits. Depending on the board type (Xenon, Argon, Boron), it provides access to multiple communication protocols: BLE, 802.15.4, WiFi, LTE.</p>
+<p>Using the <a href="https://docs.particle.io/datasheets/accessories/mesh-accessories/#debugger">Particle Mesh debugger</a>, the board can be flashed with PyOCD programmer via a DAPLink.</p>
+<p>PyOCD can be installed using Python package manager: </p><div class="fragment"><div class="line">pip install pyocd --user -U</div></div><!-- fragment --><p>To flash the board, use <code>BOARD=&lt;board name&gt;</code> (with board name in {particle-argon, particle-boron, particle-xenon}) with the <code>make</code> command.<br />
+ Example with <code>hello-world</code> application: </p><div class="fragment"><div class="line">make BOARD=particle-xenon -C examples/basic/hello-world flash</div></div><!-- fragment --><p>In this case, OpenOCD can also be used. For the moment, the latest stable version of OpenOCD (0.10) doesn't contain any support for nrf52 but versions built against the actual development version can be used.</p>
+<p>To flash the board with OpenOCD, use the <code>PROGRAMMER</code> variable: </p><div class="fragment"><div class="line">PROGRAMMER=openocd make BOARD=&lt;board name&gt; -C examples/basic/hello-world flash</div></div><!-- fragment --><p>As an alternative to using the Particle Mesh debugger, the USB DFU mode bootloader shipped with Particle Mesh devices can be used. That mode can be entered by keeping the SETUP/MODE button pressed after power-up or reset until the RGB LED <b>blinks yellow fast</b>.</p>
+<p>In this mode, the bootloader and Soft Device are kept in place, reducing the available flash memory to 784kB, but in turn, devices can easily be switched back to using Particle software.</p>
+<p>In order to use this mode, set <code>PARTICLE_MONOFIRMWARE=1</code> wherever you set the <code>BOARD</code>. This will trigger the use of the appropriate linker script, and switch in <a href="http://dfu-util.sourceforge.net/"><code>dfu-util</code></a> as the default programmer, which needs to be installed.</p>
+<p>On Linux hosts, devices for the DFU mode are frequently only accessible to root, causing error messages like </p><pre class="fragment">dfu-util: Cannot open DFU device 2b04:d00e
+dfu-util: No DFU capable USB device available
+</pre><p>To make Particle devices writable for all users, follow <a href="https://docs.particle.io/support/particle-tools-faq/installing-dfu-util/">Particle's instructions</a> on setting up dfu-util.</p>
+<p>The Particle bootloader checks the firmware's checksum at startup time. As these checks would be frustrated by flash writes inside RIOT (typically using the <a class="el" href="group__drivers__periph__flashpage.html">Flash page driver</a>), the CFLAG <a class="el" href="common_2particle-mesh_2include_2board_8h.html#a5488bec84d59fabc84e4b61dd3f2ce06">-DPARTICLE_MONOFIRMWARE_CHECKSUMLIMIT</a> can be set. Then, the checksum is only calculated over the memory region that contains the interrupt vector and the bootloader manifest.</p>
+<p>The on-board reset button doesn't work, so to trigger a reset of the board, use the <code>reset</code> target with <code>make</code>: </p><div class="fragment"><div class="line">make BOARD=&lt;board name&gt; -C examples/basic/hello-world reset</div></div><!-- fragment --><p>By default, the board uses USB to expose a serial terminal. Other stdio options can be enabled as modules to replace that.</p>
+<p>When the <code>stdio_uart</code> module is used, it defaults to using UART0, which is configured for the board's RX/TX pin pair.</p>
+<p>The Particle Mesh boards all have two antenna choices for their nRF (Bluetooth / 802.15.4) radios, a on-board antenna and a U.FL connector for an external antenna.</p>
+<p>By default, the on-board antenna is selected at startup. That choice can be overridden by setting <code>BOARD_NRFANTENNA_DEFAULT = EXTERNAL</code> (as opposed to the default <code>BUILTIN</code>) in a project's <code>Makefile</code>, or at runtime using <a class="el" href="common_2particle-mesh_2include_2board_8h.html#a256a868fbdd26f23b010090d1b37c437">board_nrfantenna_select</a> function.</p>
+<p>The external antenna connection should only be enabled if a suitable antenna is connected. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:common_2particle-mesh_2include_2bat__voltage__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_2particle-mesh_2include_2bat__voltage__params_8h.html">bat_voltage_params.h</a></td></tr>
+<tr class="memdesc:common_2particle-mesh_2include_2bat__voltage__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped battery voltage information. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:common_2particle-mesh_2include_2board_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_2particle-mesh_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:common_2particle-mesh_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common board specific configuration for the Particle Mesh. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:common_2particle-mesh_2include_2gpio__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_2particle-mesh_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:common_2particle-mesh_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped GPIO pins. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:particle-mesh_2include_2periph__conf__common_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="particle-mesh_2include_2periph__conf__common_8h.html">periph_conf_common.h</a></td></tr>
+<tr class="memdesc:particle-mesh_2include_2periph__conf__common_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common peripheral configuration for the Particle Mesh. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:common_2particle-mesh_2include_2pwm__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="common_2particle-mesh_2include_2pwm__params_8h.html">pwm_params.h</a></td></tr>
+<tr class="memdesc:common_2particle-mesh_2include_2pwm__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration of SAUL mapped PWM channels. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

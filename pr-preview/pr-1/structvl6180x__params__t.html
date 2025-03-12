@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>vl6180x_params_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structvl6180x__params__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">vl6180x_params_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__vl6180x.html">VL6180X Ranging and Ambient Light Sensing (ALS) module</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>VL6180X device configuration.  
+ <a href="structvl6180x__params__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>VL6180X device configuration. </p>
+
+<p class="definition">Definition at line <a class="el" href="vl6180x_8h_source.html#l00549">549</a> of file <a class="el" href="vl6180x_8h_source.html">vl6180x.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="vl6180x_8h_source.html">vl6180x.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa3331bdbe9ffead1999020d9fdef4f9a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#aa3331bdbe9ffead1999020d9fdef4f9a">period</a></td></tr>
+<tr class="memdesc:aa3331bdbe9ffead1999020d9fdef4f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measurement period in continuous mode in steps of 10 ms (default 20 = 200 ms).  <a href="#aa3331bdbe9ffead1999020d9fdef4f9a">More...</a><br /></td></tr>
+<tr class="separator:aa3331bdbe9ffead1999020d9fdef4f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Hardware configuration</h2></td></tr>
+<tr class="memitem:aed283ac707d68ef0a49a3ae1fccc3dd2"><td class="memItemLeft" align="right" valign="top"><a id="aed283ac707d68ef0a49a3ae1fccc3dd2"></a>
+unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#aed283ac707d68ef0a49a3ae1fccc3dd2">i2c_dev</a></td></tr>
+<tr class="memdesc:aed283ac707d68ef0a49a3ae1fccc3dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C device, default <a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> <br /></td></tr>
+<tr class="separator:aed283ac707d68ef0a49a3ae1fccc3dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba895c1dfcd29928d07b7d4c92b7ee8"><td class="memItemLeft" align="right" valign="top"><a id="a8ba895c1dfcd29928d07b7d4c92b7ee8"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a8ba895c1dfcd29928d07b7d4c92b7ee8">i2c_addr</a></td></tr>
+<tr class="memdesc:a8ba895c1dfcd29928d07b7d4c92b7ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C slave address. <br /></td></tr>
+<tr class="separator:a8ba895c1dfcd29928d07b7d4c92b7ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156e0a45977d503f68352fd8844253fc"><td class="memItemLeft" align="right" valign="top"><a id="a156e0a45977d503f68352fd8844253fc"></a>
+<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a156e0a45977d503f68352fd8844253fc">shutdown_pin</a></td></tr>
+<tr class="memdesc:a156e0a45977d503f68352fd8844253fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shutdown pin, LOW active. <br /></td></tr>
+<tr class="separator:a156e0a45977d503f68352fd8844253fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23f825a687c48778d24133ca817104e"><td class="memItemLeft" align="right" valign="top"><a id="ad23f825a687c48778d24133ca817104e"></a>
+<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#ad23f825a687c48778d24133ca817104e">int_pin</a></td></tr>
+<tr class="memdesc:ad23f825a687c48778d24133ca817104e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt pin, LOW active. <br /></td></tr>
+<tr class="separator:ad23f825a687c48778d24133ca817104e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e46006d9985bc9bdd0af18aff5cef5"><td class="memItemLeft" align="right" valign="top"><a id="a41e46006d9985bc9bdd0af18aff5cef5"></a>
+<a class="el" href="structvl6180x__int__config__t.html">vl6180x_int_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a41e46006d9985bc9bdd0af18aff5cef5">int_cfg</a></td></tr>
+<tr class="memdesc:a41e46006d9985bc9bdd0af18aff5cef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt mode configuration. <br /></td></tr>
+<tr class="separator:a41e46006d9985bc9bdd0af18aff5cef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5293d5209b3b68e23aa7c4b5e04d244"><td class="memItemLeft" align="right" valign="top"><a id="ac5293d5209b3b68e23aa7c4b5e04d244"></a>
+<a class="el" href="structvl6180x__int__thresh__t.html">vl6180x_int_thresh_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#ac5293d5209b3b68e23aa7c4b5e04d244">int_thresh</a></td></tr>
+<tr class="memdesc:ac5293d5209b3b68e23aa7c4b5e04d244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt threshold configuration. <br /></td></tr>
+<tr class="separator:ac5293d5209b3b68e23aa7c4b5e04d244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Range measurement configuration</h2></td></tr>
+<tr class="memitem:a41591bd06ae590008cea1ca565be2f71"><td class="memItemLeft" align="right" valign="top"><a id="a41591bd06ae590008cea1ca565be2f71"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a41591bd06ae590008cea1ca565be2f71">rng_max_time</a></td></tr>
+<tr class="memdesc:a41591bd06ae590008cea1ca565be2f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum convergence time in ms [1...63] given to the sensor to perform a range measurement (default 50 = 50 ms) <br /></td></tr>
+<tr class="separator:a41591bd06ae590008cea1ca565be2f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+ALS measurement configuration</h2></td></tr>
+<tr class="memitem:a0aa0035dda5095061a43b31e5f6370f5"><td class="memItemLeft" align="right" valign="top"><a id="a0aa0035dda5095061a43b31e5f6370f5"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a0aa0035dda5095061a43b31e5f6370f5">als_int_time</a></td></tr>
+<tr class="memdesc:a0aa0035dda5095061a43b31e5f6370f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALS integration time in ms [1...512] (default 100 = 100 ms, <b>recommended</b>) <br /></td></tr>
+<tr class="separator:a0aa0035dda5095061a43b31e5f6370f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a651f03c1c10e5178f1a7c27cd283c8ef"><td class="memItemLeft" align="right" valign="top"><a id="a651f03c1c10e5178f1a7c27cd283c8ef"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#a651f03c1c10e5178f1a7c27cd283c8ef">als_lux_res</a></td></tr>
+<tr class="memdesc:a651f03c1c10e5178f1a7c27cd283c8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALS lux resolution multiplied by factor 1000 (default 0.32 lux/count is the factory calibrated lux resolution without cover glas) <br /></td></tr>
+<tr class="separator:a651f03c1c10e5178f1a7c27cd283c8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab306b1a7590e6929a3a78b542d4ff040"><td class="memItemLeft" align="right" valign="top"><a id="ab306b1a7590e6929a3a78b542d4ff040"></a>
+<a class="el" href="group__drivers__vl6180x.html#gaba8bc8b0923dafee52fbe268058ea275">vl6180x_als_gain_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvl6180x__params__t.html#ab306b1a7590e6929a3a78b542d4ff040">als_gain</a></td></tr>
+<tr class="memdesc:ab306b1a7590e6929a3a78b542d4ff040"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALS analogue gain for light channel (default VL6180X_ALS_GAIN_1_0) <br /></td></tr>
+<tr class="separator:ab306b1a7590e6929a3a78b542d4ff040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="aa3331bdbe9ffead1999020d9fdef4f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3331bdbe9ffead1999020d9fdef4f9a">&#9670;&nbsp;</a></span>period</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t vl6180x_params_t::period</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Measurement period in continuous mode in steps of 10 ms (default 20 = 200 ms). </p>
+<p>The measurement period also controls the measurement mode used after sensor initialization. If the configured measurement period is 0, the single-shot mode is enabled for both the range and ALS measurements. The functions vl6180x_rng_start_single and vl6180x_als_start_single must then be used to start a single measurement. Otherwise, the continuous mode is activated for both measurements, which are started immediately after sensor initialization with the configured measurement period. This also applies to the initialization after a power-down and power-up cycle.</p>
+<dl class="section note"><dt>Note</dt><dd>When ALS and range measurements are used in continuous mode, the so-called interleaved mode is used automatically, where an ALS measurement is immediately followed by a range measurement and repeated with the defined period. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="vl6180x_8h_source.html#l00588">588</a> of file <a class="el" href="vl6180x_8h_source.html">vl6180x.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="vl6180x_8h_source.html">vl6180x.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:36 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

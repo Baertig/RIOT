@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Entropy Source compile configurations</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__entropy__source__config.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Entropy Source compile configurations<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__entropy__source.html">Entropy Sources</a> &raquo; <a class="el" href="group__sys__entropy__source__common.html">Entropy Source Common</a> &#124; <a class="el" href="group__config.html">Compile time configurations</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga4ab54924ce5c8ac67ea6ccd7b72ec1cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga4ab54924ce5c8ac67ea6ccd7b72ec1cd">CONFIG_ENTROPY_SOURCE_TESTS_WIN</a>&#160;&#160;&#160;(512)</td></tr>
+<tr class="memdesc:ga4ab54924ce5c8ac67ea6ccd7b72ec1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Window size for Adaptive Proportion Test (NIST SP 800-90B 4.4.2).  <a href="#ga4ab54924ce5c8ac67ea6ccd7b72ec1cd">More...</a><br /></td></tr>
+<tr class="separator:ga4ab54924ce5c8ac67ea6ccd7b72ec1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f26353d163eaf6b6cb96f0dc7393e72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga9f26353d163eaf6b6cb96f0dc7393e72">CONFIG_ENTROPY_SOURCE_NEUMANN_ABORT</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:ga9f26353d163eaf6b6cb96f0dc7393e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort factor for von Neumann extractor.  <a href="#ga9f26353d163eaf6b6cb96f0dc7393e72">More...</a><br /></td></tr>
+<tr class="separator:ga9f26353d163eaf6b6cb96f0dc7393e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98ca8f0a74b8ff1ad9371ae188130845"><td class="memItemLeft" align="right" valign="top"><a id="ga98ca8f0a74b8ff1ad9371ae188130845"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga98ca8f0a74b8ff1ad9371ae188130845">CONFIG_ENTROPY_SOURCE_ADC_RES</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__adc.html#ggae4d48fdca21097fd8b34324f33ae4020ae21291741a3a61209b20161449066b5a">ADC_RES_10BIT</a></td></tr>
+<tr class="memdesc:ga98ca8f0a74b8ff1ad9371ae188130845"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC resolution default configuration. <br /></td></tr>
+<tr class="separator:ga98ca8f0a74b8ff1ad9371ae188130845"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2cd2ee565693595de78fbfd99b8f5147"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga2cd2ee565693595de78fbfd99b8f5147">CONFIG_ENTROPY_SOURCE_ADC_LINE</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888">ADC_LINE</a>(0)</td></tr>
+<tr class="memdesc:ga2cd2ee565693595de78fbfd99b8f5147"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC line default configuration.  <a href="#ga2cd2ee565693595de78fbfd99b8f5147">More...</a><br /></td></tr>
+<tr class="separator:ga2cd2ee565693595de78fbfd99b8f5147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaffb640c981502b3e705460a64038651c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gaffb640c981502b3e705460a64038651c">CONFIG_ENTROPY_SOURCE_ADC_HMIN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gaffb640c981502b3e705460a64038651c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC estimated entropy per sample [2^16 * bit/sample].  <a href="#gaffb640c981502b3e705460a64038651c">More...</a><br /></td></tr>
+<tr class="separator:gaffb640c981502b3e705460a64038651c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga942687afa455a8d3356afa5e8fa42464"><td class="memItemLeft" align="right" valign="top"><a id="ga942687afa455a8d3356afa5e8fa42464"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga942687afa455a8d3356afa5e8fa42464">CONFIG_ENTROPY_SOURCE_ADC_HEALTH_TEST</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga942687afa455a8d3356afa5e8fa42464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable ADC health test by default. <br /></td></tr>
+<tr class="separator:ga942687afa455a8d3356afa5e8fa42464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacc1ad5779488e7b2592834feb43693d8"><td class="memItemLeft" align="right" valign="top"><a id="gacc1ad5779488e7b2592834feb43693d8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gacc1ad5779488e7b2592834feb43693d8">CONFIG_ENTROPY_SOURCE_ADC_COND</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:gacc1ad5779488e7b2592834feb43693d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable ADC conditioning test by default. <br /></td></tr>
+<tr class="separator:gacc1ad5779488e7b2592834feb43693d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad64c33dd4bdeb59cf3e13d860fe07bce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gad64c33dd4bdeb59cf3e13d860fe07bce">CONFIG_ENTROPY_SOURCE_ZERO_HMIN</a>&#160;&#160;&#160;(58982)</td></tr>
+<tr class="memdesc:gad64c33dd4bdeb59cf3e13d860fe07bce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Min.  <a href="#gad64c33dd4bdeb59cf3e13d860fe07bce">More...</a><br /></td></tr>
+<tr class="separator:gad64c33dd4bdeb59cf3e13d860fe07bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0210174b5b535d9e5f46552d13ffbdd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#gaa0210174b5b535d9e5f46552d13ffbdd">CONFIG_ENTROPY_SOURCE_ZERO_HEALTH_TEST</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gaa0210174b5b535d9e5f46552d13ffbdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable health test by default.  <a href="#gaa0210174b5b535d9e5f46552d13ffbdd">More...</a><br /></td></tr>
+<tr class="separator:gaa0210174b5b535d9e5f46552d13ffbdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18b5b02be31dfa2a069b591f6f9f4353"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__entropy__source__config.html#ga18b5b02be31dfa2a069b591f6f9f4353">CONFIG_ENTROPY_SOURCE_ZERO_COND</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga18b5b02be31dfa2a069b591f6f9f4353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable conditioning by default.  <a href="#ga18b5b02be31dfa2a069b591f6f9f4353">More...</a><br /></td></tr>
+<tr class="separator:ga18b5b02be31dfa2a069b591f6f9f4353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gaffb640c981502b3e705460a64038651c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaffb640c981502b3e705460a64038651c">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ADC_HMIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ADC_HMIN&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC estimated entropy per sample [2^16 * bit/sample]. </p>
+<p>The entropy value needs to be estimated and evaluated thoroughly beforehand deployment! To avoid float, the actual entropy value per one byte sample needs to be manually multiplied by 2^16 before before configuring it (e.g., to an entropy value of 1 bit/sample, a value of 1 * 65536 needs to be set) . We default to zero which is an invalid configuration to enforce a thoughtful investigation on the actual entropy properties. See <a class="el" href="group__sys__entropy__source.html">Entropy Sources</a> for further information about entropy source validation.H_min=0 bit/sample * 2^16 is invalid and needs to set manually! </p>
+
+<p class="definition">Definition at line <a class="el" href="adc__noise_8h_source.html#l00099">99</a> of file <a class="el" href="adc__noise_8h_source.html">adc_noise.h</a>.</p>
+
+</div>
+</div>
+<a id="ga2cd2ee565693595de78fbfd99b8f5147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2cd2ee565693595de78fbfd99b8f5147">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ADC_LINE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ADC_LINE&#160;&#160;&#160;<a class="el" href="group__drivers__periph__adc.html#gaf0487d2e8711bf1c9e7daa6e61e05888">ADC_LINE</a>(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ADC line default configuration. </p>
+<p>The ADC line maps to an I/O pin. This number acts as index to an array of predefined ADC devices that contain the pin definition. Typically, the array is defined by a board in a periph_conf.h file. Please note that a board is not required to specify a minimum number of lines. </p>
+
+<p class="definition">Definition at line <a class="el" href="adc__noise_8h_source.html#l00081">81</a> of file <a class="el" href="adc__noise_8h_source.html">adc_noise.h</a>.</p>
+
+</div>
+</div>
+<a id="ga9f26353d163eaf6b6cb96f0dc7393e72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f26353d163eaf6b6cb96f0dc7393e72">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_NEUMANN_ABORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_NEUMANN_ABORT&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Abort factor for von Neumann extractor. </p>
+<p>The algorithms runs as long as no bit changes appear in subsequent samples. This define adds a factor that aborts the procedure after (factor * requested length) samples. </p>
+
+<p class="definition">Definition at line <a class="el" href="entropy__source_8h_source.html#l00104">104</a> of file <a class="el" href="entropy__source_8h_source.html">entropy_source.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4ab54924ce5c8ac67ea6ccd7b72ec1cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ab54924ce5c8ac67ea6ccd7b72ec1cd">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_TESTS_WIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_TESTS_WIN&#160;&#160;&#160;(512)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Window size for Adaptive Proportion Test (NIST SP 800-90B 4.4.2). </p>
+<p>In (NIST SP 800-90B 4.4.2) a window size of 512 samples is recommended for non-binary sources. Typically, RIOT use cases will not request as many samples, thus, it might be worth considering a smaller window size so the test is more likely to complete a cycle. It is noteworthy that a cutoff value calculated by <a class="el" href="group__sys__entropy__source__common.html#gadc6b5a9fa06e6dbcb6f69fc9a2b4ed85">entropy_source_test_prop_cutoff</a> that is greater than the window size may lead to undetected errors. </p>
+
+<p class="definition">Definition at line <a class="el" href="entropy__source_8h_source.html#l00094">94</a> of file <a class="el" href="entropy__source_8h_source.html">entropy_source.h</a>.</p>
+
+</div>
+</div>
+<a id="ga18b5b02be31dfa2a069b591f6f9f4353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18b5b02be31dfa2a069b591f6f9f4353">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ZERO_COND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ZERO_COND&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable conditioning by default. </p>
+<p>Conditioning is useless for zeros only. The von Neumann extractor would never finish and wait for the stop criterion given by <a class="el" href="group__sys__entropy__source__config.html#ga9f26353d163eaf6b6cb96f0dc7393e72">CONFIG_ENTROPY_SOURCE_NEUMANN_ABORT</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="zero__entropy_8h_source.html#l00064">64</a> of file <a class="el" href="zero__entropy_8h_source.html">zero_entropy.h</a>.</p>
+
+</div>
+</div>
+<a id="gaa0210174b5b535d9e5f46552d13ffbdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0210174b5b535d9e5f46552d13ffbdd">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ZERO_HEALTH_TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ZERO_HEALTH_TEST&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable health test by default. </p>
+<p>Testing is the only purpose of this module. </p>
+
+<p class="definition">Definition at line <a class="el" href="zero__entropy_8h_source.html#l00053">53</a> of file <a class="el" href="zero__entropy_8h_source.html">zero_entropy.h</a>.</p>
+
+</div>
+</div>
+<a id="gad64c33dd4bdeb59cf3e13d860fe07bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad64c33dd4bdeb59cf3e13d860fe07bce">&#9670;&nbsp;</a></span>CONFIG_ENTROPY_SOURCE_ZERO_HMIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_ENTROPY_SOURCE_ZERO_HMIN&#160;&#160;&#160;(58982)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Min. </p>
+<p>Entropy value for zero entropy module.</p>
+<p>H_min=0.9 bit/sample * 2^16 fake for testing! </p>
+
+<p class="definition">Definition at line <a class="el" href="zero__entropy_8h_source.html#l00044">44</a> of file <a class="el" href="zero__entropy_8h_source.html">zero_entropy.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

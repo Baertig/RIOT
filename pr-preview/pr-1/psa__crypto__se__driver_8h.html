@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/psa_crypto/include/psa_crypto_se_driver.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('psa__crypto__se__driver_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle">
+<div class="title">psa_crypto_se_driver.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a> &raquo; <a class="el" href="group__sys__psa__crypto__se__driver.html">PSA Crypto Secure Element Wrapper</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>PSA external cryptoprocessor driver module.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PSA external cryptoprocessor driver module. </p>
+<p>This header declares types and function signatures for cryptography drivers that access key material via opaque references. This is meant for cryptoprocessors that have a separate key storage from the space in which the PSA Crypto implementation runs, typically secure elements (SEs).</p>
+<p>This file is part of the PSA Crypto Driver HAL (hardware abstraction layer), containing functions for driver developers to implement to enable hardware to be called in a standardized way by a PSA Cryptography API implementation. The functions comprising the driver HAL, which driver authors implement, are not intended to be called by application developers. </p>
+
+<p class="definition">Definition in file <a class="el" href="psa__crypto__se__driver_8h_source.html">psa_crypto_se_driver.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="crypto__values_8h_source.html">psa/crypto_values.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="crypto__types_8h_source.html">psa/crypto_types.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for psa_crypto_se_driver.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="psa__crypto__se__driver_8h__incl.svg" width="1487" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="psa__crypto__se__driver_8h__dep__incl.svg" width="395" height="335"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="psa__crypto__se__driver_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver context structure.  <a href="structpsa__drv__se__context__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__mac__t.html">psa_drv_se_mac_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to perform secure element MAC operations.  <a href="structpsa__drv__se__mac__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__cipher__t.html">psa_drv_se_cipher_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to implement cipher operations using secure elements.  <a href="structpsa__drv__se__cipher__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__asymmetric__t.html">psa_drv_se_asymmetric_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to implement asymmetric cryptographic operations using secure elements.  <a href="structpsa__drv__se__asymmetric__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__aead__t.html">psa_drv_se_aead_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to implement secure element Authenticated Encryption with Additional Data operations.  <a href="structpsa__drv__se__aead__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__key__management__t.html">psa_drv_se_key_management_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to for secure element key management.  <a href="structpsa__drv__se__key__management__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__key__derivation__t.html">psa_drv_se_key_derivation_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A struct containing all of the function pointers needed to for secure element key derivation and agreement.  <a href="structpsa__drv__se__key__derivation__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpsa__drv__se__t.html">psa_drv_se_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A structure containing pointers to all the entry points of a secure element driver.  <a href="structpsa__drv__se__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga75c21f8eb0cbda078453ffe37aaca862"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__se__driver.html#ga75c21f8eb0cbda078453ffe37aaca862">PSA_MAX_PERSISTENT_DATA_SIZE</a>&#160;&#160;&#160;(16)</td></tr>
+<tr class="memdesc:ga75c21f8eb0cbda078453ffe37aaca862"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum size of persistent driver data in bytes. <br /></td></tr>
+<tr class="separator:ga75c21f8eb0cbda078453ffe37aaca862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65e25a718c3e95893522ae882d4ea826"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__psa__crypto__se__driver.html#ga65e25a718c3e95893522ae882d4ea826">PSA_DRV_SE_HAL_VERSION</a>&#160;&#160;&#160;0x00000005</td></tr>
+<tr class="memdesc:ga65e25a718c3e95893522ae882d4ea826"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current version of the secure element driver HAL. <br /></td></tr>
+<tr class="separator:ga65e25a718c3e95893522ae882d4ea826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga61d926bb163ea2aae3c6e27c19ebe58c"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__init.html#ga61d926bb163ea2aae3c6e27c19ebe58c">psa_drv_se_init_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *persistent_data, <a class="el" href="lifetime_8h.html#a5e700601f686237a8d1e29363ae543d5">psa_key_location_t</a> location)</td></tr>
+<tr class="memdesc:ga61d926bb163ea2aae3c6e27c19ebe58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A driver initialization function.  <a href="group__se__init.html#ga61d926bb163ea2aae3c6e27c19ebe58c">More...</a><br /></td></tr>
+<tr class="separator:ga61d926bb163ea2aae3c6e27c19ebe58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90828ba6e282dd39260c81af68532e1d"><td class="memItemLeft" align="right" valign="top">
+typedef uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a></td></tr>
+<tr class="memdesc:ga90828ba6e282dd39260c81af68532e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoding of a key slot number on a secure element. <br /></td></tr>
+<tr class="separator:ga90828ba6e282dd39260c81af68532e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d7dacfb4ede205538c5713b11e10326"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga1d7dacfb4ede205538c5713b11e10326">psa_drv_se_mac_setup_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *op_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t algorithm)</td></tr>
+<tr class="memdesc:ga1d7dacfb4ede205538c5713b11e10326"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that starts a secure element MAC operation for a PSA Crypto Driver implementation.  <a href="group__se__mac.html#ga1d7dacfb4ede205538c5713b11e10326">More...</a><br /></td></tr>
+<tr class="separator:ga1d7dacfb4ede205538c5713b11e10326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5066f0423519b1a403019f16cad004f6"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga5066f0423519b1a403019f16cad004f6">psa_drv_se_mac_update_t</a>) (void *op_context, const uint8_t *p_input, size_t input_length)</td></tr>
+<tr class="memdesc:ga5066f0423519b1a403019f16cad004f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that continues a previously started secure element MAC operation.  <a href="group__se__mac.html#ga5066f0423519b1a403019f16cad004f6">More...</a><br /></td></tr>
+<tr class="separator:ga5066f0423519b1a403019f16cad004f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8d2c6b8639790e00a755774270c9a36a"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga8d2c6b8639790e00a755774270c9a36a">psa_drv_se_mac_finish_t</a>) (void *op_context, uint8_t *p_mac, size_t mac_size, size_t *p_mac_length)</td></tr>
+<tr class="memdesc:ga8d2c6b8639790e00a755774270c9a36a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that completes a previously started secure element MAC operation by returning the resulting MAC.  <a href="group__se__mac.html#ga8d2c6b8639790e00a755774270c9a36a">More...</a><br /></td></tr>
+<tr class="separator:ga8d2c6b8639790e00a755774270c9a36a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57c46b9072760a2f3f501dc8278bf963"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga57c46b9072760a2f3f501dc8278bf963">psa_drv_se_mac_finish_verify_t</a>) (void *op_context, const uint8_t *p_mac, size_t mac_length)</td></tr>
+<tr class="memdesc:ga57c46b9072760a2f3f501dc8278bf963"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that completes a previously started secure element MAC operation by comparing the resulting MAC against a provided value.  <a href="group__se__mac.html#ga57c46b9072760a2f3f501dc8278bf963">More...</a><br /></td></tr>
+<tr class="separator:ga57c46b9072760a2f3f501dc8278bf963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ffdfc1d70ef3b4da100e9e46a08e511"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga5ffdfc1d70ef3b4da100e9e46a08e511">psa_drv_se_mac_abort_t</a>) (void *op_context)</td></tr>
+<tr class="memdesc:ga5ffdfc1d70ef3b4da100e9e46a08e511"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that aborts a previous started secure element MAC operation.  <a href="group__se__mac.html#ga5ffdfc1d70ef3b4da100e9e46a08e511">More...</a><br /></td></tr>
+<tr class="separator:ga5ffdfc1d70ef3b4da100e9e46a08e511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8b2bbcfeb4a8f4409a4777051f55666"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#gac8b2bbcfeb4a8f4409a4777051f55666">psa_drv_se_mac_generate_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, const uint8_t *p_input, size_t input_length, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, uint8_t *p_mac, size_t mac_size, size_t *p_mac_length)</td></tr>
+<tr class="memdesc:gac8b2bbcfeb4a8f4409a4777051f55666"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs a secure element MAC operation in one command and returns the calculated MAC.  <a href="group__se__mac.html#gac8b2bbcfeb4a8f4409a4777051f55666">More...</a><br /></td></tr>
+<tr class="separator:gac8b2bbcfeb4a8f4409a4777051f55666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e7e9a020f0061492ba383aa404f1c09"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__mac.html#ga6e7e9a020f0061492ba383aa404f1c09">psa_drv_se_mac_verify_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, const uint8_t *p_input, size_t input_length, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, const uint8_t *p_mac, size_t mac_length)</td></tr>
+<tr class="memdesc:ga6e7e9a020f0061492ba383aa404f1c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs a secure element MAC operation in one command and compares the resulting MAC against a provided value.  <a href="group__se__mac.html#ga6e7e9a020f0061492ba383aa404f1c09">More...</a><br /></td></tr>
+<tr class="separator:ga6e7e9a020f0061492ba383aa404f1c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7d31744990222cf99a02bcd905996a3a"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#ga7d31744990222cf99a02bcd905996a3a">psa_drv_se_cipher_setup_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *op_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t algorithm, <a class="el" href="crypto__types_8h.html#ad4cfad719c2b1ad88835d193f593371d">psa_encrypt_or_decrypt_t</a> direction)</td></tr>
+<tr class="memdesc:ga7d31744990222cf99a02bcd905996a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that provides the cipher setup function for a secure element driver.  <a href="group__se__cipher.html#ga7d31744990222cf99a02bcd905996a3a">More...</a><br /></td></tr>
+<tr class="separator:ga7d31744990222cf99a02bcd905996a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c603c3ee2f0f98a09d9df1e9a0c86bf"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#ga4c603c3ee2f0f98a09d9df1e9a0c86bf">psa_drv_se_cipher_set_iv_t</a>) (void *op_context, const uint8_t *p_iv, size_t iv_length)</td></tr>
+<tr class="memdesc:ga4c603c3ee2f0f98a09d9df1e9a0c86bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that sets the initialization vector (if necessary) for an secure element cipher operation.  <a href="group__se__cipher.html#ga4c603c3ee2f0f98a09d9df1e9a0c86bf">More...</a><br /></td></tr>
+<tr class="separator:ga4c603c3ee2f0f98a09d9df1e9a0c86bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeca34a7a7afd10ba9c79f3eaaf20d96b"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#gaeca34a7a7afd10ba9c79f3eaaf20d96b">psa_drv_se_cipher_update_t</a>) (void *op_context, const uint8_t *p_input, size_t input_size, uint8_t *p_output, size_t output_size, size_t *p_output_length)</td></tr>
+<tr class="memdesc:gaeca34a7a7afd10ba9c79f3eaaf20d96b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that continues a previously started secure element cipher operation.  <a href="group__se__cipher.html#gaeca34a7a7afd10ba9c79f3eaaf20d96b">More...</a><br /></td></tr>
+<tr class="separator:gaeca34a7a7afd10ba9c79f3eaaf20d96b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06bf0bfbf55291d0bf5a411175a0350b"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#ga06bf0bfbf55291d0bf5a411175a0350b">psa_drv_se_cipher_finish_t</a>) (void *op_context, uint8_t *p_output, size_t output_size, size_t *p_output_length)</td></tr>
+<tr class="memdesc:ga06bf0bfbf55291d0bf5a411175a0350b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that completes a previously started secure element cipher operation.  <a href="group__se__cipher.html#ga06bf0bfbf55291d0bf5a411175a0350b">More...</a><br /></td></tr>
+<tr class="separator:ga06bf0bfbf55291d0bf5a411175a0350b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cb204afa81012e4c561e0731792cae9"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#ga1cb204afa81012e4c561e0731792cae9">psa_drv_se_cipher_abort_t</a>) (void *op_context)</td></tr>
+<tr class="memdesc:ga1cb204afa81012e4c561e0731792cae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that aborts a previously started secure element cipher operation.  <a href="group__se__cipher.html#ga1cb204afa81012e4c561e0731792cae9">More...</a><br /></td></tr>
+<tr class="separator:ga1cb204afa81012e4c561e0731792cae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec35ce527439186d9f7e283e24c63a75"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__cipher.html#gaec35ce527439186d9f7e283e24c63a75">psa_drv_se_cipher_ecb_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t algorithm, <a class="el" href="crypto__types_8h.html#ad4cfad719c2b1ad88835d193f593371d">psa_encrypt_or_decrypt_t</a> direction, const uint8_t *p_input, size_t input_size, uint8_t *p_output, size_t output_size)</td></tr>
+<tr class="memdesc:gaec35ce527439186d9f7e283e24c63a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs the ECB block mode for secure element cipher operations.  <a href="group__se__cipher.html#gaec35ce527439186d9f7e283e24c63a75">More...</a><br /></td></tr>
+<tr class="separator:gaec35ce527439186d9f7e283e24c63a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac5182bca42737841785662743594515"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__asymmetric.html#gaac5182bca42737841785662743594515">psa_drv_se_asymmetric_sign_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, const uint8_t *p_hash, size_t hash_length, uint8_t *p_signature, size_t signature_size, size_t *p_signature_length)</td></tr>
+<tr class="memdesc:gaac5182bca42737841785662743594515"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that signs a hash or short message with a private key in a secure element.  <a href="group__se__asymmetric.html#gaac5182bca42737841785662743594515">More...</a><br /></td></tr>
+<tr class="separator:gaac5182bca42737841785662743594515"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb372536a004009294591eaf6cc4d186"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__asymmetric.html#gabb372536a004009294591eaf6cc4d186">psa_drv_se_asymmetric_verify_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, const uint8_t *p_hash, size_t hash_length, const uint8_t *p_signature, size_t signature_length)</td></tr>
+<tr class="memdesc:gabb372536a004009294591eaf6cc4d186"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that verifies the signature a hash or short message using an asymmetric public key in a secure element.  <a href="group__se__asymmetric.html#gabb372536a004009294591eaf6cc4d186">More...</a><br /></td></tr>
+<tr class="separator:gabb372536a004009294591eaf6cc4d186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8544105c218640adfc4f983da4b34478"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__asymmetric.html#ga8544105c218640adfc4f983da4b34478">psa_drv_se_asymmetric_encrypt_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, const uint8_t *p_input, size_t input_length, const uint8_t *p_salt, size_t salt_length, uint8_t *p_output, size_t output_size, size_t *p_output_length)</td></tr>
+<tr class="memdesc:ga8544105c218640adfc4f983da4b34478"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that encrypts a short message with an asymmetric public key in a secure element.  <a href="group__se__asymmetric.html#ga8544105c218640adfc4f983da4b34478">More...</a><br /></td></tr>
+<tr class="separator:ga8544105c218640adfc4f983da4b34478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3472b9f36ffd9eb303100d5ec3eacda0"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__asymmetric.html#ga3472b9f36ffd9eb303100d5ec3eacda0">psa_drv_se_asymmetric_decrypt_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t alg, const uint8_t *p_input, size_t input_length, const uint8_t *p_salt, size_t salt_length, uint8_t *p_output, size_t output_size, size_t *p_output_length)</td></tr>
+<tr class="memdesc:ga3472b9f36ffd9eb303100d5ec3eacda0"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that decrypts a short message with an asymmetric private key in a secure element.  <a href="group__se__asymmetric.html#ga3472b9f36ffd9eb303100d5ec3eacda0">More...</a><br /></td></tr>
+<tr class="separator:ga3472b9f36ffd9eb303100d5ec3eacda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0acef6488a7dddbc707467907dec1842"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__aead.html#ga0acef6488a7dddbc707467907dec1842">psa_drv_se_aead_encrypt_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t algorithm, const uint8_t *p_nonce, size_t nonce_length, const uint8_t *p_additional_data, size_t additional_data_length, const uint8_t *p_plaintext, size_t plaintext_length, uint8_t *p_ciphertext, size_t ciphertext_size, size_t *p_ciphertext_length)</td></tr>
+<tr class="memdesc:ga0acef6488a7dddbc707467907dec1842"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs a secure element authenticated encryption operation.  <a href="group__se__aead.html#ga0acef6488a7dddbc707467907dec1842">More...</a><br /></td></tr>
+<tr class="separator:ga0acef6488a7dddbc707467907dec1842"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab517338cb0541c9e36fbcea713622104"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__aead.html#gab517338cb0541c9e36fbcea713622104">psa_drv_se_aead_decrypt_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, psa_algorithm_t algorithm, const uint8_t *p_nonce, size_t nonce_length, const uint8_t *p_additional_data, size_t additional_data_length, const uint8_t *p_ciphertext, size_t ciphertext_length, uint8_t *p_plaintext, size_t plaintext_size, size_t *p_plaintext_length)</td></tr>
+<tr class="memdesc:gab517338cb0541c9e36fbcea713622104"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs a secure element authenticated decryption operation.  <a href="group__se__aead.html#gab517338cb0541c9e36fbcea713622104">More...</a><br /></td></tr>
+<tr class="separator:gab517338cb0541c9e36fbcea713622104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab9a5d39285c68ac29264017e0119d98"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#gaab9a5d39285c68ac29264017e0119d98">psa_drv_se_allocate_key_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *persistent_data, const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, <a class="el" href="group__se__key__management.html#ga984d5535962320e0c4692bb4ede486ef">psa_key_creation_method_t</a> method, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> *key_slot)</td></tr>
+<tr class="memdesc:gaab9a5d39285c68ac29264017e0119d98"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that allocates a slot for a key.  <a href="group__se__key__management.html#gaab9a5d39285c68ac29264017e0119d98">More...</a><br /></td></tr>
+<tr class="separator:gaab9a5d39285c68ac29264017e0119d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga26c4b96c6d68dbd74b0512475d29f934"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#ga26c4b96c6d68dbd74b0512475d29f934">psa_drv_se_validate_slot_number_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *persistent_data, const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, <a class="el" href="group__se__key__management.html#ga984d5535962320e0c4692bb4ede486ef">psa_key_creation_method_t</a> method, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot)</td></tr>
+<tr class="memdesc:ga26c4b96c6d68dbd74b0512475d29f934"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that determines whether a slot number is valid for a key.  <a href="group__se__key__management.html#ga26c4b96c6d68dbd74b0512475d29f934">More...</a><br /></td></tr>
+<tr class="separator:ga26c4b96c6d68dbd74b0512475d29f934"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e04e71aff4837259e54598708edcf7d"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#ga9e04e71aff4837259e54598708edcf7d">psa_drv_se_import_key_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, const uint8_t *data, size_t data_length, size_t *bits)</td></tr>
+<tr class="memdesc:ga9e04e71aff4837259e54598708edcf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that imports a key into a secure element in binary format.  <a href="group__se__key__management.html#ga9e04e71aff4837259e54598708edcf7d">More...</a><br /></td></tr>
+<tr class="separator:ga9e04e71aff4837259e54598708edcf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf8c22c4a5b87035fcb594858d68e1ba"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#gaaf8c22c4a5b87035fcb594858d68e1ba">psa_drv_se_destroy_key_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *persistent_data, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot)</td></tr>
+<tr class="memdesc:gaaf8c22c4a5b87035fcb594858d68e1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that destroys a secure element key and restore the slot to its default state.  <a href="group__se__key__management.html#gaaf8c22c4a5b87035fcb594858d68e1ba">More...</a><br /></td></tr>
+<tr class="separator:gaaf8c22c4a5b87035fcb594858d68e1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab9779816d17fa8ab42345b7c297dc843"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#gab9779816d17fa8ab42345b7c297dc843">psa_drv_se_export_key_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, uint8_t *p_data, size_t data_size, size_t *p_data_length)</td></tr>
+<tr class="memdesc:gab9779816d17fa8ab42345b7c297dc843"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that exports a secure element key in binary format.  <a href="group__se__key__management.html#gab9779816d17fa8ab42345b7c297dc843">More...</a><br /></td></tr>
+<tr class="separator:gab9779816d17fa8ab42345b7c297dc843"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62df4bbc6b63ab5ef8183012b12a6cf8"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#ga62df4bbc6b63ab5ef8183012b12a6cf8">psa_drv_se_generate_key_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> key_slot, const <a class="el" href="attributes_8h.html#a0ec645e1fdafe59d591104451ebf5680">psa_key_attributes_t</a> *attributes, uint8_t *pubkey, size_t pubkey_size, size_t *pubkey_length)</td></tr>
+<tr class="memdesc:ga62df4bbc6b63ab5ef8183012b12a6cf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that generates a symmetric or asymmetric key on a secure element.  <a href="group__se__key__management.html#ga62df4bbc6b63ab5ef8183012b12a6cf8">More...</a><br /></td></tr>
+<tr class="separator:ga62df4bbc6b63ab5ef8183012b12a6cf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga517b85e6c8f12f986de375a7e70028fe"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__driver__derivation.html#ga517b85e6c8f12f986de375a7e70028fe">psa_drv_se_key_derivation_setup_t</a>) (<a class="el" href="structpsa__drv__se__context__t.html">psa_drv_se_context_t</a> *drv_context, void *op_context, psa_algorithm_t kdf_alg, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> source_key)</td></tr>
+<tr class="memdesc:ga517b85e6c8f12f986de375a7e70028fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that Sets up a secure element key derivation operation by specifying the algorithm and the source key sot.  <a href="group__driver__derivation.html#ga517b85e6c8f12f986de375a7e70028fe">More...</a><br /></td></tr>
+<tr class="separator:ga517b85e6c8f12f986de375a7e70028fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3d730798a122772534887ea87e2f9c4e"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__driver__derivation.html#ga3d730798a122772534887ea87e2f9c4e">psa_drv_se_key_derivation_collateral_t</a>) (void *op_context, uint32_t collateral_id, const uint8_t *p_collateral, size_t collateral_size)</td></tr>
+<tr class="memdesc:ga3d730798a122772534887ea87e2f9c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that provides collateral (parameters) needed for a secure element key derivation or key agreement operation.  <a href="group__driver__derivation.html#ga3d730798a122772534887ea87e2f9c4e">More...</a><br /></td></tr>
+<tr class="separator:ga3d730798a122772534887ea87e2f9c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27684e05d9af85548b26849302f4db8a"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__driver__derivation.html#ga27684e05d9af85548b26849302f4db8a">psa_drv_se_key_derivation_derive_t</a>) (void *op_context, <a class="el" href="group__se__init.html#ga90828ba6e282dd39260c81af68532e1d">psa_key_slot_number_t</a> dest_key)</td></tr>
+<tr class="memdesc:ga27684e05d9af85548b26849302f4db8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs the final secure element key derivation step and place the generated key material in a slot.  <a href="group__driver__derivation.html#ga27684e05d9af85548b26849302f4db8a">More...</a><br /></td></tr>
+<tr class="separator:ga27684e05d9af85548b26849302f4db8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga25d0d785a7acd6957891f3c1022f91b4"><td class="memItemLeft" align="right" valign="top">typedef psa_status_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__driver__derivation.html#ga25d0d785a7acd6957891f3c1022f91b4">psa_drv_se_key_derivation_export_t</a>) (void *op_context, uint8_t *p_output, size_t output_size, size_t *p_output_length)</td></tr>
+<tr class="memdesc:ga25d0d785a7acd6957891f3c1022f91b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that performs the final step of a secure element key agreement and place the generated key material in a buffer.  <a href="group__driver__derivation.html#ga25d0d785a7acd6957891f3c1022f91b4">More...</a><br /></td></tr>
+<tr class="separator:ga25d0d785a7acd6957891f3c1022f91b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga984d5535962320e0c4692bb4ede486ef"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__se__key__management.html#ga984d5535962320e0c4692bb4ede486ef">psa_key_creation_method_t</a> { <a class="el" href="group__se__key__management.html#gga984d5535962320e0c4692bb4ede486efa9d61c409158f958b864b759662adbbed">PSA_KEY_CREATION_IMPORT</a>, 
+<a class="el" href="group__se__key__management.html#gga984d5535962320e0c4692bb4ede486efab197db75a74e331a570562ba3b3e04a9">PSA_KEY_CREATION_GENERATE</a>, 
+<a class="el" href="group__se__key__management.html#gga984d5535962320e0c4692bb4ede486efaae615ce8bde386039d1ee1b348f6552c">PSA_KEY_CREATION_DERIVE</a>, 
+<a class="el" href="group__se__key__management.html#gga984d5535962320e0c4692bb4ede486efa61d76b2af65ab3fb904b5eedd8f46363">PSA_KEY_CREATION_COPY</a>
+ }</td></tr>
+<tr class="memdesc:ga984d5535962320e0c4692bb4ede486ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">An enumeration indicating how a key is created.  <a href="group__se__key__management.html#ga984d5535962320e0c4692bb4ede486ef">More...</a><br /></td></tr>
+<tr class="separator:ga984d5535962320e0c4692bb4ede486ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

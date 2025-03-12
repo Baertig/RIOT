@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/shell.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('shell_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">shell.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="shell_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2009-2013 Freie Universität Berlin</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifndef SHELL_H</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define SHELL_H</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pm_8h.html">periph/pm.h</a>&quot;</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="modules_8h.html">modules.h</a>&quot;</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="xfa_8h.html">xfa.h</a>&quot;</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#ifndef __cplusplus</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="flash__utils_8h.html">flash_utils.h</a>&quot;</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifndef CONFIG_SHELL_SHUTDOWN_ON_EXIT</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/* Some systems (e.g Ubuntu 20.04) close stdin on CTRL-D / EOF</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment"> * That means we can&#39;t just re-start the shell.</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"> * Instead terminate RIOT, which is also the behavior a user would</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"> * expect from a CLI application.</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#  if defined(CPU_NATIVE) &amp;&amp; !IS_ACTIVE(MODULE_SHELL_LOCK)</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#    define CONFIG_SHELL_SHUTDOWN_ON_EXIT 1</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#  else</span></div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="group__sys__shell__config.html#ga78fbb3e723489b0dfafb2457457f0575">   83</a></span>&#160;<span class="preprocessor">#    define CONFIG_SHELL_SHUTDOWN_ON_EXIT 0</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#  endif</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifndef CONFIG_SHELL_NO_ECHO</span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__sys__shell__config.html#gaf6908f2c6f3206b1ea8a81c5f4bc2fb7">   91</a></span>&#160;<span class="preprocessor">#define CONFIG_SHELL_NO_ECHO 0</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifndef CONFIG_SHELL_NO_PROMPT</span></div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="group__sys__shell__config.html#gaf63e01393008706d54df898d6bc7f3df">   98</a></span>&#160;<span class="preprocessor">#define CONFIG_SHELL_NO_PROMPT 0</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="group__sys__shell.html#gac6ce9a12c394d101eb934286106ed2ee">  119</a></span>&#160;<span class="preprocessor">#define SHELL_DEFAULT_BUFSIZE   (128)</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga58012536a8c7a12b37cd82b0ffddbc47">shell_post_readline_hook</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga06b6793cabe83ec1e30db3bfcafa8ac5">shell_pre_command_hook</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga80aaccb8dd5ee218b6dcae8175444afd">shell_post_command_hook</a>(<span class="keywordtype">int</span> ret, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00176"></a><span class="lineno"><a class="line" href="group__sys__shell.html#ga6cf265eee7d4bf93b186d6aaadd659a5">  176</a></span>&#160;<span class="keyword">typedef</span> int (*<a class="code" href="group__sys__shell.html#ga6cf265eee7d4bf93b186d6aaadd659a5">shell_command_handler_t</a>)(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div><div class="line"><a name="l00183"></a><span class="lineno"><a class="line" href="structshell__command__t.html">  183</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structshell__command__t.html">shell_command_t</a> {</div><div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="structshell__command__t.html#aca72232a2f1848131bd0238991478df3">  184</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structshell__command__t.html#aca72232a2f1848131bd0238991478df3">name</a>; </div><div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="structshell__command__t.html#ae42a6658af9f41c405936655f629510e">  185</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structshell__command__t.html#ae42a6658af9f41c405936655f629510e">desc</a>; </div><div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="structshell__command__t.html#ab9e626b70c34603cf06cc0d82ee25e6b">  186</a></span>&#160;    <a class="code" href="group__sys__shell.html#ga6cf265eee7d4bf93b186d6aaadd659a5">shell_command_handler_t</a> <a class="code" href="structshell__command__t.html#ab9e626b70c34603cf06cc0d82ee25e6b">handler</a>; </div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;} <a class="code" href="group__sys__shell.html#ga169f80d22f314444b0a8b8efa6bc5fb9">shell_command_t</a>;</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#ifndef __cplusplus</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div><div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="structshell__command__xfa__t.html">  195</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="structshell__command__xfa__t.html#a1ade46eb0323a92fb891dc5c9e13f6ac">  196</a></span>&#160;    <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structshell__command__xfa__t.html#a1ade46eb0323a92fb891dc5c9e13f6ac">name</a>; </div><div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="structshell__command__xfa__t.html#a5bf5750a4dbd670787e3fd23c77ed2f9">  197</a></span>&#160;    <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structshell__command__xfa__t.html#a5bf5750a4dbd670787e3fd23c77ed2f9">desc</a>; </div><div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="structshell__command__xfa__t.html#a28ae36d89fefd0d4462c3310d99c9feb">  199</a></span>&#160;    <a class="code" href="group__sys__shell.html#ga6cf265eee7d4bf93b186d6aaadd659a5">shell_command_handler_t</a> <a class="code" href="structshell__command__xfa__t.html#a28ae36d89fefd0d4462c3310d99c9feb">handler</a>; </div><div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;} <a class="code" href="structshell__command__xfa__t.html">shell_command_xfa_t</a>;</div><div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga3d3d8dea426c6c5fa188479e53286aec">shell_run_once</a>(<span class="keyword">const</span> <a class="code" href="structshell__command__t.html">shell_command_t</a> *commands, <span class="keywordtype">char</span> *line_buf, <span class="keywordtype">int</span> len);</div><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;</div><div class="line"><a name="l00222"></a><span class="lineno"><a class="line" href="group__sys__shell.html#ga51ab5e366fa7797e8529071abd68f68b">  222</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga51ab5e366fa7797e8529071abd68f68b">shell_run_forever</a>(<span class="keyword">const</span> <a class="code" href="structshell__command__t.html">shell_command_t</a> *commands,</div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                     <span class="keywordtype">char</span> *line_buf, <span class="keywordtype">int</span> len)</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;{</div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">while</span> (1) {</div><div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="group__sys__shell.html#ga3d3d8dea426c6c5fa188479e53286aec">shell_run_once</a>(commands, line_buf, len);</div><div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div><div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="modules_8h.html#a25e432312ddc824e161578831972028c">IS_ACTIVE</a>(<a class="code" href="group__sys__shell__config.html#ga78fbb3e723489b0dfafb2457457f0575">CONFIG_SHELL_SHUTDOWN_ON_EXIT</a>)) {</div><div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <a class="code" href="group__drivers__periph__pm.html#ga077d22f0521fd08aaf552e5d7775fec9">pm_off</a>();</div><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        }</div><div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    }</div><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;}</div><div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div><div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="group__sys__shell.html#ga6e7970d4823d1624837c9e7ddc6accf0">  241</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__sys__shell.html#ga6e7970d4823d1624837c9e7ddc6accf0">shell_run</a>(<span class="keyword">const</span> <a class="code" href="structshell__command__t.html">shell_command_t</a> *commands,</div><div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                             <span class="keywordtype">char</span> *line_buf, <span class="keywordtype">int</span> len)</div><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;{</div><div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <a class="code" href="group__sys__shell.html#ga51ab5e366fa7797e8529071abd68f68b">shell_run_forever</a>(commands, line_buf, len);</div><div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div><div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div><div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__shell.html#ga3cff0292efc7d2c7cad01708064a444e">shell_handle_input_line</a>(<span class="keyword">const</span> <a class="code" href="structshell__command__t.html">shell_command_t</a> *commands, <span class="keywordtype">char</span> *line);</div><div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div><div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__shell.html#ga9581ba9058c4dbcb09468055a83bcde6">shell_parse_file</a>(<span class="keyword">const</span> <a class="code" href="structshell__command__t.html">shell_command_t</a> *commands,</div><div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                     <span class="keyword">const</span> <span class="keywordtype">char</span> *filename, <span class="keywordtype">unsigned</span> *line_nr);</div><div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div><div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#ifndef __cplusplus</span></div><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div><div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="group__sys__shell.html#gaafec93867eb7af5bedfe2dcfb8d8120e">  304</a></span>&#160;<span class="preprocessor">#define SHELL_COMMAND(cmd, help, func) \</span></div><div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">    XFA_USE_CONST(shell_command_xfa_t, shell_commands_xfa_v2); \</span></div><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="preprocessor">    static FLASH_ATTR const char _xfa_ ## cmd ## _cmd_name[] = #cmd; \</span></div><div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="preprocessor">    static FLASH_ATTR const char _xfa_ ## cmd ## _cmd_desc[] = help; \</span></div><div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="preprocessor">    XFA_CONST(shell_command_xfa_t, shell_commands_xfa_v2, 0) _xfa_ ## cmd ## _cmd = { \</span></div><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">        .name = _xfa_ ## cmd ## _cmd_name, \</span></div><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">        .desc = _xfa_ ## cmd ## _cmd_desc, \</span></div><div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">        .handler = &amp;func \</span></div><div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;<span class="preprocessor">    };</span></div><div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __cplusplus */</span><span class="preprocessor"></span></div><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;</div><div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;}</div><div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div><div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SHELL_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;</div><div class="ttc" id="modules_8h_html"><div class="ttname"><a href="modules_8h.html">modules.h</a></div><div class="ttdoc">Common macros and compiler attributes/pragmas configuration. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga3d3d8dea426c6c5fa188479e53286aec"><div class="ttname"><a href="group__sys__shell.html#ga3d3d8dea426c6c5fa188479e53286aec">shell_run_once</a></div><div class="ttdeci">void shell_run_once(const shell_command_t *commands, char *line_buf, int len)</div><div class="ttdoc">Start a shell and exit once EOF is reached. </div></div>
+<div class="ttc" id="group__drivers__periph__pm_html_ga077d22f0521fd08aaf552e5d7775fec9"><div class="ttname"><a href="group__drivers__periph__pm.html#ga077d22f0521fd08aaf552e5d7775fec9">pm_off</a></div><div class="ttdeci">void pm_off(void)</div><div class="ttdoc">Turn off MCU completely. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga6cf265eee7d4bf93b186d6aaadd659a5"><div class="ttname"><a href="group__sys__shell.html#ga6cf265eee7d4bf93b186d6aaadd659a5">shell_command_handler_t</a></div><div class="ttdeci">int(* shell_command_handler_t)(int argc, char **argv)</div><div class="ttdoc">Prototype of a shell callback handler. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00176">shell.h:176</a></div></div>
+<div class="ttc" id="structshell__command__t_html_aca72232a2f1848131bd0238991478df3"><div class="ttname"><a href="structshell__command__t.html#aca72232a2f1848131bd0238991478df3">shell_command_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">Name of the function. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00184">shell.h:184</a></div></div>
+<div class="ttc" id="group__sys__shell_html_ga06b6793cabe83ec1e30db3bfcafa8ac5"><div class="ttname"><a href="group__sys__shell.html#ga06b6793cabe83ec1e30db3bfcafa8ac5">shell_pre_command_hook</a></div><div class="ttdeci">void shell_pre_command_hook(int argc, char **argv)</div><div class="ttdoc">Optional hook before shell command is called. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga6e7970d4823d1624837c9e7ddc6accf0"><div class="ttname"><a href="group__sys__shell.html#ga6e7970d4823d1624837c9e7ddc6accf0">shell_run</a></div><div class="ttdeci">static void shell_run(const shell_command_t *commands, char *line_buf, int len)</div><div class="ttdoc">Back-porting alias for shell_run_forever. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00241">shell.h:241</a></div></div>
+<div class="ttc" id="structshell__command__xfa__t_html_a1ade46eb0323a92fb891dc5c9e13f6ac"><div class="ttname"><a href="structshell__command__xfa__t.html#a1ade46eb0323a92fb891dc5c9e13f6ac">shell_command_xfa_t::name</a></div><div class="ttdeci">FLASH_ATTR const char * name</div><div class="ttdoc">Name of the function. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00196">shell.h:196</a></div></div>
+<div class="ttc" id="pm_8h_html"><div class="ttname"><a href="pm_8h.html">pm.h</a></div><div class="ttdoc">Power management interface. </div></div>
+<div class="ttc" id="structshell__command__t_html"><div class="ttname"><a href="structshell__command__t.html">shell_command_t</a></div><div class="ttdoc">A single command in the list of the supported commands. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00183">shell.h:183</a></div></div>
+<div class="ttc" id="structshell__command__xfa__t_html"><div class="ttname"><a href="structshell__command__xfa__t.html">shell_command_xfa_t</a></div><div class="ttdoc">A single command in the list of the supported commands. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00195">shell.h:195</a></div></div>
+<div class="ttc" id="group__sys__shell_html_ga3cff0292efc7d2c7cad01708064a444e"><div class="ttname"><a href="group__sys__shell.html#ga3cff0292efc7d2c7cad01708064a444e">shell_handle_input_line</a></div><div class="ttdeci">int shell_handle_input_line(const shell_command_t *commands, char *line)</div><div class="ttdoc">Parse and run a line of text as a shell command with arguments. </div></div>
+<div class="ttc" id="group__sys__shell__config_html_ga78fbb3e723489b0dfafb2457457f0575"><div class="ttname"><a href="group__sys__shell__config.html#ga78fbb3e723489b0dfafb2457457f0575">CONFIG_SHELL_SHUTDOWN_ON_EXIT</a></div><div class="ttdeci">#define CONFIG_SHELL_SHUTDOWN_ON_EXIT</div><div class="ttdoc">Shutdown RIOT on shell exit. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00083">shell.h:83</a></div></div>
+<div class="ttc" id="group__sys__shell_html_ga51ab5e366fa7797e8529071abd68f68b"><div class="ttname"><a href="group__sys__shell.html#ga51ab5e366fa7797e8529071abd68f68b">shell_run_forever</a></div><div class="ttdeci">static void shell_run_forever(const shell_command_t *commands, char *line_buf, int len)</div><div class="ttdoc">Start a shell and restart it if it exits. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00222">shell.h:222</a></div></div>
+<div class="ttc" id="structshell__command__t_html_ae42a6658af9f41c405936655f629510e"><div class="ttname"><a href="structshell__command__t.html#ae42a6658af9f41c405936655f629510e">shell_command_t::desc</a></div><div class="ttdeci">const char * desc</div><div class="ttdoc">Description to print in the &quot;help&quot; command. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00185">shell.h:185</a></div></div>
+<div class="ttc" id="structshell__command__xfa__t_html_a5bf5750a4dbd670787e3fd23c77ed2f9"><div class="ttname"><a href="structshell__command__xfa__t.html#a5bf5750a4dbd670787e3fd23c77ed2f9">shell_command_xfa_t::desc</a></div><div class="ttdeci">FLASH_ATTR const char * desc</div><div class="ttdoc">Description to print in the &quot;help&quot; command. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00197">shell.h:197</a></div></div>
+<div class="ttc" id="group__sys__shell_html_ga58012536a8c7a12b37cd82b0ffddbc47"><div class="ttname"><a href="group__sys__shell.html#ga58012536a8c7a12b37cd82b0ffddbc47">shell_post_readline_hook</a></div><div class="ttdeci">void shell_post_readline_hook(void)</div><div class="ttdoc">Optional hook after readline has triggered. </div></div>
+<div class="ttc" id="flash__utils_8h_html"><div class="ttname"><a href="flash__utils_8h.html">flash_utils.h</a></div><div class="ttdoc">Utility functions, macros, and types for read-only memory. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga6ac949979ebabc3d7130779422ead49a"><div class="ttname"><a href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a></div><div class="ttdeci">#define FLASH_ATTR</div><div class="ttdoc">C type qualifier required to place a variable in flash. </div><div class="ttdef"><b>Definition:</b> <a href="flash__utils_8h_source.html#l00068">flash_utils.h:68</a></div></div>
+<div class="ttc" id="structshell__command__xfa__t_html_a28ae36d89fefd0d4462c3310d99c9feb"><div class="ttname"><a href="structshell__command__xfa__t.html#a28ae36d89fefd0d4462c3310d99c9feb">shell_command_xfa_t::handler</a></div><div class="ttdeci">shell_command_handler_t handler</div><div class="ttdoc">The callback function. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00199">shell.h:199</a></div></div>
+<div class="ttc" id="structshell__command__t_html_ab9e626b70c34603cf06cc0d82ee25e6b"><div class="ttname"><a href="structshell__command__t.html#ab9e626b70c34603cf06cc0d82ee25e6b">shell_command_t::handler</a></div><div class="ttdeci">shell_command_handler_t handler</div><div class="ttdoc">The callback function. </div><div class="ttdef"><b>Definition:</b> <a href="shell_8h_source.html#l00186">shell.h:186</a></div></div>
+<div class="ttc" id="modules_8h_html_a25e432312ddc824e161578831972028c"><div class="ttname"><a href="modules_8h.html#a25e432312ddc824e161578831972028c">IS_ACTIVE</a></div><div class="ttdeci">#define IS_ACTIVE(macro)</div><div class="ttdoc">Allows to verify a macro definition outside the preprocessor. </div><div class="ttdef"><b>Definition:</b> <a href="modules_8h_source.html#l00060">modules.h:60</a></div></div>
+<div class="ttc" id="xfa_8h_html"><div class="ttname"><a href="xfa_8h.html">xfa.h</a></div><div class="ttdoc">Cross File Arrays. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga169f80d22f314444b0a8b8efa6bc5fb9"><div class="ttname"><a href="group__sys__shell.html#ga169f80d22f314444b0a8b8efa6bc5fb9">shell_command_t</a></div><div class="ttdeci">struct shell_command_t shell_command_t</div><div class="ttdoc">A single command in the list of the supported commands. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga9581ba9058c4dbcb09468055a83bcde6"><div class="ttname"><a href="group__sys__shell.html#ga9581ba9058c4dbcb09468055a83bcde6">shell_parse_file</a></div><div class="ttdeci">int shell_parse_file(const shell_command_t *commands, const char *filename, unsigned *line_nr)</div><div class="ttdoc">Read shell commands from a file and run them. </div></div>
+<div class="ttc" id="group__sys__shell_html_ga80aaccb8dd5ee218b6dcae8175444afd"><div class="ttname"><a href="group__sys__shell.html#ga80aaccb8dd5ee218b6dcae8175444afd">shell_post_command_hook</a></div><div class="ttdeci">void shell_post_command_hook(int ret, int argc, char **argv)</div><div class="ttdoc">Optional hook after shell command is called. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

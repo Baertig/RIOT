@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ESP32-S3-Box</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__boards__esp32s3__box.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">ESP32-S3-Box<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__esp32s3.html">ESP32-S3 Boards</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+Support for the ESP32-S3-Box  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><br />
+</p>
+<p>Support for the ESP32-S3-Box </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a></dd></dl>
+<h1><a class="anchor" id="esp32s3_box"></a>
+ESP32-S3-Box</h1>
+<h2><a class="anchor" id="esp32s3_box_toc"></a>
+Table of Contents</h2>
+<ol type="1">
+<li><a href="#esp32s3_box_overview">Overview</a></li>
+<li><a href="#esp32s3_box_hardware">Hardware</a><ol type="a">
+<li><a href="#esp32s3_box_mcu">MCU</a></li>
+<li><a href="#esp32s3_box_board_configuration">Board Configuration</a></li>
+<li><a href="#esp32s3_box_pinout">Board Pinout</a></li>
+</ol>
+</li>
+<li><a href="#esp32s3_box_flashing">Flashing the Device</a></li>
+</ol>
+<h2><a class="anchor" id="esp32s3_box_overview"></a>
+Overview</h2>
+<p>The Espressif ESP32-S3-Box is a AIoT development platform for the ESP32-S3 SoC.</p>
+<div class="image">
+<img src="https://raw.githubusercontent.com/espressif/esp-box/master/docs/_static/esp32_s3_box.png" alt="esp32_s3_box.png" width="400px"/>
+<div class="caption">
+ESP32-S2-Box</div></div>
+ <div class="image">
+<img src="https://obrazki.elektroda.pl/4333131800_1637933077_bigthumb.jpg" alt="4333131800_1637933077_bigthumb.jpg" width="700px"/>
+<div class="caption">
+Hardware Overview</div></div>
+<p>The ESP32-S3-Box has following main features:</p>
+<center> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Feature  </th><th class="markdownTableHeadCenter">Support   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ESP32-S3 SoC  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">16 MB Flash  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">8 MB Octal SPI RAM  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">2.4" LCD Display 320 x 240 with ILI9342C  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Capacitive Touch Panel  </td><td class="markdownTableBodyCenter">no   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Dual Microphone ES7210  </td><td class="markdownTableBodyCenter">no   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Speaker Codec ES8311  </td><td class="markdownTableBodyCenter">no   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">3-axis Gyroscope, 3-axis Accelerometer  </td><td class="markdownTableBodyCenter">no   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">2 x Digilent Pmod(TM) Connectors  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">USB Type-C  </td><td class="markdownTableBodyCenter">yes   </td></tr>
+</table>
+</center><p> <br />
+</p>
+<p>The Espressif ESP32-S3-Box is shipped with a Dock which exposes the 2 x Digilent Pmod(TM) Connectors.</p>
+<p><a href="#esp32s3_box_toc">Back to table of contents</a></p>
+<h2><a class="anchor" id="esp32s3_box_hardware"></a>
+Hardware</h2>
+<p>This section describes</p>
+<ul>
+<li>the <a href="#esp32s3_box_mcu">MCU</a>,</li>
+<li>the default <a href="#esp32s3_box_board_configuration">board configuration</a>,</li>
+<li>the <a href="#esp32s3_box_pinout">board pinout</a>.</li>
+</ul>
+<p><a href="#esp32s3_box_toc">Back to table of contents</a></p>
+<h3><a class="anchor" id="esp32s3_box_mcu"></a>
+MCU</h3>
+<p>Most features of the ESP32-S3-Box are provided by the ESP32-S3 SoC. For detailed information about the ESP32-S3 SoC variant (family) and ESP32x SoCs, see section <a class="el" href="group__cpu__esp32.html#esp32_mcu_esp32">ESP32 SoC Series</a>.</p>
+<p><a href="#esp32s3_box_toc">Back to table of contents</a></p>
+<h3><a class="anchor" id="esp32s3_box_board_configuration"></a>
+Board Configuration</h3>
+<p>The following table shows the default ESP32-S3-Box configuration, which is sorted according to the defined functionality of GPIOs. This configuration can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific configurations</a>.</p>
+<center> <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Function  </th><th class="markdownTableHeadLeft">GPIOs  </th><th class="markdownTableHeadLeft">Remarks  </th><th class="markdownTableHeadLeft">Configuration :------------&mdash;   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">BUTTON0  </td><td class="markdownTableBodyLeft">GPIO0  </td><td class="markdownTableBodyLeft">Boot Mode Button  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> SCL  </td><td class="markdownTableBodyLeft">GPIO40  </td><td class="markdownTableBodyLeft">PMOD1  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_i2c_interfaces">I2C Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> SDA  </td><td class="markdownTableBodyLeft">GPIO41  </td><td class="markdownTableBodyLeft">PMOD1  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_i2c_interfaces">I2C Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> CLK  </td><td class="markdownTableBodyLeft">GPIO12  </td><td class="markdownTableBodyLeft">PMOD2, SPI2_HOST (FSPI) is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> MISO  </td><td class="markdownTableBodyLeft">GPIO13  </td><td class="markdownTableBodyLeft">PMOD2, SPI2_HOST (FSPI) is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> MOSI  </td><td class="markdownTableBodyLeft">GPIO11  </td><td class="markdownTableBodyLeft">PMOD2, SPI2_HOST (FSPI) is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> CS0  </td><td class="markdownTableBodyLeft">GPIO10  </td><td class="markdownTableBodyLeft">PMOD2, SPI2_HOST (FSPI) is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> CLK  </td><td class="markdownTableBodyLeft">GPIO7  </td><td class="markdownTableBodyLeft">LCD SCK, SPI3_HOST is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> MISO  </td><td class="markdownTableBodyLeft">GPIO35  </td><td class="markdownTableBodyLeft">not used, SPI3_HOST is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> MOSI  </td><td class="markdownTableBodyLeft">GPIO6  </td><td class="markdownTableBodyLeft">LCD SDA, SPI3_HOST is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> CS0  </td><td class="markdownTableBodyLeft">GPIO5  </td><td class="markdownTableBodyLeft">LCD CS, SPI3_HOST is used  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_spi_interfaces">SPI Interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro. ">UART_DEV(0)</a> TxD  </td><td class="markdownTableBodyLeft">GPIO43  </td><td class="markdownTableBodyLeft">PMOD2  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_uart_interfaces">UART interfaces</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro. ">UART_DEV(0)</a> RxD  </td><td class="markdownTableBodyLeft">GPIO44  </td><td class="markdownTableBodyLeft">PMOD2  </td><td class="markdownTableBodyLeft"><a class="el" href="group__cpu__esp32.html#esp32_uart_interfaces">UART interfaces</a>   </td></tr>
+</table>
+</center><p> <br />
+ <a href="#esp32s3_box_toc">Back to table of contents</a></p>
+<h3><a class="anchor" id="esp32s3_box_pinout"></a>
+Board Pinout</h3>
+<p>The following figures show the pinouts as configured by default board definition.</p>
+<div class="image">
+<img src="https://raw.githubusercontent.com/espressif/esp-box/master/docs/_static/previous_get_started_fig/hardware_pmod.png" alt="hardware_pmod.png" width="900px"/>
+<div class="caption">
+ESP32-S3-BoxC-1 Pinout</div></div>
+<p>The corresponding schematics can be found:</p>
+<ul>
+<li><a href="https://github.com/espressif/esp-box/blob/master/hardware/esp32_s3_box_v2.5/schematic/SCH_ESP32-S3-BOX_V2.5_20211011.pdf">ESP32-S3-Box</a></li>
+<li><a href="https://github.com/espressif/esp-box/blob/master/hardware/esp32_s3_box_dock_v1.0/schematic/ESP32-S3-BOX-DOCK_V1D0_20210922.pdf">ESP32-S3-Box Dock</a></li>
+</ul>
+<p><a href="#esp32s3_box_toc">Back to table of contents</a></p>
+<h2><a class="anchor" id="esp32s3_box_flashing"></a>
+Flashing the Device</h2>
+<p>Since the ESP32-S3-Box does not have a USB-to-Serial chip, the easiest way to flash it is using the USB Serial/JTAG interface. Just connect the ESP32-S3-Box to your host computer and use the following command: </p><div class="fragment"><div class="line">BOARD=esp32s3-box make flash ...</div></div><!-- fragment --><p>Usually the make system resets the ESP32-S3-Box before flashing to enable the USB Serial/JTAG controller and to reboot the ESP32-S3 in download mode.</p>
+<p>In some very special cases this reset does not work and the programmer cannot connect to the card, so the flashing is aborted with a timeout: </p><div class="fragment"><div class="line"><a class="code" href="group__sys__arduino__api.html#ga92b379c51adb090644efd62a845977c7">Serial</a> port /dev/ttyACM0</div><div class="line">Connecting...</div><div class="line">...</div><div class="line">serial.serialutil.SerialTimeoutException: Write timeout</div></div><!-- fragment --><p> This can happen either if RIOT is not yet installed or if the USB port was previously used with the USB OTG controller, for example with USBUS or tinyUSB. In this case, restart the ESP32-S3-Box manually into download mode by pressing and releasing the RESET button while holding down the BOOT button. In download mode, the USB Serial/JTAG interface is always available.</p>
+<dl class="section note"><dt>Note</dt><dd>If the USB port was previously used with the USB OTG controller, an automatic restart of the ESP32-S3 with the flashed application is not possible. In this case the ESP32-S3-Box must be reset manually using the RESET button. In all other cases the ESP32-S3 automatically restarts with the flashed application.</dd></dl>
+<p><a href="#esp32s3_box_toc">Back to table of contents</a> </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:esp32s3-box_2include_2board_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:esp32s3-box_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board definitions for ESP32-S3-Box boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:esp32s3-box_2include_2gpio__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="esp32s3-box_2include_2gpio__params_8h.html">gpio_params.h</a></td></tr>
+<tr class="memdesc:esp32s3-box_2include_2gpio__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration of direct mapped GPIOs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:boards_2esp32s3-box_2include_2periph__conf_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2esp32s3-box_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral configurations for ESP32-S3-Box boards. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

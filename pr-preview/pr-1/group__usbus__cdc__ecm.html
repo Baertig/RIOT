@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>USBUS CDC ECM - USBUS CDC ethernet control model</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__usbus__cdc__ecm.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">USBUS CDC ECM - USBUS CDC ethernet control model<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS CDC ECM interface module.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>USBUS CDC ECM interface module. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:ecm_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ecm_8h.html">ecm.h</a></td></tr>
+<tr class="memdesc:ecm_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface and definitions for USB CDC ECM type interfaces. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__cdcecm__device.html">usbus_cdcecm_device</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS CDC ECM device interface context.  <a href="structusbus__cdcecm__device.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga70fd152e64ec3b449c1b0539eba44fe7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga70fd152e64ec3b449c1b0539eba44fe7">CONFIG_USBUS_CDC_ECM_CONFIG_SPEED</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="memdesc:ga70fd152e64ec3b449c1b0539eba44fe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link throughput as reported by the peripheral.  <a href="#ga70fd152e64ec3b449c1b0539eba44fe7">More...</a><br /></td></tr>
+<tr class="separator:ga70fd152e64ec3b449c1b0539eba44fe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d0713d776e5effe7bdfb1cfb03746b0"><td class="memItemLeft" align="right" valign="top"><a id="ga2d0713d776e5effe7bdfb1cfb03746b0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga2d0713d776e5effe7bdfb1cfb03746b0">CONFIG_USBUS_CDC_ECM_CONFIG_SPEED_DOWNSTREAM</a>&#160;&#160;&#160;<a class="el" href="group__usbus__cdc__ecm.html#ga70fd152e64ec3b449c1b0539eba44fe7">CONFIG_USBUS_CDC_ECM_CONFIG_SPEED</a></td></tr>
+<tr class="memdesc:ga2d0713d776e5effe7bdfb1cfb03746b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link download speed as reported by the peripheral. <br /></td></tr>
+<tr class="separator:ga2d0713d776e5effe7bdfb1cfb03746b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga424f2e3ae5a47ada3599fe989b7df512"><td class="memItemLeft" align="right" valign="top"><a id="ga424f2e3ae5a47ada3599fe989b7df512"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga424f2e3ae5a47ada3599fe989b7df512">CONFIG_USBUS_CDC_ECM_CONFIG_SPEED_UPSTREAM</a>&#160;&#160;&#160;<a class="el" href="group__usbus__cdc__ecm.html#ga70fd152e64ec3b449c1b0539eba44fe7">CONFIG_USBUS_CDC_ECM_CONFIG_SPEED</a></td></tr>
+<tr class="memdesc:ga424f2e3ae5a47ada3599fe989b7df512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link upload speed as reported by the peripheral. <br /></td></tr>
+<tr class="separator:ga424f2e3ae5a47ada3599fe989b7df512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga54e3abe1429f747ace7dde6b1972da34"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga54e3abe1429f747ace7dde6b1972da34">USBUS_CDCECM_EP_CTRL_SIZE</a>&#160;&#160;&#160;16</td></tr>
+<tr class="memdesc:ga54e3abe1429f747ace7dde6b1972da34"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ECM interrupt endpoint size.  <a href="#ga54e3abe1429f747ace7dde6b1972da34">More...</a><br /></td></tr>
+<tr class="separator:ga54e3abe1429f747ace7dde6b1972da34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66117434eb5762ea279e7daf55884231"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga66117434eb5762ea279e7daf55884231">USBUS_CDCECM_EP_DATA_SIZE</a>&#160;&#160;&#160;64</td></tr>
+<tr class="memdesc:ga66117434eb5762ea279e7daf55884231"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ECM bulk data endpoint size.  <a href="#ga66117434eb5762ea279e7daf55884231">More...</a><br /></td></tr>
+<tr class="separator:ga66117434eb5762ea279e7daf55884231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e331ded7588dfb1ed23c893a51e4c70"><td class="memItemLeft" align="right" valign="top"><a id="ga8e331ded7588dfb1ed23c893a51e4c70"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga8e331ded7588dfb1ed23c893a51e4c70">USBUS_ETHERNET_FRAME_BUF</a>&#160;&#160;&#160;<a class="el" href="math_8h.html#a8dbcb81b93148bf052d765893f2c2e41">MATH_ALIGN</a>(<a class="el" href="group__net__ethernet.html#ga0e6d56db28c49e480b5c5eee87ebf59a">ETHERNET_FRAME_LEN</a>, <a class="el" href="group__usbus__cdc__ecm.html#ga66117434eb5762ea279e7daf55884231">USBUS_CDCECM_EP_DATA_SIZE</a>)</td></tr>
+<tr class="memdesc:ga8e331ded7588dfb1ed23c893a51e4c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full ethernet frame rounded up to a whole number of transfers. <br /></td></tr>
+<tr class="separator:ga8e331ded7588dfb1ed23c893a51e4c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacdf7bd13739736bf3312ec413bc925a5"><td class="memItemLeft" align="right" valign="top"><a id="gacdf7bd13739736bf3312ec413bc925a5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#gacdf7bd13739736bf3312ec413bc925a5">USBUS_CDC_ECM_EP_IN_REQUIRED_NUMOF</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gacdf7bd13739736bf3312ec413bc925a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of IN EPs required for the CDC ECM interface. <br /></td></tr>
+<tr class="separator:gacdf7bd13739736bf3312ec413bc925a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f550b1ec8253999f798713e7e0fcffc"><td class="memItemLeft" align="right" valign="top"><a id="ga7f550b1ec8253999f798713e7e0fcffc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga7f550b1ec8253999f798713e7e0fcffc">USBUS_CDC_ECM_EP_OUT_REQUIRED_NUMOF</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga7f550b1ec8253999f798713e7e0fcffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Out EPs required for the CDC ECM interface. <br /></td></tr>
+<tr class="separator:ga7f550b1ec8253999f798713e7e0fcffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gace4e662ba72ee069473b56ffb474e73f"><td class="memItemLeft" align="right" valign="top"><a id="gace4e662ba72ee069473b56ffb474e73f"></a>
+typedef struct <a class="el" href="structusbus__cdcecm__device.html">usbus_cdcecm_device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#gace4e662ba72ee069473b56ffb474e73f">usbus_cdcecm_device_t</a></td></tr>
+<tr class="memdesc:gace4e662ba72ee069473b56ffb474e73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS CDC ECM device interface context. <br /></td></tr>
+<tr class="separator:gace4e662ba72ee069473b56ffb474e73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga76d14441c853f99f12d25b8b2af97221"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#ga76d14441c853f99f12d25b8b2af97221">usbus_cdcecm_notif_t</a> { <a class="el" href="group__usbus__cdc__ecm.html#gga76d14441c853f99f12d25b8b2af97221a6caa2a96edc138af86a6ea0e250f754b">USBUS_CDCECM_NOTIF_NONE</a>, 
+<a class="el" href="group__usbus__cdc__ecm.html#gga76d14441c853f99f12d25b8b2af97221aa8dc72fd5846bc3020e2ec5f15cc3a24">USBUS_CDCECM_NOTIF_LINK_UP</a>, 
+<a class="el" href="group__usbus__cdc__ecm.html#gga76d14441c853f99f12d25b8b2af97221ab16886f0a117744176fc6b2249cfdf63">USBUS_CDCECM_NOTIF_SPEED</a>
+ }</td></tr>
+<tr class="memdesc:ga76d14441c853f99f12d25b8b2af97221"><td class="mdescLeft">&#160;</td><td class="mdescRight">notification state, used to track which information must be send to the host  <a href="group__usbus__cdc__ecm.html#ga76d14441c853f99f12d25b8b2af97221">More...</a><br /></td></tr>
+<tr class="separator:ga76d14441c853f99f12d25b8b2af97221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac16f068f133d82425afd852bc352940d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__ecm.html#gac16f068f133d82425afd852bc352940d">usbus_cdcecm_init</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usbus__cdc__ecm.html#gace4e662ba72ee069473b56ffb474e73f">usbus_cdcecm_device_t</a> *handler)</td></tr>
+<tr class="memdesc:gac16f068f133d82425afd852bc352940d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ECM initialization function.  <a href="#gac16f068f133d82425afd852bc352940d">More...</a><br /></td></tr>
+<tr class="separator:gac16f068f133d82425afd852bc352940d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga70fd152e64ec3b449c1b0539eba44fe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70fd152e64ec3b449c1b0539eba44fe7">&#9670;&nbsp;</a></span>CONFIG_USBUS_CDC_ECM_CONFIG_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_USBUS_CDC_ECM_CONFIG_SPEED&#160;&#160;&#160;1000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Link throughput as reported by the peripheral. </p>
+<p>This defines a common up and down link throughput in bits/second. The USB peripheral will report this to the host. This doesn't affect the actual throughput, only what the peripheral reports to the host. </p>
+
+<p class="definition">Definition at line <a class="el" href="ecm_8h_source.html#l00048">48</a> of file <a class="el" href="ecm_8h_source.html">ecm.h</a>.</p>
+
+</div>
+</div>
+<a id="ga54e3abe1429f747ace7dde6b1972da34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga54e3abe1429f747ace7dde6b1972da34">&#9670;&nbsp;</a></span>USBUS_CDCECM_EP_CTRL_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USBUS_CDCECM_EP_CTRL_SIZE&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ECM interrupt endpoint size. </p>
+<p>Used by the device to report events to the host.</p>
+<dl class="section note"><dt>Note</dt><dd>Must be at least 16B to allow for reporting the link throughput </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="ecm_8h_source.html#l00072">72</a> of file <a class="el" href="ecm_8h_source.html">ecm.h</a>.</p>
+
+</div>
+</div>
+<a id="ga66117434eb5762ea279e7daf55884231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga66117434eb5762ea279e7daf55884231">&#9670;&nbsp;</a></span>USBUS_CDCECM_EP_DATA_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USBUS_CDCECM_EP_DATA_SIZE&#160;&#160;&#160;64</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ECM bulk data endpoint size. </p>
+<p>Used for the transfer of network frames. </p>
+
+<p class="definition">Definition at line <a class="el" href="ecm_8h_source.html#l00080">80</a> of file <a class="el" href="ecm_8h_source.html">ecm.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga76d14441c853f99f12d25b8b2af97221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga76d14441c853f99f12d25b8b2af97221">&#9670;&nbsp;</a></span>usbus_cdcecm_notif_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__usbus__cdc__ecm.html#ga76d14441c853f99f12d25b8b2af97221">usbus_cdcecm_notif_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>notification state, used to track which information must be send to the host </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga76d14441c853f99f12d25b8b2af97221a6caa2a96edc138af86a6ea0e250f754b"></a>USBUS_CDCECM_NOTIF_NONE&#160;</td><td class="fielddoc"><p>Nothing notified so far. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga76d14441c853f99f12d25b8b2af97221aa8dc72fd5846bc3020e2ec5f15cc3a24"></a>USBUS_CDCECM_NOTIF_LINK_UP&#160;</td><td class="fielddoc"><p>Link status is notified. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga76d14441c853f99f12d25b8b2af97221ab16886f0a117744176fc6b2249cfdf63"></a>USBUS_CDCECM_NOTIF_SPEED&#160;</td><td class="fielddoc"><p>Link speed is notified. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="ecm_8h_source.html#l00104">104</a> of file <a class="el" href="ecm_8h_source.html">ecm.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gac16f068f133d82425afd852bc352940d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac16f068f133d82425afd852bc352940d">&#9670;&nbsp;</a></span>usbus_cdcecm_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usbus_cdcecm_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td>
+          <td class="paramname"><em>usbus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__ecm.html#gace4e662ba72ee069473b56ffb474e73f">usbus_cdcecm_device_t</a> *&#160;</td>
+          <td class="paramname"><em>handler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ECM initialization function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS thread to use </td></tr>
+    <tr><td class="paramname">handler</td><td>CDCECM device struct </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

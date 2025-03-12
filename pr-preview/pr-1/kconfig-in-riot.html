@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Kconfig in RIOT</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('kconfig-in-riot.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Kconfig in RIOT </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#kconfig-overview">Overview</a><ul><li class="level2"><a href="#autotoc_md2415">Exposure</a></li>
+<li class="level2"><a href="#autotoc_md2416">Assignment</a></li>
+<li class="level2"><a href="#autotoc_md2417">Verification and application</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#kconfig-users-guide">User&#39;s guide to configure with Kconfig</a><ul><li class="level2"><a href="#configure-using-menuconfig">Configure using menuconfig</a></li>
+<li class="level2"><a href="#configure-using-files">Configure using &#39;.config&#39; files</a></li>
+<li class="level2"><a href="#app-config-kconfig">Application configuration with Kconfig</a></li>
+<li class="level2"><a href="#env-config-kconfig">Configuration via environment variables</a></li>
+<li class="level2"><a href="#autotoc_md2419">A note on the usage of CFLAGS</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#kconfig-integration-into-build-system">Integration into the build system</a><ul><li class="level2"><a href="#kconfig-steps-build-process">Steps during the build process</a><ul><li class="level3"><a href="#autotoc_md2421">0. Module dependency resolution</a><ul><li class="level4"><a href="#autotoc_md2422">Input</a></li>
+<li class="level4"><a href="#autotoc_md2423">Output</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#autotoc_md2424">1. Module listing</a><ul><li class="level4"><a href="#autotoc_md2425">Input</a></li>
+<li class="level4"><a href="#autotoc_md2426">Output</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#kconfig-steps-merge-configs">2. Merging all configuration sources</a><ul><li class="level4"><a href="#autotoc_md2427">Input</a></li>
+<li class="level4"><a href="#autotoc_md2428">Output</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#autotoc_md2429">3. Menuconfig execution (optional)</a><ul><li class="level4"><a href="#autotoc_md2430">Input</a></li>
+<li class="level4"><a href="#autotoc_md2431">Output</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#kconfig-steps-header-gen">4. Generation of the autoconf.h header</a><ul><li class="level4"><a href="#autotoc_md2432">Input:</a></li>
+<li class="level4"><a href="#autotoc_md2433">Output:</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#autotoc_md2434">Summary of files</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#autotoc_md2435">Kconfig symbols in Makefiles</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#kconfig-transition-phase">Transition phase</a><ul><li class="level2"><a href="#kconfig-configuration-optional">Making configuration via Kconfig optional</a></li>
+<li class="level2"><a href="#kconfig-cpu-boards-fekconfig-cpu-boards">Modelling CPUs and boards</a><ul><li class="level3"><a href="#autotoc_md2437">CPUs</a><ul><li class="level4"><a href="#autotoc_md2438">Example</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#autotoc_md2439">Boards</a><ul><li class="level4"><a href="#autotoc_md2440">Example</a></li>
+</ul>
+</li>
+<li class="level3"><a href="#autotoc_md2441">Default configurations</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#autotoc_md2442">Summary of reserved Kconfig prefixes</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#kconfig-appendixes">Appendixes</a><ul><li class="level2"><a href="#kconfig-appendix-a">Appendix A: Check if a module or package is used</a></li>
+<li class="level2"><a href="#kconfig-appendix-b">Appendix B: Difference between &#39;Kconfig&#39; and &#39;.config&#39; files</a><ul><ul><li class="level4"><a href="#autotoc_md2444">Kconfig file</a></li>
+<li class="level4"><a href="#autotoc_md2445">&#39;.config&#39; file</a></li>
+</ul>
+</ul>
+</li>
+<li class="level2"><a href="#kconfig-appendix-c">Appendix C: Pitfall when using different configuration interfaces</a></li>
+<li class="level2"><a href="#kconfig-appendix-d">Appendix D: A few key aspects while exposing a macro to Kconfig</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#kconfig-useful-references">Useful references</a></li>
+</ul>
+</div>
+<div class="textblock"><p>The objective of using Kconfig in RIOT is to configure software modules at compile-time. This means having a standard way of:</p><ul>
+<li>Exposing configurable parameters</li>
+<li>Assigning application and user-specific configurations</li>
+<li>Verifying these parameters<ul>
+<li>Check possible values</li>
+<li>Check valid configuration considering inter-dependencies</li>
+</ul>
+</li>
+<li>Applying the selected configuration</li>
+</ul>
+<h1><a class="anchor" id="kconfig-overview"></a>
+Overview</h1>
+<h2><a class="anchor" id="autotoc_md2415"></a>
+Exposure</h2>
+<p>Modules in RIOT expose their configurable parameters via Kconfig files (for more information on Kconfig syntax check <a href="https://www.kernel.org/doc/html/latest/kbuild/kconfig-language.html">the specification</a>). In these files documentation, restrictions, default values and dependencies can be expressed.</p>
+<p>Kconfig files are structured through the file system mirroring the current module distribution. In time, all modules will have Kconfig files to make themselves configurable through this system.</p>
+<h2><a class="anchor" id="autotoc_md2416"></a>
+Assignment</h2>
+<p>The user can assign values to the exposed parameters, either by manually writing '.config' files or using an interface such as Menuconfig. Parameters with no assigned values will take the default ones. For a detailed distinction between Kconfig and '.config' files see <a href="#kconfig-appendix-b">Appendix B</a>.</p>
+<h2><a class="anchor" id="autotoc_md2417"></a>
+Verification and application</h2>
+<p>Using '.config' and Kconfig files the build system takes care of doing the necessary checks on the values according to the parameter definition. After that, the <code>autoconf.h</code> header file is generated, it contains all the configurations in the form of (<code>CONFIG_</code> prefixed) macros. </p><hr/>
+ <h1><a class="anchor" id="kconfig-users-guide"></a>
+User's guide to configure with Kconfig</h1>
+<h2><a class="anchor" id="configure-using-menuconfig"></a>
+Configure using menuconfig</h2>
+<p>In order to use the graphical interface menuconfig to configure the application, run <code>make menuconfig</code> in the application's folder. All available configurations (based on the used modules) for the particular platform will be presented. By default, the configuration of a module via Kconfig is not enabled. In order to activate the configuration via Kconfig the corresponding option should be selected. That will enable the configuration of all inner options, if available.</p>
+<p>Once the desired configuration is achieved save the configuration to the default proposed path and exit. The saved configuration will be applied when the code is compiled (<code>make all</code>).</p>
+<p>If the current configuration will be used in the future it can be saved in the application's folder as <code>user.config</code>, using the 'Save' option in menuconfig. This way it will be persistent after cleaning the application directory (<code>make clean</code>).</p>
+<h2><a class="anchor" id="configure-using-files"></a>
+Configure using '.config' files</h2>
+<p>The second way to configure the application is by directly writing '.config' files. Two files will be sources of configuration during the generation of the final header file: <code>app.config</code> and <code>user.config</code>, which should be placed inside the application's folder. <code>app.config</code> sets default configuration values for the particular application, the user can override them by setting them in <code>user.config</code>. Additionally, further <code>.config</code> files can be added to the variable <code>KCONFIG_ADD_CONFIG</code>, which will be applied <em>after</em> default CPU and board configurations, <code>app.config</code> and <code>user.config</code>. This means that they will have priority.</p>
+<p>Let's say that the <code>SOCK_UTIL_SCHEME_MAXLEN</code> symbol in <code>sock_util</code> module needs to be configured. The <code>user.config</code> file could look like:</p>
+<div class="fragment"><div class="line"># activate configuration of sock_util using Kconfig</div><div class="line">CONFIG_KCONFIG_MODULE_SOCK_UTIL=y</div><div class="line"># change scheme part length</div><div class="line">CONFIG_SOCK_UTIL_SCHEME_MAXLEN=24</div></div><!-- fragment --><p>In this case, there is no need for using menuconfig. It's enough just to call <code>make all</code> in the application folder, as this configuration will be read and applied. Note that if any dependency issue occurs, warnings will be generated (e.g. not enabling the configuration of a module via Kconfig).</p>
+<h2><a class="anchor" id="app-config-kconfig"></a>
+Application configuration with Kconfig</h2>
+<p>To expose application-specific configuration options a <code>Kconfig</code> file can be placed in the application's folder. For an example of this you can check the <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/build_system/kconfig">tests/build_system/kconfig</a> application.</p>
+<h2><a class="anchor" id="env-config-kconfig"></a>
+Configuration via environment variables</h2>
+<p>For easy debugging of configuration or testing new modules by compiling them into existing applications, one can also use environment variables prefixed by <code>RIOT_CONFIG_</code>. To achieve the same configuration exemplified in <a class="el" href="kconfig-in-riot.html#configure-using-files">Configure using '.config' files</a>, e.g., you could also use</p>
+<div class="fragment"><div class="line">RIOT_CONFIG_KCONFIG_MODULE_SOCK_UTIL=1 \</div><div class="line">RIOT_CONFIG_SOCK_UTIL_SCHEME_MAXLEN=24 \</div><div class="line">    make</div></div><!-- fragment --><p>All the checks that apply for <code>.config</code> files also are done with this approach.</p>
+<p>Mind that this is only meant to be used during development. In production, please set the configuration via <code>.config</code> files.</p>
+<h2><a class="anchor" id="autotoc_md2419"></a>
+A note on the usage of CFLAGS</h2>
+<p>When a certain module is being configured via Kconfig the configuration macro will no longer be overridable by means of CFLAGS (e.g. set on the compilation command or on a Makefile). Consider this if you are getting a 'redefined warning'. </p><hr/>
+ <h1><a class="anchor" id="kconfig-integration-into-build-system"></a>
+Integration into the build system</h1>
+<p>The integration of Kconfig into the build system is mainly done in <code>makefiles/kconfig.mk</code>.</p>
+<h2><a class="anchor" id="kconfig-steps-build-process"></a>
+Steps during the build process</h2>
+<div class="image">
+<object type="image/svg+xml" data="kconfig_integration.svg">kconfig_integration.svg</object>
+<div class="caption">
+Output of every step of the build process</div></div>
+ <h3><a class="anchor" id="autotoc_md2421"></a>
+0. Module dependency resolution</h3>
+<p>The resolution of module dependencies is performed by the build system where all the used modules and packages end up listed in the <code>USEMODULE</code> or <code>USEPKG</code> make variables.</p>
+<h4><a class="anchor" id="autotoc_md2422"></a>
+Input</h4>
+<ul>
+<li>Makefiles.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2423"></a>
+Output</h4>
+<ul>
+<li><code>USEMODULE</code> and <code>USEPKG</code> variables.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2424"></a>
+1. Module listing</h3>
+<p>The list of modules needed for the particular build is dumped into the <code>$ (GENERATED_DIR)/Kconfig.dep</code> file, where each module is translated into a Kconfig symbol as documented in <a href="#kconfig-appendix-a">Appendix A</a>.</p>
+<h4><a class="anchor" id="autotoc_md2425"></a>
+Input</h4>
+<ul>
+<li><code>USEMODULE</code> and <code>USEPKG</code> variables</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2426"></a>
+Output</h4>
+<ul>
+<li><code>$ (GENERATED_DIR)/Kconfig.dep</code> file</li>
+</ul>
+<h3><a class="anchor" id="kconfig-steps-merge-configs"></a>
+2. Merging all configuration sources</h3>
+<p>In this step configuration values are taken from multiple sources and merged into a single <code>out.config</code> configuration file. This file is temporary and is removed on clean. If the user needs to save a particular configuration set, a backup has to be saved (this can be done using the menuconfig interface) so it can be loaded later in this step.</p>
+<p>To accomplish merging of multiple input files, the <code>genconfig</code> script is used. Note that <b>the order matters</b>: existing configuration values are merged in the order expressed in the input section, where the last value assigned to a parameter has the highest priority. If no configuration files are available all default values will be applied.</p>
+<p><code>out.config</code> is the only configuration input for the <code>autoconf.h</code> in the <a href="#kconfig-steps-header-gen">generation step</a>.</p>
+<p>Additionally this step generates a file <code>out.config.d</code> which holds the information of all the used Kconfig files in Makefile format. This file is included by the build system and allows to re-trigger the generation of <code>out.conf</code> whenever a Kconfig file is modified.</p>
+<h4><a class="anchor" id="autotoc_md2427"></a>
+Input</h4>
+<ul>
+<li>Optional:<ul>
+<li><code>$ (APPDIR)/app.config</code>: Application specific default configurations.</li>
+<li><code>$ (APPDIR)/user.config</code>: Configurations saved by user.</li>
+</ul>
+</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2428"></a>
+Output</h4>
+<ul>
+<li><code>$ (GENERATED_DIR)/out.config</code> file.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2429"></a>
+3. Menuconfig execution (optional)</h3>
+<p>Menuconfig is a graphical interface for software configuration. It is used for the configuration of the Linux kernel. This section explains the process that occurs when RIOT is being configured using the menuconfig interface.</p>
+<p>The main <code>Kconfig</code> file is used in this step to show the configurable parameters of the system. Kconfig will filter inapplicable parameters (i.e. parameters exposed by modules that are not being used) based on the file <code>$ (GENERATED_DIR)/Kconfig.dep</code> generated in step 1.</p>
+<p>Note that if Kconfig is not used to configure a module, the corresponding header files default values will be used.</p>
+<p><code>out.config</code> is one of the inputs for menuconfig. This means that any configuration that the application defines in the <code>app.config</code> or a backup configuration from the user in <code>user.config</code> are taken into account on the first run (see <a href="#kconfig-appendix-c">Appendix C</a>).</p>
+<p>In this step the user chooses configuration values (or selects the minimal configuration) and saves it to the <code>out.config</code> file. Here the user can choose to save a backup configuration file for later at a different location (e.g. a <code>user.config</code> file in the application folder).</p>
+<p>If any changes occur to <code>out.config</code>, the <a href="#kconfig-steps-header-gen">generation of autoconf.h</a> is executed automatically.</p>
+<h4><a class="anchor" id="autotoc_md2430"></a>
+Input</h4>
+<ul>
+<li><code>/Kconfig</code> file.</li>
+<li>Optional:<ul>
+<li><code>$ (APPDIR)/app.config</code></li>
+<li><code>$ (APPDIR)/user.config</code></li>
+<li><code>$ (GENERATED_DIR)/out.config</code></li>
+</ul>
+</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2431"></a>
+Output</h4>
+<ul>
+<li>Updated <code>$ (GENERATED_DIR)/out.config</code> file.</li>
+<li><code>$ (GENERATED_DIR)/out.config.old</code> backup file.</li>
+</ul>
+<h3><a class="anchor" id="kconfig-steps-header-gen"></a>
+4. Generation of the autoconf.h header</h3>
+<p>With the addition of Kconfig a dependency has been added to the build process: the <code>$ (GENERATED_DIR)/autoconf.h</code> header file. This header file is the main output from the Kconfig configuration system. It holds all the macros that should be used to configure modules in RIOT: <code>CONFIG_&lt;module&gt;_&lt;parameter&gt;</code>.</p>
+<p>In order to generate the <code>autoconf.h</code> file the <code>genconfig</code> script is used. Inputs for this script are the main <code>Kconfig</code> file and <code>out.config</code> configuration file, which holds the selected values for the exposed parameters.</p>
+<h4><a class="anchor" id="autotoc_md2432"></a>
+Input:</h4>
+<ul>
+<li><code>$ (GENERATED_DIR)/out.config</code> file.</li>
+<li>Main <code>Kconfig</code> file exposing configuration of modules.</li>
+</ul>
+<h4><a class="anchor" id="autotoc_md2433"></a>
+Output:</h4>
+<ul>
+<li><code>$ (GENERATED_DIR)/autoconf.h</code> configuration header file.</li>
+<li>Optional:<ul>
+<li><code>$ (GENERATED_DIR)/deps/*/*.h</code> header files that allow incremental builds</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md2434"></a>
+Summary of files</h3>
+<p>These files are defined in <code>kconfig.mk</code>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">File  </th><th class="markdownTableHeadNone">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>Kconfig</code>  </td><td class="markdownTableBodyNone">Defines configuration options of modules.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>Kconfig.dep</code>  </td><td class="markdownTableBodyNone">Holds a list of the modules that are being compiled.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>app.config</code>  </td><td class="markdownTableBodyNone">Holds default application configuration values.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>user.config</code>  </td><td class="markdownTableBodyNone">Holds configuration values applied by the user.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>out.config</code>  </td><td class="markdownTableBodyNone">Configuration file containing all the symbols defined in <code>autoconf.h</code>.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>out.config.d</code>  </td><td class="markdownTableBodyNone">Dependency file of <code>out.config</code> containing the list of Kconfig files used to generate it.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>autoconf.h</code>  </td><td class="markdownTableBodyNone">Header file containing the macros that applied the selected configuration.   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md2435"></a>
+Kconfig symbols in Makefiles</h2>
+<p>As '.config' files have Makefile syntax they can be included when building, which allows to access the applied configuration from the build system.</p>
+<p>During migration this is also useful, as it gives the ability to check if a parameter is being configured via Kconfig or a default value via <code>CFLAGS</code> could be injected. For example:</p>
+<div class="fragment"><div class="line">ifndef CONFIG_USB_VID</div><div class="line">  CFLAGS += -DCONFIG_USB_VID=0x1209</div><div class="line">endif</div></div><!-- fragment --><p>Symbols will have the same name as the configuration macros (thus will always have the <code>CONFIG_</code> prefix). As the configuration file is loaded in <code>Makefile.include</code> care should be taken when performing checks in the application's Makefile. The symbols will not be defined until after including <code>Makefile.include</code>. </p><hr/>
+ <h1><a class="anchor" id="kconfig-transition-phase"></a>
+Transition phase</h1>
+<h2><a class="anchor" id="kconfig-configuration-optional"></a>
+Making configuration via Kconfig optional</h2>
+<p>During transition to the usage of Kconfig as the main configuration tool for RIOT, the default behavior will be the traditional one: expose configuration options in header files and use CFLAGS as inputs. To allow optional configuration via Kconfig, a convention will be used when writing Kconfig files.</p>
+<p>Modules should be contained in their own <code>menu</code> entries, this way the user can choose to enable the configuration via Kconfig for an specific module. These entries should define a dependency on the module they configure (see <a href="#kconfig-appendix-a">Appendix A</a> to see how to check if a module is being used).</p>
+<p>The module configuration must be enabled either via make dependency modelling.</p>
+<h2><a class="anchor" id="kconfig-cpu-boards-fekconfig-cpu-boards"></a>
+Modelling CPUs and boards</h2>
+<p>CPUs and boards are being modelled in Kconfig. The following is a guide on how to organize and name the symbols.</p>
+<h3><a class="anchor" id="autotoc_md2437"></a>
+CPUs</h3>
+<p>The proposed hierarchy for the classification of CPUs is as follows:</p>
+<div class="fragment"><div class="line">                    +------------+</div><div class="line">More Specific       | CPU_MODEL  |</div><div class="line">      +             +------------+</div><div class="line">      |</div><div class="line">      |</div><div class="line">      |             +------------+</div><div class="line">      |             |  CPU_FAM   |</div><div class="line">      |             +------------+</div><div class="line">      |</div><div class="line">      |</div><div class="line">      |             +------------+</div><div class="line">      |             |  CPU_CORE  |</div><div class="line">      |             +------------+</div><div class="line">      |</div><div class="line">      |</div><div class="line">      v             +------------+</div><div class="line">Less Specific       |  CPU_ARCH  |</div><div class="line">                    +------------+</div></div><!-- fragment --><p>Where each hierarchy is defined as:</p><ul>
+<li><code>CPU_MODEL</code>: The specific identifier of the used CPU, used for some CPU implementations to differentiate between different memory layouts.</li>
+<li><code>CPU_FAM</code>: An intermediate identifier between CPU and CPU_MODEL that represents a sub-group of a Manufacturers CPU's.</li>
+<li><code>CPU_CORE</code>: The specific identifier of the core present in the CPU.</li>
+<li><code>CPU_ARCH</code>: The specific identifier of the architecture of the core defined in <code>CPU_CORE</code>.</li>
+</ul>
+<p>In order to model the hierarchies, a hidden boolean symbol must be declared for each. The name of the symbol must begin with the correspondent prefix and must be followed by the specific value. For instance, the 'samd21' family symbol is named <code>CPU_FAM_SAMD21</code>.</p>
+<p>In addition, a default value to the correspondent common symbol must be defined. The default value must be guarded by the boolean symbol correspondent to the hierarchy.</p>
+<p>Features may be provided by any hierarchy symbol. Usually symbols are selected from more specific to less specific. This means that a <code>CPU_MODEL_&lt;model&gt;</code> symbol usually would select the correspondent <code>CPU_FAM_&lt;family&gt;</code> symbol, which would in turn select the <code>CPU_CORE_&lt;core&gt;</code>. This may change in some cases where <code>CPU_COMMON_</code> symbols are defined to avoid repetition. For convenience and if it makes sense within a CPU vendor family, it's also allowed to use intermediate grouping levels, like <code>CPU_LINE_&lt;xxx&gt;</code> used for STM32.</p>
+<p>In addition to the symbols of the hierarchy described above, a default value to the <code>CPU</code> symbol should be assigned, which will match the value of the <code>CPU</code> Makefile variable in the build system.</p>
+<p>The declaration of the symbols should be placed in a <code>Kconfig</code> file in the folder that corresponds to the hierarchy. When the symbols are scattered into multiple files, it is responsibility of file containing the most specific symbols to <code>source</code> the less specific. Keep in mind that only the file located in <code>/cpu/&lt;CPU&gt;/Kconfig</code> will be included by the root <code>/Kconfig</code> file.</p>
+<h4><a class="anchor" id="autotoc_md2438"></a>
+Example</h4>
+<div class="fragment"><div class="line"># This is the most specific symbol (selected by the board)</div><div class="line"># The CPU model selects the family it belongs to</div><div class="line">config CPU_MODEL_SAMR21G18A</div><div class="line">    bool</div><div class="line">    select CPU_FAM_SAMD21</div><div class="line"></div><div class="line"># In this case the family selects a common &#39;sam0&#39; symbol (which provides some</div><div class="line"># features), and the core it has (cortex-m0+)</div><div class="line">config CPU_FAM_SAMD21</div><div class="line">    bool</div><div class="line">    select CPU_COMMON_SAM0</div><div class="line">    select CPU_CORE_CORTEX_M0PLUS</div><div class="line"></div><div class="line"># The value of the common value depends on the selected model</div><div class="line">config CPU_MODEL</div><div class="line">    default &quot;samd21e18a&quot; if CPU_MODEL_SAMD21E18A</div><div class="line">    default &quot;samd21g18a&quot; if CPU_MODEL_SAMD21G18A</div><div class="line">    default &quot;samd21j18a&quot; if CPU_MODEL_SAMD21J18A</div><div class="line">    default &quot;samr21e18a&quot; if CPU_MODEL_SAMR21E18A</div><div class="line">    default &quot;samr21g18a&quot; if CPU_MODEL_SAMR21G18A</div><div class="line"></div><div class="line">config CPU_FAM</div><div class="line">    default &quot;samd21&quot; if CPU_FAM_SAMD21</div></div><!-- fragment --><h3><a class="anchor" id="autotoc_md2439"></a>
+Boards</h3>
+<p>Boards must be modelled as hidden boolean symbols with the prefix <code>BOARD_</code> which default to <code>y</code> and are placed in <code>/boards/&lt;BOARD&gt;/Kconfig</code>. This file will be <code>source</code>d from the main <code>/Kconfig</code> file. The board symbol must select the <code>CPU_MODEL_&lt;model&gt;</code> symbol that corresponds to the CPU model present on the board. The board symbol must also select the symbols that correspond to the features it provides.</p>
+<p>In the same <code>Kconfig</code> file a default value must be assigned to the common <code>BOARD</code> symbol. It must be guarded by the board's symbol, so it only applies in that case.</p>
+<p>There are cases when grouping common code for multiple boards helps to avoid unnecessary repetition. In the case features are provided in a common board folder (e.g. <code>/boards/common/arduino-atmega</code>) a symbol should be declared to model this in Kconfig. Symbols for common boards must have the <code>BOARD_COMMON_</code> prefix, and must select the common provided features.</p>
+<h4><a class="anchor" id="autotoc_md2440"></a>
+Example</h4>
+<p>The samr21-xpro has a <code>samr21g18a</code> CPU and provides multiple features. Its symbol is modelled as following:</p>
+<div class="fragment"><div class="line"># /boards/samr21-xpro/Kconfig</div><div class="line"></div><div class="line">config BOARD</div><div class="line">    default &quot;samr21-xpro&quot; if BOARD_SAMR21_XPRO</div><div class="line"></div><div class="line">config BOARD_SAMR21_XPRO</div><div class="line">    bool</div><div class="line">    default y</div><div class="line">    select CPU_MODEL_SAMR21G18A</div></div><!-- fragment --><h3><a class="anchor" id="autotoc_md2441"></a>
+Default configurations</h3>
+<p>Boards, common board directories, CPUs and common CPU directories may need to override default configuration values. Visible configuration symbols are configurable by the user and show on the menuconfig interface. <code>.config</code> files are used to set their values. To allow multiple sources of <code>.config</code> files, there are two Makefile variables developers should use: <code>KCONFIG_CPU_CONFIG</code> for sources added by the CPU or common CPU directories, and <code>KCONFIG_BOARD_CONFIG</code> for sources added by the board or common board directories. This ensures the correct priority of the configurations.</p>
+<p>The <code>Makefile.features</code> infrastructure is used to populate the configuration sources. As the order in which <code>.config</code> files are merged matters, configuration sources should be ordered from more generic to more specific. Because board's <code>Makefile.features</code> is included before CPU's <code>Makefile.features</code> it is important to utilize two different lists of configuration sources. For instance, if <code>cpu/cortexm_common</code> adds its configuration, <code>cpu/stm32</code> should add its configuration after it, and <code>boards/stm32f769i-disco</code> after it.</p>
+<div class="fragment"><div class="line">include $(RIOTCPU)/cortexm_common/Makefile.features</div><div class="line"></div><div class="line"># Add stm32 configs after including cortexm_common so stm32 takes precedence</div><div class="line">KCONFIG_CPU_CONFIG += $(RIOTCPU)/stm32/stm32.config</div></div><!-- fragment --><h2><a class="anchor" id="autotoc_md2442"></a>
+Summary of reserved Kconfig prefixes</h2>
+<p>The following symbol prefixes have been assigned particular semantics and are reserved for the cases described below:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Prefix  </th><th class="markdownTableHeadLeft">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>BOARD_</code>  </td><td class="markdownTableBodyLeft">Models a board   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>BOARD_COMMON_</code>  </td><td class="markdownTableBodyLeft">Used for common symbols used by multiple boards   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>CPU_ARCH_</code>  </td><td class="markdownTableBodyLeft">Models a CPU architecture   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>CPU_COMMON_</code>  </td><td class="markdownTableBodyLeft">Used for common symbols used by multiple CPUs   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>CPU_CORE_</code>  </td><td class="markdownTableBodyLeft">Models a CPU core   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>CPU_FAM_</code>  </td><td class="markdownTableBodyLeft">Models a family of CPUs   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>CPU_MODEL_</code>  </td><td class="markdownTableBodyLeft">Models a particular model of CPU   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>USEMODULE_</code>  </td><td class="markdownTableBodyLeft">Models a <a href="creating-modules.html#creating-modules">RIOT module</a>. Generated from <code>USEMODULE</code> variable   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>USEPKG_</code>  </td><td class="markdownTableBodyLeft">Models an <a href="group__pkg.html">external package</a>. Generated from <code>USEPKG</code> variable   </td></tr>
+</table>
+<hr/>
+ <h1><a class="anchor" id="kconfig-appendixes"></a>
+Appendixes</h1>
+<h2><a class="anchor" id="kconfig-appendix-a"></a>
+Appendix A: Check if a module or package is used</h2>
+<p>In order to show only the relevant configuration parameters to the user with respect to a given application and board selection, Kconfig needs knowledge about all modules and packages to be used for a compilation. The dependency handling among modules is performed by the build system (via <code>Makefile.dep</code> files). The interface defined to declared the used modules and packages is the <code>$ (GENERATED_DIR)/Kconfig.dep</code> file.</p>
+<p>There will be a symbol for every used module (i.e. every module in <code>USEMODULE</code> make variable) and package. The names in the symbols will be uppercase and separated by <code>_</code>. Based on these symbols configurability is decided.</p>
+<p>The following is an example of how to use these symbols in Kconfig files to configure compile-time configurations with <code>USEMODULE</code> dependencies:</p>
+<div class="fragment"><div class="line">menu &quot;Configure Sock Utilities&quot;</div><div class="line">    depends on USEMODULE_SOCK_UTIL</div><div class="line"></div><div class="line">config SOCK_UTIL_SCHEME_MAXLEN</div><div class="line">    int &quot;Maximum length of the scheme part for sock_urlsplit&quot;</div><div class="line">    default 16</div><div class="line"></div><div class="line">...</div><div class="line"></div><div class="line">endmenu # Configure Sock Utilities</div></div><!-- fragment --><h2><a class="anchor" id="kconfig-appendix-b"></a>
+Appendix B: Difference between 'Kconfig' and '.config' files</h2>
+<p>Kconfig files describe a configuration database, which is a collection of configuration options organized in a tree structure. Configuration options may have dependencies (among other attributes), which are used to determine their visibility.</p>
+<p>Kconfig files are written in <a href="https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt">Kconfig language</a> defined in the Linux kernel. Configuration options have attributes such as types, prompts and default values.</p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

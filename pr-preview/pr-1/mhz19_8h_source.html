@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/mhz19.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mhz19_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mhz19.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mhz19_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2018 Koen Zandberg &lt;koen@bergzand.net&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2018 Beduino Master Projekt - University of Bremen</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Copyright (C) 2020 Bas Stottelaar &lt;basstottelaar@gmail.com&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef MHZ19_H</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MHZ19_H</span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2saul_8h.html">saul.h</a>&quot;</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef MODULE_MHZ19_UART</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2uart_8h.html">periph/uart.h</a>&quot;</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mhz19__internals_8h.html">mhz19_internals.h</a>&quot;</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mutex_8h.html">mutex.h</a>&quot;</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_MHZ19_UART */</span><span class="preprocessor"></span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef MODULE_MHZ19_PWM</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_MHZ19_PWM */</span><span class="preprocessor"></span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">enum</span> {</div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda629a82c3d1ffaaf897d5c54ddf99a9b2">   63</a></span>&#160;    <a class="code" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda629a82c3d1ffaaf897d5c54ddf99a9b2">MHZ19_OK</a>            =  0,       </div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda20334fc3281533446dcfcb62bc21cfbb">   64</a></span>&#160;    <a class="code" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda20334fc3281533446dcfcb62bc21cfbb">MHZ19_ERR_INIT</a>      = -1,       </div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda7c060762b51153ab4121c7eed3b55f1a">   65</a></span>&#160;    <a class="code" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda7c060762b51153ab4121c7eed3b55f1a">MHZ19_ERR_TIMEOUT</a>   = -2,       </div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda10b38292cdddbc617702f8fb70586440">   66</a></span>&#160;    <a class="code" href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda10b38292cdddbc617702f8fb70586440">MHZ19_ERR_CHECKSUM</a>  = -3,       </div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#ifdef MODULE_MHZ19_UART</span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a> uart;                </div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> auto_calibration;      </div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} mhz19_params_t;</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> mhz19_params_t *params;   </div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="structmutex__t.html">mutex_t</a> mutex;                  </div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="structmutex__t.html">mutex_t</a> sync;                   </div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t idx;                    </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint8_t rxmem[MHZ19_BUF_SIZE];  </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} mhz19_t;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_MHZ19_UART */</span><span class="preprocessor"></span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifdef MODULE_MHZ19_PWM</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    gpio_t pin;     </div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} mhz19_params_t;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    gpio_t pin;     </div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;} mhz19_t;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MODULE_MHZ19_PWM */</span><span class="preprocessor"></span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="structsaul__driver__t.html">saul_driver_t</a> <a class="code" href="group__drivers__mhz19.html#gae7fbeda4b0ca145d08f1d1eb75d700ce">mhz19_ppm_saul_driver</a>;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__drivers__mhz19.html#ga326bf9228d31c89226e9d7deb1137e6a">mhz19_init</a>(mhz19_t *dev, <span class="keyword">const</span> mhz19_params_t *params);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__drivers__mhz19.html#ga80b093fb1763a7feb3f6bdf2a5567fb9">mhz19_get_ppm</a>(mhz19_t *dev, int16_t *ppm);</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#ifdef MODULE_MHZ19_UART</span></div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keywordtype">void</span> mhz19_set_auto_calibration(mhz19_t *dev, <span class="keywordtype">bool</span> enable);</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">void</span> mhz19_calibrate_zero_point(mhz19_t *dev);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MHZ19_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div><div class="ttc" id="group__drivers__mhz19_html_ggacb6f6fa3e73244ffcf5c366390b4a4eda629a82c3d1ffaaf897d5c54ddf99a9b2"><div class="ttname"><a href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda629a82c3d1ffaaf897d5c54ddf99a9b2">MHZ19_OK</a></div><div class="ttdoc">everything was fine </div><div class="ttdef"><b>Definition:</b> <a href="mhz19_8h_source.html#l00063">mhz19.h:63</a></div></div>
+<div class="ttc" id="group__drivers__mhz19_html_ga80b093fb1763a7feb3f6bdf2a5567fb9"><div class="ttname"><a href="group__drivers__mhz19.html#ga80b093fb1763a7feb3f6bdf2a5567fb9">mhz19_get_ppm</a></div><div class="ttdeci">int mhz19_get_ppm(mhz19_t *dev, int16_t *ppm)</div><div class="ttdoc">Get measured CO2 ppm value. </div></div>
+<div class="ttc" id="mhz19__internals_8h_html"><div class="ttname"><a href="mhz19__internals_8h.html">mhz19_internals.h</a></div><div class="ttdoc">Internal addresses, registers, constants for the MH-Z19 CO2 sensor. </div></div>
+<div class="ttc" id="structsaul__driver__t_html"><div class="ttname"><a href="structsaul__driver__t.html">saul_driver_t</a></div><div class="ttdoc">Definition of the RIOT actuator/sensor interface. </div><div class="ttdef"><b>Definition:</b> <a href="drivers_2include_2saul_8h_source.html#l00284">saul.h:284</a></div></div>
+<div class="ttc" id="group__drivers__periph__uart_html_ga83a92464bff5eb42f085e06e553d52b1"><div class="ttname"><a href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a></div><div class="ttdeci">uint_fast8_t uart_t</div><div class="ttdoc">Define default UART type identifier. </div><div class="ttdef"><b>Definition:</b> <a href="drivers_2include_2periph_2uart_8h_source.html#l00085">uart.h:85</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2uart_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2uart_8h.html">uart.h</a></div><div class="ttdoc">Low-level UART peripheral driver interface definition. </div></div>
+<div class="ttc" id="group__drivers__mhz19_html_ggacb6f6fa3e73244ffcf5c366390b4a4eda10b38292cdddbc617702f8fb70586440"><div class="ttname"><a href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda10b38292cdddbc617702f8fb70586440">MHZ19_ERR_CHECKSUM</a></div><div class="ttdoc">checksum failure on received data </div><div class="ttdef"><b>Definition:</b> <a href="mhz19_8h_source.html#l00066">mhz19.h:66</a></div></div>
+<div class="ttc" id="group__drivers__mhz19_html_gae7fbeda4b0ca145d08f1d1eb75d700ce"><div class="ttname"><a href="group__drivers__mhz19.html#gae7fbeda4b0ca145d08f1d1eb75d700ce">mhz19_ppm_saul_driver</a></div><div class="ttdeci">const saul_driver_t mhz19_ppm_saul_driver</div><div class="ttdoc">Export SAUL endpoint. </div></div>
+<div class="ttc" id="drivers_2include_2saul_8h_html"><div class="ttname"><a href="drivers_2include_2saul_8h.html">saul.h</a></div><div class="ttdoc">Definition of the generic [S]ensor [A]ctuator [U]ber [L]ayer. </div></div>
+<div class="ttc" id="mutex_8h_html"><div class="ttname"><a href="mutex_8h.html">mutex.h</a></div><div class="ttdoc">Mutex for thread synchronization. </div></div>
+<div class="ttc" id="structmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdoc">Mutex structure. </div><div class="ttdef"><b>Definition:</b> <a href="mutex_8h_source.html#l00146">mutex.h:146</a></div></div>
+<div class="ttc" id="group__drivers__mhz19_html_ga326bf9228d31c89226e9d7deb1137e6a"><div class="ttname"><a href="group__drivers__mhz19.html#ga326bf9228d31c89226e9d7deb1137e6a">mhz19_init</a></div><div class="ttdeci">int mhz19_init(mhz19_t *dev, const mhz19_params_t *params)</div><div class="ttdoc">Initialize a MH-Z19 device. </div></div>
+<div class="ttc" id="group__drivers__mhz19_html_ggacb6f6fa3e73244ffcf5c366390b4a4eda7c060762b51153ab4121c7eed3b55f1a"><div class="ttname"><a href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda7c060762b51153ab4121c7eed3b55f1a">MHZ19_ERR_TIMEOUT</a></div><div class="ttdoc">timeout on retrieving sensor data </div><div class="ttdef"><b>Definition:</b> <a href="mhz19_8h_source.html#l00065">mhz19.h:65</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions. </div></div>
+<div class="ttc" id="group__drivers__mhz19_html_ggacb6f6fa3e73244ffcf5c366390b4a4eda20334fc3281533446dcfcb62bc21cfbb"><div class="ttname"><a href="group__drivers__mhz19.html#ggacb6f6fa3e73244ffcf5c366390b4a4eda20334fc3281533446dcfcb62bc21cfbb">MHZ19_ERR_INIT</a></div><div class="ttdoc">error initializing the device </div><div class="ttdef"><b>Definition:</b> <a href="mhz19_8h_source.html#l00064">mhz19.h:64</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:19 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

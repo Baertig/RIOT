@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Simple-Subnet auto-configuration</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__gnrc__ipv6__auto__subnets.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">Simple-Subnet auto-configuration<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Automatic configuration for cascading subnets.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Automatic configuration for cascading subnets. </p>
+<h1><a class="anchor" id="autotoc_md2506"></a>
+About</h1>
+<p>This module provides an automatic configuration for networks with a (simple) tree topology.</p>
+<p>If a sufficiently large IPv6 subnet (prefix length &lt; /64) is provided via Router Advertisements, a routing node with this module will automatically configure subnets from it by dividing it into sub-prefixes for each downstream interface.</p>
+<p>When using the <code>gnrc_ipv6_auto_subnets_simple</code> module, there can only be a single routing node on each level of the network but an arbitrary number of leaf nodes and downstream interfaces.</p>
+<div class="image">
+<object type="image/svg+xml" data="gnrc_ipv6_auto_subnets_simple.svg">gnrc_ipv6_auto_subnets_simple.svg</object>
+<div class="caption">
+Example Topology with only one router on each level</div></div>
+<p> If there are multiple routing nodes on the same link, coordination between the routers is required. For this the <code>gnrc_ipv6_auto_subnets</code> implements a simple UDP based synchronisation protocol where each router announces the number of subnets they want to create.</p>
+<div class="image">
+<object type="image/svg+xml" data="gnrc_ipv6_auto_subnets-flow.svg">gnrc_ipv6_auto_subnets-flow.svg</object>
+<div class="caption">
+Synchronisation Algorithm</div></div>
+<p> The layer 2 address of the sender then determines the order in which the prefixes are assigned.</p>
+<div class="image">
+<object type="image/svg+xml" data="gnrc_ipv6_auto_subnets.svg">gnrc_ipv6_auto_subnets.svg</object>
+<div class="caption">
+Example Topology with multiple routers</div></div>
+<p> The downstream network(s) receive the sub-prefix via Router Advertisements and the process repeats until the bits of the prefix are exhausted. The smallest subnet must still have a /64 prefix.</p>
+<p>The new subnet must no longer be considered on-link by the hosts in the parent network. Therefore the downstream router will send a router advertisement, which only contains a Route Information Option, to the upstream network. The Route Information Option contains the prefix of the downstream network so that upstream routers will no longer consider hosts in this subnet on-link, but instead will use the downstream router to route to the new subnet.</p>
+<h2><a class="anchor" id="autotoc_md2507"></a>
+The need for a Route Information Option</h2>
+<p>All nodes that want to communicate with hosts in a downstream subnet must implement parsing of the Route Information Option. For routing RIOT nodes this is enabled by default, non-routing nodes need to enable the <code>gnrc_ipv6_nib_rio</code> module.</p>
+<p>This is because all addresses in the subnet are also within the original network, so without further information hosts would consider those addresses on-link and perform neighbor solicitation to communicate with them.</p>
+<p>E.g. if host Ⓒ (<code>2001:db8:0:8:5075:35ff:fefa:30bc</code>) sends an ICMPv6 Echo request to Ⓑ (<code>2001:db8:0:0:a7a2:12e0:48bc:7487</code>), it would not get a response:</p>
+<div class="image">
+<object type="image/svg+xml" data="gnrc_ipv6_auto_subnets-without_rio.svg">gnrc_ipv6_auto_subnets-without_rio.svg</object>
+<div class="caption">
+Auto-Subnets without RIO</div></div>
+<p> To solve this, the routing node Ⓐ also sends a Router Advertisement to the <em>upstream</em> network that only contains a Route Information Option for each downstream network created by that router. This way hosts in the upstream network will prefer the route via Ⓐ over link-local transmission as it is a stronger match than the upstream prefix:</p>
+<div class="image">
+<object type="image/svg+xml" data="gnrc_ipv6_auto_subnets-with_rio.svg">gnrc_ipv6_auto_subnets-with_rio.svg</object>
+<div class="caption">
+Auto-Subnets with RIO</div></div>
+ <h1><a class="anchor" id="autotoc_md2508"></a>
+Usage</h1>
+<p>Simply add the <code>gnrc_ipv6_auto_subnets</code> or <code>gnrc_ipv6_auto_subnets_simple</code> module to the nodes that should act as routers in the cascading network. The upstream network will be automatically chosen as the one that first receives a router advertisement.</p>
+<p>If only a single level of downstream routers exists and a sufficiently small upstream prefix is provided, we can skip the synchronisation and instead derive the <em>prefix</em> from the EUI of the downstream interface.</p>
+<p>e.g. given a prefix <code>fd12::/16</code> a router with a downstream interface with the layer 2 address <code>12:84:0C:87:1F:B7</code> would create the prefix <code>fd12:1284:c87:1fb7::/64</code> for the downstream network.</p>
+<p>To enable this behavior, chose the <code>gnrc_ipv6_auto_subnets_eui</code> module. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:gnrc__ipv6__auto__subnets_8c"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gnrc__ipv6__auto__subnets_8c.html">gnrc_ipv6_auto_subnets.c</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaa8ea59ee970849a2f43aa2641e43a5fc"><td class="memItemLeft" align="right" valign="top"><a id="gaa8ea59ee970849a2f43aa2641e43a5fc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gaa8ea59ee970849a2f43aa2641e43a5fc">CONFIG_GNRC_IPV6_AUTO_SUBNETS_PORT</a>&#160;&#160;&#160;(16179)</td></tr>
+<tr class="memdesc:gaa8ea59ee970849a2f43aa2641e43a5fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Port for the custom UDP sync protocol. <br /></td></tr>
+<tr class="separator:gaa8ea59ee970849a2f43aa2641e43a5fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga16739eb64df82cd8d68247918fd840a0"><td class="memItemLeft" align="right" valign="top"><a id="ga16739eb64df82cd8d68247918fd840a0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#ga16739eb64df82cd8d68247918fd840a0">CONFIG_GNRC_IPV6_AUTO_SUBNETS_PEERS_MAX</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="memdesc:ga16739eb64df82cd8d68247918fd840a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max number of other routers on the same link. <br /></td></tr>
+<tr class="separator:ga16739eb64df82cd8d68247918fd840a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac9d004b28ee82d74fdfa217d1ef2b4f"><td class="memItemLeft" align="right" valign="top"><a id="gaac9d004b28ee82d74fdfa217d1ef2b4f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gaac9d004b28ee82d74fdfa217d1ef2b4f">CONFIG_GNRC_IPV6_AUTO_SUBNETS_TX_PER_PERIOD</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:gaac9d004b28ee82d74fdfa217d1ef2b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">How often the number subnets should be announced by the routers. <br /></td></tr>
+<tr class="separator:gaac9d004b28ee82d74fdfa217d1ef2b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4db5ec851d70adcc31380697140992d1"><td class="memItemLeft" align="right" valign="top"><a id="ga4db5ec851d70adcc31380697140992d1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#ga4db5ec851d70adcc31380697140992d1">CONFIG_GNRC_IPV6_AUTO_SUBNETS_TIMEOUT_MS</a>&#160;&#160;&#160;(50)</td></tr>
+<tr class="memdesc:ga4db5ec851d70adcc31380697140992d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">How long to wait for other routers announcements before resending or creating subnets when the retry counter is exhausted. <br /></td></tr>
+<tr class="separator:ga4db5ec851d70adcc31380697140992d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac81841ddded26404c1d0384defb23344"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gac81841ddded26404c1d0384defb23344">CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_FIX_LEN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gac81841ddded26404c1d0384defb23344"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many bits of a new prefix have to match the old prefix for it to be considered for replacement.  <a href="#gac81841ddded26404c1d0384defb23344">More...</a><br /></td></tr>
+<tr class="separator:gac81841ddded26404c1d0384defb23344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabbfce1e27dcefc82c00ec2e58b273053"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gabbfce1e27dcefc82c00ec2e58b273053">CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_MIN_LEN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gabbfce1e27dcefc82c00ec2e58b273053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimal length of a new prefix.  <a href="#gabbfce1e27dcefc82c00ec2e58b273053">More...</a><br /></td></tr>
+<tr class="separator:gabbfce1e27dcefc82c00ec2e58b273053"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd478bbf55a33dcc983855d627bd4672"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gafd478bbf55a33dcc983855d627bd4672">CONFIG_GNRC_IPV6_AUTO_SUBNETS_NUMOF</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:gafd478bbf55a33dcc983855d627bd4672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of subnets that can be configured.  <a href="#gafd478bbf55a33dcc983855d627bd4672">More...</a><br /></td></tr>
+<tr class="separator:gafd478bbf55a33dcc983855d627bd4672"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa6b08413af78bbe0d526da26ed9e3fc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__ipv6__auto__subnets.html#gaa6b08413af78bbe0d526da26ed9e3fc5">CONFIG_GNRC_IPV6_AUTO_SUBNETS_STATIC</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:gaa6b08413af78bbe0d526da26ed9e3fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable this if you have a static network that might experience high packet loss under certain conditions.  <a href="#gaa6b08413af78bbe0d526da26ed9e3fc5">More...</a><br /></td></tr>
+<tr class="separator:gaa6b08413af78bbe0d526da26ed9e3fc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gafd478bbf55a33dcc983855d627bd4672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafd478bbf55a33dcc983855d627bd4672">&#9670;&nbsp;</a></span>CONFIG_GNRC_IPV6_AUTO_SUBNETS_NUMOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GNRC_IPV6_AUTO_SUBNETS_NUMOF&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of subnets that can be configured. </p>
+<p>This is not needed when using the <code>gnrc_ipv6_auto_subnets_simple</code> module or if only a single upstream subnet is to be partitioned.</p>
+<p>If this is set to any number higher than 1, make sure to also configure CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_FIX_LEN to suit your setup. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html#l00174">174</a> of file <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html">gnrc_ipv6_auto_subnets.c</a>.</p>
+
+</div>
+</div>
+<a id="gac81841ddded26404c1d0384defb23344"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac81841ddded26404c1d0384defb23344">&#9670;&nbsp;</a></span>CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_FIX_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_FIX_LEN&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>How many bits of a new prefix have to match the old prefix for it to be considered for replacement. </p>
+<p>Set this if you want to join multiple upstream subnets at the same time.</p>
+<p>If you use <code>gnrc_ipv6_auto_subnets</code> instead of <code>gnrc_ipv6_auto_subnets_simple</code> make sure to also set CONFIG_GNRC_IPV6_AUTO_SUBNETS_NUMOF accordingly. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html#l00153">153</a> of file <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html">gnrc_ipv6_auto_subnets.c</a>.</p>
+
+</div>
+</div>
+<a id="gabbfce1e27dcefc82c00ec2e58b273053"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbfce1e27dcefc82c00ec2e58b273053">&#9670;&nbsp;</a></span>CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_MIN_LEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GNRC_IPV6_AUTO_SUBNETS_PREFIX_MIN_LEN&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Minimal length of a new prefix. </p>
+<p>e.g. Linux will only accept /64 prefixes for SLAAC </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html#l00161">161</a> of file <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html">gnrc_ipv6_auto_subnets.c</a>.</p>
+
+</div>
+</div>
+<a id="gaa6b08413af78bbe0d526da26ed9e3fc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6b08413af78bbe0d526da26ed9e3fc5">&#9670;&nbsp;</a></span>CONFIG_GNRC_IPV6_AUTO_SUBNETS_STATIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_GNRC_IPV6_AUTO_SUBNETS_STATIC&#160;&#160;&#160;(0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable this if you have a static network that might experience high packet loss under certain conditions. </p>
+<p>If enabled, this option causes the module to always assume the highest number of downstream routers it has ever seen. This prevents different/conflicting downstream subnets from being configured if multiple sync packets got lost. </p>
+
+<p class="definition">Definition at line <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html#l00186">186</a> of file <a class="el" href="gnrc__ipv6__auto__subnets_8c_source.html">gnrc_ipv6_auto_subnets.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

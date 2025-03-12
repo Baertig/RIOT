@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/usb/usbus/control.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('control_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">control.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="control_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2019 Koen Zandberg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef USB_USBUS_CONTROL_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define USB_USBUS_CONTROL_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="control_8h.html#a57f3e761fef9ba60e96ae4747fce87dc">   27</a></span>&#160;<span class="preprocessor">#define USBUS_CONTROL_EP_IN_REQUIRED_NUMOF  1</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="control_8h.html#a5b0043fa3e50fc586b3e2c5751fbbfe2">   32</a></span>&#160;<span class="preprocessor">#define USBUS_CONTROL_EP_OUT_REQUIRED_NUMOF 1</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usbus_8h.html">usb/usbus.h</a>&quot;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html#add7988c3a6c66172e6286a64ec8fea79">   44</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__slicer__t.html#add7988c3a6c66172e6286a64ec8fea79">start</a>;                   </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html#af97aa8fbb3a5fa8805f83fa21e8b611f">   45</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__slicer__t.html#af97aa8fbb3a5fa8805f83fa21e8b611f">cur</a>;                     </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html#a25a6179f1390c24a9574222f23157b10">   46</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__slicer__t.html#a25a6179f1390c24a9574222f23157b10">len</a>;                     </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html#ae94c8c25a32f16ad2975da6fba2597ba">   47</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__slicer__t.html#ae94c8c25a32f16ad2975da6fba2597ba">transferred</a>;             </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structusbus__control__slicer__t.html#a9b8ae60ba0054938cfdb30fa922cfd88">   48</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__slicer__t.html#a9b8ae60ba0054938cfdb30fa922cfd88">reqlen</a>;                  </div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <a class="code" href="structusbus__control__slicer__t.html">usbus_control_slicer_t</a>;</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#a7400dc9294e598a5fcf7ae6a39b754dd">   59</a></span>&#160;    <a class="code" href="structusbus__handler.html">usbus_handler_t</a> <a class="code" href="structusbus__control__handler__t.html#a7400dc9294e598a5fcf7ae6a39b754dd">handler</a>;</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#aa095668fdc8d2b81c3abf734ba20975e">   64</a></span>&#160;    <a class="code" href="structusb__setup__t.html">usb_setup_t</a> <a class="code" href="structusbus__control__handler__t.html#aa095668fdc8d2b81c3abf734ba20975e">setup</a>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#afb3d3cf4b76b3494c2263ab37e0782f5">   69</a></span>&#160;    <a class="code" href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">usbus_control_request_state_t</a> <a class="code" href="structusbus__control__handler__t.html#afb3d3cf4b76b3494c2263ab37e0782f5">control_request_state</a>;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#a9d43a8bfab49211e25e24261e75e3273">   74</a></span>&#160;    <a class="code" href="structusbus__control__slicer__t.html">usbus_control_slicer_t</a> <a class="code" href="structusbus__control__handler__t.html#a9d43a8bfab49211e25e24261e75e3273">slicer</a>;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#a270f93e7101be742f0e51c764d66c075">   79</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="structusbus__control__handler__t.html#a270f93e7101be742f0e51c764d66c075">received_len</a>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#aa39c1bd926d5512eb385885ce34b2b50">   84</a></span>&#160;    <a class="code" href="structusbdev__ep.html">usbdev_ep_t</a> *<a class="code" href="structusbus__control__handler__t.html#aa39c1bd926d5512eb385885ce34b2b50">out</a>;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#ad963e3124b87d5aab0f33e5e8571b4f2">   89</a></span>&#160;    <a class="code" href="structusbdev__ep.html">usbdev_ep_t</a> *<a class="code" href="structusbus__control__handler__t.html#ad963e3124b87d5aab0f33e5e8571b4f2">in</a>;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#a901182d8eefcffd624e8dc3f5f585066">   94</a></span>&#160;    <a class="code" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> out_buf[<a class="code" href="group__usb__usbus__conf.html#ga1fb95fe07ea93ba49f960ed592f4293b">CONFIG_USBUS_EP0_SIZE</a>];</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structusbus__control__handler__t.html#a28a963a9e28ea4385d1b972d9ea006e6">   99</a></span>&#160;    <a class="code" href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a> in_buf[<a class="code" href="group__usb__usbus__conf.html#ga1fb95fe07ea93ba49f960ed592f4293b">CONFIG_USBUS_EP0_SIZE</a>];</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <a class="code" href="structusbus__control__handler__t.html">usbus_control_handler_t</a>;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control_8h.html#aac95cb78e9056a7d2a57e9ef1c846e55">usbus_control_init</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>, <a class="code" href="structusbus__control__handler__t.html">usbus_control_handler_t</a> *handler);</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="control_8h.html#abbd0f72bb7ebae7f3eeffc2a414027f7">usbus_control_slicer_put_bytes</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>, <span class="keyword">const</span> uint8_t *buf,</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                                      <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="control_8h.html#a5870f464e7b73fb54c45f350b368d8e8">usbus_control_slicer_put_char</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>, <span class="keywordtype">char</span> c);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keywordtype">void</span> <a class="code" href="control_8h.html#a18cd348eecf0c928d88c4c1c7257239e">usbus_control_slicer_ready</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>);</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keywordtype">int</span> <a class="code" href="control_8h.html#a89324928ff3aa306a55a76a0d8df8333">usbus_control_slicer_nextslice</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>);</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;uint8_t *<a class="code" href="control_8h.html#a708838b2a2e787155552df9bb6f3cd09">usbus_control_get_out_data</a>(<a class="code" href="structusbus.html">usbus_t</a> *<a class="code" href="structusbus.html">usbus</a>, <span class="keywordtype">size_t</span> *len);</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* USB_USBUS_CONTROL_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div><div class="ttc" id="structusbus__control__handler__t_html"><div class="ttname"><a href="structusbus__control__handler__t.html">usbus_control_handler_t</a></div><div class="ttdoc">Endpoint zero event handler. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00054">control.h:54</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_afb3d3cf4b76b3494c2263ab37e0782f5"><div class="ttname"><a href="structusbus__control__handler__t.html#afb3d3cf4b76b3494c2263ab37e0782f5">usbus_control_handler_t::control_request_state</a></div><div class="ttdeci">usbus_control_request_state_t control_request_state</div><div class="ttdoc">Control request state machine state. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00069">control.h:69</a></div></div>
+<div class="ttc" id="structusbus_html"><div class="ttname"><a href="structusbus.html">usbus</a></div><div class="ttdoc">USBUS context struct. </div><div class="ttdef"><b>Definition:</b> <a href="usbus_8h_source.html#l00449">usbus.h:449</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_a9d43a8bfab49211e25e24261e75e3273"><div class="ttname"><a href="structusbus__control__handler__t.html#a9d43a8bfab49211e25e24261e75e3273">usbus_control_handler_t::slicer</a></div><div class="ttdeci">usbus_control_slicer_t slicer</div><div class="ttdoc">Slicer state for multipart control request messages. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00074">control.h:74</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_a7400dc9294e598a5fcf7ae6a39b754dd"><div class="ttname"><a href="structusbus__control__handler__t.html#a7400dc9294e598a5fcf7ae6a39b754dd">usbus_control_handler_t::handler</a></div><div class="ttdeci">usbus_handler_t handler</div><div class="ttdoc">inherited generic handler </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00059">control.h:59</a></div></div>
+<div class="ttc" id="control_8h_html_aac95cb78e9056a7d2a57e9ef1c846e55"><div class="ttname"><a href="control_8h.html#aac95cb78e9056a7d2a57e9ef1c846e55">usbus_control_init</a></div><div class="ttdeci">void usbus_control_init(usbus_t *usbus, usbus_control_handler_t *handler)</div><div class="ttdoc">Initialize the control endpoint handler. </div></div>
+<div class="ttc" id="control_8h_html_a708838b2a2e787155552df9bb6f3cd09"><div class="ttname"><a href="control_8h.html#a708838b2a2e787155552df9bb6f3cd09">usbus_control_get_out_data</a></div><div class="ttdeci">uint8_t * usbus_control_get_out_data(usbus_t *usbus, size_t *len)</div><div class="ttdoc">Retrieve the data from the OUT pipe of the control endpoint. </div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html_add7988c3a6c66172e6286a64ec8fea79"><div class="ttname"><a href="structusbus__control__slicer__t.html#add7988c3a6c66172e6286a64ec8fea79">usbus_control_slicer_t::start</a></div><div class="ttdeci">size_t start</div><div class="ttdoc">Start offset of the current part. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00044">control.h:44</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_aa095668fdc8d2b81c3abf734ba20975e"><div class="ttname"><a href="structusbus__control__handler__t.html#aa095668fdc8d2b81c3abf734ba20975e">usbus_control_handler_t::setup</a></div><div class="ttdeci">usb_setup_t setup</div><div class="ttdoc">Last received setup packet. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00064">control.h:64</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_ad963e3124b87d5aab0f33e5e8571b4f2"><div class="ttname"><a href="structusbus__control__handler__t.html#ad963e3124b87d5aab0f33e5e8571b4f2">usbus_control_handler_t::in</a></div><div class="ttdeci">usbdev_ep_t * in</div><div class="ttdoc">EP0 IN endpoint reference. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00089">control.h:89</a></div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html"><div class="ttname"><a href="structusbus__control__slicer__t.html">usbus_control_slicer_t</a></div><div class="ttdoc">helper struct to divide control messages in multiple parts </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00043">control.h:43</a></div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_a270f93e7101be742f0e51c764d66c075"><div class="ttname"><a href="structusbus__control__handler__t.html#a270f93e7101be742f0e51c764d66c075">usbus_control_handler_t::received_len</a></div><div class="ttdeci">size_t received_len</div><div class="ttdoc">Received bytes for set requests. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00079">control.h:79</a></div></div>
+<div class="ttc" id="control_8h_html_a5870f464e7b73fb54c45f350b368d8e8"><div class="ttname"><a href="control_8h.html#a5870f464e7b73fb54c45f350b368d8e8">usbus_control_slicer_put_char</a></div><div class="ttdeci">size_t usbus_control_slicer_put_char(usbus_t *usbus, char c)</div><div class="ttdoc">Helper function for adding single bytes to the current control message part. </div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html_a25a6179f1390c24a9574222f23157b10"><div class="ttname"><a href="structusbus__control__slicer__t.html#a25a6179f1390c24a9574222f23157b10">usbus_control_slicer_t::len</a></div><div class="ttdeci">size_t len</div><div class="ttdoc">Length of the full message. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00046">control.h:46</a></div></div>
+<div class="ttc" id="structusb__setup__t_html"><div class="ttname"><a href="structusb__setup__t.html">usb_setup_t</a></div><div class="ttdoc">USB setup packet (USB 2.0 spec table 9-2) </div><div class="ttdef"><b>Definition:</b> <a href="descriptor_8h_source.html#l00209">descriptor.h:209</a></div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html_af97aa8fbb3a5fa8805f83fa21e8b611f"><div class="ttname"><a href="structusbus__control__slicer__t.html#af97aa8fbb3a5fa8805f83fa21e8b611f">usbus_control_slicer_t::cur</a></div><div class="ttdeci">size_t cur</div><div class="ttdoc">Current position in the message. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00045">control.h:45</a></div></div>
+<div class="ttc" id="group__usb__usbus_html_ga75a538ca121919799d4e604539db2525"><div class="ttname"><a href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">usbus_control_request_state_t</a></div><div class="ttdeci">usbus_control_request_state_t</div><div class="ttdoc">USBUS control request state machine. </div><div class="ttdef"><b>Definition:</b> <a href="usbus_8h_source.html#l00197">usbus.h:197</a></div></div>
+<div class="ttc" id="control_8h_html_a18cd348eecf0c928d88c4c1c7257239e"><div class="ttname"><a href="control_8h.html#a18cd348eecf0c928d88c4c1c7257239e">usbus_control_slicer_ready</a></div><div class="ttdeci">void usbus_control_slicer_ready(usbus_t *usbus)</div><div class="ttdoc">Helper function to signal the end of the control message. </div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html_a9b8ae60ba0054938cfdb30fa922cfd88"><div class="ttname"><a href="structusbus__control__slicer__t.html#a9b8ae60ba0054938cfdb30fa922cfd88">usbus_control_slicer_t::reqlen</a></div><div class="ttdeci">size_t reqlen</div><div class="ttdoc">Maximum length of the request. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00048">control.h:48</a></div></div>
+<div class="ttc" id="group__drivers__periph__usbdev_html_gaa9322e0f092c580129915333bab9a8f2"><div class="ttname"><a href="group__drivers__periph__usbdev.html#gaa9322e0f092c580129915333bab9a8f2">usbdev_ep_buf_t</a></div><div class="ttdeci">#define usbdev_ep_buf_t</div><div class="ttdoc">Instantiation type for usbdev endpoint buffers. </div><div class="ttdef"><b>Definition:</b> <a href="usbdev_8h_source.html#l00126">usbdev.h:126</a></div></div>
+<div class="ttc" id="control_8h_html_a89324928ff3aa306a55a76a0d8df8333"><div class="ttname"><a href="control_8h.html#a89324928ff3aa306a55a76a0d8df8333">usbus_control_slicer_nextslice</a></div><div class="ttdeci">int usbus_control_slicer_nextslice(usbus_t *usbus)</div><div class="ttdoc">Initialize the next slice of the control message. </div></div>
+<div class="ttc" id="group__usb__usbus__conf_html_ga1fb95fe07ea93ba49f960ed592f4293b"><div class="ttname"><a href="group__usb__usbus__conf.html#ga1fb95fe07ea93ba49f960ed592f4293b">CONFIG_USBUS_EP0_SIZE</a></div><div class="ttdeci">#define CONFIG_USBUS_EP0_SIZE</div><div class="ttdoc">USBUS endpoint 0 buffer size. </div><div class="ttdef"><b>Definition:</b> <a href="usbus_8h_source.html#l00105">usbus.h:105</a></div></div>
+<div class="ttc" id="structusbus__handler_html"><div class="ttname"><a href="structusbus__handler.html">usbus_handler</a></div><div class="ttdoc">USBUS handler struct. </div><div class="ttdef"><b>Definition:</b> <a href="usbus_8h_source.html#l00437">usbus.h:437</a></div></div>
+<div class="ttc" id="control_8h_html_abbd0f72bb7ebae7f3eeffc2a414027f7"><div class="ttname"><a href="control_8h.html#abbd0f72bb7ebae7f3eeffc2a414027f7">usbus_control_slicer_put_bytes</a></div><div class="ttdeci">size_t usbus_control_slicer_put_bytes(usbus_t *usbus, const uint8_t *buf, size_t len)</div><div class="ttdoc">Helper function for adding bytes to the current control message part. </div></div>
+<div class="ttc" id="structusbdev__ep_html"><div class="ttname"><a href="structusbdev__ep.html">usbdev_ep</a></div><div class="ttdoc">usbdev endpoint descriptor </div><div class="ttdef"><b>Definition:</b> <a href="usbdev_8h_source.html#l00259">usbdev.h:259</a></div></div>
+<div class="ttc" id="structusbus__control__slicer__t_html_ae94c8c25a32f16ad2975da6fba2597ba"><div class="ttname"><a href="structusbus__control__slicer__t.html#ae94c8c25a32f16ad2975da6fba2597ba">usbus_control_slicer_t::transferred</a></div><div class="ttdeci">size_t transferred</div><div class="ttdoc">Number of bytes transferred. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00047">control.h:47</a></div></div>
+<div class="ttc" id="usbus_8h_html"><div class="ttname"><a href="usbus_8h.html">usbus.h</a></div><div class="ttdoc">USBUS basic interface. </div></div>
+<div class="ttc" id="structusbus__control__handler__t_html_aa39c1bd926d5512eb385885ce34b2b50"><div class="ttname"><a href="structusbus__control__handler__t.html#aa39c1bd926d5512eb385885ce34b2b50">usbus_control_handler_t::out</a></div><div class="ttdeci">usbdev_ep_t * out</div><div class="ttdoc">EP0 OUT endpoint reference. </div><div class="ttdef"><b>Definition:</b> <a href="control_8h_source.html#l00084">control.h:84</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

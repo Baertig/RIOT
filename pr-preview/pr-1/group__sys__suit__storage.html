@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SUIT secure firmware OTA upgrade storage</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__suit__storage.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">SUIT secure firmware OTA upgrade storage<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__suit.html">SUIT secure firmware OTA upgrade infrastructure</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><pre class="fragment">                          infrastructure
+</pre>  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<pre class="fragment">                          infrastructure
+</pre> <p>SUIT firmware storage backends</p>
+<p>Storage backend functions for SUIT manifests </p><dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span style="display: none;">.nosp@m.</span>berg<span style="display: none;">.nosp@m.</span>zand.<span style="display: none;">.nosp@m.</span>net</a></dd></dl>
+<p>The interface defined here specifies a generic API for SUIT OTA storage backends.</p>
+<p>The driver allows for creating multiple backends, each possibly servicing multiple locations. An example of this is a VFS storage backend. This backend could service multiple file locations on a filesystem.</p>
+<p>A SUIT component ID is formatted as an array of bytestrings. To make it easy to match and use a string, the location is supplied as string, each component separated by a separator provided in the driver. If no separator (<code>\0</code>) is set, the components are concatenated without separator. The <a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> must be called before starting operations on the backend.</p>
+<p>A write sequence by the caller must start with <a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a>. The total length of the image is supplied to allow the backend to check if the payload fits in the available space. The payload data can be supplied piecewise with multiple calls to <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a>. The caller is free to specify the offset, but the backend may enforce strict monotonicity on the offset and may enforce the gapless writes. After all bytes are supplied, the <a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> function must be called to signal the end of the write stage.</p>
+<p>Only when the <a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> is called, the payload must be marked as valid. The mechanism for this can be backend specific. However in the case of a firmware image, it must not be bootable before this function is called. Similarly, a file payload must not be available at its provided path until after this function is called. The reason behind this is that the payload often must first be stored on the device before the image_match is called by the manifest.</p>
+<p>The other option is that the <a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> is called. In this case the not-yet-installed payload must be erased again as its contents might not be what is expected by the digest in the manifest. The payload must then be removed to prevent the possibility of storing malicious code on the device.</p>
+<p>A form of read access must be implemented to provide a way to read back the data and check the digest of the payload. <a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> must be implemented, providing piecewise reading of the data. <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> is optional to implement, it can provide direct read access on memory-mapped storage.</p>
+<p>As the storage backend provides a mechanism to store persistent data, functions are added to set and retrieve the manifest sequence number. While not strictly required to implement, a firmware without a mechanism to retrieve and store sequence numbers will always fail to update.</p>
+<p>The <a class="el" href="structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee">suit_storage_driver_t::match_offset</a> function allows the manifest handler to check the component-offset condition against a storage backend.</p>
+<p>The usual call sequence by a manifest handler is:</p>
+<ol type="1">
+<li><a class="el" href="structsuit__storage__driver.html#ab884ee1d6c260334b603c70851c0dddb">suit_storage_driver_t::init</a> as on-boot initialization.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a1b00d856f2ce0ceadddd4e09dbea8b63">suit_storage_driver_t::get_seq_no</a> to determine if the manifest is not replayed.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a83d3abb9e1df010ce91a8a412fe07183">suit_storage_driver_t::has_location</a> to determine if the backend handles the payload in the manifest.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a771b575214bc8ad8d5cdd2c72d8530b5">suit_storage_driver_t::set_active_location</a> to set the active location for the payload.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a5b996af8800e6f6adda13a01bea4af71">suit_storage_driver_t::start</a> to start a payload write sequence.</li>
+<li>At least one <a class="el" href="structsuit__storage__driver.html#a1bcb69cf7bd476bbcfdd93e7107ea8e5">suit_storage_driver_t::write</a> calls to write the payload data.</li>
+<li><a class="el" href="structsuit__storage__driver.html#accd8f42c0f5a26e1466d8d65b321b3e2">suit_storage_driver_t::finish</a> to mark the end of the payload write.</li>
+<li><a class="el" href="structsuit__storage__driver.html#ad6d948219078ec70812a74fb5470554f">suit_storage_driver_t::read</a> or <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> to read back the written payload. This to verify the digest of the payload with what is provided in the manifest.</li>
+<li><a class="el" href="structsuit__storage__driver.html#a507db5fbf05f97ac76fbc3d8bc7eee0c">suit_storage_driver_t::install</a> if the digest matches with what is expected and the payload can be installed or marked as valid, or:</li>
+<li><a class="el" href="structsuit__storage__driver.html#a141a01aa05a3407dba52fbc687364d52">suit_storage_driver_t::erase</a> if the digest does not match with what is expected and must be erased.</li>
+<li>ref <a class="el" href="structsuit__storage__driver.html#a4f5912a0eebefb273b3405d3d0ed64ec" title="Set a new sequence number in the storage backend. ">suit_storage_driver_t::set_seq_no</a> to update the sequence number stored in the backend.</li>
+</ol>
+<dl class="section warning"><dt>Warning</dt><dd>This API is by design not thread safe </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__sys__suit__storage__ram"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage__ram.html">ram storage backend</a></td></tr>
+<tr class="memdesc:group__sys__suit__storage__ram"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAM blob SUIT payload storage backends. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__suit__storage__flashwrite"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage__flashwrite.html">riotboot flashwrite storage backend</a></td></tr>
+<tr class="memdesc:group__sys__suit__storage__flashwrite"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUIT riotboot firmware storage backend. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__sys__suit__storage__vfs"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage__vfs.html">riotboot vfs storage backend</a></td></tr>
+<tr class="memdesc:group__sys__suit__storage__vfs"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUIT riotboot firmware storage backend. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsuit__storage__driver.html">suit_storage_driver</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUIT storage backend driver struct.  <a href="structsuit__storage__driver.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsuit__storage.html">suit_storage</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generic storage backend state.  <a href="structsuit__storage.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga03298711d23f61d14c2a44095fc9c3d0"><td class="memItemLeft" align="right" valign="top"><a id="ga03298711d23f61d14c2a44095fc9c3d0"></a>
+typedef struct <a class="el" href="structsuit__storage.html">suit_storage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a></td></tr>
+<tr class="memdesc:ga03298711d23f61d14c2a44095fc9c3d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward declaration for storage struct. <br /></td></tr>
+<tr class="separator:ga03298711d23f61d14c2a44095fc9c3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe22e9b00cbc7406fcfbace006a7bffd"><td class="memItemLeft" align="right" valign="top"><a id="gabe22e9b00cbc7406fcfbace006a7bffd"></a>
+typedef struct <a class="el" href="structsuit__storage__driver.html">suit_storage_driver</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gabe22e9b00cbc7406fcfbace006a7bffd">suit_storage_driver_t</a></td></tr>
+<tr class="memdesc:gabe22e9b00cbc7406fcfbace006a7bffd"><td class="mdescLeft">&#160;</td><td class="mdescRight">SUIT storage backend driver struct. <br /></td></tr>
+<tr class="separator:gabe22e9b00cbc7406fcfbace006a7bffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga1833e6420ae9aaee737828acc333cac9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga1833e6420ae9aaee737828acc333cac9">suit_storage_find_by_id</a> (const char *id)</td></tr>
+<tr class="memdesc:ga1833e6420ae9aaee737828acc333cac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve a storage backend based on the location ID string  <a href="#ga1833e6420ae9aaee737828acc333cac9">More...</a><br /></td></tr>
+<tr class="separator:ga1833e6420ae9aaee737828acc333cac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga142aa0b39c94fe336d98a36e50a21cae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga142aa0b39c94fe336d98a36e50a21cae">suit_storage_find_by_component</a> (const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *manifest, const <a class="el" href="structsuit__component__t.html">suit_component_t</a> *component)</td></tr>
+<tr class="memdesc:ga142aa0b39c94fe336d98a36e50a21cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve a storage backend based on the suit component  <a href="#ga142aa0b39c94fe336d98a36e50a21cae">More...</a><br /></td></tr>
+<tr class="separator:ga142aa0b39c94fe336d98a36e50a21cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93940a17686ac8318ece243710686ef2"><td class="memItemLeft" align="right" valign="top"><a id="ga93940a17686ac8318ece243710686ef2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga93940a17686ac8318ece243710686ef2">suit_storage_init_all</a> (void)</td></tr>
+<tr class="memdesc:ga93940a17686ac8318ece243710686ef2"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize all storage backends <br /></td></tr>
+<tr class="separator:ga93940a17686ac8318ece243710686ef2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaecf213a95a178c5fa26dcfcdc84b6faa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gaecf213a95a178c5fa26dcfcdc84b6faa">suit_storage_get_highest_seq_no</a> (uint32_t *seq_no)</td></tr>
+<tr class="memdesc:gaecf213a95a178c5fa26dcfcdc84b6faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the highest sequence number among available backends.  <a href="#gaecf213a95a178c5fa26dcfcdc84b6faa">More...</a><br /></td></tr>
+<tr class="separator:gaecf213a95a178c5fa26dcfcdc84b6faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf373ba1389f7b2515655507b265e6fbb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gaf373ba1389f7b2515655507b265e6fbb">suit_storage_set_seq_no_all</a> (uint32_t seq_no)</td></tr>
+<tr class="memdesc:gaf373ba1389f7b2515655507b265e6fbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the new sequence number on all available backends.  <a href="#gaf373ba1389f7b2515655507b265e6fbb">More...</a><br /></td></tr>
+<tr class="separator:gaf373ba1389f7b2515655507b265e6fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Storage driver helper functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp2996dfb3f92568ce3ca882f50cf7b2b3"></a>For easy access to the <a class="el" href="group__sys__suit__storage.html#gabe22e9b00cbc7406fcfbace006a7bffd">suit_storage_driver_t</a> functions. </p>
+</td></tr>
+<tr class="memitem:ga44617abc09407f99eaed17c7cd91d2ad"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga44617abc09407f99eaed17c7cd91d2ad">suit_storage_get_separator</a> (const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage)</td></tr>
+<tr class="memdesc:ga44617abc09407f99eaed17c7cd91d2ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the separator for a storage backend  <a href="#ga44617abc09407f99eaed17c7cd91d2ad">More...</a><br /></td></tr>
+<tr class="separator:ga44617abc09407f99eaed17c7cd91d2ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga53273de844ef3ffdcbc1309dbd305cdf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga53273de844ef3ffdcbc1309dbd305cdf">suit_storage_has_readptr</a> (const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage)</td></tr>
+<tr class="memdesc:ga53273de844ef3ffdcbc1309dbd305cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the storage backend implements the <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> function.  <a href="#ga53273de844ef3ffdcbc1309dbd305cdf">More...</a><br /></td></tr>
+<tr class="separator:ga53273de844ef3ffdcbc1309dbd305cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga737ca14e3e5218a21fd0454ec436da64"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga737ca14e3e5218a21fd0454ec436da64">suit_storage_has_offset</a> (const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage)</td></tr>
+<tr class="memdesc:ga737ca14e3e5218a21fd0454ec436da64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the storage backend implements the <a class="el" href="structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee">suit_storage_driver_t::match_offset</a> function.  <a href="#ga737ca14e3e5218a21fd0454ec436da64">More...</a><br /></td></tr>
+<tr class="separator:ga737ca14e3e5218a21fd0454ec436da64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaeae219414ea0bb3be68afdf6c3835ce"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gaaeae219414ea0bb3be68afdf6c3835ce">suit_storage_init</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage)</td></tr>
+<tr class="memdesc:gaaeae219414ea0bb3be68afdf6c3835ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-time initialization function.  <a href="#gaaeae219414ea0bb3be68afdf6c3835ce">More...</a><br /></td></tr>
+<tr class="separator:gaaeae219414ea0bb3be68afdf6c3835ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9127bcef40eb261be32c3d7727e39ae7"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga9127bcef40eb261be32c3d7727e39ae7">suit_storage_start</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *manifest, size_t len)</td></tr>
+<tr class="memdesc:ga9127bcef40eb261be32c3d7727e39ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start a new payload write sequence.  <a href="#ga9127bcef40eb261be32c3d7727e39ae7">More...</a><br /></td></tr>
+<tr class="separator:ga9127bcef40eb261be32c3d7727e39ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafdc45341030f88e58780b64a02c14599"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gafdc45341030f88e58780b64a02c14599">suit_storage_write</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *manifest, const uint8_t *buf, size_t offset, size_t len)</td></tr>
+<tr class="memdesc:gafdc45341030f88e58780b64a02c14599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a new chunk of the payload to the storage backend.  <a href="#gafdc45341030f88e58780b64a02c14599">More...</a><br /></td></tr>
+<tr class="separator:gafdc45341030f88e58780b64a02c14599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0dca4a1008dbdf95931eff8ad5f0433"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gae0dca4a1008dbdf95931eff8ad5f0433">suit_storage_finish</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *manifest)</td></tr>
+<tr class="memdesc:gae0dca4a1008dbdf95931eff8ad5f0433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that the payload write stage done to the storage backend.  <a href="#gae0dca4a1008dbdf95931eff8ad5f0433">More...</a><br /></td></tr>
+<tr class="separator:gae0dca4a1008dbdf95931eff8ad5f0433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga056c950556409fd8735c0aab93d5c57a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga056c950556409fd8735c0aab93d5c57a">suit_storage_read</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, uint8_t *buf, size_t offset, size_t len)</td></tr>
+<tr class="memdesc:ga056c950556409fd8735c0aab93d5c57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a chunk of previously written data back.  <a href="#ga056c950556409fd8735c0aab93d5c57a">More...</a><br /></td></tr>
+<tr class="separator:ga056c950556409fd8735c0aab93d5c57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e672e0dfee03c8829791827145fb7b4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga4e672e0dfee03c8829791827145fb7b4">suit_storage_read_ptr</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const uint8_t **buf, size_t *len)</td></tr>
+<tr class="memdesc:ga4e672e0dfee03c8829791827145fb7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieve a direct read pointer for this storage backend  <a href="#ga4e672e0dfee03c8829791827145fb7b4">More...</a><br /></td></tr>
+<tr class="separator:ga4e672e0dfee03c8829791827145fb7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga45bff4398d5c8108bd4c5accca1967d9"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga45bff4398d5c8108bd4c5accca1967d9">suit_storage_install</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *manifest)</td></tr>
+<tr class="memdesc:ga45bff4398d5c8108bd4c5accca1967d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Install the payload or mark the payload as valid.  <a href="#ga45bff4398d5c8108bd4c5accca1967d9">More...</a><br /></td></tr>
+<tr class="separator:ga45bff4398d5c8108bd4c5accca1967d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b89ef497bfbf0b587e8e8257f19d1d4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga7b89ef497bfbf0b587e8e8257f19d1d4">suit_storage_erase</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage)</td></tr>
+<tr class="memdesc:ga7b89ef497bfbf0b587e8e8257f19d1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase the previously loaded payload.  <a href="#ga7b89ef497bfbf0b587e8e8257f19d1d4">More...</a><br /></td></tr>
+<tr class="separator:ga7b89ef497bfbf0b587e8e8257f19d1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga262c18e832469e76076f19702174e07b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga262c18e832469e76076f19702174e07b">suit_storage_has_location</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const char *location)</td></tr>
+<tr class="memdesc:ga262c18e832469e76076f19702174e07b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this storage backend services a location.  <a href="#ga262c18e832469e76076f19702174e07b">More...</a><br /></td></tr>
+<tr class="separator:ga262c18e832469e76076f19702174e07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28a98359197e7bf9756359225bbe89e4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga28a98359197e7bf9756359225bbe89e4">suit_storage_match_offset</a> (const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, size_t offset)</td></tr>
+<tr class="memdesc:ga28a98359197e7bf9756359225bbe89e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the supplied offset is true or false for the current location.  <a href="#ga28a98359197e7bf9756359225bbe89e4">More...</a><br /></td></tr>
+<tr class="separator:ga28a98359197e7bf9756359225bbe89e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1f18d18951f32bf5070c0ab966e5482"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#gae1f18d18951f32bf5070c0ab966e5482">suit_storage_set_active_location</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, const char *location)</td></tr>
+<tr class="memdesc:gae1f18d18951f32bf5070c0ab966e5482"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the active location of the storage handler.  <a href="#gae1f18d18951f32bf5070c0ab966e5482">More...</a><br /></td></tr>
+<tr class="separator:gae1f18d18951f32bf5070c0ab966e5482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga271f11f9f668e3bd27e25caaef45ea04"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga271f11f9f668e3bd27e25caaef45ea04">suit_storage_get_seq_no</a> (const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, uint32_t *seq_no)</td></tr>
+<tr class="memdesc:ga271f11f9f668e3bd27e25caaef45ea04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the sequence number from the storage backend.  <a href="#ga271f11f9f668e3bd27e25caaef45ea04">More...</a><br /></td></tr>
+<tr class="separator:ga271f11f9f668e3bd27e25caaef45ea04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8f130af051b232e6f14041b11da84ee2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__suit__storage.html#ga8f130af051b232e6f14041b11da84ee2">suit_storage_set_seq_no</a> (<a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *storage, uint32_t seq_no)</td></tr>
+<tr class="memdesc:ga8f130af051b232e6f14041b11da84ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new sequence number in the storage backend.  <a href="#ga8f130af051b232e6f14041b11da84ee2">More...</a><br /></td></tr>
+<tr class="separator:ga8f130af051b232e6f14041b11da84ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga7b89ef497bfbf0b587e8e8257f19d1d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b89ef497bfbf0b587e8e8257f19d1d4">&#9670;&nbsp;</a></span>suit_storage_erase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erase the previously loaded payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully erasing the data </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00513">513</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga142aa0b39c94fe336d98a36e50a21cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga142aa0b39c94fe336d98a36e50a21cae">&#9670;&nbsp;</a></span>suit_storage_find_by_component()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a>* suit_storage_find_by_component </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *&#160;</td>
+          <td class="paramname"><em>manifest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsuit__component__t.html">suit_component_t</a> *&#160;</td>
+          <td class="paramname"><em>component</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retrieve a storage backend based on the suit component </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">manifest</td><td>SUIT manifest context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">component</td><td>Component to find a storage backend for</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first storage driver that handles this component </dd>
+<dd>
+NULL if none of the storage drivers is able to handle this component. </dd></dl>
+
+</div>
+</div>
+<a id="ga1833e6420ae9aaee737828acc333cac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1833e6420ae9aaee737828acc333cac9">&#9670;&nbsp;</a></span>suit_storage_find_by_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a>* suit_storage_find_by_id </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>retrieve a storage backend based on the location ID string </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>ID string to match</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first storage driver that handles this ID </dd>
+<dd>
+NULL if none of the storage drivers is able to handle this ID. </dd></dl>
+
+</div>
+</div>
+<a id="gae0dca4a1008dbdf95931eff8ad5f0433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae0dca4a1008dbdf95931eff8ad5f0433">&#9670;&nbsp;</a></span>suit_storage_finish()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_finish </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *&#160;</td>
+          <td class="paramname"><em>manifest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal that the payload write stage done to the storage backend. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">manifest</td><td>The suit manifest context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully finalizing the write </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00449">449</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="gaecf213a95a178c5fa26dcfcdc84b6faa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaecf213a95a178c5fa26dcfcdc84b6faa">&#9670;&nbsp;</a></span>suit_storage_get_highest_seq_no()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suit_storage_get_highest_seq_no </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>seq_no</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the highest sequence number among available backends. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">seq_no</td><td>Retrieved sequence number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>suit_ok if at least one sequence number is retrieved </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+</div>
+</div>
+<a id="ga44617abc09407f99eaed17c7cd91d2ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga44617abc09407f99eaed17c7cd91d2ad">&#9670;&nbsp;</a></span>suit_storage_get_separator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static char suit_storage_get_separator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the separator for a storage backend </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The separator char </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00360">360</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga271f11f9f668e3bd27e25caaef45ea04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga271f11f9f668e3bd27e25caaef45ea04">&#9670;&nbsp;</a></span>suit_storage_get_seq_no()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_get_seq_no </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>seq_no</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieve the sequence number from the storage backend. </p>
+<dl class="section note"><dt>Note</dt><dd>The sequence number must be global to the storage context, it must not depend on the location</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">seq_no</td><td>Retrieved sequence number</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SUIT_OK on success </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> if the sequence number can't be retrieved </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00588">588</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga262c18e832469e76076f19702174e07b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga262c18e832469e76076f19702174e07b">&#9670;&nbsp;</a></span>suit_storage_has_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool suit_storage_has_location </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if this storage backend services a location. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">location</td><td>Location to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this storage driver must be used for the supplied location </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00527">527</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga737ca14e3e5218a21fd0454ec436da64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga737ca14e3e5218a21fd0454ec436da64">&#9670;&nbsp;</a></span>suit_storage_has_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool suit_storage_has_offset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the storage backend implements the <a class="el" href="structsuit__storage__driver.html#ab5cc93de1b9acae9c3a2308b69bde4ee">suit_storage_driver_t::match_offset</a> function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the function is implemented, </dd>
+<dd>
+False otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00388">388</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga53273de844ef3ffdcbc1309dbd305cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga53273de844ef3ffdcbc1309dbd305cdf">&#9670;&nbsp;</a></span>suit_storage_has_readptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool suit_storage_has_readptr </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if the storage backend implements the <a class="el" href="structsuit__storage__driver.html#ae201c7825a6b374b38a71ae355e423cc">suit_storage_driver_t::read_ptr</a> function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the function is implemented, </dd>
+<dd>
+False otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00374">374</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="gaaeae219414ea0bb3be68afdf6c3835ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaeae219414ea0bb3be68afdf6c3835ce">&#9670;&nbsp;</a></span>suit_storage_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>One-time initialization function. </p>
+<p>Called at boot.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00398">398</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga45bff4398d5c8108bd4c5accca1967d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga45bff4398d5c8108bd4c5accca1967d9">&#9670;&nbsp;</a></span>suit_storage_install()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_install </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *&#160;</td>
+          <td class="paramname"><em>manifest</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Install the payload or mark the payload as valid. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">manifest</td><td>The suit manifest context</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully installing the payload </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00499">499</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga28a98359197e7bf9756359225bbe89e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28a98359197e7bf9756359225bbe89e4">&#9670;&nbsp;</a></span>suit_storage_match_offset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_match_offset </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the supplied offset is true or false for the current location. </p>
+<dl class="section note"><dt>Note</dt><dd>Optional to implement, should not be implemented if the backend doesn't support the image_offset</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset to check</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the location matches the offset, </dd>
+<dd>
+False otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00546">546</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga056c950556409fd8735c0aab93d5c57a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga056c950556409fd8735c0aab93d5c57a">&#9670;&nbsp;</a></span>suit_storage_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read a chunk of previously written data back. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buf</td><td>Buffer to write the read data in </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset to read from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Number of bytes to read</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully reading the chunk </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00466">466</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4e672e0dfee03c8829791827145fb7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e672e0dfee03c8829791827145fb7b4">&#9670;&nbsp;</a></span>suit_storage_read_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_read_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>retrieve a direct read pointer for this storage backend </p>
+<dl class="section note"><dt>Note</dt><dd>Optional to implement</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">buf</td><td>Pointer to the location data </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>Full length of the location data</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully providing the region </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00484">484</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="gae1f18d18951f32bf5070c0ab966e5482"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae1f18d18951f32bf5070c0ab966e5482">&#9670;&nbsp;</a></span>suit_storage_set_active_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_set_active_location </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>location</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the active location of the storage handler. </p>
+<p>A storage backend can handle multiple locations, e.g. a VFS backend targeting multiple files on a filesystem, setting the location selects the target location for writes or reads.</p>
+<dl class="section note"><dt>Note</dt><dd>Must be idempotent</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage backend context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">location</td><td>The location supplied as string with components separated by the <a class="el" href="structsuit__storage__driver.html#acfc32fb546fdf9e6f0c778effd417670">suit_storage_driver_t::separator</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SUIT_OK on success </dd>
+<dd>
+SUIT_ERR_STORAGE_UNAVAILABLE if the location is not available. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00570">570</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="ga8f130af051b232e6f14041b11da84ee2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8f130af051b232e6f14041b11da84ee2">&#9670;&nbsp;</a></span>suit_storage_set_seq_no()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_set_seq_no </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seq_no</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a new sequence number in the storage backend. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">seq_no</td><td>Sequence number to store</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>SUIT_OK on success </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> if the sequence number can't be stored. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00603">603</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="gaf373ba1389f7b2515655507b265e6fbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf373ba1389f7b2515655507b265e6fbb">&#9670;&nbsp;</a></span>suit_storage_set_seq_no_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int suit_storage_set_seq_no_all </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seq_no</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the new sequence number on all available backends. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">seq_no</td><td>Sequence number to store</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully storing the sequence number on at least one backend </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+</div>
+</div>
+<a id="ga9127bcef40eb261be32c3d7727e39ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9127bcef40eb261be32c3d7727e39ae7">&#9670;&nbsp;</a></span>suit_storage_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_start </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *&#160;</td>
+          <td class="paramname"><em>manifest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Start a new payload write sequence. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">manifest</td><td>The suit manifest context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Total size of the payload in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully starting the write </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00413">413</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+<a id="gafdc45341030f88e58780b64a02c14599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafdc45341030f88e58780b64a02c14599">&#9670;&nbsp;</a></span>suit_storage_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int suit_storage_write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__suit__storage.html#ga03298711d23f61d14c2a44095fc9c3d0">suit_storage_t</a> *&#160;</td>
+          <td class="paramname"><em>storage</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structsuit__manifest__t.html">suit_manifest_t</a> *&#160;</td>
+          <td class="paramname"><em>manifest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write a new chunk of the payload to the storage backend. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">storage</td><td>Storage context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">manifest</td><td>The suit manifest context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>Buffer to read the payload chunk from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>Offset to write at </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Length of the payload chunk</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__sys__suit.html#gga5ad972943b02a8964f9f1d3c60da1fb5a5be35b975835e9929e7143166c0ed9f5">SUIT_OK</a> on successfully writing the chunk </dd>
+<dd>
+<a class="el" href="group__sys__suit.html#ga5ad972943b02a8964f9f1d3c60da1fb5">suit_error_t</a> on error </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="storage_8h_source.html#l00432">432</a> of file <a class="el" href="storage_8h_source.html">storage.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/mynewt-core/include/hal/hal_spi.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('hal__spi_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">hal_spi.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="hal__spi_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 Inria</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef HAL_HAL_SPI_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define HAL_HAL_SPI_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="spi_8h.html">periph/spi.h</a>&quot;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="hal__spi_8h.html#af269bbeaf787deae7de03b7e1c8ede4f">   30</a></span>&#160;<span class="preprocessor">#define HAL_SPI_MODE0               (SPI_MODE_0)</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="hal__spi_8h.html#aa4fae1c5b56c54e8bb905d4774b6c21e">   32</a></span>&#160;<span class="preprocessor">#define HAL_SPI_MODE1               (SPI_MODE_1)</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="hal__spi_8h.html#a9a4f7a6b535bf91c6d9eadc94876b3ab">   34</a></span>&#160;<span class="preprocessor">#define HAL_SPI_MODE2               (SPI_MODE_2)</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="hal__spi_8h.html#ab3d553cb6ad796c81cf8da03fd162410">   36</a></span>&#160;<span class="preprocessor">#define HAL_SPI_MODE3               (SPI_MODE_3)</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">   41</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a>)(<span class="keywordtype">void</span> *arg, <span class="keywordtype">int</span> len);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structhal__spi__settings.html">   47</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structhal__spi__settings.html">hal_spi_settings</a> {</div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structhal__spi__settings.html#af3cddd373ae481d3a88d643336b9f020">   49</a></span>&#160;    <a class="code" href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h.html#ac4b206a51636d91c5cffcbcee458c3cb">spi_mode_t</a>         <a class="code" href="structhal__spi__settings.html#af3cddd373ae481d3a88d643336b9f020">data_mode</a>;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structhal__spi__settings.html#abe68b116d89a02d36966ea1825b86686">   51</a></span>&#160;    <a class="code" href="atxmega_2include_2periph__cpu_8h.html#ae81cec9f03084065c25089e514a57337">spi_clk_t</a>          <a class="code" href="structhal__spi__settings.html#abe68b116d89a02d36966ea1825b86686">baudrate</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#a8546bc1ec3e14eabc80bb56319d6628e">hal_spi_config</a>(<span class="keywordtype">int</span> spi_num, <span class="keyword">struct</span> <a class="code" href="structhal__spi__settings.html">hal_spi_settings</a> *psettings);</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#aa87db99ce986ed1b1385590cea1f32a8">hal_spi_set_txrx_cb</a>(<span class="keywordtype">int</span> spi_num, <a class="code" href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a> txrx_cb, <span class="keywordtype">void</span> *arg);</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#ac20b051b9e98152804dd0801a57f1360">hal_spi_enable</a>(<span class="keywordtype">int</span> spi_num);</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#ae2fca841a1ac4dd055e6247449bf45ab">hal_spi_disable</a>(<span class="keywordtype">int</span> spi_num);</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#a553da06a116ddadf0df93343f51f1432">hal_spi_txrx</a>(<span class="keywordtype">int</span> spi_num, <span class="keywordtype">void</span> *txbuf, <span class="keywordtype">void</span> *rxbuf, <span class="keywordtype">int</span> cnt);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordtype">int</span> <a class="code" href="hal__spi_8h.html#af63f67ca8a93d7c93061565e9be1385b">hal_spi_txrx_noblock</a>(<span class="keywordtype">int</span> spi_num, <span class="keywordtype">void</span> *txbuf, <span class="keywordtype">void</span> *rxbuf, <span class="keywordtype">int</span> cnt);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* HAL_HAL_SPI_H */</span><span class="preprocessor"></span></div><div class="ttc" id="hal__spi_8h_html_af63f67ca8a93d7c93061565e9be1385b"><div class="ttname"><a href="hal__spi_8h.html#af63f67ca8a93d7c93061565e9be1385b">hal_spi_txrx_noblock</a></div><div class="ttdeci">int hal_spi_txrx_noblock(int spi_num, void *txbuf, void *rxbuf, int cnt)</div><div class="ttdoc">Non-blocking interface to send a buffer and store received values. </div></div>
+<div class="ttc" id="hal__spi_8h_html_a2eaa9ef4b5bdf3048b6a942462ad1ec1"><div class="ttname"><a href="hal__spi_8h.html#a2eaa9ef4b5bdf3048b6a942462ad1ec1">hal_spi_txrx_cb</a></div><div class="ttdeci">void(* hal_spi_txrx_cb)(void *arg, int len)</div><div class="ttdoc">Prototype for tx/rx callback. </div><div class="ttdef"><b>Definition:</b> <a href="hal__spi_8h_source.html#l00041">hal_spi.h:41</a></div></div>
+<div class="ttc" id="spi_8h_html"><div class="ttname"><a href="spi_8h.html">spi.h</a></div><div class="ttdoc">Low-level SPI peripheral driver interface definition. </div></div>
+<div class="ttc" id="hal__spi_8h_html_a553da06a116ddadf0df93343f51f1432"><div class="ttname"><a href="hal__spi_8h.html#a553da06a116ddadf0df93343f51f1432">hal_spi_txrx</a></div><div class="ttdeci">int hal_spi_txrx(int spi_num, void *txbuf, void *rxbuf, int cnt)</div><div class="ttdoc">Blocking interface to send a buffer and store the received values from the slave. ...</div></div>
+<div class="ttc" id="structhal__spi__settings_html"><div class="ttname"><a href="structhal__spi__settings.html">hal_spi_settings</a></div><div class="ttdoc">since one spi device can control multiple devices, some configuration can be changed on the fly from ...</div><div class="ttdef"><b>Definition:</b> <a href="hal__spi_8h_source.html#l00047">hal_spi.h:47</a></div></div>
+<div class="ttc" id="hal__spi_8h_html_ae2fca841a1ac4dd055e6247449bf45ab"><div class="ttname"><a href="hal__spi_8h.html#ae2fca841a1ac4dd055e6247449bf45ab">hal_spi_disable</a></div><div class="ttdeci">int hal_spi_disable(int spi_num)</div><div class="ttdoc">Disables the SPI. </div></div>
+<div class="ttc" id="hal__spi_8h_html_aa87db99ce986ed1b1385590cea1f32a8"><div class="ttname"><a href="hal__spi_8h.html#aa87db99ce986ed1b1385590cea1f32a8">hal_spi_set_txrx_cb</a></div><div class="ttdeci">int hal_spi_set_txrx_cb(int spi_num, hal_spi_txrx_cb txrx_cb, void *arg)</div><div class="ttdoc">Sets the txrx callback (executed at interrupt context) when the buffer is transferred by the master o...</div></div>
+<div class="ttc" id="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_html_ac4b206a51636d91c5cffcbcee458c3cb"><div class="ttname"><a href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h.html#ac4b206a51636d91c5cffcbcee458c3cb">spi_mode_t</a></div><div class="ttdeci">spi_mode_t</div><div class="ttdoc">Support SPI modes. </div><div class="ttdef"><b>Definition:</b> <a href="msp430_2include_2f2xx__g2xx_2periph__cpu_8h_source.html#l00043">periph_cpu.h:43</a></div></div>
+<div class="ttc" id="hal__spi_8h_html_a8546bc1ec3e14eabc80bb56319d6628e"><div class="ttname"><a href="hal__spi_8h.html#a8546bc1ec3e14eabc80bb56319d6628e">hal_spi_config</a></div><div class="ttdeci">int hal_spi_config(int spi_num, struct hal_spi_settings *psettings)</div><div class="ttdoc">Configure the spi. </div></div>
+<div class="ttc" id="hal__spi_8h_html_ac20b051b9e98152804dd0801a57f1360"><div class="ttname"><a href="hal__spi_8h.html#ac20b051b9e98152804dd0801a57f1360">hal_spi_enable</a></div><div class="ttdeci">int hal_spi_enable(int spi_num)</div><div class="ttdoc">Enables the SPI. </div></div>
+<div class="ttc" id="atxmega_2include_2periph__cpu_8h_html_ae81cec9f03084065c25089e514a57337"><div class="ttname"><a href="atxmega_2include_2periph__cpu_8h.html#ae81cec9f03084065c25089e514a57337">spi_clk_t</a></div><div class="ttdeci">spi_clk_t</div><div class="ttdef"><b>Definition:</b> <a href="atxmega_2include_2periph__cpu_8h_source.html#l00352">periph_cpu.h:352</a></div></div>
+<div class="ttc" id="structhal__spi__settings_html_abe68b116d89a02d36966ea1825b86686"><div class="ttname"><a href="structhal__spi__settings.html#abe68b116d89a02d36966ea1825b86686">hal_spi_settings::baudrate</a></div><div class="ttdeci">spi_clk_t baudrate</div><div class="ttdoc">Baudrate in kHz. </div><div class="ttdef"><b>Definition:</b> <a href="hal__spi_8h_source.html#l00051">hal_spi.h:51</a></div></div>
+<div class="ttc" id="structhal__spi__settings_html_af3cddd373ae481d3a88d643336b9f020"><div class="ttname"><a href="structhal__spi__settings.html#af3cddd373ae481d3a88d643336b9f020">hal_spi_settings::data_mode</a></div><div class="ttdeci">spi_mode_t data_mode</div><div class="ttdoc">Data mode of SPI driver, defined by HAL_SPI_MODEn. </div><div class="ttdef"><b>Definition:</b> <a href="hal__spi_8h_source.html#l00049">hal_spi.h:49</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

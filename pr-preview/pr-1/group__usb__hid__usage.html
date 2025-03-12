@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>USB HID usage tables</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__usb__hid__usage.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">USB HID usage tables<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usb__hid.html">HID - USB communications device class</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USB HID usage tables.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>USB HID usage tables. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:hid__usage_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="hid__usage_8h.html">hid_usage.h</a></td></tr>
+<tr class="memdesc:hid__usage_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for USB HID usage tables. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Usage page definitions</h2></td></tr>
+<tr class="memitem:ga0ba00e492caaea7678c79cf44aedce5f"><td class="memItemLeft" align="right" valign="top"><a id="ga0ba00e492caaea7678c79cf44aedce5f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga0ba00e492caaea7678c79cf44aedce5f">USB_HID_USAGE_GD</a>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="memdesc:ga0ba00e492caaea7678c79cf44aedce5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Generic Desktop. <br /></td></tr>
+<tr class="separator:ga0ba00e492caaea7678c79cf44aedce5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8bb49d0e136f792d89ad3e02a3558f7d"><td class="memItemLeft" align="right" valign="top"><a id="ga8bb49d0e136f792d89ad3e02a3558f7d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga8bb49d0e136f792d89ad3e02a3558f7d">USB_HID_USAGE_SIM</a>&#160;&#160;&#160;(0x02)</td></tr>
+<tr class="memdesc:ga8bb49d0e136f792d89ad3e02a3558f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Simulation Controls. <br /></td></tr>
+<tr class="separator:ga8bb49d0e136f792d89ad3e02a3558f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0095e0bdf781f1dfe776099fdf4cf83"><td class="memItemLeft" align="right" valign="top"><a id="gaa0095e0bdf781f1dfe776099fdf4cf83"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaa0095e0bdf781f1dfe776099fdf4cf83">USB_HID_USAGE_VR</a>&#160;&#160;&#160;(0x03)</td></tr>
+<tr class="memdesc:gaa0095e0bdf781f1dfe776099fdf4cf83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page VR Controls. <br /></td></tr>
+<tr class="separator:gaa0095e0bdf781f1dfe776099fdf4cf83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad12d1b0b035d9e09e092584edfd943b8"><td class="memItemLeft" align="right" valign="top"><a id="gad12d1b0b035d9e09e092584edfd943b8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gad12d1b0b035d9e09e092584edfd943b8">USB_HID_USAGE_SPORT</a>&#160;&#160;&#160;(0x04)</td></tr>
+<tr class="memdesc:gad12d1b0b035d9e09e092584edfd943b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Sport Controls. <br /></td></tr>
+<tr class="separator:gad12d1b0b035d9e09e092584edfd943b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga86142737022a44a4d65bfb5055ff33a4"><td class="memItemLeft" align="right" valign="top"><a id="ga86142737022a44a4d65bfb5055ff33a4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga86142737022a44a4d65bfb5055ff33a4">USB_HID_USAGE_GAME</a>&#160;&#160;&#160;(0x05)</td></tr>
+<tr class="memdesc:ga86142737022a44a4d65bfb5055ff33a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Game Controls. <br /></td></tr>
+<tr class="separator:ga86142737022a44a4d65bfb5055ff33a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab39803f69c9c40f7d2ffb28facbe2a58"><td class="memItemLeft" align="right" valign="top"><a id="gab39803f69c9c40f7d2ffb28facbe2a58"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gab39803f69c9c40f7d2ffb28facbe2a58">USB_HID_USAGE_GDV</a>&#160;&#160;&#160;(0x06)</td></tr>
+<tr class="memdesc:gab39803f69c9c40f7d2ffb28facbe2a58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Generic Device Controls. <br /></td></tr>
+<tr class="separator:gab39803f69c9c40f7d2ffb28facbe2a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80a67e65f7c9d6762b5a395c39412aff"><td class="memItemLeft" align="right" valign="top"><a id="ga80a67e65f7c9d6762b5a395c39412aff"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga80a67e65f7c9d6762b5a395c39412aff">USB_HID_USAGE_KEY</a>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="memdesc:ga80a67e65f7c9d6762b5a395c39412aff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Keyboard/Keypad. <br /></td></tr>
+<tr class="separator:ga80a67e65f7c9d6762b5a395c39412aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga08a9b0b39868772cdab9ca480d54ad0e"><td class="memItemLeft" align="right" valign="top"><a id="ga08a9b0b39868772cdab9ca480d54ad0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga08a9b0b39868772cdab9ca480d54ad0e">USB_HID_USAGE_LED</a>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="memdesc:ga08a9b0b39868772cdab9ca480d54ad0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page LED. <br /></td></tr>
+<tr class="separator:ga08a9b0b39868772cdab9ca480d54ad0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac82e6993e75c851c73edec73369eeba0"><td class="memItemLeft" align="right" valign="top"><a id="gac82e6993e75c851c73edec73369eeba0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gac82e6993e75c851c73edec73369eeba0">USB_HID_USAGE_TELEPHONY</a>&#160;&#160;&#160;(0x0B)</td></tr>
+<tr class="memdesc:gac82e6993e75c851c73edec73369eeba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Telephony Device. <br /></td></tr>
+<tr class="separator:gac82e6993e75c851c73edec73369eeba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae882d4f37bd267bee4e78320ed94138f"><td class="memItemLeft" align="right" valign="top"><a id="gae882d4f37bd267bee4e78320ed94138f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gae882d4f37bd267bee4e78320ed94138f">USB_HID_USAGE_CONSUMER</a>&#160;&#160;&#160;(0x0C)</td></tr>
+<tr class="memdesc:gae882d4f37bd267bee4e78320ed94138f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Consumer. <br /></td></tr>
+<tr class="separator:gae882d4f37bd267bee4e78320ed94138f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf37341d1987c19c2c6a673e0cd9bb344"><td class="memItemLeft" align="right" valign="top"><a id="gaf37341d1987c19c2c6a673e0cd9bb344"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaf37341d1987c19c2c6a673e0cd9bb344">USB_HID_USAGE_DIGITIZERS</a>&#160;&#160;&#160;(0x0D)</td></tr>
+<tr class="memdesc:gaf37341d1987c19c2c6a673e0cd9bb344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Digitizers. <br /></td></tr>
+<tr class="separator:gaf37341d1987c19c2c6a673e0cd9bb344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21718c4f2ba83eb6beccf3cd7a38491d"><td class="memItemLeft" align="right" valign="top"><a id="ga21718c4f2ba83eb6beccf3cd7a38491d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga21718c4f2ba83eb6beccf3cd7a38491d">USB_HID_USAGE_HAPTICS</a>&#160;&#160;&#160;(0x0E)</td></tr>
+<tr class="memdesc:ga21718c4f2ba83eb6beccf3cd7a38491d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Haptics. <br /></td></tr>
+<tr class="separator:ga21718c4f2ba83eb6beccf3cd7a38491d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga928c4457ce2d76f7a2e7b8f2f7fe8187"><td class="memItemLeft" align="right" valign="top"><a id="ga928c4457ce2d76f7a2e7b8f2f7fe8187"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga928c4457ce2d76f7a2e7b8f2f7fe8187">USB_HID_USAGE_PID</a>&#160;&#160;&#160;(0x0F)</td></tr>
+<tr class="memdesc:ga928c4457ce2d76f7a2e7b8f2f7fe8187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page PID. <br /></td></tr>
+<tr class="separator:ga928c4457ce2d76f7a2e7b8f2f7fe8187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3671d69f320bf76518f672407a203b04"><td class="memItemLeft" align="right" valign="top"><a id="ga3671d69f320bf76518f672407a203b04"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga3671d69f320bf76518f672407a203b04">USB_HID_USAGE_EHT</a>&#160;&#160;&#160;(0x12)</td></tr>
+<tr class="memdesc:ga3671d69f320bf76518f672407a203b04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Eye and Head Trackers. <br /></td></tr>
+<tr class="separator:ga3671d69f320bf76518f672407a203b04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga58473ecaaa777c4a33ad099929f37bab"><td class="memItemLeft" align="right" valign="top"><a id="ga58473ecaaa777c4a33ad099929f37bab"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga58473ecaaa777c4a33ad099929f37bab">USB_HID_USAGE_AUXDISP</a>&#160;&#160;&#160;(0x14)</td></tr>
+<tr class="memdesc:ga58473ecaaa777c4a33ad099929f37bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Auxiliary Display. <br /></td></tr>
+<tr class="separator:ga58473ecaaa777c4a33ad099929f37bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5dfad67308211a35e2f21af63aba50d"><td class="memItemLeft" align="right" valign="top"><a id="gaf5dfad67308211a35e2f21af63aba50d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaf5dfad67308211a35e2f21af63aba50d">USB_HID_USAGE_SENSORS</a>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="memdesc:gaf5dfad67308211a35e2f21af63aba50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Sensors. <br /></td></tr>
+<tr class="separator:gaf5dfad67308211a35e2f21af63aba50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf9ab433a19eb6e274d2246b588aa878a"><td class="memItemLeft" align="right" valign="top"><a id="gaf9ab433a19eb6e274d2246b588aa878a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaf9ab433a19eb6e274d2246b588aa878a">USB_HID_USAGE_MEDICAL</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:gaf9ab433a19eb6e274d2246b588aa878a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Medical Instrument. <br /></td></tr>
+<tr class="separator:gaf9ab433a19eb6e274d2246b588aa878a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf60a877810f1e0e21a5d476a24ac8675"><td class="memItemLeft" align="right" valign="top"><a id="gaf60a877810f1e0e21a5d476a24ac8675"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaf60a877810f1e0e21a5d476a24ac8675">USB_HID_USAGE_BRAILLE</a>&#160;&#160;&#160;(0x41)</td></tr>
+<tr class="memdesc:gaf60a877810f1e0e21a5d476a24ac8675"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Braille Display. <br /></td></tr>
+<tr class="separator:gaf60a877810f1e0e21a5d476a24ac8675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga19d591ab84adfb137c694233fe05e939"><td class="memItemLeft" align="right" valign="top"><a id="ga19d591ab84adfb137c694233fe05e939"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga19d591ab84adfb137c694233fe05e939">USB_HID_USAGE_LIGHT</a>&#160;&#160;&#160;(0x59)</td></tr>
+<tr class="memdesc:ga19d591ab84adfb137c694233fe05e939"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Lighting And Illumination. <br /></td></tr>
+<tr class="separator:ga19d591ab84adfb137c694233fe05e939"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf7edcccf1508729cf618a8b3ea09812"><td class="memItemLeft" align="right" valign="top"><a id="gabf7edcccf1508729cf618a8b3ea09812"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gabf7edcccf1508729cf618a8b3ea09812">USB_HID_USAGE_MONITOR</a>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="memdesc:gabf7edcccf1508729cf618a8b3ea09812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page USB Monitor. <br /></td></tr>
+<tr class="separator:gabf7edcccf1508729cf618a8b3ea09812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ea90c93d1f1c74242235e1046289711"><td class="memItemLeft" align="right" valign="top"><a id="ga8ea90c93d1f1c74242235e1046289711"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga8ea90c93d1f1c74242235e1046289711">USB_HID_USAGE_MONITOR_VALUES</a>&#160;&#160;&#160;(0x81)</td></tr>
+<tr class="memdesc:ga8ea90c93d1f1c74242235e1046289711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Monitor Enumerated Values. <br /></td></tr>
+<tr class="separator:ga8ea90c93d1f1c74242235e1046289711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9449531435e390c731510582aca2883b"><td class="memItemLeft" align="right" valign="top"><a id="ga9449531435e390c731510582aca2883b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga9449531435e390c731510582aca2883b">USB_HID_USAGE_MONITOR_VESA</a>&#160;&#160;&#160;(0x82)</td></tr>
+<tr class="memdesc:ga9449531435e390c731510582aca2883b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page VESA Virtual Control. <br /></td></tr>
+<tr class="separator:ga9449531435e390c731510582aca2883b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga47fb78d86cc74d30af899aa30707bb28"><td class="memItemLeft" align="right" valign="top"><a id="ga47fb78d86cc74d30af899aa30707bb28"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga47fb78d86cc74d30af899aa30707bb28">USB_HID_USAGE_POWER</a>&#160;&#160;&#160;(0x84)</td></tr>
+<tr class="memdesc:ga47fb78d86cc74d30af899aa30707bb28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Power. <br /></td></tr>
+<tr class="separator:ga47fb78d86cc74d30af899aa30707bb28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae7bec4b3d593ef547ac62b213bf3243"><td class="memItemLeft" align="right" valign="top"><a id="gaae7bec4b3d593ef547ac62b213bf3243"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaae7bec4b3d593ef547ac62b213bf3243">USB_HID_USAGE_POS_BARCODE</a>&#160;&#160;&#160;(0x8C)</td></tr>
+<tr class="memdesc:gaae7bec4b3d593ef547ac62b213bf3243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Bar Code Scanner. <br /></td></tr>
+<tr class="separator:gaae7bec4b3d593ef547ac62b213bf3243"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab150e6036cfeea8d373386f4b29a967b"><td class="memItemLeft" align="right" valign="top"><a id="gab150e6036cfeea8d373386f4b29a967b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gab150e6036cfeea8d373386f4b29a967b">USB_HID_USAGE_POS_SCALE</a>&#160;&#160;&#160;(0x8D)</td></tr>
+<tr class="memdesc:gab150e6036cfeea8d373386f4b29a967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Scale. <br /></td></tr>
+<tr class="separator:gab150e6036cfeea8d373386f4b29a967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf009e6878a467ab2ef8d531aecd81736"><td class="memItemLeft" align="right" valign="top"><a id="gaf009e6878a467ab2ef8d531aecd81736"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gaf009e6878a467ab2ef8d531aecd81736">USB_HID_USAGE_POS_MSR</a>&#160;&#160;&#160;(0x8E)</td></tr>
+<tr class="memdesc:gaf009e6878a467ab2ef8d531aecd81736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Magnetic Stripe Reading (MSR) Devices. <br /></td></tr>
+<tr class="separator:gaf009e6878a467ab2ef8d531aecd81736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafee73097901d5d5ad64c8f61a074fab4"><td class="memItemLeft" align="right" valign="top"><a id="gafee73097901d5d5ad64c8f61a074fab4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gafee73097901d5d5ad64c8f61a074fab4">USB_HID_USAGE_POS_RESV</a>&#160;&#160;&#160;(0x8F)</td></tr>
+<tr class="memdesc:gafee73097901d5d5ad64c8f61a074fab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Reserved Point of Sale. <br /></td></tr>
+<tr class="separator:gafee73097901d5d5ad64c8f61a074fab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabb1551b5745b51fabd506ad0156920d1"><td class="memItemLeft" align="right" valign="top"><a id="gabb1551b5745b51fabd506ad0156920d1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gabb1551b5745b51fabd506ad0156920d1">USB_HID_USAGE_CAMERA</a>&#160;&#160;&#160;(0x90)</td></tr>
+<tr class="memdesc:gabb1551b5745b51fabd506ad0156920d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Camera Control. <br /></td></tr>
+<tr class="separator:gabb1551b5745b51fabd506ad0156920d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4027df8e22ea377f343c024dcdde6881"><td class="memItemLeft" align="right" valign="top"><a id="ga4027df8e22ea377f343c024dcdde6881"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga4027df8e22ea377f343c024dcdde6881">USB_HID_USAGE_ARCADE</a>&#160;&#160;&#160;(0x91)</td></tr>
+<tr class="memdesc:ga4027df8e22ea377f343c024dcdde6881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Arcade. <br /></td></tr>
+<tr class="separator:ga4027df8e22ea377f343c024dcdde6881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad44c0e012fb59d2279993e00a0222590"><td class="memItemLeft" align="right" valign="top"><a id="gad44c0e012fb59d2279993e00a0222590"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#gad44c0e012fb59d2279993e00a0222590">USB_HID_USAGE_GAMING</a>&#160;&#160;&#160;(0x92)</td></tr>
+<tr class="memdesc:gad44c0e012fb59d2279993e00a0222590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page Gaming Device. <br /></td></tr>
+<tr class="separator:gad44c0e012fb59d2279993e00a0222590"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f0b594133d4e2411e4e5938cbd7cf74"><td class="memItemLeft" align="right" valign="top"><a id="ga3f0b594133d4e2411e4e5938cbd7cf74"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usb__hid__usage.html#ga3f0b594133d4e2411e4e5938cbd7cf74">USB_HID_USAGE_FIDO</a>&#160;&#160;&#160;(0xF1D0)</td></tr>
+<tr class="memdesc:ga3f0b594133d4e2411e4e5938cbd7cf74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage page FIDO Alliance. <br /></td></tr>
+<tr class="separator:ga3f0b594133d4e2411e4e5938cbd7cf74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/nrf24l01p_ng.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nrf24l01p__ng_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">nrf24l01p_ng.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__nrf24l01p__ng.html">NRF24L01+ (NG) 2.4 GHz trasceiver driver</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Public interface for NRF24L01+ (NG) devices.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public interface for NRF24L01+ (NG) devices. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span style="display: none;">.nosp@m.</span>n.hu<span style="display: none;">.nosp@m.</span>essle<span style="display: none;">.nosp@m.</span>r@ov<span style="display: none;">.nosp@m.</span>gu.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="nrf24l01p__ng_8h_source.html">nrf24l01p_ng.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="kernel__defines_8h_source.html">kernel_defines.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nettype_8h_source.html">net/gnrc/nettype.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2net_2netdev_8h_source.html">net/netdev.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="spi_8h_source.html">periph/spi.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="nrf24l01p__ng__types_8h_source.html">nrf24l01p_ng_types.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for nrf24l01p_ng.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="nrf24l01p__ng_8h__incl.svg" width="1771" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="nrf24l01p__ng_8h__dep__incl.svg" width="824" height="246"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="nrf24l01p__ng_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng__cfg__t.html">nrf24l01p_ng_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that holds all active configuration values.  <a href="structnrf24l01p__ng__cfg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct of NRF24L01+ initialization parameters.  <a href="structnrf24l01p__ng__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng.html">nrf24l01p_ng</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NRF24L01+ device struct.  <a href="structnrf24l01p__ng.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gae1a04919915b2d206de46a4ba6cd4504"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gae1a04919915b2d206de46a4ba6cd4504">NRF24L01P_NG_MIN_ADDR_WIDTH</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:gae1a04919915b2d206de46a4ba6cd4504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum width of a NRF24L01+ layer-2 address. <br /></td></tr>
+<tr class="separator:gae1a04919915b2d206de46a4ba6cd4504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga5644a7c69ec88aeb2eed1ee4a12574fe">NRF24L01P_NG_MAX_ADDR_WIDTH</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum width of a NRF24L01+ layer-2 address. <br /></td></tr>
+<tr class="separator:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga603b9f706a694bff10b024e820cc4253"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga603b9f706a694bff10b024e820cc4253">NRF24L01P_NG_ADDR_WIDTH</a>&#160;&#160;&#160;<a class="el" href="group__drivers__nrf24l01p__ng.html#ga5644a7c69ec88aeb2eed1ee4a12574fe">NRF24L01P_NG_MAX_ADDR_WIDTH</a></td></tr>
+<tr class="memdesc:ga603b9f706a694bff10b024e820cc4253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass the compiler a definition of NRF24L01P_NG_ADDR_WIDTH to configure the layer-2 address width of this transceiver. <br /></td></tr>
+<tr class="separator:ga603b9f706a694bff10b024e820cc4253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga1ca6f0c290cbcf46e6e955ab90ccf69f">NRF24L01P_NG_BROADCAST_ADDR</a>&#160;&#160;&#160;{ 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }</td></tr>
+<tr class="memdesc:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agreed layer-2 address to send broadcast frames to.  <a href="group__drivers__nrf24l01p__ng.html#ga1ca6f0c290cbcf46e6e955ab90ccf69f">More...</a><br /></td></tr>
+<tr class="separator:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ad0ab7be9309c928c315b99bb05f365"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga3ad0ab7be9309c928c315b99bb05f365">NRF24L01P_NG_ADDR_P0</a>(dev)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_long[<a class="el" href="nrf24l01p__ng__types_8h.html#a0fa526d986c8ade854b2de70be3c8443a36f7fc27a32b1a0f72ea5e664eefc47c">NRF24L01P_NG_P0</a>])</td></tr>
+<tr class="memdesc:ga3ad0ab7be9309c928c315b99bb05f365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the address of pipe 0. <br /></td></tr>
+<tr class="separator:ga3ad0ab7be9309c928c315b99bb05f365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05e0d44c85c1256aa06092e62349ea97"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga05e0d44c85c1256aa06092e62349ea97">NRF24L01P_NG_ADDR_P1</a>(dev)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_long[<a class="el" href="nrf24l01p__ng__types_8h.html#a0fa526d986c8ade854b2de70be3c8443a8cca2ec338d0fb6d60ac6e1ea8d6a44e">NRF24L01P_NG_P1</a>])</td></tr>
+<tr class="memdesc:ga05e0d44c85c1256aa06092e62349ea97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the address of pipe 1. <br /></td></tr>
+<tr class="separator:ga05e0d44c85c1256aa06092e62349ea97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca0d0f905446b54fc8202a44198885bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaca0d0f905446b54fc8202a44198885bc">NRF24L01P_NG_ADDR_PX_LSB</a>(dev,  pipe)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_short[(pipe) - 2])</td></tr>
+<tr class="memdesc:gaca0d0f905446b54fc8202a44198885bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the least significant byte of the addresses pipe 2, pipe 3, pipe 4 or pipe 5.  <a href="group__drivers__nrf24l01p__ng.html#gaca0d0f905446b54fc8202a44198885bc">More...</a><br /></td></tr>
+<tr class="separator:gaca0d0f905446b54fc8202a44198885bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga7f5644a3f1347d4fbbd38f22738a2821">nrf24l01p_ng_setup</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, const <a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a> *params, uint8_t index)</td></tr>
+<tr class="memdesc:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the NRF24L01+ driver, but perform no initialization.  <a href="group__drivers__nrf24l01p__ng.html#ga7f5644a3f1347d4fbbd38f22738a2821">More...</a><br /></td></tr>
+<tr class="separator:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaf277cb1b28533f3add551a3c4a6f28e4">nrf24l01p_ng_set_enable_pipe</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe, bool enable)</td></tr>
+<tr class="memdesc:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable data pipe <code>pipe</code>.  <a href="group__drivers__nrf24l01p__ng.html#gaf277cb1b28533f3add551a3c4a6f28e4">More...</a><br /></td></tr>
+<tr class="separator:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41b9879e5eebd191191edbc5d4928b36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga41b9879e5eebd191191edbc5d4928b36">nrf24l01p_ng_get_enable_pipe</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe, bool *enable)</td></tr>
+<tr class="memdesc:ga41b9879e5eebd191191edbc5d4928b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if data pipe <code>pipe</code> is enabled.  <a href="group__drivers__nrf24l01p__ng.html#ga41b9879e5eebd191191edbc5d4928b36">More...</a><br /></td></tr>
+<tr class="separator:ga41b9879e5eebd191191edbc5d4928b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaeda6e1bccc3fffababb92b4efe3d7219">nrf24l01p_ng_set_air_data_rate</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a> data_rate)</td></tr>
+<tr class="memdesc:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure air data rate.  <a href="group__drivers__nrf24l01p__ng.html#gaeda6e1bccc3fffababb92b4efe3d7219">More...</a><br /></td></tr>
+<tr class="separator:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf27fbf98efa564a50a4213efe3445353"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaf27fbf98efa564a50a4213efe3445353">nrf24l01p_ng_get_air_data_rate</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a> *data_rate)</td></tr>
+<tr class="memdesc:gaf27fbf98efa564a50a4213efe3445353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured data rate.  <a href="group__drivers__nrf24l01p__ng.html#gaf27fbf98efa564a50a4213efe3445353">More...</a><br /></td></tr>
+<tr class="separator:gaf27fbf98efa564a50a4213efe3445353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga599510b4ce7e7909a3021e401f0e270a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga599510b4ce7e7909a3021e401f0e270a">nrf24l01p_ng_set_crc</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a> crc)</td></tr>
+<tr class="memdesc:ga599510b4ce7e7909a3021e401f0e270a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure CRC length.  <a href="group__drivers__nrf24l01p__ng.html#ga599510b4ce7e7909a3021e401f0e270a">More...</a><br /></td></tr>
+<tr class="separator:ga599510b4ce7e7909a3021e401f0e270a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6720a63175d8c26921579a2ce1c908c4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga6720a63175d8c26921579a2ce1c908c4">nrf24l01p_ng_get_crc</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a> *crc)</td></tr>
+<tr class="memdesc:ga6720a63175d8c26921579a2ce1c908c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured CRC length.  <a href="group__drivers__nrf24l01p__ng.html#ga6720a63175d8c26921579a2ce1c908c4">More...</a><br /></td></tr>
+<tr class="separator:ga6720a63175d8c26921579a2ce1c908c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0eafc06beef89a2642b6529c05352a3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga0eafc06beef89a2642b6529c05352a3a">nrf24l01p_ng_set_tx_power</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a> power)</td></tr>
+<tr class="memdesc:ga0eafc06beef89a2642b6529c05352a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Tx trasceiver power.  <a href="group__drivers__nrf24l01p__ng.html#ga0eafc06beef89a2642b6529c05352a3a">More...</a><br /></td></tr>
+<tr class="separator:ga0eafc06beef89a2642b6529c05352a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca172d2099ebd6f058e25b7520f99f30"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaca172d2099ebd6f058e25b7520f99f30">nrf24l01p_ng_get_tx_power</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a> *power)</td></tr>
+<tr class="memdesc:gaca172d2099ebd6f058e25b7520f99f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured Tx transceiver power.  <a href="group__drivers__nrf24l01p__ng.html#gaca172d2099ebd6f058e25b7520f99f30">More...</a><br /></td></tr>
+<tr class="separator:gaca172d2099ebd6f058e25b7520f99f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga841028300f3d4bb05be73d2c4fd41bd5">nrf24l01p_ng_set_channel</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t channel)</td></tr>
+<tr class="memdesc:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transceiver channel.  <a href="group__drivers__nrf24l01p__ng.html#ga841028300f3d4bb05be73d2c4fd41bd5">More...</a><br /></td></tr>
+<tr class="separator:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga889f07e3cb952a9637db4c1d282c718e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga889f07e3cb952a9637db4c1d282c718e">nrf24l01p_ng_get_channel</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:ga889f07e3cb952a9637db4c1d282c718e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured transceiver channel.  <a href="group__drivers__nrf24l01p__ng.html#ga889f07e3cb952a9637db4c1d282c718e">More...</a><br /></td></tr>
+<tr class="separator:ga889f07e3cb952a9637db4c1d282c718e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9735eb61190792c7781c05c5a87cb157"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga9735eb61190792c7781c05c5a87cb157">nrf24l01p_ng_set_rx_address</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, const uint8_t *addr, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe)</td></tr>
+<tr class="memdesc:ga9735eb61190792c7781c05c5a87cb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Rx address of a certain data pipe.  <a href="group__drivers__nrf24l01p__ng.html#ga9735eb61190792c7781c05c5a87cb157">More...</a><br /></td></tr>
+<tr class="separator:ga9735eb61190792c7781c05c5a87cb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gafa8e1d7db0cc690393834f8cb7445bfd">nrf24l01p_ng_get_rx_address</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t *addr, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe)</td></tr>
+<tr class="memdesc:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current Rx address of a certain data pipe.  <a href="group__drivers__nrf24l01p__ng.html#gafa8e1d7db0cc690393834f8cb7445bfd">More...</a><br /></td></tr>
+<tr class="separator:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gad55fd7e8e7ea96e58c3cfa567a868225">nrf24l01p_ng_set_max_retransm</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t max_rt)</td></tr>
+<tr class="memdesc:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure maximum number of retransmissions for ESB.  <a href="group__drivers__nrf24l01p__ng.html#gad55fd7e8e7ea96e58c3cfa567a868225">More...</a><br /></td></tr>
+<tr class="separator:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga240b83d7f85abbbc666ab85d5024a0a4">nrf24l01p_ng_get_max_retransm</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured number of maximum retransmissions for ESB.  <a href="group__drivers__nrf24l01p__ng.html#ga240b83d7f85abbbc666ab85d5024a0a4">More...</a><br /></td></tr>
+<tr class="separator:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga071c22c97992bbb96be5beb757af8e08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga071c22c97992bbb96be5beb757af8e08">nrf24l01p_ng_set_retransm_delay</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a> rt_delay)</td></tr>
+<tr class="memdesc:ga071c22c97992bbb96be5beb757af8e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set retransmission delay for ESB.  <a href="group__drivers__nrf24l01p__ng.html#ga071c22c97992bbb96be5beb757af8e08">More...</a><br /></td></tr>
+<tr class="separator:ga071c22c97992bbb96be5beb757af8e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad59bc9ecf759be70d409cee8cebe8361"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gad59bc9ecf759be70d409cee8cebe8361">nrf24l01p_ng_get_retransm_delay</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a> *rt_delay)</td></tr>
+<tr class="memdesc:gad59bc9ecf759be70d409cee8cebe8361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get retransmission delay for ESB.  <a href="group__drivers__nrf24l01p__ng.html#gad59bc9ecf759be70d409cee8cebe8361">More...</a><br /></td></tr>
+<tr class="separator:gad59bc9ecf759be70d409cee8cebe8361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85c646b2665acd98d0595556ee90781d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga85c646b2665acd98d0595556ee90781d">nrf24l01p_ng_set_state</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a> state)</td></tr>
+<tr class="memdesc:ga85c646b2665acd98d0595556ee90781d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put device into sleep mode(<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a5816f6660ec69662cf40e8c4c18d7187">NRF24L01P_NG_STATE_POWER_DOWN</a>), standby mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a98f671cbba722655f53eb7fa7084322c">NRF24L01P_NG_STATE_STANDBY_1</a>), or Rx mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a3497eab27344ba1bf1f417d42f261001">NRF24L01P_NG_STATE_RX_MODE</a>)  <a href="group__drivers__nrf24l01p__ng.html#ga85c646b2665acd98d0595556ee90781d">More...</a><br /></td></tr>
+<tr class="separator:ga85c646b2665acd98d0595556ee90781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaa156f6157e5b2afcaf6eef41cd2845bf">nrf24l01p_ng_get_state</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current device state.  <a href="group__drivers__nrf24l01p__ng.html#gaa156f6157e5b2afcaf6eef41cd2845bf">More...</a><br /></td></tr>
+<tr class="separator:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6223b67d60cce99202c26870ddf60c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gac6223b67d60cce99202c26870ddf60c1">nrf24l01p_ng_eui_get</a> (const <a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, uint8_t *eui)</td></tr>
+<tr class="memdesc:gac6223b67d60cce99202c26870ddf60c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a unique layer-2 address for an <a class="el" href="structnrf24l01p__ng.html" title="NRF24L01+ device struct. ">nrf24l01p_ng</a> instance.  <a href="group__drivers__nrf24l01p__ng.html#gac6223b67d60cce99202c26870ddf60c1">More...</a><br /></td></tr>
+<tr class="separator:gac6223b67d60cce99202c26870ddf60c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Autoconn</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__pkg__nimble__autoconn.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Autoconn<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a><a class="el" href="group__net.html">Networking</a> &raquo;  &#124; <a class="el" href="group__ble.html">Bluetooth Low Energy (BLE)</a> &raquo; <a class="el" href="group__pkg__nimble.html">NimBLE</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Simple connection manager that automatically opens BLE connections to any node that fits some given filter criteria.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Simple connection manager that automatically opens BLE connections to any node that fits some given filter criteria. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br />
+ </dd></dl>
+<h1><a class="anchor" id="autotoc_md1873"></a>
+WARNING</h1>
+<p>This module is highly experimental! Expect bugs, instabilities and sudden API changes :-)</p>
+<h1><a class="anchor" id="autotoc_md1874"></a>
+About</h1>
+<p>This NimBLE submodule implements a connection manager for BLE. It takes care of scanning, advertising, and opening connections to neighboring nodes. For this autoconn periodically switches between advertising and scanning mode, hence from accepting incoming connection requests to scanning actively for new neighbors.</p>
+<h1><a class="anchor" id="autotoc_md1875"></a>
+Concept</h1>
+<p>The IETF and BT SIG standards describing IP-over-BLE only describe how to transfer IP data over L2CAP connection oriented channels. But they do not say anything about when BLE connections should be established between two BLE nodes in the first place. While this can be done manually (e.g. via RIOTs <code>ble</code> shell command), this is certainly no option in massive M2M deployments.</p>
+<p>To enable nodes to automatically connect to their neighbors, autoconn implements a naive strategy which makes nodes to connect to any neighbor they see, as long as the neighbor signals a predefined set of capabilities.</p>
+<p>In particular, neighbors are simply filtered by looking at the 16-bit service UUIDs included in the <code>Incomplete List of 16-bit Service UUIDs</code> field in the advertising data that is received from neighbors.</p>
+<p>The logical network topology (as seen by IP) is formed by the established BLE link layer connections. It is important to node, that the autoconn module will form a random topology on the link layer, as no further context information is used for the connection decisions. This can potentially lead to fragmented, non-connected sub-networks in larger deployments!</p>
+<h1><a class="anchor" id="autotoc_md1876"></a>
+State Machine</h1>
+<p>Autoconn implements a state machine, that switches a nodes role periodically between scanning and advertising. To make sure, that nodes always have a chance to see each other, especially when booted at the same point in time, the intervals of each role consist of a constant amount of time plus a random interval. This way two nodes will eventually see each other and be able to establish a connection.</p>
+<p>All timing values for the interval duration and the maximum amount of the random offset are configurable.</p>
+<h1><a class="anchor" id="autotoc_md1877"></a>
+Usage</h1>
+<p>In the current state, the filtering of neighbors is hard coded into the autoconn module. Two options are implemented:</p>
+<ol type="1">
+<li>connect to any neighbor capable of IP-over-BLE -&gt; <a class="el" href="group__ble__defs.html#gaddb36be01640aefd1cf9d1273092a4e3">BLE_GATT_SVC_IPSS</a> UUID included in the BLE_GAP_AD_UUID16_INCOMP field of the received advertising data</li>
+<li>connect to any neighbor capable of NDN-over-BLE -&gt; <a class="el" href="group__ble__defs.html#ga917cc9eba844f34f5c71f9065668d6ff">BLE_GATT_SVC_NDNSS</a> UUID included in the BLE_GAP_AD_UUID16_INCOMP field of the received advertising data</li>
+</ol>
+<p>The active filter used in autoconn is selected using one of two submodules during build time:</p>
+<ol type="1">
+<li><code>USEMDOULE += nimble_autoconn_ipsp</code></li>
+<li>&lsquo;USEMODULE += nibmle_autoconn_ndnsp&rsquo;</li>
+</ol>
+<dl class="section note"><dt>Note</dt><dd>The NDN support service (NDNSP) is defined by us and it is not at all standardized nor sanctioned by the BT SIG. For experimental use only...</dd></dl>
+<h1><a class="anchor" id="autotoc_md1878"></a>
+Implementation Status</h1>
+<ul>
+<li>The filter function could be more powerful. It is probably a good idea to extend this module to allow for passing custom filter functions using a function pointer</li>
+<li>Currently this module does not allow to use NimBLE as IP-over-BLE node and as a GATT server concurrently. This could be enabled by adding an additional callback function which exposes some/all GAP events to a user application (i.e. BLE_GAP_EVENT_SUBSCRIBE, BLE_GAP_EVENT_NOTIFY_RX, BLE_GAP_EVENT_NOTIFY_TX).</li>
+<li>It might make sense to get rid of the periodic switching between scanning and advertising in favor of doing both in parallel. This would simplify the code (and configuration) quite a bit. But in the past, there were severe stability issues with NimBLE doing this, so it needs to be evaluated in the future if this is a feasible option. </li>
+</ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:nimble__autoconn_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nimble__autoconn_8h.html">nimble_autoconn.h</a></td></tr>
+<tr class="memdesc:nimble__autoconn_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple automated connection manager for NimBLE netif. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nimble__autoconn__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nimble__autoconn__params_8h.html">nimble_autoconn_params.h</a></td></tr>
+<tr class="memdesc:nimble__autoconn__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the nimble_autoconn module. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of configuration parameters needed to run autoconn.  <a href="structnimble__autoconn__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gacf031a18714fab9c47677ce9eba30e70"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="group__pkg__nimble__autoconn.html#ggacf031a18714fab9c47677ce9eba30e70ae3b2f68607077056f0392724e95b5897">NIMBLE_AUTOCONN_OK</a> = 0, 
+<a class="el" href="group__pkg__nimble__autoconn.html#ggacf031a18714fab9c47677ce9eba30e70ad4f9c31382c5ba24737e394d1aee3b41">NIMBLE_AUTOCONN_PARAMERR</a> = -1, 
+<a class="el" href="group__pkg__nimble__autoconn.html#ggacf031a18714fab9c47677ce9eba30e70a12dff9b5332609748fbd09b3c3192cc5">NIMBLE_AUTOCONN_ADERR</a> = -2
+ }</td></tr>
+<tr class="memdesc:gacf031a18714fab9c47677ce9eba30e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return codes used by the autoconn module.  <a href="group__pkg__nimble__autoconn.html#gacf031a18714fab9c47677ce9eba30e70">More...</a><br /></td></tr>
+<tr class="separator:gacf031a18714fab9c47677ce9eba30e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga4104186cd847c39ff064bc6a4774ab62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__autoconn.html#ga4104186cd847c39ff064bc6a4774ab62">nimble_autoconn_init</a> (const <a class="el" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a> *params, const uint8_t *ad, size_t adlen)</td></tr>
+<tr class="memdesc:ga4104186cd847c39ff064bc6a4774ab62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and enable the autoconn module.  <a href="#ga4104186cd847c39ff064bc6a4774ab62">More...</a><br /></td></tr>
+<tr class="separator:ga4104186cd847c39ff064bc6a4774ab62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c4f680c8cc944eff73beb5cd2bfd547"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__autoconn.html#ga3c4f680c8cc944eff73beb5cd2bfd547">nimble_autoconn_eventcb</a> (<a class="el" href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a> cb)</td></tr>
+<tr class="memdesc:ga3c4f680c8cc944eff73beb5cd2bfd547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register a callback that is called on netif events.  <a href="#ga3c4f680c8cc944eff73beb5cd2bfd547">More...</a><br /></td></tr>
+<tr class="separator:ga3c4f680c8cc944eff73beb5cd2bfd547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf71c33159e24daef7cbf59d95e65ea8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__autoconn.html#gacf71c33159e24daef7cbf59d95e65ea8">nimble_autoconn_update</a> (const <a class="el" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a> *params, const uint8_t *ad, size_t adlen)</td></tr>
+<tr class="memdesc:gacf71c33159e24daef7cbf59d95e65ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the used parameters (timing and node ID)  <a href="#gacf71c33159e24daef7cbf59d95e65ea8">More...</a><br /></td></tr>
+<tr class="separator:gacf71c33159e24daef7cbf59d95e65ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab65002584b89e7588bcf25e2893b82c"><td class="memItemLeft" align="right" valign="top"><a id="gaab65002584b89e7588bcf25e2893b82c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__autoconn.html#gaab65002584b89e7588bcf25e2893b82c">nimble_autoconn_enable</a> (void)</td></tr>
+<tr class="memdesc:gaab65002584b89e7588bcf25e2893b82c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable automated creation of new BLE connections. <br /></td></tr>
+<tr class="separator:gaab65002584b89e7588bcf25e2893b82c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07c0e1179a5ebfab831989e9c2725da4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble__autoconn.html#ga07c0e1179a5ebfab831989e9c2725da4">nimble_autoconn_disable</a> (void)</td></tr>
+<tr class="memdesc:ga07c0e1179a5ebfab831989e9c2725da4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the automated connection management.  <a href="#ga07c0e1179a5ebfab831989e9c2725da4">More...</a><br /></td></tr>
+<tr class="separator:ga07c0e1179a5ebfab831989e9c2725da4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gacf031a18714fab9c47677ce9eba30e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf031a18714fab9c47677ce9eba30e70">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return codes used by the autoconn module. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggacf031a18714fab9c47677ce9eba30e70ae3b2f68607077056f0392724e95b5897"></a>NIMBLE_AUTOCONN_OK&#160;</td><td class="fielddoc"><p>like a walk in the park </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf031a18714fab9c47677ce9eba30e70ad4f9c31382c5ba24737e394d1aee3b41"></a>NIMBLE_AUTOCONN_PARAMERR&#160;</td><td class="fielddoc"><p>invalid parameters given </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ggacf031a18714fab9c47677ce9eba30e70a12dff9b5332609748fbd09b3c3192cc5"></a>NIMBLE_AUTOCONN_ADERR&#160;</td><td class="fielddoc"><p>error generating advertising data </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="nimble__autoconn_8h_source.html#l00123">123</a> of file <a class="el" href="nimble__autoconn_8h_source.html">nimble_autoconn.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga07c0e1179a5ebfab831989e9c2725da4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga07c0e1179a5ebfab831989e9c2725da4">&#9670;&nbsp;</a></span>nimble_autoconn_disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nimble_autoconn_disable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the automated connection management. </p>
+<dl class="section note"><dt>Note</dt><dd>All existing connections are kept, only the scanning and advertising is canceled </dd></dl>
+
+</div>
+</div>
+<a id="ga3c4f680c8cc944eff73beb5cd2bfd547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c4f680c8cc944eff73beb5cd2bfd547">&#9670;&nbsp;</a></span>nimble_autoconn_eventcb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nimble_autoconn_eventcb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Register a callback that is called on netif events. </p>
+<p>The registered callback function is a simple pass-through of nimble_netif events. The callback is executed in the context of NimBLE's host thread.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>event callback to register, may be NULL </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4104186cd847c39ff064bc6a4774ab62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4104186cd847c39ff064bc6a4774ab62">&#9670;&nbsp;</a></span>nimble_autoconn_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nimble_autoconn_init </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a> *&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>ad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>adlen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize and enable the autoconn module. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This function <b>must</b> only be called once. Typically this is during system initialization or at the beginning of the user application. Use <a class="el" href="group__pkg__nimble__autoconn.html#gacf71c33159e24daef7cbf59d95e65ea8" title="Update the used parameters (timing and node ID) ">nimble_autoconn_update()</a> to update parameters at runtime.</dd>
+<dd>
+Autoconn expects nimble_netif to be initialized. So make sure <a class="el" href="group__pkg__nimble__netif.html#ga571a0f63aa1f6d4c3a8a4588d2b971b2" title="Initialize the netif implementation, spawns the netif thread. ">nimble_netif_init()</a> was called before calling <a class="el" href="group__pkg__nimble__autoconn.html#ga4104186cd847c39ff064bc6a4774ab62" title="Initialize and enable the autoconn module. ">nimble_autoconn_init()</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>timing parameters to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ad</td><td>advertising data, if NULL it is generated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">adlen</td><td>length of <code>ad</code> in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gacf71c33159e24daef7cbf59d95e65ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf71c33159e24daef7cbf59d95e65ea8">&#9670;&nbsp;</a></span>nimble_autoconn_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nimble_autoconn_update </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a> *&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>ad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>adlen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Update the used parameters (timing and node ID) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>new parameters to apply </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ad</td><td>advertising data, if NULL it is generated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">adlen</td><td>length of <code>ad</code> in bytes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NIMBLE_AUTOCONN_OK if everything went fine </dd>
+<dd>
+NIMBLE_AUTOCONN_INVALID if given parameters can not be applied </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

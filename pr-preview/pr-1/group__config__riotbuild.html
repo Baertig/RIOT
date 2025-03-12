@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>riotbuild.h: Preprocessor Constants to Query the Build System Configuration</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__config__riotbuild.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">riotbuild.h: Preprocessor Constants to Query the Build System Configuration<div class="ingroups"><a class="el" href="group__config.html">Compile time configurations</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The RIOT build system generates a header file <code>riotbuild.h</code> that is included in every C compilation unit by passing the <code>-include</code> flag to the C compiler.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>The RIOT build system generates a header file <code>riotbuild.h</code> that is included in every C compilation unit by passing the <code>-include</code> flag to the C compiler. </p>
+<p>Hence, it provides a set of macros that are unconditionally available and can be used by C code to query the build system configuration. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga4e095a4668ff041ffb1e577f3a4c444c"><td class="memItemLeft" align="right" valign="top"><a id="ga4e095a4668ff041ffb1e577f3a4c444c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga4e095a4668ff041ffb1e577f3a4c444c">RIOT_VERSION</a>&#160;&#160;&#160;&quot;&lt;YEAR_OF_RELEASE&gt;.&lt;MONTH_OF_RELEASE&gt;-&lt;POSTFIX&gt;&quot;</td></tr>
+<tr class="memdesc:ga4e095a4668ff041ffb1e577f3a4c444c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The used RIOT version as human readable string literal, e.g., for printing to stdio or writing to a log. <br /></td></tr>
+<tr class="separator:ga4e095a4668ff041ffb1e577f3a4c444c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ea56613f93f74a64a1c94b7648779dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga3ea56613f93f74a64a1c94b7648779dc">RIOT_VERSION_CODE</a>&#160;&#160;&#160;<a class="el" href="riot__version_8h.html#ab30c2236f36d52f82720fa6955766a9e">RIOT_VERSION_NUM</a>(&lt;YEAR&gt;,&lt;MONTH&gt;,&lt;PATCH&gt;,&lt;EXTRA&gt;)</td></tr>
+<tr class="memdesc:ga3ea56613f93f74a64a1c94b7648779dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The used RIOT version as machine readable number, e.g., for testing whether new APIs are available.  <a href="#ga3ea56613f93f74a64a1c94b7648779dc">More...</a><br /></td></tr>
+<tr class="separator:ga3ea56613f93f74a64a1c94b7648779dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f77926253b39ff3b57635dba5b725a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga9f77926253b39ff3b57635dba5b725a2">RIOT_APPLICATION</a>&#160;&#160;&#160;&quot;&lt;RIOT_APP_NAME&gt;&quot;</td></tr>
+<tr class="memdesc:ga9f77926253b39ff3b57635dba5b725a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the RIOT application as string literal.  <a href="#ga9f77926253b39ff3b57635dba5b725a2">More...</a><br /></td></tr>
+<tr class="separator:ga9f77926253b39ff3b57635dba5b725a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8fc9a8d57dbc30d25ba92e07f931ed25"><td class="memItemLeft" align="right" valign="top"><a id="ga8fc9a8d57dbc30d25ba92e07f931ed25"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga8fc9a8d57dbc30d25ba92e07f931ed25">RIOT_BOARD</a>&#160;&#160;&#160;&quot;&lt;BOARD_NAME&gt;&quot;</td></tr>
+<tr class="memdesc:ga8fc9a8d57dbc30d25ba92e07f931ed25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the board the app is compiled for as string literal. <br /></td></tr>
+<tr class="separator:ga8fc9a8d57dbc30d25ba92e07f931ed25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd6ad5e916f98426d3e10ced48f0caaf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#gadd6ad5e916f98426d3e10ced48f0caaf">RIOT_CPU</a>&#160;&#160;&#160;&quot;&lt;CPU_FOLDER_NAME&gt;&quot;</td></tr>
+<tr class="memdesc:gadd6ad5e916f98426d3e10ced48f0caaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the MCU the app is compiled for as string literal.  <a href="#gadd6ad5e916f98426d3e10ced48f0caaf">More...</a><br /></td></tr>
+<tr class="separator:gadd6ad5e916f98426d3e10ced48f0caaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga474bf800e20c12b8b3baa21245b59045"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga474bf800e20c12b8b3baa21245b59045">CPU_RAM_SIZE</a>&#160;&#160;&#160;/* RAM Size in Bytes */</td></tr>
+<tr class="memdesc:ga474bf800e20c12b8b3baa21245b59045"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of the RAM in Bytes.  <a href="#ga474bf800e20c12b8b3baa21245b59045">More...</a><br /></td></tr>
+<tr class="separator:ga474bf800e20c12b8b3baa21245b59045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga06c1e0d6df746bfe65568115e079b448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga06c1e0d6df746bfe65568115e079b448">MACRO_DEPRECATED</a>&#160;&#160;&#160;/* implementation */</td></tr>
+<tr class="memdesc:ga06c1e0d6df746bfe65568115e079b448"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark a preprocessor macro as deprecated by including this macro in the definition.  <a href="#ga06c1e0d6df746bfe65568115e079b448">More...</a><br /></td></tr>
+<tr class="separator:ga06c1e0d6df746bfe65568115e079b448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9cc0edbe0977ef6d2d755907cf89fc8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__config__riotbuild.html#ga9cc0edbe0977ef6d2d755907cf89fc8b">RIOT_MCU</a>&#160;&#160;&#160;<a class="el" href="group__config__riotbuild.html#ga06c1e0d6df746bfe65568115e079b448">MACRO_DEPRECATED</a> <a class="el" href="group__config__riotbuild.html#gadd6ad5e916f98426d3e10ced48f0caaf">RIOT_CPU</a></td></tr>
+<tr class="memdesc:ga9cc0edbe0977ef6d2d755907cf89fc8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the MCU the app is compiled for as string literal.  <a href="#ga9cc0edbe0977ef6d2d755907cf89fc8b">More...</a><br /></td></tr>
+<tr class="separator:ga9cc0edbe0977ef6d2d755907cf89fc8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga474bf800e20c12b8b3baa21245b59045"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga474bf800e20c12b8b3baa21245b59045">&#9670;&nbsp;</a></span>CPU_RAM_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPU_RAM_SIZE&#160;&#160;&#160;/* RAM Size in Bytes */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of the RAM in Bytes. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Not every CPU family provides this, it will be undefined if not provided </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00063">63</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+<a id="ga06c1e0d6df746bfe65568115e079b448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga06c1e0d6df746bfe65568115e079b448">&#9670;&nbsp;</a></span>MACRO_DEPRECATED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MACRO_DEPRECATED&#160;&#160;&#160;/* implementation */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mark a preprocessor macro as deprecated by including this macro in the definition. </p>
+<p>Usage: ``` C ///</p><dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000042">Deprecated:</a></b></dt><dd>, use BAR instead of FOO #define FOO MACRO_DEPRECATED BAR ``` </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00077">77</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+<a id="ga9f77926253b39ff3b57635dba5b725a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f77926253b39ff3b57635dba5b725a2">&#9670;&nbsp;</a></span>RIOT_APPLICATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIOT_APPLICATION&#160;&#160;&#160;&quot;&lt;RIOT_APP_NAME&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name of the RIOT application as string literal. </p>
+<p>The string is defined in the applications <code>Makefile</code> using the <code>APPLICATION</code> variable. </p>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00041">41</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+<a id="gadd6ad5e916f98426d3e10ced48f0caaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadd6ad5e916f98426d3e10ced48f0caaf">&#9670;&nbsp;</a></span>RIOT_CPU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIOT_CPU&#160;&#160;&#160;&quot;&lt;CPU_FOLDER_NAME&gt;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name of the MCU the app is compiled for as string literal. </p>
+<p>This is the name of the MCU family in terms of RIOT's peripheral drivers, or in other words, the folder name in the <code>cpu</code> folder in RIOT's repo root used. </p>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00055">55</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+<a id="ga9cc0edbe0977ef6d2d755907cf89fc8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9cc0edbe0977ef6d2d755907cf89fc8b">&#9670;&nbsp;</a></span>RIOT_MCU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIOT_MCU&#160;&#160;&#160;<a class="el" href="group__config__riotbuild.html#ga06c1e0d6df746bfe65568115e079b448">MACRO_DEPRECATED</a> <a class="el" href="group__config__riotbuild.html#gadd6ad5e916f98426d3e10ced48f0caaf">RIOT_CPU</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Name of the MCU the app is compiled for as string literal. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000043">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__config__riotbuild.html#gadd6ad5e916f98426d3e10ced48f0caaf">RIOT_CPU</a> instead. This will be removed soonest in release 2025.04</dd></dl>
+<p>This has been renamed to <code>RIOT_CPU</code> for consistency. Even though MCU would technically be the better name, CPU is used every else in the source code and folder structure. </p>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00094">94</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+<a id="ga3ea56613f93f74a64a1c94b7648779dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ea56613f93f74a64a1c94b7648779dc">&#9670;&nbsp;</a></span>RIOT_VERSION_CODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RIOT_VERSION_CODE&#160;&#160;&#160;<a class="el" href="riot__version_8h.html#ab30c2236f36d52f82720fa6955766a9e">RIOT_VERSION_NUM</a>(&lt;YEAR&gt;,&lt;MONTH&gt;,&lt;PATCH&gt;,&lt;EXTRA&gt;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The used RIOT version as machine readable number, e.g., for testing whether new APIs are available. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="riot__version_8h.html#ab30c2236f36d52f82720fa6955766a9e" title="Generates a 64 bit variable of a release version. ">RIOT_VERSION_NUM</a> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="riotbuild-prefix_8h_8in_source.html#l00033">33</a> of file <a class="el" href="riotbuild-prefix_8h_8in_source.html">riotbuild-prefix.h.in</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

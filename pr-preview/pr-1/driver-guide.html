@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Writing a Device Driver in RIOT</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('driver-guide.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Writing a Device Driver in RIOT </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#driver-guide-design-objectives">General Design Objectives</a></li>
+<li class="level1"><a href="#driver-guide-general">General</a><ul><li class="level2"><a href="#driver-guide-doc">Documentation</a></li>
+<li class="level2"><a href="#driver-guide-types">Device descriptor and parameter configuration</a></li>
+<li class="level2"><a href="#driver-guide-config">Default device configuration</a></li>
+<li class="level2"><a href="#driver-guide-doxygen">Compile-time configuration documentation</a></li>
+<li class="level2"><a href="#driver-guide-initialization">Initialization</a></li>
+<li class="level2"><a href="#driver-guide-return-values">Return Values</a><ul><li class="level3"><a href="#driver-guide-return-values-doc">Documenting Return Values</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#driver-guide-general-checklist">General Device Driver Checklist</a></li>
+<li class="level2"><a href="#autotoc_md2281">Build system integration</a><ul><li class="level3"><a href="#autotoc_md2282">Internal include files</a></li>
+<li class="level3"><a href="#autotoc_md2283">External dependencies</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#autotoc_md2284">Helper tools</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#driver-guide-sensors">Sensors</a><ul><li class="level2"><a href="#driver-guide-saul">SAUL</a></li>
+<li class="level2"><a href="#driver-guide-sensor-initialization">Initialization</a></li>
+<li class="level2"><a href="#driver-guide-sensor-value-handling">Value handling</a><ul><li class="level3"><a href="#driver-guide-sensor-value-semantics">Value semantics</a></li>
+<li class="level3"><a href="#driver-guide-sensor-types">Typing</a></li>
+</ul>
+</li>
+<li class="level2"><a href="#driver-guide-sensor-checklist">Additional Sensor Driver Checklist</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#driver-guide-netdev">Network devices</a><ul><li class="level2"><a href="#driver-guide-netdev-init">Initialization</a></li>
+<li class="level2"><a href="#driver-guide-netdev-interface">netdev</a></li>
+<li class="level2"><a href="#driver-guide-netdev-checklist">Additional Network Device Driver Checklist</a></li>
+</ul>
+</li>
+<li class="level1"><a href="#driver-guide-todo">TODO</a></li>
+</ul>
+</div>
+<div class="textblock"><p>This document describes the requirement, design objectives, and some non-function details when writing device drivers in/for RIOT. The term device driver in this context includes all 'CPU-external' devices connected to the CPU typically via peripherals like SPI, I2C, UART, GPIO, and similar. CPU peripherals itself are in RIOT not considered to be device drivers, but peripheral or low-level drivers. Typical devices are network devices like radios, Ethernet adapters, sensors, and actuators.</p>
+<h1><a class="anchor" id="driver-guide-design-objectives"></a>
+General Design Objectives</h1>
+<p>Device drivers should be as easy to use as possible. This implies an 'initialize-&gt;ready' paradigm, meaning, that device drivers should be ready to use and in operation right after they have been initialized. On top, devices should work with physical values wherever possible. So e.g. sensors should return already converted values in some physical unit instead of RAW data, so that users can work directly with data from different devices directly without having to care about device specific conversion.</p>
+<p>However, please avoid the use of <code>float</code> or <code>double</code>. Instead, multiply to the next SI (or appropriate) unit. E.g. if an ADC would return values like <code>1.23 V</code>, chose to return <code>1230 mV</code> instead.</p>
+<p>Additionally, towards ease of use, all device drivers in RIOT should provide a similar 'look and feel'. They should behave similarly in terms of their state after initialization, like their used data representation and so on.</p>
+<p>Secondly, all device drivers should be optimized for minimal RAM/ROM usage, as RIOT targets (very) constrained devices. This implies that instead of exposing all thinkable functionality, the drivers should focus on exporting and implementing a device's core functionality, thus covering ~95% of the use cases.</p>
+<p>Third, it should always be possible to handle more than a single device of the same kind. Drivers and their interfaces are thus designed to keep their state information in a parameterized location instead of driver defined global variables.</p>
+<p>Fourth, RIOT defines high-level interfaces for certain groups of devices (i.e. netdev for network devices, SAUL for sensors and actuators), which enable users to work with a wide variety of devices without having to know much about the actual device that is mapped.</p>
+<p>Fifth, during initialization, we make sure that we can communicate with a device. Other functions should check the dev pointer is not void, and should also handle error return values from the lower layer peripheral driver implementations, where there are some.</p>
+<p>Sixth, device drivers SHOULD be implemented independent of any CPU/board code. To achieve this, the driver implementations should strictly be based on platform independent interfaces as the peripheral drivers, xtimer, etc.</p>
+<h1><a class="anchor" id="driver-guide-general"></a>
+General</h1>
+<h2><a class="anchor" id="driver-guide-doc"></a>
+Documentation</h2>
+<p>Document what your driver does! Most devices come with a very large number of features, while the corresponding device driver only supports a subset of them. This should be clearly stated in the device driver's documentation so that anyone wanting to use the driver can find out the supported features without having to scan through the code.</p>
+<h2><a class="anchor" id="driver-guide-types"></a>
+Device descriptor and parameter configuration</h2>
+<p>Each device MUST supply a data structure, holding the devices state and configuration, using the naming scheme of <code>DEVNAME_t</code> (e.g. <code><a class="el" href="structdht__t.html" title="Device descriptor for DHT sensor devices. ">dht_t</a></code>, or <code><a class="el" href="structat86rf2xx__t.html" title="Device descriptor for AT86RF2XX radio devices. ">at86rf2xx_t</a></code>). In the context of RIOT, we call this data structure the device descriptor.</p>
+<p>This device descriptor MUST contain all the state data of a device. By this, we are not limited to the number of instances of the driver we can run concurrently. The descriptor is hereby used for identifying the device we want to interact with, and SHOULD always be the first parameter for all device driver related functions.</p>
+<p>Typical things found in these descriptors are e.g. used peripherals (e.g. SPI or I2C bus used, interfacing GPIO pins), data buffers (e.g. RX/TX buffers where needed), or state machine information.</p>
+<p>On top of the device descriptor, each device driver MUST also define a data structure holding the needed configuration data. The naming scheme for this type is <code>DEVNAME_params_t</code>. In contrary to the device descriptor, this data structure should only contain static information, that is needed for the device initialization as it is preferably allocated in ROM.</p>
+<p>A simple I2C temperature sensors' device descriptor could look like this:</p>
+<div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line">    tmpabc_params_t p;  </div><div class="line">    <span class="keywordtype">int</span> scale;          </div><div class="line">} tmpabc_t;</div><div class="line"></div><div class="line"><span class="comment">/* with params being */</span></div><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line">    <a class="code" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a> bus;          </div><div class="line">    uint8_t addr;       </div><div class="line">} tmpabc_params_t;</div></div><!-- fragment --><p><b>NOTE:</b> In many cases it makes sense, to copy the <code>xxx_params</code> data into the device descriptor during initialization. In some cases, it is, however, better to just link the <code>params</code> data via pointer and only copy selected data. This way, configuration data that is only used once can be read directly from ROM, while often used fields (e.g. used peripherals) are stored directly in the device descriptor and one saves hereby one de-referencing step when accessing them.</p>
+<h2><a class="anchor" id="driver-guide-config"></a>
+Default device configuration</h2>
+<p>Each device driver in RIOT MUST supply a default configuration file, named <code>DEVNAME_params.h</code>. This file should be located in the <code>RIOT/drivers/...</code>. The idea is that this file can be overridden by an application or a board, by simply putting a file with the same name in the application's or the board's include folders, while RIOT's build system takes care of preferring those files instead of the default params file.</p>
+<p>A default parameter header file for the example temperature sensor above would look like this (<code>tmpabc_params.h</code>):</p>
+<div class="fragment"><div class="line"><span class="comment">/* ... */</span></div><div class="line"></div><div class="line"><span class="preprocessor">#include &quot;board.h&quot;</span>  <span class="comment">/* THIS INCLUDE IS MANDATORY */</span></div><div class="line"><span class="preprocessor">#include &quot;tmpabc.h&quot;</span></div><div class="line"></div><div class="line"><span class="comment">/* ... */</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifndef TMPABC_PARAM_I2C</span></div><div class="line"><span class="preprocessor">#define TMPABC_PARAM_I2C        (I2C_DEV(0))</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"><span class="preprocessor">#ifndef TMPABC_PARAM_ADDR</span></div><div class="line"><span class="preprocessor">#define TMPABC_PARAM_ADDR       (0xab)</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"></div><div class="line"><span class="preprocessor">#ifndef TMPABC_PARAMS</span></div><div class="line"><span class="preprocessor">#define TMPABC_PARAMS           { .i2c  = TMPABC_PARAM_I2C \</span></div><div class="line"><span class="preprocessor">                                  .addr = TMPABC_PARAM_ADDR }</span></div><div class="line"><span class="preprocessor">#endif</span></div><div class="line"></div><div class="line"><span class="keyword">static</span> <span class="keyword">const</span> tmpabc_params_t tmpabc_params[] = {</div><div class="line">    TMPABC_PARAMS</div><div class="line">}</div><div class="line"><span class="comment">/* ... */</span></div></div><!-- fragment --><p>Now to influence the default configuration parameters, we have these options:</p>
+<p>First, we can override one or more of the parameter from the makesystem, e.g.</p>
+<div class="fragment"><div class="line">CFLAGS=&quot;-DTMPABC_PARAM_ADDR=0x23&quot; make all</div></div><!-- fragment --><p>Second, we can override selected parameters from the board configuration (<code>board.h</code>):</p>
+<div class="fragment"><div class="line">/* ... */</div><div class="line">/**</div><div class="line"> * @brief   TMPABC sensor configuration</div><div class="line"> * @{</div><div class="line"> */</div><div class="line">#define TMPABC_PARAM_I2C        (I2C_DEV(1))</div><div class="line">#define TMPABC_PARAM_ADDR       (0x17)</div><div class="line">/** @} */</div><div class="line">/* ... */</div></div><!-- fragment --><p>Third, we can define more than a single device in the board configuration (<code>board.h</code>):</p>
+<div class="fragment"><div class="line"><span class="comment">/* ... */</span></div><div class="line"><span class="preprocessor">#define TMPABC_PARAMS           { \</span></div><div class="line"><span class="preprocessor">                                  .i2c  = I2C_DEV(1), \</span></div><div class="line"><span class="preprocessor">                                  .addr = 0x31 \</span></div><div class="line"><span class="preprocessor">                                }, \</span></div><div class="line"><span class="preprocessor">                                { \</span></div><div class="line"><span class="preprocessor">                                    .i2c  = I2C_DEV(1), \</span></div><div class="line"><span class="preprocessor">                                    .addr = 0x21 \</span></div><div class="line"><span class="preprocessor">                                }</span></div><div class="line"></div><div class="line"><span class="comment">/* ... */</span></div></div><!-- fragment --><p>And finally, we can simply override the <code>tmpabc_params.h</code> file as described above.</p>
+<h2><a class="anchor" id="driver-guide-doxygen"></a>
+Compile-time configuration documentation</h2>
+<p>The macros that configure the driver during compilation is added to the listing for <a class="el" href="group__config.html">Compile time configurations</a>. Refer to the following example that exposes <a href="https://github.com/RIOT-OS/RIOT/blob/master/drivers/include/tmp00x.h#L96-L157">TMP00x sensor</a> to <a class="el" href="group__config__drivers__sensors.html">sensors group</a>.</p>
+<div class="fragment"><div class="line">/**</div><div class="line"> * @defgroup drivers_tmp00x_config     TMP006/TMP007 Infrared Thermopile</div><div class="line"> * Sensor driver compile configuration</div><div class="line"> * @ingroup config_drivers_sensors</div><div class="line"> * @{</div><div class="line"> */</div><div class="line">/**</div><div class="line"> * @brief   Default Address</div><div class="line"> * ....</div><div class="line"> */</div><div class="line">#ifndef TMP00X_I2C_ADDRESS</div><div class="line">#define TMP00X_I2C_ADDRESS       (0x40)</div><div class="line">#endif</div><div class="line">....</div><div class="line">/** @} */</div></div><!-- fragment --><p>Sub-groups defined for different types of drivers can be found in <a href="https://github.com/RIOT-OS/RIOT/blob/master/drivers/doc.txt">drivers/doc.txt</a></p>
+<h2><a class="anchor" id="driver-guide-initialization"></a>
+Initialization</h2>
+<p>In general, the initialization functions should do the following:</p>
+<ul>
+<li>initialize the device descriptor</li>
+<li>initialize non-shared peripherals they use, e.g. GPIO pins</li>
+<li>test for device connectivity, e.g. does an SPI/I2C slave react</li>
+<li>reset the device to a well-defined state, e.g. use external reset lines or do a software rest</li>
+<li>do the actual device initialization</li>
+</ul>
+<p>For testing a device's connectivity, it is recommended to read certain configuration data with a defined value from the device. Some devices offer <code>WHO_AM_I</code> or <code>DEVICE_ID</code> registers for this purpose. Writing and reading back some data to the device is another valid option for testing its responsiveness.</p>
+<p>For more detailed information on how the signature of the init functions should look like, please refer below to the specific requirements for network devices and sensors.</p>
+<h2><a class="anchor" id="driver-guide-return-values"></a>
+Return Values</h2>
+<p>As stated above, we check communication of a device during initialization and handle error return values from the lower layers, where they exist. To prevent subsequent misuse by passing NULL pointers and similar to the subsequent functions, the recommended way is to check the parameter using <code>assert</code>, e.g.:</p>
+<div class="fragment"><div class="line">int16_t tmpabc_read(<span class="keyword">const</span> tmpabc_t *dev)</div><div class="line">{</div><div class="line">    <a class="code" href="assert_8h.html#a3153a272f18d0f805028fce7e4337b53">assert</a>(dev);</div><div class="line">    <span class="comment">/* ... */</span></div><div class="line">    <span class="keywordflow">return</span> value;</div><div class="line">}</div></div><!-- fragment --><p>Whenever you implement status/error return values in your driver, magic numbers MUST <em><b>NOT</b></em> be used. Instead, use negative <code>errno</code> codes (such as <code>-EIO</code> for an input/output error) and <em>document</em> every single error code that can be return for each function using the <code>reval</code> Doxygen command. E.g. like this:</p>
+<div class="fragment"><div class="line">/**</div><div class="line"> * @brief               Initialize the foo device and its descriptor</div><div class="line"> * @param[out]  dev     Device descriptor to initialized</div><div class="line"> * @param[in]   params  Device initialization parameters</div><div class="line"> *</div><div class="line"> * @retval      0       Success</div><div class="line"> * @retval      -ENXIO  No foo device connected to the I2C bus</div><div class="line"> * @retval      -ENODEV Device using the foo I2C address is not a foo device</div><div class="line"> * etc.</div><div class="line"> */</div><div class="line">int foo_init(foo_t *dev, const foo_params_t *params);</div></div><!-- fragment --><p>You can multiplex this information whenever this is reasonable, as long as a negative return value indicates an error without exceptions. E.g. like this:</p>
+<div class="fragment"><div class="line">/**</div><div class="line"> * @brief               Perform a relative humidity measurement</div><div class="line"> * @param[in]   dev     Humidity sensor to perform the measurement on</div><div class="line"> *</div><div class="line"> * @return              The relative humidity in percent</div><div class="line"> * @retval      -EIO    Communication with the sensor failed</div><div class="line"> */</div><div class="line">int foo_humidity(const foo_t *dev);</div></div><!-- fragment --><h3><a class="anchor" id="driver-guide-return-values-doc"></a>
+Documenting Return Values</h3>
+<p>With the exception of functions returning <code>void</code>, all return values have to be documented. Use the <code>return</code> Doxygen command to describe what is returned. In order to document special return value (such as error codes), use the <code>retval</code> command. The <code>retval</code> command expects the specific value to document as first argument (no spaces in the value allowed!), and a description (spaces allowed here) as second. It is safe to use both <code>return</code> and <code>retval</code> commands, or just one of them - whatever makes most sense for a given function.</p>
+<h2><a class="anchor" id="driver-guide-general-checklist"></a>
+General Device Driver Checklist</h2>
+<ul>
+<li><em>MUST</em>: the supported feature set and any custom behavior is clearly documented</li>
+<li><em>MUST</em>: device descriptor is defined: <code>devab_t</code></li>
+<li><em>MUST</em>: device parameter <code>struct</code> is defined: <code>devab_params_t</code></li>
+<li><em>MUST</em>: a default parameter configuration file is present, e.g. <code>RIOT/drivers/devab/include/devab_params.h</code></li>
+<li><em>MUST</em>: all error and status return codes are named, e.g. <code>DEVAB_OK, DEVAB_NOSPI, DEVAB_OVERFLOW, ...</code></li>
+<li><em>MUST</em>: use <code>const devab_t *dev</code> when the device descriptor can be access read-only</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md2281"></a>
+Build system integration</h2>
+<h3><a class="anchor" id="autotoc_md2282"></a>
+Internal include files</h3>
+<p>If the driver contains internal include files, a <code>Makefile.include</code> must be added in the driver implementation directory, with the following content (adapted to the name of the driver module):</p>
+<div class="fragment"><div class="line">USEMODULE_INCLUDES_&lt;driver name&gt; := $(LAST_MAKEFILEDIR)/include</div><div class="line">USEMODULE_INCLUDES += $(USEMODULE_INCLUDES_&lt;driver name&gt;)</div></div><!-- fragment --><h3><a class="anchor" id="autotoc_md2283"></a>
+External dependencies</h3>
+<p>If the driver has other module or CPU features dependencies (like <code>xtimer</code> or <code>periph_i2c</code>), they must be added in the <code>/drivers/Makefile.dep</code> file in a block like below (this is an example, you'll have to adapt to the driver requirements):</p>
+<div class="fragment"><div class="line">ifneq (,$(filter &lt;driver name&gt;,$(USEMODULE)))</div><div class="line">  FEATURES_REQUIRED += periph_i2c</div><div class="line">  USEMODULE += xtimer</div><div class="line">endif</div></div><!-- fragment --><p><b>Warning:</b> Please be careful with alphabetical order when modifying this file.</p>
+<h2><a class="anchor" id="autotoc_md2284"></a>
+Helper tools</h2>
+<p>To help you start writing a device driver, the RIOT build system provides the <code>generate-driver</code> make target. It is a wrapper around the <a href="https://pypi.org/project/riotgen/">riotgen</a> command line tool that is helpful when starting to implement a driver: all minimum files are generated with copyright headers, doxygen groups, etc, so you can concentrate on the driver implementation.</p>
+<p><b>Usage:</b></p>
+<p>From the RIOT base directory, run: </p><div class="fragment"><div class="line">make generate-driver</div></div><!-- fragment --><p> Then answer a few questions about the driver:</p><ul>
+<li>Driver name: enter a name for your driver. It will be used as both the name of the driver directory where the source files are created and the build system module.</li>
+<li>Driver doxygen group name: Enter the name of the driver, as displayed in the Doxygen documentation.</li>
+<li>Brief doxygen description: Describe in one line what is this driver about.</li>
+<li>Parent driver Doxygen group: Enter the Doxygen group the driver belongs to. It can be <code>actuators</code>, <code>display</code>, <code>misc</code>, <code>netdev</code>, <code>sensors</code>, <code>storage</code>.</li>
+</ul>
+<p>Other global information (author name, email, organization) should be retrieved automatically from your git configuration.</p>
+<h1><a class="anchor" id="driver-guide-sensors"></a>
+Sensors</h1>
+<h2><a class="anchor" id="driver-guide-saul"></a>
+SAUL</h2>
+<p>All sensor drivers SHOULD implement the SAUL interface. It is however recommended, that the drivers are written in a way, that the drivers do not solely export the SAUL interface, but map the SAUL interface upon a driver specific one.</p>
+<p>For example, a temperature driver provides the following function (<code>tmpabc.c</code>):</p>
+<div class="fragment"><div class="line">int16_t tmpabc_read(tmpabc_t *dev);</div></div><!-- fragment --><p>which then can easily be mapped to SAUL (<code>tmpabc_saul.c</code>):</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> saul_read(saul_t *dev, <a class="code" href="structphydat__t.html">phydat_t</a> *data)</div><div class="line">{</div><div class="line">    memset(data, 0, <span class="keyword">sizeof</span>(<a class="code" href="structphydat__t.html">phydat_t</a>));</div><div class="line">    data-&gt;x = tmpabc_read((tmpabc_t *)dev);</div><div class="line">    data-&gt;<a class="code" href="structphydat__t.html#a9046cf3953ac76cf657f4469759f6f26">unit</a> = <a class="code" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3a02367205acda9055098eace9894a11d4">UNIT_TEMP_C</a>;</div><div class="line">    data-&gt;<a class="code" href="structphydat__t.html#a729603375fb37d09c94523ce8b993c6c">scale</a> = -2;</div><div class="line">    <span class="keywordflow">return</span> 1;</div><div class="line">}</div></div><!-- fragment --><p>This ensures the versatility of the device driver, having in mind that one might want to use the driver without SAUL or maybe in a context without RIOT.</p>
+<h2><a class="anchor" id="driver-guide-sensor-initialization"></a>
+Initialization</h2>
+<p>Sensor device drivers are expected to implement a single initialization function, <code>DEVNAME_init</code>, taking the device descriptor and the device's parameter struct as argument:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> tmpabc_init(tmpabc_t *dev, <span class="keyword">const</span> tmpabc_params_t *params);</div></div><!-- fragment --><p>After this function is called, the device MUST be running and usable.</p>
+<h2><a class="anchor" id="driver-guide-sensor-value-handling"></a>
+Value handling</h2>
+<h3><a class="anchor" id="driver-guide-sensor-value-semantics"></a>
+Value semantics</h3>
+<p>All sensors in RIOT MUST return their reading results as real physical values. When working with sensor data, these are the values of interest, and the overhead of the conversion is normally neglectable.</p>
+<h3><a class="anchor" id="driver-guide-sensor-types"></a>
+Typing</h3>
+<p>All values SHOULD be returned using integer types, with <code>int16_t</code> being the preferred type where applicable.</p>
+<p>In many situations, the physical values cannot be mapped directly to integer values. For example, we do not want to map temperature values to integers directly while using their fraction. The recommended way to solve this is by scaling the result value using decimal fixed point arithmetic, in other words, just return centi-degree instead of degree (e.g. 2372c°C instead of 23.72°C).</p>
+<h2><a class="anchor" id="driver-guide-sensor-checklist"></a>
+Additional Sensor Driver Checklist</h2>
+<ul>
+<li><em>MUST</em>: mandatory device parameters are configurable through this file, e.g. sampling rate, resolution, sensitivity</li>
+<li><em>MUST</em>: an init function in the style of <code>int devab_init(devab_t *dev, const devab_params_t *params);</code> exists</li>
+<li><em>MUST</em>: after initialization, the device must be operational</li>
+<li><em>MUST</em>: all error and return values are named, e.g. <code>DEVAB_OK, DEVAB_NODEV, ...</code></li>
+<li><em>MUST</em>: all 'read' functions return values in their physical representation, e.g. <code>centi-degree, Pa, lux, mili-G</code></li>
+<li><em>MUST</em>: all 'read' functions return integer values, preferably <code>int16_t</code></li>
+<li><em>SHOULD</em>: if multiple dimensions are read, they SHOULD be combined into a data structure</li>
+<li><em>SHOULD</em>: the driver implements the SAUL interface</li>
+<li><em>SHOULD</em>: the driver exports functions for putting it to sleep and waking up the device</li>
+</ul>
+<h1><a class="anchor" id="driver-guide-netdev"></a>
+Network devices</h1>
+<h2><a class="anchor" id="driver-guide-netdev-init"></a>
+Initialization</h2>
+<p>The initialization process MUST be split into 2 steps: first, initialize the device descriptor and if applicable the used peripherals, and secondly do the actual device initialization. The reason for this is, that before a device is actually activated and can start to process data, the network stack for the device needs to be initialized. By supplying a second init function, that does the actual initialization, we can hand the control over when this is done to the actual network stacks.</p>
+<p>The initialization functions SHOULD follow this naming scheme:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> netabc_setup(netabc_t *dev, <span class="keyword">const</span> netabc_params_t *params);</div><div class="line"><span class="keywordtype">int</span> netabs_init(netabc_t *dev);</div></div><!-- fragment --><h2><a class="anchor" id="driver-guide-netdev-interface"></a>
+netdev</h2>
+<p>Device driver for network device SHOULD implement the <code>netdev</code> interface. It is up to the implementer, if the device driver also offers a device specific interface which is then mapped to the <code>netdev</code> interface, or if the device driver can be purely interfaced using <code>netdev</code>. While the second option is recommended for efficiency reasons, this is not mandatory.</p>
+<h2><a class="anchor" id="driver-guide-netdev-checklist"></a>
+Additional Network Device Driver Checklist</h2>
+<ul>
+<li><em>MUST</em>: a setup function in the style of <code>int devab_setup(devab_t *dev, const devab_params_t *params);</code> exists</li>
+<li><em>MUST</em>: an init function in the style of <code>int devnet_init(devnet_t *dev)</code> exists</li>
+<li><em>SHOULD</em>: the driver implements 'netdev' [if applicable]</li>
+</ul>
+<h1><a class="anchor" id="driver-guide-todo"></a>
+TODO</h1>
+<p>Add some information about how to handle multiple threads, when to use mutexes, and how to deal with interrupts? And especially patterns for being nice from other threads and power consumption point of view... </p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>USBUS CDC ACM - USBUS CDC abstract control model</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__usbus__cdc__acm.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">USBUS CDC ACM - USBUS CDC abstract control model<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS CDC ACM interface module.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>USBUS CDC ACM interface module. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__usbus__cdc__acm__conf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm__conf.html">USBUS CDC ACM compile time configurations</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:acm_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="acm_8h.html">acm.h</a></td></tr>
+<tr class="memdesc:acm_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interface and definitions for USB CDC ACM type interfaces in USBUS. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__cdcacm__device.html">usbus_cdcacm_device</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS CDC ACM context struct.  <a href="structusbus__cdcacm__device.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gae7f21779d32ca20abb3229f0b4205d7b"><td class="memItemLeft" align="right" valign="top"><a id="gae7f21779d32ca20abb3229f0b4205d7b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#gae7f21779d32ca20abb3229f0b4205d7b">USBUS_CDC_ACM_INT_EP_SIZE</a>&#160;&#160;&#160;(8)</td></tr>
+<tr class="memdesc:gae7f21779d32ca20abb3229f0b4205d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS CDC ACM interrupt endpoint size. <br /></td></tr>
+<tr class="separator:gae7f21779d32ca20abb3229f0b4205d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8924c0facae3b4603b05ed48d23b4d5d"><td class="memItemLeft" align="right" valign="top"><a id="ga8924c0facae3b4603b05ed48d23b4d5d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga8924c0facae3b4603b05ed48d23b4d5d">USBUS_CDC_ACM_EP_IN_REQUIRED_NUMOF</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga8924c0facae3b4603b05ed48d23b4d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of IN EPs required for the CDC ACM interface. <br /></td></tr>
+<tr class="separator:ga8924c0facae3b4603b05ed48d23b4d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91c0f6ddeb4bd6c2edd04ac86a0e41fa"><td class="memItemLeft" align="right" valign="top"><a id="ga91c0f6ddeb4bd6c2edd04ac86a0e41fa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga91c0f6ddeb4bd6c2edd04ac86a0e41fa">USBUS_CDC_ACM_EP_OUT_REQUIRED_NUMOF</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga91c0f6ddeb4bd6c2edd04ac86a0e41fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of Out EPs required for the CDC ACM interface. <br /></td></tr>
+<tr class="separator:ga91c0f6ddeb4bd6c2edd04ac86a0e41fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gab8aee4067d283fc8bc170ba8cef552cc"><td class="memItemLeft" align="right" valign="top"><a id="gab8aee4067d283fc8bc170ba8cef552cc"></a>
+typedef struct <a class="el" href="structusbus__cdcacm__device.html">usbus_cdcacm_device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a></td></tr>
+<tr class="memdesc:gab8aee4067d283fc8bc170ba8cef552cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">USBUS CDC ACM context struct forward declaration. <br /></td></tr>
+<tr class="separator:gab8aee4067d283fc8bc170ba8cef552cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a713164e3ee50a7f3e2dae079392dad"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga3a713164e3ee50a7f3e2dae079392dad">usbus_cdcacm_cb_t</a>) (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, uint8_t *data, size_t len)</td></tr>
+<tr class="memdesc:ga3a713164e3ee50a7f3e2dae079392dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ACM data callback.  <a href="#ga3a713164e3ee50a7f3e2dae079392dad">More...</a><br /></td></tr>
+<tr class="separator:ga3a713164e3ee50a7f3e2dae079392dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga858955682a87febb014609ecd5ac6995"><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga858955682a87febb014609ecd5ac6995">usbus_cdcacm_coding_cb_t</a>) (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, uint32_t baud, uint8_t bits, uint8_t parity, uint8_t stop)</td></tr>
+<tr class="memdesc:ga858955682a87febb014609ecd5ac6995"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ACM line coding callback.  <a href="#ga858955682a87febb014609ecd5ac6995">More...</a><br /></td></tr>
+<tr class="separator:ga858955682a87febb014609ecd5ac6995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga00305af294a84012971732d7b3b62e6c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga00305af294a84012971732d7b3b62e6c">usbus_cdcacm_line_state_t</a> { <a class="el" href="group__usbus__cdc__acm.html#gga00305af294a84012971732d7b3b62e6caef971697e617d5edf32a11522ad7475c">USBUS_CDC_ACM_LINE_STATE_DISCONNECTED</a>, 
+<a class="el" href="group__usbus__cdc__acm.html#gga00305af294a84012971732d7b3b62e6caf6bd32f72d3f98b0bbd3af056925b8fe">USBUS_CDC_ACM_LINE_STATE_DTE</a>
+ }</td></tr>
+<tr class="memdesc:ga00305af294a84012971732d7b3b62e6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">CDC ACM line state as reported by the host computer.  <a href="group__usbus__cdc__acm.html#ga00305af294a84012971732d7b3b62e6c">More...</a><br /></td></tr>
+<tr class="separator:ga00305af294a84012971732d7b3b62e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga46f04a6cc7362504d6319f1fcadca400"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga46f04a6cc7362504d6319f1fcadca400">usbus_cdc_acm_init</a> (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, <a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, <a class="el" href="group__usbus__cdc__acm.html#ga3a713164e3ee50a7f3e2dae079392dad">usbus_cdcacm_cb_t</a> cb, <a class="el" href="group__usbus__cdc__acm.html#ga858955682a87febb014609ecd5ac6995">usbus_cdcacm_coding_cb_t</a> coding_cb, uint8_t *buf, size_t len)</td></tr>
+<tr class="memdesc:ga46f04a6cc7362504d6319f1fcadca400"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an USBUS CDC ACM interface.  <a href="#ga46f04a6cc7362504d6319f1fcadca400">More...</a><br /></td></tr>
+<tr class="separator:ga46f04a6cc7362504d6319f1fcadca400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga552c2de35ff35a8e8536da7c72723eca"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga552c2de35ff35a8e8536da7c72723eca">usbus_cdc_acm_submit</a> (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, const uint8_t *buf, size_t len)</td></tr>
+<tr class="memdesc:ga552c2de35ff35a8e8536da7c72723eca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Submit bytes to the CDC ACM handler.  <a href="#ga552c2de35ff35a8e8536da7c72723eca">More...</a><br /></td></tr>
+<tr class="separator:ga552c2de35ff35a8e8536da7c72723eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b66598e22c5bc551a5c61896d74b6e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga6b66598e22c5bc551a5c61896d74b6e9">usbus_cdc_acm_flush</a> (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm)</td></tr>
+<tr class="memdesc:ga6b66598e22c5bc551a5c61896d74b6e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the buffer to the USB host.  <a href="#ga6b66598e22c5bc551a5c61896d74b6e9">More...</a><br /></td></tr>
+<tr class="separator:ga6b66598e22c5bc551a5c61896d74b6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f5f0c11b1fe815398cbd03dd6c76eaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__usbus__cdc__acm.html#ga4f5f0c11b1fe815398cbd03dd6c76eaf">usbus_cdc_acm_set_coding_cb</a> (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, <a class="el" href="group__usbus__cdc__acm.html#ga858955682a87febb014609ecd5ac6995">usbus_cdcacm_coding_cb_t</a> coding_cb)</td></tr>
+<tr class="memdesc:ga4f5f0c11b1fe815398cbd03dd6c76eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the callback for control settings.  <a href="#ga4f5f0c11b1fe815398cbd03dd6c76eaf">More...</a><br /></td></tr>
+<tr class="separator:ga4f5f0c11b1fe815398cbd03dd6c76eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga3a713164e3ee50a7f3e2dae079392dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3a713164e3ee50a7f3e2dae079392dad">&#9670;&nbsp;</a></span>usbus_cdcacm_cb_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* usbus_cdcacm_cb_t) (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, uint8_t *data, size_t len)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ACM data callback. </p>
+<p>Callback for received data from the USB host</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>CDC ACM handler context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>ptr to the data </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Length of the received data </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="acm_8h_source.html#l00131">131</a> of file <a class="el" href="acm_8h_source.html">acm.h</a>.</p>
+
+</div>
+</div>
+<a id="ga858955682a87febb014609ecd5ac6995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga858955682a87febb014609ecd5ac6995">&#9670;&nbsp;</a></span>usbus_cdcacm_coding_cb_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int(* usbus_cdcacm_coding_cb_t) (<a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *cdcacm, uint32_t baud, uint8_t bits, uint8_t parity, uint8_t stop)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ACM line coding callback. </p>
+<p>Callback for received line coding request from the USB host</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>CDC ACM handler context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">baud</td><td>requested baud rate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bits</td><td>requested number of data bits </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">parity</td><td>requested parity </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stop</td><td>requested number of stop bits</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 when the mode is available </dd>
+<dd>
+negative if the mode is not available </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="acm_8h_source.html#l00148">148</a> of file <a class="el" href="acm_8h_source.html">acm.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ga00305af294a84012971732d7b3b62e6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00305af294a84012971732d7b3b62e6c">&#9670;&nbsp;</a></span>usbus_cdcacm_line_state_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__usbus__cdc__acm.html#ga00305af294a84012971732d7b3b62e6c">usbus_cdcacm_line_state_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CDC ACM line state as reported by the host computer. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga00305af294a84012971732d7b3b62e6caef971697e617d5edf32a11522ad7475c"></a>USBUS_CDC_ACM_LINE_STATE_DISCONNECTED&#160;</td><td class="fielddoc"><p>No DTE connected. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga00305af294a84012971732d7b3b62e6caf6bd32f72d3f98b0bbd3af056925b8fe"></a>USBUS_CDC_ACM_LINE_STATE_DTE&#160;</td><td class="fielddoc"><p>DTE (e.g. </p>
+<p>a personal computer) is present and connected </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="acm_8h_source.html#l00105">105</a> of file <a class="el" href="acm_8h_source.html">acm.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga6b66598e22c5bc551a5c61896d74b6e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b66598e22c5bc551a5c61896d74b6e9">&#9670;&nbsp;</a></span>usbus_cdc_acm_flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usbus_cdc_acm_flush </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *&#160;</td>
+          <td class="paramname"><em>cdcacm</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flush the buffer to the USB host. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>USBUS CDC ACM handler context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga46f04a6cc7362504d6319f1fcadca400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga46f04a6cc7362504d6319f1fcadca400">&#9670;&nbsp;</a></span>usbus_cdc_acm_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usbus_cdc_acm_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *&#160;</td>
+          <td class="paramname"><em>usbus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *&#160;</td>
+          <td class="paramname"><em>cdcacm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#ga3a713164e3ee50a7f3e2dae079392dad">usbus_cdcacm_cb_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#ga858955682a87febb014609ecd5ac6995">usbus_cdcacm_coding_cb_t</a>&#160;</td>
+          <td class="paramname"><em>coding_cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize an USBUS CDC ACM interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">usbus</td><td>USBUS context to register with </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>USBUS CDC ACM handler </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Callback for data from the USB interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coding_cb</td><td>Callback for control settings </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>Buffer for data to the USB interface </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>Size in bytes of the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4f5f0c11b1fe815398cbd03dd6c76eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f5f0c11b1fe815398cbd03dd6c76eaf">&#9670;&nbsp;</a></span>usbus_cdc_acm_set_coding_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void usbus_cdc_acm_set_coding_cb </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *&#160;</td>
+          <td class="paramname"><em>cdcacm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#ga858955682a87febb014609ecd5ac6995">usbus_cdcacm_coding_cb_t</a>&#160;</td>
+          <td class="paramname"><em>coding_cb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the callback for control settings. </p>
+<p>Interrupts are disabled during update to ensure thread safety</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>USBUS CDC ACM handler context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">coding_cb</td><td>Callback for control settings </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga552c2de35ff35a8e8536da7c72723eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga552c2de35ff35a8e8536da7c72723eca">&#9670;&nbsp;</a></span>usbus_cdc_acm_submit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t usbus_cdc_acm_submit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__usbus__cdc__acm.html#gab8aee4067d283fc8bc170ba8cef552cc">usbus_cdcacm_device_t</a> *&#160;</td>
+          <td class="paramname"><em>cdcacm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Submit bytes to the CDC ACM handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cdcacm</td><td>USBUS CDC ACM handler context </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>buffer to submit </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>length of the submitted buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes added to the CDC ACM ring buffer </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/esp32/include/can_esp.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('can__esp_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">can_esp.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="can__esp_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2019 Gunar Schorcht</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef CAN_ESP_H</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define CAN_ESP_H</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="candev_8h.html">can/candev.h</a>&quot;</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__cpu__esp32__esp__can.html#gab4bedfc1c9aa5a0ec9f4becf9b981b42">   56</a></span>&#160;<span class="preprocessor">#define ESP_CAN_MAX_RX_FILTERS  (16)</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="group__cpu__esp32__esp__can.html#gaf5783a50441c032b81d375bff2260f43">   59</a></span>&#160;<span class="preprocessor">#define ESP_CAN_MAX_RX_FRAMES   (8)</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structcan.html">   64</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcan.html">can</a> {</div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structcan.html#a85b10fb35e23e87ee7b6243894d07f8a">   65</a></span>&#160;    <a class="code" href="structcandev.html">candev_t</a>          <a class="code" href="structcan.html#a85b10fb35e23e87ee7b6243894d07f8a">candev</a>;       </div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structcan.html#a20cf01fcd36987fb31fee89c7cf4bdc1">   66</a></span>&#160;    <a class="code" href="group__sys__can__common.html#ga195953bb16685f4a8a4a90fc5ef78dc6">canopt_state_t</a>    <a class="code" href="structcan.html#a20cf01fcd36987fb31fee89c7cf4bdc1">state</a>;        </div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structcan.html#a774b2028bed6f0e2baecadd2d32f51d4">   68</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcan__frame.html">can_frame</a> *<a class="code" href="structcan.html#a774b2028bed6f0e2baecadd2d32f51d4">tx_frame</a>;                           </div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structcan.html#a6520c7ff7c2963d357ca8a5393479f21">   69</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcan__frame.html">can_frame</a>  <a class="code" href="structcan.html#a6520c7ff7c2963d357ca8a5393479f21">rx_frames</a>[<a class="code" href="group__cpu__esp32__esp__can.html#gaf5783a50441c032b81d375bff2260f43">ESP_CAN_MAX_RX_FRAMES</a>];   </div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structcan.html#a0e1386e7dac4070b4f7d81f26440ff13">   70</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcan__filter.html">can_filter</a> <a class="code" href="structcan.html#a0e1386e7dac4070b4f7d81f26440ff13">rx_filters</a>[<a class="code" href="group__cpu__esp32__esp__can.html#gab4bedfc1c9aa5a0ec9f4becf9b981b42">ESP_CAN_MAX_RX_FILTERS</a>]; </div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structcan.html#a58848bedfd5aaeecd545e767b970729b">   72</a></span>&#160;    uint32_t <a class="code" href="structcan.html#a58848bedfd5aaeecd545e767b970729b">rx_frames_wptr</a>;    </div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structcan.html#a730082795046222b244ec51c29e10367">   73</a></span>&#160;    uint32_t <a class="code" href="structcan.html#a730082795046222b244ec51c29e10367">rx_frames_rptr</a>;    </div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structcan.html#a6286dec1652522f935ddff750276ca6e">   74</a></span>&#160;    uint32_t <a class="code" href="structcan.html#a6286dec1652522f935ddff750276ca6e">rx_frames_num</a>;     </div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structcan.html#a32fd106c301048d4afc54d8834e7d099">   75</a></span>&#160;    uint32_t <a class="code" href="structcan.html#a32fd106c301048d4afc54d8834e7d099">rx_filter_num</a>;     </div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structcan.html#aa85fe4c3b9557af071c2eaef366fed2c">   77</a></span>&#160;    <span class="keywordtype">bool</span>   <a class="code" href="structcan.html#aa85fe4c3b9557af071c2eaef366fed2c">powered_up</a>;          </div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structcan.html#adf7e5e3f37f874801f165abf034ebae3">   79</a></span>&#160;    uint32_t <a class="code" href="structcan.html#adf7e5e3f37f874801f165abf034ebae3">events</a>;            </div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <a class="code" href="group__cpu__esp32__esp__can.html#ga5b90cc3f6782c1a6164ccfb212035bda">can_t</a>;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="group__cpu__esp32__esp__can.html#gaf157b88f267810575b5f71a48691e548">   83</a></span>&#160;<span class="preprocessor">#define HAVE_CAN_T</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structcan__conf__t.html">   88</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structcan__conf__t.html#a819a8110fc5dbf8f420a4a2f8cafc2e7">   89</a></span>&#160;    uint32_t <a class="code" href="structcan__conf__t.html#a819a8110fc5dbf8f420a4a2f8cafc2e7">bitrate</a>;           </div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structcan__conf__t.html#a246bb05804eac5e0d8e9791539d68ee5">   90</a></span>&#160;    gpio_t <a class="code" href="structcan__conf__t.html#a246bb05804eac5e0d8e9791539d68ee5">tx_pin</a>;              </div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structcan__conf__t.html#a9d10fd3d0294dbef9607ca7e9326c3b6">   91</a></span>&#160;    gpio_t <a class="code" href="structcan__conf__t.html#a9d10fd3d0294dbef9607ca7e9326c3b6">rx_pin</a>;              </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#ifdef CAN_CLK_OUT</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    gpio_t clk_out_pin;         </div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef CAN_BUS_ON_OFF</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    gpio_t bus_on_off_pin;      </div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <a class="code" href="group__drivers__candev__linux.html#gad0adcedb4086af54261cb93db2ff9351">can_conf_t</a>;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group__cpu__esp32__esp__can.html#ga1f144ca1575a4ebb59b99cd6273b5389">  101</a></span>&#160;<span class="preprocessor">#define HAVE_CAN_CONF_T</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CAN_ESP_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="ttc" id="structcan_html_a6286dec1652522f935ddff750276ca6e"><div class="ttname"><a href="structcan.html#a6286dec1652522f935ddff750276ca6e">can::rx_frames_num</a></div><div class="ttdeci">uint32_t rx_frames_num</div><div class="ttdoc">number of frames in ring buffer </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00074">can_esp.h:74</a></div></div>
+<div class="ttc" id="structcandev_html"><div class="ttname"><a href="structcandev.html">candev</a></div><div class="ttdoc">Structure to hold driver state. </div><div class="ttdef"><b>Definition:</b> <a href="candev_8h_source.html#l00077">candev.h:77</a></div></div>
+<div class="ttc" id="structcan_html_a774b2028bed6f0e2baecadd2d32f51d4"><div class="ttname"><a href="structcan.html#a774b2028bed6f0e2baecadd2d32f51d4">can::tx_frame</a></div><div class="ttdeci">struct can_frame * tx_frame</div><div class="ttdoc">frame in transmission </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00068">can_esp.h:68</a></div></div>
+<div class="ttc" id="structcan_html_a0e1386e7dac4070b4f7d81f26440ff13"><div class="ttname"><a href="structcan.html#a0e1386e7dac4070b4f7d81f26440ff13">can::rx_filters</a></div><div class="ttdeci">struct can_filter rx_filters[ESP_CAN_MAX_RX_FILTERS]</div><div class="ttdoc">acceptance filter list </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00070">can_esp.h:70</a></div></div>
+<div class="ttc" id="group__drivers__candev__linux_html_gad0adcedb4086af54261cb93db2ff9351"><div class="ttname"><a href="group__drivers__candev__linux.html#gad0adcedb4086af54261cb93db2ff9351">can_conf_t</a></div><div class="ttdeci">struct candev_conf can_conf_t</div><div class="ttdoc">Linux candev configuration. </div></div>
+<div class="ttc" id="group__sys__can__common_html_ga195953bb16685f4a8a4a90fc5ef78dc6"><div class="ttname"><a href="group__sys__can__common.html#ga195953bb16685f4a8a4a90fc5ef78dc6">canopt_state_t</a></div><div class="ttdeci">canopt_state_t</div><div class="ttdoc">CAN state options. </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2can_2common_8h_source.html#l00074">common.h:74</a></div></div>
+<div class="ttc" id="structcan__conf__t_html_a246bb05804eac5e0d8e9791539d68ee5"><div class="ttname"><a href="structcan__conf__t.html#a246bb05804eac5e0d8e9791539d68ee5">can_conf_t::tx_pin</a></div><div class="ttdeci">gpio_t tx_pin</div><div class="ttdoc">CAN transceiver TX pin. </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00090">can_esp.h:90</a></div></div>
+<div class="ttc" id="group__cpu__esp32__esp__can_html_ga5b90cc3f6782c1a6164ccfb212035bda"><div class="ttname"><a href="group__cpu__esp32__esp__can.html#ga5b90cc3f6782c1a6164ccfb212035bda">can_t</a></div><div class="ttdeci">struct can can_t</div><div class="ttdoc">Low level device structure for ESP32 CAN (extension of candev_t) </div></div>
+<div class="ttc" id="structcan_html_a6520c7ff7c2963d357ca8a5393479f21"><div class="ttname"><a href="structcan.html#a6520c7ff7c2963d357ca8a5393479f21">can::rx_frames</a></div><div class="ttdeci">struct can_frame rx_frames[ESP_CAN_MAX_RX_FRAMES]</div><div class="ttdoc">frames received </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00069">can_esp.h:69</a></div></div>
+<div class="ttc" id="structcan__conf__t_html_a819a8110fc5dbf8f420a4a2f8cafc2e7"><div class="ttname"><a href="structcan__conf__t.html#a819a8110fc5dbf8f420a4a2f8cafc2e7">can_conf_t::bitrate</a></div><div class="ttdeci">uint32_t bitrate</div><div class="ttdoc">Bitrate. </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00089">can_esp.h:89</a></div></div>
+<div class="ttc" id="structcan_html_a730082795046222b244ec51c29e10367"><div class="ttname"><a href="structcan.html#a730082795046222b244ec51c29e10367">can::rx_frames_rptr</a></div><div class="ttdeci">uint32_t rx_frames_rptr</div><div class="ttdoc">pointer to ring buffer for read </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00073">can_esp.h:73</a></div></div>
+<div class="ttc" id="structcan__frame_html"><div class="ttname"><a href="structcan__frame.html">can_frame</a></div><div class="ttdoc">Controller Area Network frame. </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2can_2can_8h_source.html#l00101">can.h:101</a></div></div>
+<div class="ttc" id="structcan_html_a85b10fb35e23e87ee7b6243894d07f8a"><div class="ttname"><a href="structcan.html#a85b10fb35e23e87ee7b6243894d07f8a">can::candev</a></div><div class="ttdeci">candev_t candev</div><div class="ttdoc">candev base structure </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00065">can_esp.h:65</a></div></div>
+<div class="ttc" id="structcan_html_a20cf01fcd36987fb31fee89c7cf4bdc1"><div class="ttname"><a href="structcan.html#a20cf01fcd36987fb31fee89c7cf4bdc1">can::state</a></div><div class="ttdeci">canopt_state_t state</div><div class="ttdoc">current state of device </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00066">can_esp.h:66</a></div></div>
+<div class="ttc" id="group__cpu__esp32__esp__can_html_gab4bedfc1c9aa5a0ec9f4becf9b981b42"><div class="ttname"><a href="group__cpu__esp32__esp__can.html#gab4bedfc1c9aa5a0ec9f4becf9b981b42">ESP_CAN_MAX_RX_FILTERS</a></div><div class="ttdeci">#define ESP_CAN_MAX_RX_FILTERS</div><div class="ttdoc">Number of receiver acceptance filters. </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00056">can_esp.h:56</a></div></div>
+<div class="ttc" id="structcan_html_adf7e5e3f37f874801f165abf034ebae3"><div class="ttname"><a href="structcan.html#adf7e5e3f37f874801f165abf034ebae3">can::events</a></div><div class="ttdeci">uint32_t events</div><div class="ttdoc">events triggered by the last interrupt </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00079">can_esp.h:79</a></div></div>
+<div class="ttc" id="structcan_html"><div class="ttname"><a href="structcan.html">can</a></div><div class="ttdoc">Low level device structure for ESP32 CAN (extension of candev_t) </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00064">can_esp.h:64</a></div></div>
+<div class="ttc" id="group__cpu__esp32__esp__can_html_gaf5783a50441c032b81d375bff2260f43"><div class="ttname"><a href="group__cpu__esp32__esp__can.html#gaf5783a50441c032b81d375bff2260f43">ESP_CAN_MAX_RX_FRAMES</a></div><div class="ttdeci">#define ESP_CAN_MAX_RX_FRAMES</div><div class="ttdoc">Number of frames in receiver buffer, must be a power of two. </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00059">can_esp.h:59</a></div></div>
+<div class="ttc" id="candev_8h_html"><div class="ttname"><a href="candev_8h.html">candev.h</a></div><div class="ttdoc">Definitions for low-level CAN driver interface. </div></div>
+<div class="ttc" id="structcan__conf__t_html_a9d10fd3d0294dbef9607ca7e9326c3b6"><div class="ttname"><a href="structcan__conf__t.html#a9d10fd3d0294dbef9607ca7e9326c3b6">can_conf_t::rx_pin</a></div><div class="ttdeci">gpio_t rx_pin</div><div class="ttdoc">CAN transceiver RX pin. </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00091">can_esp.h:91</a></div></div>
+<div class="ttc" id="structcan__filter_html"><div class="ttname"><a href="structcan__filter.html">can_filter</a></div><div class="ttdoc">Controller Area Network filter. </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2can_2can_8h_source.html#l00129">can.h:129</a></div></div>
+<div class="ttc" id="structcan_html_aa85fe4c3b9557af071c2eaef366fed2c"><div class="ttname"><a href="structcan.html#aa85fe4c3b9557af071c2eaef366fed2c">can::powered_up</a></div><div class="ttdeci">bool powered_up</div><div class="ttdoc">device is powered up </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00077">can_esp.h:77</a></div></div>
+<div class="ttc" id="structcan_html_a32fd106c301048d4afc54d8834e7d099"><div class="ttname"><a href="structcan.html#a32fd106c301048d4afc54d8834e7d099">can::rx_filter_num</a></div><div class="ttdeci">uint32_t rx_filter_num</div><div class="ttdoc">number of acceptance filters </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00075">can_esp.h:75</a></div></div>
+<div class="ttc" id="structcan_html_a58848bedfd5aaeecd545e767b970729b"><div class="ttname"><a href="structcan.html#a58848bedfd5aaeecd545e767b970729b">can::rx_frames_wptr</a></div><div class="ttdeci">uint32_t rx_frames_wptr</div><div class="ttdoc">pointer to ring buffer for write </div><div class="ttdef"><b>Definition:</b> <a href="can__esp_8h_source.html#l00072">can_esp.h:72</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:18 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

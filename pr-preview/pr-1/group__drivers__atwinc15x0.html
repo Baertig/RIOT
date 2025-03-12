@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ATWINC15x0 WiFi module driver</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__drivers__atwinc15x0.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">ATWINC15x0 WiFi module driver<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+<a class="el" href="structNetwork.html" title="Network struct within mqtt paho. ">Network</a> device driver for the Microchip ATWINC15x0 WiFi Module  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><br />
+</p>
+<p><a class="el" href="structNetwork.html" title="Network struct within mqtt paho. ">Network</a> device driver for the Microchip ATWINC15x0 WiFi Module </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a></dd></dl>
+<p>This module implements a <code>netdev</code> device driver for the Microchip ATWINC15x0 WiFi module. The ATWINC15x0 WiFi module is widely used as WiFi interface on various boards and extension boards. Examples are:</p>
+<ul>
+<li><a href="https://learn.adafruit.com/adafruit-feather-m0-wifi-atwinc1500/">Adafruit Feather M0 WiFi</a> (also supported by <a href="https://doc.riot-os.org/group__boards__feather-m0.html">RIOT</a>)</li>
+<li><a href="https://www.microchip.com/DevelopmentTools/ProductDetails/ATWINC1500-XPRO">ATWIN1500-XPRO</a> for the extension of Atmel Xplained PRO boards (also supported by RIOT)</li>
+<li><a href="https://learn.adafruit.com/adafruit-atwinc1500-wifi-module-breakout">Adafruit ATWINC1500 WiFi breakout</a></li>
+<li><a href="https://github.com/watterott/ATWINC1500-Breakout">Watterott ATWINC1500-Breakout</a></li>
+</ul>
+<p>Since the ATWINC15x0 WiFi module is also the only module supported by the standard <a href="https://github.com/arduino-libraries/WiFi101">Arduino WiFi101 library</a>, there are a number of Arduino shields with the ATWINC15x0 WiFi module, e.g. <a href="https://learn.adafruit.com/adafruit-winc1500-wifi-shield-for-arduino">Adafruit WINC1500 WiFi Shield for Arduino</a>.</p>
+<p>Using this 'netdev' driver together with an ATWINC15x0 WiFi module enables the connection via WiFi in RIOT.</p>
+<p>The ATWINC15x0 WiFi module is a low-power IEEE 802.11 b/g/n module with a bandwidth of 20 MHz in the 2,4 GHz ISM band. It supports the IEEE 802.11i/WPA2 personal and enterprise modes. In enterprise mode it supports</p>
+<ul>
+<li>EAP-TLS</li>
+<li>EAP-PEAPv0/1 with TLS</li>
+<li>EAP-TTLSv0 with MSCHAPv2</li>
+<li>EAP-PEAPv0/1 with MSCHAPv2</li>
+</ul>
+<p>The WiFi module ATWINC15x0 is connected via SPI and supports SPI clock speeds of up to 48 MHz. Although the module also has an I2C and a UART interface, these interfaces are only used for debugging.</p>
+<p>The ATWINC15x0 WiFi module implements a complete TCP/IP protocol stack which is not used in RIOT.</p>
+<p>The ATWINC15x0 WiFi <code>netdev</code> driver doesn't directly use the ATWINC15x0 WiFi module. Instead, it uses the ATWINC15x0 vendor driver <a href="http://asf.atmel.com/docs/latest/sam4s/html/group__winc1500__group.html">WINC1500 Wifi</a>. from Microchip's Advanced Software Framework. For that purpose, the <a href="https://github.com/arduino-libraries/WiFi101">Arduino WiFi101 library</a> which also includes this vendor library is used as a package.</p>
+<p>Although the ATWINC15x0 vendor driver is complex and quite large, there is no other way to do it because the ATWINC15x0 WiFi module's programming interface is not documented. At the very least, the ATWINC15x0 WiFi <code>netdev</code> driver uses only those parts of the vendor driver that are absolutely necessary.</p>
+<p>The ATWINC15x0 vendor driver consists of several parts:</p>
+<ul>
+<li>the M2M WiFi library, which implements high-level WiFi connection management Functions</li>
+<li>the HIF (Host Interface) library, which implements the interface with the ATWINC15x0 module</li>
+<li>the BSP (Bus Support Package) as an abstraction layer for platform-specific Functions</li>
+<li>the bus wrapper interface for access to the SPI</li>
+</ul>
+<p>In addition to these parts, the ATWINC15x0 vendor driver contains a socket library and a library for accessing the SPI flash of the ATWINC15x0 module, but these are not used in RIOT.</p>
+<p>The ATWINC15x0 WiFi <code>netdev</code> driver replaces the BSP and the Bus Wrapper Interface by RIOT specific parts and interacts with ATWINC15x0 vendor driver as shown in the following figure.</p>
+<div class="fragment"><div class="line">+-----------------+        +---------------+   +----------+    +------------+</div><div class="line">| RIOT ATWINC15x0 |        |   ATWINC15x0  |   | RIOT Bus |    | ATWINC15x0 |</div><div class="line">|  <a class="code" href="structnetdev.html">netdev</a> driver  |        | vendor driver |   |  Wrapper |    |   module   |</div><div class="line">+-----------------+        +---------------+   +----------+    +------------+</div><div class="line">        |                          |                |                |</div><div class="line">        |      m2m_wifi_func       |    command     |  <a class="code" href="spiport_8hpp.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a>(command)  |</div><div class="line">        |-------------------------&gt;|---------------&gt;|---------------&gt;|</div><div class="line">        |          <span class="keywordflow">return</span>          |                |                |</div><div class="line">        |&lt;-------------------------|                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |&lt;------------------------------- IRQ -----------------------|</div><div class="line">        |                          |                |                |</div><div class="line">        |  m2m_wifi_handle_events  |     request    |  <a class="code" href="spiport_8hpp.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a>(request)  |</div><div class="line">        |-------------------------&gt;|---------------&gt;|---------------&gt;|</div><div class="line">        |                          |     response   | <a class="code" href="spiport_8hpp.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a>(response)  |</div><div class="line">        |    atwinc15x0_wifi_cb    |&lt;---------------|&lt;---------------|</div><div class="line">        |&lt;-------------------------|                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |                          |                |                |</div><div class="line">        |&lt;------------------------------- IRQ -----------------------|</div><div class="line">        |                          |                |                |</div><div class="line">        |  m2m_wifi_handle_events  |     request    |  <a class="code" href="spiport_8hpp.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a>(request)  |</div><div class="line">        |-------------------------&gt;|---------------&gt;|---------------&gt;|</div><div class="line">        |                          |     response   | <a class="code" href="spiport_8hpp.html#a56953eb3affc2a9f56e1680bbc537bf7">SPI</a>(response)  |</div><div class="line">        |    atwinc15x0_eth_cb     |&lt;---------------|&lt;---------------|</div><div class="line">        |&lt;-------------------------|                |                |</div></div><!-- fragment --><p>As shown, the ATWINC15x0 WiFi module operates asynchronously. This means that when an API function of the ATWINC15x0 driver is called, it simply sends a command to the ATWINC15x0 WiFi module and returns immediately. The command is then executed asynchronously by the ATWINC15x0 WiFi module. As soon as the execution of the command is completed or one or more events are pending, the module interrupts the host. Since the ISR is executed in the interrupt context, the ATWINC15x0 'netdev' driver simply indicates that an interrupt has occurred. The interrupt is handled later in the thread context by calling 'm2m_wifi_handle_events'. This in turn fetches available information from the ATWINC15x0 WiFi module and then calls various callback functions according to the state, all of which are executed in the thread context.</p>
+<p>The ATWINC15x0 'netdev' driver requires the configuration ATWINC15x0 WiFi module as WiFi settings:</p>
+<p>The default configuration is defined in <a class="el" href="atwinc15x0__params_8h.html" title="Default configuration for the ATWINC15x0 WiFi netdev driver. ">atwinc15x0_params.h</a> and can be overridden either by the board definition or by environment variables in make command line.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Symbol  </th><th class="markdownTableHeadLeft">Default  </th><th class="markdownTableHeadLeft">Description :-----&mdash;   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_SPI</code>  </td><td class="markdownTableBodyLeft"><code><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a></code>  </td><td class="markdownTableBodyLeft">Used SPI device   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_SPI_CLK</code>  </td><td class="markdownTableBodyLeft"><code>SPI_CLK_10MHZ</code>  </td><td class="markdownTableBodyLeft">Used SPI clock speed   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_SSN_PIN</code>  </td><td class="markdownTableBodyLeft"><code><a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value. ">GPIO_PIN(1, 4)</a></code>  </td><td class="markdownTableBodyLeft">SPI slave select pin   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_RESET_PIN</code>  </td><td class="markdownTableBodyLeft"><code><a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value. ">GPIO_PIN(4, 3)</a></code>  </td><td class="markdownTableBodyLeft"><code>RESET</code> pin   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_IRQ_PIN</code>  </td><td class="markdownTableBodyLeft"><code><a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value. ">GPIO_PIN(7, 4)</a></code>  </td><td class="markdownTableBodyLeft"><code>IRQ</code> pin   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_CHIP_EN_PIN</code>  </td><td class="markdownTableBodyLeft"><code>GPIO_UNDEF</code>  </td><td class="markdownTableBodyLeft"><code>CHIP_EN</code> pin   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>ATWINC15X0_PARAM_WAKE_PIN</code>  </td><td class="markdownTableBodyLeft"><code>GPIO_UNDEF</code>  </td><td class="markdownTableBodyLeft">WAKE pin   </td></tr>
+</table>
+<p>At the moment only WPA2 Personal Mode is supported. The required settings are:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Parameter  </th><th class="markdownTableHeadLeft">Default  </th><th class="markdownTableHeadLeft">Description   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">WIFI_SSID  </td><td class="markdownTableBodyLeft">"RIOT_AP"  </td><td class="markdownTableBodyLeft">SSID of the AP to be used.   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">WIFI_PASS  </td><td class="markdownTableBodyLeft">-  </td><td class="markdownTableBodyLeft">Passphrase used for the AP as clear text (max. 64 chars).   </td></tr>
+</table>
+<p>The following example shows the make command with the setting of different GPIOs and the WiFi parameters. </p><div class="fragment"><div class="line">USEMODULE=<span class="stringliteral">&#39;atwinc15x0&#39;</span> \</div><div class="line">CFLAGS=<span class="stringliteral">&#39;-DWIFI_SSID=\&quot;ssid\&quot; -DWIFI_PASS=\&quot;pass\&quot; \</span></div><div class="line"><span class="stringliteral">        -DATWINC15X0_PARAM_SSN_PIN=GPIO_PIN\(1,6\) \</span></div><div class="line"><span class="stringliteral">        -DATWINC15X0_PARAM_RESET_PIN=GPIO_PIN\(1,4\) \</span></div><div class="line"><span class="stringliteral">        -DATWINC15X0_PARAM_IRQ_PIN=GPIO_PIN\(0,8\)&#39;</span> \</div><div class="line">make BOARD=... -C examples/networking/gnrc/gnrc_networking flash term</div></div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:atwinc15x0__internal_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atwinc15x0__internal_8h.html">atwinc15x0_internal.h</a></td></tr>
+<tr class="memdesc:atwinc15x0__internal_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal definitions for the ATWINC15x0 WiFi netdev driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:atwinc15x0__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="atwinc15x0__params_8h.html">atwinc15x0_params.h</a></td></tr>
+<tr class="memdesc:atwinc15x0__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default configuration for the ATWINC15x0 WiFi netdev driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

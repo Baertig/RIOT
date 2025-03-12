@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/wakaama/include/objects/security.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('security_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">security.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a> &raquo; <a class="el" href="group__lwm2m__objects.html">LwM2M Object implementations</a> &raquo; <a class="el" href="group__lwm2m__objects__security.html">Security LwM2M object</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Leandro Lanzieri <a href="#" onclick="location.href='mai'+'lto:'+'lea'+'nd'+'ro.'+'la'+'nzi'+'er'+'i@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">leand<span style="display: none;">.nosp@m.</span>ro.l<span style="display: none;">.nosp@m.</span>anzie<span style="display: none;">.nosp@m.</span>ri@h<span style="display: none;">.nosp@m.</span>aw-ha<span style="display: none;">.nosp@m.</span>mbur<span style="display: none;">.nosp@m.</span>g.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="security_8h_source.html">security.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="stdio_8h_source.html">stdio.h</a>&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="assert_8h_source.html">assert.h</a>&gt;</code><br />
+<code>#include &quot;liblwm2m.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="credman_8h_source.html">net/credman.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lwm2m__client_8h_source.html">lwm2m_client.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lwm2m__client__config_8h_source.html">lwm2m_client_config.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for security.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="security_8h__incl.svg" width="1740" height="575"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="security_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlwm2m__obj__security__args.html">lwm2m_obj_security_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for a new Security object instance creation (<a class="el" href="group__lwm2m__objects__security.html#gafd3eaae1ec622a3529f7963acc166a4f">lwm2m_object_security_instance_create</a>).  <a href="structlwm2m__obj__security__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaf9601ee2d0f6b7bbab6d557b990ba644"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security__config.html#gaf9601ee2d0f6b7bbab6d557b990ba644">CONFIG_LWM2M_OBJ_SECURITY_INSTANCES_MAX</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="memdesc:gaf9601ee2d0f6b7bbab6d557b990ba644"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of instances of the Security object. <br /></td></tr>
+<tr class="separator:gaf9601ee2d0f6b7bbab6d557b990ba644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c26f1b41aba0ef0be496993fb0adc62"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security__config.html#ga9c26f1b41aba0ef0be496993fb0adc62">CONFIG_LWM2M_OBJ_SECURITY_PUB_KEY_ID_BUFSIZE</a>&#160;&#160;&#160;(128)</td></tr>
+<tr class="memdesc:ga9c26f1b41aba0ef0be496993fb0adc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size of the public key or ID resource. <br /></td></tr>
+<tr class="separator:ga9c26f1b41aba0ef0be496993fb0adc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c680b37539ff768ff6032f79e74140d"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security__config.html#ga7c680b37539ff768ff6032f79e74140d">CONFIG_LWM2M_OBJ_SECURITY_SERVER_PUB_KEY_BUFSIZE</a>&#160;&#160;&#160;(128)</td></tr>
+<tr class="memdesc:ga7c680b37539ff768ff6032f79e74140d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size of the server public key resource. <br /></td></tr>
+<tr class="separator:ga7c680b37539ff768ff6032f79e74140d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaba6fb564c3f25aee4190d309077255cb"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security__config.html#gaba6fb564c3f25aee4190d309077255cb">CONFIG_LWM2M_OBJ_SECURITY_SEC_KEY_BUFSIZE</a>&#160;&#160;&#160;(64)</td></tr>
+<tr class="memdesc:gaba6fb564c3f25aee4190d309077255cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer size of the secret key resource. <br /></td></tr>
+<tr class="separator:gaba6fb564c3f25aee4190d309077255cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaf29a2bb3ce3afa746f83fcfe1c066762"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structlwm2m__obj__security__args.html">lwm2m_obj_security_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gaf29a2bb3ce3afa746f83fcfe1c066762">lwm2m_obj_security_args_t</a></td></tr>
+<tr class="memdesc:gaf29a2bb3ce3afa746f83fcfe1c066762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arguments for a new Security object instance creation (<a class="el" href="group__lwm2m__objects__security.html#gafd3eaae1ec622a3529f7963acc166a4f">lwm2m_object_security_instance_create</a>). <br /></td></tr>
+<tr class="separator:gaf29a2bb3ce3afa746f83fcfe1c066762"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae5a6e40dd869d736e680cc5b063200ab"><td class="memItemLeft" align="right" valign="top">lwm2m_object_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gae5a6e40dd869d736e680cc5b063200ab">lwm2m_object_security_init</a> (<a class="el" href="structlwm2m__client__data__t.html">lwm2m_client_data_t</a> *client_data)</td></tr>
+<tr class="memdesc:gae5a6e40dd869d736e680cc5b063200ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Security object.  <a href="group__lwm2m__objects__security.html#gae5a6e40dd869d736e680cc5b063200ab">More...</a><br /></td></tr>
+<tr class="separator:gae5a6e40dd869d736e680cc5b063200ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd3eaae1ec622a3529f7963acc166a4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gafd3eaae1ec622a3529f7963acc166a4f">lwm2m_object_security_instance_create</a> (const <a class="el" href="group__lwm2m__objects__security.html#gaf29a2bb3ce3afa746f83fcfe1c066762">lwm2m_obj_security_args_t</a> *args, int32_t instance_id)</td></tr>
+<tr class="memdesc:gafd3eaae1ec622a3529f7963acc166a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new Security instance and add it to the <code>object</code> list.  <a href="group__lwm2m__objects__security.html#gafd3eaae1ec622a3529f7963acc166a4f">More...</a><br /></td></tr>
+<tr class="separator:gafd3eaae1ec622a3529f7963acc166a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga49778bc3064935b7a457f3594f5e4b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__net__credman.html#ga89fc115fe10d879da7faf1c0d0f901a7">credman_tag_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga49778bc3064935b7a457f3594f5e4b41">lwm2m_object_security_get_credential</a> (uint16_t instance_id)</td></tr>
+<tr class="memdesc:ga49778bc3064935b7a457f3594f5e4b41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the credential of a given instance of the security object.  <a href="group__lwm2m__objects__security.html#ga49778bc3064935b7a457f3594f5e4b41">More...</a><br /></td></tr>
+<tr class="separator:ga49778bc3064935b7a457f3594f5e4b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+LwM2M Security object security modes</h2></td></tr>
+<tr class="memitem:ga15d86892263343d84b480e9072da09b2"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga15d86892263343d84b480e9072da09b2">LWM2M_SECURITY_MODE_PRE_SHARED_KEY</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga15d86892263343d84b480e9072da09b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-Shared keys mode. <br /></td></tr>
+<tr class="separator:ga15d86892263343d84b480e9072da09b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa0a975f82146b4d8369d8f81fe441d63"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gaa0a975f82146b4d8369d8f81fe441d63">LWM2M_SECURITY_MODE_RAW_PUBLIC_KEY</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gaa0a975f82146b4d8369d8f81fe441d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw public keys mode. <br /></td></tr>
+<tr class="separator:gaa0a975f82146b4d8369d8f81fe441d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3b954aa191cf01187e078564a50b8f7"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gad3b954aa191cf01187e078564a50b8f7">LWM2M_SECURITY_MODE_CERTIFICATE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:gad3b954aa191cf01187e078564a50b8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Certificate mode. <br /></td></tr>
+<tr class="separator:gad3b954aa191cf01187e078564a50b8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70a6f5afd228e42a5ed0494276df1e21"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga70a6f5afd228e42a5ed0494276df1e21">LWM2M_SECURITY_MODE_NONE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ga70a6f5afd228e42a5ed0494276df1e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">No security mode. <br /></td></tr>
+<tr class="separator:ga70a6f5afd228e42a5ed0494276df1e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Resource IDs for the LWM2M Security Object</h2></td></tr>
+<tr class="memitem:ga2e82f10e223cf394906eef4fe4e00dc0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga2e82f10e223cf394906eef4fe4e00dc0">LWM2M_SECURITY_URI_ID</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga2e82f10e223cf394906eef4fe4e00dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server URI. <br /></td></tr>
+<tr class="separator:ga2e82f10e223cf394906eef4fe4e00dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad8d96a094f29b3df02f271a95207f0aa"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gad8d96a094f29b3df02f271a95207f0aa">LWM2M_SECURITY_BOOTSTRAP_ID</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:gad8d96a094f29b3df02f271a95207f0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bootstrap server. <br /></td></tr>
+<tr class="separator:gad8d96a094f29b3df02f271a95207f0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga026da7678d6d9ff7bbadb31c8ebd75ab"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga026da7678d6d9ff7bbadb31c8ebd75ab">LWM2M_SECURITY_SECURITY_ID</a>&#160;&#160;&#160;2</td></tr>
+<tr class="memdesc:ga026da7678d6d9ff7bbadb31c8ebd75ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Security mode. <br /></td></tr>
+<tr class="separator:ga026da7678d6d9ff7bbadb31c8ebd75ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1963d2dce3c77ce35fd6e5d42dd0f546"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga1963d2dce3c77ce35fd6e5d42dd0f546">LWM2M_SECURITY_PUBLIC_KEY_ID</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:ga1963d2dce3c77ce35fd6e5d42dd0f546"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public key or ID. <br /></td></tr>
+<tr class="separator:ga1963d2dce3c77ce35fd6e5d42dd0f546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga298330b3a6dbf71232f9dcf2d18ce745"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga298330b3a6dbf71232f9dcf2d18ce745">LWM2M_SECURITY_SERVER_PUBLIC_KEY_ID</a>&#160;&#160;&#160;4</td></tr>
+<tr class="memdesc:ga298330b3a6dbf71232f9dcf2d18ce745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server public key. <br /></td></tr>
+<tr class="separator:ga298330b3a6dbf71232f9dcf2d18ce745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad06542250f44fb4ff2151987e002c989"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gad06542250f44fb4ff2151987e002c989">LWM2M_SECURITY_SECRET_KEY_ID</a>&#160;&#160;&#160;5</td></tr>
+<tr class="memdesc:gad06542250f44fb4ff2151987e002c989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Secret key. <br /></td></tr>
+<tr class="separator:gad06542250f44fb4ff2151987e002c989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1c309e53df3737796d96313fe89e0fa1"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#ga1c309e53df3737796d96313fe89e0fa1">LWM2M_SECURITY_SMS_SECURITY_ID</a>&#160;&#160;&#160;6</td></tr>
+<tr class="memdesc:ga1c309e53df3737796d96313fe89e0fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMS security mode. <br /></td></tr>
+<tr class="separator:ga1c309e53df3737796d96313fe89e0fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace4fb48301905e1654796d4c5b46bafd"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gace4fb48301905e1654796d4c5b46bafd">LWM2M_SECURITY_SMS_KEY_PARAM_ID</a>&#160;&#160;&#160;7</td></tr>
+<tr class="memdesc:gace4fb48301905e1654796d4c5b46bafd"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMS binding key parameters. <br /></td></tr>
+<tr class="separator:gace4fb48301905e1654796d4c5b46bafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2e73edb4ebc7f0e603ed39a93d657b2"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gae2e73edb4ebc7f0e603ed39a93d657b2">LWM2M_SECURITY_SMS_SECRET_KEY_ID</a>&#160;&#160;&#160;8</td></tr>
+<tr class="memdesc:gae2e73edb4ebc7f0e603ed39a93d657b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">SMS binding secret keys. <br /></td></tr>
+<tr class="separator:gae2e73edb4ebc7f0e603ed39a93d657b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa34404716d5dcbc35d0f6bf14ddc4bb0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gaa34404716d5dcbc35d0f6bf14ddc4bb0">LWM2M_SECURITY_SMS_SERVER_NUMBER_ID</a>&#160;&#160;&#160;9</td></tr>
+<tr class="memdesc:gaa34404716d5dcbc35d0f6bf14ddc4bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server SMS number. <br /></td></tr>
+<tr class="separator:gaa34404716d5dcbc35d0f6bf14ddc4bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf64473a12bf6cc1627aad59ab8097b95"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gaf64473a12bf6cc1627aad59ab8097b95">LWM2M_SECURITY_SHORT_SERVER_ID</a>&#160;&#160;&#160;10</td></tr>
+<tr class="memdesc:gaf64473a12bf6cc1627aad59ab8097b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short server ID. <br /></td></tr>
+<tr class="separator:gaf64473a12bf6cc1627aad59ab8097b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee7538bfa6911565220d3bb4efc9c3db"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gaee7538bfa6911565220d3bb4efc9c3db">LWM2M_SECURITY_HOLD_OFF_ID</a>&#160;&#160;&#160;11</td></tr>
+<tr class="memdesc:gaee7538bfa6911565220d3bb4efc9c3db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Client hold-off time. <br /></td></tr>
+<tr class="separator:gaee7538bfa6911565220d3bb4efc9c3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae156d4a2d87b77925ac73adc1fa91de6"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__lwm2m__objects__security.html#gae156d4a2d87b77925ac73adc1fa91de6">LWM2M_SECURITY_BOOTSTRAP_TIMEOUT_ID</a>&#160;&#160;&#160;12</td></tr>
+<tr class="memdesc:gae156d4a2d87b77925ac73adc1fa91de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bootstrap server account timeout. <br /></td></tr>
+<tr class="separator:gae156d4a2d87b77925ac73adc1fa91de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

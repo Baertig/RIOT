@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>dose_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structdose__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">dose_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__dose.html">Differentially Operated Serial Ethernet</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>DOSE netdev device.  
+ <a href="structdose__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>DOSE netdev device. </p>
+
+<p class="definition">Definition at line <a class="el" href="dose_8h_source.html#l00186">186</a> of file <a class="el" href="dose_8h_source.html">dose.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="dose_8h_source.html">dose.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a1129963d252b60be5850cb89d9b4e35c"><td class="memItemLeft" align="right" valign="top"><a id="a1129963d252b60be5850cb89d9b4e35c"></a>
+<a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a1129963d252b60be5850cb89d9b4e35c">netdev</a></td></tr>
+<tr class="memdesc:a1129963d252b60be5850cb89d9b4e35c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extended netdev structure. <br /></td></tr>
+<tr class="separator:a1129963d252b60be5850cb89d9b4e35c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1583471a46f75d691d8a1d808f4ba53"><td class="memItemLeft" align="right" valign="top"><a id="af1583471a46f75d691d8a1d808f4ba53"></a>
+<a class="el" href="structeui48__t.html">eui48_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#af1583471a46f75d691d8a1d808f4ba53">mac_addr</a></td></tr>
+<tr class="memdesc:af1583471a46f75d691d8a1d808f4ba53"><td class="mdescLeft">&#160;</td><td class="mdescRight">This device's MAC address. <br /></td></tr>
+<tr class="separator:af1583471a46f75d691d8a1d808f4ba53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20e0011f1f04b91f167d19d87f93826"><td class="memItemLeft" align="right" valign="top"><a id="ad20e0011f1f04b91f167d19d87f93826"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#ad20e0011f1f04b91f167d19d87f93826">opts</a></td></tr>
+<tr class="memdesc:ad20e0011f1f04b91f167d19d87f93826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver options. <br /></td></tr>
+<tr class="separator:ad20e0011f1f04b91f167d19d87f93826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9127ced0c1272c6d36de0f727b5a7cb8"><td class="memItemLeft" align="right" valign="top"><a id="a9127ced0c1272c6d36de0f727b5a7cb8"></a>
+<a class="el" href="group__drivers__dose.html#gadce3cc3a69672e85d98942f947ee2794">dose_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a9127ced0c1272c6d36de0f727b5a7cb8">state</a></td></tr>
+<tr class="memdesc:a9127ced0c1272c6d36de0f727b5a7cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current state of the driver's state machine. <br /></td></tr>
+<tr class="separator:a9127ced0c1272c6d36de0f727b5a7cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37e193220feff4cac7706c6c63c3556b"><td class="memItemLeft" align="right" valign="top"><a id="a37e193220feff4cac7706c6c63c3556b"></a>
+<a class="el" href="structmutex__t.html">mutex_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a37e193220feff4cac7706c6c63c3556b">state_mtx</a></td></tr>
+<tr class="memdesc:a37e193220feff4cac7706c6c63c3556b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is unlocked every time a state is (re)entered. <br /></td></tr>
+<tr class="separator:a37e193220feff4cac7706c6c63c3556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e3a2351369482d58ad493e2b977944"><td class="memItemLeft" align="right" valign="top"><a id="ac0e3a2351369482d58ad493e2b977944"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#ac0e3a2351369482d58ad493e2b977944">recv_buf</a> [<a class="el" href="group__drivers__dose.html#ga1b61b0f6d22decaf13d15547cfcce80a">CONFIG_DOSE_RX_BUF_LEN</a>]</td></tr>
+<tr class="memdesc:ac0e3a2351369482d58ad493e2b977944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive buffer for incoming frames. <br /></td></tr>
+<tr class="separator:ac0e3a2351369482d58ad493e2b977944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c10ce4afb8c0209bf7761e78d5a71b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structchunk__ringbuf__t.html">chunk_ringbuf_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#ae6c10ce4afb8c0209bf7761e78d5a71b">rb</a></td></tr>
+<tr class="memdesc:ae6c10ce4afb8c0209bf7761e78d5a71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ringbuffer to store received frames.  <a href="#ae6c10ce4afb8c0209bf7761e78d5a71b">More...</a><br /></td></tr>
+<tr class="separator:ae6c10ce4afb8c0209bf7761e78d5a71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae6c764d84315f6f4f22892ecdbe376"><td class="memItemLeft" align="right" valign="top"><a id="a1ae6c764d84315f6f4f22892ecdbe376"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a1ae6c764d84315f6f4f22892ecdbe376">recv_buf_ptr_last</a></td></tr>
+<tr class="memdesc:a1ae6c764d84315f6f4f22892ecdbe376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last value of recv_buf_ptr when the watchdog visited. <br /></td></tr>
+<tr class="separator:a1ae6c764d84315f6f4f22892ecdbe376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae6d0f440a3cad274dcd3a3723021d47"><td class="memItemLeft" align="right" valign="top"><a id="aae6d0f440a3cad274dcd3a3723021d47"></a>
+<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#aae6d0f440a3cad274dcd3a3723021d47">sense_pin</a></td></tr>
+<tr class="memdesc:aae6d0f440a3cad274dcd3a3723021d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO to sense for start bits on the UART's rx line. <br /></td></tr>
+<tr class="separator:aae6d0f440a3cad274dcd3a3723021d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5db7ca5b5021e068c9b378e6349c4e5"><td class="memItemLeft" align="right" valign="top"><a id="aa5db7ca5b5021e068c9b378e6349c4e5"></a>
+<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#aa5db7ca5b5021e068c9b378e6349c4e5">standby_pin</a></td></tr>
+<tr class="memdesc:aa5db7ca5b5021e068c9b378e6349c4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO to put the CAN transceiver in standby mode. <br /></td></tr>
+<tr class="separator:aa5db7ca5b5021e068c9b378e6349c4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11b22c27c3fbdafaf7ef85fac71d7322"><td class="memItemLeft" align="right" valign="top"><a id="a11b22c27c3fbdafaf7ef85fac71d7322"></a>
+<a class="el" href="structztimer__t.html">ztimer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a11b22c27c3fbdafaf7ef85fac71d7322">timeout</a></td></tr>
+<tr class="memdesc:a11b22c27c3fbdafaf7ef85fac71d7322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timeout timer ensuring always to get back to IDLE state. <br /></td></tr>
+<tr class="separator:a11b22c27c3fbdafaf7ef85fac71d7322"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e860ed0b59e4427b64514bc95ddeeb3"><td class="memItemLeft" align="right" valign="top"><a id="a2e860ed0b59e4427b64514bc95ddeeb3"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a2e860ed0b59e4427b64514bc95ddeeb3">timeout_base</a></td></tr>
+<tr class="memdesc:a2e860ed0b59e4427b64514bc95ddeeb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base timeout in us. <br /></td></tr>
+<tr class="separator:a2e860ed0b59e4427b64514bc95ddeeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae548dbb7f9ff21e3a46de9de56708140"><td class="memItemLeft" align="right" valign="top"><a id="ae548dbb7f9ff21e3a46de9de56708140"></a>
+<a class="el" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#ae548dbb7f9ff21e3a46de9de56708140">uart</a></td></tr>
+<tr class="memdesc:ae548dbb7f9ff21e3a46de9de56708140"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART device to use. <br /></td></tr>
+<tr class="separator:ae548dbb7f9ff21e3a46de9de56708140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b33c272c2338b27cfa5953af9159690"><td class="memItemLeft" align="right" valign="top"><a id="a2b33c272c2338b27cfa5953af9159690"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#a2b33c272c2338b27cfa5953af9159690">uart_octet</a></td></tr>
+<tr class="memdesc:a2b33c272c2338b27cfa5953af9159690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Last received octet. <br /></td></tr>
+<tr class="separator:a2b33c272c2338b27cfa5953af9159690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab10f0d7b960e53869ad5d61b4b24e39f"><td class="memItemLeft" align="right" valign="top"><a id="ab10f0d7b960e53869ad5d61b4b24e39f"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdose__t.html#ab10f0d7b960e53869ad5d61b4b24e39f">flags</a></td></tr>
+<tr class="memdesc:ab10f0d7b960e53869ad5d61b4b24e39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Several flags. <br /></td></tr>
+<tr class="separator:ab10f0d7b960e53869ad5d61b4b24e39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_structnetdev"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_structnetdev')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="structnetdev.html">netdev</a></td></tr>
+<tr class="memitem:a54bb633f6794c67d66685ecfe21aa3d2 inherit pub_attribs_structnetdev"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="structnetdev__driver.html">netdev_driver</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetdev.html#a54bb633f6794c67d66685ecfe21aa3d2">driver</a></td></tr>
+<tr class="memdesc:a54bb633f6794c67d66685ecfe21aa3d2 inherit pub_attribs_structnetdev"><td class="mdescLeft">&#160;</td><td class="mdescRight">ptr to that driver's interface.  <a href="structnetdev.html#a54bb633f6794c67d66685ecfe21aa3d2">More...</a><br /></td></tr>
+<tr class="separator:a54bb633f6794c67d66685ecfe21aa3d2 inherit pub_attribs_structnetdev"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af91155f0bff62279c2b4c12fcc909d16 inherit pub_attribs_structnetdev"><td class="memItemLeft" align="right" valign="top"><a id="af91155f0bff62279c2b4c12fcc909d16"></a>
+<a class="el" href="group__drivers__netdev__api.html#gad323355be0487ba68c16dea102740275">netdev_event_cb_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetdev.html#af91155f0bff62279c2b4c12fcc909d16">event_callback</a></td></tr>
+<tr class="memdesc:af91155f0bff62279c2b4c12fcc909d16 inherit pub_attribs_structnetdev"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback for device events <br /></td></tr>
+<tr class="separator:af91155f0bff62279c2b4c12fcc909d16 inherit pub_attribs_structnetdev"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacac29a8aa7891d7dc1882b5eb89773 inherit pub_attribs_structnetdev"><td class="memItemLeft" align="right" valign="top"><a id="aaacac29a8aa7891d7dc1882b5eb89773"></a>
+void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnetdev.html#aaacac29a8aa7891d7dc1882b5eb89773">context</a></td></tr>
+<tr class="memdesc:aaacac29a8aa7891d7dc1882b5eb89773 inherit pub_attribs_structnetdev"><td class="mdescLeft">&#160;</td><td class="mdescRight">ptr to network stack context <br /></td></tr>
+<tr class="separator:aaacac29a8aa7891d7dc1882b5eb89773 inherit pub_attribs_structnetdev"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ae6c10ce4afb8c0209bf7761e78d5a71b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c10ce4afb8c0209bf7761e78d5a71b">&#9670;&nbsp;</a></span>rb</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structchunk__ringbuf__t.html">chunk_ringbuf_t</a> dose_t::rb</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ringbuffer to store received frames. </p>
+
+<p class="definition">Definition at line <a class="el" href="dose_8h_source.html#l00193">193</a> of file <a class="el" href="dose_8h_source.html">dose.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="dose_8h_source.html">dose.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

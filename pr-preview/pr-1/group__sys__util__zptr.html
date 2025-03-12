@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Pointer Compression</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__util__zptr.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Pointer Compression<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Provides 32bit -&gt; 16bit pointer compression.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Provides 32bit -&gt; 16bit pointer compression. </p>
+<p>On many platforms, some pointers may have to be aligned, e.g., to 4 byte boundaries. On 32bit platforms, that makes it possible to store all possible aligned 32bit pointers in a 16bit value as long as the total memory is small (e.g., with 4 byte alignment, all pointers within 256kb RAM can be represented by a 16bit value). This can save memory, at the cost of some instructions for compression/decompression.</p>
+<p>In order to use pointer compression, ZPTR_BASE needs to be defined to a (4 byte aligned) base address.</p>
+<p>A printf format macro (PRIzptr) is provided.</p>
+<p>You can then use zptr_t instead of a pointer type, using the supplied functions to compress / decompress, e.g., </p><pre class="fragment">void func(void *ptr) {
+    printf("%"PRIzptr"\n", ptr);
+    ...
+    free(ptr);
+</pre><p> }</p>
+<p>... would become </p><pre class="fragment">void func(zptr_t zptr);
+    printf("%"PRIzptr"\n", zptr);
+    ...
+    free(zptrd(zptr));
+}
+</pre><p>If ZPTR_BASE is unset, <a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a> / <a class="el" href="group__sys__util__zptr.html#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">zptrc()</a> / <a class="el" href="group__sys__util__zptr.html#gada85e1164d5503d9b9572dcef1bc8afd">zptrd()</a> will transparently and without overhead compile to normal (uncompressed) pointer operations. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:zptr_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="zptr_8h.html">zptr.h</a></td></tr>
+<tr class="memdesc:zptr_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">32bit -&gt; 16bit pointer compression implementation <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga21a367287af6d549c5a235669a0addf4"><td class="memItemLeft" align="right" valign="top"><a id="ga21a367287af6d549c5a235669a0addf4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#ga21a367287af6d549c5a235669a0addf4">PRIzptr</a>&#160;&#160;&#160;PRIu16</td></tr>
+<tr class="memdesc:ga21a367287af6d549c5a235669a0addf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">zptr printf format definition <br /></td></tr>
+<tr class="separator:ga21a367287af6d549c5a235669a0addf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab85ed2300b8181d3caadffd431b8c38d"><td class="memItemLeft" align="right" valign="top"><a id="gab85ed2300b8181d3caadffd431b8c38d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#gab85ed2300b8181d3caadffd431b8c38d">ZPTR_MAX_ADDR</a>&#160;&#160;&#160;((uintptr_t)ZPTR_BASE + (1 &lt;&lt; 18))</td></tr>
+<tr class="memdesc:gab85ed2300b8181d3caadffd431b8c38d"><td class="mdescLeft">&#160;</td><td class="mdescRight">zptr highest compressible address <br /></td></tr>
+<tr class="separator:gab85ed2300b8181d3caadffd431b8c38d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gafae15584f6356f9392f4cd7459dc61ea"><td class="memItemLeft" align="right" valign="top"><a id="gafae15584f6356f9392f4cd7459dc61ea"></a>
+typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a></td></tr>
+<tr class="memdesc:gafae15584f6356f9392f4cd7459dc61ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">zptr type definition <br /></td></tr>
+<tr class="separator:gafae15584f6356f9392f4cd7459dc61ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga9f9c7408243cbbe4df3251351420c2d1"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#ga9f9c7408243cbbe4df3251351420c2d1">zptr_check</a> (void *pointer)</td></tr>
+<tr class="memdesc:ga9f9c7408243cbbe4df3251351420c2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if a pointer is compressible by <a class="el" href="group__sys__util__zptr.html#ga0d776532fbf73f97f4e1c1d8b6ee6b9c" title="Compress a pointer (if possible) ">zptrc()</a>  <a href="#ga9f9c7408243cbbe4df3251351420c2d1">More...</a><br /></td></tr>
+<tr class="separator:ga9f9c7408243cbbe4df3251351420c2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d776532fbf73f97f4e1c1d8b6ee6b9c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">zptrc</a> (void *pointer)</td></tr>
+<tr class="memdesc:ga0d776532fbf73f97f4e1c1d8b6ee6b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compress a pointer (if possible)  <a href="#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">More...</a><br /></td></tr>
+<tr class="separator:ga0d776532fbf73f97f4e1c1d8b6ee6b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gada85e1164d5503d9b9572dcef1bc8afd"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__util__zptr.html#gada85e1164d5503d9b9572dcef1bc8afd">zptrd</a> (<a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a> zptr)</td></tr>
+<tr class="memdesc:gada85e1164d5503d9b9572dcef1bc8afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decompress a pointer.  <a href="#gada85e1164d5503d9b9572dcef1bc8afd">More...</a><br /></td></tr>
+<tr class="separator:gada85e1164d5503d9b9572dcef1bc8afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga9f9c7408243cbbe4df3251351420c2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f9c7408243cbbe4df3251351420c2d1">&#9670;&nbsp;</a></span>zptr_check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int zptr_check </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pointer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if a pointer is compressible by <a class="el" href="group__sys__util__zptr.html#ga0d776532fbf73f97f4e1c1d8b6ee6b9c" title="Compress a pointer (if possible) ">zptrc()</a> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pointer</td><td>pointer to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if pointer can be compressed, 0 if not </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="zptr_8h_source.html#l00090">90</a> of file <a class="el" href="zptr_8h_source.html">zptr.h</a>.</p>
+
+</div>
+</div>
+<a id="ga0d776532fbf73f97f4e1c1d8b6ee6b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d776532fbf73f97f4e1c1d8b6ee6b9c">&#9670;&nbsp;</a></span>zptrc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a> zptrc </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>pointer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compress a pointer (if possible) </p>
+<p>Subtracts ZPTR_BASE, then right-shifts <code>pointer</code> by two.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pointer</td><td>pointer to compress </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>compressed pointer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="zptr_8h_source.html#l00106">106</a> of file <a class="el" href="zptr_8h_source.html">zptr.h</a>.</p>
+
+</div>
+</div>
+<a id="gada85e1164d5503d9b9572dcef1bc8afd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gada85e1164d5503d9b9572dcef1bc8afd">&#9670;&nbsp;</a></span>zptrd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* zptrd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__util__zptr.html#gafae15584f6356f9392f4cd7459dc61ea">zptr_t</a>&#160;</td>
+          <td class="paramname"><em>zptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decompress a pointer. </p>
+<p>Left-shifts zptr_t by two, then adds ZPTR_BASE.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">zptr</td><td>compressed pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>decompressed pointer </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="zptr_8h_source.html#l00120">120</a> of file <a class="el" href="zptr_8h_source.html">zptr.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

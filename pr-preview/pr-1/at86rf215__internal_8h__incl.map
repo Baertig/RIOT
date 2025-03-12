@@ -1,0 +1,49 @@
+<map id="drivers/at86rf215/include/at86rf215_internal.h" name="drivers/at86rf215/include/at86rf215_internal.h">
+<area shape="rect" id="node3" href="$at86rf215_8h.html" title="Interface definition for AT86RF215 based drivers. " alt="" coords="1050,95,1147,121"/>
+<area shape="rect" id="node60" href="$at86rf215__registers_8h.html" title="Register Definitions for the AT86RF215 chip. " alt="" coords="3010,95,3169,121"/>
+<area shape="rect" id="node6" href="$spi_8h.html" title="Low&#45;level SPI peripheral driver interface definition. " alt="" coords="179,543,277,569"/>
+<area shape="rect" id="node12" href="$drivers_2include_2periph_2gpio_8h.html" title="Low&#45;level GPIO peripheral driver interface definitions. " alt="" coords="172,617,279,644"/>
+<area shape="rect" id="node14" href="$drivers_2include_2net_2netdev_8h.html" title="Definitions low&#45;level network driver interface. " alt="" coords="1442,543,1545,569"/>
+<area shape="rect" id="node25" href="$drivers_2include_2net_2netdev_2ieee802154_8h.html" title="Definitions for netdev common IEEE 802.15.4 code. " alt="" coords="2215,393,2399,420"/>
+<area shape="rect" id="node35" href="$nettype_8h.html" title="Protocol type definitions. " alt="" coords="1798,468,1941,495"/>
+<area shape="rect" id="node39" href="$xtimer_8h.html" title="xtimer interface definitions " alt="" coords="1447,169,1521,196"/>
+<area shape="rect" id="node7" href="$endian_8h.html" title="libc header for endian conversion " alt="" coords="2525,767,2601,793"/>
+<area shape="rect" id="node8" href="$errno_8h.html" title="errno.h" alt="" coords="1129,617,1199,644"/>
+<area shape="rect" id="node15" href="$iolist_8h.html" title="iolist scatter / gather IO " alt="" coords="1767,617,1830,644"/>
+<area shape="rect" id="node18" href="$netopt_8h.html" title="Definition of global configuration options. " alt="" coords="2210,617,2313,644"/>
+<area shape="rect" id="node19" href="$kernel__defines_8h.html" title="Common macros and compiler attributes/pragmas configuration. " alt="" coords="1617,617,1743,644"/>
+<area shape="rect" id="node16" href="$unistd_8h_source.html" title="unistd.h" alt="" coords="1600,692,1672,719"/>
+<area shape="rect" id="node17" href="$cpu_2avr8__common_2avr__libc__extra_2include_2sys_2types_8h_source.html" title="sys/types.h" alt="" coords="1590,767,1682,793"/>
+<area shape="rect" id="node20" href="$modules_8h.html" title="Common macros and compiler attributes/pragmas configuration. " alt="" coords="1895,692,1982,719"/>
+<area shape="rect" id="node21" href="$riot__version_8h.html" title="Common macros and compiler attributes/pragmas configuration. " alt="" coords="1770,767,1878,793"/>
+<area shape="rect" id="node22" href="$compiler__hints_8h.html" title="Common macros and compiler attributes/pragmas configuration. " alt="" coords="1747,692,1871,719"/>
+<area shape="rect" id="node24" href="$container_8h.html" title="Common macros and compiler attributes/pragmas configuration. " alt="" coords="865,767,957,793"/>
+<area shape="rect" id="node23" href="$assert_8h.html" title="POSIX.1&#45;2008 compliant version of the assert macro. " alt="" coords="1961,767,2033,793"/>
+<area shape="rect" id="node26" href="$eui__provider_8h.html" title="EUI&#45;48 and EUI&#45;64 address provider. " alt="" coords="2344,468,2483,495"/>
+<area shape="rect" id="node32" href="$sys_2include_2net_2ieee802154_8h.html" title="IEEE 802.15.4 header definitions. " alt="" coords="2679,543,2814,569"/>
+<area shape="rect" id="node27" href="$eui48_8h.html" title="Definition and IPv6 IID conversion for IEEE EUI&#45;48 identifiers. " alt="" coords="2906,543,3001,569"/>
+<area shape="rect" id="node28" href="$eui64_8h.html" title="EUI&#45;64 data type definition. " alt="" coords="2906,617,3001,644"/>
+<area shape="rect" id="node29" href="$byteorder_8h.html" title="Functions to work with different byte orders. " alt="" coords="2710,692,2807,719"/>
+<area shape="rect" id="node31" href="$unaligned_8h.html" title="Unaligned but safe memory access functions. " alt="" coords="2771,767,2866,793"/>
+<area shape="rect" id="node34" href="$time__units_8h.html" title="Utility header providing time unit defines. " alt="" coords="2540,617,2639,644"/>
+<area shape="rect" id="node36" href="$inttypes_8h.html" title="Adds include for missing inttype definitions. " alt="" coords="1437,692,1521,719"/>
+<area shape="rect" id="node37" href="$ethertype_8h.html" title="Ether type definitions. " alt="" coords="1620,543,1743,569"/>
+<area shape="rect" id="node38" href="$protnum_8h.html" title="Protocol number definitions. " alt="" coords="1767,543,1881,569"/>
+<area shape="rect" id="node40" href="$timex_8h.html" title="Utility library for comparing and computing timestamps. " alt="" coords="2360,543,2429,569"/>
+<area shape="rect" id="node41" href="$mutex_8h.html" title="Mutex for thread synchronization. " alt="" coords="1408,319,1483,345"/>
+<area shape="rect" id="node49" href="$sched_8h.html" title="Scheduler API definition. " alt="" coords="1245,543,1315,569"/>
+<area shape="rect" id="node54" href="$rmutex_8h.html" title="Recursive Mutex for thread synchronization. " alt="" coords="1483,244,1563,271"/>
+<area shape="rect" id="node55" href="$tick__conversion_8h.html" title="xtimer tick &lt;&#45;&gt; seconds conversions for different values of XTIMER_HZ " alt="" coords="1863,319,2038,345"/>
+<area shape="rect" id="node57" href="$implementation_8h.html" title="xtimer implementation " alt="" coords="537,393,716,420"/>
+<area shape="rect" id="node42" href="$architecture_8h.html" title="Platform&#45;independent access to architecture details. " alt="" coords="557,617,667,644"/>
+<area shape="rect" id="node44" href="$list_8h.html" title="Intrusive linked list. " alt="" coords="1075,692,1125,719"/>
+<area shape="rect" id="node45" href="$core_2include_2thread_8h.html" title="Threading API. " alt="" coords="1226,393,1302,420"/>
+<area shape="rect" id="node46" href="$clist_8h.html" title="Circular linked list. " alt="" coords="1047,617,1105,644"/>
+<area shape="rect" id="node47" href="$cib_8h.html" title="Circular integer buffer interface. " alt="" coords="1965,468,2016,495"/>
+<area shape="rect" id="node48" href="$core_2include_2msg_8h.html" title="Messaging API for inter process communication. " alt="" coords="1166,468,1226,495"/>
+<area shape="rect" id="node51" href="$thread__config_8h.html" title="Thread configuration defines. " alt="" coords="1021,468,1141,495"/>
+<area shape="rect" id="node50" href="$native__sched_8h.html" title="Add definitions required on the native board. " alt="" coords="1325,617,1440,644"/>
+<area shape="rect" id="node56" href="$div_8h.html" title="div.h" alt="" coords="2159,692,2209,719"/>
+<area shape="rect" id="node58" href="$drivers_2include_2periph_2timer_8h.html" title="Low&#45;level timer peripheral driver interface definitions. " alt="" coords="490,543,603,569"/>
+<area shape="rect" id="node59" href="$irq_8h.html" title="IRQ driver interface. " alt="" coords="679,468,729,495"/>
+</map>

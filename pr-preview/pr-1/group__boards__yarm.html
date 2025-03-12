@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Acmesystems YARM board</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__boards__yarm.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">Acmesystems YARM board<div class="ingroups"><a class="el" href="group__boards.html">Boards</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+Support for the Acmesystems YARM board.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><br />
+</p>
+<p>Support for the Acmesystems YARM board. </p>
+<p>Yarm is a smart and cost effective solution for system integrators to build their own RF applications at 868 MHz avoiding all the hardware design costs requested to start a new custom RF project.</p>
+<p>Yarm integrates:</p>
+<ul>
+<li>a Microchip SAML21 low power MCU</li>
+<li>a Microchip ATA8510 radio module</li>
+</ul>
+<p>See Acmesystems <a href="https://www.acmesystems.it/yarm">product page</a> for more information.</p>
+<p>In the provided configuration, stdio is available via USB. The board could be configured to provide it on the exposed UART instead, by defining</p>
+<div class="fragment"><div class="line">USEMODULE=stdio_uart</div></div><!-- fragment --><p>Depending on the connection to your PC, you will probably also need to set PORT_LINUX to a different value (default is /dev/ttyACM0), for instance</p>
+<div class="fragment"><div class="line">PORT_LINUX=/dev/ttyUSB0</div></div><!-- fragment --><div class="image">
+<img src="https://www.acmesystems.it/www/yarm/yarm-dev-yarm.jpg" alt="yarm image"/>
+</div>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">MCU  </th><th class="markdownTableHeadLeft">ATSAML21J18B   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Family  </td><td class="markdownTableBodyLeft">ARM Cortex-M0+   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Vendor  </td><td class="markdownTableBodyLeft">Microchip   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">RAM  </td><td class="markdownTableBodyLeft">32Kb   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Flash  </td><td class="markdownTableBodyLeft">256Kb   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Frequency  </td><td class="markdownTableBodyLeft">up to 48MHz   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">FPU  </td><td class="markdownTableBodyLeft">no   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Timers  </td><td class="markdownTableBodyLeft">8 (16-bit)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">ADCs  </td><td class="markdownTableBodyLeft">1x 12-bit (20 channels)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">UARTs  </td><td class="markdownTableBodyLeft">x 6 (shared with SPI and I2C)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">SPIs  </td><td class="markdownTableBodyLeft">max 6 (see UART)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">I2Cs  </td><td class="markdownTableBodyLeft">max 6 (see UART)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Vcc  </td><td class="markdownTableBodyLeft">1.8V - 3.6V   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Datasheet  </td><td class="markdownTableBodyLeft"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/SAM_L21_Family_DataSheet_DS60001477C.pdf">Datasheet</a>   </td></tr>
+</table>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Transceiver  </th><th class="markdownTableHeadLeft">ATA8510   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Vendor  </td><td class="markdownTableBodyLeft">Microchip   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Sensitivity  </td><td class="markdownTableBodyLeft">-123dBm   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Output power  </td><td class="markdownTableBodyLeft">-12dBm to +14.5dBm programmable in 0.4-dB steps ]   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Datasheet  </td><td class="markdownTableBodyLeft"><a href="https://ww1.microchip.com/downloads/en/DeviceDoc/UHF-ASK-FSK-Transceiver-Product-Brief-DS00003077A.pdf">Datasheet</a>   </td></tr>
+</table>
+<p>NOTE:* not all MCU interfaces are available on YARM; see the <a href="https://www.acmesystems.it/pinout_yarm-dev">pinout</a> to know more.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Device  </th><th class="markdownTableHeadLeft">ID  </th><th class="markdownTableHeadLeft">Supported  </th><th class="markdownTableHeadLeft">Comments   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">MCU  </td><td class="markdownTableBodyLeft">saml21  </td><td class="markdownTableBodyLeft">partly  </td><td class="markdownTableBodyLeft">PLL clock not implemented   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Low-level driver  </td><td class="markdownTableBodyLeft">GPIO  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">PWM  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">UART  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">I2C  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">SPI  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">USB  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">RTT  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">RTC  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">RNG  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft"><a class="el" href="structTimer.html" title="struct to get time references within mqtt paho ">Timer</a>  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyLeft">ADC  </td><td class="markdownTableBodyLeft">yes  </td><td class="markdownTableBodyLeft"></td></tr>
+</table>
+<p>Both the MCU and the radio module are flashed using <a href="https://www.microchip.com/DevelopmentTools/ProductDetails/atatmel-ice">Atmel ICE</a>, with the help of a small adapter. The software used is edbg, bundled with RIOT.</p>
+<p><a href="https://www.acmesystems.it/asquini/yarm_avr_programming/ice-wiring.jpg">wiring</a></p>
+<p>On Linux you might have to add a <b>udev</b> rule for Atmel ICE, like </p><div class="fragment"><div class="line">bash</div><div class="line">(</div><div class="line">cat &lt;&lt;END</div><div class="line"># Atmel-ICE JTAG/SWD in-circuit debugger</div><div class="line">ATTRS{idVendor}==<span class="stringliteral">&quot;03eb&quot;</span>, ATTRS{idProduct}==<span class="stringliteral">&quot;2141&quot;</span>, MODE=<span class="stringliteral">&quot;664&quot;</span>, GROUP=<span class="stringliteral">&quot;plugdev&quot;</span></div><div class="line">END</div><div class="line">) | sudo tee -a /etc/udev/rules.d/99-atmel-ice.rules</div><div class="line">sudo service udev restart</div></div><!-- fragment --><p>Recommended toolchain for SAML21 is <a href="https://launchpad.net/gcc-arm-embedded">GNU Tools for ARM Embedded Processors</a>. On Debian Buster, the default <a href="https://packages.debian.org/buster/gcc-arm-none-eabi">gcc-arm-none-eabi</a> package works well. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:yarm_2include_2board_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="yarm_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:yarm_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support for the Acmesystems YARM board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:boards_2yarm_2include_2periph__conf_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2yarm_2include_2periph__conf_8h.html">periph_conf.h</a></td></tr>
+<tr class="memdesc:boards_2yarm_2include_2periph__conf_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peripheral MCU configuration for the Acmesystems YARM board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

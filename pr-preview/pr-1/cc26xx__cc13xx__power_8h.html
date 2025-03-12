@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/cc26xx_cc13xx/include/cc26xx_cc13xx_power.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cc26xx__cc13xx__power_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cc26xx_cc13xx_power.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__cc26xx__cc13xx.html">CC26xx/CC13xx common</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>CC26xx/CC13xx Power management.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>CC26xx/CC13xx Power management. </p>
+<dl class="section author"><dt>Author</dt><dd>Jean Pierre Dudey <a href="#" onclick="location.href='mai'+'lto:'+'jea'+'nd'+'ude'+'y@'+'hot'+'ma'+'il.'+'co'+'m'; return false;">jeand<span style="display: none;">.nosp@m.</span>udey<span style="display: none;">.nosp@m.</span>@hotm<span style="display: none;">.nosp@m.</span>ail.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="cc26xx__cc13xx__power_8h_source.html">cc26xx_cc13xx_power.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;<a class="el" href="cc26xx__cc13xx_8h_source.html">cc26xx_cc13xx.h</a>&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2uart_8h_source.html">periph/uart.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cc26xx_cc13xx_power.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cc26xx__cc13xx__power_8h__incl.svg" width="744" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="cc26xx__cc13xx__power_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:af7f31ccffddb279c67ac1f233d7fa42c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a> { <br />
+&#160;&#160;<a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42ca52ca13ecbeff7dfcc60fd56a771c6886">POWER_DOMAIN_PERIPHERALS</a>, 
+<a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42cabf494dca97351cc8ab7123c6d8c4a14e">POWER_DOMAIN_SERIAL</a>, 
+<a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42cac1bb830d1d773ec09111103ab2bd816a">POWER_DOMAIN_RFC</a>, 
+<a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42cafbd647b8d98850d629b7d1f8c51a4bcb">POWER_DOMAIN_CPU</a>, 
+<br />
+&#160;&#160;<a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42ca398d0838895328c7046289282ed82c64">POWER_DOMAIN_VIMS</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:af7f31ccffddb279c67ac1f233d7fa42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power domains.  <a href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">More...</a><br /></td></tr>
+<tr class="separator:af7f31ccffddb279c67ac1f233d7fa42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a0eb7ad573c3e706b9ac60c615cfd1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#ab8a0eb7ad573c3e706b9ac60c615cfd1">power_is_domain_enabled</a> (const <a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a> domain)</td></tr>
+<tr class="memdesc:ab8a0eb7ad573c3e706b9ac60c615cfd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is power domain enabled?  <a href="#ab8a0eb7ad573c3e706b9ac60c615cfd1">More...</a><br /></td></tr>
+<tr class="separator:ab8a0eb7ad573c3e706b9ac60c615cfd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782553f4f6759ccd587990a172fb3234"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#a782553f4f6759ccd587990a172fb3234">power_enable_domain</a> (const <a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a> domain)</td></tr>
+<tr class="memdesc:a782553f4f6759ccd587990a172fb3234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the specified power domain.  <a href="#a782553f4f6759ccd587990a172fb3234">More...</a><br /></td></tr>
+<tr class="separator:a782553f4f6759ccd587990a172fb3234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb689ebaa1b714b6b28063ef4ff0fb49"><td class="memItemLeft" align="right" valign="top"><a id="acb689ebaa1b714b6b28063ef4ff0fb49"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#acb689ebaa1b714b6b28063ef4ff0fb49">power_clock_enable_gpio</a> (void)</td></tr>
+<tr class="memdesc:acb689ebaa1b714b6b28063ef4ff0fb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable GPIO clock. <br /></td></tr>
+<tr class="separator:acb689ebaa1b714b6b28063ef4ff0fb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a075304f726c2454930f195346bccbc0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#a075304f726c2454930f195346bccbc0a">power_clock_enable_gpt</a> (uint32_t tim)</td></tr>
+<tr class="memdesc:a075304f726c2454930f195346bccbc0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable General Purpose <a class="el" href="structTimer.html" title="struct to get time references within mqtt paho ">Timer</a> clock.  <a href="#a075304f726c2454930f195346bccbc0a">More...</a><br /></td></tr>
+<tr class="separator:a075304f726c2454930f195346bccbc0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f60789546c7fe33fc29ffa8f4058ab9"><td class="memItemLeft" align="right" valign="top"><a id="a3f60789546c7fe33fc29ffa8f4058ab9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#a3f60789546c7fe33fc29ffa8f4058ab9">power_clock_enable_i2c</a> (void)</td></tr>
+<tr class="memdesc:a3f60789546c7fe33fc29ffa8f4058ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable I2C clock. <br /></td></tr>
+<tr class="separator:a3f60789546c7fe33fc29ffa8f4058ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac081f3a5e137db9c38ded8fa5b848b1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#ac081f3a5e137db9c38ded8fa5b848b1f">power_clock_enable_uart</a> (<a class="el" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a> uart)</td></tr>
+<tr class="memdesc:ac081f3a5e137db9c38ded8fa5b848b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable UART clocks.  <a href="#ac081f3a5e137db9c38ded8fa5b848b1f">More...</a><br /></td></tr>
+<tr class="separator:ac081f3a5e137db9c38ded8fa5b848b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90f514570e720d08fd10e09e04517726"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cc26xx__cc13xx__power_8h.html#a90f514570e720d08fd10e09e04517726">power_clock_disable_uart</a> (<a class="el" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a> uart)</td></tr>
+<tr class="memdesc:a90f514570e720d08fd10e09e04517726"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable UART clocks.  <a href="#a90f514570e720d08fd10e09e04517726">More...</a><br /></td></tr>
+<tr class="separator:a90f514570e720d08fd10e09e04517726"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="af7f31ccffddb279c67ac1f233d7fa42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f31ccffddb279c67ac1f233d7fa42c">&#9670;&nbsp;</a></span>power_domain_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Power domains. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af7f31ccffddb279c67ac1f233d7fa42ca52ca13ecbeff7dfcc60fd56a771c6886"></a>POWER_DOMAIN_PERIPHERALS&#160;</td><td class="fielddoc"><p>Peripherals domain. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af7f31ccffddb279c67ac1f233d7fa42cabf494dca97351cc8ab7123c6d8c4a14e"></a>POWER_DOMAIN_SERIAL&#160;</td><td class="fielddoc"><p>Serial domain. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af7f31ccffddb279c67ac1f233d7fa42cac1bb830d1d773ec09111103ab2bd816a"></a>POWER_DOMAIN_RFC&#160;</td><td class="fielddoc"><p>RF Core domain. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af7f31ccffddb279c67ac1f233d7fa42cafbd647b8d98850d629b7d1f8c51a4bcb"></a>POWER_DOMAIN_CPU&#160;</td><td class="fielddoc"><p>CPU domain. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="af7f31ccffddb279c67ac1f233d7fa42ca398d0838895328c7046289282ed82c64"></a>POWER_DOMAIN_VIMS&#160;</td><td class="fielddoc"><p>VIMS domain. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__power_8h_source.html#l00034">34</a> of file <a class="el" href="cc26xx__cc13xx__power_8h_source.html">cc26xx_cc13xx_power.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a90f514570e720d08fd10e09e04517726"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90f514570e720d08fd10e09e04517726">&#9670;&nbsp;</a></span>power_clock_disable_uart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void power_clock_disable_uart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a>&#160;</td>
+          <td class="paramname"><em>uart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable UART clocks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>The UART number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a075304f726c2454930f195346bccbc0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a075304f726c2454930f195346bccbc0a">&#9670;&nbsp;</a></span>power_clock_enable_gpt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void power_clock_enable_gpt </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>tim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable General Purpose <a class="el" href="structTimer.html" title="struct to get time references within mqtt paho ">Timer</a> clock. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">tim</td><td>The timer to enable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac081f3a5e137db9c38ded8fa5b848b1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac081f3a5e137db9c38ded8fa5b848b1f">&#9670;&nbsp;</a></span>power_clock_enable_uart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void power_clock_enable_uart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__drivers__periph__uart.html#ga83a92464bff5eb42f085e06e553d52b1">uart_t</a>&#160;</td>
+          <td class="paramname"><em>uart</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable UART clocks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uart</td><td>The UART number </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a782553f4f6759ccd587990a172fb3234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a782553f4f6759ccd587990a172fb3234">&#9670;&nbsp;</a></span>power_enable_domain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void power_enable_domain </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a>&#160;</td>
+          <td class="paramname"><em>domain</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable the specified power domain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>The domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab8a0eb7ad573c3e706b9ac60c615cfd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a0eb7ad573c3e706b9ac60c615cfd1">&#9670;&nbsp;</a></span>power_is_domain_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool power_is_domain_enabled </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="cc26xx__cc13xx__power_8h.html#af7f31ccffddb279c67ac1f233d7fa42c">power_domain_t</a>&#160;</td>
+          <td class="paramname"><em>domain</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Is power domain enabled? </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>The domain.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true Is enabled. </dd>
+<dd>
+false Is not enabled. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:23 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

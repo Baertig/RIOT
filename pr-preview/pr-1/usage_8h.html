@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/key/usage.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('usage_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">usage.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Key usage definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Key usage definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for usage.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usage_8h__incl.svg" width="174" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usage_8h__dep__incl.svg" width="2546" height="886"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="usage_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a7dddccdd1303176e87a4d20c87b589ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a7dddccdd1303176e87a4d20c87b589ed">PSA_KEY_USAGE_EXPORT</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000001)</td></tr>
+<tr class="memdesc:a7dddccdd1303176e87a4d20c87b589ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to export the key.  <a href="#a7dddccdd1303176e87a4d20c87b589ed">More...</a><br /></td></tr>
+<tr class="separator:a7dddccdd1303176e87a4d20c87b589ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4605d686020a6cb433c5d78bf7e91689"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a4605d686020a6cb433c5d78bf7e91689">PSA_KEY_USAGE_COPY</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000002)</td></tr>
+<tr class="memdesc:a4605d686020a6cb433c5d78bf7e91689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to copy the key.  <a href="#a4605d686020a6cb433c5d78bf7e91689">More...</a><br /></td></tr>
+<tr class="separator:a4605d686020a6cb433c5d78bf7e91689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0babcff38bd6afb43461197266fe073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#ad0babcff38bd6afb43461197266fe073">PSA_KEY_USAGE_CACHE</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000004)</td></tr>
+<tr class="memdesc:ad0babcff38bd6afb43461197266fe073"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission for the implementation to cache the key.  <a href="#ad0babcff38bd6afb43461197266fe073">More...</a><br /></td></tr>
+<tr class="separator:ad0babcff38bd6afb43461197266fe073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75153b296d045d529d97203a6a995dad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a75153b296d045d529d97203a6a995dad">PSA_KEY_USAGE_ENCRYPT</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000100)</td></tr>
+<tr class="memdesc:a75153b296d045d529d97203a6a995dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to encrypt a message with the key.  <a href="#a75153b296d045d529d97203a6a995dad">More...</a><br /></td></tr>
+<tr class="separator:a75153b296d045d529d97203a6a995dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f2d2e5983db1edde9f142ca9bf8e6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#ac3f2d2e5983db1edde9f142ca9bf8e6a">PSA_KEY_USAGE_DECRYPT</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000200)</td></tr>
+<tr class="memdesc:ac3f2d2e5983db1edde9f142ca9bf8e6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to decrypt a message with the key.  <a href="#ac3f2d2e5983db1edde9f142ca9bf8e6a">More...</a><br /></td></tr>
+<tr class="separator:ac3f2d2e5983db1edde9f142ca9bf8e6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552117ac92b79500cae87d4e65a85c54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a552117ac92b79500cae87d4e65a85c54">PSA_KEY_USAGE_SIGN_MESSAGE</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000400)</td></tr>
+<tr class="memdesc:a552117ac92b79500cae87d4e65a85c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to sign a message with the key.  <a href="#a552117ac92b79500cae87d4e65a85c54">More...</a><br /></td></tr>
+<tr class="separator:a552117ac92b79500cae87d4e65a85c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abea7ec4173f4f943110329ac2953b2b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#abea7ec4173f4f943110329ac2953b2b1">PSA_KEY_USAGE_VERIFY_MESSAGE</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000800)</td></tr>
+<tr class="memdesc:abea7ec4173f4f943110329ac2953b2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to verify a message signature with the key.  <a href="#abea7ec4173f4f943110329ac2953b2b1">More...</a><br /></td></tr>
+<tr class="separator:abea7ec4173f4f943110329ac2953b2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a181c73e00d9e95aa3a8366f26c4380b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a181c73e00d9e95aa3a8366f26c4380b6">PSA_KEY_USAGE_SIGN_HASH</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00001000)</td></tr>
+<tr class="memdesc:a181c73e00d9e95aa3a8366f26c4380b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to sign a message hash with the key.  <a href="#a181c73e00d9e95aa3a8366f26c4380b6">More...</a><br /></td></tr>
+<tr class="separator:a181c73e00d9e95aa3a8366f26c4380b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afadf131ef2182045e3483d03aadaa1bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#afadf131ef2182045e3483d03aadaa1bd">PSA_KEY_USAGE_VERIFY_HASH</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00002000)</td></tr>
+<tr class="memdesc:afadf131ef2182045e3483d03aadaa1bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to verify a message hash with the key.  <a href="#afadf131ef2182045e3483d03aadaa1bd">More...</a><br /></td></tr>
+<tr class="separator:afadf131ef2182045e3483d03aadaa1bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af19022acc5ef23cf12477f632b48a0b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#af19022acc5ef23cf12477f632b48a0b2">PSA_KEY_USAGE_DERIVE</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00004000)</td></tr>
+<tr class="memdesc:af19022acc5ef23cf12477f632b48a0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to derive other keys or produce a password hash from this key.  <a href="#af19022acc5ef23cf12477f632b48a0b2">More...</a><br /></td></tr>
+<tr class="separator:af19022acc5ef23cf12477f632b48a0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25aece70be2b79afbdb4180f7c4e68ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a25aece70be2b79afbdb4180f7c4e68ed">PSA_KEY_USAGE_VERIFY_DERIVATION</a>&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00008000)</td></tr>
+<tr class="memdesc:a25aece70be2b79afbdb4180f7c4e68ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permission to verify the result of a key derivation, including password hashing.  <a href="#a25aece70be2b79afbdb4180f7c4e68ed">More...</a><br /></td></tr>
+<tr class="separator:a25aece70be2b79afbdb4180f7c4e68ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb9de71337e0e98de843aa7f9b55f25"><td class="memItemLeft" align="right" valign="top"><a id="a7bb9de71337e0e98de843aa7f9b55f25"></a>
+typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a></td></tr>
+<tr class="memdesc:a7bb9de71337e0e98de843aa7f9b55f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoding of permitted usage on a key. <br /></td></tr>
+<tr class="separator:a7bb9de71337e0e98de843aa7f9b55f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ad0babcff38bd6afb43461197266fe073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0babcff38bd6afb43461197266fe073">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_CACHE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_CACHE&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000004)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission for the implementation to cache the key. </p>
+<p>This flag allows the implementation to make additional copies of the key material that are not in storage and not for the purpose of an ongoing operation. Applications can use it as a hint to keep the key around for repeated access.</p>
+<p>An application can request that cached key material is removed from memory by calling <a class="el" href="crypto_8h.html#a09670055d73cef15422ad1b92113c09f">psa_purge_key()</a>.</p>
+<p>The presence of this usage flag when creating a key is a hint:</p><ul>
+<li>An implementation is not required to cache keys that have this usage flag.</li>
+<li>An implementation must not report an error if it does not cache keys.</li>
+</ul>
+<p>If this usage flag is not present, the implementation must ensure key material is removed from memory as soon as it is not required for an operation or for maintenance of a volatile key.</p>
+<p>This flag must be preserved when reading back the attributes for all keys, regardless of key type or implementation behavior. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00089">89</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a4605d686020a6cb433c5d78bf7e91689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4605d686020a6cb433c5d78bf7e91689">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_COPY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_COPY&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000002)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to copy the key. </p>
+<p>This flag allows the use of <a class="el" href="crypto_8h.html#a78da90274bd8f8680017a4bb513803a1">psa_copy_key()</a> to make a copy of the key with the same policy or a more restrictive policy.</p>
+<p>For lifetimes for which the key is located in a secure element which enforce the non-exportability of keys, copying a key outside the secure element also requires the usage flag <a class="el" href="usage_8h.html#a7dddccdd1303176e87a4d20c87b589ed">PSA_KEY_USAGE_EXPORT</a>. Copying the key inside the secure element is permitted with just <a class="el" href="usage_8h.html#a4605d686020a6cb433c5d78bf7e91689">PSA_KEY_USAGE_COPY</a> if the secure element supports it. For keys with the lifetime <a class="el" href="lifetime_8h.html#a8b438870ba69489b685730d346455108">PSA_KEY_LIFETIME_VOLATILE</a> or <a class="el" href="lifetime_8h.html#a3713a01c5fcd5f7eae46ff22ceaf6d02">PSA_KEY_LIFETIME_PERSISTENT</a>, the usage flag <a class="el" href="usage_8h.html#a4605d686020a6cb433c5d78bf7e91689">PSA_KEY_USAGE_COPY</a> is sufficient to permit the copy. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00066">66</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="ac3f2d2e5983db1edde9f142ca9bf8e6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3f2d2e5983db1edde9f142ca9bf8e6a">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_DECRYPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_DECRYPT&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to decrypt a message with the key. </p>
+<p>This flag allows the key to be used for a symmetric decryption operation, for an AEAD decryption-and-verification operation, or for an asymmetric decryption operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used with the following APIs:</p><ul>
+<li><a class="el" href="crypto_8h.html#a31dd2b33667e1a4aebd4789d789c9c55">psa_cipher_decrypt()</a></li>
+<li><a class="el" href="crypto_8h.html#a9ea37677a0e9152ff712d2ea0f3096ad">psa_cipher_decrypt_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#abb268fefdd140c2e4d802b01b95a8e7a">psa_aead_decrypt()</a></li>
+<li><a class="el" href="crypto_8h.html#a31af4853ff1f9df38b589f6014e278b8">psa_aead_decrypt_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#a19a171d35473710c3b78744713f3fa64">psa_asymmetric_decrypt()</a></li>
+</ul>
+<p>For a key pair, this concerns the private key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00123">123</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="af19022acc5ef23cf12477f632b48a0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af19022acc5ef23cf12477f632b48a0b2">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_DERIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_DERIVE&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00004000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to derive other keys or produce a password hash from this key. </p>
+<p>This flag allows the key to be used for a key derivation operation or for a key agreement operation, if otherwise permitted by the key’s type and policy.</p>
+<p>This flag must be present on keys used with the following APIs:</p><ul>
+<li><a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a></li>
+<li><a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a></li>
+</ul>
+<p>If this flag is present on all keys used in calls to <a class="el" href="crypto_8h.html#aa936b9b1f6264beb6e23afd5f87bcccc">psa_key_derivation_input_key()</a> for a key derivation operation, then it permits calling <a class="el" href="crypto_8h.html#a06b7eb34a2fa88965f68e3d023fa12b9">psa_key_derivation_output_bytes()</a> or <a class="el" href="crypto_8h.html#ad286b675f3f8b46fa6cab620de6bead3">psa_key_derivation_output_key()</a> at the end of the operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00202">202</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a75153b296d045d529d97203a6a995dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75153b296d045d529d97203a6a995dad">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_ENCRYPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_ENCRYPT&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to encrypt a message with the key. </p>
+<p>This flag allows the key to be used for a symmetric encryption operation, for an AEAD encryption-and-authentication operation, or for an asymmetric encryption operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used with the following APIs:</p><ul>
+<li><a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a></li>
+<li><a class="el" href="crypto_8h.html#ac696b9ac87eac90d25e08e34d040ff72">psa_cipher_encrypt_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#a174ed4f8e3f3db72670968050d8db6df">psa_aead_encrypt()</a></li>
+<li><a class="el" href="crypto_8h.html#a5497da908443e971fdd60248ad07bdae">psa_aead_encrypt_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#a29f79a5294e91c320ba69c1956ccf506">psa_asymmetric_encrypt()</a></li>
+</ul>
+<p>For a key pair, this concerns the public key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00106">106</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a7dddccdd1303176e87a4d20c87b589ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dddccdd1303176e87a4d20c87b589ed">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_EXPORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_EXPORT&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000001)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to export the key. </p>
+<p>This flag allows the use of <a class="el" href="crypto_8h.html#a5f2f7c851186c5d1d928be0b6020225c">psa_export_key()</a> to export a key from the cryptoprocessor. A public key or the public part of a key pair can always be exported regardless of the value of this permission flag.</p>
+<p>This flag can also be required to copy a key using <a class="el" href="crypto_8h.html#a78da90274bd8f8680017a4bb513803a1">psa_copy_key()</a> outside of a secure element. See also <a class="el" href="usage_8h.html#a4605d686020a6cb433c5d78bf7e91689">PSA_KEY_USAGE_COPY</a>.</p>
+<p>If a key does not have export permission, implementations must not allow the key to be exported in plain form from the cryptoprocessor, whether through <a class="el" href="crypto_8h.html#a5f2f7c851186c5d1d928be0b6020225c">psa_export_key()</a> or through a proprietary interface. The key might still be exportable in a wrapped form, i.e. in a form where it is encrypted by another key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00051">51</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a181c73e00d9e95aa3a8366f26c4380b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181c73e00d9e95aa3a8366f26c4380b6">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_SIGN_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_SIGN_HASH&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00001000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to sign a message hash with the key. </p>
+<p>This flag allows the key to be used to sign a message hash as part of an asymmetric signature operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used when calling <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a>.</p>
+<p>This flag automatically sets <a class="el" href="usage_8h.html#a552117ac92b79500cae87d4e65a85c54">PSA_KEY_USAGE_SIGN_MESSAGE</a> : if an application sets the flag <a class="el" href="usage_8h.html#a181c73e00d9e95aa3a8366f26c4380b6">PSA_KEY_USAGE_SIGN_HASH</a> when creating a key, then the key always has the permissions conveyed by <a class="el" href="usage_8h.html#a552117ac92b79500cae87d4e65a85c54">PSA_KEY_USAGE_SIGN_MESSAGE</a>, and the flag <a class="el" href="usage_8h.html#a552117ac92b79500cae87d4e65a85c54">PSA_KEY_USAGE_SIGN_MESSAGE</a> will also be present when the application queries the usage flags of the key.</p>
+<p>For a key pair, this concerns the private key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00168">168</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a552117ac92b79500cae87d4e65a85c54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552117ac92b79500cae87d4e65a85c54">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_SIGN_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_SIGN_MESSAGE&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to sign a message with the key. </p>
+<p>This flag allows the key to be used for a MAC calculation operation or for an asymmetric message signature operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used with the following APIs:</p><ul>
+<li><a class="el" href="crypto_8h.html#afb4c0e338fdc192ef8d293aa545d94cb">psa_mac_compute()</a></li>
+<li><a class="el" href="crypto_8h.html#a6420e166df3967edf60042e589facd04">psa_mac_sign_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a></li>
+</ul>
+<p>For a key pair, this concerns the private key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00137">137</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="a25aece70be2b79afbdb4180f7c4e68ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25aece70be2b79afbdb4180f7c4e68ed">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_VERIFY_DERIVATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_VERIFY_DERIVATION&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00008000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to verify the result of a key derivation, including password hashing. </p>
+<p>This flag allows the key to be used in a key derivation operation, if otherwise permitted by the key’s type and policy.</p>
+<p>This flag must be present on keys used with <a class="el" href="crypto_8h.html#ac041714e34a94742e8ee006ac7dfea5a">psa_key_derivation_verify_key()</a>.</p>
+<p>If this flag is present on all keys used in calls to <a class="el" href="crypto_8h.html#aa936b9b1f6264beb6e23afd5f87bcccc">psa_key_derivation_input_key()</a> for a key derivation operation, then it permits calling <a class="el" href="crypto_8h.html#af01520beb7ba932143ffe733b0795b08">psa_key_derivation_verify_bytes()</a> or <a class="el" href="crypto_8h.html#ac041714e34a94742e8ee006ac7dfea5a">psa_key_derivation_verify_key()</a> at the end of the operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00217">217</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="afadf131ef2182045e3483d03aadaa1bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afadf131ef2182045e3483d03aadaa1bd">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_VERIFY_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_VERIFY_HASH&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00002000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to verify a message hash with the key. </p>
+<p>This flag allows the key to be used to verify a message hash as part of an asymmetric signature verification operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used when calling <a class="el" href="crypto_8h.html#a01b4dea9fdb090219123f5de26bb6716">psa_verify_hash()</a>.</p>
+<p>This flag automatically sets <a class="el" href="usage_8h.html#abea7ec4173f4f943110329ac2953b2b1">PSA_KEY_USAGE_VERIFY_MESSAGE</a> : if an application sets the flag <a class="el" href="usage_8h.html#afadf131ef2182045e3483d03aadaa1bd">PSA_KEY_USAGE_VERIFY_HASH</a> when creating a key, then the key always has the permissions conveyed by <a class="el" href="usage_8h.html#abea7ec4173f4f943110329ac2953b2b1">PSA_KEY_USAGE_VERIFY_MESSAGE</a>, and the flag <a class="el" href="usage_8h.html#abea7ec4173f4f943110329ac2953b2b1">PSA_KEY_USAGE_VERIFY_MESSAGE</a> will also be present when the application queries the usage flags of the key.</p>
+<p>For a key pair, this concerns the public key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00185">185</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+<a id="abea7ec4173f4f943110329ac2953b2b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abea7ec4173f4f943110329ac2953b2b1">&#9670;&nbsp;</a></span>PSA_KEY_USAGE_VERIFY_MESSAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_USAGE_VERIFY_MESSAGE&#160;&#160;&#160;((<a class="el" href="usage_8h.html#a7bb9de71337e0e98de843aa7f9b55f25">psa_key_usage_t</a>)0x00000800)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permission to verify a message signature with the key. </p>
+<p>This flag allows the key to be used for a MAC verification operation or for an asymmetric message signature verification operation, if otherwise permitted by the key’s type and policy. The flag must be present on keys used with the following APIs:</p><ul>
+<li><a class="el" href="crypto_8h.html#aa5542f4a1c590d76c329125d571cf494">psa_mac_verify()</a></li>
+<li><a class="el" href="crypto_8h.html#a715679bbf633be958fa447216127eaf8">psa_mac_verify_setup()</a></li>
+<li><a class="el" href="crypto_8h.html#a8112e02cd89cc652acb2f45074a7464e">psa_verify_message()</a></li>
+</ul>
+<p>For a key pair, this concerns the public key. </p>
+
+<p class="definition">Definition at line <a class="el" href="usage_8h_source.html#l00151">151</a> of file <a class="el" href="usage_8h_source.html">usage.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

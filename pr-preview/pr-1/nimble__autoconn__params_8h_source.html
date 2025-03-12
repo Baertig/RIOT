@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/nimble/autoconn/include/nimble_autoconn_params.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nimble__autoconn__params_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">nimble_autoconn_params.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="nimble__autoconn__params_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2019 Freie Universität Berlin</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PARAMS_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PARAMS_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PERIOD_SCAN_MS</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PERIOD_SCAN_MS      (2000U)         </span><span class="comment">/* 2s */</span><span class="preprocessor"></span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PERIOD_ADV_MS</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PERIOD_ADV_MS       (10000U)        </span><span class="comment">/* 10s */</span><span class="preprocessor"></span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PERIOD_JITTER_MS</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PERIOD_JITTER_MS    (5000U)         </span><span class="comment">/* 0-5s */</span><span class="preprocessor"></span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_ADV_ITVL_MS</span></div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_ADV_ITVL_MS         (100U)          </span><span class="comment">/* 100ms */</span><span class="preprocessor"></span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_SCAN_ITVL_MS</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_SCAN_ITVL_MS        (1500U)         </span><span class="comment">/* 1.5s */</span><span class="preprocessor"></span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_SCAN_WIN_MS</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_SCAN_WIN_MS         (110U)          </span><span class="comment">/* 110ms */</span><span class="preprocessor"></span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_CONN_TIMEOUT_MS</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_CONN_TIMEOUT_MS     (3 * NIMBLE_AUTOCONN_SCAN_WIN_MS)</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_CONN_ITVL_MIN_MS</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_CONN_ITVL_MIN_MS    75U             </span><span class="comment">/* 75ms */</span><span class="preprocessor"></span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_CONN_ITVL_MAX_MS</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_CONN_ITVL_MAX_MS    75U             </span><span class="comment">/* 75ms */</span><span class="preprocessor"></span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_CONN_LATENCY</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_CONN_LATENCY        (0)</span></div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_CONN_SVTO_MS</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_CONN_SVTO_MS        (2500U)         </span><span class="comment">/* 2.5s */</span><span class="preprocessor"></span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PHY_MODE</span></div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="nimble__autoconn__params_8h.html#a632f1680c25b1fb12ba1b8147ac73602">   71</a></span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PHY_MODE            NIMBLE_PHY_1M</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_NODE_ID</span></div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_NODE_ID             &quot;RIOT-autoconn&quot;</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifndef NIMBLE_AUTOCONN_PARAMS</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#define NIMBLE_AUTOCONN_PARAMS                           \</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    { .period_scan_ms   = NIMBLE_AUTOCONN_PERIOD_SCAN_MS,   \</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">      .period_adv_ms    = NIMBLE_AUTOCONN_PERIOD_ADV_MS,    \</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">      .period_jitter_ms = NIMBLE_AUTOCONN_PERIOD_JITTER_MS, \</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">      .adv_itvl_ms      = NIMBLE_AUTOCONN_ADV_ITVL_MS,      \</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">      .scan_itvl_ms     = NIMBLE_AUTOCONN_SCAN_ITVL_MS,     \</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">      .scan_win_ms      = NIMBLE_AUTOCONN_SCAN_WIN_MS,      \</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">      .conn_timeout_ms  = NIMBLE_AUTOCONN_CONN_TIMEOUT_MS,  \</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">      .conn_itvl_min_ms = NIMBLE_AUTOCONN_CONN_ITVL_MIN_MS, \</span></div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">      .conn_itvl_max_ms = NIMBLE_AUTOCONN_CONN_ITVL_MAX_MS, \</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">      .conn_latency     = NIMBLE_AUTOCONN_CONN_LATENCY,     \</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">      .conn_super_to_ms = NIMBLE_AUTOCONN_CONN_SVTO_MS,     \</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">      .phy_mode         = NIMBLE_AUTOCONN_PHY_MODE,         \</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">      .node_id          = NIMBLE_AUTOCONN_NODE_ID, }</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="nimble__autoconn__params_8h.html#a43eb0fd0166d2c1ba1d2270bdbca2e24">   99</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a> <a class="code" href="nimble__autoconn__params_8h.html#a43eb0fd0166d2c1ba1d2270bdbca2e24">nimble_autoconn_params</a> =</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    NIMBLE_AUTOCONN_PARAMS;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NIMBLE_AUTOCONN_PARAMS_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="ttc" id="structnimble__autoconn__params__t_html"><div class="ttname"><a href="structnimble__autoconn__params__t.html">nimble_autoconn_params_t</a></div><div class="ttdoc">Set of configuration parameters needed to run autoconn. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__autoconn_8h_source.html#l00132">nimble_autoconn.h:132</a></div></div>
+<div class="ttc" id="nimble__autoconn__params_8h_html_a43eb0fd0166d2c1ba1d2270bdbca2e24"><div class="ttname"><a href="nimble__autoconn__params_8h.html#a43eb0fd0166d2c1ba1d2270bdbca2e24">nimble_autoconn_params</a></div><div class="ttdeci">static const nimble_autoconn_params_t nimble_autoconn_params</div><div class="ttdoc">nimble_netif_autoconn configuration </div><div class="ttdef"><b>Definition:</b> <a href="nimble__autoconn__params_8h_source.html#l00099">nimble_autoconn_params.h:99</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

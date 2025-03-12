@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_defs_v.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>VBAT_ADC
+: <a class="el" href="boards_2common_2weact-f4x1cx_2include_2periph__conf_8h.html#a61ee60f0de31df7084ccd61829789d7e">periph_conf.h</a>
+</li>
+<li>VCDIFF_MTD_INIT
+: <a class="el" href="vcdiff__mtd_8h.html#a8d9d7e05287eac5a8782c0c1d54607c7">vcdiff_mtd.h</a>
+</li>
+<li>VCDIFF_VFS_INIT
+: <a class="el" href="vcdiff__vfs_8h.html#ae2490a6bdffae10c09faf758dd1b9045">vcdiff_vfs.h</a>
+</li>
+<li>VCDIFF_VFS_INIT_MAX_SIZE
+: <a class="el" href="vcdiff__vfs_8h.html#ae8ad51d272794a06bb711a0523fe7372">vcdiff_vfs.h</a>
+</li>
+<li>VCNL40X0_ADDR
+: <a class="el" href="vcnl40x0__internals_8h.html#a81ce57d1b487170ebf999dc990a9d1dd">vcnl40x0_internals.h</a>
+</li>
+<li>VCNL40X0_PRODUCT_ID
+: <a class="el" href="vcnl40x0__internals_8h.html#a87457fb022ed942e3a81edaf0edceef2">vcnl40x0_internals.h</a>
+</li>
+<li>VCTL1_PIN
+: <a class="el" href="common_2particle-mesh_2include_2board_8h.html#aba57eedc6a46a6b28f0a3f1410854bb9">board.h</a>
+</li>
+<li>VCTL2_PIN
+: <a class="el" href="common_2particle-mesh_2include_2board_8h.html#a2706d4302393e59143e4ea6d90df6f6d">board.h</a>
+</li>
+<li>VDD
+: <a class="el" href="arduino-nano-33-ble-sense_2include_2board_8h.html#aca282936bcfbb85c24a95855c0dffd6f">board.h</a>
+</li>
+<li>VDD_PWR_CTRL_PIN
+: <a class="el" href="thingy52_2include_2board_8h.html#a4d6a0a3bddb22c9a153a38cde59d8552">board.h</a>
+</li>
+<li>VFS_ANY_FD
+: <a class="el" href="group__sys__vfs.html#ga2033ea53eb6551b0de53412ab38d0f41">vfs.h</a>
+</li>
+<li>VFS_AUTO_MOUNT
+: <a class="el" href="group__sys__vfs.html#ga74c1713a82cbe6a385e552ed6427f0bb">vfs.h</a>
+</li>
+<li>VFS_DEFAULT_DATA
+: <a class="el" href="vfs__default_8h.html#a8216c827a1aedb0d69c7be433396d793">vfs_default.h</a>
+</li>
+<li>VFS_DEFAULT_NVM
+: <a class="el" href="vfs__default_8h.html#ae84e6f99c43a7d29b0cab74427dca2ef">vfs_default.h</a>
+</li>
+<li>VFS_DEFAULT_SD
+: <a class="el" href="vfs__default_8h.html#a385645b2b933f1e4f720b6ccdf6d4884">vfs_default.h</a>
+</li>
+<li>VFS_DIR_BUFFER_SIZE
+: <a class="el" href="group__sys__vfs.html#ga0e3cb874e1e5f6a49f33151d89f0aaef">vfs.h</a>
+</li>
+<li>VFS_FILE_BUFFER_SIZE
+: <a class="el" href="group__sys__vfs.html#ga6d9a9dcf98b4d4e4372cc476b8fe8eba">vfs.h</a>
+</li>
+<li>VFS_FS_FLAG_WANT_ABS_PATH
+: <a class="el" href="group__sys__vfs.html#ga2116058f96366fca25adf0065ebef013">vfs.h</a>
+</li>
+<li>VFS_MAX_OPEN_FILES
+: <a class="el" href="group__sys__vfs.html#ga0dc4e529ed77b4432c7bd295bd89fefc">vfs.h</a>
+</li>
+<li>VFS_MTD
+: <a class="el" href="group__sys__vfs.html#ga6fdbbbfc8a5870cf706458d5c8419f9a">vfs.h</a>
+</li>
+<li>VFS_NAME_MAX
+: <a class="el" href="group__sys__vfs.html#ga818372246f79e5e859a10eb24517a3df">vfs.h</a>
+</li>
+<li>VIMS
+: <a class="el" href="cc26xx__cc13xx__vims_8h.html#a2097ced0314f7cdd8a3ce52603bd32bd">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>VIMS_BASE
+: <a class="el" href="group__cpu__specific__peripheral__memory__map.html#gad43ff60bcb712a7544e8f4ad483a5649">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>VIMS_CTL_STATS_CLR
+: <a class="el" href="cc26xx__cc13xx__vims_8h.html#a70c663efb14c21c81ce802976c3b41dc">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>VL6180X_ALS_DEVICE_RDY
+: <a class="el" href="vl6180x__regs_8h.html#a34b347167246d27f75d29478771c7a92">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ALS_ERR_CODE
+: <a class="el" href="vl6180x__regs_8h.html#addbad83843dfef72c1a14f29beaaceea">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ALS_ERR_CODE_S
+: <a class="el" href="vl6180x__regs_8h.html#a76cfdfc261c6c258db952aa8c08eaa3e">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_LIGHT
+: <a class="el" href="vl6180x__regs_8h.html#a7e250adce827d6b34cf5198f070f8929">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ALS_MODE_CONT
+: <a class="el" href="vl6180x__regs_8h.html#acad5342b4ff9402413b92b0e8f1c06b5">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ALS_START_STOP
+: <a class="el" href="vl6180x__regs_8h.html#a6432eef53bf57ffddf7edb1ae4086e21">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_CLR_ALL_INT
+: <a class="el" href="vl6180x__regs_8h.html#a4bb93669b54edd8b9487215a4777c73b">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_CLR_ALS_INT
+: <a class="el" href="vl6180x__regs_8h.html#a7eb642687751e15a11cb1c365be8b8f4">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_CLR_ERR_INT
+: <a class="el" href="vl6180x__regs_8h.html#ac80ddd72a6a991355df47ecadf6faee8">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_CLR_RNG_INT
+: <a class="el" href="vl6180x__regs_8h.html#a6a4d90fc352d5dfd5f64c20bceb37245">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ERR_INT
+: <a class="el" href="vl6180x__regs_8h.html#afa84c4a7abb4a920a3785f7430bfebc5">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_ERR_INT_S
+: <a class="el" href="vl6180x__regs_8h.html#abdc45389d98e50c35eed856677ab5010">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_FUNC
+: <a class="el" href="vl6180x__regs_8h.html#a69444158b6f166ea2273fb6f42b1f3d5">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_FUNC_OFF
+: <a class="el" href="vl6180x__regs_8h.html#ac1a5de82056a15b6c84afa767d50acb3">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_FUNC_ON
+: <a class="el" href="vl6180x__regs_8h.html#a3e40ea590b62316336d2becab88951ff">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_POL
+: <a class="el" href="vl6180x__regs_8h.html#a26e13148a5ee5c959bf0f65cf0e4db0d">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_POL_HIGH
+: <a class="el" href="vl6180x__regs_8h.html#a005aff5551a43f4a07735ec8b09175ea">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_POL_LOW
+: <a class="el" href="vl6180x__regs_8h.html#aef3537fbd966b456c574f63d15f87a54">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_SHUT
+: <a class="el" href="vl6180x__regs_8h.html#af96529531679b9f608da2c7a3ccfab7f">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_SHUT_OFF
+: <a class="el" href="vl6180x__regs_8h.html#aa4acf643001a33e5888d74a4863b4200">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO0_SHUT_ON
+: <a class="el" href="vl6180x__regs_8h.html#aa0f67457bdd5bbb262a165c73f1a6e86">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_FUNC
+: <a class="el" href="vl6180x__regs_8h.html#aa79f4d5cd814ff12cd3629438dcf80ba">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_FUNC_OFF
+: <a class="el" href="vl6180x__regs_8h.html#adcbb380d1302d623a5297dbad9ac53cd">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_FUNC_ON
+: <a class="el" href="vl6180x__regs_8h.html#a66fe3196765868c0ba8700cb46322f25">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_POL
+: <a class="el" href="vl6180x__regs_8h.html#a1c3a069934e786133f73537d87328b48">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_POL_HIGH
+: <a class="el" href="vl6180x__regs_8h.html#a1f4bdca827221ff1f1d7303195b8d84f">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_GPIO1_POL_LOW
+: <a class="el" href="vl6180x__regs_8h.html#aeace332f4801d4b891efdeb530b52544">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_I2C_ADDR
+: <a class="el" href="group__drivers__vl6180x.html#ga073f17f7fd9eaee55465373cd11c1eb7">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_ALS
+: <a class="el" href="vl6180x__regs_8h.html#a745b9520ee256719a4c9ccda5b74191c">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ALS_DRDY
+: <a class="el" href="vl6180x__regs_8h.html#a5ea33bc628c5859f86d251afc740da53">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ALS_HIGH
+: <a class="el" href="vl6180x__regs_8h.html#af977df9ade7b00c1c9fa05ba9baf3a46">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ALS_LOW
+: <a class="el" href="vl6180x__regs_8h.html#aa546c3e4f9452255b2842f10e43fbba6">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ALS_OUT
+: <a class="el" href="vl6180x__regs_8h.html#a5bcd8428e676f6cd8bc76b44628437d9">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ALS_S
+: <a class="el" href="vl6180x__regs_8h.html#abc1d350900da2c81600b58d9d12d2452">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ERR_LASER
+: <a class="el" href="vl6180x__regs_8h.html#abaf834f4fa4d5a66258c323fe493a915">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_ERR_PLL
+: <a class="el" href="vl6180x__regs_8h.html#aa840c5f488e3c264e81647a3abc1b0a0">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG
+: <a class="el" href="vl6180x__regs_8h.html#af179b46ff65eadde98f248b3b5efa09e">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG_DRDY
+: <a class="el" href="vl6180x__regs_8h.html#a537d47991434f146a5f2c6a56f8686c4">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG_HIGH
+: <a class="el" href="vl6180x__regs_8h.html#a83ad0cb67adc1b4182b8963c8594b99b">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG_LOW
+: <a class="el" href="vl6180x__regs_8h.html#a8ff967fa1f8891b1d3d3105215b46b36">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG_OUT
+: <a class="el" href="vl6180x__regs_8h.html#a3bec5197e55396aad4f639dc1c4a543e">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_INT_RNG_S
+: <a class="el" href="vl6180x__regs_8h.html#a70ae55cf0176dde7c9b7ac787bd89e6f">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_MODEL_ID
+: <a class="el" href="vl6180x__regs_8h.html#a617091b249dfc771845d575acdcf94b1">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_PARAM_ADDR
+: <a class="el" href="vl6180x__params_8h.html#a363fe8d70c5adf432ba644346b6c5e66">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_ALS
+: <a class="el" href="vl6180x__params_8h.html#a07ed1b7561d7ecbd6d7cef234ddf996b">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_DEV
+: <a class="el" href="vl6180x__params_8h.html#a5a200a6e333199ca974603fc2bdfe006">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_INT
+: <a class="el" href="vl6180x__params_8h.html#ad1c2036c6ee4d47dc8e0538f8a6d1db6">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_INT_ALS_CFG
+: <a class="el" href="vl6180x__params_8h.html#abb09c58bb611a3ad3fd0fbaa07a7ed7d">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_INT_PIN
+: <a class="el" href="vl6180x__params_8h.html#a06800eff0d16061477e3bf7eea64d67c">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_INT_RNG_CFG
+: <a class="el" href="vl6180x__params_8h.html#a1147b3dee3e1d92c392d8dd67e7c0afc">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_RANGE
+: <a class="el" href="vl6180x__params_8h.html#add92009b5d4f001d233833b147530fba">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_SHUTDOWN
+: <a class="el" href="vl6180x__params_8h.html#ac62ddecefdd75c0ee778cc9ee5b40665">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAM_SHUTDOWN_PIN
+: <a class="el" href="vl6180x__params_8h.html#aecb6cd928b087f66bdcc861099819308">vl6180x_params.h</a>
+</li>
+<li>VL6180X_PARAMS
+: <a class="el" href="vl6180x__params_8h.html#ab7e70a494bcf6403298563094179549e">vl6180x_params.h</a>
+</li>
+<li>VL6180X_REG_ALS_GAIN
+: <a class="el" href="vl6180x__regs_8h.html#ac633ed878c54132ad75121d82806d6a2">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_INT_TIME
+: <a class="el" href="vl6180x__regs_8h.html#a9c4cfe485b3fcb451c0680a754a406fc">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_PERIOD
+: <a class="el" href="vl6180x__regs_8h.html#a3e012ffa140dc7336a157a7b769f500a">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_START
+: <a class="el" href="vl6180x__regs_8h.html#a11543f021a8d680bc3695454a5e5a0f4">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_STATUS
+: <a class="el" href="vl6180x__regs_8h.html#a69e41d5d3cd8e99b9d5a0aea901f6ec7">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_THRESH_HI
+: <a class="el" href="vl6180x__regs_8h.html#a6f56996c51c6888d695390dc267ece01">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_THRESH_LO
+: <a class="el" href="vl6180x__regs_8h.html#acf33dd82c66352dda7960dc8e654aaf2">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_ALS_VALUE
+: <a class="el" href="vl6180x__regs_8h.html#ad45d069dc41ad8ce77dc59512c7615f1">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_FRESH_RST
+: <a class="el" href="vl6180x__regs_8h.html#acf60123f638f63654958c580a5e66ed1">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_GPIO0_MODE
+: <a class="el" href="vl6180x__regs_8h.html#aae49b0008316de9738ecb30fdf183c8c">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_GPIO1_MODE
+: <a class="el" href="vl6180x__regs_8h.html#a82aeef280106a7eb4386820e83e24241">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_HISTORY_CTRL
+: <a class="el" href="vl6180x__regs_8h.html#a6ce5369ed8c74d13913cb7520f69cdaa">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_I2C_ADDR
+: <a class="el" href="vl6180x__regs_8h.html#adcf1f797f5da11a39932e12c412108c0">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_INT_CLR
+: <a class="el" href="vl6180x__regs_8h.html#a8554e5d340a89124b5192694e865c83b">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_INT_CONFIG
+: <a class="el" href="vl6180x__regs_8h.html#ab6ae761c996572245eb8f852c0a5d09e">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_INT_STATUS
+: <a class="el" href="vl6180x__regs_8h.html#a31eb39dbf792cec939da183ffe84cee1">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_INTERLEAVED_MODE
+: <a class="el" href="vl6180x__regs_8h.html#ab9d601c5f233b38282c2c5c0863da794">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_MODEL_ID
+: <a class="el" href="vl6180x__regs_8h.html#af7f4af5bab2982596496611fa43da85c">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_MODEL_REV_MAJOR
+: <a class="el" href="vl6180x__regs_8h.html#a48bc5f5f90fc19b6d870c3c6031e602a">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_MODEL_REV_MINOR
+: <a class="el" href="vl6180x__regs_8h.html#a95d8233d653029a0c158687ce3c3558a">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_MODULE_REV_MAJOR
+: <a class="el" href="vl6180x__regs_8h.html#ac58aa4fcf94d7a0077c5a2f03e4ae7a6">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_MODULE_REV_MINOR
+: <a class="el" href="vl6180x__regs_8h.html#a2f96a1659c8b2b9a033cc2d3737f440d">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_MAX_TIME
+: <a class="el" href="vl6180x__regs_8h.html#aa0cd3a8b24092465e5f392f01f14c534">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_PERIOD
+: <a class="el" href="vl6180x__regs_8h.html#a5e1ab1e1b642e7a57ddb8048472fc6de">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_START
+: <a class="el" href="vl6180x__regs_8h.html#a34b7e429b6e04a84b18e4b03436f3c14">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_STATUS
+: <a class="el" href="vl6180x__regs_8h.html#a2cf1afab13c4f6eea49d7f2e5518d656">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_THRESH_HI
+: <a class="el" href="vl6180x__regs_8h.html#ac5b2622bc9828aa8671e6004e0a0616b">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_THRESH_LO
+: <a class="el" href="vl6180x__regs_8h.html#aacc87e7ebc28059d84dc8d502abf231c">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_REG_RNG_VALUE
+: <a class="el" href="vl6180x__regs_8h.html#a24367b61e62e8b10e0c09fc0401d8310">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_RNG_DEVICE_RDY
+: <a class="el" href="vl6180x__regs_8h.html#a8284dfdc8b929e234c28dd956596896f">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_RNG_ERR_CODE
+: <a class="el" href="vl6180x__regs_8h.html#ad4ffdeb757c64438ee39c948b2798ebe">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_RNG_ERR_CODE_S
+: <a class="el" href="vl6180x__regs_8h.html#a5edae3d48c27fa922756a103ce1a3e2d">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_RNG_MODE_CONT
+: <a class="el" href="vl6180x__regs_8h.html#a061fc0fa4d43fb42d5c09476e667731a">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_RNG_START_STOP
+: <a class="el" href="vl6180x__regs_8h.html#a0cafcdb9d7cd0164c8e015d88c0e7cd8">vl6180x_regs.h</a>
+</li>
+<li>VL6180X_SAUL_INFO
+: <a class="el" href="vl6180x__params_8h.html#ab8a2cd25cd752a6edb5bc0afe6b55ba6">vl6180x_params.h</a>
+</li>
+<li>VREFBUF_ENABLE
+: <a class="el" href="boards_2stm32l496g-disco_2include_2periph__conf_8h.html#aa295897010a32a9da1741d89400b2799">periph_conf.h</a>
+</li>
+<li>VREFINT_ADC
+: <a class="el" href="boards_2stm32l496g-disco_2include_2periph__conf_8h.html#a1252cf8cdb111fd7ea384d00fec19b24">periph_conf.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

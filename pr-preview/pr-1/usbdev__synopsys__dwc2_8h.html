@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/usbdev_synopsys_dwc2.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('usbdev__synopsys__dwc2_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">usbdev_synopsys_dwc2.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__periph.html">Peripheral Driver Interface</a> &raquo; <a class="el" href="group__drivers__periph__usbdev.html">usbdev - USB Device Driver API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Low level USB FS/HS driver definitions for MCUs with Synopsys DWC2 IP core.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low level USB FS/HS driver definitions for MCUs with Synopsys DWC2 IP core. </p>
+<dl class="section author"><dt>Author</dt><dd>Koen Zandberg <a href="#" onclick="location.href='mai'+'lto:'+'koe'+'n@'+'ber'+'gz'+'and'+'.n'+'et'; return false;">koen@<span style="display: none;">.nosp@m.</span>berg<span style="display: none;">.nosp@m.</span>zand.<span style="display: none;">.nosp@m.</span>net</a> </dd>
+<dd>
+Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="usbdev__synopsys__dwc2_8h_source.html">usbdev_synopsys_dwc2.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for usbdev_synopsys_dwc2.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usbdev__synopsys__dwc2_8h__incl.svg" width="176" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="usbdev__synopsys__dwc2_8h__dep__incl.svg" width="5599" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="usbdev__synopsys__dwc2_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdwc2__usb__otg__fshs__config__t.html">dwc2_usb_otg_fshs_config_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB OTG configuration.  <a href="structdwc2__usb__otg__fshs__config__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ae6fef7b8a1b9e61a3d32a9a757eceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbdev__synopsys__dwc2_8h.html#a6ae6fef7b8a1b9e61a3d32a9a757eceb">USBDEV_CPU_SET_ADDR_AFTER_STATUS</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:a6ae6fef7b8a1b9e61a3d32a9a757eceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB OTG peripheral requirement for setting the device address.  <a href="#a6ae6fef7b8a1b9e61a3d32a9a757eceb">More...</a><br /></td></tr>
+<tr class="separator:a6ae6fef7b8a1b9e61a3d32a9a757eceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeef682094b432a6d71252c6e2321e7d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbdev__synopsys__dwc2_8h.html#aeeef682094b432a6d71252c6e2321e7d">dwc2_usb_otg_fshs_type_t</a> { <a class="el" href="usbdev__synopsys__dwc2_8h.html#aeeef682094b432a6d71252c6e2321e7da995d0c59cba6c54b429dab6f1267cb3c">DWC2_USB_OTG_FS</a> = 0, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#aeeef682094b432a6d71252c6e2321e7dae0d908e494bec002f81d95f3a7e6a248">DWC2_USB_OTG_HS</a> = 1
+ }</td></tr>
+<tr class="memdesc:aeeef682094b432a6d71252c6e2321e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">USB OTG peripheral type.  <a href="usbdev__synopsys__dwc2_8h.html#aeeef682094b432a6d71252c6e2321e7d">More...</a><br /></td></tr>
+<tr class="separator:aeeef682094b432a6d71252c6e2321e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae80a0d22f4afbcca8ed3a82f768038db"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <a class="el" href="usbdev__synopsys__dwc2_8h.html#ae80a0d22f4afbcca8ed3a82f768038dba6f784dcf83058d9ffc1560ac30422a82">DWC2_USB_OTG_DSPD_HS</a> = 0, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#ae80a0d22f4afbcca8ed3a82f768038dbaa57a5af1696cba674fdfcc8e9e32550f">DWC2_USB_OTG_DSPD_FS_PHY_HS</a> = 1, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#ae80a0d22f4afbcca8ed3a82f768038dba7d9064123c0201905da60252efba50ba">DWC2_USB_OTG_DSPD_LS</a> = 2, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#ae80a0d22f4afbcca8ed3a82f768038dbaa1b8e2a77adbf63c1f9fc5be5a766c2e">DWC2_USB_OTG_DSPD_FS</a> = 3
+ }</td></tr>
+<tr class="memdesc:ae80a0d22f4afbcca8ed3a82f768038db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device speed used.  <a href="usbdev__synopsys__dwc2_8h.html#ae80a0d22f4afbcca8ed3a82f768038db">More...</a><br /></td></tr>
+<tr class="separator:ae80a0d22f4afbcca8ed3a82f768038db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94436ee0faeeaaf728bd0880667d690e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690e">dwc2_usb_otg_fshs_phy_t</a> { <a class="el" href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690ead2eb1f5bbf3cc7402030d1cd05a82932">DWC2_USB_OTG_PHY_BUILTIN</a>, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690ea4990a0ecd039c7b6aa586e2c7304adb8">DWC2_USB_OTG_PHY_ULPI</a>, 
+<a class="el" href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690ea62452e90242f9b4870c9b84839343fdb">DWC2_USB_OTG_PHY_UTMI</a>
+ }</td></tr>
+<tr class="memdesc:a94436ee0faeeaaf728bd0880667d690e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of USB OTG peripheral PHY.  <a href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690e">More...</a><br /></td></tr>
+<tr class="separator:a94436ee0faeeaaf728bd0880667d690e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6ae6fef7b8a1b9e61a3d32a9a757eceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ae6fef7b8a1b9e61a3d32a9a757eceb">&#9670;&nbsp;</a></span>USBDEV_CPU_SET_ADDR_AFTER_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define USBDEV_CPU_SET_ADDR_AFTER_STATUS&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB OTG peripheral requirement for setting the device address. </p>
+<p>The address in the USB device has to be directly after the SETUP stage on receipt of the <code>SET ADDRESS Request</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbdev__synopsys__dwc2_8h_source.html#l00036">36</a> of file <a class="el" href="usbdev__synopsys__dwc2_8h_source.html">usbdev_synopsys_dwc2.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ae80a0d22f4afbcca8ed3a82f768038db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae80a0d22f4afbcca8ed3a82f768038db">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Device speed used. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae80a0d22f4afbcca8ed3a82f768038dba6f784dcf83058d9ffc1560ac30422a82"></a>DWC2_USB_OTG_DSPD_HS&#160;</td><td class="fielddoc"><p>High speed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae80a0d22f4afbcca8ed3a82f768038dbaa57a5af1696cba674fdfcc8e9e32550f"></a>DWC2_USB_OTG_DSPD_FS_PHY_HS&#160;</td><td class="fielddoc"><p>Full speed on HS PHY. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae80a0d22f4afbcca8ed3a82f768038dba7d9064123c0201905da60252efba50ba"></a>DWC2_USB_OTG_DSPD_LS&#160;</td><td class="fielddoc"><p>Low speed. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ae80a0d22f4afbcca8ed3a82f768038dbaa1b8e2a77adbf63c1f9fc5be5a766c2e"></a>DWC2_USB_OTG_DSPD_FS&#160;</td><td class="fielddoc"><p>Full speed. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="usbdev__synopsys__dwc2_8h_source.html#l00055">55</a> of file <a class="el" href="usbdev__synopsys__dwc2_8h_source.html">usbdev_synopsys_dwc2.h</a>.</p>
+
+</div>
+</div>
+<a id="a94436ee0faeeaaf728bd0880667d690e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94436ee0faeeaaf728bd0880667d690e">&#9670;&nbsp;</a></span>dwc2_usb_otg_fshs_phy_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="usbdev__synopsys__dwc2_8h.html#a94436ee0faeeaaf728bd0880667d690e">dwc2_usb_otg_fshs_phy_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Type of USB OTG peripheral PHY. </p>
+<p>The FS type only supports the built-in PHY, the HS type can have enabled either</p><ul>
+<li>the on-chip FS PHY,</li>
+<li>the external ULPI HS PHY interface, or</li>
+<li>the internal UTMI HS PHY. </li>
+</ul>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a94436ee0faeeaaf728bd0880667d690ead2eb1f5bbf3cc7402030d1cd05a82932"></a>DWC2_USB_OTG_PHY_BUILTIN&#160;</td><td class="fielddoc"><p>on-chip FS PHY </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94436ee0faeeaaf728bd0880667d690ea4990a0ecd039c7b6aa586e2c7304adb8"></a>DWC2_USB_OTG_PHY_ULPI&#160;</td><td class="fielddoc"><p>ULPI for external HS PHY. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a94436ee0faeeaaf728bd0880667d690ea62452e90242f9b4870c9b84839343fdb"></a>DWC2_USB_OTG_PHY_UTMI&#160;</td><td class="fielddoc"><p>UTMI for internal HS PHY. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="usbdev__synopsys__dwc2_8h_source.html#l00071">71</a> of file <a class="el" href="usbdev__synopsys__dwc2_8h_source.html">usbdev_synopsys_dwc2.h</a>.</p>
+
+</div>
+</div>
+<a id="aeeef682094b432a6d71252c6e2321e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeef682094b432a6d71252c6e2321e7d">&#9670;&nbsp;</a></span>dwc2_usb_otg_fshs_type_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="usbdev__synopsys__dwc2_8h.html#aeeef682094b432a6d71252c6e2321e7d">dwc2_usb_otg_fshs_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>USB OTG peripheral type. </p>
+<p>High speed peripheral is assumed to have DMA support available.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Only one of each type is supported at the moment, it is not supported to have two FS type or two HS type peripherals enabled on a single MCU. </dd></dl>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeeef682094b432a6d71252c6e2321e7da995d0c59cba6c54b429dab6f1267cb3c"></a>DWC2_USB_OTG_FS&#160;</td><td class="fielddoc"><p>Full speed peripheral. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aeeef682094b432a6d71252c6e2321e7dae0d908e494bec002f81d95f3a7e6a248"></a>DWC2_USB_OTG_HS&#160;</td><td class="fielddoc"><p>High speed peripheral. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="usbdev__synopsys__dwc2_8h_source.html#l00047">47</a> of file <a class="el" href="usbdev__synopsys__dwc2_8h_source.html">usbdev_synopsys_dwc2.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

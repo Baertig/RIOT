@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_eval_q.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_q"></a>- q -</h3><ul>
+<li>QMC5883L_BUSERR
+: <a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbda0c4ede693865a7cd9a2b0d7b7b3c56a4">qmc5883l.h</a>
+</li>
+<li>QMC5883L_NOCFG
+: <a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaf5650a24c957dad9f00d9056d2e6293e">qmc5883l.h</a>
+</li>
+<li>QMC5883L_NODATA
+: <a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaf91f3a59f3440457b2790f3f18c8c897">qmc5883l.h</a>
+</li>
+<li>QMC5883L_ODR_100HZ
+: <a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497a7eb4ac101a486307d887bd17fc04f561">qmc5883l.h</a>
+</li>
+<li>QMC5883L_ODR_10HZ
+: <a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497add21c0a687ade247d4d92fced6235b94">qmc5883l.h</a>
+</li>
+<li>QMC5883L_ODR_200HZ
+: <a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497afe1942a4f7cc8132a8b6a9760304f8e1">qmc5883l.h</a>
+</li>
+<li>QMC5883L_ODR_50HZ
+: <a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497a79fce4d7797423703679f63f49234e3e">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OK
+: <a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaca91b7829c15c9e1cd9189c92a6a70ef">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OSR_128
+: <a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33aca7d9bed12848420ca2c81c51ad6fd0b">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OSR_256
+: <a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a0ce82bb0cdceb8533cd87a97fa846bfc">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OSR_512
+: <a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a933d3e23c89d96f490693c39fea71df0">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OSR_64
+: <a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a8bd7f98a03a572d96902d8fb45fe35fb">qmc5883l.h</a>
+</li>
+<li>QMC5883L_OVERFLOW
+: <a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaeaf4920b13c2454f1cca8c62bd221ba1">qmc5883l.h</a>
+</li>
+<li>QMC5883L_RNG_2G
+: <a class="el" href="group__drivers__qmc5883l.html#gga479a092e370a54f48e3bc7ee8fa23e02a0353d72bc41fd36789496e773a6d9cfa">qmc5883l.h</a>
+</li>
+<li>QMC5883L_RNG_8G
+: <a class="el" href="group__drivers__qmc5883l.html#gga479a092e370a54f48e3bc7ee8fa23e02a11b2cedf4575639a324d7515516aaa3d">qmc5883l.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

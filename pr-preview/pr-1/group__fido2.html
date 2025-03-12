@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>FIDO2 - Fast Identity Online 2</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__fido2.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
+  <div class="headertitle">
+<div class="title">FIDO2 - Fast Identity Online 2<div class="ingroups"><a class="el" href="group__sys.html">System</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Description of the FIDO2 CTAP implementation in RIOT.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Description of the FIDO2 CTAP implementation in RIOT. </p>
+<dl class="section author"><dt>Author</dt><dd>Nils Ollrogge <a href="#" onclick="location.href='mai'+'lto:'+'nil'+'s.'+'oll'+'ro'+'gge'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">nils.<span style="display: none;">.nosp@m.</span>ollr<span style="display: none;">.nosp@m.</span>ogge@<span style="display: none;">.nosp@m.</span>fu-b<span style="display: none;">.nosp@m.</span>erlin<span style="display: none;">.nosp@m.</span>.de</a></dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This feature is experimental! This API is experimental and in an early state - expect changes.</dd>
+<dd>
+The FIDO2 implementation currently stores private keys in plain text inside flash memory.</dd>
+<dd>
+This implementation persists FIDO CTAP data across reboots and when unpowered; any firmware update loses the data because it will be overwritten. This applies both to firmware updates through bootloaders and to firmware updates through external programmers.</dd></dl>
+<p>FIDO2 is an authentication standard that seeks to solve the password problem by enabling passwordless authentication. Instead of using passwords to authenticate to web services, FIDO2 enables users to use common devices (authenticators) to create cryptographic credentials which are then used for authentication. FIDO2 consists of the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/">W3C Web Authentication specification (WebAuthn)</a> and the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html">Client to Authenticator Protocol (CTAP)</a>.</p>
+<p><b>This code implements the FIDO2 CTAP protocol.</b></p>
+<p>Following is an overview of the entities of this implementation and their relationships:</p>
+<pre class="fragment">                +-----------+  +-----------+   +-----------+   +-----------+
+                |           |  |           |   |           |   |           |
+                | ctap_cbor |  |ctap_crypto|   | ctap_mem  |   |ctap_utils |
+                |           |  |           |   |           |   |           |
+                +-----------+  +-----------+   +-----------+   +-----|-----+
+                      |             |               |                |
+                      |             |               |                |
+                      |         +---------------------------+        |
+                      |         |                           |        |
+                      |---------|           ctap            |--------|
+                                |                           |
+                                +---------------------------+
+                                              |
+                                +-------------|-------------+
+                                |                           |
+                                |       ctap_transport      |
+                                |                           |
+                                +---------------------------+
+                                      |
+                                      |
+                                +-----------+
+                                |           |
+                                | ctap_hid  |
+                                |           |
+                                +-----------+
+</pre><p><b>ctap_hid</b></p>
+<p>USB Human Interface Device (USB HID) transport binding for CTAP (CTAPHID).</p>
+<p>Initializes the USBUS HID interface.</p>
+<p>Communicates with the USBUS USB HID interface through the USBUS HID IO interface.</p>
+<p><b>ctap_transport</b></p>
+<p>Initializes CTAP layer.</p>
+<p>Initializes CTAP event queue.</p>
+<p>Manages CTAP transport bindings (currently only CTAPHID).</p>
+<p><b>ctap</b></p>
+<p>Contains the main CTAP logic.</p>
+<p>Makes use of helpers for flash access, cryptographic operations and CBOR operations.</p>
+<p><b>ctap_cbor</b></p>
+<p>Helper containing functionality to parse and encode CBOR messages. Uses the <a href="https://doc.riot-os.org/group__pkg__tinycbor.html">tinyCBOR</a> pkg.</p>
+<p><b>ctap_crypto</b></p>
+<p>Helper containing functionality for cryptographic operations.</p>
+<p>Abstraction for cryptographic operations (SHA256, HMAC-SHA-256, AES CCM).</p>
+<dl class="section note"><dt>Note</dt><dd>This abstraction exposes error return values which are currently not implemented in all cases by the RIOT crypto API.</dd></dl>
+<p>Abstraction for Elliptic curve cryptography (ECC) operations. Uses the <a href="https://api.riot-os.org/group__pkg__micro__ecc.html">micro-ecc</a> pkg.</p>
+<p>Parsing of cryptographic signatures into ASN.1 DER format. Uses the <a href="http://doc.riot-os.org/group__pkg__tiny-asn1.html">tiny-asn1</a> pkg.</p>
+<p><b>ctap_mem</b></p>
+<p>Abstraction for flash operations. Uses the RIOT <a href="http://api.riot-os.org/group__drivers__mtd__flashpage.html">Flashpage MTD driver</a>.</p>
+<p>Flash memory is reserved at build time using the <code>FLASH_WRITABLE_INIT</code> macro. The amount of flashpages reserved can be configured as <code>FIDO2_CTAP_NUM_FLASHPAGES</code> in KConfig. The implementation needs at least 1 flashpage to store state information and 1 flashpage to store credentials also called resident keys (rks). Therefore, the minimum amount of flashpages needed is 2. State information is stored on the first flashpage, credentials (rks) on the following flashpages.</p>
+<p>Adds additional functionality to speedup flash accesses (e.g. by checking if a flash page is erased to avoid unnecessary erasures of flash pages).</p>
+<p><b>ctap_utils</b></p>
+<p>Abstraction for GPIO functionality and LED animations.</p>
+<p><b>FIDO2 CTAP methods</b></p>
+<p>All methods defined in the FIDO2 CTAP specification are implemented. Specifically these are:</p><ul>
+<li>MakeCredential</li>
+<li>GetAssertion</li>
+<li>GetNextAssertion</li>
+<li>GetInfo</li>
+<li>ClientPIN</li>
+<li>Reset</li>
+</ul>
+<p>For information about the FIDO2 CTAP methods refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#authenticator-api">CTAP specification</a>.</p>
+<p><b>Transport bindings</b></p>
+<p>The USB Human Interface Device (USB HID) transport binding is fully implemented.</p>
+<p>For more information about the available transport bindings refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#transport-specific-bindings">CTAP specification</a>.</p>
+<p><b>Credentials</b></p>
+<p>Both types of credentials are supported. Resident and non resident.</p>
+<ul>
+<li>Resident Credentials<ul>
+<li>Resident credentials are credentials stored on the authenticator.</li>
+<li>They are also called resident key (rk) credentials due to the key material being stored on the device.</li>
+<li>This implementation stores resident keys in flash memory. <dl class="section warning"><dt>Warning</dt><dd>As of now the credentials (containing a private key) are stored in plain text inside flash memory</dd></dl>
+</li>
+</ul>
+</li>
+<li>Non-resident credentials<ul>
+<li>Non-resident credentials are credentials that are stored by the relying party in encrypted form.</li>
+<li>To encrypt the credentials, this implementation uses the RIOT <a href="https://api.riot-os.org/ccm_8h.html">AES-CCM 128 CCM implementation</a>.</li>
+</ul>
+</li>
+</ul>
+<p>For more information about the two types of credential refer to the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/#sctn-credential-storage-modality">WebAuthn specification</a></p>
+<p><b>Attestation types</b></p>
+<p>Currently only self attestation is supported.</p>
+<p>For more information about available attestation types refer to the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/#sctn-attestation-types">WebAuthn specification</a>.</p>
+<p><b>Backward compatibility with FIDO1</b></p>
+<p>For more information about the backward compatibility of FIDO2 to FIDO1 refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#u2f-interoperability">CTAP specification</a>.</p>
+<p><b>Support of further attestation types</b></p>
+<p>Specifically these are:</p><ul>
+<li>Basic Attestation</li>
+<li>Attestation Certificate Authority</li>
+<li>Elliptic Curve based Direct Anonymous Attestation</li>
+</ul>
+<p>For more information about available attestation types refer to the <a href="https://www.w3.org/TR/2019/REC-webauthn-1-20190304/#sctn-attestation-types">WebAuthn specification</a>.</p>
+<p><b>Support of further transport bindings</b></p>
+<p>Specifically these are:</p><ul>
+<li>Near Field Communication (NFC)</li>
+<li>Bluetooth Low Energy (BLE)</li>
+</ul>
+<p>For information about the available transport bindings refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#transport-specific-bindings">CTAP specification</a>.</p>
+<p><b>Extensions</b></p>
+<p>For information about CTAP extensions refer to the <a href="https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html#sctn-defined-extensions">CTAP specification</a></p>
+<p><b>CTAP 2.1 support</b></p>
+<p>None of the additions from the <a href="https://fidoalliance.org/specs/fido-v2.1-ps-20210615/fido-client-to-authenticator-protocol-v2.1-ps-20210615.html">CTAP 2.1 specification</a> are implemented.</p>
+<p>Testing is done with the help of the fido2-tests package based on the <a href="https://github.com/solokeys/fido2-tests">solokeys fido2-tests</a>.</p>
+<p>For for more information about testing the FIDO2 CTAP implementation refer to the README of the test application (<code>/tests/sys/fido2_ctap</code>).</p>
+<p><b>Todo</b></p>
+<ul>
+<li>The expected return codes of some tests were changed due to different opinions of how to interpret the CTAP2 specification. Refer to the <a href="https://github.com/solokeys/fido2-tests/issues/55">issue</a> for more information. As of writing this the issue is still open.</li>
+</ul>
+<p>There are two CFLAGS which can be used to change the behavior of the FIDO2 CTAP implementation:</p>
+<ul>
+<li><b>FIDO2_CTAP_DISABLE_UP</b>: Disables the user presence test. User presence will always be set to true. This is helpful when running the fido2-tests as one doesn't have to click the button many times, as well as other use cases where no user presence test is wanted.</li>
+<li><b>FIDO2_CTAP_DISABLE_LED</b>: Disables LED animations which are used to indicate that user action is needed.</li>
+</ul>
+<p>The CFLAGS can either be set in the Makefile or configured via KConfig.</p>
+<p>Future improvements / extensions to the FIDO2 CTAP implementation that should be implemented are:</p>
+<ul>
+<li>Usage of secure elements if available to safely store private keys of FIDO2 credentials.</li>
+<li>Usage of an extra cryptographic processor (e.g. <a href="https://infocenter.nordicsemi.com/index.jsp?topic=%2Fps_nrf9160%2Fcryptocell.html">ARM CryptoCell</a>) to improve efficiency and drop dependency for ECC cryptography.</li>
+<li>Support of further attestation types.</li>
+<li>Support of further CTAP transport bindings.</li>
+<li>Support of CTAP 2.1. </li>
+</ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__fido2__ctap"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html">CTAP</a></td></tr>
+<tr class="memdesc:group__fido2__ctap"><td class="mdescLeft">&#160;</td><td class="mdescRight">FIDO2 CTAP. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>lwIP options</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__pkg__lwip__opts.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">lwIP options<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__lwip.html">lwIP network stack</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Options for the lwIP stack.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Options for the lwIP stack. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:lwipopts_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lwipopts_8h.html">lwipopts.h</a></td></tr>
+<tr class="memdesc:lwipopts_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaef78611dcc4ea900c8c935c23d0d8a31"><td class="memItemLeft" align="right" valign="top"><a id="gaef78611dcc4ea900c8c935c23d0d8a31"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sys_mark_tcpip_thread</b> (void)</td></tr>
+<tr class="separator:gaef78611dcc4ea900c8c935c23d0d8a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae2093389ea90f004b3db416403409e4f"><td class="memItemLeft" align="right" valign="top"><a id="gae2093389ea90f004b3db416403409e4f"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sys_check_core_locked</b> (void)</td></tr>
+<tr class="separator:gae2093389ea90f004b3db416403409e4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9609a014bba4638cc191d6a8f9556c87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip__opts.html#ga9609a014bba4638cc191d6a8f9556c87">LWIP_ARP</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga9609a014bba4638cc191d6a8f9556c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">lwIP configuration macros.  <a href="#ga9609a014bba4638cc191d6a8f9556c87">More...</a><br /></td></tr>
+<tr class="separator:ga9609a014bba4638cc191d6a8f9556c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf1b3a089827223589baf1b7f4f57069"><td class="memItemLeft" align="right" valign="top"><a id="gaaf1b3a089827223589baf1b7f4f57069"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_AUTOIP</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gaaf1b3a089827223589baf1b7f4f57069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a6ec62dc121064ac591b1fd8567bee9"><td class="memItemLeft" align="right" valign="top"><a id="ga8a6ec62dc121064ac591b1fd8567bee9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_DHCP</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga8a6ec62dc121064ac591b1fd8567bee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga30e02dc217cc2995d0fd241d510c904f"><td class="memItemLeft" align="right" valign="top"><a id="ga30e02dc217cc2995d0fd241d510c904f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_ETHERNET</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga30e02dc217cc2995d0fd241d510c904f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadd45fb65f2d0e6de5a0d14ff9e101b77"><td class="memItemLeft" align="right" valign="top"><a id="gadd45fb65f2d0e6de5a0d14ff9e101b77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_NETIF_API</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gadd45fb65f2d0e6de5a0d14ff9e101b77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadaf25915ae1fd69c0943ef68cbb38923"><td class="memItemLeft" align="right" valign="top"><a id="gadaf25915ae1fd69c0943ef68cbb38923"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_IGMP</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gadaf25915ae1fd69c0943ef68cbb38923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga429e811a80ebb5157e14a854870c4410"><td class="memItemLeft" align="right" valign="top"><a id="ga429e811a80ebb5157e14a854870c4410"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_IPV4</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga429e811a80ebb5157e14a854870c4410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga580039bf2baf49fcb9e504e5d2b40a03"><td class="memItemLeft" align="right" valign="top"><a id="ga580039bf2baf49fcb9e504e5d2b40a03"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_IPV6_AUTOCONFIG</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga580039bf2baf49fcb9e504e5d2b40a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga44d8f24eaebbc50221ac1336212a3528"><td class="memItemLeft" align="right" valign="top"><a id="ga44d8f24eaebbc50221ac1336212a3528"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_IPV6_MLD</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga44d8f24eaebbc50221ac1336212a3528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga872e3bb3fe2212156d66b18fccc9643f"><td class="memItemLeft" align="right" valign="top"><a id="ga872e3bb3fe2212156d66b18fccc9643f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_IPV6</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga872e3bb3fe2212156d66b18fccc9643f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga746c0ebaef5399987d53a1426eba6273"><td class="memItemLeft" align="right" valign="top"><a id="ga746c0ebaef5399987d53a1426eba6273"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>PPP_SUPPORT</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga746c0ebaef5399987d53a1426eba6273"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca452be5cb05d9666f8f57e582c39221"><td class="memItemLeft" align="right" valign="top"><a id="gaca452be5cb05d9666f8f57e582c39221"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_RAW</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gaca452be5cb05d9666f8f57e582c39221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab16b772237b292c012352c01d2b87b2b"><td class="memItemLeft" align="right" valign="top"><a id="gab16b772237b292c012352c01d2b87b2b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_6LOWPAN</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gab16b772237b292c012352c01d2b87b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga542b58734cc01902c5e099f6efdc5f1b"><td class="memItemLeft" align="right" valign="top"><a id="ga542b58734cc01902c5e099f6efdc5f1b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_STATS</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga542b58734cc01902c5e099f6efdc5f1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa4ed98deb97b77c633cb8870f34c71e9"><td class="memItemLeft" align="right" valign="top"><a id="gaa4ed98deb97b77c633cb8870f34c71e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_TCP</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gaa4ed98deb97b77c633cb8870f34c71e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6030e96e72df649d2650fd32d7a67b3"><td class="memItemLeft" align="right" valign="top"><a id="gab6030e96e72df649d2650fd32d7a67b3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_UDP</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gab6030e96e72df649d2650fd32d7a67b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga35731bc5f337943e474a15c1cd538a61"><td class="memItemLeft" align="right" valign="top"><a id="ga35731bc5f337943e474a15c1cd538a61"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_UDPLITE</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga35731bc5f337943e474a15c1cd538a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga478041b8544461258f6961bf0f3c1a77"><td class="memItemLeft" align="right" valign="top"><a id="ga478041b8544461258f6961bf0f3c1a77"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_NETCONN</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga478041b8544461258f6961bf0f3c1a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga98b23e7cbd3281915c50a485cb61899d"><td class="memItemLeft" align="right" valign="top"><a id="ga98b23e7cbd3281915c50a485cb61899d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TCP_LISTEN_BACKLOG</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga98b23e7cbd3281915c50a485cb61899d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cb62ce61ac39d7d6728ae5d3d3b927f"><td class="memItemLeft" align="right" valign="top"><a id="ga1cb62ce61ac39d7d6728ae5d3d3b927f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_SOCKET</b>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga1cb62ce61ac39d7d6728ae5d3d3b927f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f646b461357ac9cf7fd559ee58e4090"><td class="memItemLeft" align="right" valign="top"><a id="ga6f646b461357ac9cf7fd559ee58e4090"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_DONT_PROVIDE_BYTEORDER_FUNCTIONS</b></td></tr>
+<tr class="separator:ga6f646b461357ac9cf7fd559ee58e4090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae93af697d27bbcefa6a28052d90f2f38"><td class="memItemLeft" align="right" valign="top"><a id="gae93af697d27bbcefa6a28052d90f2f38"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MEMP_MEM_MALLOC</b>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:gae93af697d27bbcefa6a28052d90f2f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab887a8ec553de1be1d04cf2961c63c41"><td class="memItemLeft" align="right" valign="top"><a id="gab887a8ec553de1be1d04cf2961c63c41"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>NETIF_MAX_HWADDR_LEN</b>&#160;&#160;&#160;(<a class="el" href="group__net__gnrc__netif__hdr.html#gaefe50831ad4ae5980edb0abc70fa3392">GNRC_NETIF_HDR_L2ADDR_MAX_LEN</a>)</td></tr>
+<tr class="separator:gab887a8ec553de1be1d04cf2961c63c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa02b84eafa0c8b09b158b97c96d79db0"><td class="memItemLeft" align="right" valign="top"><a id="gaa02b84eafa0c8b09b158b97c96d79db0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>TCPIP_THREAD_STACKSIZE</b>&#160;&#160;&#160;(<a class="el" href="native_2include_2cpu__conf_8h.html#a713ebddc00581f4d415095cdbfd8791f">THREAD_STACKSIZE_DEFAULT</a>)</td></tr>
+<tr class="separator:gaa02b84eafa0c8b09b158b97c96d79db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga97343214666ee6dcb18c0bd77b441ea7"><td class="memItemLeft" align="right" valign="top"><a id="ga97343214666ee6dcb18c0bd77b441ea7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MEM_ALIGNMENT</b>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:ga97343214666ee6dcb18c0bd77b441ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2dcf8c45f945dd0c4301a94700f2112c"><td class="memItemLeft" align="right" valign="top"><a id="ga2dcf8c45f945dd0c4301a94700f2112c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>MEM_SIZE</b>&#160;&#160;&#160;(TCPIP_THREAD_STACKSIZE + 6144)</td></tr>
+<tr class="separator:ga2dcf8c45f945dd0c4301a94700f2112c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11b4a65c7b6e49ef7129aca3bd6737e6"><td class="memItemLeft" align="right" valign="top"><a id="ga11b4a65c7b6e49ef7129aca3bd6737e6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_MARK_TCPIP_THREAD</b>&#160;&#160;&#160;sys_mark_tcpip_thread</td></tr>
+<tr class="separator:ga11b4a65c7b6e49ef7129aca3bd6737e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a30040db307b3459fc11906bd433f75"><td class="memItemLeft" align="right" valign="top"><a id="ga6a30040db307b3459fc11906bd433f75"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>LWIP_ASSERT_CORE_LOCKED</b>()&#160;&#160;&#160;LWIP_ASSERT(&quot;Core lock held&quot;, sys_check_core_locked())</td></tr>
+<tr class="separator:ga6a30040db307b3459fc11906bd433f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga9609a014bba4638cc191d6a8f9556c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9609a014bba4638cc191d6a8f9556c87">&#9670;&nbsp;</a></span>LWIP_ARP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LWIP_ARP&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>lwIP configuration macros. </p>
+<dl class="section see"><dt>See also</dt><dd>lwIP documentation </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lwipopts_8h_source.html#l00038">38</a> of file <a class="el" href="lwipopts_8h_source.html">lwipopts.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

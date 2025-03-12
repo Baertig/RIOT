@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>lcd_ll_par_driver_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structlcd__ll__par__driver__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">lcd_ll_par_driver_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__display.html">Display Device Drivers</a> &raquo; <a class="el" href="group__drivers__lcd.html">LCD display driver</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Low-level MCU 8080 8-/16-bit parallel interface driver.  
+ <a href="structlcd__ll__par__driver__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Low-level MCU 8080 8-/16-bit parallel interface driver. </p>
+<p>If the MCU-driven low-level parallel interface is enabled by module <code>lcd_ll_parallel_mcu</code>, the implementation of the MCU low-level parallel interface has to define a variable <a class="el" href="group__drivers__lcd.html#ga2666177bb70f393258c446df9176a7d8">lcd_ll_par_driver</a> of this type. All or a set of members have to point to the low-level parallel interface functions implemented by the MCU. For functions that are not implemented by the MCU, the members have to be set to the corresponding GPIO-driven low-level parallel interface functions provided by the LCD driver. </p>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00419">419</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="lcd_8h_source.html">lcd.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:adf7a267c6017de24fe81d8f4792aecc8"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#adf7a267c6017de24fe81d8f4792aecc8">init</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev)</td></tr>
+<tr class="memdesc:adf7a267c6017de24fe81d8f4792aecc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the MCU-driven low-level parallel interface.  <a href="#adf7a267c6017de24fe81d8f4792aecc8">More...</a><br /></td></tr>
+<tr class="separator:adf7a267c6017de24fe81d8f4792aecc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a686f3d88ffe48bb08e651853ae0ee1b1"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#a686f3d88ffe48bb08e651853ae0ee1b1">set_data_dir</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool output)</td></tr>
+<tr class="memdesc:a686f3d88ffe48bb08e651853ae0ee1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the data direction of the low-level parallel interface.  <a href="#a686f3d88ffe48bb08e651853ae0ee1b1">More...</a><br /></td></tr>
+<tr class="separator:a686f3d88ffe48bb08e651853ae0ee1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab258495475913b231734c2f75068f2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#afab258495475913b231734c2f75068f2">cmd_start</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, uint8_t cmd, bool cont)</td></tr>
+<tr class="memdesc:afab258495475913b231734c2f75068f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write command using the MCU-driven low-level parallel interface.  <a href="#afab258495475913b231734c2f75068f2">More...</a><br /></td></tr>
+<tr class="separator:afab258495475913b231734c2f75068f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39c416460a67892c80e75b1bfd3c1727"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#a39c416460a67892c80e75b1bfd3c1727">write_byte</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont, uint8_t out)</td></tr>
+<tr class="memdesc:a39c416460a67892c80e75b1bfd3c1727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a byte using the MCU-driven low-level parallel interface.  <a href="#a39c416460a67892c80e75b1bfd3c1727">More...</a><br /></td></tr>
+<tr class="separator:a39c416460a67892c80e75b1bfd3c1727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37dc08e98dc671fadd02a1d60da1ce4f"><td class="memItemLeft" align="right" valign="top">uint8_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#a37dc08e98dc671fadd02a1d60da1ce4f">read_byte</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont)</td></tr>
+<tr class="memdesc:a37dc08e98dc671fadd02a1d60da1ce4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a byte using the MCU-driven low-level parallel interface.  <a href="#a37dc08e98dc671fadd02a1d60da1ce4f">More...</a><br /></td></tr>
+<tr class="separator:a37dc08e98dc671fadd02a1d60da1ce4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23ead92e70892eccfe342f4af60f0158"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#a23ead92e70892eccfe342f4af60f0158">write_word</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont, uint16_t out)</td></tr>
+<tr class="memdesc:a23ead92e70892eccfe342f4af60f0158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a word using the MCU-driven low-level parallel interface.  <a href="#a23ead92e70892eccfe342f4af60f0158">More...</a><br /></td></tr>
+<tr class="separator:a23ead92e70892eccfe342f4af60f0158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8ee73b43ea63d9368b24153ff71159"><td class="memItemLeft" align="right" valign="top">uint16_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlcd__ll__par__driver__t.html#aef8ee73b43ea63d9368b24153ff71159">read_word</a> )(<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont)</td></tr>
+<tr class="memdesc:aef8ee73b43ea63d9368b24153ff71159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a word using the MCU-driven low-level parallel interface.  <a href="#aef8ee73b43ea63d9368b24153ff71159">More...</a><br /></td></tr>
+<tr class="separator:aef8ee73b43ea63d9368b24153ff71159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="afab258495475913b231734c2f75068f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab258495475913b231734c2f75068f2">&#9670;&nbsp;</a></span>cmd_start</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* lcd_ll_par_driver_t::cmd_start) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, uint8_t cmd, bool cont)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write command using the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmd</td><td>command </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>operation is continued </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00442">442</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="adf7a267c6017de24fe81d8f4792aecc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7a267c6017de24fe81d8f4792aecc8">&#9670;&nbsp;</a></span>init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* lcd_ll_par_driver_t::init) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00425">425</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a37dc08e98dc671fadd02a1d60da1ce4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37dc08e98dc671fadd02a1d60da1ce4f">&#9670;&nbsp;</a></span>read_byte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t(* lcd_ll_par_driver_t::read_byte) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a byte using the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>operation is continued</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>byte read </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00461">461</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="aef8ee73b43ea63d9368b24153ff71159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8ee73b43ea63d9368b24153ff71159">&#9670;&nbsp;</a></span>read_word</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t(* lcd_ll_par_driver_t::read_word) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read a word using the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>operation is continued</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>word read </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00481">481</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a686f3d88ffe48bb08e651853ae0ee1b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686f3d88ffe48bb08e651853ae0ee1b1">&#9670;&nbsp;</a></span>set_data_dir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* lcd_ll_par_driver_t::set_data_dir) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool output)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the data direction of the low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">output</td><td>set to output mode if true and to input mode otherwise </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00433">433</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a39c416460a67892c80e75b1bfd3c1727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39c416460a67892c80e75b1bfd3c1727">&#9670;&nbsp;</a></span>write_byte</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* lcd_ll_par_driver_t::write_byte) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont, uint8_t out)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a byte using the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>operation is continued </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>byte to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00451">451</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<a id="a23ead92e70892eccfe342f4af60f0158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ead92e70892eccfe342f4af60f0158">&#9670;&nbsp;</a></span>write_word</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* lcd_ll_par_driver_t::write_word) (<a class="el" href="structlcd__t.html">lcd_t</a> *dev, bool cont, uint16_t out)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write a word using the MCU-driven low-level parallel interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>device descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cont</td><td>operation is continued </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>word to be written </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="lcd_8h_source.html#l00471">471</a> of file <a class="el" href="lcd_8h_source.html">lcd.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="lcd_8h_source.html">lcd.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

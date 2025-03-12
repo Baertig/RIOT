@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/qmc5883l.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('qmc5883l_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">qmc5883l.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__qmc5883l.html">QMC5883L 3-Axis Digital Magnetic Sensor</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>API definition for the QMC5883L device driver.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>API definition for the QMC5883L device driver. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span style="display: none;">.nosp@m.</span>.pet<span style="display: none;">.nosp@m.</span>ersen<span style="display: none;">.nosp@m.</span>@fu-<span style="display: none;">.nosp@m.</span>berli<span style="display: none;">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="qmc5883l_8h_source.html">qmc5883l.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="i2c_8h_source.html">periph/i2c.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for qmc5883l.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="qmc5883l_8h__incl.svg" width="634" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="qmc5883l_8h__dep__incl.svg" width="204" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="qmc5883l_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqmc5883l__params__t.html">qmc5883l_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">QMC5883L initialization parameters.  <a href="structqmc5883l__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structqmc5883l__t.html">qmc5883l_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">QMC5883L device descriptor.  <a href="structqmc5883l__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gaaabcbdf1659e744611f2b0b476c91bf4"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gaaabcbdf1659e744611f2b0b476c91bf4">QMC5883L_ADDR</a>&#160;&#160;&#160;(0x0d)</td></tr>
+<tr class="memdesc:gaaabcbdf1659e744611f2b0b476c91bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static QMC5883L I2C address (can not be changed) <br /></td></tr>
+<tr class="separator:gaaabcbdf1659e744611f2b0b476c91bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gaa62371d642974c67a0c0efa77d54fcbd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaca91b7829c15c9e1cd9189c92a6a70ef">QMC5883L_OK</a>, 
+<a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaf91f3a59f3440457b2790f3f18c8c897">QMC5883L_NODATA</a>, 
+<a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaeaf4920b13c2454f1cca8c62bd221ba1">QMC5883L_OVERFLOW</a>, 
+<a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbda0c4ede693865a7cd9a2b0d7b7b3c56a4">QMC5883L_BUSERR</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__drivers__qmc5883l.html#ggaa62371d642974c67a0c0efa77d54fcbdaf5650a24c957dad9f00d9056d2e6293e">QMC5883L_NOCFG</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gaa62371d642974c67a0c0efa77d54fcbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error codes used by the QMC5883L driver.  <a href="group__drivers__qmc5883l.html#gaa62371d642974c67a0c0efa77d54fcbd">More...</a><br /></td></tr>
+<tr class="separator:gaa62371d642974c67a0c0efa77d54fcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b309fb78b36f074ed8b5b9ff07cd497"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga9b309fb78b36f074ed8b5b9ff07cd497">qmc5883l_odr_t</a> { <a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497add21c0a687ade247d4d92fced6235b94">QMC5883L_ODR_10HZ</a> = (0u &lt;&lt; 2), 
+<a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497a79fce4d7797423703679f63f49234e3e">QMC5883L_ODR_50HZ</a> = (1u &lt;&lt; 2), 
+<a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497a7eb4ac101a486307d887bd17fc04f561">QMC5883L_ODR_100HZ</a> = (2u &lt;&lt; 2), 
+<a class="el" href="group__drivers__qmc5883l.html#gga9b309fb78b36f074ed8b5b9ff07cd497afe1942a4f7cc8132a8b6a9760304f8e1">QMC5883L_ODR_200HZ</a> = (3u &lt;&lt; 2)
+ }</td></tr>
+<tr class="memdesc:ga9b309fb78b36f074ed8b5b9ff07cd497"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output data rate.  <a href="group__drivers__qmc5883l.html#ga9b309fb78b36f074ed8b5b9ff07cd497">More...</a><br /></td></tr>
+<tr class="separator:ga9b309fb78b36f074ed8b5b9ff07cd497"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga479a092e370a54f48e3bc7ee8fa23e02"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga479a092e370a54f48e3bc7ee8fa23e02">qmc5883l_rng_t</a> { <a class="el" href="group__drivers__qmc5883l.html#gga479a092e370a54f48e3bc7ee8fa23e02a0353d72bc41fd36789496e773a6d9cfa">QMC5883L_RNG_2G</a> = (0u &lt;&lt; 4), 
+<a class="el" href="group__drivers__qmc5883l.html#gga479a092e370a54f48e3bc7ee8fa23e02a11b2cedf4575639a324d7515516aaa3d">QMC5883L_RNG_8G</a> = (1u &lt;&lt; 4)
+ }</td></tr>
+<tr class="memdesc:ga479a092e370a54f48e3bc7ee8fa23e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output value range.  <a href="group__drivers__qmc5883l.html#ga479a092e370a54f48e3bc7ee8fa23e02">More...</a><br /></td></tr>
+<tr class="separator:ga479a092e370a54f48e3bc7ee8fa23e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga94bf5e3f282baf506fb7f9ad5a1d7f33"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga94bf5e3f282baf506fb7f9ad5a1d7f33">qmc5883l_osr_t</a> { <a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a933d3e23c89d96f490693c39fea71df0">QMC5883L_OSR_512</a> = (0u &lt;&lt; 6), 
+<a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a0ce82bb0cdceb8533cd87a97fa846bfc">QMC5883L_OSR_256</a> = (1u &lt;&lt; 6), 
+<a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33aca7d9bed12848420ca2c81c51ad6fd0b">QMC5883L_OSR_128</a> = (2u &lt;&lt; 6), 
+<a class="el" href="group__drivers__qmc5883l.html#gga94bf5e3f282baf506fb7f9ad5a1d7f33a8bd7f98a03a572d96902d8fb45fe35fb">QMC5883L_OSR_64</a> = (3u &lt;&lt; 6)
+ }</td></tr>
+<tr class="memdesc:ga94bf5e3f282baf506fb7f9ad5a1d7f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Over sample rate (bandwidth of internal digital filter)  <a href="group__drivers__qmc5883l.html#ga94bf5e3f282baf506fb7f9ad5a1d7f33">More...</a><br /></td></tr>
+<tr class="separator:ga94bf5e3f282baf506fb7f9ad5a1d7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaefb5771db3d3891abb2f47dfe5f649b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gaefb5771db3d3891abb2f47dfe5f649b4">qmc5883l_init</a> (<a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev, const <a class="el" href="structqmc5883l__params__t.html">qmc5883l_params_t</a> *params)</td></tr>
+<tr class="memdesc:gaefb5771db3d3891abb2f47dfe5f649b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the given QMC5883L magnetic sensor.  <a href="group__drivers__qmc5883l.html#gaefb5771db3d3891abb2f47dfe5f649b4">More...</a><br /></td></tr>
+<tr class="separator:gaefb5771db3d3891abb2f47dfe5f649b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafeb7738287859a3833797d55d7bed1e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gafeb7738287859a3833797d55d7bed1e5">qmc5883l_data_ready</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev)</td></tr>
+<tr class="memdesc:gafeb7738287859a3833797d55d7bed1e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if new data is available.  <a href="group__drivers__qmc5883l.html#gafeb7738287859a3833797d55d7bed1e5">More...</a><br /></td></tr>
+<tr class="separator:gafeb7738287859a3833797d55d7bed1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b8601b6c68648eb00b8b57035628e5f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga3b8601b6c68648eb00b8b57035628e5f">qmc5883l_read</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev, int16_t *data_out)</td></tr>
+<tr class="memdesc:ga3b8601b6c68648eb00b8b57035628e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read sampled data from the device [converted to milli-Gauss].  <a href="group__drivers__qmc5883l.html#ga3b8601b6c68648eb00b8b57035628e5f">More...</a><br /></td></tr>
+<tr class="separator:ga3b8601b6c68648eb00b8b57035628e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05bd4875a906b03bb194c294282273ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga05bd4875a906b03bb194c294282273ec">qmc5883l_read_raw</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev, int16_t *data_out)</td></tr>
+<tr class="memdesc:ga05bd4875a906b03bb194c294282273ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read RAW data from the device.  <a href="group__drivers__qmc5883l.html#ga05bd4875a906b03bb194c294282273ec">More...</a><br /></td></tr>
+<tr class="separator:ga05bd4875a906b03bb194c294282273ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9fdb19470f7f9811e3fbbc2483f67a26"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga9fdb19470f7f9811e3fbbc2483f67a26">qmc5883l_poweron</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev)</td></tr>
+<tr class="memdesc:ga9fdb19470f7f9811e3fbbc2483f67a26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power on the sensor (put it into continuous sampling mode)  <a href="group__drivers__qmc5883l.html#ga9fdb19470f7f9811e3fbbc2483f67a26">More...</a><br /></td></tr>
+<tr class="separator:ga9fdb19470f7f9811e3fbbc2483f67a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfdfb0e583a0ddf1d64ffba8706c2a0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gacfdfb0e583a0ddf1d64ffba8706c2a0d">qmc5883l_poweroff</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev)</td></tr>
+<tr class="memdesc:gacfdfb0e583a0ddf1d64ffba8706c2a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power off the sensor (put it into standby mode)  <a href="group__drivers__qmc5883l.html#gacfdfb0e583a0ddf1d64ffba8706c2a0d">More...</a><br /></td></tr>
+<tr class="separator:gacfdfb0e583a0ddf1d64ffba8706c2a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad76786c21c71180d424f0d1d9ff35047"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gad76786c21c71180d424f0d1d9ff35047">qmc5883l_init_int</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev, <a class="el" href="group__drivers__periph__gpio.html#ga06ceaaf4824f1504972babf0775dba92">gpio_cb_t</a> cb, void *arg)</td></tr>
+<tr class="memdesc:gad76786c21c71180d424f0d1d9ff35047"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize data ready (DRDY) interrupt notifications.  <a href="group__drivers__qmc5883l.html#gad76786c21c71180d424f0d1d9ff35047">More...</a><br /></td></tr>
+<tr class="separator:gad76786c21c71180d424f0d1d9ff35047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1cf62589a039f7c1bee1ab6959d7670"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#gab1cf62589a039f7c1bee1ab6959d7670">qmc5883l_irq_enable</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev)</td></tr>
+<tr class="memdesc:gab1cf62589a039f7c1bee1ab6959d7670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the data ready (DRDY) interrupt.  <a href="group__drivers__qmc5883l.html#gab1cf62589a039f7c1bee1ab6959d7670">More...</a><br /></td></tr>
+<tr class="separator:gab1cf62589a039f7c1bee1ab6959d7670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3e13673fdbe6d77facc7c7d8a8f24ba0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html#ga3e13673fdbe6d77facc7c7d8a8f24ba0">qmc5883l_irq_disable</a> (const <a class="el" href="structqmc5883l__t.html">qmc5883l_t</a> *dev)</td></tr>
+<tr class="memdesc:ga3e13673fdbe6d77facc7c7d8a8f24ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the data ready (DRDY) interrupt.  <a href="group__drivers__qmc5883l.html#ga3e13673fdbe6d77facc7c7d8a8f24ba0">More...</a><br /></td></tr>
+<tr class="separator:ga3e13673fdbe6d77facc7c7d8a8f24ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

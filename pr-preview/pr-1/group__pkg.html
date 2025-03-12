@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Packages</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__pkg.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a>  </div>
+  <div class="headertitle">
+<div class="title">Packages</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>External libraries and applications.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>External libraries and applications. </p>
+<p>What are packages? RIOT packages:</p><ul>
+<li>pull a specific tested version most often from the (a) origin source</li>
+<li>patch them to match the RIOT architecture</li>
+<li>provide a specific tested configuration (such configuration may enable or disable features)</li>
+<li>integrate the packages build process into the RIOT one</li>
+<li>they have RIOT tests and/or examples to test/build them</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1798"></a>
+Using packages</h1>
+<p>To add a package to the list of compiled modules you have to add it to the <code>USEPKG</code> macro in your application's Makefile:</p>
+<div class="fragment"><div class="line">USEPKG += &lt;pkg_name&gt;</div></div><!-- fragment --><p>When the package can be built out-of-source, the source code of external packages is fetched in a global location in:</p>
+<div class="fragment"><div class="line">$(PKGDIRBASE)/$(PKG_NAME)</div></div><!-- fragment --><p>When out-of-source build is not possible (for example because the package build system doesn't allow it), the source code is fetched in the build directory of the application under:</p>
+<div class="fragment"><div class="line">$(BINDIR)/pkg/$(PKG_NAME)</div></div><!-- fragment --><p>In this case, the source and the build directory are the same (currently, this only applies to the micropython package).</p>
+<h1><a class="anchor" id="autotoc_md1799"></a>
+Porting an external library</h1>
+<h2><a class="anchor" id="autotoc_md1800"></a>
+Structure of a package</h2>
+<p>This module provides porting information for libraries and applications to use with RIOT (to build an external module). If you'd like to add a package to RIOT you need to add a directory with the name of your package to this directory. This directory should contain at least one file:</p>
+<ul>
+<li><b>Makefile</b>: A Makefile describing how to get the upstream application, apply the patch and how to build the package as a RIOT module. A rough template for several methods of acquiring a package is provided in <code>pkg/Makefile.git</code> and <code>pkg/Makefile.http</code>.</li>
+</ul>
+<p>If your port or the package provide header files, you need to update the <code>INCLUDES</code> variable in the package's <code>Makefile.include</code>:</p>
+<div class="fragment"><div class="line">INCLUDES += -I$(RIOTPKG)/&lt;pkg_name&gt;/include # headers provided by the port</div><div class="line">INCLUDES += -I$(PKGDIRBASE)/&lt;pkg_name&gt; # headers provided by the package</div></div><!-- fragment --><p>Patch files can be included in a <code>patches</code> directory in the package dir. These are applied to the upstream package to make it build with RIOT.</p>
+<h2><a class="anchor" id="autotoc_md1801"></a>
+Creating a patch with git</h2>
+<p>Assuming your upstream library resides in a git repository, you can create the patch files as follows:</p><ul>
+<li>checkout the targeted version of the upstream application</li>
+<li>create a new branch (e.g. <code>riot-port</code>)</li>
+<li>conduct necessary changes (e.g. edit, add, or remove some files)</li>
+<li>commit your changes using <code>git commit</code></li>
+<li>create the patch files using <code>git format-patch -n riot-port</code></li>
+<li>move the resulting patch files to the patches directory of your package.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1802"></a>
+Packages outside of RIOTPKG</h2>
+<p>It can be beneficial to create packages outside of the RIOT tree. For example if one is working on new packages that aren't ready to be committed to upstream or if an application needs its own unique packages. For this, one can use the <code>EXTERNAL_PKG_DIRS</code> make variable. It works similar to the way <a class="el" href="creating-modules.html#modules-outside-of-riotbase">external modules</a> are handled. In your application's Makefile, in addition to adding the package name to <code>USEPKG</code> as shown above, add the path to a folder that contains your external packages:</p>
+<div class="fragment"><div class="line">EXTERNAL_PKG_DIRS += &lt;PATH_TO_FOLDER_CONTAINING_PACKAGES&gt;</div></div><!-- fragment --><p>The path is allowed to be relative to the application's directory.</p>
+<p><em><b>NOTE:</b></em> The name of an external package must be unique (both in regard to other external packages, as well to native RIOT packages). Additionally, the directory containing the packages must match the package name, e.g. package <code>foo</code>must be located in <code>&lt;PATH_IN_EXTERNAL_PKG_DIRS&gt;/foo</code>.</p>
+<p>An example can be found in <a href="https://github.com/RIOT-OS/RIOT/tree/master/tests/build_system/external_pkg_dirs"><code>tests/build_system/external_pkg_dirs</code></a></p>
+<p>RIOT welcomes new and useful packages. If you'd like to share your work, consider https://github.com/RIOT-OS/RIOT/tree/master/CONTRIBUTING.md "contributing". </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__pkg__driver__cryptocell__310"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__driver__cryptocell__310.html">ARM CryptoCell 310 Driver</a></td></tr>
+<tr class="memdesc:group__pkg__driver__cryptocell__310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the driver for the ARM CryptoCell 310 hardware accelerator. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__mbedtls"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__mbedtls.html">ARM Mbed TLS</a></td></tr>
+<tr class="memdesc:group__pkg__mbedtls"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSL crypto library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__driver__atwinc15x0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__driver__atwinc15x0.html">ATWINC15x0 WiFi Module Vendor Driver Package</a></td></tr>
+<tr class="memdesc:group__pkg__driver__atwinc15x0"><td class="mdescLeft">&#160;</td><td class="mdescRight">ATWINC15x0 WiFi vendor driver from the Arduino WiFi101 library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__adafruit__sensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__adafruit__sensor.html">Adafruit Unified Sensor Driver</a></td></tr>
+<tr class="memdesc:group__pkg__adafruit__sensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adafruit Unified Sensor Driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__arduino__sdi__12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__arduino__sdi__12.html">Arduino library for SDI-12 communication</a></td></tr>
+<tr class="memdesc:group__pkg__arduino__sdi__12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements support for the SDI-12 serial communications protocol. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libb2.html">BLAKE2 hashing library</a></td></tr>
+<tr class="memdesc:group__pkg__libb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">C library providing BLAKE2b, BLAKE2s, BLAKE2bp, BLAKE2sp. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__c25519"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__c25519.html">C25519 cryptographic library</a></td></tr>
+<tr class="memdesc:group__pkg__c25519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Curve25519 and Ed25519 for low-memory systems. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__cayenne-lpp"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__cayenne-lpp.html">Cayenne Low Power Payload (LPP)</a></td></tr>
+<tr class="memdesc:group__pkg__cayenne-lpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a RIOT support for Cayenne LPP format. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__cifra"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__cifra.html">Cifra cryptographic library</a></td></tr>
+<tr class="memdesc:group__pkg__cifra"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Cifra cryptographic library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__ucglib"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__ucglib.html">Color graphics library for embedded systems</a></td></tr>
+<tr class="memdesc:group__pkg__ucglib"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a color graphics library for OLED and LCD displays. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libfixmath"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libfixmath.html">Cross platform fixed point maths library</a></td></tr>
+<tr class="memdesc:group__pkg__libfixmath"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a cross platform fixed point maths library to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__uwb__core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__uwb__core.html">Device driver model for the Decawave Impulse Radio-Ultra Wideband (IR-UWB) transceiver(s)</a></td></tr>
+<tr class="memdesc:group__pkg__uwb__core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware and architecture agnostic platform for IoT Location Based Services (LBS) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__uwb__dw1000"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__uwb__dw1000.html">Driver implementation for the uwb-core driver for Decawave DW1000 transceiver</a></td></tr>
+<tr class="memdesc:group__pkg__uwb__dw1000"><td class="mdescLeft">&#160;</td><td class="mdescRight">uwb-core driver for Decawave DW1000 transceiver <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__driver__bme680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__driver__bme680.html">Driver package for I2C/SPI BME680 sensor</a></td></tr>
+<tr class="memdesc:group__pkg__driver__bme680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Bosch Sensortec's BME680 gas sensor API. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__edhoc__c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__edhoc__c.html">EDHOC-C</a></td></tr>
+<tr class="memdesc:group__pkg__edhoc__c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support for Ephemeral Diffie-Hellman Over COSE (EDHOC) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__esp32__sdk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__esp32__sdk.html">ESP32 SDK for the ESP32 MCU support</a></td></tr>
+<tr class="memdesc:group__pkg__esp32__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor SDK without libraries for ESP32 MCU support by Espressif. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__esp8266__sdk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__esp8266__sdk.html">ESP8266 RTOS SDK for the ESP8266 MCU support</a></td></tr>
+<tr class="memdesc:group__pkg__esp8266__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor SDK with libraries for ESP8266 MCU support by Espressif. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__elk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__elk.html">Elk: a tiny Javascript engine</a></td></tr>
+<tr class="memdesc:group__pkg__elk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elk is a tiny embeddable JavaScript engine that implements a small but usable subset of ES6. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__etl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__etl.html">Embedded Template Library</a></td></tr>
+<tr class="memdesc:group__pkg__etl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Embedded Template Library (etl) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__fatfs"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__fatfs.html">FAT file system</a></td></tr>
+<tr class="memdesc:group__pkg__fatfs"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides FAT file system support. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__fff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__fff.html">Fake Functions Framework</a></td></tr>
+<tr class="memdesc:group__pkg__fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fake Functions Framework (fff) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__flashdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__flashdb.html">FlashDB: Database for Flash</a></td></tr>
+<tr class="memdesc:group__pkg__flashdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">An ultra-lightweight embedded database. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__flatbuffers"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__flatbuffers.html">FlatBuffers</a></td></tr>
+<tr class="memdesc:group__pkg__flatbuffers"><td class="mdescLeft">&#160;</td><td class="mdescRight">FlatBuffers: Memory Efficient Serialization Library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__corejson"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__corejson.html">FreeRTOS coreJSON</a></td></tr>
+<tr class="memdesc:group__pkg__corejson"><td class="mdescLeft">&#160;</td><td class="mdescRight">JSON parser that strictly enforces the ECMA-404 JSON standard. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__gemmlowp"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__gemmlowp.html">GEMM (General Matrix Multiplication) library</a></td></tr>
+<tr class="memdesc:group__pkg__gemmlowp"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides support for GEMM library from Google. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__minmea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__minmea.html">GPS parser library</a></td></tr>
+<tr class="memdesc:group__pkg__minmea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a GPS parser library to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__hacl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__hacl.html">HACL High Assurance Cryptographic Library</a></td></tr>
+<tr class="memdesc:group__pkg__hacl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support for HACL* (High Assurance Cryptographic Library) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__arduino__api"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__arduino__api.html">Hardware independent layer of the Arduino cores</a></td></tr>
+<tr class="memdesc:group__pkg__arduino__api"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hardware independent layer of the Arduino cores. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__jsmn"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__jsmn.html">JSON parser library</a></td></tr>
+<tr class="memdesc:group__pkg__jsmn"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a JSON parser library to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libbase58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libbase58.html">JSON parser library</a></td></tr>
+<tr class="memdesc:group__pkg__libbase58"><td class="mdescLeft">&#160;</td><td class="mdescRight">C library for Bitcoin's base58 encoding. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lvgl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lvgl.html">LVGL - Open-Source Embedded GUI Library</a></td></tr>
+<tr class="memdesc:group__pkg__lvgl"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+LVGL package for RIOT <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lv__drivers"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lv__drivers.html">LVGL Drivers</a></td></tr>
+<tr class="memdesc:group__pkg__lv__drivers"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+Display controller and touchpad driver to can be directly used with LVGL. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lz4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lz4.html">LZ4 compression library</a></td></tr>
+<tr class="memdesc:group__pkg__lz4"><td class="mdescLeft">&#160;</td><td class="mdescRight">LZ4 is a fast compression library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libhydrogen"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libhydrogen.html">LibHydrogen cryptographic library</a></td></tr>
+<tr class="memdesc:group__pkg__libhydrogen"><td class="mdescLeft">&#160;</td><td class="mdescRight">A lightweight, secure, easy-to-use crypto library suitable for constrained environments. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tiny-asn1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tiny-asn1.html">Lightweight ASN.1 decoding/encoding library</a></td></tr>
+<tr class="memdesc:group__pkg__tiny-asn1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lightweight ASN.1 decoding/encoding library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__umorse"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__umorse.html">Lightweight Morse encoder</a></td></tr>
+<tr class="memdesc:group__pkg__umorse"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides slim Morse encoding functionality. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__heatshrink"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__heatshrink.html">Lightweight compression library</a></td></tr>
+<tr class="memdesc:group__pkg__heatshrink"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a lightweight compression library to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lorabasicsmodem"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lorabasicsmodem.html">LoRa Basics</a></td></tr>
+<tr class="memdesc:group__pkg__lorabasicsmodem"><td class="mdescLeft">&#160;</td><td class="mdescRight">LoRa Basics Modem. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lora-serialization"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lora-serialization.html">Lora Serialization</a></td></tr>
+<tr class="memdesc:group__pkg__lora-serialization"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a RIOT support for Lora Serialization format. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lua"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lua.html">Lua ported to RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__lua"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a Lua interpreter for RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__wakaama"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__wakaama.html">LwM2M - Lightweight Machine to Machine</a></td></tr>
+<tr class="memdesc:group__pkg__wakaama"><td class="mdescLeft">&#160;</td><td class="mdescRight">LwM2M implementation based on the Wakaama package. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__mcufont"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__mcufont.html">MCUFont</a></td></tr>
+<tr class="memdesc:group__pkg__mcufont"><td class="mdescLeft">&#160;</td><td class="mdescRight">MCUFont is a font compression, decompression and rendering library for use with microcontroller systems. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__micro__ecc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__micro__ecc.html">Micro-ECC for RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__micro__ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Micro-ECC for RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__micropython"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__micropython.html">MicroPython RIOT port</a></td></tr>
+<tr class="memdesc:group__pkg__micropython"><td class="mdescLeft">&#160;</td><td class="mdescRight">MicroPython - Python for microcontrollers. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__cryptoauthlib"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__cryptoauthlib.html">Microchip CryptoAuthentication Library</a></td></tr>
+<tr class="memdesc:group__pkg__cryptoauthlib"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the library for Microchip CryptoAuth devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__monocypher"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__monocypher.html">Monocypher cryptographic library</a></td></tr>
+<tr class="memdesc:group__pkg__monocypher"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Monocypher cryptographic library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nanocbor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nanocbor.html">NanoCBOR library</a></td></tr>
+<tr class="memdesc:group__pkg__nanocbor"><td class="mdescLeft">&#160;</td><td class="mdescRight">CBOR encoder and decoder library for tiny devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nimble"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nimble.html">NimBLE</a></td></tr>
+<tr class="memdesc:group__pkg__nimble"><td class="mdescLeft">&#160;</td><td class="mdescRight">RIOT port of the NimBLE BLE stack. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nrfx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nrfx.html">Nordic nrfx HAL</a></td></tr>
+<tr class="memdesc:group__pkg__nrfx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Nordic nrfx HAL. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nmsis__sdk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nmsis__sdk.html">Nuclei MCU Software Interface Standard</a></td></tr>
+<tr class="memdesc:group__pkg__nmsis__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor SDK from Nuclei System Technology for Nuclei-based MCUs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__openthread"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__openthread.html">OpenThread network stack</a></td></tr>
+<tr class="memdesc:group__pkg__openthread"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a RIOT adaption of the OpenThread network stack. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__openwsn"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a></td></tr>
+<tr class="memdesc:group__pkg__openwsn"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+Provides a RIOT adaption of the OpenWSN network stack <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__paho__mqtt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__paho__mqtt.html">PAHO MQTT framework</a></td></tr>
+<tr class="memdesc:group__pkg__paho__mqtt"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Eclipse Paho project provides open-source client implementations of MQTT for embedded systems. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__qcbor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__qcbor.html">QCBOR for RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__qcbor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Small footprint CBOR encoder/decoder. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__qr-code-generator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__qr-code-generator.html">QR Code generator</a></td></tr>
+<tr class="memdesc:group__pkg__qr-code-generator"><td class="mdescLeft">&#160;</td><td class="mdescRight">QR Code generator library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__relic"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__relic.html">Relic toolkit for RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__relic"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Relic cryptographic toolkit to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__spiffs"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__spiffs.html">SPI flash file system</a></td></tr>
+<tr class="memdesc:group__pkg__spiffs"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a file system for SPI NOR flash devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__driver__sx126x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__driver__sx126x.html">SX1261/2 LoRa radio driver</a></td></tr>
+<tr class="memdesc:group__pkg__driver__sx126x"><td class="mdescLeft">&#160;</td><td class="mdescRight">This package is an implementation of the SX1261/2 LoRa radio driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__semtech-loramac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__semtech-loramac.html">Semtech LoRaMAC implementation</a></td></tr>
+<tr class="memdesc:group__pkg__semtech-loramac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a RIOT adaption of Semtech LoRaMAC implementation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libsocketcan"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libsocketcan.html">Socketcan library</a></td></tr>
+<tr class="memdesc:group__pkg__libsocketcan"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides libsocketcan for native 32bit linux builds when not available otherwise. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tlsf__malloc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tlsf__malloc.html">TLSF-based malloc.</a></td></tr>
+<tr class="memdesc:group__pkg__tlsf__malloc"><td class="mdescLeft">&#160;</td><td class="mdescRight">TLSF-based global memory allocator. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__talking__leds"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__talking__leds.html">Talking LEDs - Arduino library for demonstration</a></td></tr>
+<tr class="memdesc:group__pkg__talking__leds"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demonstrates the usage of Arduino libraries as packages. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tflite-micro"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tflite-micro.html">Tensorflow Lite Micro</a></td></tr>
+<tr class="memdesc:group__pkg__tflite-micro"><td class="mdescLeft">&#160;</td><td class="mdescRight">Portable C++ library for signal processing and machine learning inferencing. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__ruy"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__ruy.html">The ruy matrix multiplication library</a></td></tr>
+<tr class="memdesc:group__pkg__ruy"><td class="mdescLeft">&#160;</td><td class="mdescRight">ruy is a matrix multiplication library <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinyvcdiff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinyvcdiff.html">Tiny VCDIFF</a></td></tr>
+<tr class="memdesc:group__pkg__tinyvcdiff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoder for interleaved VCDIFF deltas. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinycbor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinycbor.html">TinyCBOR library</a></td></tr>
+<tr class="memdesc:group__pkg__tinycbor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the TinyCBOR (Concise Binary Object Representation) library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinydtls"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinydtls.html">TinyDTLS for RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__tinydtls"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the Eclipse TinyDTLS to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinyusb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinyusb.html">TinyUSB package</a></td></tr>
+<tr class="memdesc:group__pkg__tinyusb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the tinyUSB stack as package. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tweetnacl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tweetnacl.html">TweetNaCl high-security cryptographic library</a></td></tr>
+<tr class="memdesc:group__pkg__tweetnacl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the TweetNaCl high-security cryptographic library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tlsf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tlsf.html">Two-Level Segregated Fit memory allocator</a></td></tr>
+<tr class="memdesc:group__pkg__tlsf"><td class="mdescLeft">&#160;</td><td class="mdescRight">TLSF is a general purpose dynamic memory allocator specifically designed to meet real-time requirements: <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__u8g2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__u8g2.html">U8G2 graphic library for monochome displays</a></td></tr>
+<tr class="memdesc:group__pkg__u8g2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a monochrome graphics library for OLED and LCD displays. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__jerryscript"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__jerryscript.html">Ultra-lightweight Javascript for Internet Of Things</a></td></tr>
+<tr class="memdesc:group__pkg__jerryscript"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides Javascript support for RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__gecko__sdk"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__gecko__sdk.html">Vendor library for EFM/EFR/EZR32 MCUs</a></td></tr>
+<tr class="memdesc:group__pkg__gecko__sdk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vendor library for EFM/EFR/EZR32 targets by Silicon Labs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__wamr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__wamr.html">WebAssembly Micro Runtime</a></td></tr>
+<tr class="memdesc:group__pkg__wamr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides WebAssembly support for RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__wolfssl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__wolfssl.html">WolfSSL Embedded SSL/TLS library</a></td></tr>
+<tr class="memdesc:group__pkg__wolfssl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the WolfSSL SSL/TLS solution. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__yxml"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__yxml.html">Yxml XML parser</a></td></tr>
+<tr class="memdesc:group__pkg__yxml"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an XML parser library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__cn-cbor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__cn-cbor.html">cn-cbor</a></td></tr>
+<tr class="memdesc:group__pkg__cn-cbor"><td class="mdescLeft">&#160;</td><td class="mdescRight">A constrained node implementation of CBOR in C. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__emlearn"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__emlearn.html">emlearn</a></td></tr>
+<tr class="memdesc:group__pkg__emlearn"><td class="mdescLeft">&#160;</td><td class="mdescRight">Machine Learning inference engine. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libschc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libschc.html">libSCHC</a></td></tr>
+<tr class="memdesc:group__pkg__libschc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides support for Static Context Header Compression and Fragmentation (SCHC) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__libcose"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__libcose.html">libcose for RIOT</a></td></tr>
+<tr class="memdesc:group__pkg__libcose"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constrained node COSE library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lwext4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwext4.html">lightweight ext2/3/4 implementation</a></td></tr>
+<tr class="memdesc:group__pkg__lwext4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a lightweight implementation of the ext2/3/4 filesystem with optional journaling transactions &amp; recovery. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__littlefs"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__littlefs.html">littlefs file system</a></td></tr>
+<tr class="memdesc:group__pkg__littlefs"><td class="mdescLeft">&#160;</td><td class="mdescRight">A little fail-safe filesystem designed for embedded systems. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__littlefs2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__littlefs2.html">littlefs v2.x.y file system</a></td></tr>
+<tr class="memdesc:group__pkg__littlefs2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A little fail-safe filesystem designed for embedded systems, v2.x.y release. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__lwip"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__lwip.html">lwIP network stack</a></td></tr>
+<tr class="memdesc:group__pkg__lwip"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the lwIP network stack. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__mjson"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__mjson.html">mjson</a></td></tr>
+<tr class="memdesc:group__pkg__mjson"><td class="mdescLeft">&#160;</td><td class="mdescRight">mjson - a JSON parser + emitter + JSON-RPC engine <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__mynewt__core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__mynewt__core.html">mynewt-core</a></td></tr>
+<tr class="memdesc:group__pkg__mynewt__core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache MyNewt package for MyNewt based packages: uwb-core, nimble. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__opendsme"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__opendsme.html">openDSME - IEEE 802.15.4 DSME</a></td></tr>
+<tr class="memdesc:group__pkg__opendsme"><td class="mdescLeft">&#160;</td><td class="mdescRight">Support for IEEE 802.15.4 Deterministic and Synchronous Multi-channel Extension. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__qdsa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__qdsa.html">qdsa</a></td></tr>
+<tr class="memdesc:group__pkg__qdsa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Small and Secure Digital Signatures with Curve-based Diffie-Hellman Key Pairs. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nanopb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nanopb.html">small Protocol Buffers library</a></td></tr>
+<tr class="memdesc:group__pkg__nanopb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a protocol buffers library to RIOT. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__nanors"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__nanors.html">small Reed-Solomon code implementation</a></td></tr>
+<tr class="memdesc:group__pkg__nanors"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a tiny, performant implementation of reed solomon codes. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__tinycrypt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__tinycrypt.html">tinycrypt crypto library</a></td></tr>
+<tr class="memdesc:group__pkg__tinycrypt"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory optimized crypto library for embedded devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__ubasic"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__ubasic.html">uBASIC interpreter</a></td></tr>
+<tr class="memdesc:group__pkg__ubasic"><td class="mdescLeft">&#160;</td><td class="mdescRight">A really tiny BASIC interpreter. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__utensor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__utensor.html">uTensor</a></td></tr>
+<tr class="memdesc:group__pkg__utensor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a package for AI inference based on TensorFlow. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__pkg__uzlib"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__pkg__uzlib.html">uzlib</a></td></tr>
+<tr class="memdesc:group__pkg__uzlib"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deflate/Zlib-compatible LZ77 compression/decompression library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

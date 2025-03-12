@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Message based implementation of Bottom Half Processor</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__bhp__msg.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Message based implementation of Bottom Half Processor<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__bhp.html">Bottom Half Processor</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Bottom Half Processor module for generic IRQ offloading using messages.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Bottom Half Processor module for generic IRQ offloading using messages. </p>
+<dl class="section note"><dt>Note</dt><dd>Offloading ISRs with messages is in general a terrible idea, because messages can be lost. Use it with care or prefer alternatives such as <a class="el" href="group__sys__bhp__event.html">Event based implementation of Bottom Half Processor</a>.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>José I. Alamos <a href="#" onclick="location.href='mai'+'lto:'+'jos'+'e.'+'ala'+'mo'+'s@h'+'aw'+'-ha'+'mb'+'urg'+'.d'+'e'; return false;">jose.<span style="display: none;">.nosp@m.</span>alam<span style="display: none;">.nosp@m.</span>os@ha<span style="display: none;">.nosp@m.</span>w-ha<span style="display: none;">.nosp@m.</span>mburg<span style="display: none;">.nosp@m.</span>.de</a> </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbhp__msg__t.html">bhp_msg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message based Bottom Half Processor descriptor.  <a href="structbhp__msg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga6925df50330f61d80e38c7910e490693"><td class="memItemLeft" align="right" valign="top"><a id="ga6925df50330f61d80e38c7910e490693"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__bhp__msg.html#ga6925df50330f61d80e38c7910e490693">BHP_MSG_BH_REQUEST</a>&#160;&#160;&#160;0x1539</td></tr>
+<tr class="memdesc:ga6925df50330f61d80e38c7910e490693"><td class="mdescLeft">&#160;</td><td class="mdescRight">The message type to trigger Bottom Half Processing. <br /></td></tr>
+<tr class="separator:ga6925df50330f61d80e38c7910e490693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga7f0c4c708d661d281140a8d43ca9cdd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__bhp__msg.html#ga7f0c4c708d661d281140a8d43ca9cdd4">bhp_msg_init</a> (<a class="el" href="structbhp__msg__t.html">bhp_msg_t</a> *bhp_msg, <a class="el" href="group__sys__bhp.html#ga9b5b050ea24895b6521a0845fe6ad486">bhp_cb_t</a> cb, void *ctx)</td></tr>
+<tr class="memdesc:ga7f0c4c708d661d281140a8d43ca9cdd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Init a Bottom Half Processor to be used with messages.  <a href="#ga7f0c4c708d661d281140a8d43ca9cdd4">More...</a><br /></td></tr>
+<tr class="separator:ga7f0c4c708d661d281140a8d43ca9cdd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac577e797922a39c172d7885c92caa4fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__bhp__msg.html#gac577e797922a39c172d7885c92caa4fd">bhp_msg_isr_cb</a> (void *bhp_msg_ctx)</td></tr>
+<tr class="memdesc:gac577e797922a39c172d7885c92caa4fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message based Bottom Half Processor ISR callback To be called from ISR in order to trigger the Bottom Half Processor.  <a href="#gac577e797922a39c172d7885c92caa4fd">More...</a><br /></td></tr>
+<tr class="separator:gac577e797922a39c172d7885c92caa4fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad82b920b22afddd8350b404c121b1ad1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__bhp__msg.html#gad82b920b22afddd8350b404c121b1ad1">bhp_msg_claim_thread</a> (<a class="el" href="structbhp__msg__t.html">bhp_msg_t</a> *bhp_msg, <a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a> pid)</td></tr>
+<tr class="memdesc:gad82b920b22afddd8350b404c121b1ad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Claim a thread with a message queue to be used as Bottom Half Processor.  <a href="#gad82b920b22afddd8350b404c121b1ad1">More...</a><br /></td></tr>
+<tr class="separator:gad82b920b22afddd8350b404c121b1ad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27884bbb03bad5554d254b2e80c7fc05"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__bhp__msg.html#ga27884bbb03bad5554d254b2e80c7fc05">bhp_msg_handler</a> (<a class="el" href="structmsg__t.html">msg_t</a> *msg)</td></tr>
+<tr class="memdesc:ga27884bbb03bad5554d254b2e80c7fc05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a Bottom Half Processor message with type <a class="el" href="group__sys__bhp__msg.html#ga6925df50330f61d80e38c7910e490693">BHP_MSG_BH_REQUEST</a>.  <a href="#ga27884bbb03bad5554d254b2e80c7fc05">More...</a><br /></td></tr>
+<tr class="separator:ga27884bbb03bad5554d254b2e80c7fc05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gad82b920b22afddd8350b404c121b1ad1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad82b920b22afddd8350b404c121b1ad1">&#9670;&nbsp;</a></span>bhp_msg_claim_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bhp_msg_claim_thread </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbhp__msg__t.html">bhp_msg_t</a> *&#160;</td>
+          <td class="paramname"><em>bhp_msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__core__sched.html#ga8375139300d7cbf23bd8bd89ddddbe84">kernel_pid_t</a>&#160;</td>
+          <td class="paramname"><em>pid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Claim a thread with a message queue to be used as Bottom Half Processor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bhp_msg</td><td>The message based Bottom Half Processor descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pid</td><td>PID of the target thread </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2bhp_2msg_8h_source.html#l00081">81</a> of file <a class="el" href="sys_2include_2bhp_2msg_8h_source.html">msg.h</a>.</p>
+
+</div>
+</div>
+<a id="ga27884bbb03bad5554d254b2e80c7fc05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27884bbb03bad5554d254b2e80c7fc05">&#9670;&nbsp;</a></span>bhp_msg_handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bhp_msg_handler </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmsg__t.html">msg_t</a> *&#160;</td>
+          <td class="paramname"><em>msg</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle a Bottom Half Processor message with type <a class="el" href="group__sys__bhp__msg.html#ga6925df50330f61d80e38c7910e490693">BHP_MSG_BH_REQUEST</a>. </p>
+<p>This function will call <a class="el" href="group__sys__bhp.html#ga43395f2690c88fe92693c81de1db78c6">bhp_irq_handler</a> internally.</p>
+<dl class="section note"><dt>Note</dt><dd>This function asserts that the message type is <a class="el" href="group__sys__bhp__msg.html#ga6925df50330f61d80e38c7910e490693">BHP_MSG_BH_REQUEST</a>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg</td><td>Pointer to the Bottom Half Processor message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="sys_2include_2bhp_2msg_8h_source.html#l00095">95</a> of file <a class="el" href="sys_2include_2bhp_2msg_8h_source.html">msg.h</a>.</p>
+
+</div>
+</div>
+<a id="ga7f0c4c708d661d281140a8d43ca9cdd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f0c4c708d661d281140a8d43ca9cdd4">&#9670;&nbsp;</a></span>bhp_msg_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bhp_msg_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structbhp__msg__t.html">bhp_msg_t</a> *&#160;</td>
+          <td class="paramname"><em>bhp_msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__sys__bhp.html#ga9b5b050ea24895b6521a0845fe6ad486">bhp_cb_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Init a Bottom Half Processor to be used with messages. </p>
+<dl class="section post"><dt>Postcondition</dt><dd>the target PID is set to <a class="el" href="group__core__sched.html#gab4fb52da047cf9af9626b9c408704384">KERNEL_PID_UNDEF</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bhp_msg</td><td>The message based Bottom Half Processor descriptor </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Bottom Half Processor callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Context of <code>cb</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gac577e797922a39c172d7885c92caa4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac577e797922a39c172d7885c92caa4fd">&#9670;&nbsp;</a></span>bhp_msg_isr_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bhp_msg_isr_cb </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>bhp_msg_ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Message based Bottom Half Processor ISR callback To be called from ISR in order to trigger the Bottom Half Processor. </p>
+<p>This sends a message with type <a class="el" href="group__sys__bhp__msg.html#ga6925df50330f61d80e38c7910e490693">BHP_MSG_BH_REQUEST</a> to the target thread, which should process the event accordingly by calling <a class="el" href="group__sys__bhp__msg.html#ga27884bbb03bad5554d254b2e80c7fc05">bhp_msg_handler</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>This function asserts that the target PID is valid. Therefore, make sure to call <a class="el" href="group__sys__bhp__msg.html#gad82b920b22afddd8350b404c121b1ad1">bhp_msg_claim_thread</a> beforehand.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">bhp_msg_ctx</td><td>Pointer to the message based Bottom Half Processor (<a class="el" href="structbhp__msg__t.html">bhp_msg_t</a>) Bottom Half Processor. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>NRF24L01+ (NG) 2.4 GHz trasceiver driver</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__drivers__nrf24l01p__ng.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">NRF24L01+ (NG) 2.4 GHz trasceiver driver<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>This module contains the driver for the NRF24L01+ (NG) 2.4 GHz transceiver.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>This module contains the driver for the NRF24L01+ (NG) 2.4 GHz transceiver. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:nrf24l01p__ng_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng_8h.html">nrf24l01p_ng.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public interface for NRF24L01+ (NG) devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gnrc__netif__nrf24l01p__ng_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gnrc__netif__nrf24l01p__ng_8h.html">gnrc_netif_nrf24l01p_ng.h</a></td></tr>
+<tr class="memdesc:gnrc__netif__nrf24l01p__ng_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">NRF24L01+ (NG) adaptation for <a class="el" href="group__net__gnrc__netif.html">Network interface API</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__communication_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__communication_8h.html">nrf24l01p_ng_communication.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__communication_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to communicate with the NRF24L01+ (NG) transceiver via SPI. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__constants_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__constants_8h.html">nrf24l01p_ng_constants.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__constants_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constants from the datasheet of the NRF24L01+ (NG) transceiver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__diagnostics_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__diagnostics_8h.html">nrf24l01p_ng_diagnostics.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__diagnostics_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functions to print NRF24L01+ (NG) debug information. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__netdev_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__netdev_8h.html">nrf24l01p_ng_netdev.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__netdev_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Netdev driver interface for NRF24L01+ (NG) device driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__params_8h.html">nrf24l01p_ng_params.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific configuration for all NRF24L01+ (NG) devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__registers_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__registers_8h.html">nrf24l01p_ng_registers.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__registers_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register map of NRF24L01+ (NG) devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:nrf24l01p__ng__states_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nrf24l01p__ng__states_8h.html">nrf24l01p_ng_states.h</a></td></tr>
+<tr class="memdesc:nrf24l01p__ng__states_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operation states of NRF24L01+ (NG) devices. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng__cfg__t.html">nrf24l01p_ng_cfg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct that holds all active configuration values.  <a href="structnrf24l01p__ng__cfg__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct of NRF24L01+ initialization parameters.  <a href="structnrf24l01p__ng__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnrf24l01p__ng.html">nrf24l01p_ng</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">NRF24L01+ device struct.  <a href="structnrf24l01p__ng.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gae1a04919915b2d206de46a4ba6cd4504"><td class="memItemLeft" align="right" valign="top"><a id="gae1a04919915b2d206de46a4ba6cd4504"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gae1a04919915b2d206de46a4ba6cd4504">NRF24L01P_NG_MIN_ADDR_WIDTH</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="memdesc:gae1a04919915b2d206de46a4ba6cd4504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimum width of a NRF24L01+ layer-2 address. <br /></td></tr>
+<tr class="separator:gae1a04919915b2d206de46a4ba6cd4504"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="memItemLeft" align="right" valign="top"><a id="ga5644a7c69ec88aeb2eed1ee4a12574fe"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga5644a7c69ec88aeb2eed1ee4a12574fe">NRF24L01P_NG_MAX_ADDR_WIDTH</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="memdesc:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum width of a NRF24L01+ layer-2 address. <br /></td></tr>
+<tr class="separator:ga5644a7c69ec88aeb2eed1ee4a12574fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga603b9f706a694bff10b024e820cc4253"><td class="memItemLeft" align="right" valign="top"><a id="ga603b9f706a694bff10b024e820cc4253"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga603b9f706a694bff10b024e820cc4253">NRF24L01P_NG_ADDR_WIDTH</a>&#160;&#160;&#160;<a class="el" href="group__drivers__nrf24l01p__ng.html#ga5644a7c69ec88aeb2eed1ee4a12574fe">NRF24L01P_NG_MAX_ADDR_WIDTH</a></td></tr>
+<tr class="memdesc:ga603b9f706a694bff10b024e820cc4253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass the compiler a definition of NRF24L01P_NG_ADDR_WIDTH to configure the layer-2 address width of this transceiver. <br /></td></tr>
+<tr class="separator:ga603b9f706a694bff10b024e820cc4253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga1ca6f0c290cbcf46e6e955ab90ccf69f">NRF24L01P_NG_BROADCAST_ADDR</a>&#160;&#160;&#160;{ 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }</td></tr>
+<tr class="memdesc:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agreed layer-2 address to send broadcast frames to.  <a href="#ga1ca6f0c290cbcf46e6e955ab90ccf69f">More...</a><br /></td></tr>
+<tr class="separator:ga1ca6f0c290cbcf46e6e955ab90ccf69f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ad0ab7be9309c928c315b99bb05f365"><td class="memItemLeft" align="right" valign="top"><a id="ga3ad0ab7be9309c928c315b99bb05f365"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga3ad0ab7be9309c928c315b99bb05f365">NRF24L01P_NG_ADDR_P0</a>(dev)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_long[<a class="el" href="nrf24l01p__ng__types_8h.html#a0fa526d986c8ade854b2de70be3c8443a36f7fc27a32b1a0f72ea5e664eefc47c">NRF24L01P_NG_P0</a>])</td></tr>
+<tr class="memdesc:ga3ad0ab7be9309c928c315b99bb05f365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the address of pipe 0. <br /></td></tr>
+<tr class="separator:ga3ad0ab7be9309c928c315b99bb05f365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05e0d44c85c1256aa06092e62349ea97"><td class="memItemLeft" align="right" valign="top"><a id="ga05e0d44c85c1256aa06092e62349ea97"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga05e0d44c85c1256aa06092e62349ea97">NRF24L01P_NG_ADDR_P1</a>(dev)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_long[<a class="el" href="nrf24l01p__ng__types_8h.html#a0fa526d986c8ade854b2de70be3c8443a8cca2ec338d0fb6d60ac6e1ea8d6a44e">NRF24L01P_NG_P1</a>])</td></tr>
+<tr class="memdesc:ga05e0d44c85c1256aa06092e62349ea97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the address of pipe 1. <br /></td></tr>
+<tr class="separator:ga05e0d44c85c1256aa06092e62349ea97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca0d0f905446b54fc8202a44198885bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaca0d0f905446b54fc8202a44198885bc">NRF24L01P_NG_ADDR_PX_LSB</a>(dev,  pipe)&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_short[(pipe) - 2])</td></tr>
+<tr class="memdesc:gaca0d0f905446b54fc8202a44198885bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shortcut to access the least significant byte of the addresses pipe 2, pipe 3, pipe 4 or pipe 5.  <a href="#gaca0d0f905446b54fc8202a44198885bc">More...</a><br /></td></tr>
+<tr class="separator:gaca0d0f905446b54fc8202a44198885bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga7f5644a3f1347d4fbbd38f22738a2821">nrf24l01p_ng_setup</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, const <a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a> *params, uint8_t index)</td></tr>
+<tr class="memdesc:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the NRF24L01+ driver, but perform no initialization.  <a href="#ga7f5644a3f1347d4fbbd38f22738a2821">More...</a><br /></td></tr>
+<tr class="separator:ga7f5644a3f1347d4fbbd38f22738a2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaf277cb1b28533f3add551a3c4a6f28e4">nrf24l01p_ng_set_enable_pipe</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe, bool enable)</td></tr>
+<tr class="memdesc:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable data pipe <code>pipe</code>.  <a href="#gaf277cb1b28533f3add551a3c4a6f28e4">More...</a><br /></td></tr>
+<tr class="separator:gaf277cb1b28533f3add551a3c4a6f28e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41b9879e5eebd191191edbc5d4928b36"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga41b9879e5eebd191191edbc5d4928b36">nrf24l01p_ng_get_enable_pipe</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe, bool *enable)</td></tr>
+<tr class="memdesc:ga41b9879e5eebd191191edbc5d4928b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if data pipe <code>pipe</code> is enabled.  <a href="#ga41b9879e5eebd191191edbc5d4928b36">More...</a><br /></td></tr>
+<tr class="separator:ga41b9879e5eebd191191edbc5d4928b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaeda6e1bccc3fffababb92b4efe3d7219">nrf24l01p_ng_set_air_data_rate</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a> data_rate)</td></tr>
+<tr class="memdesc:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure air data rate.  <a href="#gaeda6e1bccc3fffababb92b4efe3d7219">More...</a><br /></td></tr>
+<tr class="separator:gaeda6e1bccc3fffababb92b4efe3d7219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf27fbf98efa564a50a4213efe3445353"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaf27fbf98efa564a50a4213efe3445353">nrf24l01p_ng_get_air_data_rate</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a> *data_rate)</td></tr>
+<tr class="memdesc:gaf27fbf98efa564a50a4213efe3445353"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured data rate.  <a href="#gaf27fbf98efa564a50a4213efe3445353">More...</a><br /></td></tr>
+<tr class="separator:gaf27fbf98efa564a50a4213efe3445353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga599510b4ce7e7909a3021e401f0e270a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga599510b4ce7e7909a3021e401f0e270a">nrf24l01p_ng_set_crc</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a> crc)</td></tr>
+<tr class="memdesc:ga599510b4ce7e7909a3021e401f0e270a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure CRC length.  <a href="#ga599510b4ce7e7909a3021e401f0e270a">More...</a><br /></td></tr>
+<tr class="separator:ga599510b4ce7e7909a3021e401f0e270a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6720a63175d8c26921579a2ce1c908c4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga6720a63175d8c26921579a2ce1c908c4">nrf24l01p_ng_get_crc</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a> *crc)</td></tr>
+<tr class="memdesc:ga6720a63175d8c26921579a2ce1c908c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured CRC length.  <a href="#ga6720a63175d8c26921579a2ce1c908c4">More...</a><br /></td></tr>
+<tr class="separator:ga6720a63175d8c26921579a2ce1c908c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0eafc06beef89a2642b6529c05352a3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga0eafc06beef89a2642b6529c05352a3a">nrf24l01p_ng_set_tx_power</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a> power)</td></tr>
+<tr class="memdesc:ga0eafc06beef89a2642b6529c05352a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure Tx trasceiver power.  <a href="#ga0eafc06beef89a2642b6529c05352a3a">More...</a><br /></td></tr>
+<tr class="separator:ga0eafc06beef89a2642b6529c05352a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca172d2099ebd6f058e25b7520f99f30"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaca172d2099ebd6f058e25b7520f99f30">nrf24l01p_ng_get_tx_power</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a> *power)</td></tr>
+<tr class="memdesc:gaca172d2099ebd6f058e25b7520f99f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured Tx transceiver power.  <a href="#gaca172d2099ebd6f058e25b7520f99f30">More...</a><br /></td></tr>
+<tr class="separator:gaca172d2099ebd6f058e25b7520f99f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga841028300f3d4bb05be73d2c4fd41bd5">nrf24l01p_ng_set_channel</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t channel)</td></tr>
+<tr class="memdesc:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set transceiver channel.  <a href="#ga841028300f3d4bb05be73d2c4fd41bd5">More...</a><br /></td></tr>
+<tr class="separator:ga841028300f3d4bb05be73d2c4fd41bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga889f07e3cb952a9637db4c1d282c718e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga889f07e3cb952a9637db4c1d282c718e">nrf24l01p_ng_get_channel</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:ga889f07e3cb952a9637db4c1d282c718e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured transceiver channel.  <a href="#ga889f07e3cb952a9637db4c1d282c718e">More...</a><br /></td></tr>
+<tr class="separator:ga889f07e3cb952a9637db4c1d282c718e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9735eb61190792c7781c05c5a87cb157"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga9735eb61190792c7781c05c5a87cb157">nrf24l01p_ng_set_rx_address</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, const uint8_t *addr, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe)</td></tr>
+<tr class="memdesc:ga9735eb61190792c7781c05c5a87cb157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Rx address of a certain data pipe.  <a href="#ga9735eb61190792c7781c05c5a87cb157">More...</a><br /></td></tr>
+<tr class="separator:ga9735eb61190792c7781c05c5a87cb157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gafa8e1d7db0cc690393834f8cb7445bfd">nrf24l01p_ng_get_rx_address</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t *addr, <a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a> pipe)</td></tr>
+<tr class="memdesc:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current Rx address of a certain data pipe.  <a href="#gafa8e1d7db0cc690393834f8cb7445bfd">More...</a><br /></td></tr>
+<tr class="separator:gafa8e1d7db0cc690393834f8cb7445bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gad55fd7e8e7ea96e58c3cfa567a868225">nrf24l01p_ng_set_max_retransm</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, uint8_t max_rt)</td></tr>
+<tr class="memdesc:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure maximum number of retransmissions for ESB.  <a href="#gad55fd7e8e7ea96e58c3cfa567a868225">More...</a><br /></td></tr>
+<tr class="separator:gad55fd7e8e7ea96e58c3cfa567a868225"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga240b83d7f85abbbc666ab85d5024a0a4">nrf24l01p_ng_get_max_retransm</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get currently configured number of maximum retransmissions for ESB.  <a href="#ga240b83d7f85abbbc666ab85d5024a0a4">More...</a><br /></td></tr>
+<tr class="separator:ga240b83d7f85abbbc666ab85d5024a0a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga071c22c97992bbb96be5beb757af8e08"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga071c22c97992bbb96be5beb757af8e08">nrf24l01p_ng_set_retransm_delay</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a> rt_delay)</td></tr>
+<tr class="memdesc:ga071c22c97992bbb96be5beb757af8e08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set retransmission delay for ESB.  <a href="#ga071c22c97992bbb96be5beb757af8e08">More...</a><br /></td></tr>
+<tr class="separator:ga071c22c97992bbb96be5beb757af8e08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad59bc9ecf759be70d409cee8cebe8361"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gad59bc9ecf759be70d409cee8cebe8361">nrf24l01p_ng_get_retransm_delay</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a> *rt_delay)</td></tr>
+<tr class="memdesc:gad59bc9ecf759be70d409cee8cebe8361"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get retransmission delay for ESB.  <a href="#gad59bc9ecf759be70d409cee8cebe8361">More...</a><br /></td></tr>
+<tr class="separator:gad59bc9ecf759be70d409cee8cebe8361"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85c646b2665acd98d0595556ee90781d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#ga85c646b2665acd98d0595556ee90781d">nrf24l01p_ng_set_state</a> (<a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev, <a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a> state)</td></tr>
+<tr class="memdesc:ga85c646b2665acd98d0595556ee90781d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put device into sleep mode(<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a5816f6660ec69662cf40e8c4c18d7187">NRF24L01P_NG_STATE_POWER_DOWN</a>), standby mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a98f671cbba722655f53eb7fa7084322c">NRF24L01P_NG_STATE_STANDBY_1</a>), or Rx mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a3497eab27344ba1bf1f417d42f261001">NRF24L01P_NG_STATE_RX_MODE</a>)  <a href="#ga85c646b2665acd98d0595556ee90781d">More...</a><br /></td></tr>
+<tr class="separator:ga85c646b2665acd98d0595556ee90781d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gaa156f6157e5b2afcaf6eef41cd2845bf">nrf24l01p_ng_get_state</a> (const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *dev)</td></tr>
+<tr class="memdesc:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current device state.  <a href="#gaa156f6157e5b2afcaf6eef41cd2845bf">More...</a><br /></td></tr>
+<tr class="separator:gaa156f6157e5b2afcaf6eef41cd2845bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6223b67d60cce99202c26870ddf60c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__nrf24l01p__ng.html#gac6223b67d60cce99202c26870ddf60c1">nrf24l01p_ng_eui_get</a> (const <a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *dev, uint8_t *eui)</td></tr>
+<tr class="memdesc:gac6223b67d60cce99202c26870ddf60c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve a unique layer-2 address for an <a class="el" href="structnrf24l01p__ng.html" title="NRF24L01+ device struct. ">nrf24l01p_ng</a> instance.  <a href="#gac6223b67d60cce99202c26870ddf60c1">More...</a><br /></td></tr>
+<tr class="separator:gac6223b67d60cce99202c26870ddf60c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gaca0d0f905446b54fc8202a44198885bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca0d0f905446b54fc8202a44198885bc">&#9670;&nbsp;</a></span>NRF24L01P_NG_ADDR_PX_LSB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_ADDR_PX_LSB</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">dev, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pipe&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;((dev)-&gt;arxaddr.rx_addr_short[(pipe) - 2])</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Shortcut to access the least significant byte of the addresses pipe 2, pipe 3, pipe 4 or pipe 5. </p>
+<p>The other bytes are shared with the address of pipe 1 </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng_8h_source.html#l00083">83</a> of file <a class="el" href="nrf24l01p__ng_8h_source.html">nrf24l01p_ng.h</a>.</p>
+
+</div>
+</div>
+<a id="ga1ca6f0c290cbcf46e6e955ab90ccf69f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ca6f0c290cbcf46e6e955ab90ccf69f">&#9670;&nbsp;</a></span>NRF24L01P_NG_BROADCAST_ADDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NRF24L01P_NG_BROADCAST_ADDR&#160;&#160;&#160;{ 0xFF, 0xFF, 0xFF, 0xFF, 0xFF }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Agreed layer-2 address to send broadcast frames to. </p>
+<p>The broadcast address will be assigned to pipe 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="nrf24l01p__ng_8h_source.html#l00065">65</a> of file <a class="el" href="nrf24l01p__ng_8h_source.html">nrf24l01p_ng.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gac6223b67d60cce99202c26870ddf60c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6223b67d60cce99202c26870ddf60c1">&#9670;&nbsp;</a></span>nrf24l01p_ng_eui_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void nrf24l01p_ng_eui_get </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__drivers__netdev__api.html#ga14012f723b7591ad2fa42ace34601ac4">netdev_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>eui</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieve a unique layer-2 address for an <a class="el" href="structnrf24l01p__ng.html" title="NRF24L01+ device struct. ">nrf24l01p_ng</a> instance. </p>
+<dl class="section note"><dt>Note</dt><dd>This function has <b>attribute</b>((weak)) so you can override this, e.g. to construct an address. By default <a class="el" href="group__sys__luid.html#ga0b8167bbf3f5e2f27d8b1b48fdfd1387">luid_get_lb</a> is used.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>The device descriptor of the transceiver </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">eui</td><td>Destination to write the address to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf27fbf98efa564a50a4213efe3445353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf27fbf98efa564a50a4213efe3445353">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_air_data_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t nrf24l01p_ng_get_air_data_rate </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a> *&#160;</td>
+          <td class="paramname"><em>data_rate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured data rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data_rate</td><td>Configuration data rate value (may be NULL)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Data rate in [kbit/s] </dd></dl>
+
+</div>
+</div>
+<a id="ga889f07e3cb952a9637db4c1d282c718e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga889f07e3cb952a9637db4c1d282c718e">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nrf24l01p_ng_get_channel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured transceiver channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transceiver channel </dd></dl>
+
+</div>
+</div>
+<a id="ga6720a63175d8c26921579a2ce1c908c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6720a63175d8c26921579a2ce1c908c4">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_crc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nrf24l01p_ng_get_crc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a> *&#160;</td>
+          <td class="paramname"><em>crc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured CRC length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">crc</td><td>Configuration crc value (may be NULL)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Current CRC length </dd></dl>
+
+</div>
+</div>
+<a id="ga41b9879e5eebd191191edbc5d4928b36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41b9879e5eebd191191edbc5d4928b36">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_enable_pipe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_get_enable_pipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if data pipe <code>pipe</code> is enabled. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>Pipe index </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">enable</td><td>If pipe is enabled or disabled</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad pipe index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga240b83d7f85abbbc666ab85d5024a0a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga240b83d7f85abbbc666ab85d5024a0a4">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_max_retransm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nrf24l01p_ng_get_max_retransm </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured number of maximum retransmissions for ESB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Maximum number of retransmissions </dd></dl>
+
+</div>
+</div>
+<a id="gad59bc9ecf759be70d409cee8cebe8361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad59bc9ecf759be70d409cee8cebe8361">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_retransm_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t nrf24l01p_ng_get_retransm_delay </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a> *&#160;</td>
+          <td class="paramname"><em>rt_delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get retransmission delay for ESB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">rt_delay</td><td>Configuration retransmission delay value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retransmission delay in [us] </dd></dl>
+
+</div>
+</div>
+<a id="gafa8e1d7db0cc690393834f8cb7445bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafa8e1d7db0cc690393834f8cb7445bfd">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_rx_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_get_rx_address </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current Rx address of a certain data pipe. </p>
+<p><code>addr</code> must be at least NRF24L01P_NG_ADDR_WIDTH wide.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">addr</td><td>Rx address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>Pipe index</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Address width </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-EINVAL</td><td>Bad pipe index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaa156f6157e5b2afcaf6eef41cd2845bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa156f6157e5b2afcaf6eef41cd2845bf">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a> nrf24l01p_ng_get_state </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current device state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRf24L01+ device handle</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Device state </dd></dl>
+
+</div>
+</div>
+<a id="gaca172d2099ebd6f058e25b7520f99f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca172d2099ebd6f058e25b7520f99f30">&#9670;&nbsp;</a></span>nrf24l01p_ng_get_tx_power()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t nrf24l01p_ng_get_tx_power </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a> *&#160;</td>
+          <td class="paramname"><em>power</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get currently configured Tx transceiver power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">power</td><td>Configuration Tx power value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Tx power in [dbm] </dd></dl>
+
+</div>
+</div>
+<a id="gaeda6e1bccc3fffababb92b4efe3d7219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeda6e1bccc3fffababb92b4efe3d7219">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_air_data_rate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_air_data_rate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a7a413486c3c477bd0acce1aa7faf8eab">nrf24l01p_ng_rfdr_t</a>&#160;</td>
+          <td class="paramname"><em>data_rate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure air data rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_rate</td><td>Data rate configuration value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad data rate value </td></tr>
+    <tr><td class="paramname">-EAGAIN</td><td>Current state does not permit changing data rate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga841028300f3d4bb05be73d2c4fd41bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga841028300f3d4bb05be73d2c4fd41bd5">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_channel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_channel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set transceiver channel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24l01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">channel</td><td>Channel [0; 15]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad channel </td></tr>
+    <tr><td class="paramname">-EAGAIN</td><td>Current state does not permit switching channel </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga599510b4ce7e7909a3021e401f0e270a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga599510b4ce7e7909a3021e401f0e270a">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_crc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_crc </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a2f32b3458b8bc5bcb22304fddcaf07fd">nrf24l01p_ng_crc_t</a>&#160;</td>
+          <td class="paramname"><em>crc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure CRC length. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">crc</td><td>Configuration CRC value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad CRC configuration value </td></tr>
+    <tr><td class="paramname">-ENOTSUP</td><td>CRC length not supported </td></tr>
+    <tr><td class="paramname">-EAGAIN</td><td>Current state does not permit changing CRC length </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf277cb1b28533f3add551a3c4a6f28e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf277cb1b28533f3add551a3c4a6f28e4">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_enable_pipe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_enable_pipe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable data pipe <code>pipe</code>. </p>
+<p>If <code>pipe</code> should be enabled, it is advised to set an address in advance. </p><dl class="section see"><dt>See also</dt><dd>nrf24l01p_ng_set_rx_addr For Enhanced ShockBurst, auto ACK and dynamic payload length are enabled</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>Pipe index </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td>If pipe should be enabled or disabled</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad pipe index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gad55fd7e8e7ea96e58c3cfa567a868225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad55fd7e8e7ea96e58c3cfa567a868225">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_max_retransm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_max_retransm </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>max_rt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure maximum number of retransmissions for ESB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_rt</td><td>Number of maximum retransmissions [0; 15]</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Unsupported number of retransmissions </td></tr>
+    <tr><td class="paramname">-EAGAIN</td><td>Current state does not permit changing the maximum number of retransmissions </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga071c22c97992bbb96be5beb757af8e08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga071c22c97992bbb96be5beb757af8e08">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_retransm_delay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_retransm_delay </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#aff41a6e49449e713ddfbc07fbe6ebf74">nrf24l01p_ng_ard_t</a>&#160;</td>
+          <td class="paramname"><em>rt_delay</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set retransmission delay for ESB. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rt_delay</td><td>Configuration retransmission delay value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 </dd>
+<dd>
+-EINVAL Bad retransmission delay value </dd>
+<dd>
+-EAGAIN Current state does not permit changing retransmission delay </dd></dl>
+
+</div>
+</div>
+<a id="ga9735eb61190792c7781c05c5a87cb157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9735eb61190792c7781c05c5a87cb157">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_rx_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_rx_address </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>addr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#ad2a06efea21496928bc5b2f16e4d7af6">nrf24l01p_ng_pipe_t</a>&#160;</td>
+          <td class="paramname"><em>pipe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Rx address of a certain data pipe. </p>
+<p>If you want to set the address of pipe 2, 3, 4 or 5 you only set the LSB because the other bytes are equal to the address of pipe 1.</p>
+<p>For pipe 0 and 1 NRF24L01P_NG_ADDR_WIGTH bytes are expected</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Rx address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pipe</td><td>Pipe index</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad address length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>-EAGAIN Current state does not permit changing Rx address </dd></dl>
+
+</div>
+</div>
+<a id="ga85c646b2665acd98d0595556ee90781d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga85c646b2665acd98d0595556ee90781d">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_state </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#acbf8ebcf91524fc1803c39aebdb2814d">nrf24l01p_ng_state_t</a>&#160;</td>
+          <td class="paramname"><em>state</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put device into sleep mode(<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a5816f6660ec69662cf40e8c4c18d7187">NRF24L01P_NG_STATE_POWER_DOWN</a>), standby mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a98f671cbba722655f53eb7fa7084322c">NRF24L01P_NG_STATE_STANDBY_1</a>), or Rx mode (<a class="el" href="nrf24l01p__ng__types_8h.html#a8f6599e344ca2c6828ab717ae73ac1e1a3497eab27344ba1bf1f417d42f261001">NRF24L01P_NG_STATE_RX_MODE</a>) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>State</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Old state </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-EAGAIN</td><td>Device is currently not permitted to change state </td></tr>
+    <tr><td class="paramname">-ENOTSUP</td><td>Device is not permitted to change state to <code>state</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0eafc06beef89a2642b6529c05352a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0eafc06beef89a2642b6529c05352a3a">&#9670;&nbsp;</a></span>nrf24l01p_ng_set_tx_power()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_set_tx_power </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a8a03130bab8505e5a721acc7d97e2e0c">nrf24l01p_ng_tx_power_t</a>&#160;</td>
+          <td class="paramname"><em>power</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure Tx trasceiver power. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRf24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Configuration Tx power value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Success </td></tr>
+    <tr><td class="paramname">-EINVAL</td><td>Bad Tx power configuration value </td></tr>
+    <tr><td class="paramname">-EAGAIN</td><td>Current state does not permit changing Tx power </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7f5644a3f1347d4fbbd38f22738a2821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f5644a3f1347d4fbbd38f22738a2821">&#9670;&nbsp;</a></span>nrf24l01p_ng_setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nrf24l01p_ng_setup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="nrf24l01p__ng__types_8h.html#a61175fdc334ffbe179e0a324c97c598a">nrf24l01p_ng_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structnrf24l01p__ng__params__t.html">nrf24l01p_ng_params_t</a> *&#160;</td>
+          <td class="paramname"><em>params</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Setup the NRF24L01+ driver, but perform no initialization. </p>
+<p><a class="el" href="structnetdev__driver.html#ae9c8aa7e8b6ef4b7b4acfcb0ae84209a">netdev_driver_t::init</a> can be used after this call to initialize the transceiver.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>NRF24L01+ device handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">params</td><td>Parameters of the device to setup </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index of <code>params</code> in a global parameter struct array. If initialized manually, pass a unique identifier instead.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>Device successfully set up </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:31 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

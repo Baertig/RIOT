@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/mtd_mapper.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('mtd__mapper_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mtd_mapper.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 Koen Zandberg &lt;koen@bergzand.net&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifndef MTD_MAPPER_H</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#define MTD_MAPPER_H</span></div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mtd_8h.html">mtd.h</a>&quot;</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mutex_8h.html">mutex.h</a>&quot;</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__drivers__mtd__mapper.html#ga35f0f9dde0c457059a8b2d2f27b7a9c2">   78</a></span>&#160;<span class="preprocessor">#define MTD_PARENT_INIT(_parent) \</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">{ \</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">    .mtd = _parent, \</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">    .lock = MUTEX_INIT, \</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">    .init = false, \</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">}</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structmtd__mapper__parent__t.html">   88</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structmtd__mapper__parent__t.html#a6eebd917d225cc69a08d58b12afe3e09">   89</a></span>&#160;    <a class="code" href="structmtd__dev__t.html">mtd_dev_t</a> *<a class="code" href="structmtd__mapper__parent__t.html#a6eebd917d225cc69a08d58b12afe3e09">mtd</a>;     </div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structmtd__mapper__parent__t.html#a2d49e3fc62a91aeec11e24377eb5d2ac">   90</a></span>&#160;    <a class="code" href="structmutex__t.html">mutex_t</a> <a class="code" href="structmtd__mapper__parent__t.html#a2d49e3fc62a91aeec11e24377eb5d2ac">lock</a>;       </div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structmtd__mapper__parent__t.html#a970e062970b71ec6bc851edf887111bd">   91</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structmtd__mapper__parent__t.html#a970e062970b71ec6bc851edf887111bd">init</a>;          </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <a class="code" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a>;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structmtd__mapper__region__t.html">   97</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structmtd__mapper__region__t.html#a9edb672928d4f2d89ad18c8a03f389b1">   98</a></span>&#160;    <a class="code" href="structmtd__dev__t.html">mtd_dev_t</a> <a class="code" href="structmtd__mapper__region__t.html#a9edb672928d4f2d89ad18c8a03f389b1">mtd</a>;                  </div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structmtd__mapper__region__t.html#a5dacd4a9d652d854a10004b0bc558fa6">   99</a></span>&#160;    <a class="code" href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a> *<a class="code" href="structmtd__mapper__region__t.html#a5dacd4a9d652d854a10004b0bc558fa6">parent</a>;    </div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structmtd__mapper__region__t.html#af913e85e666d40bcdbc758baec8bc0e9">  100</a></span>&#160;    uint32_t <a class="code" href="structmtd__mapper__region__t.html#af913e85e666d40bcdbc758baec8bc0e9">sector</a>;                </div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <a class="code" href="structmtd__mapper__region__t.html">mtd_mapper_region_t</a>;</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">extern</span> <span class="keyword">const</span> <a class="code" href="structmtd__desc.html">mtd_desc_t</a> <a class="code" href="group__drivers__mtd__mapper.html#ga3aa8c8a85800fedb5444843873a74bde">mtd_mapper_driver</a>;</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* MTD_MAPPER_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="ttc" id="structmtd__desc_html"><div class="ttname"><a href="structmtd__desc.html">mtd_desc</a></div><div class="ttdoc">MTD driver interface. </div><div class="ttdef"><b>Definition:</b> <a href="mtd_8h_source.html#l00204">mtd.h:204</a></div></div>
+<div class="ttc" id="structmtd__mapper__region__t_html_af913e85e666d40bcdbc758baec8bc0e9"><div class="ttname"><a href="structmtd__mapper__region__t.html#af913e85e666d40bcdbc758baec8bc0e9">mtd_mapper_region_t::sector</a></div><div class="ttdeci">uint32_t sector</div><div class="ttdoc">first sector of the region </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00100">mtd_mapper.h:100</a></div></div>
+<div class="ttc" id="structmtd__mapper__parent__t_html"><div class="ttname"><a href="structmtd__mapper__parent__t.html">mtd_mapper_parent_t</a></div><div class="ttdoc">MTD mapper backing device context. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00088">mtd_mapper.h:88</a></div></div>
+<div class="ttc" id="structmtd__mapper__region__t_html_a9edb672928d4f2d89ad18c8a03f389b1"><div class="ttname"><a href="structmtd__mapper__region__t.html#a9edb672928d4f2d89ad18c8a03f389b1">mtd_mapper_region_t::mtd</a></div><div class="ttdeci">mtd_dev_t mtd</div><div class="ttdoc">MTD context. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00098">mtd_mapper.h:98</a></div></div>
+<div class="ttc" id="structmtd__mapper__parent__t_html_a970e062970b71ec6bc851edf887111bd"><div class="ttname"><a href="structmtd__mapper__parent__t.html#a970e062970b71ec6bc851edf887111bd">mtd_mapper_parent_t::init</a></div><div class="ttdeci">bool init</div><div class="ttdoc">Initialization flag. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00091">mtd_mapper.h:91</a></div></div>
+<div class="ttc" id="mutex_8h_html"><div class="ttname"><a href="mutex_8h.html">mutex.h</a></div><div class="ttdoc">Mutex for thread synchronization. </div></div>
+<div class="ttc" id="structmtd__dev__t_html"><div class="ttname"><a href="structmtd__dev__t.html">mtd_dev_t</a></div><div class="ttdoc">MTD device descriptor. </div><div class="ttdef"><b>Definition:</b> <a href="mtd_8h_source.html#l00112">mtd.h:112</a></div></div>
+<div class="ttc" id="structmtd__mapper__parent__t_html_a2d49e3fc62a91aeec11e24377eb5d2ac"><div class="ttname"><a href="structmtd__mapper__parent__t.html#a2d49e3fc62a91aeec11e24377eb5d2ac">mtd_mapper_parent_t::lock</a></div><div class="ttdeci">mutex_t lock</div><div class="ttdoc">Mutex for guarding the backing device access. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00090">mtd_mapper.h:90</a></div></div>
+<div class="ttc" id="structmtd__mapper__parent__t_html_a6eebd917d225cc69a08d58b12afe3e09"><div class="ttname"><a href="structmtd__mapper__parent__t.html#a6eebd917d225cc69a08d58b12afe3e09">mtd_mapper_parent_t::mtd</a></div><div class="ttdeci">mtd_dev_t * mtd</div><div class="ttdoc">Parent MTD device. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00089">mtd_mapper.h:89</a></div></div>
+<div class="ttc" id="structmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdoc">Mutex structure. </div><div class="ttdef"><b>Definition:</b> <a href="mutex_8h_source.html#l00146">mutex.h:146</a></div></div>
+<div class="ttc" id="group__drivers__mtd__mapper_html_ga3aa8c8a85800fedb5444843873a74bde"><div class="ttname"><a href="group__drivers__mtd__mapper.html#ga3aa8c8a85800fedb5444843873a74bde">mtd_mapper_driver</a></div><div class="ttdeci">const mtd_desc_t mtd_mapper_driver</div><div class="ttdoc">Mapper MTD device operations table. </div></div>
+<div class="ttc" id="structmtd__mapper__region__t_html_a5dacd4a9d652d854a10004b0bc558fa6"><div class="ttname"><a href="structmtd__mapper__region__t.html#a5dacd4a9d652d854a10004b0bc558fa6">mtd_mapper_region_t::parent</a></div><div class="ttdeci">mtd_mapper_parent_t * parent</div><div class="ttdoc">MTD mapper parent device. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00099">mtd_mapper.h:99</a></div></div>
+<div class="ttc" id="structmtd__mapper__region__t_html"><div class="ttname"><a href="structmtd__mapper__region__t.html">mtd_mapper_region_t</a></div><div class="ttdoc">MTD mapped region. </div><div class="ttdef"><b>Definition:</b> <a href="mtd__mapper_8h_source.html#l00097">mtd_mapper.h:97</a></div></div>
+<div class="ttc" id="mtd_8h_html"><div class="ttname"><a href="mtd_8h.html">mtd.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:19 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

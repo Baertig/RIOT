@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>hard_api_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structhard__api__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">hard_api_t Struct Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>ROM Hard-API.  
+ <a href="structhard__api__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ROM Hard-API. </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html#l00031">31</a> of file <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a6846ecfb76ca23a24eafa323c1c6ba95"><td class="memItemLeft" align="right" valign="top"><a id="a6846ecfb76ca23a24eafa323c1c6ba95"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a6846ecfb76ca23a24eafa323c1c6ba95">crc32</a> )(uint8_t *data, uint32_t bytecount, uint32_t repeatcount)</td></tr>
+<tr class="memdesc:a6846ecfb76ca23a24eafa323c1c6ba95"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRC-32. <br /></td></tr>
+<tr class="separator:a6846ecfb76ca23a24eafa323c1c6ba95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab53caee04751c8bbc069f60cbb6cd4f7"><td class="memItemLeft" align="right" valign="top"><a id="ab53caee04751c8bbc069f60cbb6cd4f7"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#ab53caee04751c8bbc069f60cbb6cd4f7">get_fl_size</a> )(void)</td></tr>
+<tr class="memdesc:ab53caee04751c8bbc069f60cbb6cd4f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get flash size. <br /></td></tr>
+<tr class="separator:ab53caee04751c8bbc069f60cbb6cd4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabdb763880dbd77bc4ccd58b93a8484c"><td class="memItemLeft" align="right" valign="top"><a id="aabdb763880dbd77bc4ccd58b93a8484c"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#aabdb763880dbd77bc4ccd58b93a8484c">get_chip_id</a> )(void)</td></tr>
+<tr class="memdesc:aabdb763880dbd77bc4ccd58b93a8484c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get chip ID. <br /></td></tr>
+<tr class="separator:aabdb763880dbd77bc4ccd58b93a8484c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9079fea9e52167908bee404961efa17"><td class="memItemLeft" align="right" valign="top"><a id="ad9079fea9e52167908bee404961efa17"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#ad9079fea9e52167908bee404961efa17">__reserved0</a> )(uint32_t)</td></tr>
+<tr class="memdesc:ad9079fea9e52167908bee404961efa17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:ad9079fea9e52167908bee404961efa17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61815bb0ee607e75af0d7dd0d30ff25d"><td class="memItemLeft" align="right" valign="top"><a id="a61815bb0ee607e75af0d7dd0d30ff25d"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a61815bb0ee607e75af0d7dd0d30ff25d">__reserved1</a> )(void)</td></tr>
+<tr class="memdesc:a61815bb0ee607e75af0d7dd0d30ff25d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:a61815bb0ee607e75af0d7dd0d30ff25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38cd2e9c05b5ea43b9ee30ac947e8928"><td class="memItemLeft" align="right" valign="top"><a id="a38cd2e9c05b5ea43b9ee30ac947e8928"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a38cd2e9c05b5ea43b9ee30ac947e8928">__reserved2</a> )(uint8_t *, uint32_t, uint32_t)</td></tr>
+<tr class="memdesc:a38cd2e9c05b5ea43b9ee30ac947e8928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:a38cd2e9c05b5ea43b9ee30ac947e8928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac91e02eefd53ed255c1c5a2ae39c9aa3"><td class="memItemLeft" align="right" valign="top"><a id="ac91e02eefd53ed255c1c5a2ae39c9aa3"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#ac91e02eefd53ed255c1c5a2ae39c9aa3">resetdev</a> )(void)</td></tr>
+<tr class="memdesc:ac91e02eefd53ed255c1c5a2ae39c9aa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset device. <br /></td></tr>
+<tr class="separator:ac91e02eefd53ed255c1c5a2ae39c9aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fcddefefba2573ca2bc261a6ef2b9dd"><td class="memItemLeft" align="right" valign="top"><a id="a2fcddefefba2573ca2bc261a6ef2b9dd"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a2fcddefefba2573ca2bc261a6ef2b9dd">fletcher32</a> )(uint16_t *data, uint16_t wordcount, uint16_t repeatcount)</td></tr>
+<tr class="memdesc:a2fcddefefba2573ca2bc261a6ef2b9dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fletcher-32. <br /></td></tr>
+<tr class="separator:a2fcddefefba2573ca2bc261a6ef2b9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8281d07eb871fb57258cb9dfaa1345c1"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a8281d07eb871fb57258cb9dfaa1345c1">min_val</a> )(uint32_t *buffer, uint32_t datacount)</td></tr>
+<tr class="memdesc:a8281d07eb871fb57258cb9dfaa1345c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Min.  <a href="#a8281d07eb871fb57258cb9dfaa1345c1">More...</a><br /></td></tr>
+<tr class="separator:a8281d07eb871fb57258cb9dfaa1345c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae789fb8e0cb7de3554eab8e308bab989"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#ae789fb8e0cb7de3554eab8e308bab989">max_val</a> )(uint32_t *databuffer, uint32_t datacount)</td></tr>
+<tr class="memdesc:ae789fb8e0cb7de3554eab8e308bab989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Max.  <a href="#ae789fb8e0cb7de3554eab8e308bab989">More...</a><br /></td></tr>
+<tr class="separator:ae789fb8e0cb7de3554eab8e308bab989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf673b35dc71c68e2f75cda9a4ea2678"><td class="memItemLeft" align="right" valign="top">uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#acf673b35dc71c68e2f75cda9a4ea2678">mean_val</a> )(uint32_t *databuffer, uint32_t datacount)</td></tr>
+<tr class="memdesc:acf673b35dc71c68e2f75cda9a4ea2678"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mean.  <a href="#acf673b35dc71c68e2f75cda9a4ea2678">More...</a><br /></td></tr>
+<tr class="separator:acf673b35dc71c68e2f75cda9a4ea2678"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdfd79b905d1bbdda3eb3ec1dccb304c"><td class="memItemLeft" align="right" valign="top"><a id="afdfd79b905d1bbdda3eb3ec1dccb304c"></a>
+uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#afdfd79b905d1bbdda3eb3ec1dccb304c">stdd_val</a> )(uint32_t *databuffer, uint32_t datacount)</td></tr>
+<tr class="memdesc:afdfd79b905d1bbdda3eb3ec1dccb304c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard deviation value. <br /></td></tr>
+<tr class="separator:afdfd79b905d1bbdda3eb3ec1dccb304c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd43c1460ad5cb469517c644307b4a73"><td class="memItemLeft" align="right" valign="top"><a id="abd43c1460ad5cb469517c644307b4a73"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#abd43c1460ad5cb469517c644307b4a73">hf_source_safe_switch</a> )(void)</td></tr>
+<tr class="memdesc:abd43c1460ad5cb469517c644307b4a73"><td class="mdescLeft">&#160;</td><td class="mdescRight">HF source safe-switch. <br /></td></tr>
+<tr class="separator:abd43c1460ad5cb469517c644307b4a73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeba81ab32dca59ad5692c4163cdfe26"><td class="memItemLeft" align="right" valign="top"><a id="aaeba81ab32dca59ad5692c4163cdfe26"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#aaeba81ab32dca59ad5692c4163cdfe26">__reserved3</a> )(uint32_t)</td></tr>
+<tr class="memdesc:aaeba81ab32dca59ad5692c4163cdfe26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:aaeba81ab32dca59ad5692c4163cdfe26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90219cc37599b66b8c26270e07b03b9e"><td class="memItemLeft" align="right" valign="top"><a id="a90219cc37599b66b8c26270e07b03b9e"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a90219cc37599b66b8c26270e07b03b9e">__reserved4</a> )(uint32_t)</td></tr>
+<tr class="memdesc:a90219cc37599b66b8c26270e07b03b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved. <br /></td></tr>
+<tr class="separator:a90219cc37599b66b8c26270e07b03b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4df6b714c1913d986750f83bca0e0a"><td class="memItemLeft" align="right" valign="top"><a id="a0d4df6b714c1913d986750f83bca0e0a"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a0d4df6b714c1913d986750f83bca0e0a">compa_in</a> )(uint8_t signal)</td></tr>
+<tr class="memdesc:a0d4df6b714c1913d986750f83bca0e0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select CompA input. <br /></td></tr>
+<tr class="separator:a0d4df6b714c1913d986750f83bca0e0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f07c24a18cb9627619b3f3fff326c97"><td class="memItemLeft" align="right" valign="top"><a id="a4f07c24a18cb9627619b3f3fff326c97"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a4f07c24a18cb9627619b3f3fff326c97">compa_ref</a> )(uint8_t signal)</td></tr>
+<tr class="memdesc:a4f07c24a18cb9627619b3f3fff326c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select CompA reference. <br /></td></tr>
+<tr class="separator:a4f07c24a18cb9627619b3f3fff326c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef29f2c4c28e163a104dac3fe9906a2"><td class="memItemLeft" align="right" valign="top"><a id="a3ef29f2c4c28e163a104dac3fe9906a2"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#a3ef29f2c4c28e163a104dac3fe9906a2">adc_compb_in</a> )(uint8_t signal)</td></tr>
+<tr class="memdesc:a3ef29f2c4c28e163a104dac3fe9906a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select ADC CompB input. <br /></td></tr>
+<tr class="separator:a3ef29f2c4c28e163a104dac3fe9906a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb57115f6c3998c969f755b9a01fbbf"><td class="memItemLeft" align="right" valign="top"><a id="abfb57115f6c3998c969f755b9a01fbbf"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhard__api__t.html#abfb57115f6c3998c969f755b9a01fbbf">compb_ref</a> )(uint8_t signal)</td></tr>
+<tr class="memdesc:abfb57115f6c3998c969f755b9a01fbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select CompB reference. <br /></td></tr>
+<tr class="separator:abfb57115f6c3998c969f755b9a01fbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ae789fb8e0cb7de3554eab8e308bab989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae789fb8e0cb7de3554eab8e308bab989">&#9670;&nbsp;</a></span>max_val</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(*  hard_api_t::max_val) (uint32_t *databuffer, uint32_t datacount)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Max. </p>
+<p>value </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html#l00045">45</a> of file <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a>.</p>
+
+</div>
+</div>
+<a id="acf673b35dc71c68e2f75cda9a4ea2678"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf673b35dc71c68e2f75cda9a4ea2678">&#9670;&nbsp;</a></span>mean_val</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(*  hard_api_t::mean_val) (uint32_t *databuffer, uint32_t datacount)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mean. </p>
+<p>value </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html#l00047">47</a> of file <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a>.</p>
+
+</div>
+</div>
+<a id="a8281d07eb871fb57258cb9dfaa1345c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8281d07eb871fb57258cb9dfaa1345c1">&#9670;&nbsp;</a></span>min_val</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t(*  hard_api_t::min_val) (uint32_t *buffer, uint32_t datacount)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Min. </p>
+<p>value </p>
+
+<p class="definition">Definition at line <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html#l00043">43</a> of file <a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/cc26xx_cc13xx/include/<a class="el" href="cc26xx__cc13xx__hard__api_8h_source.html">cc26xx_cc13xx_hard_api.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

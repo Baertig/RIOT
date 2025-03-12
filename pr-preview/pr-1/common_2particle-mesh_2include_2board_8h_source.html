@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/common/particle-mesh/include/board.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('common_2particle-mesh_2include_2board_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">board.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="common_2particle-mesh_2include_2board_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2018 Inria</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef BOARD_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define BOARD_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;cpu.h&quot;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;board_common.h&quot;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef DOXYGEN</span></div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a306c911cf764242055eaa6f804231a22">   50</a></span>&#160;<span class="preprocessor">#define PARTICLE_MONOFIRMWARE</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef DOXYGEN</span></div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a5488bec84d59fabc84e4b61dd3f2ce06">   65</a></span>&#160;<span class="preprocessor">#define PARTICLE_MONOFIRMWARE_CHECKSUMLIMIT</span></div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef DOXYGEN</span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a278388b6a32c9780630b1beb98349e88">   79</a></span>&#160;<span class="preprocessor">#define PARTICLE_PLATFORM_ID</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#define LED0_PIN            GPIO_PIN(0, 13)</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#define LED1_PIN            GPIO_PIN(0, 14)</span></div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#define LED2_PIN            GPIO_PIN(0, 15)</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define LED_PORT            (NRF_P0)</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define LED0_MASK           (1 &lt;&lt; 13)</span></div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define LED1_MASK           (1 &lt;&lt; 14)</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define LED2_MASK           (1 &lt;&lt; 15)</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#define LED_MASK            (LED0_MASK | LED1_MASK | LED2_MASK)</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">/* The typical SAUL setup for this board uses PWM to make the LEDs (really a</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * single RGB LED) into a PWM controlled RGB LED entry. As a consequence of the</span></div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * PWM configuration, toggling the GPIO has no effect any more, and thus we do</span></div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * not define the macros so that no LEDs get picked up for LEDn_IS_PROVIDED.</span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * (The LEDn_ON etc macros will still be present and no-op as usual, but those</span></div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * explicitly checking for IS_PROVIDED will get an accurate picture).</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * Both conditions are typically true when saul_default is on, but strictly, it</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * is those two that in combination make LEDs effectively unavailable to users.</span></div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> * */</span></div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#if !(IS_USED(MODULE_AUTO_INIT_SAUL) &amp;&amp; IS_USED(MODULE_SAUL_PWM))</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#define LED0_ON             (LED_PORT-&gt;OUTCLR = LED0_MASK)</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#define LED0_OFF            (LED_PORT-&gt;OUTSET = LED0_MASK)</span></div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#define LED0_TOGGLE         (LED_PORT-&gt;OUT   ^= LED0_MASK)</span></div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#define LED1_ON             (LED_PORT-&gt;OUTCLR = LED1_MASK)</span></div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#define LED1_OFF            (LED_PORT-&gt;OUTSET = LED1_MASK)</span></div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#define LED1_TOGGLE         (LED_PORT-&gt;OUT   ^= LED1_MASK)</span></div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#define LED2_ON             (LED_PORT-&gt;OUTCLR = LED2_MASK)</span></div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#define LED2_OFF            (LED_PORT-&gt;OUTSET = LED2_MASK)</span></div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#define LED2_TOGGLE         (LED_PORT-&gt;OUT   ^= LED2_MASK)</span></div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !(IS_USED(MODULE_AUTO_INIT_SAUL) &amp;&amp; IS_USED(MODULE_SAUL_PWM)) */</span><span class="preprocessor"></span></div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define BTN0_PIN            GPIO_PIN(0, 11)</span></div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define BTN0_MODE           GPIO_IN_PU</span></div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47">  142</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47">board_nrfantenna_selection</a> {</div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47af7aee87625e515b33b45c69d2aa094be">  144</a></span>&#160;    <a class="code" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47af7aee87625e515b33b45c69d2aa094be">BOARD_NRFANTENNA_BUILTIN</a>,</div><div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47ab63a3dd77ae912934e57b920f59b4b38">  146</a></span>&#160;    <a class="code" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47ab63a3dd77ae912934e57b920f59b4b38">BOARD_NRFANTENNA_EXTERNAL</a>,</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="keywordtype">void</span> <a class="code" href="common_2particle-mesh_2include_2board_8h.html#a256a868fbdd26f23b010090d1b37c437">board_nrfantenna_select</a>(<span class="keyword">enum</span> <a class="code" href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47">board_nrfantenna_selection</a> choice);</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#if defined(BOARD_PARTICLE_XENON) || defined(DOXYGEN)</span></div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div><div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#aba57eedc6a46a6b28f0a3f1410854bb9">  166</a></span>&#160;<span class="preprocessor">#define VCTL1_PIN           GPIO_PIN(0, 24)</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div><div class="line"><a name="l00175"></a><span class="lineno"><a class="line" href="common_2particle-mesh_2include_2board_8h.html#a2706d4302393e59143e4ea6d90df6f6d">  175</a></span>&#160;<span class="preprocessor">#define VCTL2_PIN           GPIO_PIN(0, 25)</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#ifdef BOARD_PARTICLE_ARGON</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#define VCTL1_PIN           GPIO_PIN(0, 25)</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#define VCTL2_PIN           GPIO_PIN(0, 2)</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#ifdef BOARD_PARTICLE_BORON</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define VCTL1_PIN           GPIO_PIN(0, 7)</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div><div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* BOARD_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div><div class="ttc" id="common_2particle-mesh_2include_2board_8h_html_a256a868fbdd26f23b010090d1b37c437"><div class="ttname"><a href="common_2particle-mesh_2include_2board_8h.html#a256a868fbdd26f23b010090d1b37c437">board_nrfantenna_select</a></div><div class="ttdeci">void board_nrfantenna_select(enum board_nrfantenna_selection choice)</div><div class="ttdoc">Antenna output selection. </div></div>
+<div class="ttc" id="common_2particle-mesh_2include_2board_8h_html_a57bf63dee096cf6baa4c8c0952ad8c47af7aee87625e515b33b45c69d2aa094be"><div class="ttname"><a href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47af7aee87625e515b33b45c69d2aa094be">BOARD_NRFANTENNA_BUILTIN</a></div><div class="ttdoc">The board&amp;#39;s built-in antenna. </div><div class="ttdef"><b>Definition:</b> <a href="common_2particle-mesh_2include_2board_8h_source.html#l00144">board.h:144</a></div></div>
+<div class="ttc" id="common_2particle-mesh_2include_2board_8h_html_a57bf63dee096cf6baa4c8c0952ad8c47ab63a3dd77ae912934e57b920f59b4b38"><div class="ttname"><a href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47ab63a3dd77ae912934e57b920f59b4b38">BOARD_NRFANTENNA_EXTERNAL</a></div><div class="ttdoc">The board&amp;#39;s uFL connector. </div><div class="ttdef"><b>Definition:</b> <a href="common_2particle-mesh_2include_2board_8h_source.html#l00146">board.h:146</a></div></div>
+<div class="ttc" id="common_2particle-mesh_2include_2board_8h_html_a57bf63dee096cf6baa4c8c0952ad8c47"><div class="ttname"><a href="common_2particle-mesh_2include_2board_8h.html#a57bf63dee096cf6baa4c8c0952ad8c47">board_nrfantenna_selection</a></div><div class="ttdeci">board_nrfantenna_selection</div><div class="ttdoc">Choices in antenna outputs for the board&amp;#39;s nRF radio. </div><div class="ttdef"><b>Definition:</b> <a href="common_2particle-mesh_2include_2board_8h_source.html#l00142">board.h:142</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:17 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

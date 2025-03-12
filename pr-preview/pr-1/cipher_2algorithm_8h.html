@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/cipher/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cipher_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Cipher algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Cipher algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cipher_2algorithm_8h__incl.svg" width="180" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cipher_2algorithm_8h__dep__incl.svg" width="2546" height="707"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="cipher_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a68228a619db59eba93fd13e9129dbfe2"><td class="memItemLeft" align="right" valign="top"><a id="a68228a619db59eba93fd13e9129dbfe2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#a68228a619db59eba93fd13e9129dbfe2">PSA_ALG_CATEGORY_CIPHER</a>&#160;&#160;&#160;((psa_algorithm_t)0x04000000)</td></tr>
+<tr class="memdesc:a68228a619db59eba93fd13e9129dbfe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for cipher algorithms. <br /></td></tr>
+<tr class="separator:a68228a619db59eba93fd13e9129dbfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1a5a402ad89a2e68f12bfb535490eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#a1d1a5a402ad89a2e68f12bfb535490eb">PSA_ALG_IS_CIPHER</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="cipher_2algorithm_8h.html#a68228a619db59eba93fd13e9129dbfe2">PSA_ALG_CATEGORY_CIPHER</a>)</td></tr>
+<tr class="memdesc:a1d1a5a402ad89a2e68f12bfb535490eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a symmetric cipher algorithm.  <a href="#a1d1a5a402ad89a2e68f12bfb535490eb">More...</a><br /></td></tr>
+<tr class="separator:a1d1a5a402ad89a2e68f12bfb535490eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfec68e0c6175e02e1b2ebc97df383c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#acfec68e0c6175e02e1b2ebc97df383c0">PSA_ALG_IS_STREAM_CIPHER</a>(alg)&#160;&#160;&#160;(((alg) &amp; 0x7f800000) == 0x04800000)</td></tr>
+<tr class="memdesc:acfec68e0c6175e02e1b2ebc97df383c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is a stream cipher.  <a href="#acfec68e0c6175e02e1b2ebc97df383c0">More...</a><br /></td></tr>
+<tr class="separator:acfec68e0c6175e02e1b2ebc97df383c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98c105198f7428f7d1dffcb2cd398cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#ad98c105198f7428f7d1dffcb2cd398cd">PSA_ALG_STREAM_CIPHER</a>&#160;&#160;&#160;((psa_algorithm_t)0x04800100)</td></tr>
+<tr class="memdesc:ad98c105198f7428f7d1dffcb2cd398cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The stream cipher mode of a stream cipher algorithm.  <a href="#ad98c105198f7428f7d1dffcb2cd398cd">More...</a><br /></td></tr>
+<tr class="separator:ad98c105198f7428f7d1dffcb2cd398cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad318309706a769cffdc64e4c7e06b2e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#ad318309706a769cffdc64e4c7e06b2e9">PSA_ALG_CTR</a>&#160;&#160;&#160;((psa_algorithm_t)0x04c01000)</td></tr>
+<tr class="memdesc:ad318309706a769cffdc64e4c7e06b2e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stream cipher built using the Counter (CTR) mode of a block cipher.  <a href="#ad318309706a769cffdc64e4c7e06b2e9">More...</a><br /></td></tr>
+<tr class="separator:ad318309706a769cffdc64e4c7e06b2e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0088c933e01d671f263a9a1f177cb5bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#a0088c933e01d671f263a9a1f177cb5bc">PSA_ALG_CFB</a>&#160;&#160;&#160;((psa_algorithm_t)0x04c01100)</td></tr>
+<tr class="memdesc:a0088c933e01d671f263a9a1f177cb5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stream cipher built using the Cipher Feedback (CFB) mode of a block cipher.  <a href="#a0088c933e01d671f263a9a1f177cb5bc">More...</a><br /></td></tr>
+<tr class="separator:a0088c933e01d671f263a9a1f177cb5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96bb421fa634c6fa8f571f0112f1ddb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#ae96bb421fa634c6fa8f571f0112f1ddb">PSA_ALG_OFB</a>&#160;&#160;&#160;((psa_algorithm_t)0x04c01200)</td></tr>
+<tr class="memdesc:ae96bb421fa634c6fa8f571f0112f1ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">A stream cipher built using the Output Feedback (OFB) mode of a block cipher.  <a href="#ae96bb421fa634c6fa8f571f0112f1ddb">More...</a><br /></td></tr>
+<tr class="separator:ae96bb421fa634c6fa8f571f0112f1ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa722c0e426a797fd6d99623f59748125"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#aa722c0e426a797fd6d99623f59748125">PSA_ALG_XTS</a>&#160;&#160;&#160;((psa_algorithm_t)0x0440ff00)</td></tr>
+<tr class="memdesc:aa722c0e426a797fd6d99623f59748125"><td class="mdescLeft">&#160;</td><td class="mdescRight">The XEX with Ciphertext Stealing (XTS) cipher mode of a block cipher.  <a href="#aa722c0e426a797fd6d99623f59748125">More...</a><br /></td></tr>
+<tr class="separator:aa722c0e426a797fd6d99623f59748125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb332d72716958880ee7f97d8365ae66"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#acb332d72716958880ee7f97d8365ae66">PSA_ALG_CBC_NO_PADDING</a>&#160;&#160;&#160;((psa_algorithm_t)0x04404000)</td></tr>
+<tr class="memdesc:acb332d72716958880ee7f97d8365ae66"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Cipher Block Chaining (CBC) mode of a block cipher, with no padding.  <a href="#acb332d72716958880ee7f97d8365ae66">More...</a><br /></td></tr>
+<tr class="separator:acb332d72716958880ee7f97d8365ae66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef50d2e9716eb6d476046608e4e0c78c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#aef50d2e9716eb6d476046608e4e0c78c">PSA_ALG_CBC_PKCS7</a>&#160;&#160;&#160;((psa_algorithm_t)0x04404100)</td></tr>
+<tr class="memdesc:aef50d2e9716eb6d476046608e4e0c78c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Cipher Block Chaining (CBC) mode of a block cipher, with PKCS#7 padding.  <a href="#aef50d2e9716eb6d476046608e4e0c78c">More...</a><br /></td></tr>
+<tr class="separator:aef50d2e9716eb6d476046608e4e0c78c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f0609cd0f12cccc9c950fd5a81a0e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_2algorithm_8h.html#ab8f0609cd0f12cccc9c950fd5a81a0e3">PSA_ALG_ECB_NO_PADDING</a>&#160;&#160;&#160;((psa_algorithm_t)0x04404400)</td></tr>
+<tr class="memdesc:ab8f0609cd0f12cccc9c950fd5a81a0e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Electronic Codebook (ECB) mode of a block cipher, with no padding.  <a href="#ab8f0609cd0f12cccc9c950fd5a81a0e3">More...</a><br /></td></tr>
+<tr class="separator:ab8f0609cd0f12cccc9c950fd5a81a0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="acb332d72716958880ee7f97d8365ae66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb332d72716958880ee7f97d8365ae66">&#9670;&nbsp;</a></span>PSA_ALG_CBC_NO_PADDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CBC_NO_PADDING&#160;&#160;&#160;((psa_algorithm_t)0x04404000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Cipher Block Chaining (CBC) mode of a block cipher, with no padding. </p>
+<p>The underlying block cipher is determined by the key type. This symmetric cipher mode can only be used with messages whose lengths are a multiple of the block size of the chosen block cipher.</p>
+<p>CBC mode requires an initialization vector (IV) that is the same size as the cipher block length.</p>
+<dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     The CBC block cipher mode is defined in NIST Special Publication 800-38A:
+     Recommendation for Block Cipher Modes of Operation: Methods and Techniques
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38B).
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00276">276</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aef50d2e9716eb6d476046608e4e0c78c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef50d2e9716eb6d476046608e4e0c78c">&#9670;&nbsp;</a></span>PSA_ALG_CBC_PKCS7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CBC_PKCS7&#160;&#160;&#160;((psa_algorithm_t)0x04404100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Cipher Block Chaining (CBC) mode of a block cipher, with PKCS#7 padding. </p>
+<p>The underlying block cipher is determined by the key type. </p><pre class="fragment">     CBC mode requires an initialization vector (IV) that is the same size as the cipher
+     block length.
+</pre><dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     The CBC block cipher mode is defined in NIST Special Publication 800-38A:
+     Recommendation for Block Cipher Modes of Operation: Methods and Techniques
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38B).
+     The padding operation is defined by PKCS #7: Cryptographic Message Syntax Version 1.5
+     [RFC2315](https://tools.ietf.org/html/rfc2315.html) §10.3.
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00301">301</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a0088c933e01d671f263a9a1f177cb5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0088c933e01d671f263a9a1f177cb5bc">&#9670;&nbsp;</a></span>PSA_ALG_CFB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CFB&#160;&#160;&#160;((psa_algorithm_t)0x04c01100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A stream cipher built using the Cipher Feedback (CFB) mode of a block cipher. </p>
+<p>The underlying block cipher is determined by the key type. This is the variant of CFB where each iteration encrypts or decrypts a segment of the input that is the same length as the cipher block size. For example, using <a class="el" href="cipher_2algorithm_8h.html#a0088c933e01d671f263a9a1f177cb5bc">PSA_ALG_CFB</a> with a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a> will result in the AES-CFB-128 cipher.</p>
+<p>CFB mode requires an initialization vector (IV) that is the same size as the cipher block length.</p>
+<dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     The CFB block cipher mode is defined in NIST Special Publication 800-38A:
+     Recommendation for Block Cipher Modes of Operation: Methods and Techniques
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38A), using a segment size s equal
+     to the block size b. The definition in
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38A) is
+     extended to allow an incomplete final block of input, in which case the algorithm
+     discards the final bytes of the key stream when encrypting or decrypting the final
+     partial block.
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00199">199</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad318309706a769cffdc64e4c7e06b2e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad318309706a769cffdc64e4c7e06b2e9">&#9670;&nbsp;</a></span>PSA_ALG_CTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_CTR&#160;&#160;&#160;((psa_algorithm_t)0x04c01000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A stream cipher built using the Counter (CTR) mode of a block cipher. </p>
+<p>CTR is a stream cipher which is built from a block cipher. The underlying block cipher is determined by the key type. For example, to use AES-128-CTR, use this algorithm with a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a> and a size of 128 bits (16 bytes).</p>
+<p>The CTR block cipher mode is defined in NIST Special Publication 800-38A: Recommendation for Block Cipher Modes of Operation: Methods and Techniques [SP800-38A].</p>
+<p>CTR mode requires a counter block which is the same size as the cipher block length. The counter block is updated for each block (or a partial final block) that is encrypted or decrypted.</p>
+<p>A counter block value must only be used once across all messages encrypted using the same key value. This is typically achieved by splitting the counter block into a nonce, which is unique among all message encrypted with the key, and a counter which is incremented for each block of a message.</p>
+<p>For example, when using AES-CTR encryption, which uses a 16-byte block, the application can provide a 12-byte nonce when setting the IV. This leaves 4 bytes for the counter, allowing up to 2^32 blocks (64GB) of message data to be encrypted in each message.</p>
+<p>The first counter block is constructed from the initialization vector (IV). The initial counter block is is constructed in the following ways:</p><ul>
+<li>A call to <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a> will generate a random counter block value. This is the first block of output.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a31dd2b33667e1a4aebd4789d789c9c55">psa_cipher_decrypt()</a> will use first block of the input buffer as the initial counter block value.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a29fd7d32a5729226a2f73e7b6487bd8a">psa_cipher_generate_iv()</a> on a multi-part cipher operation will generate and return a random counter block value.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a9caddac1a429a5032d6d4a907fb70ba1">psa_cipher_set_iv()</a> on a multi-part cipher operation requires an IV that is between 1 and n bytes in length, where n is the cipher block length. The counter block is initialized using the IV, and padded with zero bytes up to the block length.</li>
+</ul>
+<p>During the counter block update operation, the counter block is treated as a single big-endian encoded integer and the update operation increments this integer by 1.</p>
+<p>This scheme meets the recommendations in Appendix B of <a href="https://doi.org/10.6028/NIST.SP.800-38A">SP800-38A</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00168">168</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8f0609cd0f12cccc9c950fd5a81a0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f0609cd0f12cccc9c950fd5a81a0e3">&#9670;&nbsp;</a></span>PSA_ALG_ECB_NO_PADDING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_ECB_NO_PADDING&#160;&#160;&#160;((psa_algorithm_t)0x04404400)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The Electronic Codebook (ECB) mode of a block cipher, with no padding. </p>
+<dl class="section warning"><dt>Warning</dt><dd>ECB mode does not protect the confidentiality of the encrypted data except in extremely narrow circumstances. It is recommended that applications only use ECB if they need to construct an operating mode that the implementation does not provide. Implementations are encouraged to provide the modes that applications need in preference to supporting direct access to ECB.</dd></dl>
+<p>The underlying block cipher is determined by the key type. </p><pre class="fragment">     This symmetric cipher mode can only be used with messages whose lengths are a multiple
+     of the block size of the chosen block cipher.
+
+     ECB mode does not accept an initialization vector (IV). When using a multi-part cipher
+     operation with this algorithm, @ref psa_cipher_generate_iv() and
+     @ref psa_cipher_set_iv() must not be called.
+</pre><dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     The ECB block cipher mode is defined in NIST Special Publication 800-38A:
+     Recommendation for Block Cipher Modes of Operation: Methods and Techniques
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38A).
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00334">334</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a1d1a5a402ad89a2e68f12bfb535490eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d1a5a402ad89a2e68f12bfb535490eb">&#9670;&nbsp;</a></span>PSA_ALG_IS_CIPHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_CIPHER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="cipher_2algorithm_8h.html#a68228a619db59eba93fd13e9129dbfe2">PSA_ALG_CATEGORY_CIPHER</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a symmetric cipher algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier (value of type psa_algorithm_t).</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a symmetric cipher algorithm, 0 if algorithm is not recognized or not supported </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00044">44</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="acfec68e0c6175e02e1b2ebc97df383c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfec68e0c6175e02e1b2ebc97df383c0">&#9670;&nbsp;</a></span>PSA_ALG_IS_STREAM_CIPHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_STREAM_CIPHER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; 0x7f800000) == 0x04800000)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is a stream cipher. </p>
+<p>A stream cipher is a symmetric cipher that encrypts or decrypts messages by applying a bitwise-xor with a stream of bytes that is generated from a key.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a stream cipher 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00057">57</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ae96bb421fa634c6fa8f571f0112f1ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96bb421fa634c6fa8f571f0112f1ddb">&#9670;&nbsp;</a></span>PSA_ALG_OFB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_OFB&#160;&#160;&#160;((psa_algorithm_t)0x04c01200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A stream cipher built using the Output Feedback (OFB) mode of a block cipher. </p>
+<p>The underlying block cipher is determined by the key type. </p><pre class="fragment">     OFB mode requires an initialization vector (IV) that is the same size as the cipher
+     block length. OFB mode requires that the IV is a nonce, and must be unique for each use
+     of the mode with the same key.
+</pre><dl class="section note"><dt>Note</dt><dd>The cipher block length can be determined using <a class="el" href="crypto__sizes_8h.html#aeed2ae6f2ea1e2f994562ada459d1f03">PSA_BLOCK_CIPHER_BLOCK_LENGTH()</a>. <pre class="fragment">     The OFB block cipher mode is defined in NIST Special Publication 800-38A:
+     Recommendation for Block Cipher Modes of Operation: Methods and Techniques
+     [SP800-38A](https://doi.org/10.6028/NIST.SP.800-38A).
+
+     @b Compatible @b key @b types
+     - @ref PSA_KEY_TYPE_AES
+     - @ref PSA_KEY_TYPE_ARIA
+     - @ref PSA_KEY_TYPE_DES
+     - @ref PSA_KEY_TYPE_CAMELLIA
+     - @ref PSA_KEY_TYPE_SM4</pre> </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00223">223</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="ad98c105198f7428f7d1dffcb2cd398cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98c105198f7428f7d1dffcb2cd398cd">&#9670;&nbsp;</a></span>PSA_ALG_STREAM_CIPHER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_STREAM_CIPHER&#160;&#160;&#160;((psa_algorithm_t)0x04800100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The stream cipher mode of a stream cipher algorithm. </p>
+<p>The underlying stream cipher is determined by the key type. The ARC4 and ChaCha20 ciphers use this algorithm identifier.</p>
+<p><b>ARC4</b> To use ARC4, use a key type of <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ae4d46e83f910dcaa126000a8ed03cde9">PSA_KEY_TYPE_ARC4</a> and algorithm id <a class="el" href="cipher_2algorithm_8h.html#ad98c105198f7428f7d1dffcb2cd398cd">PSA_ALG_STREAM_CIPHER</a>.</p>
+<dl class="section warning"><dt>Warning</dt><dd>The ARC4 cipher is weak and deprecated and is only recommended for use in legacy protocols.</dd></dl>
+<p>The ARC4 cipher does not use an initialization vector (IV). When using a multi-part cipher operation with the <a class="el" href="cipher_2algorithm_8h.html#ad98c105198f7428f7d1dffcb2cd398cd">PSA_ALG_STREAM_CIPHER</a> algorithm and an ARC4 key, <a class="el" href="crypto_8h.html#a29fd7d32a5729226a2f73e7b6487bd8a">psa_cipher_generate_iv()</a> and <a class="el" href="crypto_8h.html#a9caddac1a429a5032d6d4a907fb70ba1">psa_cipher_set_iv()</a> must not be called.</p>
+<p><b>ChaCha20</b> To use ChaCha20, use a key type of <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a901548883b3bce56cc21c3a22cf8d93c">PSA_KEY_TYPE_CHACHA20</a> and algorithm id <a class="el" href="cipher_2algorithm_8h.html#ad98c105198f7428f7d1dffcb2cd398cd">PSA_ALG_STREAM_CIPHER</a>.</p>
+<p>Implementations must support the variant that is defined in ChaCha20 and Poly1305 for IETF Protocols <a href="https://tools.ietf.org/html/rfc7539.html">RFC7539</a> §2.4, which has a 96-bit nonce and a 32-bit counter. Implementations can optionally also support the original variant, as defined in ChaCha, a variant of Salsa20 <a href="http://cr.yp.to/chacha/chacha-20080128.pdf">CHACHA20</a>, which has a 64-bit nonce and a 64-bit counter. Except where noted, the <a href="https://tools.ietf.org/html/rfc7539.html">RFC7539</a> variant must be used.</p>
+<p>ChaCha20 defines a nonce and an initial counter to be provided to the encryption and decryption operations. When using a ChaCha20 key with the <a class="el" href="cipher_2algorithm_8h.html#ad98c105198f7428f7d1dffcb2cd398cd">PSA_ALG_STREAM_CIPHER</a> algorithm, these values are provided using the initialization vector (IV) functions in the following ways:</p><ul>
+<li>A call to <a class="el" href="crypto_8h.html#a0ba1e627bd194914ef9297212dd423f9">psa_cipher_encrypt()</a> will generate a random 12-byte nonce, and set the counter value to zero. The random nonce is output as a 12-byte IV value in the output.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a31dd2b33667e1a4aebd4789d789c9c55">psa_cipher_decrypt()</a> will use first 12 bytes of the input buffer as the nonce and set the counter value to zero.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a29fd7d32a5729226a2f73e7b6487bd8a">psa_cipher_generate_iv()</a> on a multi-part cipher operation will generate and return a random 12-byte nonce and set the counter value to zero.</li>
+<li>A call to <a class="el" href="crypto_8h.html#a9caddac1a429a5032d6d4a907fb70ba1">psa_cipher_set_iv()</a> on a multi-part cipher operation can support the following IV sizes:<ul>
+<li>12 bytes: the provided IV is used as the nonce, and the counter value is set to zero.<ul>
+<li>16 bytes: the first four bytes of the IV are used as the counter value (encoded as little-endian), and the remaining 12 bytes is used as the nonce.</li>
+<li>8 bytes: the cipher operation uses the original <a href="http://cr.yp.to/chacha/chacha-20080128.pdf">CHACHA20</a> definition of ChaCha20: the provided IV is used as the 64-bit nonce, and the 64-bit counter value is set to zero.</li>
+<li>It is recommended that implementations do not support other sizes of IV.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ae4d46e83f910dcaa126000a8ed03cde9">PSA_KEY_TYPE_ARC4</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a901548883b3bce56cc21c3a22cf8d93c">PSA_KEY_TYPE_CHACHA20</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00115">115</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa722c0e426a797fd6d99623f59748125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa722c0e426a797fd6d99623f59748125">&#9670;&nbsp;</a></span>PSA_ALG_XTS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_XTS&#160;&#160;&#160;((psa_algorithm_t)0x0440ff00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The XEX with Ciphertext Stealing (XTS) cipher mode of a block cipher. </p>
+<p>XTS is a cipher mode which is built from a block cipher, designed for use in disk encryption. It requires at least one full cipher block length of input, but beyond this minimum the input does not need to be a whole number of blocks.</p>
+<p>XTS mode uses two keys for the underlying block cipher. These are provided by using a key that is twice the normal key size for the cipher. For example, to use AES-256-XTS the application must create a key with type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a> and bit size 512.</p>
+<p>XTS mode requires an initialization vector (IV) that is the same size as the cipher block length. The IV for XTS is typically defined to be the sector number of the disk block being encrypted or decrypted.</p>
+<p>The XTS block cipher mode is defined in 1619-2018 &mdash; IEEE Standard for Cryptographic Protection of Data on Block-Oriented Storage Devices <a href="https://ieeexplore.ieee.org/servlet/opac?punumber=8637986">IEEE-XTS</a>.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a6ee54579dcf278c677eda4bb1a29575e">PSA_KEY_TYPE_AES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a853d69f982740f4fd40cc964075c188f">PSA_KEY_TYPE_ARIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a577562bfbbc691c820d55ec308333138">PSA_KEY_TYPE_DES</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ad8e5da742343fd5519f9d8a630c2ed81">PSA_KEY_TYPE_CAMELLIA</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a5b2b1f1434710f4ddbcea30919f08a2c">PSA_KEY_TYPE_SM4</a> </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="cipher_2algorithm_8h_source.html#l00251">251</a> of file <a class="el" href="cipher_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/soft_uart.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('soft__uart_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">soft_uart.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="soft__uart_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 ML!PA Consulting GmbH</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef SOFT_UART_H</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define SOFT_UART_H</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2uart_8h.html">periph/uart.h</a>&quot;</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2timer_8h.html">periph/timer.h</a>&quot;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="group__drivers__soft__uart.html#ga8fb21fc0aba48b0416b8af2eca4235e9">   43</a></span>&#160;<span class="preprocessor">#define SOFT_UART_FLAG_INVERT_TX    0x1</span></div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__drivers__soft__uart.html#gaf51871ffadc3eade0c9a6e6cf69f780d">   48</a></span>&#160;<span class="preprocessor">#define SOFT_UART_FLAG_INVERT_RX    0x2</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html">   53</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#a6670d291e3fa67f6425fd998ce08f964">   54</a></span>&#160;    gpio_t <a class="code" href="structsoft__uart__conf__t.html#a6670d291e3fa67f6425fd998ce08f964">rx_pin</a>;          </div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#a3325afa2575222da71cd7d16ee4a2817">   55</a></span>&#160;    gpio_t <a class="code" href="structsoft__uart__conf__t.html#a3325afa2575222da71cd7d16ee4a2817">tx_pin</a>;          </div><div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#a738c9843961402df1c72f18d38feeb46">   56</a></span>&#160;    <a class="code" href="group__drivers__periph__timer.html#ga4a57e4433f77c5f60ecbdb5739d1add6">tim_t</a> <a class="code" href="structsoft__uart__conf__t.html#a738c9843961402df1c72f18d38feeb46">rx_timer</a>;         </div><div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#aa1c10d03c402733eb4176ec57795627f">   57</a></span>&#160;    <a class="code" href="group__drivers__periph__timer.html#ga4a57e4433f77c5f60ecbdb5739d1add6">tim_t</a> <a class="code" href="structsoft__uart__conf__t.html#aa1c10d03c402733eb4176ec57795627f">tx_timer</a>;         </div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#a699c95e571e8020223343a56f16962ec">   58</a></span>&#160;    uint32_t <a class="code" href="structsoft__uart__conf__t.html#a699c95e571e8020223343a56f16962ec">timer_freq</a>;    </div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structsoft__uart__conf__t.html#acb3c0137a003ac3e0370ea5fc09cb676">   60</a></span>&#160;    uint8_t <a class="code" href="structsoft__uart__conf__t.html#acb3c0137a003ac3e0370ea5fc09cb676">flags</a>;          </div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <a class="code" href="structsoft__uart__conf__t.html">soft_uart_conf_t</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">   66</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">unsigned</span> <a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__drivers__soft__uart.html#gaf91cf7627ff099073f61b5c5a5924a83">soft_uart_init</a>(<a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a> uart, uint32_t baudrate, <a class="code" href="group__drivers__periph__uart.html#gac4baa58903938817c0b1690a41463df0">uart_rx_cb_t</a> rx_cb, <span class="keywordtype">void</span> *arg);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__drivers__soft__uart.html#ga69ba124857fe720f7c0b34808d5b2aba">soft_uart_mode</a>(<a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a> uart, <a class="code" href="qn908x_2include_2periph__cpu_8h.html#adc68b8fd9ded3990f84129df23fee798">uart_data_bits_t</a> data_bits, <a class="code" href="qn908x_2include_2periph__cpu_8h.html#a6bcc37e31dd40c204b4ac6f6189e8878">uart_parity_t</a> parity,</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                   <a class="code" href="qn908x_2include_2periph__cpu_8h.html#a6da57a73bbdbf830b845d4116f8341d7">uart_stop_bits_t</a> stop_bits);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__drivers__soft__uart.html#ga244347f38788459d8addc6c2e708e022">soft_uart_write</a>(<a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a> uart, <span class="keyword">const</span> uint8_t *data, <span class="keywordtype">size_t</span> len);</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__drivers__soft__uart.html#gacd45995b801c9003df76a50346ba99a1">soft_uart_poweron</a>(<a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a> uart);</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__drivers__soft__uart.html#ga6e792cc1b9bdf1f6dfd6ebcec4864b32">soft_uart_poweroff</a>(<a class="code" href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a> uart);</div><div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SOFT_UART_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div><div class="ttc" id="structsoft__uart__conf__t_html"><div class="ttname"><a href="structsoft__uart__conf__t.html">soft_uart_conf_t</a></div><div class="ttdoc">Software UART port descriptor. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00053">soft_uart.h:53</a></div></div>
+<div class="ttc" id="qn908x_2include_2periph__cpu_8h_html_a6da57a73bbdbf830b845d4116f8341d7"><div class="ttname"><a href="qn908x_2include_2periph__cpu_8h.html#a6da57a73bbdbf830b845d4116f8341d7">uart_stop_bits_t</a></div><div class="ttdeci">uart_stop_bits_t</div><div class="ttdoc">Definition of possible stop bits lengths. </div><div class="ttdef"><b>Definition:</b> <a href="qn908x_2include_2periph__cpu_8h_source.html#l00534">periph_cpu.h:534</a></div></div>
+<div class="ttc" id="group__drivers__periph__uart_html_gac4baa58903938817c0b1690a41463df0"><div class="ttname"><a href="group__drivers__periph__uart.html#gac4baa58903938817c0b1690a41463df0">uart_rx_cb_t</a></div><div class="ttdeci">void(* uart_rx_cb_t)(void *arg, uint8_t data)</div><div class="ttdoc">Signature for receive interrupt callback. </div><div class="ttdef"><b>Definition:</b> <a href="drivers_2include_2periph_2uart_8h_source.html#l00108">uart.h:108</a></div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_a738c9843961402df1c72f18d38feeb46"><div class="ttname"><a href="structsoft__uart__conf__t.html#a738c9843961402df1c72f18d38feeb46">soft_uart_conf_t::rx_timer</a></div><div class="ttdeci">tim_t rx_timer</div><div class="ttdoc">Hardware timer used for RX. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00056">soft_uart.h:56</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2timer_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2timer_8h.html">timer.h</a></div><div class="ttdoc">Low-level timer peripheral driver interface definitions. </div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_aa1c10d03c402733eb4176ec57795627f"><div class="ttname"><a href="structsoft__uart__conf__t.html#aa1c10d03c402733eb4176ec57795627f">soft_uart_conf_t::tx_timer</a></div><div class="ttdeci">tim_t tx_timer</div><div class="ttdoc">Hardware timer used for TX. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00057">soft_uart.h:57</a></div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_a3325afa2575222da71cd7d16ee4a2817"><div class="ttname"><a href="structsoft__uart__conf__t.html#a3325afa2575222da71cd7d16ee4a2817">soft_uart_conf_t::tx_pin</a></div><div class="ttdeci">gpio_t tx_pin</div><div class="ttdoc">TX pin. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00055">soft_uart.h:55</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2uart_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2uart_8h.html">uart.h</a></div><div class="ttdoc">Low-level UART peripheral driver interface definition. </div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_ga000c523ac2ad48f6fd3031dc77af9663"><div class="ttname"><a href="group__drivers__soft__uart.html#ga000c523ac2ad48f6fd3031dc77af9663">soft_uart_t</a></div><div class="ttdeci">unsigned soft_uart_t</div><div class="ttdoc">Software UART type definition. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00066">soft_uart.h:66</a></div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_acb3c0137a003ac3e0370ea5fc09cb676"><div class="ttname"><a href="structsoft__uart__conf__t.html#acb3c0137a003ac3e0370ea5fc09cb676">soft_uart_conf_t::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdoc">Soft UART flags. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00060">soft_uart.h:60</a></div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_ga244347f38788459d8addc6c2e708e022"><div class="ttname"><a href="group__drivers__soft__uart.html#ga244347f38788459d8addc6c2e708e022">soft_uart_write</a></div><div class="ttdeci">void soft_uart_write(soft_uart_t uart, const uint8_t *data, size_t len)</div><div class="ttdoc">Write data from the given buffer to the specified UART device. </div></div>
+<div class="ttc" id="group__drivers__periph__timer_html_ga4a57e4433f77c5f60ecbdb5739d1add6"><div class="ttname"><a href="group__drivers__periph__timer.html#ga4a57e4433f77c5f60ecbdb5739d1add6">tim_t</a></div><div class="ttdeci">uint_fast8_t tim_t</div><div class="ttdoc">Default timer type. </div><div class="ttdef"><b>Definition:</b> <a href="drivers_2include_2periph_2timer_8h_source.html#l00071">timer.h:71</a></div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_ga69ba124857fe720f7c0b34808d5b2aba"><div class="ttname"><a href="group__drivers__soft__uart.html#ga69ba124857fe720f7c0b34808d5b2aba">soft_uart_mode</a></div><div class="ttdeci">int soft_uart_mode(soft_uart_t uart, uart_data_bits_t data_bits, uart_parity_t parity, uart_stop_bits_t stop_bits)</div><div class="ttdoc">Setup parity, data and stop bits for a given UART device. </div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_a6670d291e3fa67f6425fd998ce08f964"><div class="ttname"><a href="structsoft__uart__conf__t.html#a6670d291e3fa67f6425fd998ce08f964">soft_uart_conf_t::rx_pin</a></div><div class="ttdeci">gpio_t rx_pin</div><div class="ttdoc">RX pin. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00054">soft_uart.h:54</a></div></div>
+<div class="ttc" id="qn908x_2include_2periph__cpu_8h_html_adc68b8fd9ded3990f84129df23fee798"><div class="ttname"><a href="qn908x_2include_2periph__cpu_8h.html#adc68b8fd9ded3990f84129df23fee798">uart_data_bits_t</a></div><div class="ttdeci">uart_data_bits_t</div><div class="ttdoc">Definition of possible data bits lengths in a UART frame. </div><div class="ttdef"><b>Definition:</b> <a href="qn908x_2include_2periph__cpu_8h_source.html#l00518">periph_cpu.h:518</a></div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_gacd45995b801c9003df76a50346ba99a1"><div class="ttname"><a href="group__drivers__soft__uart.html#gacd45995b801c9003df76a50346ba99a1">soft_uart_poweron</a></div><div class="ttdeci">void soft_uart_poweron(soft_uart_t uart)</div><div class="ttdoc">Power on the given UART device. </div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_gaf91cf7627ff099073f61b5c5a5924a83"><div class="ttname"><a href="group__drivers__soft__uart.html#gaf91cf7627ff099073f61b5c5a5924a83">soft_uart_init</a></div><div class="ttdeci">int soft_uart_init(soft_uart_t uart, uint32_t baudrate, uart_rx_cb_t rx_cb, void *arg)</div><div class="ttdoc">Initialize a given UART device. </div></div>
+<div class="ttc" id="structsoft__uart__conf__t_html_a699c95e571e8020223343a56f16962ec"><div class="ttname"><a href="structsoft__uart__conf__t.html#a699c95e571e8020223343a56f16962ec">soft_uart_conf_t::timer_freq</a></div><div class="ttdeci">uint32_t timer_freq</div><div class="ttdoc">Operating frequency of the timer. </div><div class="ttdef"><b>Definition:</b> <a href="soft__uart_8h_source.html#l00058">soft_uart.h:58</a></div></div>
+<div class="ttc" id="qn908x_2include_2periph__cpu_8h_html_a6bcc37e31dd40c204b4ac6f6189e8878"><div class="ttname"><a href="qn908x_2include_2periph__cpu_8h.html#a6bcc37e31dd40c204b4ac6f6189e8878">uart_parity_t</a></div><div class="ttdeci">uart_parity_t</div><div class="ttdoc">Definition of possible parity modes. </div><div class="ttdef"><b>Definition:</b> <a href="qn908x_2include_2periph__cpu_8h_source.html#l00502">periph_cpu.h:502</a></div></div>
+<div class="ttc" id="drivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions. </div></div>
+<div class="ttc" id="group__drivers__soft__uart_html_ga6e792cc1b9bdf1f6dfd6ebcec4864b32"><div class="ttname"><a href="group__drivers__soft__uart.html#ga6e792cc1b9bdf1f6dfd6ebcec4864b32">soft_uart_poweroff</a></div><div class="ttdeci">void soft_uart_poweroff(soft_uart_t uart)</div><div class="ttdoc">Power off the given UART device. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

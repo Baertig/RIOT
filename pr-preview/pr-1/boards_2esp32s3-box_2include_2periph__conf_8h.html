@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>boards/esp32s3-box/include/periph_conf.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('boards_2esp32s3-box_2include_2periph__conf_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">periph_conf.h File Reference<div class="ingroups"><a class="el" href="group__boards.html">Boards</a> &raquo; <a class="el" href="group__boards__esp32s3.html">ESP32-S3 Boards</a> &raquo; <a class="el" href="group__boards__esp32s3__box.html">ESP32-S3-Box</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Peripheral configurations for ESP32-S3-Box boards.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Peripheral configurations for ESP32-S3-Box boards. </p>
+<p>The peripheral configurations in this file are for the Espressif ESP32-S3-Box.</p>
+<p>Any modifications required for specific applications can be overridden by <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a>.</p>
+<p>For detailed information about the peripheral configuration for ESP32-S3 boards, see section <a class="el" href="group__cpu__esp32.html#esp32_peripherals">Common Peripherals</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>Most definitions can be overridden by an <a class="el" href="group__cpu__esp32.html#esp32_application_specific_configurations">application-specific board configuration</a> if necessary.</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h_source.html">periph_conf.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;periph_conf_common.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for periph_conf.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="boards_2esp32s3-box_2include_2periph__conf_8h__incl.svg" width="272" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="boards_2esp32s3-box_2include_2periph__conf_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+I2C configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp73fbd374b1f57149dfa859716e9864c4"></a><a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> is available at the PMOD1 connector.</p>
+<dl class="section note"><dt>Note</dt><dd>The GPIOs listed in the configuration are only initialized as I2C signals when module <code>periph_i2c</code> is used. Otherwise they are not allocated and can be used for other purposes. </dd></dl>
+</td></tr>
+<tr class="memitem:a0370de2a226ec75dd11d53d0915a7754"><td class="memItemLeft" align="right" valign="top"><a id="a0370de2a226ec75dd11d53d0915a7754"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a0370de2a226ec75dd11d53d0915a7754">I2C0_SPEED</a>&#160;&#160;&#160;<a class="el" href="group__drivers__periph__i2c.html#gga6e6a870f98abb8cffa95373b69fb8243a8dc6cae939d20d56a78d123365caa4ca">I2C_SPEED_FAST</a></td></tr>
+<tr class="memdesc:a0370de2a226ec75dd11d53d0915a7754"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus speed of <a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> <br /></td></tr>
+<tr class="separator:a0370de2a226ec75dd11d53d0915a7754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69f255245dd74fb6785ca39656cf9983"><td class="memItemLeft" align="right" valign="top"><a id="a69f255245dd74fb6785ca39656cf9983"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a69f255245dd74fb6785ca39656cf9983">I2C0_SCL</a>&#160;&#160;&#160;GPIO40</td></tr>
+<tr class="memdesc:a69f255245dd74fb6785ca39656cf9983"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCL signal of <a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> <br /></td></tr>
+<tr class="separator:a69f255245dd74fb6785ca39656cf9983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af530325ce28cf25ce89308fbd9ac8c16"><td class="memItemLeft" align="right" valign="top"><a id="af530325ce28cf25ce89308fbd9ac8c16"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#af530325ce28cf25ce89308fbd9ac8c16">I2C0_SDA</a>&#160;&#160;&#160;GPIO41</td></tr>
+<tr class="memdesc:af530325ce28cf25ce89308fbd9ac8c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDA signal of <a class="el" href="group__drivers__periph__i2c.html#ga9f14916eda80b19ff41d08e25eee56fb" title="Default I2C device access macro. ">I2C_DEV(0)</a> <br /></td></tr>
+<tr class="separator:af530325ce28cf25ce89308fbd9ac8c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+SPI configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp5c303292f2f3a27a2c901333aa4b560c"></a><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> is available at the PMOD2 connector.</p>
+<p><a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> is used for the LCD display with an ILI9342C as driver chip.</p>
+<dl class="section note"><dt>Note</dt><dd>The GPIOs listed in the configuration are first initialized as SPI signals when the corresponding SPI interface is used for the first time by either calling the <code>spi_init_cs</code> function or the <code>spi_acquire</code> function. That is, they are not allocated as SPI signals before and can be used for other purposes as long as the SPI interface is not used. </dd></dl>
+</td></tr>
+<tr class="memitem:a543ec8b3d79c90202e88167a94e41c4a"><td class="memItemLeft" align="right" valign="top"><a id="a543ec8b3d79c90202e88167a94e41c4a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a543ec8b3d79c90202e88167a94e41c4a">SPI0_CTRL</a>&#160;&#160;&#160;SPI2_HOST</td></tr>
+<tr class="memdesc:a543ec8b3d79c90202e88167a94e41c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">FSPI is used as <a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(0)</a> <br /></td></tr>
+<tr class="separator:a543ec8b3d79c90202e88167a94e41c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a885041758879c90a08fed7a75d2e2"><td class="memItemLeft" align="right" valign="top"><a id="a85a885041758879c90a08fed7a75d2e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a85a885041758879c90a08fed7a75d2e2">SPI0_SCK</a>&#160;&#160;&#160;GPIO12</td></tr>
+<tr class="memdesc:a85a885041758879c90a08fed7a75d2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">FSPI SCK (pin FSPICLK) <br /></td></tr>
+<tr class="separator:a85a885041758879c90a08fed7a75d2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabba8137ea69a9180bedb49e83873988"><td class="memItemLeft" align="right" valign="top"><a id="aabba8137ea69a9180bedb49e83873988"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#aabba8137ea69a9180bedb49e83873988">SPI0_MISO</a>&#160;&#160;&#160;GPIO13</td></tr>
+<tr class="memdesc:aabba8137ea69a9180bedb49e83873988"><td class="mdescLeft">&#160;</td><td class="mdescRight">FSPI MISO (pin FSPIQ) <br /></td></tr>
+<tr class="separator:aabba8137ea69a9180bedb49e83873988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ce69be83444ff939653090fb7fa151"><td class="memItemLeft" align="right" valign="top"><a id="a16ce69be83444ff939653090fb7fa151"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a16ce69be83444ff939653090fb7fa151">SPI0_MOSI</a>&#160;&#160;&#160;GPIO11</td></tr>
+<tr class="memdesc:a16ce69be83444ff939653090fb7fa151"><td class="mdescLeft">&#160;</td><td class="mdescRight">FSPI MOSI (pin FSPID) <br /></td></tr>
+<tr class="separator:a16ce69be83444ff939653090fb7fa151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b44b397784631135a7c50730f5b8ffb"><td class="memItemLeft" align="right" valign="top"><a id="a5b44b397784631135a7c50730f5b8ffb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a5b44b397784631135a7c50730f5b8ffb">SPI0_CS0</a>&#160;&#160;&#160;GPIO10</td></tr>
+<tr class="memdesc:a5b44b397784631135a7c50730f5b8ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">FSPI CS0 (pin FSPICS0) <br /></td></tr>
+<tr class="separator:a5b44b397784631135a7c50730f5b8ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6eb18a2ccd7377d539c4b1e69e6c8dc"><td class="memItemLeft" align="right" valign="top"><a id="ac6eb18a2ccd7377d539c4b1e69e6c8dc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#ac6eb18a2ccd7377d539c4b1e69e6c8dc">SPI1_CTRL</a>&#160;&#160;&#160;SPI3_HOST</td></tr>
+<tr class="memdesc:ac6eb18a2ccd7377d539c4b1e69e6c8dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI3 is used as <a class="el" href="group__drivers__periph__spi.html#gafb9420809bc7722e41488a090b53eaf9" title="Default SPI device access macro. ">SPI_DEV(1)</a> <br /></td></tr>
+<tr class="separator:ac6eb18a2ccd7377d539c4b1e69e6c8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a241b59557c3e3c91418162ed4d682aaa"><td class="memItemLeft" align="right" valign="top"><a id="a241b59557c3e3c91418162ed4d682aaa"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a241b59557c3e3c91418162ed4d682aaa">SPI1_SCK</a>&#160;&#160;&#160;GPIO7</td></tr>
+<tr class="memdesc:a241b59557c3e3c91418162ed4d682aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_SCK. <br /></td></tr>
+<tr class="separator:a241b59557c3e3c91418162ed4d682aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bb1fce9599f7a1568a075cd975c6502"><td class="memItemLeft" align="right" valign="top"><a id="a7bb1fce9599f7a1568a075cd975c6502"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a7bb1fce9599f7a1568a075cd975c6502">SPI1_MISO</a>&#160;&#160;&#160;GPIO35</td></tr>
+<tr class="memdesc:a7bb1fce9599f7a1568a075cd975c6502"><td class="mdescLeft">&#160;</td><td class="mdescRight">not used and not broken out on ESP32-S3-WROOM-1 <br /></td></tr>
+<tr class="separator:a7bb1fce9599f7a1568a075cd975c6502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a161081b41465c86e1a771c4194041341"><td class="memItemLeft" align="right" valign="top"><a id="a161081b41465c86e1a771c4194041341"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a161081b41465c86e1a771c4194041341">SPI1_MOSI</a>&#160;&#160;&#160;GPIO6</td></tr>
+<tr class="memdesc:a161081b41465c86e1a771c4194041341"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_SDA. <br /></td></tr>
+<tr class="separator:a161081b41465c86e1a771c4194041341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa741df1c5107239cb83fda2f0e8dbc41"><td class="memItemLeft" align="right" valign="top"><a id="aa741df1c5107239cb83fda2f0e8dbc41"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#aa741df1c5107239cb83fda2f0e8dbc41">SPI1_CS0</a>&#160;&#160;&#160;GPIO5</td></tr>
+<tr class="memdesc:aa741df1c5107239cb83fda2f0e8dbc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">LCD_CS. <br /></td></tr>
+<tr class="separator:aa741df1c5107239cb83fda2f0e8dbc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+UART configuration</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp407a5b3e285fd5f1acd0d75745831cfa"></a><a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro. ">UART_DEV(0)</a> is available at the PMOD2 connector. </p>
+</td></tr>
+<tr class="memitem:add71a59fa12734b27043cabf5546d176"><td class="memItemLeft" align="right" valign="top"><a id="add71a59fa12734b27043cabf5546d176"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#add71a59fa12734b27043cabf5546d176">UART0_TXD</a>&#160;&#160;&#160;GPIO43</td></tr>
+<tr class="memdesc:add71a59fa12734b27043cabf5546d176"><td class="mdescLeft">&#160;</td><td class="mdescRight">direct I/O pin for <a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro. ">UART_DEV(0)</a> TxD, can't be changed <br /></td></tr>
+<tr class="separator:add71a59fa12734b27043cabf5546d176"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fc91fb6e973e5f0be9e44e5edd5449"><td class="memItemLeft" align="right" valign="top"><a id="a28fc91fb6e973e5f0be9e44e5edd5449"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="boards_2esp32s3-box_2include_2periph__conf_8h.html#a28fc91fb6e973e5f0be9e44e5edd5449">UART0_RXD</a>&#160;&#160;&#160;GPIO44</td></tr>
+<tr class="memdesc:a28fc91fb6e973e5f0be9e44e5edd5449"><td class="mdescLeft">&#160;</td><td class="mdescRight">direct I/O pin for <a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294" title="Default UART device access macro. ">UART_DEV(0)</a> RxD, can't be changed <br /></td></tr>
+<tr class="separator:a28fc91fb6e973e5f0be9e44e5edd5449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:24 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

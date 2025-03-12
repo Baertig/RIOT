@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/periph/pio/i2c.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('pio_2i2c_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">i2c.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__periph.html">Peripheral Driver Interface</a> &raquo; <a class="el" href="group__drivers__periph__pio__i2c.html">PIO I2C program</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>PIO I2C program interface.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>PIO I2C program interface. </p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span style="display: none;">.nosp@m.</span>n.hu<span style="display: none;">.nosp@m.</span>essle<span style="display: none;">.nosp@m.</span>r@ov<span style="display: none;">.nosp@m.</span>gu.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="pio_2i2c_8h_source.html">i2c.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="i2c_8h_source.html">periph/i2c.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2pio_8h_source.html">periph/pio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mutex_8h_source.html">mutex.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for i2c.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pio_2i2c_8h__incl.svg" width="1807" height="650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="pio_2i2c_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpio__program__i2c.html">pio_program_i2c</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIO I2C program type.  <a href="structpio__program__i2c.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structpio__i2c__bus.html">pio_i2c_bus</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIO I2C emulated bus type.  <a href="structpio__i2c__bus.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga0d8313c149c8bb3d9fcb44f4e9b0b2cc"><td class="memItemLeft" align="right" valign="top">
+typedef <a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga0d8313c149c8bb3d9fcb44f4e9b0b2cc">pio_i2c_t</a></td></tr>
+<tr class="memdesc:ga0d8313c149c8bb3d9fcb44f4e9b0b2cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIO I2C descriptor type compatible with <a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a>. <br /></td></tr>
+<tr class="separator:ga0d8313c149c8bb3d9fcb44f4e9b0b2cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga84d5f9fec920f73111a70fc10a02c4d2"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structpio__program__i2c.html">pio_program_i2c</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga84d5f9fec920f73111a70fc10a02c4d2">pio_program_i2c_t</a></td></tr>
+<tr class="memdesc:ga84d5f9fec920f73111a70fc10a02c4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIO I2C program type. <br /></td></tr>
+<tr class="separator:ga84d5f9fec920f73111a70fc10a02c4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0dd0e2d434a146b31d77e78ee0050464"><td class="memItemLeft" align="right" valign="top">
+typedef struct <a class="el" href="structpio__i2c__bus.html">pio_i2c_bus</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a></td></tr>
+<tr class="memdesc:ga0dd0e2d434a146b31d77e78ee0050464"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIO I2C emulated bus type. <br /></td></tr>
+<tr class="separator:ga0dd0e2d434a146b31d77e78ee0050464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga1845bab8d514b0e902e1bf2f1af6e802"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga1845bab8d514b0e902e1bf2f1af6e802">pio_i2c_get</a> (<a class="el" href="group__drivers__periph__pio__i2c.html#ga0d8313c149c8bb3d9fcb44f4e9b0b2cc">pio_i2c_t</a> id)</td></tr>
+<tr class="memdesc:ga1845bab8d514b0e902e1bf2f1af6e802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get access to a PIO I2C instance configured with PIO_I2C_CONFIG.  <a href="group__drivers__periph__pio__i2c.html#ga1845bab8d514b0e902e1bf2f1af6e802">More...</a><br /></td></tr>
+<tr class="separator:ga1845bab8d514b0e902e1bf2f1af6e802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga402350032bb2c9534edfea3608982dae"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga402350032bb2c9534edfea3608982dae">pio_i2c_numof</a> (void)</td></tr>
+<tr class="memdesc:ga402350032bb2c9534edfea3608982dae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query the number of PIO I2C instances configured with PIO_I2C_CONFIG.  <a href="group__drivers__periph__pio__i2c.html#ga402350032bb2c9534edfea3608982dae">More...</a><br /></td></tr>
+<tr class="separator:ga402350032bb2c9534edfea3608982dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac82d5ded1b941dac6f3f7cce7aaafa57"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__drivers__periph__pio__i2c.html#ga84d5f9fec920f73111a70fc10a02c4d2">pio_program_i2c_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gac82d5ded1b941dac6f3f7cce7aaafa57">pio_i2c_get_program</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio)</td></tr>
+<tr class="memdesc:gac82d5ded1b941dac6f3f7cce7aaafa57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get const I2C program reference.  <a href="group__drivers__periph__pio__i2c.html#gac82d5ded1b941dac6f3f7cce7aaafa57">More...</a><br /></td></tr>
+<tr class="separator:gac82d5ded1b941dac6f3f7cce7aaafa57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1a0686e88722f34e999bda5b9a6c6adc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga1a0686e88722f34e999bda5b9a6c6adc">pio_i2c_init_program</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio)</td></tr>
+<tr class="memdesc:ga1a0686e88722f34e999bda5b9a6c6adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create, allocate, and write a PIO I2C program.  <a href="group__drivers__periph__pio__i2c.html#ga1a0686e88722f34e999bda5b9a6c6adc">More...</a><br /></td></tr>
+<tr class="separator:ga1a0686e88722f34e999bda5b9a6c6adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa1bbf5e2a387829e069e660b00d4c789"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gaa1bbf5e2a387829e069e660b00d4c789">pio_i2c_deinit_program</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio)</td></tr>
+<tr class="memdesc:gaa1bbf5e2a387829e069e660b00d4c789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a PIO I2C program.  <a href="group__drivers__periph__pio__i2c.html#gaa1bbf5e2a387829e069e660b00d4c789">More...</a><br /></td></tr>
+<tr class="separator:gaa1bbf5e2a387829e069e660b00d4c789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40a22bf282d2ad90f5b9eeb849de96f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga40a22bf282d2ad90f5b9eeb849de96f6">pio_i2c_sm_lock</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *i2c)</td></tr>
+<tr class="memdesc:ga40a22bf282d2ad90f5b9eeb849de96f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Acquire a PIO state machine of PIO <code>pio</code> to run the PIO I2C program.  <a href="group__drivers__periph__pio__i2c.html#ga40a22bf282d2ad90f5b9eeb849de96f6">More...</a><br /></td></tr>
+<tr class="separator:ga40a22bf282d2ad90f5b9eeb849de96f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga204860af74b3053c7d3b5cca398fc743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga204860af74b3053c7d3b5cca398fc743">pio_i2c_sm_unlock</a> (<a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *i2c)</td></tr>
+<tr class="memdesc:ga204860af74b3053c7d3b5cca398fc743"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release a PIO state machine of PIO <code>pio</code>.  <a href="group__drivers__periph__pio__i2c.html#ga204860af74b3053c7d3b5cca398fc743">More...</a><br /></td></tr>
+<tr class="separator:ga204860af74b3053c7d3b5cca398fc743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf42017779fd88f950d245ec9d6736444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gaf42017779fd88f950d245ec9d6736444">pio_i2c_start_programs</a> (void)</td></tr>
+<tr class="memdesc:gaf42017779fd88f950d245ec9d6736444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start PIO I2C programs configured with PIO_I2C_CONFIG.  <a href="group__drivers__periph__pio__i2c.html#gaf42017779fd88f950d245ec9d6736444">More...</a><br /></td></tr>
+<tr class="separator:gaf42017779fd88f950d245ec9d6736444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bbcccbed67fa4938f212a3978530ae7"><td class="memItemLeft" align="right" valign="top">
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga6bbcccbed67fa4938f212a3978530ae7">pio_i2c_stop_programs</a> (void)</td></tr>
+<tr class="memdesc:ga6bbcccbed67fa4938f212a3978530ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop PIO I2C programs configured with PIO_I2C_CONFIG. <br /></td></tr>
+<tr class="separator:ga6bbcccbed67fa4938f212a3978530ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaea401c75dabcf65f8f5b75b00986d183"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gaea401c75dabcf65f8f5b75b00986d183">pio_i2c_write_program</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio__i2c.html#ga84d5f9fec920f73111a70fc10a02c4d2">pio_program_i2c_t</a> *pro)</td></tr>
+<tr class="memdesc:gaea401c75dabcf65f8f5b75b00986d183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a PIO I2C program to instruction memory.  <a href="group__drivers__periph__pio__i2c.html#gaea401c75dabcf65f8f5b75b00986d183">More...</a><br /></td></tr>
+<tr class="separator:gaea401c75dabcf65f8f5b75b00986d183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca58dd407d266bca2e7227bbd19194c1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gaca58dd407d266bca2e7227bbd19194c1">pio_i2c_init</a> (<a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *bus, const <a class="el" href="group__drivers__periph__pio__i2c.html#ga84d5f9fec920f73111a70fc10a02c4d2">pio_program_i2c_t</a> *pro, <a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> sda, <a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a> scl, unsigned irq)</td></tr>
+<tr class="memdesc:gaca58dd407d266bca2e7227bbd19194c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup a state machine to run the I2C program.  <a href="group__drivers__periph__pio__i2c.html#gaca58dd407d266bca2e7227bbd19194c1">More...</a><br /></td></tr>
+<tr class="separator:gaca58dd407d266bca2e7227bbd19194c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga03ca8b156e8366a781303f5c7dab3e95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga03ca8b156e8366a781303f5c7dab3e95">pio_i2c_acquire</a> (<a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *bus)</td></tr>
+<tr class="memdesc:ga03ca8b156e8366a781303f5c7dab3e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get exclusive access to the emulated I2C bus.  <a href="group__drivers__periph__pio__i2c.html#ga03ca8b156e8366a781303f5c7dab3e95">More...</a><br /></td></tr>
+<tr class="separator:ga03ca8b156e8366a781303f5c7dab3e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga55c5fd04394e40d044651575eace0403"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga55c5fd04394e40d044651575eace0403">pio_i2c_release</a> (<a class="el" href="group__drivers__periph__pio__i2c.html#ga0dd0e2d434a146b31d77e78ee0050464">pio_i2c_bus_t</a> *bus)</td></tr>
+<tr class="memdesc:ga55c5fd04394e40d044651575eace0403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Release emulated I2C bus.  <a href="group__drivers__periph__pio__i2c.html#ga55c5fd04394e40d044651575eace0403">More...</a><br /></td></tr>
+<tr class="separator:ga55c5fd04394e40d044651575eace0403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga742cd5bd5829ee0ef21e870493e44c38"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga742cd5bd5829ee0ef21e870493e44c38">pio_i2c_read_regs</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, uint16_t reg, void *data, size_t len, uint8_t flags)</td></tr>
+<tr class="memdesc:ga742cd5bd5829ee0ef21e870493e44c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga5e65efc34a8bd77223795faadc29d304">i2c_read_regs</a>.  <a href="group__drivers__periph__pio__i2c.html#ga742cd5bd5829ee0ef21e870493e44c38">More...</a><br /></td></tr>
+<tr class="separator:ga742cd5bd5829ee0ef21e870493e44c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7db9d287739d2805c45a4a5ba3b67d44"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga7db9d287739d2805c45a4a5ba3b67d44">pio_i2c_read_reg</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, uint16_t reg, void *data, uint8_t flags)</td></tr>
+<tr class="memdesc:ga7db9d287739d2805c45a4a5ba3b67d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#gac4ab6e73e05b22c2da0c2f178da06d7b">i2c_read_reg</a>.  <a href="group__drivers__periph__pio__i2c.html#ga7db9d287739d2805c45a4a5ba3b67d44">More...</a><br /></td></tr>
+<tr class="separator:ga7db9d287739d2805c45a4a5ba3b67d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa61b0a3accc1d1730c1f9b4912182a59"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gaa61b0a3accc1d1730c1f9b4912182a59">pio_i2c_read_bytes</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, void *data, size_t len, uint8_t flags)</td></tr>
+<tr class="memdesc:gaa61b0a3accc1d1730c1f9b4912182a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga196b4508511c41822eddf6b43b008e90">i2c_read_bytes</a>.  <a href="group__drivers__periph__pio__i2c.html#gaa61b0a3accc1d1730c1f9b4912182a59">More...</a><br /></td></tr>
+<tr class="separator:gaa61b0a3accc1d1730c1f9b4912182a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e847cd7147006551ec299eec6249f72"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga6e847cd7147006551ec299eec6249f72">pio_i2c_read_byte</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, void *data, uint8_t flags)</td></tr>
+<tr class="memdesc:ga6e847cd7147006551ec299eec6249f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga81fed3b6aec0ba0956ba6a1efbc74774">i2c_read_byte</a>.  <a href="group__drivers__periph__pio__i2c.html#ga6e847cd7147006551ec299eec6249f72">More...</a><br /></td></tr>
+<tr class="separator:ga6e847cd7147006551ec299eec6249f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3693f3c9db0c7c5d211fc54182902466"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga3693f3c9db0c7c5d211fc54182902466">pio_i2c_write_bytes</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, const void *data, size_t len, uint8_t flags)</td></tr>
+<tr class="memdesc:ga3693f3c9db0c7c5d211fc54182902466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga2d4c26cb8d79d7a46764fb832e93ff0b">i2c_write_bytes</a>.  <a href="group__drivers__periph__pio__i2c.html#ga3693f3c9db0c7c5d211fc54182902466">More...</a><br /></td></tr>
+<tr class="separator:ga3693f3c9db0c7c5d211fc54182902466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1217cfee7da0fa7fd4716a10568a2cff"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga1217cfee7da0fa7fd4716a10568a2cff">pio_i2c_write_byte</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, uint8_t data, uint8_t flags)</td></tr>
+<tr class="memdesc:ga1217cfee7da0fa7fd4716a10568a2cff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga062b562b2d2cd123199a2890968ba272">i2c_write_byte</a>.  <a href="group__drivers__periph__pio__i2c.html#ga1217cfee7da0fa7fd4716a10568a2cff">More...</a><br /></td></tr>
+<tr class="separator:ga1217cfee7da0fa7fd4716a10568a2cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafcd1c761777266e3c8f2d0c580002a0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#gafcd1c761777266e3c8f2d0c580002a0d">pio_i2c_write_regs</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, uint16_t reg, const void *data, size_t len, uint8_t flags)</td></tr>
+<tr class="memdesc:gafcd1c761777266e3c8f2d0c580002a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#gac7e12c6df3bc117d5e46d1e98a5a7f08">i2c_write_regs</a>.  <a href="group__drivers__periph__pio__i2c.html#gafcd1c761777266e3c8f2d0c580002a0d">More...</a><br /></td></tr>
+<tr class="separator:gafcd1c761777266e3c8f2d0c580002a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga352b4225615e3bf651aab922c2e0e6b2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__periph__pio__i2c.html#ga352b4225615e3bf651aab922c2e0e6b2">pio_i2c_write_reg</a> (<a class="el" href="group__drivers__periph__pio.html#ga521371dc9da4e0a8c3782f1d5677f217">pio_t</a> pio, <a class="el" href="group__drivers__periph__pio.html#gab8eae4b6fc10b96be649cebf6c77466d">pio_sm_t</a> sm, uint16_t addr, uint16_t reg, uint8_t data, uint8_t flags)</td></tr>
+<tr class="memdesc:ga352b4225615e3bf651aab922c2e0e6b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emulate <a class="el" href="group__drivers__periph__i2c.html#ga02b8328d5e823d972e1e1234965daab1">i2c_write_reg</a>.  <a href="group__drivers__periph__pio__i2c.html#ga352b4225615e3bf651aab922c2e0e6b2">More...</a><br /></td></tr>
+<tr class="separator:ga352b4225615e3bf651aab922c2e0e6b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

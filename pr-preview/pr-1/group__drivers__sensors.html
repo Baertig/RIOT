@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Sensor Device Drivers</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__drivers__sensors.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">Sensor Device Drivers<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Drivers for external sensors.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Drivers for external sensors. </p>
+<p>Most of these drivers will be connected over some bus or serial connection to the MCU. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__drivers__ad7746"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ad7746.html">AD7746 Capacitance-to-digital converter driver</a></td></tr>
+<tr class="memdesc:group__drivers__ad7746"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C Capacitance-to-digital converter with temperature and voltage sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__adcxx1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__adcxx1c.html">ADCXX1C ADC device driver</a></td></tr>
+<tr class="memdesc:group__drivers__adcxx1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C Analog-to-Digital Converter device driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ads101x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ads101x.html">ADS101x/111x ADC device driver</a></td></tr>
+<tr class="memdesc:group__drivers__ads101x"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C Analog-to-Digital Converter device driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__adt7310"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__adt7310.html">ADT7310 SPI temperature sensor</a></td></tr>
+<tr class="memdesc:group__drivers__adt7310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Analog Devices ADT7310 temperature sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__adxl345"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__adxl345.html">ADXL345 3-Axis accelerometer</a></td></tr>
+<tr class="memdesc:group__drivers__adxl345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the ADXL345. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__apds99xx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__apds99xx.html">APDS99XX proximity and ambient light sensors</a></td></tr>
+<tr class="memdesc:group__drivers__apds99xx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for Broadcom APDS99XX proximity and ambient light sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__at30tse75x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__at30tse75x.html">AT30TSE75x temperature sensor with EEPROM</a></td></tr>
+<tr class="memdesc:group__drivers__at30tse75x"><td class="mdescLeft">&#160;</td><td class="mdescRight">The connection between the MCU and the AT30TSE75x is based on the I2C-interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__seesaw__soil"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__seesaw__soil.html">Adafruit Seesaw Soil Moisture and Temperature Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__seesaw__soil"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Adafruit Seesaw Soil Moisture and Temperature Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__io1__xplained"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__io1__xplained.html">Atmel IO1 Xplained Extension board</a></td></tr>
+<tr class="memdesc:group__drivers__io1__xplained"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the Atmel IO1 Xplained extension. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bh1750fvi"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bh1750fvi.html">BH1750FVI Light Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bh1750fvi"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Rohm BH1750FVI ambient light sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bh1900nux"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bh1900nux.html">BH1900NUX Temperature sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bh1900nux"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Rohm BH1900NUX Temperature sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bme680"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bme680.html">BME680 Temperature/Humidity/Pressure/Gas sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bme680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Bosch BME680 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bmp180"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bmp180.html">BMP180 temperature and pressure sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bmp180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the BMP180 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bmx280"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bmx280.html">BMP280/BME280 temperature, pressure and humidity sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bmx280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the Bosch BMP280 and BME280 sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__bmx055"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__bmx055.html">BMX055 9-axis sensor</a></td></tr>
+<tr class="memdesc:group__drivers__bmx055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the Bosch BMX055 9-axis sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ccs811"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ccs811.html">CCS 811 digital gas sensor</a></td></tr>
+<tr class="memdesc:group__drivers__ccs811"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+Device Driver for AMS CCS 811 digital gas sensor for monitoring Indoor Air Quality (IAQ) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__cst816s"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__cst816s.html">Cst816S touch screen driver</a></td></tr>
+<tr class="memdesc:group__drivers__cst816s"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the Hynitron CST816S touch screen. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__dcf77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__dcf77.html">DCF77 long wave receiver with 77,5 kHz</a></td></tr>
+<tr class="memdesc:group__drivers__dcf77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver long wave receiver with 77,5 kHz. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__dht"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__dht.html">DHT Family of Humidity and Temperature Sensors</a></td></tr>
+<tr class="memdesc:group__drivers__dht"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the DHT Family of humidity and temperature sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ds1307"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds1307.html">DS1307 RTC</a></td></tr>
+<tr class="memdesc:group__drivers__ds1307"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device drive interface for the DS1307 real-time clock. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ds18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds18.html">DS18 temperature sensor driver</a></td></tr>
+<tr class="memdesc:group__drivers__ds18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver interface for the DS18 temperature sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ds3231"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3231.html">DS3231 Real Time Clock</a></td></tr>
+<tr class="memdesc:group__drivers__ds3231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Maxim DS3231 extremely accurate RTC. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ds3234"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds3234.html">DS3234 Extremely Accurate SPI RTC</a></td></tr>
+<tr class="memdesc:group__drivers__ds3234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for Maxim DS3234 Extremely Accurate SPI Bus RTC with Integrated Crystal and SRAM. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__fxos8700"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__fxos8700.html">FXOS8700 3-axis accelerometer/magnetometer</a></td></tr>
+<tr class="memdesc:group__drivers__fxos8700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the FXOS8700 3-axis accelerometer/magnetometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ft5x06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ft5x06.html">FocalTech FT5x06 touch panel driver</a></td></tr>
+<tr class="memdesc:group__drivers__ft5x06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-touch capacitive panel controller. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__gp2y10xx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__gp2y10xx.html">GP2Y10xx Optical Dust Sensor device driver</a></td></tr>
+<tr class="memdesc:group__drivers__gp2y10xx"><td class="mdescLeft">&#160;</td><td class="mdescRight">GP2Y10xx Optical Dust Sensor Converter device driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hdc1000"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hdc1000.html">HDC1000 Humidity and Temperature Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__hdc1000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the TI HDC1000 Humidity and Temperature Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hih6130"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hih6130.html">HIH6130 humidity and temperature sensor</a></td></tr>
+<tr class="memdesc:group__drivers__hih6130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for Honeywell HumidIcon Digital Humidity/Temperature Sensors: HIH-6130/6131 Series. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hm330x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hm330x.html">HM330X Laser Particulate Matter Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__hm330x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for HM330X particle matter sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hmc5883l"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hmc5883l.html">HMC5883L 3-axis digital compass</a></td></tr>
+<tr class="memdesc:group__drivers__hmc5883l"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the Honeywell HMC5883L 3-axis digital compass. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hsc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hsc.html">HSC temperature and pressure sensor</a></td></tr>
+<tr class="memdesc:group__drivers__hsc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the HSC sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ina2xx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ina2xx.html">INA2XX current/power monitor</a></td></tr>
+<tr class="memdesc:group__drivers__ina2xx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for Texas Instruments INA219/INA2XX Bi-Directional CURRENT/POWER MONITOR with Two-Wire Interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ina3221"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ina3221.html">INA3221 current/power monitor</a></td></tr>
+<tr class="memdesc:group__drivers__ina3221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for Texas Instruments INA3221 three-channel, high-side current and bus voltage monitor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__isl29020"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__isl29020.html">ISL29020 light sensor</a></td></tr>
+<tr class="memdesc:group__drivers__isl29020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the ISL29020 light sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__isl29125"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__isl29125.html">ISL29125 RGB light sensor</a></td></tr>
+<tr class="memdesc:group__drivers__isl29125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the ISL29125 RGB light sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__itg320x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html">ITG320X 3-axis gyroscope</a></td></tr>
+<tr class="memdesc:group__drivers__itg320x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for InvenSense ITG320X 3-axis gyroscope. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__jc42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__jc42.html">JC42 compliant temperature sensor driver</a></td></tr>
+<tr class="memdesc:group__drivers__jc42"><td class="mdescLeft">&#160;</td><td class="mdescRight">JC42 compliant temperature sensor driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__l3g4200d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__l3g4200d.html">L3G4200D gyroscope</a></td></tr>
+<tr class="memdesc:group__drivers__l3g4200d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the L3G4200D gyroscope. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__l3gxxxx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__l3gxxxx.html">L3Gxxxx 3-axis gyroscope sensor family</a></td></tr>
+<tr class="memdesc:group__drivers__l3gxxxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device Driver for ST L3Gxxxx 3-axis gyroscope sensor family. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lc709203f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lc709203f.html">LC709203F</a></td></tr>
+<tr class="memdesc:group__drivers__lc709203f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the LC709203F Battery Fuel Gauge. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lis2dh12"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lis2dh12.html">LIS2DH12 Accelerometer</a></td></tr>
+<tr class="memdesc:group__drivers__lis2dh12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the STM LIS2DH12 accelerometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lis3dh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lis3dh.html">LIS3DH accelerometer</a></td></tr>
+<tr class="memdesc:group__drivers__lis3dh"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the LIS3DH accelerometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lis3mdl"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lis3mdl.html">LIS3MDL 3-axis magnetometer</a></td></tr>
+<tr class="memdesc:group__drivers__lis3mdl"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the LIS3MDL 3-axis magnetometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lm75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lm75.html">LM75 Temperature Sensor driver compile configuration</a></td></tr>
+<tr class="memdesc:group__drivers__lm75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the <a class="el" href="structlm75.html" title="lm75 device descriptor ">lm75</a> temperature sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lpsxxx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lpsxxx.html">LPS331AP/LPS25HB/LPS22HB Pressure Sensors Driver</a></td></tr>
+<tr class="memdesc:group__drivers__lpsxxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the LPSXXX pressure sensor family (LPS331AP/LPS25HB/LPS22HB) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lsm303agr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lsm303agr.html">LSM303AGR 3D accelerometer/magnetometer</a></td></tr>
+<tr class="memdesc:group__drivers__lsm303agr"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+Device driver for the LSM303AGR 3D accelerometer/magnetometer <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lsm303dlhc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lsm303dlhc.html">LSM303DLHC 3D accelerometer/magnetometer</a></td></tr>
+<tr class="memdesc:group__drivers__lsm303dlhc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the LSM303DLHC 3D accelerometer/magnetometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__lsm6dsxx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__lsm6dsxx.html">LSM6DSXX 3D accelerometer/gyroscope</a></td></tr>
+<tr class="memdesc:group__drivers__lsm6dsxx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the LSM6DSXX 3D accelerometer/gyroscope. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ltc4150"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ltc4150.html">LTC4150 coulomb counter</a></td></tr>
+<tr class="memdesc:group__drivers__ltc4150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Linear Tech LTC4150 Coulomb Counter (a.k.a. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mag3110"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mag3110.html">MAG3110 3-Axis Digital Magnetometer</a></td></tr>
+<tr class="memdesc:group__drivers__mag3110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Freescale MAG3110 magnetometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__max31855"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__max31855.html">MAX31855 Thermocouple-to-Digital Converter driver</a></td></tr>
+<tr class="memdesc:group__drivers__max31855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the SPI Thermocouple-to-Digital Converter MAX31855. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mhz19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mhz19.html">MH-Z19 CO2 sensor</a></td></tr>
+<tr class="memdesc:group__drivers__mhz19"><td class="mdescLeft">&#160;</td><td class="mdescRight">MH-Z19 CO2 sensor driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mma7660"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mma7660.html">MMA7660 Accelerometer</a></td></tr>
+<tr class="memdesc:group__drivers__mma7660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Freescale MMA7660 3-Axis accelerometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mma8x5x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mma8x5x.html">MMA8x5x Accelerometer</a></td></tr>
+<tr class="memdesc:group__drivers__mma8x5x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Freescale MMA8x5x 3-Axis accelerometer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mpl3115a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mpl3115a2.html">MPL3115A2 Pressure Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__mpl3115a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Freescale MPL3115A2 pressure sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mpu9x50"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mpu9x50.html">MPU-9X50 (MPU9150 and MPU9250) accelerometer/magnetometer/gyroscope</a></td></tr>
+<tr class="memdesc:group__drivers__mpu9x50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the MPU-9X50 (MPU9150 and MPU9250) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__mq3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__mq3.html">MQ-3 Alcohol Tester</a></td></tr>
+<tr class="memdesc:group__drivers__mq3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the MQ-3 alcohol sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__matrix__keypad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__matrix__keypad.html">Matrix Keypad</a></td></tr>
+<tr class="memdesc:group__drivers__matrix__keypad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Matrix keypad driver for row/column keypads. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ds75lx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ds75lx.html">Maxim DS75LX temperature sensor</a></td></tr>
+<tr class="memdesc:group__drivers__ds75lx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the Maxim DS75LX temperature sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__opt3001"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__opt3001.html">OPT3001 Ambient Light Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__opt3001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Texas Instruments OPT3001 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__pir"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__pir.html">PIR Motion Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__pir"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the PIR motion sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__pulse__counter"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__pulse__counter.html">Pulse counter</a></td></tr>
+<tr class="memdesc:group__drivers__pulse__counter"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO based pulse counting driver. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__qmc5883l"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__qmc5883l.html">QMC5883L 3-Axis Digital Magnetic Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__qmc5883l"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for QST QMC5883L digital magnetic sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__scd30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__scd30.html">SCD30 CO2, temperature and humidity sensor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sdp3x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sdp3x.html">SDP3x temperature and differential pressure sensor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sds011"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sds011.html">SDS011 Laser Dust Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sds011"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver SDS011 Laser Dust Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sgp30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sgp30.html">SGP30 Gas Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sgp30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the Sensirion SGP30 Gas Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sht1x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sht1x.html">SHT10/SHT11/SHT15 Humidity and Temperature Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sht1x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for Sensirion SHT10/SHT11/SHT15 Humidity and Temperature Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sht2x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sht2x.html">SHT2x Humidity and Temperature sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sht2x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the SHT2x sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sht3x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sht3x.html">SHT3x Humidity and Temperature Sensor Series</a></td></tr>
+<tr class="memdesc:group__drivers__sht3x"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br />
+Device Driver for Sensirion SHT30/SHT31/SHT35 Humidity and Temperature Sensors <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__shtcx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__shtcx.html">SHTCX Temperature and humidity sensor</a></td></tr>
+<tr class="memdesc:group__drivers__shtcx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Sensirion SHTCX sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sm__pwm__01c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sm__pwm__01c.html">SM_PWM_01C dust sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sm__pwm__01c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for Amphenol SM_PWM_01C infrared dust sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__sps30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__sps30.html">SPS30 Particulate Matter Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__sps30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Sensirion SPS30 Particulate Matter Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__srf02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__srf02.html">SRF02 ultrasonic range sensor</a></td></tr>
+<tr class="memdesc:group__drivers__srf02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the SRF02 ultrasonic range sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__srf08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__srf08.html">SRF08 ultrasonic range sensor</a></td></tr>
+<tr class="memdesc:group__drivers__srf08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the SRF08 ultrasonic range sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__hts221"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__hts221.html">ST HTS221 digital Humidity Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__hts221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the ST HTS221 digital Humidity Sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__stmpe811"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html">STMPE811 Touchscreen Controller</a></td></tr>
+<tr class="memdesc:group__drivers__stmpe811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the STMPE811 touchscreen controller. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__si1133"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__si1133.html">Si1133 UV Index/Ambient Light Sensor with I2C</a></td></tr>
+<tr class="memdesc:group__drivers__si1133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the Si1133 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__si114x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__si114x.html">Si1145/6/7 UV/Ambient light/Proximity sensors</a></td></tr>
+<tr class="memdesc:group__drivers__si114x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the Si1145/6/7 sensors family. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__si70xx"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__si70xx.html">Si7006/13/20/21/5x temperature and humidity sensors</a></td></tr>
+<tr class="memdesc:group__drivers__si70xx"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Si7006/13/20/21/5x temperature and humidity sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__tcs37727"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__tcs37727.html">TCS37727 RGB Light Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__tcs37727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the AMS TCS37727 Color Light-To-Digital Converter. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__tmp00x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__tmp00x.html">TMP006/TMP007 Infrared Thermopile Sensor</a></td></tr>
+<tr class="memdesc:group__drivers__tmp00x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for the Texas Instruments TMP00X sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__tsl2561"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__tsl2561.html">TSL2561 illuminance sensor</a></td></tr>
+<tr class="memdesc:group__drivers__tsl2561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the illuminance TSL2561 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__tsl4531x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__tsl4531x.html">TSL4531x Illuminance sensor</a></td></tr>
+<tr class="memdesc:group__drivers__tsl4531x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the AMS TSL4531 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__vcnl40x0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__vcnl40x0.html">VCNL4010/VCNL4020/VCNL4040 Proximity and Ambient Light Sensors</a></td></tr>
+<tr class="memdesc:group__drivers__vcnl40x0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the VCNL40X0 Proximity and Ambient Light Sensors. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__veml6070"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__veml6070.html">VEML6070 UV sensor</a></td></tr>
+<tr class="memdesc:group__drivers__veml6070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver interface for the VEML6070 UV sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__vl6180x"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__vl6180x.html">VL6180X Ranging and Ambient Light Sensing (ALS) module</a></td></tr>
+<tr class="memdesc:group__drivers__vl6180x"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the ST VL6180X Ranging and Ambient Light Sensing (ALS) module. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__ph__oem"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__ph__oem.html">pH OEM sensor device driver</a></td></tr>
+<tr class="memdesc:group__drivers__ph__oem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for Atlas Scientific pH OEM sensor with SMBus/I2C interface. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__drivers__srf04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__srf04.html">srf04 ultra sonic range finder</a></td></tr>
+<tr class="memdesc:group__drivers__srf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver for the srf04 ultra sonic range finder. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:scd30__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="scd30__params_8h.html">scd30_params.h</a></td></tr>
+<tr class="memdesc:scd30__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver params interface for the SCD30 sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:sdp3x__params_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sdp3x__params_8h.html">sdp3x_params.h</a></td></tr>
+<tr class="memdesc:sdp3x__params_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device driver params interface for the SDP3x sensor. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

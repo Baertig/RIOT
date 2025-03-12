@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_func_x.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_x"></a>- x -</h3><ul>
+<li>xbee_build_hdr()
+: <a class="el" href="group__drivers__xbee.html#gacbe3382aa193ab5993854edef58bfc27">xbee.h</a>
+</li>
+<li>xbee_parse_hdr()
+: <a class="el" href="group__drivers__xbee.html#ga08ea75bd0c8d3d58b8c580d716bb6d4d">xbee.h</a>
+</li>
+<li>xbee_setup()
+: <a class="el" href="group__drivers__xbee.html#gaf75b399a7662e676209310635e9b07f0">xbee.h</a>
+</li>
+<li>xosc_start()
+: <a class="el" href="rpx0xx_2include_2periph__cpu_8h.html#a35f267934280953db4afe98ecc743943">periph_cpu.h</a>
+</li>
+<li>xosc_stop()
+: <a class="el" href="rpx0xx_2include_2periph__cpu_8h.html#a58b5bcefe7dbe0df5d11ac880a11b581">periph_cpu.h</a>
+</li>
+<li>xtimer_diff()
+: <a class="el" href="group__sys__xtimer.html#ga0cd366d557de02930b6bef0378c198d9">xtimer.h</a>
+</li>
+<li>xtimer_diff32_64()
+: <a class="el" href="group__sys__xtimer.html#ga6146cc0b4d0e6ba9c2b3bff7967e40ac">xtimer.h</a>
+</li>
+<li>xtimer_diff64()
+: <a class="el" href="group__sys__xtimer.html#ga925936dc1549a9eee0a216799ae3d0e0">xtimer.h</a>
+</li>
+<li>xtimer_init()
+: <a class="el" href="group__sys__xtimer.html#gabc079c5c696d02451bc3610391d177e6">xtimer.h</a>
+</li>
+<li>xtimer_is_set()
+: <a class="el" href="group__sys__xtimer.html#gaf580c1e17c944f6acea5f371abce8062">xtimer.h</a>
+</li>
+<li>xtimer_left_usec()
+: <a class="el" href="group__sys__xtimer.html#gaf9c6ba98a9e205b8bfad61459f48a886">xtimer.h</a>
+</li>
+<li>xtimer_less()
+: <a class="el" href="group__sys__xtimer.html#ga82da2a7788ea7a937aaa1e9c4e104be3">xtimer.h</a>
+</li>
+<li>xtimer_less64()
+: <a class="el" href="group__sys__xtimer.html#ga36d45604e809c97910ab3b708409103f">xtimer.h</a>
+</li>
+<li>xtimer_msg_receive_timeout()
+: <a class="el" href="group__sys__xtimer.html#ga9a8ab2f8bedb8e849ad9b168943a4dd5">xtimer.h</a>
+</li>
+<li>xtimer_msg_receive_timeout64()
+: <a class="el" href="group__sys__xtimer.html#gaf7a92a792c25cb6fdd24f5ab3a880b68">xtimer.h</a>
+</li>
+<li>xtimer_msleep()
+: <a class="el" href="group__sys__xtimer.html#ga5529cb95c1f02e5b5a4a92b6d38c4e30">xtimer.h</a>
+</li>
+<li>xtimer_mutex_lock_timeout()
+: <a class="el" href="group__sys__xtimer.html#ga9440cd58d5420e61bcd6ec4c9e265eb3">xtimer.h</a>
+</li>
+<li>xtimer_nanosleep()
+: <a class="el" href="group__sys__xtimer.html#gab14b0ed7032e0d0f06e1a98fa894e2f6">xtimer.h</a>
+</li>
+<li>xtimer_now()
+: <a class="el" href="group__sys__xtimer.html#gaf3dbc76790c2beedce25bc1ba61faf33">xtimer.h</a>
+</li>
+<li>xtimer_now64()
+: <a class="el" href="group__sys__xtimer.html#ga4064fa62ba625bb103fa836f78fc6ed9">xtimer.h</a>
+</li>
+<li>xtimer_now_timex()
+: <a class="el" href="group__sys__xtimer.html#ga9b60f150213948c651c7c7ad2c98e140">xtimer.h</a>
+</li>
+<li>xtimer_now_usec()
+: <a class="el" href="group__sys__xtimer.html#ga149e11e56e687ffbdf60eb7a826e0607">xtimer.h</a>
+</li>
+<li>xtimer_now_usec64()
+: <a class="el" href="group__sys__xtimer.html#gacc0c29679b49269c5638ef2a2ccc3e88">xtimer.h</a>
+</li>
+<li>xtimer_periodic_wakeup()
+: <a class="el" href="group__sys__xtimer.html#ga77ff235d491f651378348a46519d9dba">xtimer.h</a>
+</li>
+<li>xtimer_remove()
+: <a class="el" href="group__sys__xtimer.html#ga2b6666a277679ca79aaa27db957057ab">xtimer.h</a>
+</li>
+<li>xtimer_rmutex_lock_timeout()
+: <a class="el" href="group__sys__xtimer.html#ga6f00bd32c0a8bc00a83721946a5662bd">xtimer.h</a>
+</li>
+<li>xtimer_set()
+: <a class="el" href="group__sys__xtimer.html#gadcc4acdd5b781fe1e8760503cfb635bb">xtimer.h</a>
+</li>
+<li>xtimer_set64()
+: <a class="el" href="group__sys__xtimer.html#ga44debbdb75375d7b727fa460d4f27fe9">xtimer.h</a>
+</li>
+<li>xtimer_set_msg()
+: <a class="el" href="group__sys__xtimer.html#ga799389809547e799decc615d7203811a">xtimer.h</a>
+</li>
+<li>xtimer_set_msg64()
+: <a class="el" href="group__sys__xtimer.html#ga234532dba9440b18911b2fbf0dca7528">xtimer.h</a>
+</li>
+<li>xtimer_set_timeout_flag()
+: <a class="el" href="group__sys__xtimer.html#ga9c34d184d0dc742ff052c096a647abfe">xtimer.h</a>
+</li>
+<li>xtimer_set_timeout_flag64()
+: <a class="el" href="group__sys__xtimer.html#ga01446e9f287586f7dea0364278defd9c">xtimer.h</a>
+</li>
+<li>xtimer_set_wakeup()
+: <a class="el" href="group__sys__xtimer.html#gab46b49ec5cf112476c83ca727bb77f67">xtimer.h</a>
+</li>
+<li>xtimer_set_wakeup64()
+: <a class="el" href="group__sys__xtimer.html#ga31b5a43639e91d1ef511040a33be25d5">xtimer.h</a>
+</li>
+<li>xtimer_sleep()
+: <a class="el" href="group__sys__xtimer.html#ga5b74aa22cfd14b95f7faf2bee69bd505">xtimer.h</a>
+</li>
+<li>xtimer_spin()
+: <a class="el" href="group__sys__xtimer.html#gac1254c900c6826fc76c638d5d70bcb9b">xtimer.h</a>
+</li>
+<li>xtimer_ticks()
+: <a class="el" href="group__sys__xtimer.html#gaf102bfcea911afe876c4658c5afa4747">xtimer.h</a>
+</li>
+<li>xtimer_ticks64()
+: <a class="el" href="group__sys__xtimer.html#ga76c108030605873cdf7191facc943c8b">xtimer.h</a>
+</li>
+<li>xtimer_ticks_from_usec()
+: <a class="el" href="group__sys__xtimer.html#gae457bf7ed1f4ec0f4f6767a35a4fd181">xtimer.h</a>
+</li>
+<li>xtimer_ticks_from_usec64()
+: <a class="el" href="group__sys__xtimer.html#ga2322a5a456e7a161501e3eadfe72ecea">xtimer.h</a>
+</li>
+<li>xtimer_tsleep32()
+: <a class="el" href="group__sys__xtimer.html#ga5431404c94fff4478075807f16bbba35">xtimer.h</a>
+</li>
+<li>xtimer_tsleep64()
+: <a class="el" href="group__sys__xtimer.html#ga9c6c5f34150bdb433ccc3016f090c0f5">xtimer.h</a>
+</li>
+<li>xtimer_usec_from_ticks()
+: <a class="el" href="group__sys__xtimer.html#ga8c61899aeac7574e5c49fa6923b9a3c6">xtimer.h</a>
+</li>
+<li>xtimer_usec_from_ticks64()
+: <a class="el" href="group__sys__xtimer.html#gaf6503b61ff26a435ea04825aded9f063">xtimer.h</a>
+</li>
+<li>xtimer_usleep()
+: <a class="el" href="group__sys__xtimer.html#ga01ded1a98b76eea8a1c4c45975781989">xtimer.h</a>
+</li>
+<li>xtimer_usleep64()
+: <a class="el" href="group__sys__xtimer.html#ga9a54a4401bc1e4e770ef8d4110bdaed4">xtimer.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/itg320x.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('itg320x_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">itg320x.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__itg320x.html">ITG320X 3-axis gyroscope</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Device driver for InvenSense ITG320X 3-axis gyroscope.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Device driver for InvenSense ITG320X 3-axis gyroscope. </p>
+<dl class="section author"><dt>Author</dt><dd>Gunar Schorcht <a href="#" onclick="location.href='mai'+'lto:'+'gun'+'ar'+'@sc'+'ho'+'rch'+'t.'+'net'; return false;">gunar<span style="display: none;">.nosp@m.</span>@sch<span style="display: none;">.nosp@m.</span>orcht<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="itg320x_8h_source.html">itg320x.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="i2c_8h_source.html">periph/i2c.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for itg320x.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="itg320x_8h__incl.svg" width="634" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="itg320x_8h__dep__incl.svg" width="190" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="itg320x_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitg320x__data__t.html">itg320x_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Angular rate values in tenths of a degree per second.  <a href="structitg320x__data__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitg320x__raw__data__t.html">itg320x_raw_data_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raw data set as two complements.  <a href="structitg320x__raw__data__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitg320x__params__t.html">itg320x_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITG320X device initialization parameters.  <a href="structitg320x__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structitg320x__t.html">itg320x_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITG320X sensor device data structure type.  <a href="structitg320x__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga8d169932ebaed104704ae2f54dc68b66"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga8d169932ebaed104704ae2f54dc68b66">ITG320X_ID</a>&#160;&#160;&#160;(0x68)</td></tr>
+<tr class="memdesc:ga8d169932ebaed104704ae2f54dc68b66"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITG320X chip id defined in Who Am I. <br /></td></tr>
+<tr class="separator:ga8d169932ebaed104704ae2f54dc68b66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga61f7479fbc78071d75b09877ca54d548"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga61f7479fbc78071d75b09877ca54d548">itg320x_drdy_int_cb_t</a>) (void *)</td></tr>
+<tr class="memdesc:ga61f7479fbc78071d75b09877ca54d548"><td class="mdescLeft">&#160;</td><td class="mdescRight">ITG320X data ready interrupt (DRDY) callback function type.  <a href="group__drivers__itg320x.html#ga61f7479fbc78071d75b09877ca54d548">More...</a><br /></td></tr>
+<tr class="separator:ga61f7479fbc78071d75b09877ca54d548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:gadda9b12aef462af6df5885d2c4c8f46a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gadda9b12aef462af6df5885d2c4c8f46a">itg320x_error_codes_t</a> { <br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#ggadda9b12aef462af6df5885d2c4c8f46aa4a263557884cba3190d7d03f4869a04e">ITG320X_OK</a> = 0, 
+<a class="el" href="group__drivers__itg320x.html#ggadda9b12aef462af6df5885d2c4c8f46aa0f750b5fc3c6c1654663c92ac785d6f4">ITG320X_ERROR_I2C</a> = -1, 
+<a class="el" href="group__drivers__itg320x.html#ggadda9b12aef462af6df5885d2c4c8f46aacd7595b3937260595a9797d214708b4a">ITG320X_ERROR_WRONG_ID</a> = -2, 
+<a class="el" href="group__drivers__itg320x.html#ggadda9b12aef462af6df5885d2c4c8f46aa74a63d1c6c9b82606b021d64d3dd3ba8">ITG320X_ERROR_NO_DATA</a> = -3, 
+<br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#ggadda9b12aef462af6df5885d2c4c8f46aa6246b38c381432c0ecbd4ea066a47d8d">ITG320X_ERROR_RAW_DATA</a> = -4
+<br />
+ }</td></tr>
+<tr class="memdesc:gadda9b12aef462af6df5885d2c4c8f46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Named return values.  <a href="group__drivers__itg320x.html#gadda9b12aef462af6df5885d2c4c8f46a">More...</a><br /></td></tr>
+<tr class="separator:gadda9b12aef462af6df5885d2c4c8f46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga024f925f7c496983500513988cc0bb84"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga024f925f7c496983500513988cc0bb84">itg320x_lpf_bw_t</a> { <br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a9b6ce6e25f5339a0305eec8f2b9bc75b">ITG320X_LPF_BW_256</a> = 0, 
+<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84abccecc415746a4e422331cca1205d002">ITG320X_LPF_BW_188</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a1aaee3c6e1d36d093f54d6760b0740a5">ITG320X_LPF_BW_98</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a57c40d4fc05f555d42e5059299fb1da8">ITG320X_LPF_BW_42</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a1638198905791a74b5d36d5762cc4410">ITG320X_LPF_BW_20</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a4c4132ec763fe26af923e0f0aaa17d93">ITG320X_LPF_BW_10</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga024f925f7c496983500513988cc0bb84a720a4c4bd115b475231aad61d700cddc">ITG320X_LPF_BW_5</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga024f925f7c496983500513988cc0bb84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low pass filter bandwidth.  <a href="group__drivers__itg320x.html#ga024f925f7c496983500513988cc0bb84">More...</a><br /></td></tr>
+<tr class="separator:ga024f925f7c496983500513988cc0bb84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee2676f712635f66773919467d300122"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gaee2676f712635f66773919467d300122">itg320x_int_level_t</a> { <a class="el" href="group__drivers__itg320x.html#ggaee2676f712635f66773919467d300122afb21702951951bdfcb9840285b740420">ITG320X_INT_HIGH</a> = 0x00, 
+<a class="el" href="group__drivers__itg320x.html#ggaee2676f712635f66773919467d300122ad7f6d9a536868588224100451bccfda4">ITG320X_INT_LOW</a> = 0x80
+ }</td></tr>
+<tr class="memdesc:gaee2676f712635f66773919467d300122"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logic level for INT output pin (ITG320X_REG_INT_CFG&lt;7&gt;)  <a href="group__drivers__itg320x.html#gaee2676f712635f66773919467d300122">More...</a><br /></td></tr>
+<tr class="separator:gaee2676f712635f66773919467d300122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabee17bef12c492d49ed4b15ec67c91d8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gabee17bef12c492d49ed4b15ec67c91d8">itg320x_int_drive_t</a> { <a class="el" href="group__drivers__itg320x.html#ggabee17bef12c492d49ed4b15ec67c91d8a7f93f4733971a9250f6f57aec27fc214">ITG320X_INT_PUSH_PULL</a> = 0x00, 
+<a class="el" href="group__drivers__itg320x.html#ggabee17bef12c492d49ed4b15ec67c91d8a934f1e6c53826ec155de714ba93bfdbf">ITG320X_INT_OPEN_DRAIN</a> = 0x40
+ }</td></tr>
+<tr class="memdesc:gabee17bef12c492d49ed4b15ec67c91d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drive type for INT output pin (ITG320X_REG_INT_CFG&lt;6&gt;)  <a href="group__drivers__itg320x.html#gabee17bef12c492d49ed4b15ec67c91d8">More...</a><br /></td></tr>
+<tr class="separator:gabee17bef12c492d49ed4b15ec67c91d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c1a5dae8a6b7d005e16912ea7519003"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga2c1a5dae8a6b7d005e16912ea7519003">itg320x_clk_sel_t</a> { <br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003a6a48b74f7b707954fb0fabc6919d8ef0">ITG320X_CLK_INTERNAL</a> = 0, 
+<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003aa39e60006dd27e75b242fc986f04e477">ITG320X_CLK_PLL_X_GYRO</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003a439e97a0f2e63c2a69807d4dfb0dcbe4">ITG320X_CLK_PLL_Y_GYRO</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003a83558fc0dff7c704d37bc2e4c56aceac">ITG320X_CLK_PLL_Z_GYRO</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003ad9e339580afefa9aa419c806ef65ed04">ITG320X_CLK_PLL_32K</a>, 
+<a class="el" href="group__drivers__itg320x.html#gga2c1a5dae8a6b7d005e16912ea7519003a1ff879722fa6051499faf73666d90d0e">ITG320X_CLK_PLL_19M</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga2c1a5dae8a6b7d005e16912ea7519003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock source selection (ITG320X_REG_PWR_MGM&lt;2:0&gt;)  <a href="group__drivers__itg320x.html#ga2c1a5dae8a6b7d005e16912ea7519003">More...</a><br /></td></tr>
+<tr class="separator:ga2c1a5dae8a6b7d005e16912ea7519003"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaadadcc82ad16623ae77609004b742b3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gaadadcc82ad16623ae77609004b742b3a">itg320x_init</a> (<a class="el" href="structitg320x__t.html">itg320x_t</a> *dev, const <a class="el" href="structitg320x__params__t.html">itg320x_params_t</a> *params)</td></tr>
+<tr class="memdesc:gaadadcc82ad16623ae77609004b742b3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the ITG320X sensor device.  <a href="group__drivers__itg320x.html#gaadadcc82ad16623ae77609004b742b3a">More...</a><br /></td></tr>
+<tr class="separator:gaadadcc82ad16623ae77609004b742b3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18b3e17a7f8d3c30199e83c434adf4c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga18b3e17a7f8d3c30199e83c434adf4c6">itg320x_init_int</a> (const <a class="el" href="structitg320x__t.html">itg320x_t</a> *dev, <a class="el" href="group__drivers__itg320x.html#ga61f7479fbc78071d75b09877ca54d548">itg320x_drdy_int_cb_t</a> cb, void *arg)</td></tr>
+<tr class="memdesc:ga18b3e17a7f8d3c30199e83c434adf4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize and activate the DRDY interrupt of ITG320X sensor device.  <a href="group__drivers__itg320x.html#ga18b3e17a7f8d3c30199e83c434adf4c6">More...</a><br /></td></tr>
+<tr class="separator:ga18b3e17a7f8d3c30199e83c434adf4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4236cbf5e563439665f1c35a75fdb4d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gac4236cbf5e563439665f1c35a75fdb4d">itg320x_data_ready</a> (const <a class="el" href="structitg320x__t.html">itg320x_t</a> *dev)</td></tr>
+<tr class="memdesc:gac4236cbf5e563439665f1c35a75fdb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data-ready status function.  <a href="group__drivers__itg320x.html#gac4236cbf5e563439665f1c35a75fdb4d">More...</a><br /></td></tr>
+<tr class="separator:gac4236cbf5e563439665f1c35a75fdb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga019b325d77d8509caf280c20c112ed6c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga019b325d77d8509caf280c20c112ed6c">itg320x_read</a> (const <a class="el" href="structitg320x__t.html">itg320x_t</a> *dev, <a class="el" href="structitg320x__data__t.html">itg320x_data_t</a> *data)</td></tr>
+<tr class="memdesc:ga019b325d77d8509caf280c20c112ed6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one sample of angular rates in tenths of a degree per second.  <a href="group__drivers__itg320x.html#ga019b325d77d8509caf280c20c112ed6c">More...</a><br /></td></tr>
+<tr class="separator:ga019b325d77d8509caf280c20c112ed6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c0ac5f06ae32278678eb7a2123eca77"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga4c0ac5f06ae32278678eb7a2123eca77">itg320x_read_raw</a> (const <a class="el" href="structitg320x__t.html">itg320x_t</a> *dev, <a class="el" href="structitg320x__raw__data__t.html">itg320x_raw_data_t</a> *raw)</td></tr>
+<tr class="memdesc:ga4c0ac5f06ae32278678eb7a2123eca77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read one sample of raw sensor data as 16 bit two's complements.  <a href="group__drivers__itg320x.html#ga4c0ac5f06ae32278678eb7a2123eca77">More...</a><br /></td></tr>
+<tr class="separator:ga4c0ac5f06ae32278678eb7a2123eca77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1958fabad4588c9a2460e07b6c606fab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga1958fabad4588c9a2460e07b6c606fab">itg320x_read_temp</a> (const <a class="el" href="structitg320x__t.html">itg320x_t</a> *dev, int16_t *temp)</td></tr>
+<tr class="memdesc:ga1958fabad4588c9a2460e07b6c606fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature in tenths of a degree Celsius.  <a href="group__drivers__itg320x.html#ga1958fabad4588c9a2460e07b6c606fab">More...</a><br /></td></tr>
+<tr class="separator:ga1958fabad4588c9a2460e07b6c606fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaee6b79d4501e89891b9a9f845d5fc57d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gaee6b79d4501e89891b9a9f845d5fc57d">itg320x_power_down</a> (<a class="el" href="structitg320x__t.html">itg320x_t</a> *dev)</td></tr>
+<tr class="memdesc:gaee6b79d4501e89891b9a9f845d5fc57d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power down the sensor.  <a href="group__drivers__itg320x.html#gaee6b79d4501e89891b9a9f845d5fc57d">More...</a><br /></td></tr>
+<tr class="separator:gaee6b79d4501e89891b9a9f845d5fc57d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1918666930f738f0d5c74e3cda8a7897"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga1918666930f738f0d5c74e3cda8a7897">itg320x_power_up</a> (<a class="el" href="structitg320x__t.html">itg320x_t</a> *dev)</td></tr>
+<tr class="memdesc:ga1918666930f738f0d5c74e3cda8a7897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power up the sensor.  <a href="group__drivers__itg320x.html#ga1918666930f738f0d5c74e3cda8a7897">More...</a><br /></td></tr>
+<tr class="separator:ga1918666930f738f0d5c74e3cda8a7897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+I2C addresses</h2></td></tr>
+<tr class="memitem:gad4055c2181a79d1d42d4e3325febcaa6"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#gad4055c2181a79d1d42d4e3325febcaa6">ITG320X_I2C_ADDRESS_1</a>&#160;&#160;&#160;(0x68)</td></tr>
+<tr class="memdesc:gad4055c2181a79d1d42d4e3325febcaa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">AD0 pin low. <br /></td></tr>
+<tr class="separator:gad4055c2181a79d1d42d4e3325febcaa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga22d3230ca379d48459cf50bd3a380e7f"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__itg320x.html#ga22d3230ca379d48459cf50bd3a380e7f">ITG320X_I2C_ADDRESS_2</a>&#160;&#160;&#160;(0x69)</td></tr>
+<tr class="memdesc:ga22d3230ca379d48459cf50bd3a380e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">AD0 pin high. <br /></td></tr>
+<tr class="separator:ga22d3230ca379d48459cf50bd3a380e7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

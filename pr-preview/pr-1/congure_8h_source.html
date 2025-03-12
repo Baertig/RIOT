@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/congure.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('congure_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">congure.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="congure_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2021 Freie Universität Berlin</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef CONGURE_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define CONGURE_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="clist_8h.html">clist.h</a>&quot;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ztimer_8h.html">ztimer.h</a>&quot;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="group__sys__congure.html#ga356c72a12d4bc16dc8adb32532733bf7">   35</a></span>&#160;<span class="preprocessor">#define CONGURE_WND_SIZE_MAX    (UINT16_MAX)</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">   41</a></span>&#160;<span class="keyword">typedef</span> uint16_t <a class="code" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a>;</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__sys__congure.html#ga19db87d01fe6b0b9fb22a59289fd06a0">   46</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structcongure__snd__driver.html">congure_snd_driver</a> <a class="code" href="structcongure__snd__driver.html">congure_snd_driver_t</a>;</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structcongure__snd__t.html">   51</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structcongure__snd__t.html#a5e607d3b240c468deb7ef0f006a736ff">   55</a></span>&#160;    <span class="keyword">const</span> <a class="code" href="structcongure__snd__driver.html">congure_snd_driver_t</a> *<a class="code" href="structcongure__snd__t.html#a5e607d3b240c468deb7ef0f006a736ff">driver</a>;</div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structcongure__snd__t.html#a68b932e19d7207ed9d35bd4c9795e151">   61</a></span>&#160;    <span class="keywordtype">void</span> *<a class="code" href="structcongure__snd__t.html#a68b932e19d7207ed9d35bd4c9795e151">ctx</a>;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526">   62</a></span>&#160;    <a class="code" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> <a class="code" href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526">cwnd</a>;        </div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <a class="code" href="structcongure__snd__t.html">congure_snd_t</a>;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structcongure__snd__msg__t.html">   68</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structcongure__snd__msg__t.html#a7b62bed451f8efa361fedfebf3cf972d">   69</a></span>&#160;    <a class="code" href="structlist__node.html">clist_node_t</a> <a class="code" href="structcongure__snd__msg__t.html#a7b62bed451f8efa361fedfebf3cf972d">super</a>;         </div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structcongure__snd__msg__t.html#aa2e174eac8362efb4285ec1ff82c7d91">   73</a></span>&#160;    <a class="code" href="group__sys__ztimer.html#gab5514d8cb5abf5fb540565fd3d070f0f">ztimer_now_t</a> <a class="code" href="structcongure__snd__msg__t.html#aa2e174eac8362efb4285ec1ff82c7d91">send_time</a>;</div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structcongure__snd__msg__t.html#a72d55da68f435d2e2faa00b962bcf043">   74</a></span>&#160;    <a class="code" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> <a class="code" href="structcongure__snd__msg__t.html#a72d55da68f435d2e2faa00b962bcf043">size</a>;    </div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structcongure__snd__msg__t.html#ae820432ff2706fb56cc39167781c0db9">   80</a></span>&#160;    uint8_t <a class="code" href="structcongure__snd__msg__t.html#ae820432ff2706fb56cc39167781c0db9">resends</a>;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <a class="code" href="structcongure__snd__msg__t.html">congure_snd_msg_t</a>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html">   86</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a2d9f7fd8ae3da4786d2f7acd73418814">   90</a></span>&#160;    <a class="code" href="group__sys__ztimer.html#gab5514d8cb5abf5fb540565fd3d070f0f">ztimer_now_t</a> <a class="code" href="structcongure__snd__ack__t.html#a2d9f7fd8ae3da4786d2f7acd73418814">recv_time</a>;</div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a55688924b20e3154e762f5509c7da7ab">   91</a></span>&#160;    uint32_t <a class="code" href="structcongure__snd__ack__t.html#a55688924b20e3154e762f5509c7da7ab">id</a>;            </div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a967f109f3bf8f24b2c3def38f304e76d">   95</a></span>&#160;    <a class="code" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> <a class="code" href="structcongure__snd__ack__t.html#a967f109f3bf8f24b2c3def38f304e76d">size</a>;</div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a0a83ff3f459035ce2c6b2ca2dc582c97">  100</a></span>&#160;    <a class="code" href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a> <a class="code" href="structcongure__snd__ack__t.html#a0a83ff3f459035ce2c6b2ca2dc582c97">wnd</a>;</div><div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a90ddef7162b5df9063c36be3e04ce93c">  107</a></span>&#160;    uint16_t <a class="code" href="structcongure__snd__ack__t.html#a90ddef7162b5df9063c36be3e04ce93c">clean</a>;</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structcongure__snd__ack__t.html#a41deee4a885bc1ba3e25e62e69b24010">  113</a></span>&#160;    uint16_t <a class="code" href="structcongure__snd__ack__t.html#a41deee4a885bc1ba3e25e62e69b24010">delay</a>;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <a class="code" href="structcongure__snd__ack__t.html">congure_snd_ack_t</a>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html">  119</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcongure__snd__driver.html">congure_snd_driver</a> {</div><div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a69e52a59f0e39f06cfc2d054cc65fee5">  128</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#a69e52a59f0e39f06cfc2d054cc65fee5">init</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <span class="keywordtype">void</span> *ctx);</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a9732da536953107c41e4dbeb04062a7a">  142</a></span>&#160;    int32_t (*<a class="code" href="structcongure__snd__driver.html#a9732da536953107c41e4dbeb04062a7a">inter_msg_interval</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <span class="keywordtype">unsigned</span> msg_size);</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div><div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a0d086fd9d6316577ca210d920980a382">  150</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#a0d086fd9d6316577ca210d920980a382">report_msg_sent</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <span class="keywordtype">unsigned</span> msg_size);</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#aae1de0041920f2666803d7ba618d78c7">  162</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#aae1de0041920f2666803d7ba618d78c7">report_msg_discarded</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <span class="keywordtype">unsigned</span> msg_size);</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div><div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a83c1ff0def5814c0050ad23a928335fa">  177</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#a83c1ff0def5814c0050ad23a928335fa">report_msgs_timeout</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <a class="code" href="structcongure__snd__msg__t.html">congure_snd_msg_t</a> *msgs);</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div><div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a4504bded5e1a13662e5c858c7aaf59d4">  196</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#a4504bded5e1a13662e5c858c7aaf59d4">report_msgs_lost</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <a class="code" href="structcongure__snd__msg__t.html">congure_snd_msg_t</a> *msgs);</div><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div><div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#adabdcfb080c9e4c3536a1224ae9bb2d8">  205</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#adabdcfb080c9e4c3536a1224ae9bb2d8">report_msg_acked</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <a class="code" href="structcongure__snd__msg__t.html">congure_snd_msg_t</a> *msg,</div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                             <a class="code" href="structcongure__snd__ack__t.html">congure_snd_ack_t</a> *ack);</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div><div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="structcongure__snd__driver.html#a6d84e81002a9ab715325cd675a80f101">  217</a></span>&#160;    void (*<a class="code" href="structcongure__snd__driver.html#a6d84e81002a9ab715325cd675a80f101">report_ecn_ce</a>)(<a class="code" href="structcongure__snd__t.html">congure_snd_t</a> *c, <a class="code" href="group__sys__ztimer.html#gab5514d8cb5abf5fb540565fd3d070f0f">ztimer_now_t</a> time);</div><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;};</div><div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div><div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div><div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CONGURE_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div><div class="ttc" id="structcongure__snd__driver_html_a6d84e81002a9ab715325cd675a80f101"><div class="ttname"><a href="structcongure__snd__driver.html#a6d84e81002a9ab715325cd675a80f101">congure_snd_driver::report_ecn_ce</a></div><div class="ttdeci">void(* report_ecn_ce)(congure_snd_t *c, ztimer_now_t time)</div><div class="ttdoc">Report that &quot;congestion encountered&quot; CE signals were received for a message by means of explicit cong...</div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00217">congure.h:217</a></div></div>
+<div class="ttc" id="structcongure__snd__msg__t_html_aa2e174eac8362efb4285ec1ff82c7d91"><div class="ttname"><a href="structcongure__snd__msg__t.html#aa2e174eac8362efb4285ec1ff82c7d91">congure_snd_msg_t::send_time</a></div><div class="ttdeci">ztimer_now_t send_time</div><div class="ttdoc">timestamp in milliseconds of when the message was sent. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00073">congure.h:73</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_a69e52a59f0e39f06cfc2d054cc65fee5"><div class="ttname"><a href="structcongure__snd__driver.html#a69e52a59f0e39f06cfc2d054cc65fee5">congure_snd_driver::init</a></div><div class="ttdeci">void(* init)(congure_snd_t *c, void *ctx)</div><div class="ttdoc">Initializes a CongURE object. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00128">congure.h:128</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a55688924b20e3154e762f5509c7da7ab"><div class="ttname"><a href="structcongure__snd__ack__t.html#a55688924b20e3154e762f5509c7da7ab">congure_snd_ack_t::id</a></div><div class="ttdeci">uint32_t id</div><div class="ttdoc">ID of the message the ACK is for. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00091">congure.h:91</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a2d9f7fd8ae3da4786d2f7acd73418814"><div class="ttname"><a href="structcongure__snd__ack__t.html#a2d9f7fd8ae3da4786d2f7acd73418814">congure_snd_ack_t::recv_time</a></div><div class="ttdeci">ztimer_now_t recv_time</div><div class="ttdoc">Timestamp in milliseconds of when the ACK was received. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00090">congure.h:90</a></div></div>
+<div class="ttc" id="ztimer_8h_html"><div class="ttname"><a href="ztimer_8h.html">ztimer.h</a></div><div class="ttdoc">ztimer API </div></div>
+<div class="ttc" id="group__sys__ztimer_html_gab5514d8cb5abf5fb540565fd3d070f0f"><div class="ttname"><a href="group__sys__ztimer.html#gab5514d8cb5abf5fb540565fd3d070f0f">ztimer_now_t</a></div><div class="ttdeci">uint32_t ztimer_now_t</div><div class="ttdoc">type for ztimer_now() result </div><div class="ttdef"><b>Definition:</b> <a href="ztimer_8h_source.html#l00311">ztimer.h:311</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a0a83ff3f459035ce2c6b2ca2dc582c97"><div class="ttname"><a href="structcongure__snd__ack__t.html#a0a83ff3f459035ce2c6b2ca2dc582c97">congure_snd_ack_t::wnd</a></div><div class="ttdeci">congure_wnd_size_t wnd</div><div class="ttdoc">the peer-reported window size in caller defined units. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00100">congure.h:100</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a967f109f3bf8f24b2c3def38f304e76d"><div class="ttname"><a href="structcongure__snd__ack__t.html#a967f109f3bf8f24b2c3def38f304e76d">congure_snd_ack_t::size</a></div><div class="ttdeci">congure_wnd_size_t size</div><div class="ttdoc">size of the ACK in initiator-defined units </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00095">congure.h:95</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_adabdcfb080c9e4c3536a1224ae9bb2d8"><div class="ttname"><a href="structcongure__snd__driver.html#adabdcfb080c9e4c3536a1224ae9bb2d8">congure_snd_driver::report_msg_acked</a></div><div class="ttdeci">void(* report_msg_acked)(congure_snd_t *c, congure_snd_msg_t *msg, congure_snd_ack_t *ack)</div><div class="ttdoc">Report that the ACK for a message was received. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00205">congure.h:205</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html"><div class="ttname"><a href="structcongure__snd__driver.html">congure_snd_driver</a></div><div class="ttdoc">Driver for CongURE objects. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00119">congure.h:119</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a90ddef7162b5df9063c36be3e04ce93c"><div class="ttname"><a href="structcongure__snd__ack__t.html#a90ddef7162b5df9063c36be3e04ce93c">congure_snd_ack_t::clean</a></div><div class="ttdeci">uint16_t clean</div><div class="ttdoc">true, if ACK only contains an ACK, false if not </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00107">congure.h:107</a></div></div>
+<div class="ttc" id="structcongure__snd__msg__t_html_ae820432ff2706fb56cc39167781c0db9"><div class="ttname"><a href="structcongure__snd__msg__t.html#ae820432ff2706fb56cc39167781c0db9">congure_snd_msg_t::resends</a></div><div class="ttdeci">uint8_t resends</div><div class="ttdoc">number of times the message has already been resent. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00080">congure.h:80</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html"><div class="ttname"><a href="structcongure__snd__ack__t.html">congure_snd_ack_t</a></div><div class="ttdoc">Object to represent an ACK to a message. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00086">congure.h:86</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_aae1de0041920f2666803d7ba618d78c7"><div class="ttname"><a href="structcongure__snd__driver.html#aae1de0041920f2666803d7ba618d78c7">congure_snd_driver::report_msg_discarded</a></div><div class="ttdeci">void(* report_msg_discarded)(congure_snd_t *c, unsigned msg_size)</div><div class="ttdoc">Report message as discarded. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00162">congure.h:162</a></div></div>
+<div class="ttc" id="group__sys__congure_html_gaa8548f80649d991f82009bf414bcb193"><div class="ttname"><a href="group__sys__congure.html#gaa8548f80649d991f82009bf414bcb193">congure_wnd_size_t</a></div><div class="ttdeci">uint16_t congure_wnd_size_t</div><div class="ttdoc">Define type for window size to allow for possible window size scaling. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00041">congure.h:41</a></div></div>
+<div class="ttc" id="structlist__node_html"><div class="ttname"><a href="structlist__node.html">list_node</a></div><div class="ttdoc">List node structure. </div><div class="ttdef"><b>Definition:</b> <a href="list_8h_source.html#l00040">list.h:40</a></div></div>
+<div class="ttc" id="structcongure__snd__t_html_a692b89db2aa1507616b657af68246526"><div class="ttname"><a href="structcongure__snd__t.html#a692b89db2aa1507616b657af68246526">congure_snd_t::cwnd</a></div><div class="ttdeci">congure_wnd_size_t cwnd</div><div class="ttdoc">Congestion window size. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00062">congure.h:62</a></div></div>
+<div class="ttc" id="structcongure__snd__t_html_a68b932e19d7207ed9d35bd4c9795e151"><div class="ttname"><a href="structcongure__snd__t.html#a68b932e19d7207ed9d35bd4c9795e151">congure_snd_t::ctx</a></div><div class="ttdeci">void * ctx</div><div class="ttdoc">Context for callbacks specific to the congestion control. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00061">congure.h:61</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_a83c1ff0def5814c0050ad23a928335fa"><div class="ttname"><a href="structcongure__snd__driver.html#a83c1ff0def5814c0050ad23a928335fa">congure_snd_driver::report_msgs_timeout</a></div><div class="ttdeci">void(* report_msgs_timeout)(congure_snd_t *c, congure_snd_msg_t *msgs)</div><div class="ttdoc">Report that the ACKs for a collection of messages timed out. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00177">congure.h:177</a></div></div>
+<div class="ttc" id="structcongure__snd__t_html"><div class="ttname"><a href="structcongure__snd__t.html">congure_snd_t</a></div><div class="ttdoc">Base state object for CongURE implementations. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00051">congure.h:51</a></div></div>
+<div class="ttc" id="structcongure__snd__msg__t_html"><div class="ttname"><a href="structcongure__snd__msg__t.html">congure_snd_msg_t</a></div><div class="ttdoc">Object to represent a collection of sent messages. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00068">congure.h:68</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_a4504bded5e1a13662e5c858c7aaf59d4"><div class="ttname"><a href="structcongure__snd__driver.html#a4504bded5e1a13662e5c858c7aaf59d4">congure_snd_driver::report_msgs_lost</a></div><div class="ttdeci">void(* report_msgs_lost)(congure_snd_t *c, congure_snd_msg_t *msgs)</div><div class="ttdoc">Report that a collection of messages that is known to be lost. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00196">congure.h:196</a></div></div>
+<div class="ttc" id="clist_8h_html"><div class="ttname"><a href="clist_8h.html">clist.h</a></div><div class="ttdoc">Circular linked list. </div></div>
+<div class="ttc" id="structcongure__snd__msg__t_html_a72d55da68f435d2e2faa00b962bcf043"><div class="ttname"><a href="structcongure__snd__msg__t.html#a72d55da68f435d2e2faa00b962bcf043">congure_snd_msg_t::size</a></div><div class="ttdeci">congure_wnd_size_t size</div><div class="ttdoc">size in initiator-defined units </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00074">congure.h:74</a></div></div>
+<div class="ttc" id="structcongure__snd__t_html_a5e607d3b240c468deb7ef0f006a736ff"><div class="ttname"><a href="structcongure__snd__t.html#a5e607d3b240c468deb7ef0f006a736ff">congure_snd_t::driver</a></div><div class="ttdeci">const congure_snd_driver_t * driver</div><div class="ttdoc">Driver for the state object. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00055">congure.h:55</a></div></div>
+<div class="ttc" id="structcongure__snd__ack__t_html_a41deee4a885bc1ba3e25e62e69b24010"><div class="ttname"><a href="structcongure__snd__ack__t.html#a41deee4a885bc1ba3e25e62e69b24010">congure_snd_ack_t::delay</a></div><div class="ttdeci">uint16_t delay</div><div class="ttdoc">the peer-reported time in milliseconds the ACK was delayed since message reception. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00113">congure.h:113</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_a9732da536953107c41e4dbeb04062a7a"><div class="ttname"><a href="structcongure__snd__driver.html#a9732da536953107c41e4dbeb04062a7a">congure_snd_driver::inter_msg_interval</a></div><div class="ttdeci">int32_t(* inter_msg_interval)(congure_snd_t *c, unsigned msg_size)</div><div class="ttdoc">Get current interval between messages for pacing. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00142">congure.h:142</a></div></div>
+<div class="ttc" id="structcongure__snd__driver_html_a0d086fd9d6316577ca210d920980a382"><div class="ttname"><a href="structcongure__snd__driver.html#a0d086fd9d6316577ca210d920980a382">congure_snd_driver::report_msg_sent</a></div><div class="ttdeci">void(* report_msg_sent)(congure_snd_t *c, unsigned msg_size)</div><div class="ttdoc">Report that a message was sent. </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00150">congure.h:150</a></div></div>
+<div class="ttc" id="structcongure__snd__msg__t_html_a7b62bed451f8efa361fedfebf3cf972d"><div class="ttname"><a href="structcongure__snd__msg__t.html#a7b62bed451f8efa361fedfebf3cf972d">congure_snd_msg_t::super</a></div><div class="ttdeci">clist_node_t super</div><div class="ttdoc">see clist_node_t </div><div class="ttdef"><b>Definition:</b> <a href="congure_8h_source.html#l00069">congure.h:69</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

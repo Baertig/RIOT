@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Using Rust in RIOT</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('using-rust.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Using Rust in RIOT </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="toc"><h3>Table of Contents</h3>
+<ul><ul><li class="level2"><a href="#autotoc_md2447">Examples</a></li>
+<li class="level2"><a href="#autotoc_md2448">IDE / editor setup</a></li>
+<li class="level2"><a href="#autotoc_md2449">How it works</a></li>
+<li class="level2"><a href="#autotoc_md2450">Library components in Rust</a></li>
+<li class="level2"><a href="#toolchain">Toolchain </a></li>
+<li class="level2"><a href="#autotoc_md2451">Maintenance</a></li>
+</ul>
+</ul>
+</div>
+<div class="textblock"><p>On supported CPUs, Rust can be used to develop RIOT applications. Support is indicated in the <code>has_rust_target</code> feature, and tested for in applications using the Makefile line <code>FEATURES_REQUIRED += rust_target</code>.</p>
+<p>In addition to the regular RIOT build toolchain and a recent nightly Rust toolchain for the given target, using this also requires C2Rust with some patches applied to be installed; see <a href="#toolchain">toolchain</a> for installation instructions. All these are readily available in the <a href="https://hub.docker.com/r/riot/riotbuild">official RIOT docker image</a>, which gets used by default if <code>BUILD_IN_DOCKER=1</code> is set.</p>
+<p>Two examples are provided:</p>
+<ul>
+<li><p class="startli"><code>rust-hello-world</code> is minimal in the sense of setup and code complexity; it is the typical Hello World example.</p>
+<p class="startli">(Note that it is not necessarily minimal in terms of built size, as Rust's regular printing infrastructure is more powerful and a bit heavier than your off-the-shelf <code>printf</code>, which embedded libcs already often trim down).</p>
+</li>
+<li><code>rust-gcoap</code> is a set of demo CoAP resources both from the <a href="https://gitlab.com/chrysn/coap-message-demos">coap-message-demos</a> crate (containing platform and library independent examples) and from the <a href="https://gitlab.com/etonomy/riot-module-examples">riot-module-examples</a> crate (containing RIOT specific examples).</li>
+</ul>
+<p>There are <a href="https://gitlab.com/etonomy/riot-examples/">additional examples</a> available on GitLab, maintained in coordination with the riot-wrappers crate.</p>
+<p>Users of Rust often take advantage of autocompletion or inline help. To use this on RIOT projects, some flags and environment variables have to be set, which are listed by <code>make info-rust</code>. These can be configured in the IDE's project setup or exported as environment variables.</p>
+<p>The easy part of the story is that Rust code gets compiled into a static library which is then linked together with the rest of the RIOT code; if the main function happens to be implemented in Rust, so it is.</p>
+<p>The <b>RIOT build system</b> contains rules and metadata to facilitate building and linking: it calls <code>cargo</code> (Rust's own build system), sets up paths to work well with out-of-tree builds, configures the Rust target depending on the board's CPU, and unpacks the static library into object files to facilitate interaction with XFA.</p>
+<p>The <a href="https://crates.io/crates/riot-sys"><b>riot-sys</b></a> crate translates a selected subset of RIOT's header files for use in Rust; this happens both using the <a href="https://crates.io/crates/bindgen">bindgen</a> crate (working from API information in header files) and <a href="https://c2rust.com/">C2Rust</a> (translating static inline functions, and with some help from riot-sys, constant preprocessor initializers). Functions exported by riot-sys are inherently unsafe to use (in Rust's sense of unsafe), and may be somewhat volatile in their API due to mismatches between RIOT's / C's and Rust's API stability concepts.</p>
+<p>The <a href="https://crates.io/crates/riot-wrappers"><b>riot-wrappers</b></a> crate creates safe and idiomatic wrappers around the types and functions provided by riot-sys. Thanks to Rust's strong zero-cost abstractions, these often come at no increased runtime cost. For example, locking a <a href="https://rustdoc.etonomy.org/riot_wrappers/mutex/struct.Mutex.html">riot_wrappers::mutex::Mutex</a> can rely on it having been properly initialized at creation; furthermore, the mutex is freed when it goes out of scope.</p>
+<p>Where practical, the wrappers are not accessed through own methods but through established platform independent traits. For example, the main API surface of an <a href="https://rustdoc.etonomy.org/riot_wrappers/i2c/struct.I2CDevice.html">I2CDevice</a> is its implementation of the <a href="https://rustdoc.etonomy.org/embedded_hal/blocking/i2c/index.html">corresponding embedded-hal I2C traits</a> for reading and writing.</p>
+<p>The wrappers are <a href="https://rustdoc.etonomy.org/">documented together with riot-sys and some of the examples</a>.</p>
+<p>It is possible to use Rust in different modules than the application itself.</p>
+<p>Such modules are usually pseudomodules (although they may be mixed with C in regular modules as well). They always depend on the <code>rust_riotmodules</code> module / crate, which collects all enabled modules into a single crate by means of optional features.</p>
+<p>If the application is not written in Rust, that then depends on <code>rust_riotmodules_standalone</code>, which adds a panic handler and serves as a root crate.</p>
+<p>If the application is written in Rust, <code>rust_riotmodules</code> needs to be added as a dependency of the application. (This helps deduplicate between application and library code, and also avoids symbol name clashes). This is done by adding a dependency on the local <code>rust_riotmodules</code> crate (which is a no-op when no such modules are enabled), and placing an <code>extern crate rust_riotmodules;</code> statement in the code. (The latter is needed even after most <code>extern crate</code> was abolished in 2018, because crates depended on but not used otherwise are usually not linked in).</p>
+<p>To install the necessary Rust components, it is easiest use <a href="https://rustup.rs/"><b>rustup</b>, installed as described on its website</a>.</p>
+<p>Using Rust on RIOT needs the latest stable version of Rust.</p>
+<p>Make sure you have the core library for the CPU (<b>target</b>) of your choice available:</p>
+<div class="fragment"><div class="line">$ rustup target add thumbv7m-none-eabi</div></div><!-- fragment --><p>Substitute thumbv7m-none-eabi with the value of <code>RUST_TARGET</code> in the output of <code>make info-build</code> of an application that has your current board selected (or just add it later whenever the Rust compiler complains about not finding the core library for a given target). Using the beta or nightly toolchains will work just as well if they are selected through rustup's override mechanism.</p>
+<p>While Rust comes with its own <a href="https://doc.rust-lang.org/cargo/">cargo</a> dependency tracker for any Rust code, it does not attempt to install <b>system components</b>. To avoid playing the whack-a-mole of installing components whenever an install step fails, consider installing this list of packages on Debian (or an equivalent list on the distribution of your choice):</p>
+<div class="fragment"><div class="line"># apt install libclang-dev llvm llvm-dev cmake libssl-dev pkg-config</div></div><!-- fragment --><p>This encompass both components needed for riot-sys and for the later installation of C2Rust.</p>
+<p>In addition to the Rust compiler you'll need to install the C2Rust transpiler; as this is using some recent fixes, it is best installed as:</p>
+<div class="fragment"><div class="line">$ cargo install c2rust --git https://github.com/immunant/c2rust --tag v0.19.0 --locked</div></div><!-- fragment --><p>If multiple versions of LLVM are installed locally, it may be necessary to prefix it with the selected LLVM version:</p>
+<div class="fragment"><div class="line">$ LLVM_CONFIG_PATH=/usr/bin/llvm-config-16 cargo install …</div></div><!-- fragment --><p>The <a href="https://github.com/RIOT-OS/rust-riot-sys/">riot-sys</a> and <a href="https://github.com/RIOT-OS/rust-riot-wrappers/">riot-wrappers</a> crates are currently maintained as parts of the RIOT project. While being released via crates.io on demand, usually RIOT uses a fixed version from the git repositories that are <a href="https://github.com/RIOT-OS/RIOT/pull/17491#issuecomment-1143209437">easily updated</a>.</p>
+<p>The autogenerated bindings of the C API are slightly stricter than C's API, and thus occasionally require additional work when C APIs change subtly. The riot-sys crate takes the brunt of these changes &ndash; it changes automatically, and no attempt is currently made to reflect these changes in a SemVer compatible manner. The riot-wrappers crate smooths this out, and provides an API that aims to be more stable than the C API. It does that by generously converting types that changed, and <a href="https://github.com/RIOT-OS/rust-riot-wrappers/blob/db9d163e3eddcb7154edcf25db7207e4123964ee/src/helpers.rs#L3">introspecting generated bindings</a> or using <a href="https://github.com/RIOT-OS/rust-riot-sys/blob/525b2384a3541d4879a5f3845ee6241243c29a78/build.rs#L591">information provided by riot-sys</a>.</p>
+<p>The typical workflow of (C-nonbreaking, Rust-breaking) API changes is as follows:</p>
+<ul>
+<li><p class="startli">A PR subtly alters a type (eg. <code>uint8_t *</code> to <code>void *</code> in <a href="https://github.com/RIOT-OS/RIOT/pull/17990">#17990</a>).</p>
+<p class="startli">Consequently, builds of Rust examples break.</p>
+</li>
+<li><p class="startli">A PR is opened on riot-wrappers to smooth over the change, like <a href="https://github.com/RIOT-OS/rust-riot-wrappers/commit/aab605f464a279608ef0a8ad2afd5ae43179e330">aab605f4</a> .</p>
+<p class="startli">The PR is tested against current master in its CI (albeit not for the full set of boards). To test whether it also works for the changed API, a commit titled "REMOVEME Test with updated riot-wrappes" can be added to the original PR; it alters <code>.cargo/config.toml</code> to point to the changed branch, and removes any Cargo.lock files in the RIOT tree.</p>
+<p class="startli">That PR is then merged.</p>
+</li>
+<li><p class="startli">The version of riot-wrappers that works both with the previous and the new code is pulled into the RIOT master branch by updating the Cargo.lock files. The PR can look like <a href="https://github.com/RIOT-OS/RIOT/pull/18181">#18181</a>, and verifies that the new riot-wrappers works on all boards.</p>
+<p class="startli">That PR is then merged.</p>
+</li>
+<li><p class="startli">For the next builds (up to the merging of) the original PR, the REMOVEME commit can be removed.</p>
+<p class="startli">It is good practice to rebase it onto the latest master after the update to riot-wrappers has been merged, as this helps keeping bisectability up.</p>
+<p class="startli">The PR now contains no Rust specific changes, and can be merged.</p>
+</li>
+</ul>
+<p>There are a few variations that can occur:</p>
+<ul>
+<li>Sometimes casting is not enough, and a type must be extracted from a signature. <a href="https://github.com/RIOT-OS/rust-riot-wrappers/pull/6/files#diff-ccb7946e3b4122ea3ce23fa9bc54eba63d75f7a6142fd4afdd9908b1bead50e0">See the phydat callback type change</a> for an example.</li>
+<li><p class="startli">When neither casting nor type detection is sufficient, a marker can be introduced through riot-sys; it detects a keyword's presence in the source and passes it as <a href="https://github.com/RIOT-OS/rust-riot-sys/blob/525b2384a3541d4879a5f3845ee6241243c29a78/build.rs#L591">information provided by riot-sys</a> to riot-wrappers. <a href="https://github.com/RIOT-OS/rust-riot-wrappers/pull/4/files">See the coap_request_ctx_t change</a> for an example.</p>
+<p class="startli">In that case, a riot-sys PR is opened in parallel to the riot-wrappers PR.</p>
+<p class="startli">This method helps keeping changes backportable easily: riot-sys and riot-wrappers are expected to work with the latest released version of RIOT all the time, and avoid flag-day changes. (Keeping riot-sys and riot-wrappers compatible with the latest release is also important to retain the ability to backport fixes).</p>
+</li>
+<li><p class="startli">When functions are moved from being static and not being static, their names go from <code>riot_sys::inline::name</code> to <code>riot_sys::name</code> (or vice versa).</p>
+<p class="startli">riot-sys <a href="https://github.com/RIOT-OS/rust-riot-sys/blob/525b2384a3541d4879a5f3845ee6241243c29a78/build.rs#L533">has a list</a> of items that are always publicly exported directly as <code>riot_sys::name</code>; just add the function there.</p>
+<p class="startli">If non-generic types are referenced in them, they go from <code>riot_sys::inline::my_type_t</code> to <code>riot_sys::my_type_t</code>. The <a href="https://github.com/RIOT-OS/rust-riot-wrappers/blob/db9d163e3eddcb7154edcf25db7207e4123964ee/src/lib.rs#L68">inline_cast</a> function family helps making that cast a bit safer.</p>
+</li>
+<li><p class="startli">Things fail around atomics.</p>
+<p class="startli">Until <a href="https://github.com/immunant/c2rust/issues/436">C2Rust's support for atomics has improved</a>, riot-sys requires all exported headers to use the better supported <code><a class="el" href="atomic__utils_8h.html" title="API of the utility functions for atomic accesses. ">atomic_utils.h</a></code>.</p>
+<p class="startli">If it is unavoidable that atomics are part of header files (and not actually used in any static inline functions), riot-sys's <a href="https://github.com/RIOT-OS/rust-riot-sys/blob/525b2384a3541d4879a5f3845ee6241243c29a78/riot-c2rust.h#L79">atomics workarounds</a> can be extended as a last resort. </p>
+</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>6LoWPAN Fragmentation</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__gnrc__sixlowpan__frag.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">6LoWPAN Fragmentation<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>6LoWPAN Fragmentation headers and functionality  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>6LoWPAN Fragmentation headers and functionality </p>
+<dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc4944#section-5.3">RFC 4944, section 5.3 </a> </dd></dl>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__fb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html">6LoWPAN fragmentation buffer</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Buffer for asynchronous 6LoWPAN fragmentation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__rb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__rb.html">6LoWPAN reassembly buffer</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__rb"><td class="mdescLeft">&#160;</td><td class="mdescRight">6LoWPAN reassembly buffer <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__hint"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__hint.html">Fragment size hint</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__hint"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a hint for smaller fragment sizes than the link-layer PDU for the next fragment to sent. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__stats"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__stats.html">Fragmentation and reassembly statistics</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__stats"><td class="mdescLeft">&#160;</td><td class="mdescRight">Counter for certain 6LoWPAN fragmentation and reassembly events. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__minfwd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__minfwd.html">Minimal fragment forwarding</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__minfwd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides minimal fragment forwarding using the VRB. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__sixlowpan__frag__vrb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__vrb.html">Virtual reassembly buffer</a></td></tr>
+<tr class="memdesc:group__net__gnrc__sixlowpan__frag__vrb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual reassembly buffer. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:gnrc_2sixlowpan_2frag_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="gnrc_2sixlowpan_2frag_8h.html">frag.h</a></td></tr>
+<tr class="memdesc:gnrc_2sixlowpan_2frag_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">6LoWPAN Fragmentation definitions <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga537ce73a17fd5959699c206c45d94c27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag.html#ga537ce73a17fd5959699c206c45d94c27">gnrc_sixlowpan_frag_send</a> (<a class="el" href="group__net__gnrc__pkt.html#ga278e783e56a5ee6f1bd7b81077ed82a7">gnrc_pktsnip_t</a> *pkt, void *ctx, unsigned page)</td></tr>
+<tr class="memdesc:ga537ce73a17fd5959699c206c45d94c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a packet fragmented.  <a href="#ga537ce73a17fd5959699c206c45d94c27">More...</a><br /></td></tr>
+<tr class="separator:ga537ce73a17fd5959699c206c45d94c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12c448caeb8ebc35b7fad621b362d419"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag.html#ga12c448caeb8ebc35b7fad621b362d419">gnrc_sixlowpan_frag_recv</a> (<a class="el" href="group__net__gnrc__pkt.html#ga278e783e56a5ee6f1bd7b81077ed82a7">gnrc_pktsnip_t</a> *pkt, void *ctx, unsigned page)</td></tr>
+<tr class="memdesc:ga12c448caeb8ebc35b7fad621b362d419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a packet containing a fragment header.  <a href="#ga12c448caeb8ebc35b7fad621b362d419">More...</a><br /></td></tr>
+<tr class="separator:ga12c448caeb8ebc35b7fad621b362d419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga12c448caeb8ebc35b7fad621b362d419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12c448caeb8ebc35b7fad621b362d419">&#9670;&nbsp;</a></span>gnrc_sixlowpan_frag_recv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gnrc_sixlowpan_frag_recv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__net__gnrc__pkt.html#ga278e783e56a5ee6f1bd7b81077ed82a7">gnrc_pktsnip_t</a> *&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles a packet containing a fragment header. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pkt</td><td>The packet to handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>Context for the packet. May be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">page</td><td>Current 6Lo dispatch parsing page. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga537ce73a17fd5959699c206c45d94c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga537ce73a17fd5959699c206c45d94c27">&#9670;&nbsp;</a></span>gnrc_sixlowpan_frag_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void gnrc_sixlowpan_frag_send </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__net__gnrc__pkt.html#ga278e783e56a5ee6f1bd7b81077ed82a7">gnrc_pktsnip_t</a> *&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>page</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sends a packet fragmented. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>ctx != NULL</code> </dd>
+<dd>
+<a class="el" href="structgnrc__sixlowpan__frag__fb__t.html#a22e57218870be84de10b9b2ca1f77186" title="Pointer to the IPv6 packet to be fragmented. ">gnrc_sixlowpan_frag_fb_t::pkt</a> of <code>ctx</code> is equal to <code>pkt</code> or <code>pkt == NULL</code>.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pkt</td><td>A packet. May be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>A fragmentation buffer entry. Expected to be of type <a class="el" href="structgnrc__sixlowpan__frag__fb__t.html">gnrc_sixlowpan_frag_fb_t</a>, with <a class="el" href="structgnrc__sixlowpan__frag__fb__t.html" title="6LoWPAN fragmentation buffer entry. ">gnrc_sixlowpan_frag_fb_t</a> set to <code>pkt</code>. Must not be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">page</td><td>Current 6Lo dispatch parsing page. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:33 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

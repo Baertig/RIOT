@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>usbus_handler_driver Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structusbus__handler__driver.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">usbus_handler_driver Struct Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__usb.html">USB</a> &raquo; <a class="el" href="group__usb__usbus.html">USBUS device and endpoint manager</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>USBUS event handler function pointers.  
+ <a href="structusbus__handler__driver.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>USBUS event handler function pointers. </p>
+
+<p class="definition">Definition at line <a class="el" href="usbus_8h_source.html#l00374">374</a> of file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="usbus_8h_source.html">usbus.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a0aff27d6f7154cb5a7fd66cdf32ae0f0"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler__driver.html#a0aff27d6f7154cb5a7fd66cdf32ae0f0">init</a> )(<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler)</td></tr>
+<tr class="memdesc:a0aff27d6f7154cb5a7fd66cdf32ae0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the event handler.  <a href="#a0aff27d6f7154cb5a7fd66cdf32ae0f0">More...</a><br /></td></tr>
+<tr class="separator:a0aff27d6f7154cb5a7fd66cdf32ae0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f6d98e61b424e1c493e2bb55ae0d74"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler__driver.html#af1f6d98e61b424e1c493e2bb55ae0d74">event_handler</a> )(<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__usb__usbus.html#ga5d99cb353d12b5a49b4a3b10b9863ba5">usbus_event_usb_t</a> <a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:af1f6d98e61b424e1c493e2bb55ae0d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">event handler function  <a href="#af1f6d98e61b424e1c493e2bb55ae0d74">More...</a><br /></td></tr>
+<tr class="separator:af1f6d98e61b424e1c493e2bb55ae0d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef1e2c47e7067149c33ec9de3c9b8c2"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler__driver.html#a1ef1e2c47e7067149c33ec9de3c9b8c2">transfer_handler</a> )(<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__drivers__periph__usbdev.html#ga45fb2233696b039b8fb4f5264a5f4e5f">usbdev_ep_t</a> *ep, <a class="el" href="group__usb__usbus.html#ga1d339c5c7f7d634704eab92320d06ab5">usbus_event_transfer_t</a> <a class="el" href="structevent.html">event</a>)</td></tr>
+<tr class="memdesc:a1ef1e2c47e7067149c33ec9de3c9b8c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">transfer handler function  <a href="#a1ef1e2c47e7067149c33ec9de3c9b8c2">More...</a><br /></td></tr>
+<tr class="separator:a1ef1e2c47e7067149c33ec9de3c9b8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5ecafe8227b5d4f523ee8ca127377a2"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structusbus__handler__driver.html#af5ecafe8227b5d4f523ee8ca127377a2">control_handler</a> )(<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">usbus_control_request_state_t</a> state, <a class="el" href="structusb__setup__t.html">usb_setup_t</a> *request)</td></tr>
+<tr class="memdesc:af5ecafe8227b5d4f523ee8ca127377a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">control request handler function  <a href="#af5ecafe8227b5d4f523ee8ca127377a2">More...</a><br /></td></tr>
+<tr class="separator:af5ecafe8227b5d4f523ee8ca127377a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="af5ecafe8227b5d4f523ee8ca127377a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5ecafe8227b5d4f523ee8ca127377a2">&#9670;&nbsp;</a></span>control_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* usbus_handler_driver::control_handler) (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__usb__usbus.html#ga75a538ca121919799d4e604539db2525">usbus_control_request_state_t</a> state, <a class="el" href="structusb__setup__t.html">usb_setup_t</a> *request)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>control request handler function </p>
+<p>This function receives USB control requests from the USBUS stack.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramname">handler</td><td>handler context </td></tr>
+    <tr><td class="paramname">state</td><td>control request state </td></tr>
+    <tr><td class="paramname">setup</td><td>setup packet</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Size of the returned data when the request is handled </dd>
+<dd>
+negative to have the stack return an USB stall to the host </dd>
+<dd>
+zero when the request is not handled by this handler </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="usbus_8h_source.html#l00427">427</a> of file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+
+</div>
+</div>
+<a id="af1f6d98e61b424e1c493e2bb55ae0d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f6d98e61b424e1c493e2bb55ae0d74">&#9670;&nbsp;</a></span>event_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* usbus_handler_driver::event_handler) (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__usb__usbus.html#ga5d99cb353d12b5a49b4a3b10b9863ba5">usbus_event_usb_t</a> <a class="el" href="structevent.html">event</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>event handler function </p>
+<p>This function is passed USBUS events</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramname">handler</td><td>handler context </td></tr>
+    <tr><td class="paramname">event</td><td><a class="el" href="group__usb__usbus.html#ga5d99cb353d12b5a49b4a3b10b9863ba5">usbus_event_usb_t</a> event to handle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usbus_8h_source.html#l00396">396</a> of file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+
+</div>
+</div>
+<a id="a0aff27d6f7154cb5a7fd66cdf32ae0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aff27d6f7154cb5a7fd66cdf32ae0f0">&#9670;&nbsp;</a></span>init</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* usbus_handler_driver::init) (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the event handler. </p>
+<p>This function is called in the USBUS thread context to initialize the event handler</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramname">handler</td><td>handler context </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usbus_8h_source.html#l00385">385</a> of file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+
+</div>
+</div>
+<a id="a1ef1e2c47e7067149c33ec9de3c9b8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef1e2c47e7067149c33ec9de3c9b8c2">&#9670;&nbsp;</a></span>transfer_handler</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* usbus_handler_driver::transfer_handler) (<a class="el" href="group__usb__usbus.html#gac6a7ed25efb69d40694b3d95125743a4">usbus_t</a> *<a class="el" href="structusbus.html">usbus</a>, struct <a class="el" href="structusbus__handler.html">usbus_handler</a> *handler, <a class="el" href="group__drivers__periph__usbdev.html#ga45fb2233696b039b8fb4f5264a5f4e5f">usbdev_ep_t</a> *ep, <a class="el" href="group__usb__usbus.html#ga1d339c5c7f7d634704eab92320d06ab5">usbus_event_transfer_t</a> <a class="el" href="structevent.html">event</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>transfer handler function </p>
+<p>This function receives transfer based events</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">usbus</td><td>USBUS context </td></tr>
+    <tr><td class="paramname">handler</td><td>handler context </td></tr>
+    <tr><td class="paramname">ep</td><td>usbdev endpoint that triggered the event </td></tr>
+    <tr><td class="paramname">event</td><td><a class="el" href="group__usb__usbus.html#ga1d339c5c7f7d634704eab92320d06ab5">usbus_event_transfer_t</a> event </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="usbus_8h_source.html#l00409">409</a> of file <a class="el" href="usbus_8h_source.html">usbus.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>sys/include/usb/<a class="el" href="usbus_8h_source.html">usbus.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:36 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

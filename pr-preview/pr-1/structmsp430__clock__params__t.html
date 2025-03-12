@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>msp430_clock_params_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structmsp430__clock__params__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">msp430_clock_params_t Struct Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>MSP430Fxzy Basic Clock System Parameters.  
+ <a href="structmsp430__clock__params__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>MSP430Fxzy Basic Clock System Parameters. </p>
+<p>This structure is optimized for readability under the assumption that its values are readily available compile time constants. Hence, accesses to the structure will be fully optimized out be a decent optimizing compiler.</p>
+<p>MSP430Fxzy boards are expected to declare the parameters to configure the Basic Clock System in their <code>periph_conf.h</code> as <code>static const msp430_fxzy_clock_params_t clock_params;</code>. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00281">281</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aab1d7123241ed614c2d25b9a2ff5b354"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#aab1d7123241ed614c2d25b9a2ff5b354">target_dco_frequency</a></td></tr>
+<tr class="memdesc:aab1d7123241ed614c2d25b9a2ff5b354"><td class="mdescLeft">&#160;</td><td class="mdescRight">The target frequency to run the DCO at in Hz.  <a href="#aab1d7123241ed614c2d25b9a2ff5b354">More...</a><br /></td></tr>
+<tr class="separator:aab1d7123241ed614c2d25b9a2ff5b354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e96df4b0a979b3d32da290f3146922"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#a21e96df4b0a979b3d32da290f3146922">lfxt1_frequency</a></td></tr>
+<tr class="memdesc:a21e96df4b0a979b3d32da290f3146922"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency of the LFXT1 crystal in Hz.  <a href="#a21e96df4b0a979b3d32da290f3146922">More...</a><br /></td></tr>
+<tr class="separator:a21e96df4b0a979b3d32da290f3146922"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87f6db70e120fffeee40f30e85a340d3"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#a87f6db70e120fffeee40f30e85a340d3">xt2_frequency</a></td></tr>
+<tr class="memdesc:a87f6db70e120fffeee40f30e85a340d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The frequency of the XT2 crystal in Hz.  <a href="#a87f6db70e120fffeee40f30e85a340d3">More...</a><br /></td></tr>
+<tr class="separator:a87f6db70e120fffeee40f30e85a340d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1477cbfe0ddfca9f9f835375da0dc728"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msp430_2include_2periph__cpu__common_8h.html#a3af517999da3981cb784bea510a3434f">msp430_main_clock_source_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#a1477cbfe0ddfca9f9f835375da0dc728">main_clock_source</a></td></tr>
+<tr class="memdesc:a1477cbfe0ddfca9f9f835375da0dc728"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clock source to select for the main clock.  <a href="#a1477cbfe0ddfca9f9f835375da0dc728">More...</a><br /></td></tr>
+<tr class="separator:a1477cbfe0ddfca9f9f835375da0dc728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935b8294f6bd4d29dab9b3418740bd74"><td class="memItemLeft" align="right" valign="top"><a class="el" href="msp430_2include_2periph__cpu__common_8h.html#a96f05b11b3d33c9fc8002dc831757f1f">msp430_submain_clock_source_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#a935b8294f6bd4d29dab9b3418740bd74">submain_clock_source</a></td></tr>
+<tr class="memdesc:a935b8294f6bd4d29dab9b3418740bd74"><td class="mdescLeft">&#160;</td><td class="mdescRight">The clock source to select for the submain CPU clock.  <a href="#a935b8294f6bd4d29dab9b3418740bd74">More...</a><br /></td></tr>
+<tr class="separator:a935b8294f6bd4d29dab9b3418740bd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9da0852bae11da5943b8f74258330cc"><td class="memItemLeft" align="right" valign="top"><a id="af9da0852bae11da5943b8f74258330cc"></a>
+<a class="el" href="msp430_2include_2periph__cpu__common_8h.html#ad8214059a8d9fc89ab0c30f08888af26">msp430_main_clock_divider_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#af9da0852bae11da5943b8f74258330cc">main_clock_divier</a></td></tr>
+<tr class="memdesc:af9da0852bae11da5943b8f74258330cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divider of the main clock. <br /></td></tr>
+<tr class="separator:af9da0852bae11da5943b8f74258330cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaee04d3940695cca359143520893ff45"><td class="memItemLeft" align="right" valign="top"><a id="aaee04d3940695cca359143520893ff45"></a>
+<a class="el" href="msp430_2include_2periph__cpu__common_8h.html#aadc6e6119cfe7309e6d490a3a58d4dc9">msp430_submain_clock_divider_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#aaee04d3940695cca359143520893ff45">submain_clock_divier</a></td></tr>
+<tr class="memdesc:aaee04d3940695cca359143520893ff45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divider of the submain clock. <br /></td></tr>
+<tr class="separator:aaee04d3940695cca359143520893ff45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722b1584d41a59715cd91d21fa97f711"><td class="memItemLeft" align="right" valign="top"><a id="a722b1584d41a59715cd91d21fa97f711"></a>
+<a class="el" href="msp430_2include_2periph__cpu__common_8h.html#ab14c533b514cae8c99d04198b384d52a">msp430_auxiliary_clock_divider_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#a722b1584d41a59715cd91d21fa97f711">auxiliary_clock_divier</a></td></tr>
+<tr class="memdesc:a722b1584d41a59715cd91d21fa97f711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divider of the auxiliary clock. <br /></td></tr>
+<tr class="separator:a722b1584d41a59715cd91d21fa97f711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9f556587d1acecfbdcd5e8abc4ecae0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#af9f556587d1acecfbdcd5e8abc4ecae0">has_r_osc</a></td></tr>
+<tr class="memdesc:af9f556587d1acecfbdcd5e8abc4ecae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">An external resistor connected to source the current for the DCO.  <a href="#af9f556587d1acecfbdcd5e8abc4ecae0">More...</a><br /></td></tr>
+<tr class="separator:af9f556587d1acecfbdcd5e8abc4ecae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea289388862cd97157917d4be8677b23"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmsp430__clock__params__t.html#aea289388862cd97157917d4be8677b23">has_xt2</a></td></tr>
+<tr class="memdesc:aea289388862cd97157917d4be8677b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">A high frequency crystal (e.g.  <a href="#aea289388862cd97157917d4be8677b23">More...</a><br /></td></tr>
+<tr class="separator:aea289388862cd97157917d4be8677b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="af9f556587d1acecfbdcd5e8abc4ecae0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9f556587d1acecfbdcd5e8abc4ecae0">&#9670;&nbsp;</a></span>has_r_osc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool msp430_clock_params_t::has_r_osc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An external resistor connected to source the current for the DCO. </p>
+<p>From the datasheet:</p>
+<blockquote class="doxtable">
+<p>The DCO temperature coefficient can be reduced by using an external resistor R_OSC tied to D_VCC to source the current for the DC generator.</p>
+</blockquote>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00337">337</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="aea289388862cd97157917d4be8677b23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea289388862cd97157917d4be8677b23">&#9670;&nbsp;</a></span>has_xt2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool msp430_clock_params_t::has_xt2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A high frequency crystal (e.g. </p>
+<p>8 MHz) is connected between XT2IN and XT2OUT </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00342">342</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a21e96df4b0a979b3d32da290f3146922"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e96df4b0a979b3d32da290f3146922">&#9670;&nbsp;</a></span>lfxt1_frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t msp430_clock_params_t::lfxt1_frequency</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The frequency of the LFXT1 crystal in Hz. </p>
+<p>This should be either 32768 Hz watch crystal or a high frequency crystal anywhere between 450 kHz and 8 MHz. The clock driver will automatically configure high frequency mode of the LFXT1 clock source when the frequency is &gt;= 450 kHz. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00297">297</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a1477cbfe0ddfca9f9f835375da0dc728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1477cbfe0ddfca9f9f835375da0dc728">&#9670;&nbsp;</a></span>main_clock_source</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="msp430_2include_2periph__cpu__common_8h.html#a3af517999da3981cb784bea510a3434f">msp430_main_clock_source_t</a> msp430_clock_params_t::main_clock_source</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The clock source to select for the main clock. </p>
+<p>This is the clock the CPU will run at </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00310">310</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a935b8294f6bd4d29dab9b3418740bd74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935b8294f6bd4d29dab9b3418740bd74">&#9670;&nbsp;</a></span>submain_clock_source</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="msp430_2include_2periph__cpu__common_8h.html#a96f05b11b3d33c9fc8002dc831757f1f">msp430_submain_clock_source_t</a> msp430_clock_params_t::submain_clock_source</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The clock source to select for the submain CPU clock. </p>
+<p>This is the clock high speed peripherals will run at </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00316">316</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="aab1d7123241ed614c2d25b9a2ff5b354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1d7123241ed614c2d25b9a2ff5b354">&#9670;&nbsp;</a></span>target_dco_frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t msp430_clock_params_t::target_dco_frequency</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The target frequency to run the DCO at in Hz. </p>
+<p>A frequency between 160 kHz and 4 MHz is enforced by compile time tests to make sure DCO calibration will succeed reliable. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00288">288</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<a id="a87f6db70e120fffeee40f30e85a340d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87f6db70e120fffeee40f30e85a340d3">&#9670;&nbsp;</a></span>xt2_frequency</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t msp430_clock_params_t::xt2_frequency</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The frequency of the XT2 crystal in Hz. </p>
+<p>A value of 0 Hz means no XT2 crystal is present. Otherwise the frequency must be anywhere between 450 kHz and 8 MHz. </p>
+
+<p class="definition">Definition at line <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html#l00304">304</a> of file <a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>cpu/msp430/include/<a class="el" href="msp430_2include_2periph__cpu__common_8h_source.html">periph_cpu_common.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

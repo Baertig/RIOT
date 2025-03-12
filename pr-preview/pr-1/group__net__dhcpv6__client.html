@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DHCPv6 client</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__net__dhcpv6__client.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#groups">Modules</a> &#124;
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">DHCPv6 client<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__ipv6.html">IPv6</a> &raquo; <a class="el" href="group__net__dhcpv6.html">Dynamic Host Configuration Protocol for IPv6 (DHCPv6)</a> &#124; <a class="el" href="group__pseudomodules.html">Generic pseudomodules</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>DHCPv6 client implementation.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>DHCPv6 client implementation. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="groups"></a>
+Modules</h2></td></tr>
+<tr class="memitem:group__net__dhcpv6__conf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__conf.html">DHCPv6 compile configurations</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__dhcpv6__client"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__dhcpv6__client.html">gnrc_dhcpv6_client: Basic DHCPv6 client implementation in GNRC</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__gnrc__dhcpv6__client__6lbr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__dhcpv6__client__6lbr.html">gnrc_dhcpv6_client_6lbr: Basic client for GNRC 6LoWPAN BRs</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__net__dhcpv6__client__simple__pd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client__simple__pd.html">gnrc_dhcpv6_client_simple_pd: DHCPv6 client for</a></td></tr>
+<tr class="memdesc:group__net__dhcpv6__client__simple__pd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><pre class="fragment">                                         simple prefix delegation
+</pre> <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:client_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="client_8h.html">client.h</a></td></tr>
+<tr class="memdesc:client_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">DHCPv6 client definitions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdhcpv6__duid__l2__t.html">dhcpv6_duid_l2_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">DUID based on link-layer address plus time.  <a href="structdhcpv6__duid__l2__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gab5bcfb8454182730c2fc81a0529d3a16"><td class="memItemLeft" align="right" valign="top"><a id="gab5bcfb8454182730c2fc81a0529d3a16"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#gab5bcfb8454182730c2fc81a0529d3a16">DHCPV6_CLIENT_DUID_LEN</a>&#160;&#160;&#160;(sizeof(<a class="el" href="structdhcpv6__duid__l2__t.html">dhcpv6_duid_l2_t</a>) + 8U)</td></tr>
+<tr class="memdesc:gab5bcfb8454182730c2fc81a0529d3a16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static length of the DUID. <br /></td></tr>
+<tr class="separator:gab5bcfb8454182730c2fc81a0529d3a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa20940d718b546747a4fc82b5f919d04"><td class="memItemLeft" align="right" valign="top"><a id="gaa20940d718b546747a4fc82b5f919d04"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#gaa20940d718b546747a4fc82b5f919d04">DHCPV6_CLIENT_BUFLEN</a>&#160;&#160;&#160;(256)</td></tr>
+<tr class="memdesc:gaa20940d718b546747a4fc82b5f919d04"><td class="mdescLeft">&#160;</td><td class="mdescRight">default length for send and receive buffer <br /></td></tr>
+<tr class="separator:gaa20940d718b546747a4fc82b5f919d04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga14dc44b48ce78c734cca1462c3ece03c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga14dc44b48ce78c734cca1462c3ece03c">dhcpv6_client_req_ia_na</a> (unsigned netif)</td></tr>
+<tr class="memdesc:ga14dc44b48ce78c734cca1462c3ece03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the client to request non-temporary addresses for a network interface from a server.  <a href="#ga14dc44b48ce78c734cca1462c3ece03c">More...</a><br /></td></tr>
+<tr class="separator:ga14dc44b48ce78c734cca1462c3ece03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Auto-initialization parameters</h2></td></tr>
+<tr class="memitem:ga4baf43eae3909a4dd848b54b74d11bc9"><td class="memItemLeft" align="right" valign="top"><a id="ga4baf43eae3909a4dd848b54b74d11bc9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga4baf43eae3909a4dd848b54b74d11bc9">DHCPV6_CLIENT_STACK_SIZE</a>&#160;&#160;&#160;(<a class="el" href="native_2include_2cpu__conf_8h.html#a713ebddc00581f4d415095cdbfd8791f">THREAD_STACKSIZE_DEFAULT</a>)</td></tr>
+<tr class="memdesc:ga4baf43eae3909a4dd848b54b74d11bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack size <br /></td></tr>
+<tr class="separator:ga4baf43eae3909a4dd848b54b74d11bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5dce309ba753c6dfa9077d9362175c45"><td class="memItemLeft" align="right" valign="top"><a id="ga5dce309ba753c6dfa9077d9362175c45"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga5dce309ba753c6dfa9077d9362175c45">DHCPV6_CLIENT_PRIORITY</a>&#160;&#160;&#160;(<a class="el" href="thread__config_8h.html#ac57374d1c51374ebf95d9679281af818">THREAD_PRIORITY_MAIN</a> - 2)</td></tr>
+<tr class="memdesc:ga5dce309ba753c6dfa9077d9362175c45"><td class="mdescLeft">&#160;</td><td class="mdescRight">priority <br /></td></tr>
+<tr class="separator:ga5dce309ba753c6dfa9077d9362175c45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+DHCPv6 unique identifier (DUID) definitions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrp5cf67ef838b8ebf52b01db08e1878696"></a></p><dl class="section see"><dt>See also</dt><dd><a href="https://tools.ietf.org/html/rfc8415#section-11">RFC 8415, section 11</a> </dd></dl>
+</td></tr>
+<tr class="memitem:ga15bbe971b5ba13b986d6839df2d2ffaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga15bbe971b5ba13b986d6839df2d2ffaf">dhcpv6_client_auto_init</a> (void)</td></tr>
+<tr class="memdesc:ga15bbe971b5ba13b986d6839df2d2ffaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Auto-initializes the client in its own thread.  <a href="#ga15bbe971b5ba13b986d6839df2d2ffaf">More...</a><br /></td></tr>
+<tr class="separator:ga15bbe971b5ba13b986d6839df2d2ffaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8e0f35fb0b9a45ea1c5057f5dabdf700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga8e0f35fb0b9a45ea1c5057f5dabdf700">dhcpv6_client_init</a> (<a class="el" href="group__sys__event.html#gab46c611438815de2e758821bfaab6d04">event_queue_t</a> *event_queue, uint16_t netif)</td></tr>
+<tr class="memdesc:ga8e0f35fb0b9a45ea1c5057f5dabdf700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the client.  <a href="#ga8e0f35fb0b9a45ea1c5057f5dabdf700">More...</a><br /></td></tr>
+<tr class="separator:ga8e0f35fb0b9a45ea1c5057f5dabdf700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80f4c908b66b27eed18f940a41fb8180"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#ga80f4c908b66b27eed18f940a41fb8180">dhcpv6_client_start</a> (void)</td></tr>
+<tr class="memdesc:ga80f4c908b66b27eed18f940a41fb8180"><td class="mdescLeft">&#160;</td><td class="mdescRight">Let the server start listening.  <a href="#ga80f4c908b66b27eed18f940a41fb8180">More...</a><br /></td></tr>
+<tr class="separator:ga80f4c908b66b27eed18f940a41fb8180"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Configuration functions</h2></td></tr>
+<tr><td class="ititle" colspan="2"><p><a class="anchor" id="amgrpe75440b57b1dc7501eb46533bd6cdd11"></a><a class="anchor" id="net_dhcpv6_client_conf"></a></p>
+</td></tr>
+<tr class="memitem:gace89f6395f8eea50b8dd86d911953688"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__dhcpv6__client.html#gace89f6395f8eea50b8dd86d911953688">dhcpv6_client_req_ia_pd</a> (unsigned netif, unsigned pfx_len)</td></tr>
+<tr class="memdesc:gace89f6395f8eea50b8dd86d911953688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures the client to request prefix delegation for a network interface from a server.  <a href="#gace89f6395f8eea50b8dd86d911953688">More...</a><br /></td></tr>
+<tr class="separator:gace89f6395f8eea50b8dd86d911953688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga15bbe971b5ba13b986d6839df2d2ffaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15bbe971b5ba13b986d6839df2d2ffaf">&#9670;&nbsp;</a></span>dhcpv6_client_auto_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dhcpv6_client_auto_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Auto-initializes the client in its own thread. </p>
+<dl class="section note"><dt>Note</dt><dd>Only available with (and called by) the <code>dhcpv6_client_auto_init</code> module. </dd></dl>
+
+</div>
+</div>
+<a id="ga8e0f35fb0b9a45ea1c5057f5dabdf700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8e0f35fb0b9a45ea1c5057f5dabdf700">&#9670;&nbsp;</a></span>dhcpv6_client_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dhcpv6_client_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__sys__event.html#gab46c611438815de2e758821bfaab6d04">event_queue_t</a> *&#160;</td>
+          <td class="paramname"><em>event_queue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>netif</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initializes the client. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>event_queue-&gt;waiter != NULL</code></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event_queue</td><td>Event queue to use with the client. Needs to be initialized in the handler thread. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">netif</td><td>The network interface the client should listen on. SOCK_ADDR_ANY_NETIF for any interface </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga14dc44b48ce78c734cca1462c3ece03c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14dc44b48ce78c734cca1462c3ece03c">&#9670;&nbsp;</a></span>dhcpv6_client_req_ia_na()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dhcpv6_client_req_ia_na </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>netif</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the client to request non-temporary addresses for a network interface from a server. </p>
+<dl class="section note"><dt>Note</dt><dd>For multi-hop WPAN meshes a DHCPv6 relay (which is not implemented in RIOT yet) is required, as DHCPv6 only acts in link scope.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">netif</td><td>The interface to request non-temporaty addresses for.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>on success </td></tr>
+    <tr><td class="paramname">-ENOMEM</td><td>when there is no lease entry available anymore </td></tr>
+    <tr><td class="paramname">-ENOTSUP</td><td>when module <code>dhcpv6_client_ia_na</code> is not being used </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gace89f6395f8eea50b8dd86d911953688"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gace89f6395f8eea50b8dd86d911953688">&#9670;&nbsp;</a></span>dhcpv6_client_req_ia_pd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int dhcpv6_client_req_ia_pd </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>netif</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>pfx_len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configures the client to request prefix delegation for a network interface from a server. </p>
+<dl class="section pre"><dt>Precondition</dt><dd>Module <code>dhcpv6_client_ia_pd</code> is compiled in. </dd>
+<dd>
+<code>pfx_len &lt;= 128</code></dd></dl>
+<p>Without module <code>dhcpv6_client_ia_pd</code> and <code>NDEBUG</code> set this function is a NOP. Without module <code>dhcpv6_client_ia_pd</code> and <code>NDEBUG</code> unset this function will abort the running code on a failed assertion.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">netif</td><td>The interface to request the prefix delegation for. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pfx_len</td><td>The desired length of the prefix (note that the server might not consider this request). Must be &lt;= 128</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>on success </td></tr>
+    <tr><td class="paramname">-ENOMEM</td><td>when there is no lease entry available anymore </td></tr>
+    <tr><td class="paramname">-ENOTSUP</td><td>when module <code>dhcpv6_client_ia_pd</code> is not being used </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga80f4c908b66b27eed18f940a41fb8180"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga80f4c908b66b27eed18f940a41fb8180">&#9670;&nbsp;</a></span>dhcpv6_client_start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dhcpv6_client_start </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Let the server start listening. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="group__net__dhcpv6__client.html#ga8e0f35fb0b9a45ea1c5057f5dabdf700">dhcpv6_client_init()</a> was called (i.e. the internal event queue of he client was set).</dd></dl>
+<p>This needs to be called <em>after</em> all desired <a class="el" href="group__net__dhcpv6__client.html#net_dhcpv6_client_conf">configuration functions</a> and <a class="el" href="group__net__dhcpv6__client.html#ga8e0f35fb0b9a45ea1c5057f5dabdf700">dhcpv6_client_init()</a> were called. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:32 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

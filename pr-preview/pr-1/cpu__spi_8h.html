@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/stm32/include/periph/cpu_spi.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cpu__spi_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">cpu_spi.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__stm32.html">STM32</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>SPI CPU specific definitions for the STM32 family.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SPI CPU specific definitions for the STM32 family. </p>
+<dl class="section author"><dt>Author</dt><dd>Hauke Petersen <a href="#" onclick="location.href='mai'+'lto:'+'hau'+'ke'+'.pe'+'te'+'rse'+'n@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">hauke<span style="display: none;">.nosp@m.</span>.pet<span style="display: none;">.nosp@m.</span>ersen<span style="display: none;">.nosp@m.</span>@fu-<span style="display: none;">.nosp@m.</span>berli<span style="display: none;">.nosp@m.</span>n.de</a> </dd>
+<dd>
+Vincent Dupont <a href="#" onclick="location.href='mai'+'lto:'+'vin'+'ce'+'nt@'+'ot'+'ake'+'ys'+'.co'+'m'; return false;">vince<span style="display: none;">.nosp@m.</span>nt@o<span style="display: none;">.nosp@m.</span>takey<span style="display: none;">.nosp@m.</span>s.co<span style="display: none;">.nosp@m.</span>m</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;cpu.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="units_8h_source.html">macros/units.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cpu__dma_8h_source.html">periph/cpu_dma.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cpu__gpio_8h_source.html">periph/cpu_gpio.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cpu_spi.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cpu__spi_8h__incl.svg" width="488" height="202"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cpu__spi_8h__dep__incl.svg" width="41660" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="cpu__spi_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__conf__t.html">spi_conf_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI device configuration.  <a href="structspi__conf__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b9e5f52b319c2bf8bf6266b995cc740"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#a1b9e5f52b319c2bf8bf6266b995cc740">SPI_HWCS_MASK</a>&#160;&#160;&#160;(0xffffff00)</td></tr>
+<tr class="memdesc:a1b9e5f52b319c2bf8bf6266b995cc740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a magic number that tells us to use hardware chip select.  <a href="#a1b9e5f52b319c2bf8bf6266b995cc740">More...</a><br /></td></tr>
+<tr class="separator:a1b9e5f52b319c2bf8bf6266b995cc740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a292c9a0a5b03329a153ad28343ff2e09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#a292c9a0a5b03329a153ad28343ff2e09">SPI_HWCS</a>(x)&#160;&#160;&#160;(<a class="el" href="cpu__spi_8h.html#a1b9e5f52b319c2bf8bf6266b995cc740">SPI_HWCS_MASK</a> | x)</td></tr>
+<tr class="memdesc:a292c9a0a5b03329a153ad28343ff2e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default SPI hardware chip select access macro.  <a href="#a292c9a0a5b03329a153ad28343ff2e09">More...</a><br /></td></tr>
+<tr class="separator:a292c9a0a5b03329a153ad28343ff2e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0f414ed05adc20a504e8705587f9f8"><td class="memItemLeft" align="right" valign="top"><a id="a8b0f414ed05adc20a504e8705587f9f8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#a8b0f414ed05adc20a504e8705587f9f8">SPI_CS_UNDEF</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__gpio.html#ga3969ce1e494a72d3c2925b10ddeb4604">GPIO_UNDEF</a>)</td></tr>
+<tr class="memdesc:a8b0f414ed05adc20a504e8705587f9f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define value for unused CS line. <br /></td></tr>
+<tr class="separator:a8b0f414ed05adc20a504e8705587f9f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d9c2b9cf24ed0b13807d63f5e9b11f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#af3d9c2b9cf24ed0b13807d63f5e9b11f">PERIPH_SPI_NEEDS_TRANSFER_BYTE</a></td></tr>
+<tr class="memdesc:af3d9c2b9cf24ed0b13807d63f5e9b11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the shared SPI functions.  <a href="#af3d9c2b9cf24ed0b13807d63f5e9b11f">More...</a><br /></td></tr>
+<tr class="separator:af3d9c2b9cf24ed0b13807d63f5e9b11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68c30cec18f4abf11cc4bb09c13df17"><td class="memItemLeft" align="right" valign="top"><a id="ac68c30cec18f4abf11cc4bb09c13df17"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#ac68c30cec18f4abf11cc4bb09c13df17">PERIPH_SPI_NEEDS_TRANSFER_REG</a></td></tr>
+<tr class="memdesc:ac68c30cec18f4abf11cc4bb09c13df17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use transfer reg function from periph common. <br /></td></tr>
+<tr class="separator:ac68c30cec18f4abf11cc4bb09c13df17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb6291046cbd0102e8c87af75e4200d"><td class="memItemLeft" align="right" valign="top"><a id="afeb6291046cbd0102e8c87af75e4200d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#afeb6291046cbd0102e8c87af75e4200d">PERIPH_SPI_NEEDS_TRANSFER_REGS</a></td></tr>
+<tr class="memdesc:afeb6291046cbd0102e8c87af75e4200d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use transfer regs function from periph common. <br /></td></tr>
+<tr class="separator:afeb6291046cbd0102e8c87af75e4200d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d9d193934d2c1c598837398369a197"><td class="memItemLeft" align="right" valign="top"><a id="ad6d9d193934d2c1c598837398369a197"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#ad6d9d193934d2c1c598837398369a197">HAVE_SPI_CLK_T</a></td></tr>
+<tr class="memdesc:ad6d9d193934d2c1c598837398369a197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override SPI clock speed values. <br /></td></tr>
+<tr class="separator:ad6d9d193934d2c1c598837398369a197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94c5fdcac6a4b26211b612c3edc04ff"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom">{ <br />
+&#160;&#160;<a class="el" href="cpu__spi_8h.html#aa94c5fdcac6a4b26211b612c3edc04ffae6cc2c3387e4da1c7cb83aefb10f5d27">SPI_CLK_100KHZ</a> = KHZ(100), 
+<a class="el" href="cpu__spi_8h.html#aa94c5fdcac6a4b26211b612c3edc04ffa8db155bff416a59ca71ce9b2a2568bf3">SPI_CLK_400KHZ</a> = KHZ(400), 
+<a class="el" href="cpu__spi_8h.html#aa94c5fdcac6a4b26211b612c3edc04ffabf727d641e5cceb12a58d29dc954c111">SPI_CLK_1MHZ</a> = MHZ(1), 
+<a class="el" href="cpu__spi_8h.html#aa94c5fdcac6a4b26211b612c3edc04ffa4105210aa902203502e4392d4a3fbe58">SPI_CLK_5MHZ</a> = MHZ(5), 
+<br />
+&#160;&#160;<a class="el" href="cpu__spi_8h.html#aa94c5fdcac6a4b26211b612c3edc04ffa1693f88bef873b11f7b85ce0bba8175d">SPI_CLK_10MHZ</a> = MHZ(10)
+<br />
+ }</td></tr>
+<tr class="separator:aa94c5fdcac6a4b26211b612c3edc04ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17adf016c33fa2f2e36c9bec898bc0c8"><td class="memItemLeft" align="right" valign="top"><a id="a17adf016c33fa2f2e36c9bec898bc0c8"></a>
+typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cpu__spi_8h.html#a17adf016c33fa2f2e36c9bec898bc0c8">spi_clk_t</a></td></tr>
+<tr class="memdesc:a17adf016c33fa2f2e36c9bec898bc0c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">SPI clock type. <br /></td></tr>
+<tr class="separator:a17adf016c33fa2f2e36c9bec898bc0c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af3d9c2b9cf24ed0b13807d63f5e9b11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d9c2b9cf24ed0b13807d63f5e9b11f">&#9670;&nbsp;</a></span>PERIPH_SPI_NEEDS_TRANSFER_BYTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PERIPH_SPI_NEEDS_TRANSFER_BYTE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use the shared SPI functions. </p>
+<p>Use transfer byte function from periph common </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00077">77</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a292c9a0a5b03329a153ad28343ff2e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a292c9a0a5b03329a153ad28343ff2e09">&#9670;&nbsp;</a></span>SPI_HWCS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_HWCS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;(<a class="el" href="cpu__spi_8h.html#a1b9e5f52b319c2bf8bf6266b995cc740">SPI_HWCS_MASK</a> | x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Override the default SPI hardware chip select access macro. </p>
+<p>Since the CPU does only support one single hardware chip select line, we can detect the usage of non-valid lines by comparing to SPI_HWCS_VALID. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00055">55</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<a id="a1b9e5f52b319c2bf8bf6266b995cc740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b9e5f52b319c2bf8bf6266b995cc740">&#9670;&nbsp;</a></span>SPI_HWCS_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_HWCS_MASK&#160;&#160;&#160;(0xffffff00)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a magic number that tells us to use hardware chip select. </p>
+<p>We use a random value here, that does clearly differentiate from any possible <a class="el" href="group__drivers__periph__gpio.html#gae29846b3ecd19a0b7c44ff80a37ae7c1" title="Convert (port, pin) tuple to gpio_t value. ">GPIO_PIN(x)</a> value. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00047">47</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="aa94c5fdcac6a4b26211b612c3edc04ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94c5fdcac6a4b26211b612c3edc04ff">&#9670;&nbsp;</a></span>anonymous enum</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">anonymous enum</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aa94c5fdcac6a4b26211b612c3edc04ffae6cc2c3387e4da1c7cb83aefb10f5d27"></a>SPI_CLK_100KHZ&#160;</td><td class="fielddoc"><p>drive the SPI bus with 100KHz </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa94c5fdcac6a4b26211b612c3edc04ffa8db155bff416a59ca71ce9b2a2568bf3"></a>SPI_CLK_400KHZ&#160;</td><td class="fielddoc"><p>drive the SPI bus with 400KHz </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa94c5fdcac6a4b26211b612c3edc04ffabf727d641e5cceb12a58d29dc954c111"></a>SPI_CLK_1MHZ&#160;</td><td class="fielddoc"><p>drive the SPI bus with 1MHz </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa94c5fdcac6a4b26211b612c3edc04ffa4105210aa902203502e4392d4a3fbe58"></a>SPI_CLK_5MHZ&#160;</td><td class="fielddoc"><p>drive the SPI bus with 5MHz </p>
+</td></tr>
+<tr><td class="fieldname"><a id="aa94c5fdcac6a4b26211b612c3edc04ffa1693f88bef873b11f7b85ce0bba8175d"></a>SPI_CLK_10MHZ&#160;</td><td class="fielddoc"><p>drive the SPI bus with 10MHz </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="cpu__spi_8h_source.html#l00089">89</a> of file <a class="el" href="cpu__spi_8h_source.html">cpu_spi.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

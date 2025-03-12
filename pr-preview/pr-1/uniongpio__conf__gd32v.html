@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>gpio_conf_gd32v Union Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('uniongpio__conf__gd32v.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">gpio_conf_gd32v Union Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__periph.html">Peripheral Driver Interface</a> &raquo; <a class="el" href="group__drivers__periph__gpio__ll.html">GPIO Low-Level API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>GPIO pin configuration for GD32V MCUs.  
+ <a href="uniongpio__conf__gd32v.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>GPIO pin configuration for GD32V MCUs. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00241">241</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab63c54772ab347b99d96b13e52059639"><td class="memItemLeft" align="right" valign="top"><a id="ab63c54772ab347b99d96b13e52059639"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniongpio__conf__gd32v.html#ab63c54772ab347b99d96b13e52059639">bits</a></td></tr>
+<tr class="memdesc:ab63c54772ab347b99d96b13e52059639"><td class="mdescLeft">&#160;</td><td class="mdescRight">the raw bits <br /></td></tr>
+<tr class="separator:ab63c54772ab347b99d96b13e52059639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb448ce864270f5ff85102efc9227ed"><td class="memItemLeft" ><a id="aebb448ce864270f5ff85102efc9227ed"></a>
+struct {</td></tr>
+<tr class="memitem:add73dcedd180d60b2020f8a903782432"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio__ll.html#ga2ff5468d5ab752db6fa1fb95363392a6">gpio_state_t</a>&#160;&#160;&#160;<a class="el" href="uniongpio__conf__gd32v.html#ae77d6f3837c863c46523cb8ddf655626">state</a>: 3</td></tr>
+<tr class="memdesc:add73dcedd180d60b2020f8a903782432"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of the pin. <br /></td></tr>
+<tr class="separator:add73dcedd180d60b2020f8a903782432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86b79d15c4b342cb19a262833aa04b5"><td class="memItemLeft" >
+&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio__ll.html#ga15988813fd44aa06a2300421601952f8">gpio_pull_t</a>&#160;&#160;&#160;<a class="el" href="uniongpio__conf__gd32v.html#a1b4392627213244b8c094d6d4f9399a4">pull</a>: 2</td></tr>
+<tr class="memdesc:ab86b79d15c4b342cb19a262833aa04b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull resistor configuration. <br /></td></tr>
+<tr class="separator:ab86b79d15c4b342cb19a262833aa04b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14ef4a11754931168b44b27fc786518"><td class="memItemLeft" >&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio__ll.html#ga35634af042ff55c67687d6fdb21acee3">gpio_slew_t</a>&#160;&#160;&#160;<a class="el" href="uniongpio__conf__gd32v.html#aa9f11c44c8a71d22d45521d72619ceb1">slew_rate</a>: 2</td></tr>
+<tr class="memdesc:ad14ef4a11754931168b44b27fc786518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the slew rate of outputs.  <a href="#ad14ef4a11754931168b44b27fc786518">More...</a><br /></td></tr>
+<tr class="separator:ad14ef4a11754931168b44b27fc786518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6909f06b7269dd9846f6bdad0c10309"><td class="memItemLeft" >&#160;&#160;&#160;bool&#160;&#160;&#160;<a class="el" href="uniongpio__conf__gd32v.html#ab42f692c144821666f68584334d3d5e1">initial_value</a>: 1</td></tr>
+<tr class="memdesc:ad6909f06b7269dd9846f6bdad0c10309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initial value of the output.  <a href="#ad6909f06b7269dd9846f6bdad0c10309">More...</a><br /></td></tr>
+<tr class="separator:ad6909f06b7269dd9846f6bdad0c10309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb448ce864270f5ff85102efc9227ed"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:aebb448ce864270f5ff85102efc9227ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Field Documentation</h2>
+<a id="ab42f692c144821666f68584334d3d5e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab42f692c144821666f68584334d3d5e1">&#9670;&nbsp;</a></span>initial_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gpio_conf_gd32v::initial_value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initial value of the output. </p>
+<p>Ignored if <a class="el" href="uniongpio__conf__stm32.html#a196b3bcb19ca15b73fd2734bd8e2dc01">gpio_conf_stm32::state</a> is set to <a class="el" href="group__drivers__periph__gpio__ll.html#gga2ff5468d5ab752db6fa1fb95363392a6aa1ea38ffc304a6c32480a65b5fec7302">GPIO_INPUT</a> or <a class="el" href="group__drivers__periph__gpio__ll.html#gga2ff5468d5ab752db6fa1fb95363392a6a9cab495e0688b542427fc5a728c06bd7">GPIO_DISCONNECT</a>. If the pin was previously in a high impedance state, it is guaranteed to directly transition to the given initial value.</p>
+<p><a class="el" href="group__drivers__periph__gpio__ll.html#ga4417edcbec590f5d434fcdeae095bd65">gpio_ll_query_conf</a> will write the current value of the specified pin here, which is read from the input register when the state is <a class="el" href="group__drivers__periph__gpio__ll.html#gga2ff5468d5ab752db6fa1fb95363392a6aa1ea38ffc304a6c32480a65b5fec7302">GPIO_INPUT</a>, otherwise the state from the output register is consulted. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00275">275</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9f11c44c8a71d22d45521d72619ceb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9f11c44c8a71d22d45521d72619ceb1">&#9670;&nbsp;</a></span>slew_rate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__drivers__periph__gpio__ll.html#ga35634af042ff55c67687d6fdb21acee3">gpio_slew_t</a> gpio_conf_gd32v::slew_rate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Configure the slew rate of outputs. </p>
+<dl class="section warning"><dt>Warning</dt><dd>If the requested slew rate is not available, the closest fit supported will be configured instead.</dd></dl>
+<p>This value is ignored <em>unless</em> <a class="el" href="uniongpio__conf__stm32.html#a196b3bcb19ca15b73fd2734bd8e2dc01">gpio_conf_stm32::state</a> is configured to <a class="el" href="group__drivers__periph__gpio__ll.html#gga2ff5468d5ab752db6fa1fb95363392a6a98ad18441bf40d98b3e21c6b1e4f23a9">GPIO_OUTPUT_PUSH_PULL</a> or <a class="el" href="group__drivers__periph__gpio__ll.html#gga2ff5468d5ab752db6fa1fb95363392a6a8d500adc2f6982a9ddc8dcdd66c80c4b">GPIO_OUTPUT_OPEN_DRAIN</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html#l00261">261</a> of file <a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this union was generated from the following file:<ul>
+<li>cpu/gd32v/include/<a class="el" href="gd32v_2include_2periph__cpu_8h_source.html">periph_cpu.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

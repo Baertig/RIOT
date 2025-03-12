@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_eval_v.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_v"></a>- v -</h3><ul>
+<li>VCNL40X0_AMBIENT_AVERAGE_1
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a1e73423a7aef9d57a3d7336e49677e36">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_128
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a3728f53257c5bfa0d7f390c433a1f853">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_16
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a3b184b8b33e7a6879e78d1a5b6b24b78">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_2
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a3b075d70e8617eb75495b9a27054c76d">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_32
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a83ae6f0da6a0926071b0b4ec1926937f">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_4
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3af6df3c23d659882f610a2b7fd58de241">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_64
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a0e2c23b814352820ebad69817465289f">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_AVERAGE_8
+: <a class="el" href="group__drivers__vcnl40x0.html#gga930200ae35b2712706fbd833d42a70f3a5b39d3009941f34fd92c52e4f0201f64">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_1
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744dad4a13c268ee9c4d1e0cb154a6badabbb">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_10
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da473ee04da17d2db87b147322fe991c04">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_2
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da2865b7cd3945e8872cec3f7a842c14e3">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_3
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da2d629fb0b39927fa5fcbb3b3839f7698">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_4
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da831a5ee289e16333f593353b7de587c8">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_5
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744dabbf146fbb1bcb4c4407ee9c6cd55060b">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_6
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da2987f8fca33cb69a2f41391f97e6aa13">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_AMBIENT_RATE_8
+: <a class="el" href="group__drivers__vcnl40x0.html#ggaab690a854cdb56b09edd0bc9e13b744da3a75a0c93d85dfd3783178c2f4fbc401">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_ERR_I2C
+: <a class="el" href="group__drivers__vcnl40x0.html#gga71e6f8c0381e3283cc05b722216c4794a9e7914bb512b99d3d43a05eb4d8d7cab">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_ERR_NODEV
+: <a class="el" href="group__drivers__vcnl40x0.html#gga71e6f8c0381e3283cc05b722216c4794a9b44dfeb2224bc8556588d8f526d768e">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_OK
+: <a class="el" href="group__drivers__vcnl40x0.html#gga71e6f8c0381e3283cc05b722216c4794af3ae32586a62dcacee3ce068bf3190c9">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_125
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579abd3688e8d7ea732e31c813500631b434">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_16
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a53b836edf197766000756d90759f158a">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_2
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a22535b146e744b01b4b4bf8d2ed70c0d">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_250
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579aac0dcdf53fb1833ccbeff503f30159c4">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_31
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a155a20a78500452b92d5e6294d8af9a5">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_4
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a46072c39227d43c8880a59e29b807e31">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_62
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a36ff67a5a1faa83de07895481dedb68d">vcnl40x0.h</a>
+</li>
+<li>VCNL40X0_PROXIMITY_RATE_8
+: <a class="el" href="group__drivers__vcnl40x0.html#gga27c1625aa5fde74a6dec3d424733c579a24e0950cad1759c5346906d812bd7dae">vcnl40x0.h</a>
+</li>
+<li>VEML6070_1_T
+: <a class="el" href="group__drivers__veml6070.html#gga0c39b45f995df3f279a39d3147391a6da35cf2848ca374313d127d9988c2dcde9">veml6070.h</a>
+</li>
+<li>VEML6070_2_T
+: <a class="el" href="group__drivers__veml6070.html#gga0c39b45f995df3f279a39d3147391a6dadbe1ecf895c02ac7e08f035d68d9b904">veml6070.h</a>
+</li>
+<li>VEML6070_4_T
+: <a class="el" href="group__drivers__veml6070.html#gga0c39b45f995df3f279a39d3147391a6da3a74b6dd4ecfdc3f6901ab9d249413f7">veml6070.h</a>
+</li>
+<li>VEML6070_ERR_I2C
+: <a class="el" href="group__drivers__veml6070.html#gga2ae95ea8e60178fe99580d5142f0ec7ea1b908290653c3148e0298c8451dbf9f9">veml6070.h</a>
+</li>
+<li>VEML6070_HALF_T
+: <a class="el" href="group__drivers__veml6070.html#gga0c39b45f995df3f279a39d3147391a6daa5461ceadd78fd0e1e9a3ef7c82618fd">veml6070.h</a>
+</li>
+<li>VEML6070_OK
+: <a class="el" href="group__drivers__veml6070.html#gga2ae95ea8e60178fe99580d5142f0ec7ea997bc5b246995ce54442fb156d703017">veml6070.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_1
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275a30dc67d0dcf42ae7375ddd926bd7b1df">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_10
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275ad102aa3ece443847a43dbb7f5eed47de">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_1_25
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275ae73d105cf26af74bd0f65517b51f0a9a">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_1_67
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275a360ec43a4a5affa52e4fb59aa71f071d">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_20
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275abb4766eade555f1c832a5d9f89a5a3cd">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_2_5
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275a18c0beb22b85c171c728608b8471fca3">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_40
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275a516c2b27941ff89cdeca19411641b652">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_GAIN_5
+: <a class="el" href="group__drivers__vl6180x.html#ggaba8bc8b0923dafee52fbe268058ea275a1722fece787c98dbe56224b0af4a6938">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_OK
+: <a class="el" href="group__drivers__vl6180x.html#gga2eadfeaf1f86a23885ef13eaa6885940ae2b103656afee5b5e09922be9948b1c4">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_OVERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#gga2eadfeaf1f86a23885ef13eaa6885940a5f244a70dff3efb697060ebd74f6f7af">vl6180x.h</a>
+</li>
+<li>VL6180X_ALS_UNDERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#gga2eadfeaf1f86a23885ef13eaa6885940a8eaffb0eee7d6d8a7d0ac28ef5bf7144">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_ALS
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a6b07aea008982c578ba2b76d5bd5f82a">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_I2C
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25ac8d11d6d78c7381342f84dd0ba813e53">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_NO_DATA
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a360404e7faa85e16b7842f0035e08229">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_NO_PIN
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a815c7accebbe4235c7160cc814eae1d7">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_NOT_READY
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a33a04e3c71bf5225a814a000500ff985">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_RNG
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a7e32432f2b999c80c3683c02afe5d578">vl6180x.h</a>
+</li>
+<li>VL6180X_ERROR_WRONG_ID
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a61e428d8857ec8a0b0218edd9518b73c">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_DRDY
+: <a class="el" href="group__drivers__vl6180x.html#gga874149548c7fa6a80cca96600ddad635a45c7fc526e0383910d95e8d0de7757cc">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_HIGH
+: <a class="el" href="group__drivers__vl6180x.html#gga874149548c7fa6a80cca96600ddad635a778f44971d117f62cd3ff6d89de72c42">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_LOW
+: <a class="el" href="group__drivers__vl6180x.html#gga874149548c7fa6a80cca96600ddad635a1a15e75f9af5314f519dce07c3ce6b94">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_NONE
+: <a class="el" href="group__drivers__vl6180x.html#gga874149548c7fa6a80cca96600ddad635aa1da06268b82284f56c46a567b27cf36">vl6180x.h</a>
+</li>
+<li>VL6180X_INT_OUT
+: <a class="el" href="group__drivers__vl6180x.html#gga874149548c7fa6a80cca96600ddad635aa7c6f823016999877eaa91bc0f497217">vl6180x.h</a>
+</li>
+<li>VL6180X_OK
+: <a class="el" href="group__drivers__vl6180x.html#ggaeef583aa05ce818cc70d29a056989b25a7f6affab50fad3822de4282756dea121">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_ALGO_OVERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea21749fc9a65249a45114ffe69fc1171c">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_ALGO_UNDERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea000b6386e9838228b41ca781f0a60a89">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_EARLY_CONV_EST
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea1bd990a8309bceef123f087a0d694147">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_MAX_CONV
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea890b71c1e02d0856a371c96f22f11bbd">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_MAX_SNR
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eab95933fd2c0beee955cfd20e93c8e841">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_NO_TARGET
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea244e0dbd34747e92066ff11cbefab84b">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_OK
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eaf529b2e7c6f468dae80042b0348774ba">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_PLL1_LOCK
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea7538a1d0a68a76cd12e6e2f28a417b72">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_PLL2_LOCK
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eae094e64a6b04101812c390ebb0a0fbfa">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_RAW_ALGO_OVERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea7232d39365a099ee1725eaaecc698b7a">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_RAW_ALGO_UNDERFLOW
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eafab42d5dc696918491c1ed77530b2fae">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_VCSEL_CONT_TEST
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eac3af1ef5840e1c5950df30a78f9d039e">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_VCSEL_WD
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8eae11d525e398576504ae072d9422ea11d">vl6180x.h</a>
+</li>
+<li>VL6180X_RNG_VCSEL_WD_TEST
+: <a class="el" href="group__drivers__vl6180x.html#ggaf95787a8409141ccad02463eba94fb8ea7325a5f62800cd0385776c4e3339266a">vl6180x.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

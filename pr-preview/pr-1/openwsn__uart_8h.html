@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/openwsn/include/openwsn_uart.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('openwsn__uart_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">openwsn_uart.h File Reference<div class="ingroups"><a class="el" href="group__pkg.html">Packages</a> &#124; <a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__pkg__openwsn.html">OpenWSN network stack</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>For details on the implementation check pkg/openwsn/doc.txt.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>For details on the implementation check pkg/openwsn/doc.txt. </p>
+<p>RIOT adaption-specific definition of the "uart" bsp module.</p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Watteyne <a href="#" onclick="location.href='mai'+'lto:'+'wat'+'te'+'yne'+'@e'+'ecs'+'.b'+'erk'+'el'+'ey.'+'ed'+'u'; return false;">watte<span style="display: none;">.nosp@m.</span>yne@<span style="display: none;">.nosp@m.</span>eecs.<span style="display: none;">.nosp@m.</span>berk<span style="display: none;">.nosp@m.</span>eley.<span style="display: none;">.nosp@m.</span>edu</a>, February 2012 </dd>
+<dd>
+Peter Kietzmann <a href="#" onclick="location.href='mai'+'lto:'+'pet'+'er'+'.ki'+'et'+'zma'+'nn'+'@ha'+'w-'+'ham'+'bu'+'rg.'+'de'; return false;">peter<span style="display: none;">.nosp@m.</span>.kie<span style="display: none;">.nosp@m.</span>tzman<span style="display: none;">.nosp@m.</span>n@ha<span style="display: none;">.nosp@m.</span>w-ham<span style="display: none;">.nosp@m.</span>burg<span style="display: none;">.nosp@m.</span>.de</a>, July 2018 </dd>
+<dd>
+Francisco Molina <a href="#" onclick="location.href='mai'+'lto:'+'fra'+'nc'+'ois'+'-x'+'avi'+'er'+'.mo'+'li'+'na@'+'in'+'ria'+'.f'+'r'; return false;">franc<span style="display: none;">.nosp@m.</span>ois-<span style="display: none;">.nosp@m.</span>xavie<span style="display: none;">.nosp@m.</span>r.mo<span style="display: none;">.nosp@m.</span>lina@<span style="display: none;">.nosp@m.</span>inri<span style="display: none;">.nosp@m.</span>a.fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="openwsn__uart_8h_source.html">openwsn_uart.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;stdint.h&quot;</code><br />
+<code>#include &quot;board.h&quot;</code><br />
+<code>#include &quot;periph_conf.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for openwsn_uart.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="openwsn__uart_8h__incl.svg" width="308" height="127"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="openwsn__uart_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a81935d479349dc2ce0a416bcb0e6beda"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a81935d479349dc2ce0a416bcb0e6beda">STDIO_UART_DEV</a>&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294">UART_DEV</a>(0))</td></tr>
+<tr class="memdesc:a81935d479349dc2ce0a416bcb0e6beda"><td class="mdescLeft">&#160;</td><td class="mdescRight">UART device to use for STDIO.  <a href="#a81935d479349dc2ce0a416bcb0e6beda">More...</a><br /></td></tr>
+<tr class="separator:a81935d479349dc2ce0a416bcb0e6beda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b290758257d91ca4150bd3e16f8fa3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a00b290758257d91ca4150bd3e16f8fa3">OPENWSN_UART_DEV</a>&#160;&#160;&#160;((<a class="el" href="group__sys__stdio__uart.html#ga81935d479349dc2ce0a416bcb0e6beda">STDIO_UART_DEV</a> + 1) % <a class="el" href="boards_2nrf9160dk_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230">UART_NUMOF</a>)</td></tr>
+<tr class="memdesc:a00b290758257d91ca4150bd3e16f8fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenWSN default uart dev.  <a href="#a00b290758257d91ca4150bd3e16f8fa3">More...</a><br /></td></tr>
+<tr class="separator:a00b290758257d91ca4150bd3e16f8fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9316f7cee0b638871ac33b8fb7462659"><td class="memItemLeft" align="right" valign="top"><a id="a9316f7cee0b638871ac33b8fb7462659"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a9316f7cee0b638871ac33b8fb7462659">OPENWSN_UART_BAUDRATE</a>&#160;&#160;&#160;(115200U)</td></tr>
+<tr class="memdesc:a9316f7cee0b638871ac33b8fb7462659"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenWSN uart baudrate. <br /></td></tr>
+<tr class="separator:a9316f7cee0b638871ac33b8fb7462659"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ae005b96f0b18aecb814f4979c3e33408"><td class="memItemLeft" align="right" valign="top"><a id="ae005b96f0b18aecb814f4979c3e33408"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#ae005b96f0b18aecb814f4979c3e33408">uart_tx_cbt</a>) (void)</td></tr>
+<tr class="memdesc:ae005b96f0b18aecb814f4979c3e33408"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenWSN uart tx callback type. <br /></td></tr>
+<tr class="separator:ae005b96f0b18aecb814f4979c3e33408"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f8d6449d6a994dfb5ede3fca7ac4e2"><td class="memItemLeft" align="right" valign="top"><a id="ab8f8d6449d6a994dfb5ede3fca7ac4e2"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#ab8f8d6449d6a994dfb5ede3fca7ac4e2">uart_rx_cbt</a>) (void)</td></tr>
+<tr class="memdesc:ab8f8d6449d6a994dfb5ede3fca7ac4e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenWSN uart rx callback type. <br /></td></tr>
+<tr class="separator:ab8f8d6449d6a994dfb5ede3fca7ac4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab598e11626e06bf4262cc2ba1699a629"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#ab598e11626e06bf4262cc2ba1699a629">uart_init_openwsn</a> (void)</td></tr>
+<tr class="memdesc:ab598e11626e06bf4262cc2ba1699a629"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize OpenWSN uart.  <a href="#ab598e11626e06bf4262cc2ba1699a629">More...</a><br /></td></tr>
+<tr class="separator:ab598e11626e06bf4262cc2ba1699a629"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a390382a1fb16e9d83c1f5a34afb6e3"><td class="memItemLeft" align="right" valign="top"><a id="a9a390382a1fb16e9d83c1f5a34afb6e3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a9a390382a1fb16e9d83c1f5a34afb6e3">uart_setCallbacks</a> (<a class="el" href="openwsn__uart_8h.html#ae005b96f0b18aecb814f4979c3e33408">uart_tx_cbt</a> txCb, <a class="el" href="openwsn__uart_8h.html#ab8f8d6449d6a994dfb5ede3fca7ac4e2">uart_rx_cbt</a> rxCb)</td></tr>
+<tr class="memdesc:a9a390382a1fb16e9d83c1f5a34afb6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">OpenWSN uart tx callback type. <br /></td></tr>
+<tr class="separator:a9a390382a1fb16e9d83c1f5a34afb6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0eb795d11783def0a9f2acc99fd98a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#aa0eb795d11783def0a9f2acc99fd98a0">uart_setCTS</a> (bool state)</td></tr>
+<tr class="memdesc:aa0eb795d11783def0a9f2acc99fd98a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets software flow control CTS.  <a href="#aa0eb795d11783def0a9f2acc99fd98a0">More...</a><br /></td></tr>
+<tr class="separator:aa0eb795d11783def0a9f2acc99fd98a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a4111d6f4c172637301fe00e344e77f"><td class="memItemLeft" align="right" valign="top"><a id="a7a4111d6f4c172637301fe00e344e77f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a7a4111d6f4c172637301fe00e344e77f">uart_writeByte</a> (uint8_t byteToWrite)</td></tr>
+<tr class="memdesc:a7a4111d6f4c172637301fe00e344e77f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a single byte to the configured OpenWSN uart. <br /></td></tr>
+<tr class="separator:a7a4111d6f4c172637301fe00e344e77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b9f9e22d7f34dd0a2fe9c3456d12987"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a9b9f9e22d7f34dd0a2fe9c3456d12987">uart_readByte</a> (void)</td></tr>
+<tr class="memdesc:a9b9f9e22d7f34dd0a2fe9c3456d12987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a single byte received through uart.  <a href="#a9b9f9e22d7f34dd0a2fe9c3456d12987">More...</a><br /></td></tr>
+<tr class="separator:a9b9f9e22d7f34dd0a2fe9c3456d12987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d6ac545de3750804fcdd7d5c6ae41e"><td class="memItemLeft" align="right" valign="top"><a id="a19d6ac545de3750804fcdd7d5c6ae41e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a19d6ac545de3750804fcdd7d5c6ae41e">uart_enableInterrupts</a> (void)</td></tr>
+<tr class="memdesc:a19d6ac545de3750804fcdd7d5c6ae41e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused in RIOT, needs to be defined for OpenWSN. <br /></td></tr>
+<tr class="separator:a19d6ac545de3750804fcdd7d5c6ae41e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a138d10923b5872cc48a30802f9a85308"><td class="memItemLeft" align="right" valign="top"><a id="a138d10923b5872cc48a30802f9a85308"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#a138d10923b5872cc48a30802f9a85308">uart_disableInterrupts</a> (void)</td></tr>
+<tr class="memdesc:a138d10923b5872cc48a30802f9a85308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused in RIOT, needs to be defined for OpenWSN. <br /></td></tr>
+<tr class="separator:a138d10923b5872cc48a30802f9a85308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ce3cb232f8a2a473976527d3497fc6"><td class="memItemLeft" align="right" valign="top"><a id="ad4ce3cb232f8a2a473976527d3497fc6"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#ad4ce3cb232f8a2a473976527d3497fc6">uart_clearRxInterrupts</a> (void)</td></tr>
+<tr class="memdesc:ad4ce3cb232f8a2a473976527d3497fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused in RIOT, needs to be defined for OpenWSN. <br /></td></tr>
+<tr class="separator:ad4ce3cb232f8a2a473976527d3497fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5f8c18830d4a12c2ccd5aaab95aa563"><td class="memItemLeft" align="right" valign="top"><a id="ae5f8c18830d4a12c2ccd5aaab95aa563"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="openwsn__uart_8h.html#ae5f8c18830d4a12c2ccd5aaab95aa563">uart_clearTxInterrupts</a> (void)</td></tr>
+<tr class="memdesc:ae5f8c18830d4a12c2ccd5aaab95aa563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unused in RIOT, needs to be defined for OpenWSN. <br /></td></tr>
+<tr class="separator:ae5f8c18830d4a12c2ccd5aaab95aa563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a00b290758257d91ca4150bd3e16f8fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b290758257d91ca4150bd3e16f8fa3">&#9670;&nbsp;</a></span>OPENWSN_UART_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPENWSN_UART_DEV&#160;&#160;&#160;((<a class="el" href="group__sys__stdio__uart.html#ga81935d479349dc2ce0a416bcb0e6beda">STDIO_UART_DEV</a> + 1) % <a class="el" href="boards_2nrf9160dk_2include_2periph__conf_8h.html#a850405f2aaa352ad264346531f0e6230">UART_NUMOF</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>OpenWSN default uart dev. </p>
+<dl class="section note"><dt>Note</dt><dd>If only one UART is available that uart might collide with STDIO_UART_DEV, otherwise the next available UART will be used. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="openwsn__uart_8h_source.html#l00057">57</a> of file <a class="el" href="openwsn__uart_8h_source.html">openwsn_uart.h</a>.</p>
+
+</div>
+</div>
+<a id="a81935d479349dc2ce0a416bcb0e6beda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81935d479349dc2ce0a416bcb0e6beda">&#9670;&nbsp;</a></span>STDIO_UART_DEV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STDIO_UART_DEV&#160;&#160;&#160;(<a class="el" href="group__drivers__periph__uart.html#gafc5afd63560d27731d2517b3005f3294">UART_DEV</a>(0))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UART device to use for STDIO. </p>
+<p>Dont want to include the stdio header, so redefine the default value </p>
+
+<p class="definition">Definition at line <a class="el" href="openwsn__uart_8h_source.html#l00044">44</a> of file <a class="el" href="openwsn__uart_8h_source.html">openwsn_uart.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ab598e11626e06bf4262cc2ba1699a629"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab598e11626e06bf4262cc2ba1699a629">&#9670;&nbsp;</a></span>uart_init_openwsn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uart_init_openwsn </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize OpenWSN uart. </p>
+<p>This will initialize a uart device at STDIO_UART_BAUDRATE/8N1. It will also initialize a timer to set sw tx_isr. </p>
+
+</div>
+</div>
+<a id="a9b9f9e22d7f34dd0a2fe9c3456d12987"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b9f9e22d7f34dd0a2fe9c3456d12987">&#9670;&nbsp;</a></span>uart_readByte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t uart_readByte </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads a single byte received through uart. </p>
+<p>OpenWSN will call this thrpugh uart_rx_cbt. </p>
+
+</div>
+</div>
+<a id="aa0eb795d11783def0a9f2acc99fd98a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0eb795d11783def0a9f2acc99fd98a0">&#9670;&nbsp;</a></span>uart_setCTS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uart_setCTS </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets software flow control CTS. </p>
+<p>This function sends XON or XOFF bytes to "set" or "unset" CTS by sw.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>true sets CTS, false clears CTS </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

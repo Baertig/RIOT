@@ -1,0 +1,37 @@
+var group__cpu__cc26xx__cc13xx__definitions =
+[
+    [ "cc26xx_cc13xx.h", "cc26xx__cc13xx_8h.html", null ],
+    [ "cc26xx_cc13xx_adi.h", "cc26xx__cc13xx__adi_8h.html", null ],
+    [ "cc26xx_cc13xx_ccfg.h", "cc26xx__cc13xx__ccfg_8h.html", null ],
+    [ "cc26xx_cc13xx_gpio.h", "cc26xx__cc13xx__gpio_8h.html", null ],
+    [ "cc26xx_cc13xx_gpt.h", "cc26xx__cc13xx__gpt_8h.html", null ],
+    [ "cc26xx_cc13xx_hard_api.h", "cc26xx__cc13xx__hard__api_8h.html", null ],
+    [ "cc26xx_cc13xx_i2c.h", "cc26xx__cc13xx__i2c_8h.html", null ],
+    [ "cc26xx_cc13xx_ioc.h", "cc26xx__cc13xx__ioc_8h.html", null ],
+    [ "cc26xx_cc13xx_rfc.h", "cc26xx__cc13xx__rfc_8h.html", null ],
+    [ "cc26xx_cc13xx_uart.h", "cc26xx__cc13xx__uart_8h.html", null ],
+    [ "cc26xx_cc13xx_vims.h", "cc26xx__cc13xx__vims_8h.html", null ],
+    [ "cc26xx_cc13xx_wdt.h", "cc26xx__cc13xx__wdt_8h.html", null ],
+    [ "uart_regs_t", "structuart__regs__t.html", [
+      [ "__reserved1", "structuart__regs__t.html#a3e87473ff5839fb53d7a6bea24c9c0f3", null ],
+      [ "__reserved2", "structuart__regs__t.html#a77e49e630aa7ff0b20b9e9f24e034a63", null ],
+      [ "CTL", "structuart__regs__t.html#afaff09c4076d4f93e123b3cdca2223db", null ],
+      [ "DMACTL", "structuart__regs__t.html#a2e379bf9db1fb8e003a3e607892de16e", null ],
+      [ "DR", "structuart__regs__t.html#ac118a932c4713fe414d6be3dfe104108", null ],
+      [ "ECR", "structuart__regs__t.html#a220c8e9441f9e606a2dc4eb44a2f1070", null ],
+      [ "FBRD", "structuart__regs__t.html#a1fcfac76a420f6ddea37e049957e1c11", null ],
+      [ "FR", "structuart__regs__t.html#abf25cf7e17a874dbbe071966f4bf43df", null ],
+      [ "IBRD", "structuart__regs__t.html#a49c61b4492e0422d7d043c2522c5f148", null ],
+      [ "ICR", "structuart__regs__t.html#a0f48217e8f0fc177360611488241c5ee", null ],
+      [ "IFLS", "structuart__regs__t.html#a113c418aff320622c2cdc6fea2293951", null ],
+      [ "IMSC", "structuart__regs__t.html#a0e2d52efbfb4ba97e252932b10306875", null ],
+      [ "LCRH", "structuart__regs__t.html#a4024b8a7341f1762c55ff63f9f4d4e49", null ],
+      [ "MIS", "structuart__regs__t.html#a5aa863b17e3d9eb76edcdf3d5861c68f", null ],
+      [ "RIS", "structuart__regs__t.html#ab032b0c793fd09b6c4ed6aed732b240b", null ],
+      [ "RSR", "structuart__regs__t.html#aa6b44e5147daff2e2b8d4d0fd0227d99", null ]
+    ] ],
+    [ "UART0", "group__cpu__cc26xx__cc13xx__definitions.html#ga0508661f121639ffdee7de2353a0def2", null ],
+    [ "UART1", "group__cpu__cc26xx__cc13xx__definitions.html#ga8d69bf04d07af4fbbab5a8bd291f65ff", null ],
+    [ "UART1_BASE", "group__cpu__specific__peripheral__memory__map.html#ga383bf0c4670c3a7fa72df80f66331a46", null ],
+    [ "UART_DR_DATA_mask", "group__cpu__cc26xx__cc13xx__definitions.html#ga7094d4dad011a96622d9ae4d9c4a491f", null ]
+];

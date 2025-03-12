@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/si1133.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('si1133_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">si1133.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="si1133_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 iosabi</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser General</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Public License v2.1. See the file LICENSE in the top level directory for more</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifndef SI1133_H</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define SI1133_H</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="i2c_8h.html">periph/i2c.h</a>&quot;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea4bd100b1ff1c6e6469707a7301384cc6">   44</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea4bd100b1ff1c6e6469707a7301384cc6">SI1133_OK</a>           = 0,    </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea5007ac57cbcc4d67e69b2bb2bcacae82">   45</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea5007ac57cbcc4d67e69b2bb2bcacae82">SI1133_ERR_PARAMS</a>   = -1,   </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea42e189854104428f4a6ea72ebb89b39d">   46</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea42e189854104428f4a6ea72ebb89b39d">SI1133_ERR_I2C</a>      = -2,   </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea6edafa04a84f7058a25a986366034baf">   47</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea6edafa04a84f7058a25a986366034baf">SI1133_ERR_LOGIC</a>    = -3,   </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea9260466706293f9c42045ed58091492a">   48</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea9260466706293f9c42045ed58091492a">SI1133_ERR_NODEV</a>    = -4,   </div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eeafab8ac6ea932640816d62fa540f4ef5d">   49</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eeafab8ac6ea932640816d62fa540f4ef5d">SI1133_ERR_OVERFLOW</a> = -5,   </div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <a class="code" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a>;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">   55</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    SI1133_SENS_SMALL_IR    = 1u &lt;&lt; 0,</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    SI1133_SENS_MEDIUM_IR   = 1u &lt;&lt; 1,</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    SI1133_SENS_LARGE_IR    = 1u &lt;&lt; 2,</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    SI1133_SENS_WHITE       = 1u &lt;&lt; 3,</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    SI1133_SENS_LARGE_WHITE = 1u &lt;&lt; 4,</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    SI1133_SENS_UV          = 1u &lt;&lt; 5,</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    SI1133_SENS_DEEP_UV     = 1u &lt;&lt; 6,</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <a class="code" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a>;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structsi1133__channel__t.html">   95</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="structsi1133__channel__t.html#a2d50d8c520519c21f95f06c0f6b75ddc">   96</a></span>&#160;    uint8_t <a class="code" href="structsi1133__channel__t.html#a2d50d8c520519c21f95f06c0f6b75ddc">sample_time_log</a>;    </div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structsi1133__channel__t.html#aea48e5f7f3048f1c0413b098ada5e0d8">   97</a></span>&#160;    uint8_t <a class="code" href="structsi1133__channel__t.html#aea48e5f7f3048f1c0413b098ada5e0d8">sw_gain</a>;            </div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structsi1133__channel__t.html#a8ca35b194feb7a32fbf298bb6198b419">   98</a></span>&#160;    <a class="code" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a> <a class="code" href="structsi1133__channel__t.html#a8ca35b194feb7a32fbf298bb6198b419">sensor</a>;     </div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <a class="code" href="structsi1133__channel__t.html">si1133_channel_t</a>;</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structsi1133__params__t.html">  104</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structsi1133__params__t.html#ae2f6027bbb0f9aab9dc2fb11b790ea33">  105</a></span>&#160;    <a class="code" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a> <a class="code" href="structsi1133__params__t.html#ae2f6027bbb0f9aab9dc2fb11b790ea33">i2c_dev</a>;              </div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structsi1133__params__t.html#a877eb57b08ed35d973b1a85461974afd">  113</a></span>&#160;    uint8_t <a class="code" href="structsi1133__params__t.html#a877eb57b08ed35d973b1a85461974afd">address</a>;</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <a class="code" href="structsi1133__params__t.html">si1133_params_t</a>;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structsi1133__t.html">  119</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">/* Initialization parameters */</span></div><div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="structsi1133__t.html#afd75849146a4a3cf172e281f5a94cea0">  121</a></span>&#160;    <a class="code" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a> <a class="code" href="structsi1133__t.html#afd75849146a4a3cf172e281f5a94cea0">i2c_dev</a>;                  </div><div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="structsi1133__t.html#a758e426d237281636b882066fb7e9957">  122</a></span>&#160;    uint8_t <a class="code" href="structsi1133__t.html#a758e426d237281636b882066fb7e9957">address</a>;                </div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">/* Internal members */</span></div><div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="structsi1133__t.html#a2c0f9a9fa53aa403eb437f3c5175cd58">  124</a></span>&#160;    uint8_t <a class="code" href="structsi1133__t.html#a2c0f9a9fa53aa403eb437f3c5175cd58">cmd_counter</a>;            </div><div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="structsi1133__t.html#ad348cff0cf62ea55fda9b53d73fe9554">  125</a></span>&#160;    uint8_t <a class="code" href="structsi1133__t.html#ad348cff0cf62ea55fda9b53d73fe9554">num_channels</a>;           </div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structsi1133__t.html#a305b274eda51171b4c3388e6ee471c37">  126</a></span>&#160;    <a class="code" href="structsi1133__channel__t.html">si1133_channel_t</a> channel[6];    </div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;} <a class="code" href="structsi1133__t.html">si1133_t</a>;</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<a class="code" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a> <a class="code" href="group__drivers__si1133.html#gaec3931f32752dcd7e4392a6ab76efd68">si1133_init</a>(<a class="code" href="structsi1133__t.html">si1133_t</a> *dev, <span class="keyword">const</span> <a class="code" href="structsi1133__params__t.html">si1133_params_t</a> *params);</div><div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<a class="code" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a> <a class="code" href="group__drivers__si1133.html#ga649847b809e68b27a1a5c5c6d9ec92db">si1133_configure_channels</a>(<a class="code" href="structsi1133__t.html">si1133_t</a> *dev,</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                            <span class="keyword">const</span> <a class="code" href="structsi1133__channel__t.html">si1133_channel_t</a> *channels,</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                            uint32_t num_channels);</div><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<a class="code" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a> <a class="code" href="group__drivers__si1133.html#ga669671a50ea4892b4cacab0e7b5b0fbd">si1133_easy_configure</a>(<a class="code" href="structsi1133__t.html">si1133_t</a> *dev,</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                                        <a class="code" href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a> sensor_mask,</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                                        uint8_t sample_time_log,</div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                                        uint8_t sw_gain);</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;</div><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<a class="code" href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a> <a class="code" href="group__drivers__si1133.html#gaa159fe1bb5a9da69b7feba3c75fcd232">si1133_capture_sensors</a>(<a class="code" href="structsi1133__t.html">si1133_t</a> *dev, int32_t *values,</div><div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                         uint32_t num_channels);</div><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;</div><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SI1133_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div><div class="ttc" id="group__drivers__si1133_html_ga0758cd13d94d5c388892a43a84b54e2f"><div class="ttname"><a href="group__drivers__si1133.html#ga0758cd13d94d5c388892a43a84b54e2f">si1133_sensor_t</a></div><div class="ttdeci">si1133_sensor_t</div><div class="ttdoc">Sensor (photodiode combination) in the Si1133 package. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00055">si1133.h:55</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gaec3931f32752dcd7e4392a6ab76efd68"><div class="ttname"><a href="group__drivers__si1133.html#gaec3931f32752dcd7e4392a6ab76efd68">si1133_init</a></div><div class="ttdeci">si1133_ret_code_t si1133_init(si1133_t *dev, const si1133_params_t *params)</div><div class="ttdoc">Initialize the given Si1133 device. </div></div>
+<div class="ttc" id="structsi1133__params__t_html_a877eb57b08ed35d973b1a85461974afd"><div class="ttname"><a href="structsi1133__params__t.html#a877eb57b08ed35d973b1a85461974afd">si1133_params_t::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdoc">sensor address. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00113">si1133.h:113</a></div></div>
+<div class="ttc" id="structsi1133__params__t_html"><div class="ttname"><a href="structsi1133__params__t.html">si1133_params_t</a></div><div class="ttdoc">Device initialization parameters. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00104">si1133.h:104</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eea4bd100b1ff1c6e6469707a7301384cc6"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea4bd100b1ff1c6e6469707a7301384cc6">SI1133_OK</a></div><div class="ttdoc">No error. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00044">si1133.h:44</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_ga649847b809e68b27a1a5c5c6d9ec92db"><div class="ttname"><a href="group__drivers__si1133.html#ga649847b809e68b27a1a5c5c6d9ec92db">si1133_configure_channels</a></div><div class="ttdeci">si1133_ret_code_t si1133_configure_channels(si1133_t *dev, const si1133_channel_t *channels, uint32_t num_channels)</div><div class="ttdoc">Configure the capture channels. </div></div>
+<div class="ttc" id="structsi1133__channel__t_html"><div class="ttname"><a href="structsi1133__channel__t.html">si1133_channel_t</a></div><div class="ttdoc">Channel configuration the Si1133 sensor. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00095">si1133.h:95</a></div></div>
+<div class="ttc" id="structsi1133__channel__t_html_a2d50d8c520519c21f95f06c0f6b75ddc"><div class="ttname"><a href="structsi1133__channel__t.html#a2d50d8c520519c21f95f06c0f6b75ddc">si1133_channel_t::sample_time_log</a></div><div class="ttdeci">uint8_t sample_time_log</div><div class="ttdoc">Log2 of sampling time, 0 to 14. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00096">si1133.h:96</a></div></div>
+<div class="ttc" id="structsi1133__channel__t_html_a8ca35b194feb7a32fbf298bb6198b419"><div class="ttname"><a href="structsi1133__channel__t.html#a8ca35b194feb7a32fbf298bb6198b419">si1133_channel_t::sensor</a></div><div class="ttdeci">si1133_sensor_t sensor</div><div class="ttdoc">Sensor to sample. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00098">si1133.h:98</a></div></div>
+<div class="ttc" id="structsi1133__params__t_html_ae2f6027bbb0f9aab9dc2fb11b790ea33"><div class="ttname"><a href="structsi1133__params__t.html#ae2f6027bbb0f9aab9dc2fb11b790ea33">si1133_params_t::i2c_dev</a></div><div class="ttdeci">i2c_t i2c_dev</div><div class="ttdoc">I2C bus the sensor is connected to. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00105">si1133.h:105</a></div></div>
+<div class="ttc" id="group__drivers__periph__i2c_html_ga53bedf646ffe6ddd17f13b893a17fa74"><div class="ttname"><a href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a></div><div class="ttdeci">uint_fast8_t i2c_t</div><div class="ttdoc">Default i2c_t type definition. </div><div class="ttdef"><b>Definition:</b> <a href="i2c_8h_source.html#l00145">i2c.h:145</a></div></div>
+<div class="ttc" id="structsi1133__t_html_afd75849146a4a3cf172e281f5a94cea0"><div class="ttname"><a href="structsi1133__t.html#afd75849146a4a3cf172e281f5a94cea0">si1133_t::i2c_dev</a></div><div class="ttdeci">i2c_t i2c_dev</div><div class="ttdoc">I2C bus the sensor is connected to. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00121">si1133.h:121</a></div></div>
+<div class="ttc" id="structsi1133__t_html_a758e426d237281636b882066fb7e9957"><div class="ttname"><a href="structsi1133__t.html#a758e426d237281636b882066fb7e9957">si1133_t::address</a></div><div class="ttdeci">uint8_t address</div><div class="ttdoc">sensor address </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00122">si1133.h:122</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gaa159fe1bb5a9da69b7feba3c75fcd232"><div class="ttname"><a href="group__drivers__si1133.html#gaa159fe1bb5a9da69b7feba3c75fcd232">si1133_capture_sensors</a></div><div class="ttdeci">si1133_ret_code_t si1133_capture_sensors(si1133_t *dev, int32_t *values, uint32_t num_channels)</div><div class="ttdoc">Perform a one-time blocking sample of the configured channels. </div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eeafab8ac6ea932640816d62fa540f4ef5d"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eeafab8ac6ea932640816d62fa540f4ef5d">SI1133_ERR_OVERFLOW</a></div><div class="ttdoc">ADC overflow when sampling. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00049">si1133.h:49</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eea9260466706293f9c42045ed58091492a"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea9260466706293f9c42045ed58091492a">SI1133_ERR_NODEV</a></div><div class="ttdoc">No SI1133 device detected. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00048">si1133.h:48</a></div></div>
+<div class="ttc" id="structsi1133__channel__t_html_aea48e5f7f3048f1c0413b098ada5e0d8"><div class="ttname"><a href="structsi1133__channel__t.html#aea48e5f7f3048f1c0413b098ada5e0d8">si1133_channel_t::sw_gain</a></div><div class="ttdeci">uint8_t sw_gain</div><div class="ttdoc">Software gain, 0 to 7. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00097">si1133.h:97</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eea6edafa04a84f7058a25a986366034baf"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea6edafa04a84f7058a25a986366034baf">SI1133_ERR_LOGIC</a></div><div class="ttdoc">Device communication logic error. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00047">si1133.h:47</a></div></div>
+<div class="ttc" id="structsi1133__t_html_ad348cff0cf62ea55fda9b53d73fe9554"><div class="ttname"><a href="structsi1133__t.html#ad348cff0cf62ea55fda9b53d73fe9554">si1133_t::num_channels</a></div><div class="ttdeci">uint8_t num_channels</div><div class="ttdoc">Number of configured channels. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00125">si1133.h:125</a></div></div>
+<div class="ttc" id="structsi1133__t_html"><div class="ttname"><a href="structsi1133__t.html">si1133_t</a></div><div class="ttdoc">Device descriptor for the Si1133 sensor. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00119">si1133.h:119</a></div></div>
+<div class="ttc" id="structsi1133__t_html_a2c0f9a9fa53aa403eb437f3c5175cd58"><div class="ttname"><a href="structsi1133__t.html#a2c0f9a9fa53aa403eb437f3c5175cd58">si1133_t::cmd_counter</a></div><div class="ttdeci">uint8_t cmd_counter</div><div class="ttdoc">Si1133 command counter. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00124">si1133.h:124</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eea5007ac57cbcc4d67e69b2bb2bcacae82"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea5007ac57cbcc4d67e69b2bb2bcacae82">SI1133_ERR_PARAMS</a></div><div class="ttdoc">Invalid parameters. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00045">si1133.h:45</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_ga0f923bc3c0076c1856693ec7e9efe6ee"><div class="ttname"><a href="group__drivers__si1133.html#ga0f923bc3c0076c1856693ec7e9efe6ee">si1133_ret_code_t</a></div><div class="ttdeci">si1133_ret_code_t</div><div class="ttdoc">Driver error return codes. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00043">si1133.h:43</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_gga0f923bc3c0076c1856693ec7e9efe6eea42e189854104428f4a6ea72ebb89b39d"><div class="ttname"><a href="group__drivers__si1133.html#gga0f923bc3c0076c1856693ec7e9efe6eea42e189854104428f4a6ea72ebb89b39d">SI1133_ERR_I2C</a></div><div class="ttdoc">I2C communication error. </div><div class="ttdef"><b>Definition:</b> <a href="si1133_8h_source.html#l00046">si1133.h:46</a></div></div>
+<div class="ttc" id="group__drivers__si1133_html_ga669671a50ea4892b4cacab0e7b5b0fbd"><div class="ttname"><a href="group__drivers__si1133.html#ga669671a50ea4892b4cacab0e7b5b0fbd">si1133_easy_configure</a></div><div class="ttdeci">si1133_ret_code_t si1133_easy_configure(si1133_t *dev, si1133_sensor_t sensor_mask, uint8_t sample_time_log, uint8_t sw_gain)</div><div class="ttdoc">Convenience function to configure all capture channels. </div></div>
+<div class="ttc" id="i2c_8h_html"><div class="ttname"><a href="i2c_8h.html">i2c.h</a></div><div class="ttdoc">Low-level I2C peripheral driver interface definition. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

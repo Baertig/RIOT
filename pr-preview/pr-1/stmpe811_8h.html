@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/include/stmpe811.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('stmpe811_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">stmpe811.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a> &raquo; <a class="el" href="group__drivers__stmpe811.html">STMPE811 Touchscreen Controller</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Alexandre Abadie <a href="#" onclick="location.href='mai'+'lto:'+'ale'+'xa'+'ndr'+'e.'+'aba'+'di'+'e@i'+'nr'+'ia.'+'fr'; return false;">alexa<span style="display: none;">.nosp@m.</span>ndre<span style="display: none;">.nosp@m.</span>.abad<span style="display: none;">.nosp@m.</span>ie@i<span style="display: none;">.nosp@m.</span>nria.<span style="display: none;">.nosp@m.</span>fr</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="stmpe811_8h_source.html">stmpe811.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="drivers_2include_2saul_8h_source.html">saul.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="i2c_8h_source.html">periph/i2c.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for stmpe811.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="stmpe811_8h__incl.svg" width="948" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="stmpe811_8h__dep__incl.svg" width="264" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="stmpe811_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstmpe811__touch__position__t.html">stmpe811_touch_position_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch position structure.  <a href="structstmpe811__touch__position__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstmpe811__params__t.html">stmpe811_params_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device initialization parameters.  <a href="structstmpe811__params__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstmpe811__t.html">stmpe811_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Device descriptor for the STMPE811 sensor.  <a href="structstmpe811__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga298f293a352d24618600d0d1dfe96ebe"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#ga298f293a352d24618600d0d1dfe96ebe">stmpe811_event_cb_t</a>) (void *arg)</td></tr>
+<tr class="memdesc:ga298f293a352d24618600d0d1dfe96ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signature of touch event callback triggered from interrupt.  <a href="group__drivers__stmpe811.html#ga298f293a352d24618600d0d1dfe96ebe">More...</a><br /></td></tr>
+<tr class="separator:ga298f293a352d24618600d0d1dfe96ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga5ca8b7590c655bcf4acb9b16a48d558a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#ga5ca8b7590c655bcf4acb9b16a48d558a">stmpe811_touch_state_t</a> { <a class="el" href="group__drivers__stmpe811.html#gga5ca8b7590c655bcf4acb9b16a48d558aa90026ee26471890794e4c1a1574185b8">STMPE811_TOUCH_STATE_PRESSED</a>, 
+<a class="el" href="group__drivers__stmpe811.html#gga5ca8b7590c655bcf4acb9b16a48d558aa4b0db442db71127c710e65e93df2b33e">STMPE811_TOUCH_STATE_RELEASED</a>
+ }</td></tr>
+<tr class="memdesc:ga5ca8b7590c655bcf4acb9b16a48d558a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch state enum.  <a href="group__drivers__stmpe811.html#ga5ca8b7590c655bcf4acb9b16a48d558a">More...</a><br /></td></tr>
+<tr class="separator:ga5ca8b7590c655bcf4acb9b16a48d558a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae4f35b9889b9ac8bedbb2b8243caf0e7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#gae4f35b9889b9ac8bedbb2b8243caf0e7">stmpe811_touch_conv_t</a> { <a class="el" href="group__drivers__stmpe811.html#ggae4f35b9889b9ac8bedbb2b8243caf0e7a802c8f2c3b16a6ef1bf09aef03d13669">STMPE811_NO_CONV</a> = 0x00, 
+<a class="el" href="group__drivers__stmpe811.html#ggae4f35b9889b9ac8bedbb2b8243caf0e7a01df7afb099f15af06b71d68981786f1">STMPE811_MIRROR_X</a> = 0x01, 
+<a class="el" href="group__drivers__stmpe811.html#ggae4f35b9889b9ac8bedbb2b8243caf0e7acc32a108d2150f9c7777d20026a43969">STMPE811_MIRROR_Y</a> = 0x02, 
+<a class="el" href="group__drivers__stmpe811.html#ggae4f35b9889b9ac8bedbb2b8243caf0e7aaa10c435b02e7904a5a093ff18c5e8ad">STMPE811_SWAP_XY</a> = 0x04
+ }</td></tr>
+<tr class="memdesc:gae4f35b9889b9ac8bedbb2b8243caf0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Touch screen coordinate conversions.  <a href="group__drivers__stmpe811.html#gae4f35b9889b9ac8bedbb2b8243caf0e7">More...</a><br /></td></tr>
+<tr class="separator:gae4f35b9889b9ac8bedbb2b8243caf0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga6157af7b234d51cf25ca93396865d765"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#ga6157af7b234d51cf25ca93396865d765">stmpe811_init</a> (<a class="el" href="structstmpe811__t.html">stmpe811_t</a> *dev, const <a class="el" href="structstmpe811__params__t.html">stmpe811_params_t</a> *params, <a class="el" href="group__drivers__stmpe811.html#ga298f293a352d24618600d0d1dfe96ebe">stmpe811_event_cb_t</a> cb, void *arg)</td></tr>
+<tr class="memdesc:ga6157af7b234d51cf25ca93396865d765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the given STMPE811 device.  <a href="group__drivers__stmpe811.html#ga6157af7b234d51cf25ca93396865d765">More...</a><br /></td></tr>
+<tr class="separator:ga6157af7b234d51cf25ca93396865d765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga387e3ddb160cc6eb8c5ce9b7f05bb3fc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#ga387e3ddb160cc6eb8c5ce9b7f05bb3fc">stmpe811_read_touch_position</a> (<a class="el" href="structstmpe811__t.html">stmpe811_t</a> *dev, <a class="el" href="structstmpe811__touch__position__t.html">stmpe811_touch_position_t</a> *position)</td></tr>
+<tr class="memdesc:ga387e3ddb160cc6eb8c5ce9b7f05bb3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the touch position.  <a href="group__drivers__stmpe811.html#ga387e3ddb160cc6eb8c5ce9b7f05bb3fc">More...</a><br /></td></tr>
+<tr class="separator:ga387e3ddb160cc6eb8c5ce9b7f05bb3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f58efa8d981410a5f607334ec8c61c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__drivers__stmpe811.html#ga4f58efa8d981410a5f607334ec8c61c5">stmpe811_read_touch_state</a> (const <a class="el" href="structstmpe811__t.html">stmpe811_t</a> *dev, <a class="el" href="group__drivers__stmpe811.html#ga5ca8b7590c655bcf4acb9b16a48d558a">stmpe811_touch_state_t</a> *state)</td></tr>
+<tr class="memdesc:ga4f58efa8d981410a5f607334ec8c61c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the touch state (pressed or released)  <a href="group__drivers__stmpe811.html#ga4f58efa8d981410a5f607334ec8c61c5">More...</a><br /></td></tr>
+<tr class="separator:ga4f58efa8d981410a5f607334ec8c61c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

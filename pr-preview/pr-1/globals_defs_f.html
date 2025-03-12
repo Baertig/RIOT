@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Globals</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_defs_f.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="contents">
+&#160;
+
+<h3><a id="index_f"></a>- f -</h3><ul>
+<li>F_CPU
+: <a class="el" href="arduino__board_8h.html#a43bafb28b29491ec7f871319b5a3b2f8">arduino_board.h</a>
+</li>
+<li>FAL_FLASH_DEV_TABLE
+: <a class="el" href="fal__cfg_8h.html#ad06206501446f26c01252bc3c5691fb7">fal_cfg.h</a>
+</li>
+<li>FAL_MTD
+: <a class="el" href="fal__cfg_8h.html#ac5cc35a3fe9913e0cc02c633403de81e">fal_cfg.h</a>
+</li>
+<li>FAL_PART0_LABEL
+: <a class="el" href="fal__cfg_8h.html#a03dec42773982da584784db1a2be0216">fal_cfg.h</a>
+</li>
+<li>FAL_PART0_LENGTH
+: <a class="el" href="fal__cfg_8h.html#af47a551611579903bc5d12c476fcdb0f">fal_cfg.h</a>
+</li>
+<li>FAL_PART0_OFFSET
+: <a class="el" href="fal__cfg_8h.html#a69e8361b1d774cc747299bd8cf896c0a">fal_cfg.h</a>
+</li>
+<li>FAL_PART1_OFFSET
+: <a class="el" href="fal__cfg_8h.html#ab7561affaa0c73891f5e3646447224a9">fal_cfg.h</a>
+</li>
+<li>FAL_PART2_OFFSET
+: <a class="el" href="fal__cfg_8h.html#a24f5aa8e38bb43c5f8924fb9a538e5c5">fal_cfg.h</a>
+</li>
+<li>FAL_PART3_OFFSET
+: <a class="el" href="fal__cfg_8h.html#a99d4e8fd313c626b75d1f2fb55b66f0f">fal_cfg.h</a>
+</li>
+<li>FAL_PART_HAS_TABLE_CFG
+: <a class="el" href="fal__cfg_8h.html#a4290752df4db6925fae808a5856032c4">fal_cfg.h</a>
+</li>
+<li>FAL_PART_TABLE
+: <a class="el" href="fal__cfg_8h.html#af48e27b526bb250134a7d1897ba13977">fal_cfg.h</a>
+</li>
+<li>FAL_ROW_PART0
+: <a class="el" href="fal__cfg_8h.html#aebfe2975ef759800df9907ea76b75f72">fal_cfg.h</a>
+</li>
+<li>FAL_ROW_PART1
+: <a class="el" href="fal__cfg_8h.html#a029b231d03c3d442159bebd9f87da531">fal_cfg.h</a>
+</li>
+<li>FAL_ROW_PART2
+: <a class="el" href="fal__cfg_8h.html#aeee6d5537cf1415216488296b99107f0">fal_cfg.h</a>
+</li>
+<li>FAL_ROW_PART3
+: <a class="el" href="fal__cfg_8h.html#a255b376363425ed289f1663e53cb2ea0">fal_cfg.h</a>
+</li>
+<li>FATFS_MAX_ABS_PATH_SIZE
+: <a class="el" href="group__sys__fatfs.html#gac2705d10dbe276b4b760ead6ef7f20e5">fatfs.h</a>
+</li>
+<li>FATFS_MAX_VOL_STR_LEN
+: <a class="el" href="group__sys__fatfs.html#ga936f8b2bea013417ca1c0826e8183781">fatfs.h</a>
+</li>
+<li>FATFS_MOUNT_OPT
+: <a class="el" href="group__sys__fatfs.html#ga7ef4d049a02926687d3e3ff7ec2da937">fatfs.h</a>
+</li>
+<li>FATFS_VFS_DIR_BUFFER_SIZE
+: <a class="el" href="group__sys__vfs.html#gaf168cd5f6f5766b34d6be9b9c1ce9f26">vfs.h</a>
+</li>
+<li>FATFS_YEAR_OFFSET
+: <a class="el" href="group__sys__fatfs.html#ga91e6a88e878df2c8d1ecd3065d92dfa7">fatfs.h</a>
+</li>
+<li>FAULT_1
+: <a class="el" href="lm75__regs_8h.html#ae393c57c83d81d035d049e9e167a0199">lm75_regs.h</a>
+</li>
+<li>FAULT_2
+: <a class="el" href="lm75__regs_8h.html#aa807cb05d6f051d89efa891840a5cb4a">lm75_regs.h</a>
+</li>
+<li>FAULT_3
+: <a class="el" href="lm75__regs_8h.html#a02fef101e3cc8d4146962610d21307a6">lm75_regs.h</a>
+</li>
+<li>FAULT_4
+: <a class="el" href="lm75__regs_8h.html#ae8e2a8a45e2ec245bec4f2790f65f16d">lm75_regs.h</a>
+</li>
+<li>FAULT_4_TMP1075
+: <a class="el" href="lm75__regs_8h.html#ac196c1c397fa2c0c4ede6d1fe8fc5a0e">lm75_regs.h</a>
+</li>
+<li>FAULT_6
+: <a class="el" href="lm75__regs_8h.html#a1971eb2c4eafac7bfc64d9ca9a27a5bc">lm75_regs.h</a>
+</li>
+<li>FCFG
+: <a class="el" href="cc26x0__cc13x0__fcfg_8h.html#a8ffe7c106d46fcd1c5a866aa6cee0d94">cc26x0_cc13x0_fcfg.h</a>
+, <a class="el" href="cc26x2__cc13x2__fcfg_8h.html#a8ffe7c106d46fcd1c5a866aa6cee0d94">cc26x2_cc13x2_fcfg.h</a>
+</li>
+<li>FCFG1_DAC_BIAS_CNF_LPM_TRIM_IOUT_m
+: <a class="el" href="cc26x2__cc13x2__fcfg_8h.html#a213dfd4b91223601909c7574f309234f">cc26x2_cc13x2_fcfg.h</a>
+</li>
+<li>FCFG_BASE
+: <a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga20ab91625bf7a1402820586eeec74b6b">cc26x0_cc13x0_fcfg.h</a>
+, <a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga20ab91625bf7a1402820586eeec74b6b">cc26x2_cc13x2_fcfg.h</a>
+</li>
+<li>FD_SETSIZE
+: <a class="el" href="group__posix__select.html#ga86c5dbf5a99358e288f573d6a1e0873f">select.h</a>
+</li>
+<li>FDB_PRINT
+: <a class="el" href="fdb__cfg_8h.html#a351bfcf13855be1cda80ef553f9fc3c6">fdb_cfg.h</a>
+</li>
+<li>FDCAN_SRAM_EFSA
+: <a class="el" href="fdcandev__stm32_8h.html#a533a276662b2d8a5f259afb6cdd1cf49">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_F0SA
+: <a class="el" href="fdcandev__stm32_8h.html#a43a5729ac2caa6ad0a14744d869c7bec">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_F1SA
+: <a class="el" href="fdcandev__stm32_8h.html#a177c7532e08f9409aef73542d8de44a6">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC
+: <a class="el" href="fdcandev__stm32_8h.html#a4827d3b1e74d1cf8720f8ceafd6cc833">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC_DISABLED
+: <a class="el" href="fdcandev__stm32_8h.html#a5186364103b74487cecca2254b9a3bd8">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC_FIFO0
+: <a class="el" href="fdcandev__stm32_8h.html#a1d00393d61f3a2061a3bc2377a5f410f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC_FIFO1
+: <a class="el" href="fdcandev__stm32_8h.html#a65a7c4eed176b9c1bd25477c27ee4d66">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a8619f5399a06e1cfae0224b7eafe287c">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFEC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a2fd1016adb8112dffc7342d516ad1e1b">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFID1
+: <a class="el" href="fdcandev__stm32_8h.html#ad8032b01ba5d81c9ecb92984ef616e99">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F0_EFID1_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a9a22ff5d458129ae85e0ffec2b959450">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFID2
+: <a class="el" href="fdcandev__stm32_8h.html#a5eedc14824387e8cf1658ce3306e762c">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFID2_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a400c1f37d14ab3db9fcacd4a6e3bbefb">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFT
+: <a class="el" href="fdcandev__stm32_8h.html#a8cf4dd74ce5c118c13459cdb377d22fb">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFT_CLASSIC
+: <a class="el" href="fdcandev__stm32_8h.html#ad69d55da243c98b11f2e5ba1e1a9c0e8">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFT_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a75d6377c8d89e6d7bfc96e8743644b59">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_F1_EFT_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#ab6c06085838869f5484bb97f0dde9817">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLE_FILTER_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#aa6da85cf760c54b04a34eae709ed0b61">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLESA
+: <a class="el" href="fdcandev__stm32_8h.html#aeff4c21481d35e4681890fae00b63776">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_FILTER_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#aa1bccc39cc725f18cfc9b0c4b2059ddb">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC
+: <a class="el" href="fdcandev__stm32_8h.html#a01266b146d58f3c047eea15e63c26f3a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC_DISABLED
+: <a class="el" href="fdcandev__stm32_8h.html#af4e0211d168fc38febd78a59ab44f237">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC_FIFO0
+: <a class="el" href="fdcandev__stm32_8h.html#a5928b06ce19261ebc787ddee8f4033ea">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC_FIFO1
+: <a class="el" href="fdcandev__stm32_8h.html#a69866eb7444d9488671d0efaa1b9cd23">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#aa01605ee2257d1f147e4ace1fa103574">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFEC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a07bc0827b6871c0a00299ec95de2dc6d">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFID1
+: <a class="el" href="fdcandev__stm32_8h.html#a61f9369f256d44cdf4fc08ee551a2b12">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFID1_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#aa2e3bdb768e40ac32f5ff114951b445d">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFID1_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a31a8ada8465cecff8f35ab61059b4175">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFID2
+: <a class="el" href="fdcandev__stm32_8h.html#aff2e65490f9d06ddabfb18b7dcedd2fa">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFID2_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a1e2bb13aa08f29602fdd6781325a854f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFT
+: <a class="el" href="fdcandev__stm32_8h.html#ac35158149215132d39c60f207da45495">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFT_CLASSIC
+: <a class="el" href="fdcandev__stm32_8h.html#a9586e6dc7cefdbbc3687a79f50411b59">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFT_DISABLED
+: <a class="el" href="fdcandev__stm32_8h.html#ae51561c34e2380cdfcddcf625487be82">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFT_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a0fe2f01aad678dbe8e6eebf09e6487f9">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_FLS_SFT_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a9339e6c203b3525fca61f74ef33b185f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_MESSAGE_RAM_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#afa9d7aeaf92e7ae359231f4928df3612">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_ELEMENT_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#a62da9a6b381963c1c369edcc8b12a2ad">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ESI
+: <a class="el" href="fdcandev__stm32_8h.html#a3f79633b8a4616c0179eb3deeb4d1774">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ESI_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a03a22aefb8eedfc4de8340da0c42ff26">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ESI_PASSIVE_FLAG
+: <a class="el" href="fdcandev__stm32_8h.html#ab9c25c85df1046705fbe503c6c58cff2">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ESI_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a8ccb2f900f8402c7e40bc1036b5f435a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ESI_RECESSIVE
+: <a class="el" href="fdcandev__stm32_8h.html#a27a532cbedb4e473e405f19c76d7d2f4">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ID
+: <a class="el" href="fdcandev__stm32_8h.html#a958cf5417206f5b8eaf8d6482de3bc27">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ID_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a4af324899a9652d7382e00e512f41779">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_ID_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a510b8ecc5bdd6305b938cc9efc12b355">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_RTR
+: <a class="el" href="fdcandev__stm32_8h.html#af2bb9387aab056f0f4c52e484c32b7d1">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_RTR_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#af7f252a552be09ec53b4e273fdbe6083">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_RTR_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a6077edce3705cbf84c1b5959a653f5b2">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_XTD
+: <a class="el" href="fdcandev__stm32_8h.html#a0564bf40f888eb45e29b77d3ed47828b">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_XTD_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a4d5b5ff35afea5b0c8b65c739f12b3ba">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R0_XTD_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a9fe7763963eb6d25afd4c2c8f6788e15">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_BRS
+: <a class="el" href="fdcandev__stm32_8h.html#ac5972c296723765aa068d3e56a6a2a5a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_BRS_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a24f88c62ad9116bef9161ed07417abad">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_BRS_OFF
+: <a class="el" href="fdcandev__stm32_8h.html#a978bab7256e0863625b1f97c1da6c144">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_BRS_ON
+: <a class="el" href="fdcandev__stm32_8h.html#a8ceaad35bf98d8e478ff2ec8596cd236">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_BRS_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#ae407d2bac3237f89db7f235ab57bf7d0">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_DLC
+: <a class="el" href="fdcandev__stm32_8h.html#abe328d5131364a1ed34b86404528768a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_DLC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#ab975ff00823cf8ff91c9fc6588b88be3">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_DLC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a67937dbf0b6f754c11b232c4d20a33ae">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_EFC
+: <a class="el" href="fdcandev__stm32_8h.html#ad7dee844ed8ab5c067ac427775f03547">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_EFC_DISABLE
+: <a class="el" href="fdcandev__stm32_8h.html#acad997dcaf4d1390d037a3d9ea18811e">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_EFC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a7a89b3dbef7e25d94ea3d073b01591d5">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_EFC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#ae9c7206d3b866c126d28a5f68ef3167c">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_EFC_STORE_EVENTS
+: <a class="el" href="fdcandev__stm32_8h.html#aa897818e11ff6d2bfea38ae21b7098c8">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_FDF
+: <a class="el" href="fdcandev__stm32_8h.html#ac9c3560a38ec84313800de41bcc5a7bc">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_FDF_CLASSIC
+: <a class="el" href="fdcandev__stm32_8h.html#a41c90e7b45c4e4d17cc362df708b999d">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_FDF_FD
+: <a class="el" href="fdcandev__stm32_8h.html#a12c23080d3e9d0f74a5361062f95be2f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_FDF_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a6dae1a4a6b943bb4cbc9f7216a4e5002">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_R1_FDF_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a4eb10ea38682561340f12f57c917da00">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_RXFIFO_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#ac6dd9d482e7d7be9ee3261f9549ad429">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TBSA
+: <a class="el" href="fdcandev__stm32_8h.html#aff1fea9c16af186777916887b39bb738">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_SIZE
+: <a class="el" href="fdcandev__stm32_8h.html#aafc4107c2f5137d8c16e044ed7766359">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ESI
+: <a class="el" href="fdcandev__stm32_8h.html#adc0d5186dbbabb44c27ac7d54895b745">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ESI_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a65aa1a382bdc473ba8ac39cdc02c7141">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ESI_PASSIVE_FLAG
+: <a class="el" href="fdcandev__stm32_8h.html#a03018653ac7a6ba8f5ad07bd6c866021">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ESI_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a7a59b560bf337597ea056fe4be7b417a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ESI_RECESSIVE
+: <a class="el" href="fdcandev__stm32_8h.html#a276d308b4cbbf54a97feeb512c5b191f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_ID_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#ab75826461a604d07e87084903c76ec4a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_RTR
+: <a class="el" href="fdcandev__stm32_8h.html#aaf810e3fb7631949e85b1f9e82806632">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_RTR_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a1695ee242ccffec0d31012b05f03e9f5">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_RTR_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#ac4a395c0ce761df594d735839a19e50a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_XTD
+: <a class="el" href="fdcandev__stm32_8h.html#a0c703f0a024ead552433c49df19fe711">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_XTD_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#ae127a07e7ee8122a55fbb187f68320e0">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T0_XTD_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a57a3fe99e7a2d679fbdcb14170719d13">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_BRS
+: <a class="el" href="fdcandev__stm32_8h.html#afdd4e789ee358b879c4917ce8797c9eb">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_BRS_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a4d7d8fe8ae28e57807c5ae7e91a1043a">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_BRS_OFF
+: <a class="el" href="fdcandev__stm32_8h.html#a239b002063a13a779453a29e78843953">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_BRS_ON
+: <a class="el" href="fdcandev__stm32_8h.html#a72f7d3e9c3bab67979a90dedf30adea0">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_BRS_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a776d289b5d30f0ab8bdec767aba67e10">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_DLC
+: <a class="el" href="fdcandev__stm32_8h.html#ae4a9106268b87062a7e59fe3a87c12ab">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_DLC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#acde0230cd928604a6eac667054c56b77">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_DLC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a65a5f41b45139941452206d852f961b4">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_EFC
+: <a class="el" href="fdcandev__stm32_8h.html#ae4a9e98da7fa8c0af45dd642ef0e56fc">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_EFC_DISABLE
+: <a class="el" href="fdcandev__stm32_8h.html#a1f843ef3fc51a46c78ba816019d98349">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_EFC_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a7e4cf17cc50e946bb5dbf9741f4f3e9b">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_EFC_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#aa522bd5640a78fb7935ab020ddeb01c1">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_EFC_STORE_EVENTS
+: <a class="el" href="fdcandev__stm32_8h.html#a099dbbbbac7d4f6307894bb7edd93d00">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_FDF
+: <a class="el" href="fdcandev__stm32_8h.html#ae5edc0ec0a41ceafca8b23074ecd8940">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_FDF_CLASSIC
+: <a class="el" href="fdcandev__stm32_8h.html#a8340563d28e583d8c221db01b5162b0d">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_FDF_FD
+: <a class="el" href="fdcandev__stm32_8h.html#ad8ddc764b8e1e66cfb572b20037643de">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_FDF_Msk
+: <a class="el" href="fdcandev__stm32_8h.html#a22b32dea27a8a57b5d5054e6ab0d06b0">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_SRAM_TXBUFFER_T1_FDF_Pos
+: <a class="el" href="fdcandev__stm32_8h.html#a49630e7288fa69e34eaace19e1b6d47f">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_STM32_NB_EXT_FILTER
+: <a class="el" href="fdcandev__stm32_8h.html#a3acbc689fcabb998f6e26ab401fdd5d6">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_STM32_NB_FILTER
+: <a class="el" href="fdcandev__stm32_8h.html#abea9a9e21a1afaac3d8ef9c7ca4ab3c5">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_STM32_NB_STD_FILTER
+: <a class="el" href="fdcandev__stm32_8h.html#a0e25b4abefc3fb5baaa573ffd6c5b5e4">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_STM32_RX_MAILBOXES
+: <a class="el" href="fdcandev__stm32_8h.html#a05c32c6a85bdefca9e25868946fbae9d">fdcandev_stm32.h</a>
+</li>
+<li>FDCAN_STM32_TX_MAILBOXES
+: <a class="el" href="fdcandev__stm32_8h.html#a33b0b7f58f41e2165f8c913b54769e84">fdcandev_stm32.h</a>
+</li>
+<li>FDCANDEV_STM32_CHAN_NUMOF
+: <a class="el" href="fdcandev__stm32_8h.html#a434ab6986daa99d119e6a67f3543eafe">fdcandev_stm32.h</a>
+</li>
+<li>FDCANDEV_STM32_DEFAULT_BITRATE
+: <a class="el" href="fdcandev__stm32_8h.html#a336421f6b2cc93a9e4b057e076408baf">fdcandev_stm32.h</a>
+</li>
+<li>FDCANDEV_STM32_DEFAULT_FD_DATA_BITRATE
+: <a class="el" href="fdcandev__stm32_8h.html#afec4c18c4a76fcde75ac39c3a1eba633">fdcandev_stm32.h</a>
+</li>
+<li>FDCANDEV_STM32_DEFAULT_SPT
+: <a class="el" href="fdcandev__stm32_8h.html#a782ca4b97a4c215fc98f745ae4d82d4a">fdcandev_stm32.h</a>
+</li>
+<li>FIB_FLAG_NET_PREFIX_MASK
+: <a class="el" href="group__net__fib.html#gac1e07b8040a5c63c56d3cadf8ce61a59">fib.h</a>
+</li>
+<li>FIB_FLAG_NET_PREFIX_SHIFT
+: <a class="el" href="group__net__fib.html#gac84f4aaf5c9fd39db14202f90e1c24e3">fib.h</a>
+</li>
+<li>FIB_FLAG_RPL_ROUTE
+: <a class="el" href="group__net__fib.html#ga7df5150547e4bcc617da744ce566de2c">fib.h</a>
+</li>
+<li>FIB_LIFETIME_NO_EXPIRE
+: <a class="el" href="group__net__fib.html#gaf139d9341f52cb6805a6f90a00b196a7">fib.h</a>
+</li>
+<li>FIB_MAX_REGISTERED_RP
+: <a class="el" href="table_8h.html#a7e93177681e0ea2b2415f688c4c297a8">table.h</a>
+</li>
+<li>FIB_MSG_RP_SIGNAL_DESTINATION_USED
+: <a class="el" href="group__net__fib.html#gaafa04e3de0c61273f1760c90f20a9cb3">fib.h</a>
+</li>
+<li>FIB_MSG_RP_SIGNAL_SOURCE_ROUTE_CREATED
+: <a class="el" href="group__net__fib.html#ga132387be1b9e788816ea2531e7876951">fib.h</a>
+</li>
+<li>FIB_MSG_RP_SIGNAL_UNREACHABLE_DESTINATION
+: <a class="el" href="group__net__fib.html#ga3e5b41b796f4b6cace8167ce23656158">fib.h</a>
+</li>
+<li>FIB_TABLE_TYPE_SH
+: <a class="el" href="table_8h.html#ad6a0d17b22af0f870e3747866a13babc">table.h</a>
+</li>
+<li>FIB_TABLE_TYPE_SR
+: <a class="el" href="table_8h.html#ab76752a5daa5283bfc07849119103ba2">table.h</a>
+</li>
+<li>FIO_PORTS
+: <a class="el" href="lpc23xx_2include_2periph__cpu_8h.html#afe4b3a98cfc44098b283ff3e9537cd64">periph_cpu.h</a>
+</li>
+<li>FIQ_STACKSIZE
+: <a class="el" href="arm7tdmi__gba_2include_2cpu__conf_8h.html#acffcd0a8ef8f4ece45ef57fa89c1f8b6">cpu_conf.h</a>
+</li>
+<li>FLASH
+: <a class="el" href="cc26xx__cc13xx__vims_8h.html#a844ea28ba1e0a5a0e497f16b61ea306b">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>FLASH_ATTR
+: <a class="el" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">flash_utils.h</a>
+</li>
+<li>FLASH_BASE
+: <a class="el" href="group__cpu__specific__Peripheral__memory__map.html#ga23a9099a5f8fc9c6e253c0eecb2be8db">cc2538.h</a>
+, <a class="el" href="group__cpu__specific__peripheral__memory__map.html#ga23a9099a5f8fc9c6e253c0eecb2be8db">cc26xx_cc13xx.h</a>
+</li>
+<li>FLASH_BASEADDR
+: <a class="el" href="group__cpu__specific__peripheral__memory__map.html#gaf6863e7094aca292453684fa2af16686">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>FLASH_CFG_DIS_STANDBY
+: <a class="el" href="cc26xx__cc13xx__vims_8h.html#aa8d899e4b6e119c54ff59133e8a013a0">cc26xx_cc13xx_vims.h</a>
+</li>
+<li>FLASH_CTRL_DIECFG0
+: <a class="el" href="cc2538_8h.html#a24b5f8b43cf9c0154f2bbd4df5434a89">cc2538.h</a>
+</li>
+<li>FLASH_CTRL_DIECFG1
+: <a class="el" href="cc2538_8h.html#a37a57fbb1d043079ea462a5c0f6cf0bc">cc2538.h</a>
+</li>
+<li>FLASH_CTRL_DIECFG2
+: <a class="el" href="cc2538_8h.html#a8c91da929c79747b65707ac6194d32b5">cc2538.h</a>
+</li>
+<li>FLASH_CTRL_FADDR
+: <a class="el" href="cc2538_8h.html#aefc8efab5a191d86d0b639dcfc7144aa">cc2538.h</a>
+</li>
+<li>FLASH_CTRL_FCTL
+: <a class="el" href="cc2538_8h.html#a25f332b82b6a35499e753608c316d780">cc2538.h</a>
+</li>
+<li>FLASH_CTRL_FWDATA
+: <a class="el" href="cc2538_8h.html#a9f112e1d2d47b3d32955788ef75e33c5">cc2538.h</a>
+</li>
+<li>FLASH_PUTS
+: <a class="el" href="group__sys__flash__utils.html#ga39a1a2e42dd44ab7f64836183f52668d">flash_utils.h</a>
+</li>
+<li>FLASH_USER_PAGE_AUX_SIZE
+: <a class="el" href="sam0__common_2include_2periph__cpu__common_8h.html#a7174cbdd1370b899226371e1a41eac6c">periph_cpu_common.h</a>
+</li>
+<li>FLASH_WRITABLE_INIT
+: <a class="el" href="group__drivers__periph__flashpage.html#ga951d0ea82c1cd088012f04eaa4190fa8">flashpage.h</a>
+</li>
+<li>FLASHPAGE_ERASE_STATE
+: <a class="el" href="group__drivers__periph__flashpage.html#gaad528f0fc287d8630f38906843b45eea">flashpage.h</a>
+</li>
+<li>FLASHPAGE_NUMOF
+: <a class="el" href="group__cpu__esp32__conf.html#ga7c969ee021b57668fd1965bbe9ca1a0a">cpu_conf.h</a>
+</li>
+<li>FLASHPAGE_PAGES_PER_ROW
+: <a class="el" href="sam0__common_2include_2cpu__conf_8h.html#a4dba5347d1f3957e95d1e91f05a24911">cpu_conf.h</a>
+</li>
+<li>FLASHPAGE_SIZE
+: <a class="el" href="native_2include_2cpu__conf_8h.html#afce96cb577e50c76434ba92363ca20e8">cpu_conf.h</a>
+</li>
+<li>FLASHPAGE_WRITE_BLOCK_ALIGNMENT
+: <a class="el" href="group__drivers__periph__flashpage.html#ga72c89204ecbd5efc8d52d3bd73003a28">flashpage.h</a>
+, <a class="el" href="group__cpu__esp32__conf.html#ga72c89204ecbd5efc8d52d3bd73003a28">cpu_conf.h</a>
+</li>
+<li>FLASHPAGE_WRITE_BLOCK_SIZE
+: <a class="el" href="group__cpu__esp32__conf.html#ga16753047dc8ea05da311dd4e5e056628">cpu_conf.h</a>
+, <a class="el" href="group__drivers__periph__flashpage.html#ga16753047dc8ea05da311dd4e5e056628">flashpage.h</a>
+, <a class="el" href="group__cpu__nrf52.html#ga16753047dc8ea05da311dd4e5e056628">cpu_conf.h</a>
+</li>
+<li>FMC_ADDR_PIN_NUMOF
+: <a class="el" href="group__cpu__stm32__periph__fmc.html#ga4c376973f7069198f5f31c4593383597">cpu_fmc.h</a>
+</li>
+<li>FMC_BANK_CONFIG
+: <a class="el" href="group__cpu__stm32__periph__fmc.html#gaed7a824162ea5775855d1fde267aaeed">cpu_fmc.h</a>
+</li>
+<li>FMC_BANK_NUMOF
+: <a class="el" href="boards_2stm32f723e-disco_2include_2periph__conf_8h.html#a2f63d116fde140ff8032d5e60928856a">periph_conf.h</a>
+</li>
+<li>FMC_DATA_PIN_NUMOF
+: <a class="el" href="group__cpu__stm32__periph__fmc.html#ga01f9230e11a78288f576ae2e9d92f5d4">cpu_fmc.h</a>
+</li>
+<li>FMC_RAM_ADDR
+: <a class="el" href="group__cpu__stm32__periph__fmc.html#gaa0c9f4159e5629c9ed5c62118a4b110c">cpu_fmc.h</a>
+</li>
+<li>FMC_RAM_LEN
+: <a class="el" href="group__cpu__stm32__periph__fmc.html#ga237ddf955cf211da2030064d96f80c0e">cpu_fmc.h</a>
+</li>
+<li>FMT_USE_MEMMOVE
+: <a class="el" href="group__sys__fmt.html#gab64c1cb0f7fcbe698b619a89703043e5">fmt.h</a>
+</li>
+<li>FRDM_NOR_SPI_CS
+: <a class="el" href="frdm-kw41z_2include_2board_8h.html#a11eed08dec63d26af2f20670ca710fa1">board.h</a>
+</li>
+<li>FS_NATIVE_DIR
+: <a class="el" href="native_2include_2board_8h.html#acbd4409d933fe12f5cb1c50b9392cd79">board.h</a>
+</li>
+<li>FSK_BT_05
+: <a class="el" href="at86rf215__registers_8h.html#a4be90914f9b40f5d6fe392c086da6761">at86rf215_registers.h</a>
+</li>
+<li>FSK_CHANNEL_SPACING_200K
+: <a class="el" href="at86rf215__registers_8h.html#af5faad18542ab48db78f7790bb87346e">at86rf215_registers.h</a>
+</li>
+<li>FSK_MIDX_3_BY_8
+: <a class="el" href="at86rf215__registers_8h.html#af94bb8152d320b23b3de23ec95f06fcd">at86rf215_registers.h</a>
+</li>
+<li>FSK_MIDXS_SCALE_7_BY_8
+: <a class="el" href="at86rf215__registers_8h.html#a31308d87005f83d80d572a1f365246a3">at86rf215_registers.h</a>
+</li>
+<li>FSK_MORD_2SFK
+: <a class="el" href="at86rf215__registers_8h.html#a0b5ce79752ed5f9c0ed9c5fcf98deae5">at86rf215_registers.h</a>
+</li>
+<li>FSK_MORD_4SFK
+: <a class="el" href="at86rf215__registers_8h.html#a6438706f2a1fd9576b053be008c4e914">at86rf215_registers.h</a>
+</li>
+<li>FSK_SRATE_50K
+: <a class="el" href="at86rf215__registers_8h.html#ab487c09ccad975070921d1b162715b99">at86rf215_registers.h</a>
+</li>
+<li>FSKC3_PDT
+: <a class="el" href="at86rf215__registers_8h.html#a97f3e85c9f59e25daead77a76b546d13">at86rf215_registers.h</a>
+</li>
+<li>FSKC3_SFDT
+: <a class="el" href="at86rf215__registers_8h.html#ac6607f6d9065044b5e6a65bbdc28049d">at86rf215_registers.h</a>
+</li>
+<li>FSPI
+: <a class="el" href="esp32_2include_2periph__cpu_8h.html#a90e84d581aabaf4e2ed1683e60c8bb15">periph_cpu.h</a>
+</li>
+<li>FT5X06_PARAM_I2C_DEV
+: <a class="el" href="esp32s3-wt32-sc01-plus_2include_2board_8h.html#a340c49d0bf1f9ccd677fc9f32ac8858a">board.h</a>
+</li>
+<li>FT5X06_PARAM_INT_PIN
+: <a class="el" href="stm32f723e-disco_2include_2board_8h.html#af282933ce74b3beb2a5c4b2f07c1195c">board.h</a>
+</li>
+<li>FT5X06_PARAM_RST_PIN
+: <a class="el" href="esp32s3-wt32-sc01-plus_2include_2board_8h.html#acba0084e2964343d0ae07b9ab370f13d">board.h</a>
+</li>
+<li>FT5X06_PARAM_SCREEN_IDS
+: <a class="el" href="ft5x06__params_8h.html#a15aa8461998829c117e1716842bf759c">ft5x06_params.h</a>
+</li>
+<li>FT5X06_PARAM_TYPE
+: <a class="el" href="esp32s3-wt32-sc01-plus_2include_2board_8h.html#aeceeba019d0f14c5f9ce0deaf8c1c5b4">board.h</a>
+</li>
+<li>FT5X06_PARAM_XMAX
+: <a class="el" href="stm32l496g-disco_2include_2board_8h.html#a264dd68b385a1c42f8538a890e5626d1">board.h</a>
+</li>
+<li>FT5X06_PARAM_XYCONV
+: <a class="el" href="stm32f723e-disco_2include_2board_8h.html#a1a0e0b6cbad31771774cf5a1cde2442f">board.h</a>
+</li>
+<li>FT5X06_PARAM_YMAX
+: <a class="el" href="stm32l496g-disco_2include_2board_8h.html#abf3ac6831913d0797924a9756481ddf5">board.h</a>
+</li>
+<li>FT5X06_TOUCHES_COUNT_MAX
+: <a class="el" href="ft5x06__constants_8h.html#ade64b337f20f34ecbb91f3b64645c783">ft5x06_constants.h</a>
+</li>
+<li>FT5X06_VENDOR_ID_1
+: <a class="el" href="ft5x06__constants_8h.html#aa613480c370a9bec23b646009d40eef3">ft5x06_constants.h</a>
+</li>
+<li>FT5X06_VENDOR_ID_2
+: <a class="el" href="ft5x06__constants_8h.html#a226e1f59c60fd23dcda22428c6f5694a">ft5x06_constants.h</a>
+</li>
+<li>FT5X06_VENDOR_ID_3
+: <a class="el" href="ft5x06__constants_8h.html#a04d8cb29b12b64ffec9ab25274567a18">ft5x06_constants.h</a>
+</li>
+<li>FT6XX6_TOUCHES_COUNT_MAX
+: <a class="el" href="ft5x06__constants_8h.html#a80c7de5ada155e6a077468dcbb864820">ft5x06_constants.h</a>
+</li>
+<li>FXOS8700_PARAM_ACC_RANGE
+: <a class="el" href="fxos8700__params_8h.html#a1f01a86a6588b6a40515a8fea43828f4">fxos8700_params.h</a>
+</li>
+<li>FXOS8700_PARAM_ADDR
+: <a class="el" href="fxos8700__params_8h.html#a0585e701ae926217a4957fc71e4bbd2d">fxos8700_params.h</a>
+</li>
+<li>FXOS8700_PARAM_I2C
+: <a class="el" href="fxos8700__params_8h.html#a15834250e1a56a2f93815eb7046e6a04">fxos8700_params.h</a>
+</li>
+<li>FXOS8700_PARAM_RENEW_INTERVAL
+: <a class="el" href="fxos8700__params_8h.html#ae3c16e165bed9232412efca4e31cd5ca">fxos8700_params.h</a>
+</li>
+<li>FXOS8700_PARAMS
+: <a class="el" href="fxos8700__params_8h.html#a243a4de6e47170fb8c3f75f5d4f05337">fxos8700_params.h</a>
+</li>
+<li>FXOS8700_SAUL_INFO
+: <a class="el" href="fxos8700__params_8h.html#a68461119a1839e6b8b21d4c772f0c73f">fxos8700_params.h</a>
+</li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:39 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

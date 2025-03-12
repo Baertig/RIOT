@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/nimble/rpble/include/nimble_rpble.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nimble__rpble_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">nimble_rpble.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="nimble__rpble_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2019-2021 Freie Universität Berlin</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#ifndef NIMBLE_RPBLE_H</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#define NIMBLE_RPBLE_H</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="nimble__netif_8h.html">nimble_netif.h</a>&quot;</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html">   97</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a146373458f194670c0b6e5202d22a168">   98</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a146373458f194670c0b6e5202d22a168">scan_itvl_ms</a>;      </div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a8ab783895b4523c583d093253fe10f33">  100</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a8ab783895b4523c583d093253fe10f33">scan_win_ms</a>;       </div><div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a537224490d7031a2b79ccc7d71d20530">  102</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a537224490d7031a2b79ccc7d71d20530">adv_itvl_ms</a>;       </div><div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a47a683130d13a0eb95eeecef199fb70c">  104</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a47a683130d13a0eb95eeecef199fb70c">conn_scan_itvl_ms</a>; </div><div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a98e7252649203f8b65fd825b35fafbb4">  106</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a98e7252649203f8b65fd825b35fafbb4">conn_scan_win_ms</a>;  </div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a2378f9792897fbc7f65930bc5f707402">  108</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a2378f9792897fbc7f65930bc5f707402">conn_scan_to_ms</a>;   </div><div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a7814209040c4a6773e32908aba12f246">  109</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a7814209040c4a6773e32908aba12f246">conn_itvl_min_ms</a>;  </div><div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a7064290308d1a1db0a8be719dc0207de">  111</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a7064290308d1a1db0a8be719dc0207de">conn_itvl_max_ms</a>;  </div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a08a59d39a2d2667c7c79214c105c4374">  113</a></span>&#160;    uint16_t <a class="code" href="structnimble__rpble__cfg__t.html#a08a59d39a2d2667c7c79214c105c4374">conn_latency</a>;      </div><div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a8922c42d4a3ab7acda439574214166d5">  114</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a8922c42d4a3ab7acda439574214166d5">conn_super_to_ms</a>;  </div><div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#afd397db18dcaabc006ba9b2a00f25c06">  116</a></span>&#160;    <a class="code" href="group__pkg__nimble__contrib.html#ga9eaf9a1a15ec72187da22a550f368416">nimble_phy_t</a> <a class="code" href="structnimble__rpble__cfg__t.html#afd397db18dcaabc006ba9b2a00f25c06">phy_mode</a>;      </div><div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a202de5a68d5fdbddb50531f6ee54459a">  117</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a202de5a68d5fdbddb50531f6ee54459a">eval_itvl_min_ms</a>;  </div><div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structnimble__rpble__cfg__t.html#a682b222cbc4c74e7428c5aa700f06933">  119</a></span>&#160;    uint32_t <a class="code" href="structnimble__rpble__cfg__t.html#a682b222cbc4c74e7428c5aa700f06933">eval_itvl_max_ms</a>;  </div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;} <a class="code" href="structnimble__rpble__cfg__t.html">nimble_rpble_cfg_t</a>;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div><div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html">  126</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html#af92415a7264ff2ec59b7eb836cce7779">  127</a></span>&#160;    uint8_t <a class="code" href="structnimble__rpble__ctx__t.html#af92415a7264ff2ec59b7eb836cce7779">inst_id</a>;            </div><div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html#a6454a92648bb156655784a6a5812c6fd">  128</a></span>&#160;    uint8_t dodag_id[16];       </div><div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html#af5b85780e2677062e3282344690674ce">  129</a></span>&#160;    uint8_t <a class="code" href="structnimble__rpble__ctx__t.html#af5b85780e2677062e3282344690674ce">version</a>;            </div><div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html#aad68653ff1f11e25142b3a419f45d297">  130</a></span>&#160;    uint8_t <a class="code" href="structnimble__rpble__ctx__t.html#aad68653ff1f11e25142b3a419f45d297">role</a>;               </div><div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="structnimble__rpble__ctx__t.html#a5a1ad576f39eef9878ed5cc392fc4314">  131</a></span>&#160;    uint16_t <a class="code" href="structnimble__rpble__ctx__t.html#a5a1ad576f39eef9878ed5cc392fc4314">rank</a>;              </div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;} <a class="code" href="structnimble__rpble__ctx__t.html">nimble_rpble_ctx_t</a>;</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pkg__nimble__rpble.html#ga214c1ef76f1a96dc5a38cdc4f8cdf12e">nimble_rpble_init</a>(<span class="keyword">const</span> <a class="code" href="structnimble__rpble__cfg__t.html">nimble_rpble_cfg_t</a> *cfg);</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pkg__nimble__rpble.html#gab3316c8f8ba5cda852ef938837ee9f07">nimble_rpble_param_update</a>(<span class="keyword">const</span> <a class="code" href="structnimble__rpble__cfg__t.html">nimble_rpble_cfg_t</a> *cfg);</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pkg__nimble__rpble.html#gadc1f0ebd0db249bac732c75178014091">nimble_rpble_eventcb</a>(<a class="code" href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a> cb);</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__pkg__nimble__rpble.html#ga6660af9989321cefe476ac987f84b282">nimble_rpble_update</a>(<span class="keyword">const</span> <a class="code" href="structnimble__rpble__ctx__t.html">nimble_rpble_ctx_t</a> *ctx);</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NIMBLE_RPBLE_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div><div class="ttc" id="structnimble__rpble__cfg__t_html_a8922c42d4a3ab7acda439574214166d5"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a8922c42d4a3ab7acda439574214166d5">nimble_rpble_cfg_t::conn_super_to_ms</a></div><div class="ttdeci">uint32_t conn_super_to_ms</div><div class="ttdoc">used supervision timeout for parent connection, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00114">nimble_rpble.h:114</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_afd397db18dcaabc006ba9b2a00f25c06"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#afd397db18dcaabc006ba9b2a00f25c06">nimble_rpble_cfg_t::phy_mode</a></div><div class="ttdeci">nimble_phy_t phy_mode</div><div class="ttdoc">BLE PHY mode to use. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00116">nimble_rpble.h:116</a></div></div>
+<div class="ttc" id="group__pkg__nimble__rpble_html_ga6660af9989321cefe476ac987f84b282"><div class="ttname"><a href="group__pkg__nimble__rpble.html#ga6660af9989321cefe476ac987f84b282">nimble_rpble_update</a></div><div class="ttdeci">int nimble_rpble_update(const nimble_rpble_ctx_t *ctx)</div><div class="ttdoc">Update the current RPL context. </div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a7064290308d1a1db0a8be719dc0207de"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a7064290308d1a1db0a8be719dc0207de">nimble_rpble_cfg_t::conn_itvl_max_ms</a></div><div class="ttdeci">uint32_t conn_itvl_max_ms</div><div class="ttdoc">upper bound of connection interval range, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00111">nimble_rpble.h:111</a></div></div>
+<div class="ttc" id="structnimble__rpble__ctx__t_html_af5b85780e2677062e3282344690674ce"><div class="ttname"><a href="structnimble__rpble__ctx__t.html#af5b85780e2677062e3282344690674ce">nimble_rpble_ctx_t::version</a></div><div class="ttdeci">uint8_t version</div><div class="ttdoc">DODAG version. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00129">nimble_rpble.h:129</a></div></div>
+<div class="ttc" id="group__pkg__nimble__rpble_html_gadc1f0ebd0db249bac732c75178014091"><div class="ttname"><a href="group__pkg__nimble__rpble.html#gadc1f0ebd0db249bac732c75178014091">nimble_rpble_eventcb</a></div><div class="ttdeci">int nimble_rpble_eventcb(nimble_netif_eventcb_t cb)</div><div class="ttdoc">Register a callback that is called on BLE events. </div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a682b222cbc4c74e7428c5aa700f06933"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a682b222cbc4c74e7428c5aa700f06933">nimble_rpble_cfg_t::eval_itvl_max_ms</a></div><div class="ttdeci">uint32_t eval_itvl_max_ms</div><div class="ttdoc">amount of time a node searches for potential parents, upper bound in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00119">nimble_rpble.h:119</a></div></div>
+<div class="ttc" id="group__pkg__nimble__contrib_html_ga9eaf9a1a15ec72187da22a550f368416"><div class="ttname"><a href="group__pkg__nimble__contrib.html#ga9eaf9a1a15ec72187da22a550f368416">nimble_phy_t</a></div><div class="ttdeci">nimble_phy_t</div><div class="ttdoc">BLE PHY modes. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__riot_8h_source.html#l00075">nimble_riot.h:75</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a08a59d39a2d2667c7c79214c105c4374"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a08a59d39a2d2667c7c79214c105c4374">nimble_rpble_cfg_t::conn_latency</a></div><div class="ttdeci">uint16_t conn_latency</div><div class="ttdoc">used slave latency for parent connection </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00113">nimble_rpble.h:113</a></div></div>
+<div class="ttc" id="structnimble__rpble__ctx__t_html"><div class="ttname"><a href="structnimble__rpble__ctx__t.html">nimble_rpble_ctx_t</a></div><div class="ttdoc">RPL DODAG information. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00126">nimble_rpble.h:126</a></div></div>
+<div class="ttc" id="structnimble__rpble__ctx__t_html_af92415a7264ff2ec59b7eb836cce7779"><div class="ttname"><a href="structnimble__rpble__ctx__t.html#af92415a7264ff2ec59b7eb836cce7779">nimble_rpble_ctx_t::inst_id</a></div><div class="ttdeci">uint8_t inst_id</div><div class="ttdoc">instance ID </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00127">nimble_rpble.h:127</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a98e7252649203f8b65fd825b35fafbb4"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a98e7252649203f8b65fd825b35fafbb4">nimble_rpble_cfg_t::conn_scan_win_ms</a></div><div class="ttdeci">uint32_t conn_scan_win_ms</div><div class="ttdoc">scan window when connecting to parent, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00106">nimble_rpble.h:106</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a537224490d7031a2b79ccc7d71d20530"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a537224490d7031a2b79ccc7d71d20530">nimble_rpble_cfg_t::adv_itvl_ms</a></div><div class="ttdeci">uint32_t adv_itvl_ms</div><div class="ttdoc">advertising interval used when advertising RPL context to child nodes, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00102">nimble_rpble.h:102</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a47a683130d13a0eb95eeecef199fb70c"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a47a683130d13a0eb95eeecef199fb70c">nimble_rpble_cfg_t::conn_scan_itvl_ms</a></div><div class="ttdeci">uint32_t conn_scan_itvl_ms</div><div class="ttdoc">scan interval when connecting to parent, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00104">nimble_rpble.h:104</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a146373458f194670c0b6e5202d22a168"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a146373458f194670c0b6e5202d22a168">nimble_rpble_cfg_t::scan_itvl_ms</a></div><div class="ttdeci">uint32_t scan_itvl_ms</div><div class="ttdoc">scan interval when scanning for parents, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00098">nimble_rpble.h:98</a></div></div>
+<div class="ttc" id="structnimble__rpble__ctx__t_html_a5a1ad576f39eef9878ed5cc392fc4314"><div class="ttname"><a href="structnimble__rpble__ctx__t.html#a5a1ad576f39eef9878ed5cc392fc4314">nimble_rpble_ctx_t::rank</a></div><div class="ttdeci">uint16_t rank</div><div class="ttdoc">the node&amp;#39;s rank in the DODAG </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00131">nimble_rpble.h:131</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a2378f9792897fbc7f65930bc5f707402"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a2378f9792897fbc7f65930bc5f707402">nimble_rpble_cfg_t::conn_scan_to_ms</a></div><div class="ttdeci">uint32_t conn_scan_to_ms</div><div class="ttdoc">timeout when connecting to parent, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00108">nimble_rpble.h:108</a></div></div>
+<div class="ttc" id="structnimble__rpble__ctx__t_html_aad68653ff1f11e25142b3a419f45d297"><div class="ttname"><a href="structnimble__rpble__ctx__t.html#aad68653ff1f11e25142b3a419f45d297">nimble_rpble_ctx_t::role</a></div><div class="ttdeci">uint8_t role</div><div class="ttdoc">RPL role of the node. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00130">nimble_rpble.h:130</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a7814209040c4a6773e32908aba12f246"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a7814209040c4a6773e32908aba12f246">nimble_rpble_cfg_t::conn_itvl_min_ms</a></div><div class="ttdeci">uint32_t conn_itvl_min_ms</div><div class="ttdoc">lower bound of connection interval range, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00109">nimble_rpble.h:109</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a8ab783895b4523c583d093253fe10f33"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a8ab783895b4523c583d093253fe10f33">nimble_rpble_cfg_t::scan_win_ms</a></div><div class="ttdeci">uint32_t scan_win_ms</div><div class="ttdoc">scan window when scanning for parents, in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00100">nimble_rpble.h:100</a></div></div>
+<div class="ttc" id="group__pkg__nimble__rpble_html_gab3316c8f8ba5cda852ef938837ee9f07"><div class="ttname"><a href="group__pkg__nimble__rpble.html#gab3316c8f8ba5cda852ef938837ee9f07">nimble_rpble_param_update</a></div><div class="ttdeci">int nimble_rpble_param_update(const nimble_rpble_cfg_t *cfg)</div><div class="ttdoc">Update the used timing parameters. </div></div>
+<div class="ttc" id="group__pkg__nimble__rpble_html_ga214c1ef76f1a96dc5a38cdc4f8cdf12e"><div class="ttname"><a href="group__pkg__nimble__rpble.html#ga214c1ef76f1a96dc5a38cdc4f8cdf12e">nimble_rpble_init</a></div><div class="ttdeci">int nimble_rpble_init(const nimble_rpble_cfg_t *cfg)</div><div class="ttdoc">Initialize the nimble_rpble module with the given parameters. </div></div>
+<div class="ttc" id="nimble__netif_8h_html"><div class="ttname"><a href="nimble__netif_8h.html">nimble_netif.h</a></div><div class="ttdoc">GNRC netif implementation for NimBLE. </div></div>
+<div class="ttc" id="group__pkg__nimble__netif_html_gab1da1302e4fc013bf5c6d65029da922b"><div class="ttname"><a href="group__pkg__nimble__netif.html#gab1da1302e4fc013bf5c6d65029da922b">nimble_netif_eventcb_t</a></div><div class="ttdeci">void(* nimble_netif_eventcb_t)(int handle, nimble_netif_event_t event, const uint8_t *addr)</div><div class="ttdoc">Event callback signature used for asynchronous event signaling. </div><div class="ttdef"><b>Definition:</b> <a href="nimble__netif_8h_source.html#l00215">nimble_netif.h:215</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html"><div class="ttname"><a href="structnimble__rpble__cfg__t.html">nimble_rpble_cfg_t</a></div><div class="ttdoc">rpble configuration parameters </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00097">nimble_rpble.h:97</a></div></div>
+<div class="ttc" id="structnimble__rpble__cfg__t_html_a202de5a68d5fdbddb50531f6ee54459a"><div class="ttname"><a href="structnimble__rpble__cfg__t.html#a202de5a68d5fdbddb50531f6ee54459a">nimble_rpble_cfg_t::eval_itvl_min_ms</a></div><div class="ttdeci">uint32_t eval_itvl_min_ms</div><div class="ttdoc">amount of time a node searches for potential parents, lower bound in ms </div><div class="ttdef"><b>Definition:</b> <a href="nimble__rpble_8h_source.html#l00117">nimble_rpble.h:117</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

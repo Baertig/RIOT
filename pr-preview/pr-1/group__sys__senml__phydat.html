@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SenML Phydat</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__senml__phydat.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">SenML Phydat<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__senml.html">SenML</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Functionality for converting from <a class="el" href="group__sys__phydat.html">Phydat</a> to <a class="el" href="group__sys__senml.html">SenML</a>.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Functionality for converting from <a class="el" href="group__sys__phydat.html">Phydat</a> to <a class="el" href="group__sys__senml.html">SenML</a>. </p>
+<p>The <code>senml_phydat</code> module contains various functions for converting <a class="el" href="group__sys__phydat.html">Phydat</a> values to <a class="el" href="group__sys__senml.html">SenML</a>. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:senml_2phydat_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="senml_2phydat_8h.html">phydat.h</a></td></tr>
+<tr class="memdesc:senml_2phydat_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functionality for converting from <a class="el" href="group__sys__phydat.html">Phydat</a> to <a class="el" href="group__sys__senml.html">SenML</a>. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga152223a1967e0e6561c2b3069c6fbac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__senml__phydat.html#ga152223a1967e0e6561c2b3069c6fbac8">phydat_to_senml_bool</a> (<a class="el" href="structsenml__bool__value__t.html">senml_bool_value_t</a> *senml, const <a class="el" href="structphydat__t.html">phydat_t</a> *phydat, const uint8_t dim)</td></tr>
+<tr class="memdesc:ga152223a1967e0e6561c2b3069c6fbac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SenML boolean value.  <a href="#ga152223a1967e0e6561c2b3069c6fbac8">More...</a><br /></td></tr>
+<tr class="separator:ga152223a1967e0e6561c2b3069c6fbac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05a87f7af450ecb3976692e279265cf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__senml__phydat.html#ga05a87f7af450ecb3976692e279265cf9">phydat_to_senml_float</a> (<a class="el" href="structsenml__value__t.html">senml_value_t</a> *senml, const <a class="el" href="structphydat__t.html">phydat_t</a> *phydat, const uint8_t dim)</td></tr>
+<tr class="memdesc:ga05a87f7af450ecb3976692e279265cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SenML float value.  <a href="#ga05a87f7af450ecb3976692e279265cf9">More...</a><br /></td></tr>
+<tr class="separator:ga05a87f7af450ecb3976692e279265cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c5cc82492dd71e2402a46917e548cb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__senml__phydat.html#ga8c5cc82492dd71e2402a46917e548cb8">phydat_to_senml_decimal</a> (<a class="el" href="structsenml__value__t.html">senml_value_t</a> *senml, const <a class="el" href="structphydat__t.html">phydat_t</a> *phydat, const uint8_t dim)</td></tr>
+<tr class="memdesc:ga8c5cc82492dd71e2402a46917e548cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SenML decimal fraction value.  <a href="#ga8c5cc82492dd71e2402a46917e548cb8">More...</a><br /></td></tr>
+<tr class="separator:ga8c5cc82492dd71e2402a46917e548cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga152223a1967e0e6561c2b3069c6fbac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga152223a1967e0e6561c2b3069c6fbac8">&#9670;&nbsp;</a></span>phydat_to_senml_bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phydat_to_senml_bool </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsenml__bool__value__t.html">senml_bool_value_t</a> *&#160;</td>
+          <td class="paramname"><em>senml</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structphydat__t.html">phydat_t</a> *&#160;</td>
+          <td class="paramname"><em>phydat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a SenML boolean value. </p>
+<p>Writes the value of the given <code>dim</code> of <code>phydat</code> as a boolean. <code>phydat</code> is assumed to be of <a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3ad0e919d3b5bd8bb4ebc46277fee1ff21">UNIT_BOOL</a>.</p>
+<dl class="section note"><dt>Note</dt><dd><code>phydat-&gt;scale</code> must be zero.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">senml</td><td>SenML value to store value in. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phydat</td><td>Phydat to convert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>Dimension of <code>phydat</code> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga8c5cc82492dd71e2402a46917e548cb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8c5cc82492dd71e2402a46917e548cb8">&#9670;&nbsp;</a></span>phydat_to_senml_decimal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phydat_to_senml_decimal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsenml__value__t.html">senml_value_t</a> *&#160;</td>
+          <td class="paramname"><em>senml</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structphydat__t.html">phydat_t</a> *&#160;</td>
+          <td class="paramname"><em>phydat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a SenML decimal fraction value. </p>
+<p>Writes the value of the given <code>dim</code> of <code>phydat</code> as a decimal value. The unit of <code>phydat</code> is converted using the following rules:</p>
+<ul>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3acfd55ac0e3ad7afed2cefa404762d9d6">UNIT_TIME</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5bad48fd939b01c3e56eba6c66455b63c27">SENML_UNIT_SECOND</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3af4da29227ed5262c7552a9675c68723f">UNIT_BAR</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5baf693a3ae1bd4afd70b2ed31296b3e996">SENML_UNIT_PASCAL</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3aa1efe8c3729965b914566289b9c43eda">UNIT_GPM3</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5ba7e170f039a61d71f6161ca9800149e9e">SENML_UNIT_KILOGRAM_PER_CUBIC_METER</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3a5b2c6585ce87e0ec2ad859b7e40ea9c4">UNIT_GAUSS</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5ba40a4e770ed534f3ac72e564471e849ca">SENML_UNIT_TESLA</a>.</li>
+<li>Compatible units are set to their SenML equivalent.</li>
+<li>Incompatible (or unknown) units are set to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5bab1043881d811b5a4920c0c1cc396657d">SENML_UNIT_NONE</a>.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">senml</td><td>SenML value to store value in. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phydat</td><td>Phydat to convert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>Dimension of <code>phydat</code> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga05a87f7af450ecb3976692e279265cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05a87f7af450ecb3976692e279265cf9">&#9670;&nbsp;</a></span>phydat_to_senml_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void phydat_to_senml_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structsenml__value__t.html">senml_value_t</a> *&#160;</td>
+          <td class="paramname"><em>senml</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structphydat__t.html">phydat_t</a> *&#160;</td>
+          <td class="paramname"><em>phydat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>dim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a SenML float value. </p>
+<p>Writes the value of the given <code>dim</code> of <code>phydat</code> as a float. The unit of <code>phydat</code> is converted using the following rules:</p>
+<ul>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3acfd55ac0e3ad7afed2cefa404762d9d6">UNIT_TIME</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5bad48fd939b01c3e56eba6c66455b63c27">SENML_UNIT_SECOND</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3ae7cfbcf25c19a69af4cf0835c42a57c9">UNIT_F</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5bac4990131913f3de863f40e265c26530f">SENML_UNIT_KELVIN</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3a034ac6e202e21cbd0af806042a6f5ad4">UNIT_G_FORCE</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5ba82e2a2a10f4d1ad23791f1927d4f5251">SENML_UNIT_METER_PER_SQUARE_SECOND</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3af4da29227ed5262c7552a9675c68723f">UNIT_BAR</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5baf693a3ae1bd4afd70b2ed31296b3e996">SENML_UNIT_PASCAL</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3aa1efe8c3729965b914566289b9c43eda">UNIT_GPM3</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5ba7e170f039a61d71f6161ca9800149e9e">SENML_UNIT_KILOGRAM_PER_CUBIC_METER</a>.</li>
+<li><a class="el" href="group__sys__phydat.html#ggaa8ef16fb18d16276bf296bcd06a37be3a5b2c6585ce87e0ec2ad859b7e40ea9c4">UNIT_GAUSS</a> is converted to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5ba40a4e770ed534f3ac72e564471e849ca">SENML_UNIT_TESLA</a>.</li>
+<li>Compatible units are set to their SenML equivalent.</li>
+<li>Incompatible (or unknown) units are set to <a class="el" href="group__sys__senml.html#ggac5597b7bfe72dfb7ea3d1d26f9290c5bab1043881d811b5a4920c0c1cc396657d">SENML_UNIT_NONE</a>.</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">senml</td><td>SenML value to store value in. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phydat</td><td>Phydat to convert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dim</td><td>Dimension of <code>phydat</code> to convert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

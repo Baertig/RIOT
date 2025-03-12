@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/gnrc/sixlowpan/frag/fb.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('fb_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">fb.h File Reference<div class="ingroups"><a class="el" href="group__net.html">Networking</a> &raquo; <a class="el" href="group__net__gnrc.html">Generic (GNRC) network stack</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan.html">6LoWPAN</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag.html">6LoWPAN Fragmentation</a> &raquo; <a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html">6LoWPAN fragmentation buffer</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Fragmentation buffer definitions.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Fragmentation buffer definitions. </p>
+<dl class="section author"><dt>Author</dt><dd>Martine Lenders <a href="#" onclick="location.href='mai'+'lto:'+'m.l'+'en'+'der'+'s@'+'fu-'+'be'+'rli'+'n.'+'de'; return false;">m.len<span style="display: none;">.nosp@m.</span>ders<span style="display: none;">.nosp@m.</span>@fu-b<span style="display: none;">.nosp@m.</span>erli<span style="display: none;">.nosp@m.</span>n.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="fb_8h_source.html">fb.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;msg.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="net_2gnrc_2pkt_8h_source.html">net/gnrc/pkt.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for fb.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="fb_8h__incl.svg" width="1040" height="500"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="fb_8h__dep__incl.svg" width="998" height="410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="fb_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structgnrc__sixlowpan__frag__fb__t.html">gnrc_sixlowpan_frag_fb_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">6LoWPAN fragmentation buffer entry.  <a href="structgnrc__sixlowpan__frag__fb__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga456710e60926a108588624e108ae2f6a"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#ga456710e60926a108588624e108ae2f6a">GNRC_SIXLOWPAN_FRAG_FB_SND_MSG</a>&#160;&#160;&#160;(0x0225)</td></tr>
+<tr class="memdesc:ga456710e60926a108588624e108ae2f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message type for passing one 6LoWPAN fragment down the network stack. <br /></td></tr>
+<tr class="separator:ga456710e60926a108588624e108ae2f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga89aef7843e4f629c7a2202aac8d82064"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#ga89aef7843e4f629c7a2202aac8d82064">gnrc_sixlowpan_frag_fb_reset</a> (void)</td></tr>
+<tr class="memdesc:ga89aef7843e4f629c7a2202aac8d82064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset fragmentation buffer.  <a href="group__net__gnrc__sixlowpan__frag__fb.html#ga89aef7843e4f629c7a2202aac8d82064">More...</a><br /></td></tr>
+<tr class="separator:ga89aef7843e4f629c7a2202aac8d82064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe23c4ef57db4fcee9839699afcf3035"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgnrc__sixlowpan__frag__fb__t.html">gnrc_sixlowpan_frag_fb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#gabe23c4ef57db4fcee9839699afcf3035">gnrc_sixlowpan_frag_fb_get</a> (void)</td></tr>
+<tr class="memdesc:gabe23c4ef57db4fcee9839699afcf3035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a fragmentation buffer entry.  <a href="group__net__gnrc__sixlowpan__frag__fb.html#gabe23c4ef57db4fcee9839699afcf3035">More...</a><br /></td></tr>
+<tr class="separator:gabe23c4ef57db4fcee9839699afcf3035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga62f4eddc066a73bfdf9b8a47b776cb76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structgnrc__sixlowpan__frag__fb__t.html">gnrc_sixlowpan_frag_fb_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#ga62f4eddc066a73bfdf9b8a47b776cb76">gnrc_sixlowpan_frag_fb_get_by_tag</a> (uint16_t tag)</td></tr>
+<tr class="memdesc:ga62f4eddc066a73bfdf9b8a47b776cb76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an existing fragmentation buffer entry by a given tag.  <a href="group__net__gnrc__sixlowpan__frag__fb.html#ga62f4eddc066a73bfdf9b8a47b776cb76">More...</a><br /></td></tr>
+<tr class="separator:ga62f4eddc066a73bfdf9b8a47b776cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaadda126d2229db3592a1db06846786a"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#gaaadda126d2229db3592a1db06846786a">gnrc_sixlowpan_frag_fb_next_tag</a> (void)</td></tr>
+<tr class="memdesc:gaaadda126d2229db3592a1db06846786a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a new datagram tag for sending.  <a href="group__net__gnrc__sixlowpan__frag__fb.html#gaaadda126d2229db3592a1db06846786a">More...</a><br /></td></tr>
+<tr class="separator:gaaadda126d2229db3592a1db06846786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74e9d638e364c2a51f6095c415be740c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__net__gnrc__sixlowpan__frag__fb.html#ga74e9d638e364c2a51f6095c415be740c">gnrc_sixlowpan_frag_fb_send</a> (<a class="el" href="structgnrc__sixlowpan__frag__fb__t.html">gnrc_sixlowpan_frag_fb_t</a> *fbuf)</td></tr>
+<tr class="memdesc:ga74e9d638e364c2a51f6095c415be740c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to pass a further fragment down the network stack.  <a href="group__net__gnrc__sixlowpan__frag__fb.html#ga74e9d638e364c2a51f6095c415be740c">More...</a><br /></td></tr>
+<tr class="separator:ga74e9d638e364c2a51f6095c415be740c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

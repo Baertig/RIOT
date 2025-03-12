@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/tmp00x/include/tmp00x_regs.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('tmp00x__regs_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">tmp00x_regs.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__tmp00x.html">TMP006/TMP007 Infrared Thermopile Sensor</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Register definitions for TMP00X (TMP006 and TMP007) devices.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Register definitions for TMP00X (TMP006 and TMP007) devices. </p>
+<dl class="section author"><dt>Author</dt><dd>Sebastian Meiling <a href="#" onclick="location.href='mai'+'lto:'+'s@m'+'ln'+'g.n'+'et'; return false;">s@mln<span style="display: none;">.nosp@m.</span>g.ne<span style="display: none;">.nosp@m.</span>t</a> </dd>
+<dd>
+Jannes Volkens <a href="#" onclick="location.href='mai'+'lto:'+'jan'+'ne'+'s.v'+'ol'+'ken'+'s@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">janne<span style="display: none;">.nosp@m.</span>s.vo<span style="display: none;">.nosp@m.</span>lkens<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="tmp00x__regs_8h_source.html">tmp00x_regs.h</a>.</p>
+</div>
+<p><a href="tmp00x__regs_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+TMP00x registers</h2></td></tr>
+<tr class="memitem:a62ba79aeac9c19a19eab70ec44ca609f"><td class="memItemLeft" align="right" valign="top"><a id="a62ba79aeac9c19a19eab70ec44ca609f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a62ba79aeac9c19a19eab70ec44ca609f">TMP00X_REGS_V_OBJECT</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memdesc:a62ba79aeac9c19a19eab70ec44ca609f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor Voltage Register. <br /></td></tr>
+<tr class="separator:a62ba79aeac9c19a19eab70ec44ca609f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f24bfb612d23bb5f90360411b39d9c0"><td class="memItemLeft" align="right" valign="top"><a id="a2f24bfb612d23bb5f90360411b39d9c0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a2f24bfb612d23bb5f90360411b39d9c0">TMP00X_REGS_T_AMBIENT</a>&#160;&#160;&#160;0x01</td></tr>
+<tr class="memdesc:a2f24bfb612d23bb5f90360411b39d9c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ambient Temperature Register. <br /></td></tr>
+<tr class="separator:a2f24bfb612d23bb5f90360411b39d9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a12defad40b3bd2280583fdc585220c"><td class="memItemLeft" align="right" valign="top"><a id="a8a12defad40b3bd2280583fdc585220c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a8a12defad40b3bd2280583fdc585220c">TMP00X_REGS_CONFIG</a>&#160;&#160;&#160;0x02</td></tr>
+<tr class="memdesc:a8a12defad40b3bd2280583fdc585220c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Register. <br /></td></tr>
+<tr class="separator:a8a12defad40b3bd2280583fdc585220c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a389970227af4aad5bef968fa9d7a6523"><td class="memItemLeft" align="right" valign="top"><a id="a389970227af4aad5bef968fa9d7a6523"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a389970227af4aad5bef968fa9d7a6523">TMP00X_CONFIG_RST</a>&#160;&#160;&#160;(1 &lt;&lt; 15)</td></tr>
+<tr class="memdesc:a389970227af4aad5bef968fa9d7a6523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset register. <br /></td></tr>
+<tr class="separator:a389970227af4aad5bef968fa9d7a6523"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ba1da41f3d296b82980fbf8e336f825"><td class="memItemLeft" align="right" valign="top"><a id="a7ba1da41f3d296b82980fbf8e336f825"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a7ba1da41f3d296b82980fbf8e336f825">TMP00X_CONFIG_MOD_SHIFT</a>&#160;&#160;&#160;(12U)</td></tr>
+<tr class="memdesc:a7ba1da41f3d296b82980fbf8e336f825"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of operation shift. <br /></td></tr>
+<tr class="separator:a7ba1da41f3d296b82980fbf8e336f825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0fb17320e827e57a8b8536eac601a50"><td class="memItemLeft" align="right" valign="top"><a id="ac0fb17320e827e57a8b8536eac601a50"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ac0fb17320e827e57a8b8536eac601a50">TMP00X_CONFIG_MOD_MASK</a>&#160;&#160;&#160;(0x7000)</td></tr>
+<tr class="memdesc:ac0fb17320e827e57a8b8536eac601a50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of operation mask. <br /></td></tr>
+<tr class="separator:ac0fb17320e827e57a8b8536eac601a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65335bc09f791dc995ce6dccae89714a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a65335bc09f791dc995ce6dccae89714a">TMP00X_CONFIG_MOD</a>(x)</td></tr>
+<tr class="memdesc:a65335bc09f791dc995ce6dccae89714a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mode of operation.  <a href="#a65335bc09f791dc995ce6dccae89714a">More...</a><br /></td></tr>
+<tr class="separator:a65335bc09f791dc995ce6dccae89714a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053a09a2bba85b9455c44462f9e8f7e1"><td class="memItemLeft" align="right" valign="top"><a id="a053a09a2bba85b9455c44462f9e8f7e1"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a053a09a2bba85b9455c44462f9e8f7e1">TMP00X_CONFIG_MOD_CC</a>&#160;&#160;&#160;(0x07)</td></tr>
+<tr class="memdesc:a053a09a2bba85b9455c44462f9e8f7e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sensor and ambient continuous conversion. <br /></td></tr>
+<tr class="separator:a053a09a2bba85b9455c44462f9e8f7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71c2b3504195a93f6cc6273664201f2"><td class="memItemLeft" align="right" valign="top"><a id="ad71c2b3504195a93f6cc6273664201f2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ad71c2b3504195a93f6cc6273664201f2">TMP00X_CONFIG_MOD_OFF</a>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="memdesc:ad71c2b3504195a93f6cc6273664201f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power-down. <br /></td></tr>
+<tr class="separator:ad71c2b3504195a93f6cc6273664201f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad022a8462525edc7118eddfdbc292204"><td class="memItemLeft" align="right" valign="top"><a id="ad022a8462525edc7118eddfdbc292204"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ad022a8462525edc7118eddfdbc292204">TMP00X_CONFIG_CR_SHIFT</a>&#160;&#160;&#160;(9U)</td></tr>
+<tr class="memdesc:ad022a8462525edc7118eddfdbc292204"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC conversion rate shift. <br /></td></tr>
+<tr class="separator:ad022a8462525edc7118eddfdbc292204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54da1edb7f5ecbdaab8305411a19831c"><td class="memItemLeft" align="right" valign="top"><a id="a54da1edb7f5ecbdaab8305411a19831c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a54da1edb7f5ecbdaab8305411a19831c">TMP00X_CONFIG_CR_MASK</a>&#160;&#160;&#160;(0x0E00)</td></tr>
+<tr class="memdesc:a54da1edb7f5ecbdaab8305411a19831c"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC conversion rate mask. <br /></td></tr>
+<tr class="separator:a54da1edb7f5ecbdaab8305411a19831c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8355d5cbe2bf38333cfcaa7caafc22d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#aa8355d5cbe2bf38333cfcaa7caafc22d">TMP00X_CONFIG_CR</a>(x)</td></tr>
+<tr class="memdesc:aa8355d5cbe2bf38333cfcaa7caafc22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC conversion rate.  <a href="#aa8355d5cbe2bf38333cfcaa7caafc22d">More...</a><br /></td></tr>
+<tr class="separator:aa8355d5cbe2bf38333cfcaa7caafc22d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b28ec35c98c4a80e602c482f1fa9018"><td class="memItemLeft" align="right" valign="top"><a id="a1b28ec35c98c4a80e602c482f1fa9018"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a1b28ec35c98c4a80e602c482f1fa9018">TMP00X_DRDY_PIN_EN</a>&#160;&#160;&#160;(1 &lt;&lt; 8)</td></tr>
+<tr class="memdesc:a1b28ec35c98c4a80e602c482f1fa9018"><td class="mdescLeft">&#160;</td><td class="mdescRight">EN: DRDY enable bit. <br /></td></tr>
+<tr class="separator:a1b28ec35c98c4a80e602c482f1fa9018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+TMP006 registers</h2></td></tr>
+<tr class="memitem:a8befc4b772e4838fbc8376d28fcfc4e5"><td class="memItemLeft" align="right" valign="top"><a id="a8befc4b772e4838fbc8376d28fcfc4e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a8befc4b772e4838fbc8376d28fcfc4e5">TMP006_REGS_MANUFACTURER_ID</a>&#160;&#160;&#160;0xFE</td></tr>
+<tr class="memdesc:a8befc4b772e4838fbc8376d28fcfc4e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manufacturer ID Register. <br /></td></tr>
+<tr class="separator:a8befc4b772e4838fbc8376d28fcfc4e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+TMP007 registers</h2></td></tr>
+<tr class="memitem:a41c89774dbdb9cdaa9601df75a93f7e9"><td class="memItemLeft" align="right" valign="top"><a id="a41c89774dbdb9cdaa9601df75a93f7e9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a41c89774dbdb9cdaa9601df75a93f7e9">TMP007_REGS_OBJ_TEMP</a>&#160;&#160;&#160;0x03</td></tr>
+<tr class="memdesc:a41c89774dbdb9cdaa9601df75a93f7e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object temperature result register. <br /></td></tr>
+<tr class="separator:a41c89774dbdb9cdaa9601df75a93f7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b8194f24ac3d2c9973333b2bbafc60"><td class="memItemLeft" align="right" valign="top"><a id="a84b8194f24ac3d2c9973333b2bbafc60"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a84b8194f24ac3d2c9973333b2bbafc60">TMP007_REGS_STATUS</a>&#160;&#160;&#160;0x04</td></tr>
+<tr class="memdesc:a84b8194f24ac3d2c9973333b2bbafc60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status Register. <br /></td></tr>
+<tr class="separator:a84b8194f24ac3d2c9973333b2bbafc60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f74dfc79a71099976ceaff184a5c36e"><td class="memItemLeft" align="right" valign="top"><a id="a0f74dfc79a71099976ceaff184a5c36e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a0f74dfc79a71099976ceaff184a5c36e">TMP007_REGS_STAT_MASK_EN</a>&#160;&#160;&#160;0x05</td></tr>
+<tr class="memdesc:a0f74dfc79a71099976ceaff184a5c36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask and enable register. <br /></td></tr>
+<tr class="separator:a0f74dfc79a71099976ceaff184a5c36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa53c023576f96a80b6304e93f2d708bf"><td class="memItemLeft" align="right" valign="top"><a id="aa53c023576f96a80b6304e93f2d708bf"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#aa53c023576f96a80b6304e93f2d708bf">TMP007_REGS_OBJ_HIGH_LIMIT_TEMP</a>&#160;&#160;&#160;0x06</td></tr>
+<tr class="memdesc:aa53c023576f96a80b6304e93f2d708bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object temperature high limit register. <br /></td></tr>
+<tr class="separator:aa53c023576f96a80b6304e93f2d708bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b816a65bef3162667d60c7722d8324"><td class="memItemLeft" align="right" valign="top"><a id="a30b816a65bef3162667d60c7722d8324"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a30b816a65bef3162667d60c7722d8324">TMP007_REGS_OBJ_LOW_LIMIT_TEMP</a>&#160;&#160;&#160;0x07</td></tr>
+<tr class="memdesc:a30b816a65bef3162667d60c7722d8324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object temperature low limit register. <br /></td></tr>
+<tr class="separator:a30b816a65bef3162667d60c7722d8324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa41489d95e930f5630b3a851712d9912"><td class="memItemLeft" align="right" valign="top"><a id="aa41489d95e930f5630b3a851712d9912"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#aa41489d95e930f5630b3a851712d9912">TMP007_REGS_LOCAL_HIGH_LIMIT_TEMP</a>&#160;&#160;&#160;0x08</td></tr>
+<tr class="memdesc:aa41489d95e930f5630b3a851712d9912"><td class="mdescLeft">&#160;</td><td class="mdescRight">TDIE temperature high limit register. <br /></td></tr>
+<tr class="separator:aa41489d95e930f5630b3a851712d9912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ce7500a78378309608e97365af345eb"><td class="memItemLeft" align="right" valign="top"><a id="a6ce7500a78378309608e97365af345eb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a6ce7500a78378309608e97365af345eb">TMP007_REGS_LOCAL_LOW_LIMIT_TEMP</a>&#160;&#160;&#160;0x09</td></tr>
+<tr class="memdesc:a6ce7500a78378309608e97365af345eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">TDIE temperature low limit register. <br /></td></tr>
+<tr class="separator:a6ce7500a78378309608e97365af345eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8697d9a81802d288cd5b2d8591b37b2"><td class="memItemLeft" align="right" valign="top"><a id="ab8697d9a81802d288cd5b2d8591b37b2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ab8697d9a81802d288cd5b2d8591b37b2">TMP007_REGS_S0_COEFFCIENT</a>&#160;&#160;&#160;0x0A</td></tr>
+<tr class="memdesc:ab8697d9a81802d288cd5b2d8591b37b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">S0 coefficient register. <br /></td></tr>
+<tr class="separator:ab8697d9a81802d288cd5b2d8591b37b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab072ac38a9fb01ae603bd34d58f248b4"><td class="memItemLeft" align="right" valign="top"><a id="ab072ac38a9fb01ae603bd34d58f248b4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ab072ac38a9fb01ae603bd34d58f248b4">TMP007_REGS_A0_COEFFCIENT</a>&#160;&#160;&#160;0x0B</td></tr>
+<tr class="memdesc:ab072ac38a9fb01ae603bd34d58f248b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A0 coefficient register. <br /></td></tr>
+<tr class="separator:ab072ac38a9fb01ae603bd34d58f248b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17ed306a5bcf0cd5d3559adf047888f"><td class="memItemLeft" align="right" valign="top"><a id="ab17ed306a5bcf0cd5d3559adf047888f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#ab17ed306a5bcf0cd5d3559adf047888f">TMP007_REGS_A1_COEFFCIENT</a>&#160;&#160;&#160;0x0C</td></tr>
+<tr class="memdesc:ab17ed306a5bcf0cd5d3559adf047888f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A1 coefficient register. <br /></td></tr>
+<tr class="separator:ab17ed306a5bcf0cd5d3559adf047888f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a8023274cea12eb0940092944a672d"><td class="memItemLeft" align="right" valign="top"><a id="a43a8023274cea12eb0940092944a672d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a43a8023274cea12eb0940092944a672d">TMP007_REGS_B0_COEFFCIENT</a>&#160;&#160;&#160;0x0D</td></tr>
+<tr class="memdesc:a43a8023274cea12eb0940092944a672d"><td class="mdescLeft">&#160;</td><td class="mdescRight">B0 coefficient register. <br /></td></tr>
+<tr class="separator:a43a8023274cea12eb0940092944a672d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58305f974c61a9655c2a5113fe75e226"><td class="memItemLeft" align="right" valign="top"><a id="a58305f974c61a9655c2a5113fe75e226"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a58305f974c61a9655c2a5113fe75e226">TMP007_REGS_B1_COEFFCIENT</a>&#160;&#160;&#160;0x0E</td></tr>
+<tr class="memdesc:a58305f974c61a9655c2a5113fe75e226"><td class="mdescLeft">&#160;</td><td class="mdescRight">B1 coefficient register. <br /></td></tr>
+<tr class="separator:a58305f974c61a9655c2a5113fe75e226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053b2b7d64a145d93d3697d003034651"><td class="memItemLeft" align="right" valign="top"><a id="a053b2b7d64a145d93d3697d003034651"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a053b2b7d64a145d93d3697d003034651">TMP007_REGS_B2_COEFFCIENT</a>&#160;&#160;&#160;0x0F</td></tr>
+<tr class="memdesc:a053b2b7d64a145d93d3697d003034651"><td class="mdescLeft">&#160;</td><td class="mdescRight">B2 coefficient register. <br /></td></tr>
+<tr class="separator:a053b2b7d64a145d93d3697d003034651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5cc54bbd9998b55a0eacbd5f053f539"><td class="memItemLeft" align="right" valign="top"><a id="af5cc54bbd9998b55a0eacbd5f053f539"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#af5cc54bbd9998b55a0eacbd5f053f539">TMP007_REGS_C_COEFFCIENT</a>&#160;&#160;&#160;0x10</td></tr>
+<tr class="memdesc:af5cc54bbd9998b55a0eacbd5f053f539"><td class="mdescLeft">&#160;</td><td class="mdescRight">C coefficient register. <br /></td></tr>
+<tr class="separator:af5cc54bbd9998b55a0eacbd5f053f539"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ba335e12492b39468f719eb14127e2"><td class="memItemLeft" align="right" valign="top"><a id="a56ba335e12492b39468f719eb14127e2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a56ba335e12492b39468f719eb14127e2">TMP007_REGS_TC0_COEFFCIENT</a>&#160;&#160;&#160;0x11</td></tr>
+<tr class="memdesc:a56ba335e12492b39468f719eb14127e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">TC0 coefficient register. <br /></td></tr>
+<tr class="separator:a56ba335e12492b39468f719eb14127e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3821109db19dce4c5f60115c96b32c8"><td class="memItemLeft" align="right" valign="top"><a id="af3821109db19dce4c5f60115c96b32c8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#af3821109db19dce4c5f60115c96b32c8">TMP007_REGS_TC1_COEFFCIENT</a>&#160;&#160;&#160;0x12</td></tr>
+<tr class="memdesc:af3821109db19dce4c5f60115c96b32c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">TC1 coefficient register. <br /></td></tr>
+<tr class="separator:af3821109db19dce4c5f60115c96b32c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7140a156e0edaa429e288a8edb8b50e0"><td class="memItemLeft" align="right" valign="top"><a id="a7140a156e0edaa429e288a8edb8b50e0"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="tmp00x__regs_8h.html#a7140a156e0edaa429e288a8edb8b50e0">TMP007_REGS_MEM_ACCES</a>&#160;&#160;&#160;0x2A</td></tr>
+<tr class="memdesc:a7140a156e0edaa429e288a8edb8b50e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory access register. <br /></td></tr>
+<tr class="separator:a7140a156e0edaa429e288a8edb8b50e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa8355d5cbe2bf38333cfcaa7caafc22d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8355d5cbe2bf38333cfcaa7caafc22d">&#9670;&nbsp;</a></span>TMP00X_CONFIG_CR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP00X_CONFIG_CR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(((uint16_t)(((uint16_t)(x)) \</div><div class="line">                                     &lt;&lt; <a class="code" href="tmp00x__regs_8h.html#ad022a8462525edc7118eddfdbc292204">TMP00X_CONFIG_CR_SHIFT</a>)) \</div><div class="line">                                     &amp; <a class="code" href="tmp00x__regs_8h.html#a54da1edb7f5ecbdaab8305411a19831c">TMP00X_CONFIG_CR_MASK</a>)</div><div class="ttc" id="tmp00x__regs_8h_html_a54da1edb7f5ecbdaab8305411a19831c"><div class="ttname"><a href="tmp00x__regs_8h.html#a54da1edb7f5ecbdaab8305411a19831c">TMP00X_CONFIG_CR_MASK</a></div><div class="ttdeci">#define TMP00X_CONFIG_CR_MASK</div><div class="ttdoc">ADC conversion rate mask. </div><div class="ttdef"><b>Definition:</b> <a href="tmp00x__regs_8h_source.html#l00048">tmp00x_regs.h:48</a></div></div>
+<div class="ttc" id="tmp00x__regs_8h_html_ad022a8462525edc7118eddfdbc292204"><div class="ttname"><a href="tmp00x__regs_8h.html#ad022a8462525edc7118eddfdbc292204">TMP00X_CONFIG_CR_SHIFT</a></div><div class="ttdeci">#define TMP00X_CONFIG_CR_SHIFT</div><div class="ttdoc">ADC conversion rate shift. </div><div class="ttdef"><b>Definition:</b> <a href="tmp00x__regs_8h_source.html#l00047">tmp00x_regs.h:47</a></div></div>
+</div><!-- fragment -->
+<p>ADC conversion rate. </p>
+
+<p class="definition">Definition at line <a class="el" href="tmp00x__regs_8h_source.html#l00049">49</a> of file <a class="el" href="tmp00x__regs_8h_source.html">tmp00x_regs.h</a>.</p>
+
+</div>
+</div>
+<a id="a65335bc09f791dc995ce6dccae89714a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65335bc09f791dc995ce6dccae89714a">&#9670;&nbsp;</a></span>TMP00X_CONFIG_MOD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TMP00X_CONFIG_MOD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">(((uint16_t)(((uint16_t)(x)) \</div><div class="line">                                     &lt;&lt; <a class="code" href="tmp00x__regs_8h.html#a7ba1da41f3d296b82980fbf8e336f825">TMP00X_CONFIG_MOD_SHIFT</a>)) \</div><div class="line">                                     &amp; <a class="code" href="tmp00x__regs_8h.html#ac0fb17320e827e57a8b8536eac601a50">TMP00X_CONFIG_MOD_MASK</a>)</div><div class="ttc" id="tmp00x__regs_8h_html_a7ba1da41f3d296b82980fbf8e336f825"><div class="ttname"><a href="tmp00x__regs_8h.html#a7ba1da41f3d296b82980fbf8e336f825">TMP00X_CONFIG_MOD_SHIFT</a></div><div class="ttdeci">#define TMP00X_CONFIG_MOD_SHIFT</div><div class="ttdoc">Mode of operation shift. </div><div class="ttdef"><b>Definition:</b> <a href="tmp00x__regs_8h_source.html#l00037">tmp00x_regs.h:37</a></div></div>
+<div class="ttc" id="tmp00x__regs_8h_html_ac0fb17320e827e57a8b8536eac601a50"><div class="ttname"><a href="tmp00x__regs_8h.html#ac0fb17320e827e57a8b8536eac601a50">TMP00X_CONFIG_MOD_MASK</a></div><div class="ttdeci">#define TMP00X_CONFIG_MOD_MASK</div><div class="ttdoc">Mode of operation mask. </div><div class="ttdef"><b>Definition:</b> <a href="tmp00x__regs_8h_source.html#l00038">tmp00x_regs.h:38</a></div></div>
+</div><!-- fragment -->
+<p>Mode of operation. </p>
+
+<p class="definition">Definition at line <a class="el" href="tmp00x__regs_8h_source.html#l00039">39</a> of file <a class="el" href="tmp00x__regs_8h_source.html">tmp00x_regs.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:26 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

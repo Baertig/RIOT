@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>core/lib/include/cib.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cib_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">cib.h File Reference<div class="ingroups"><a class="el" href="group__core.html">Kernel</a> &raquo; <a class="el" href="group__core__util.html">Kernel Utilities</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Circular integer buffer interface.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Circular integer buffer interface. </p>
+<p>This structure provides an organizational interface and combined with an memory array forms a circular buffer.</p>
+<dl class="section author"><dt>Author</dt><dd>Kaspar Schleiser <a href="#" onclick="location.href='mai'+'lto:'+'kas'+'pa'+'r@s'+'ch'+'lei'+'se'+'r.d'+'e'; return false;">kaspa<span style="display: none;">.nosp@m.</span>r@sc<span style="display: none;">.nosp@m.</span>hleis<span style="display: none;">.nosp@m.</span>er.d<span style="display: none;">.nosp@m.</span>e</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="assert_8h_source.html">assert.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for cib.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cib_8h__incl.svg" width="163" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="cib_8h__dep__incl.svg" width="16774" height="1480"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="cib_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcib__t.html">cib_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">circular integer buffer structure  <a href="structcib__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d28d9cd55e98ce0e88f858630843e75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a5d28d9cd55e98ce0e88f858630843e75">CIB_INIT</a>(SIZE)&#160;&#160;&#160;{ 0, 0, (SIZE)-1 }</td></tr>
+<tr class="memdesc:a5d28d9cd55e98ce0e88f858630843e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a> to a given size.  <a href="#a5d28d9cd55e98ce0e88f858630843e75">More...</a><br /></td></tr>
+<tr class="separator:a5d28d9cd55e98ce0e88f858630843e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6b04c82f9c0bbef0f06800f19a5001"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#abc6b04c82f9c0bbef0f06800f19a5001">cib_init</a> (<a class="el" href="structcib__t.html">cib_t</a> *__restrict cib, unsigned int size)</td></tr>
+<tr class="memdesc:abc6b04c82f9c0bbef0f06800f19a5001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize <code>cib</code> to 0 and set buffer size to <code>size</code>.  <a href="#abc6b04c82f9c0bbef0f06800f19a5001">More...</a><br /></td></tr>
+<tr class="separator:abc6b04c82f9c0bbef0f06800f19a5001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c59f5338b70bd67deec97cf688cbcf8"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a1c59f5338b70bd67deec97cf688cbcf8">cib_size</a> (const <a class="el" href="structcib__t.html">cib_t</a> *cib)</td></tr>
+<tr class="memdesc:a1c59f5338b70bd67deec97cf688cbcf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total capacity (<code>size</code> parameter of <a class="el" href="cib_8h.html#abc6b04c82f9c0bbef0f06800f19a5001">cib_init()</a>) of a <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a>.  <a href="#a1c59f5338b70bd67deec97cf688cbcf8">More...</a><br /></td></tr>
+<tr class="separator:a1c59f5338b70bd67deec97cf688cbcf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee69c5b79cbdc608f05f0005041d452c"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#aee69c5b79cbdc608f05f0005041d452c">cib_avail</a> (const <a class="el" href="structcib__t.html">cib_t</a> *cib)</td></tr>
+<tr class="memdesc:aee69c5b79cbdc608f05f0005041d452c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates difference between <a class="el" href="cib_8h.html#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2" title="Get index for item in buffer to put to. ">cib_put()</a> and <a class="el" href="cib_8h.html#aa0b21dcbf37f8869733ee2e49acef02b" title="Get the index of the next item in buffer. ">cib_get()</a> accesses.  <a href="#aee69c5b79cbdc608f05f0005041d452c">More...</a><br /></td></tr>
+<tr class="separator:aee69c5b79cbdc608f05f0005041d452c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ce2b729dceec57505e46429682d9999"><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a7ce2b729dceec57505e46429682d9999">cib_full</a> (const <a class="el" href="structcib__t.html">cib_t</a> *cib)</td></tr>
+<tr class="memdesc:a7ce2b729dceec57505e46429682d9999"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if cib is full.  <a href="#a7ce2b729dceec57505e46429682d9999">More...</a><br /></td></tr>
+<tr class="separator:a7ce2b729dceec57505e46429682d9999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0b21dcbf37f8869733ee2e49acef02b"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#aa0b21dcbf37f8869733ee2e49acef02b">cib_get</a> (<a class="el" href="structcib__t.html">cib_t</a> *__restrict cib)</td></tr>
+<tr class="memdesc:aa0b21dcbf37f8869733ee2e49acef02b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the next item in buffer.  <a href="#aa0b21dcbf37f8869733ee2e49acef02b">More...</a><br /></td></tr>
+<tr class="separator:aa0b21dcbf37f8869733ee2e49acef02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8cf235813eaeee173891b2bd6165bd4"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#ad8cf235813eaeee173891b2bd6165bd4">cib_peek_at_unsafe</a> (const <a class="el" href="structcib__t.html">cib_t</a> *__restrict cib, unsigned offset)</td></tr>
+<tr class="memdesc:ad8cf235813eaeee173891b2bd6165bd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of an item in the buffer without removing anything.  <a href="#ad8cf235813eaeee173891b2bd6165bd4">More...</a><br /></td></tr>
+<tr class="separator:ad8cf235813eaeee173891b2bd6165bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7569f4ed3e7dcd0d8ba4ad674319561e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a7569f4ed3e7dcd0d8ba4ad674319561e">cib_peek_at</a> (const <a class="el" href="structcib__t.html">cib_t</a> *__restrict cib, unsigned offset)</td></tr>
+<tr class="memdesc:a7569f4ed3e7dcd0d8ba4ad674319561e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of an item in the buffer without removing anything.  <a href="#a7569f4ed3e7dcd0d8ba4ad674319561e">More...</a><br /></td></tr>
+<tr class="separator:a7569f4ed3e7dcd0d8ba4ad674319561e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e8d1e1268b543b9b6ffdba77d679905"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a9e8d1e1268b543b9b6ffdba77d679905">cib_peek_unsafe</a> (const <a class="el" href="structcib__t.html">cib_t</a> *__restrict cib)</td></tr>
+<tr class="memdesc:a9e8d1e1268b543b9b6ffdba77d679905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the next item in buffer without removing it.  <a href="#a9e8d1e1268b543b9b6ffdba77d679905">More...</a><br /></td></tr>
+<tr class="separator:a9e8d1e1268b543b9b6ffdba77d679905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122174d742cb58656858138e0b45e89c"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a122174d742cb58656858138e0b45e89c">cib_peek</a> (const <a class="el" href="structcib__t.html">cib_t</a> *__restrict cib)</td></tr>
+<tr class="memdesc:a122174d742cb58656858138e0b45e89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the next item in buffer without removing it.  <a href="#a122174d742cb58656858138e0b45e89c">More...</a><br /></td></tr>
+<tr class="separator:a122174d742cb58656858138e0b45e89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf8c45cd451dd2e8a77294e07d531e3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#a3cf8c45cd451dd2e8a77294e07d531e3">cib_get_unsafe</a> (<a class="el" href="structcib__t.html">cib_t</a> *cib)</td></tr>
+<tr class="memdesc:a3cf8c45cd451dd2e8a77294e07d531e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the next item in buffer.  <a href="#a3cf8c45cd451dd2e8a77294e07d531e3">More...</a><br /></td></tr>
+<tr class="separator:a3cf8c45cd451dd2e8a77294e07d531e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8eeb9fa00fb289ab94aa5e1bcfcc8a2"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2">cib_put</a> (<a class="el" href="structcib__t.html">cib_t</a> *__restrict cib)</td></tr>
+<tr class="memdesc:ab8eeb9fa00fb289ab94aa5e1bcfcc8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get index for item in buffer to put to.  <a href="#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2">More...</a><br /></td></tr>
+<tr class="separator:ab8eeb9fa00fb289ab94aa5e1bcfcc8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa461ff31d7bef0d7bfb9b4d46fb60a83"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cib_8h.html#aa461ff31d7bef0d7bfb9b4d46fb60a83">cib_put_unsafe</a> (<a class="el" href="structcib__t.html">cib_t</a> *cib)</td></tr>
+<tr class="memdesc:aa461ff31d7bef0d7bfb9b4d46fb60a83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get index for item in buffer to put to.  <a href="#aa461ff31d7bef0d7bfb9b4d46fb60a83">More...</a><br /></td></tr>
+<tr class="separator:aa461ff31d7bef0d7bfb9b4d46fb60a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a5d28d9cd55e98ce0e88f858630843e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d28d9cd55e98ce0e88f858630843e75">&#9670;&nbsp;</a></span>CIB_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CIB_INIT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">SIZE</td><td>)</td>
+          <td>&#160;&#160;&#160;{ 0, 0, (SIZE)-1 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a> to a given size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">SIZE</td><td>Size of the buffer, must not exceed (<code>UINT_MAX</code> + 1) / 2. Should be equal to 0 or power of 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00047">47</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aee69c5b79cbdc608f05f0005041d452c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee69c5b79cbdc608f05f0005041d452c">&#9670;&nbsp;</a></span>cib_avail()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int cib_avail </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates difference between <a class="el" href="cib_8h.html#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2" title="Get index for item in buffer to put to. ">cib_put()</a> and <a class="el" href="cib_8h.html#aa0b21dcbf37f8869733ee2e49acef02b" title="Get the index of the next item in buffer. ">cib_get()</a> accesses. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cib</td><td>the <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a> to check. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>How often <a class="el" href="cib_8h.html#aa0b21dcbf37f8869733ee2e49acef02b" title="Get the index of the next item in buffer. ">cib_get()</a> can be called before <code>cib</code> is empty. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00088">88</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a7ce2b729dceec57505e46429682d9999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ce2b729dceec57505e46429682d9999">&#9670;&nbsp;</a></span>cib_full()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int cib_full </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if cib is full. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cib</td><td>the <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a> to check. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if <a class="el" href="cib_8h.html#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2" title="Get index for item in buffer to put to. ">cib_put()</a> would return "-1", 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00100">100</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="aa0b21dcbf37f8869733ee2e49acef02b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0b21dcbf37f8869733ee2e49acef02b">&#9670;&nbsp;</a></span>cib_get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_get </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of the next item in buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of next item </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if the buffer is empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00113">113</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a3cf8c45cd451dd2e8a77294e07d531e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf8c45cd451dd2e8a77294e07d531e3">&#9670;&nbsp;</a></span>cib_get_unsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_get_unsafe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcib__t.html">cib_t</a> *&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of the next item in buffer. </p>
+<p>Unsafe version, <em>must not</em> be called if buffer is empty!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of next item </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00202">202</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="abc6b04c82f9c0bbef0f06800f19a5001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc6b04c82f9c0bbef0f06800f19a5001">&#9670;&nbsp;</a></span>cib_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void cib_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize <code>cib</code> to 0 and set buffer size to <code>size</code>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">cib</td><td>Buffer to initialize. Must not be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Size of the buffer, must not exceed (<code>UINT_MAX</code> + 1) / 2. Should be equal to 0 or power of 2. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00058">58</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a122174d742cb58656858138e0b45e89c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122174d742cb58656858138e0b45e89c">&#9670;&nbsp;</a></span>cib_peek()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_peek </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of the next item in buffer without removing it. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of next item </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if the buffer is empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00188">188</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a7569f4ed3e7dcd0d8ba4ad674319561e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7569f4ed3e7dcd0d8ba4ad674319561e">&#9670;&nbsp;</a></span>cib_peek_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_peek_at </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of an item in the buffer without removing anything. </p>
+<p>Offset 0 is the next item in the buffer that would be returned by <code>cip_get()</code>, offset 1 would be the following, and so on.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>offset from front of buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of item </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if no item at <code>offset</code> exists in the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00156">156</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="ad8cf235813eaeee173891b2bd6165bd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8cf235813eaeee173891b2bd6165bd4">&#9670;&nbsp;</a></span>cib_peek_at_unsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_peek_at_unsafe </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>offset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of an item in the buffer without removing anything. </p>
+<p>Offset 0 is the next item in the buffer that would be returned by <code>cip_get()</code>, offset 1 would be the following, and so on.</p>
+<p>Unsafe version, <em>must not</em> pass an offset that is larger than the number of items currently in the buffer!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">offset</td><td>offset from front of buffer</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of item </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if no item at <code>offset</code> exists in the buffer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00138">138</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a9e8d1e1268b543b9b6ffdba77d679905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e8d1e1268b543b9b6ffdba77d679905">&#9670;&nbsp;</a></span>cib_peek_unsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_peek_unsafe </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of the next item in buffer without removing it. </p>
+<p>Unsafe version, <em>must not</em> be called if buffer is empty!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of next item </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if the buffer is empty </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00175">175</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8eeb9fa00fb289ab94aa5e1bcfcc8a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8eeb9fa00fb289ab94aa5e1bcfcc8a2">&#9670;&nbsp;</a></span>cib_put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_put </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcib__t.html">cib_t</a> *__restrict&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get index for item in buffer to put to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of item to put to </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">-1</td><td>if the buffer is full </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00215">215</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="aa461ff31d7bef0d7bfb9b4d46fb60a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa461ff31d7bef0d7bfb9b4d46fb60a83">&#9670;&nbsp;</a></span>cib_put_unsafe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int cib_put_unsafe </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcib__t.html">cib_t</a> *&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get index for item in buffer to put to. </p>
+<p>Unsafe version, <em>must not</em> be called if buffer is full!</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">cib</td><td>corresponding <em>cib</em> to buffer. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>index of item to put to </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00236">236</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+<a id="a1c59f5338b70bd67deec97cf688cbcf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c59f5338b70bd67deec97cf688cbcf8">&#9670;&nbsp;</a></span>cib_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static unsigned int cib_size </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcib__t.html">cib_t</a> *&#160;</td>
+          <td class="paramname"><em>cib</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the total capacity (<code>size</code> parameter of <a class="el" href="cib_8h.html#abc6b04c82f9c0bbef0f06800f19a5001">cib_init()</a>) of a <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cib</td><td>the <a class="el" href="structcib__t.html" title="circular integer buffer structure ">cib_t</a> to check. Must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The total size of <code>cib</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="cib_8h_source.html#l00076">76</a> of file <a class="el" href="cib_8h_source.html">cib.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:23 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

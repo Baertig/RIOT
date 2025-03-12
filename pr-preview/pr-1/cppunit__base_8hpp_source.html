@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/cppunit/cppunit_base.hpp Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cppunit__base_8hpp_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cppunit_base.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cppunit__base_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2021 Jens Wetterich &lt;jens@wetterich-net.de&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef CPPUNIT_BASE_H</span></div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define CPPUNIT_BASE_H</span></div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#if __cplusplus &gt;= 201103L || defined(DOXYGEN)</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;cstring&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;type_traits&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef CPPUNIT_SUITE_CNT</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="group__unittests__cpp.html#ga9f3f95cf05499e59ff1a067a3bb86158">   27</a></span>&#160;<span class="preprocessor">#define CPPUNIT_SUITE_CNT (10)</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceriot.html">riot</a> {</div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespaceriot_1_1testing.html">   36</a></span>&#160;<span class="keyword">namespace </span>testing {</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="classriot_1_1testing_1_1test.html">test</a> {</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> suc = <span class="keyword">true</span>; </div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="classriot_1_1testing_1_1test.html#ad9dee3a0d49b4c996069290a9c446855">run</a>() = 0;</div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test.html#a541680138896391d7d4438c5c86f5bea">   61</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classriot_1_1testing_1_1test.html#a541680138896391d7d4438c5c86f5bea">fail</a>() {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        suc = <span class="keyword">false</span>;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test.html#a1a82ad389b1cfeadeae71e0652d1c1e8">   68</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classriot_1_1testing_1_1test.html#a1a82ad389b1cfeadeae71e0652d1c1e8">success</a>()<span class="keyword"> const </span>{</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> suc;</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html">   83</a></span>&#160;<span class="keyword">class </span><a class="code" href="classriot_1_1testing_1_1test__suite.html">test_suite</a> {</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">protected</span>:</div><div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">   85</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">suc</a> = <span class="keyword">true</span>; </div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">   86</a></span>&#160;    std::array&lt;test*, CPPUNIT_SUITE_CNT&gt; <a class="code" href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">tests</a>{}; </div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#abd096ab7189f1f8985fdc1dcbd227196">   91</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classriot_1_1testing_1_1test__suite.html#abd096ab7189f1f8985fdc1dcbd227196">set_up</a>() {</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#a23e2b28300c3e3bb0f13aadc82c34c40">   96</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classriot_1_1testing_1_1test__suite.html#a23e2b28300c3e3bb0f13aadc82c34c40">tear_down</a>() {</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div><div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#a7435ca26669851b45ed3c3aa1c177402">  102</a></span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classriot_1_1testing_1_1test__suite.html#a7435ca26669851b45ed3c3aa1c177402">get_name</a>()<span class="keyword"> const </span>{</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    };</div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#a40d1c2a4a3f191979c2a0cf8e4a17479">  108</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classriot_1_1testing_1_1test__suite.html#a40d1c2a4a3f191979c2a0cf8e4a17479">run</a>() {</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;----\nStarting Test suite %s\n&quot;</span>, <a class="code" href="classriot_1_1testing_1_1test__suite.html#a7435ca26669851b45ed3c3aa1c177402">get_name</a>());</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code" href="classriot_1_1testing_1_1test.html">test</a> : <a class="code" href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">tests</a>) {</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classriot_1_1testing_1_1test.html">test</a>) {</div><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                <a class="code" href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">suc</a> = <a class="code" href="classriot_1_1testing_1_1test.html">test</a>-&gt;<a class="code" href="classriot_1_1testing_1_1test.html#ad9dee3a0d49b4c996069290a9c446855">run</a>() &amp;&amp; <a class="code" href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">suc</a>;</div><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a>(<span class="stringliteral">&quot;Suite %s completed: %s\n----\n&quot;</span>, <a class="code" href="classriot_1_1testing_1_1test__suite.html#a7435ca26669851b45ed3c3aa1c177402">get_name</a>(), <a class="code" href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">suc</a> ? <span class="stringliteral">&quot;SUCCESS&quot;</span> : <span class="stringliteral">&quot;FAILURE&quot;</span>);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div><div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classriot_1_1testing_1_1test__suite.html#a1c689dc171e388f05743e02df6971fba">  120</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classriot_1_1testing_1_1test__suite.html#a1c689dc171e388f05743e02df6971fba">addTest</a>(<a class="code" href="classriot_1_1testing_1_1test.html">test</a>* <a class="code" href="classriot_1_1testing_1_1test.html">test</a>) {</div><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="group__unittests__cpp.html#ga9f3f95cf05499e59ff1a067a3bb86158">CPPUNIT_SUITE_CNT</a>; i++) {</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">tests</a>[i]) {</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <a class="code" href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">tests</a>[i] = <a class="code" href="classriot_1_1testing_1_1test.html">test</a>;</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keywordflow">break</span>;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            }</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        }</div><div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;};</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}<span class="comment">// namespace testing</span></div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}<span class="comment">// namespace riot</span></div><div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="group__unittests__cpp.html#gae9f9e059eec3359ec565a80be5232772">  136</a></span>&#160;<span class="comment"></span><span class="preprocessor">#define RUN_SUITE(name) test_suite_##name.run();</span></div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="group__unittests__cpp.html#ga723dab7c38a17e63879ace89c44dd4b4">  144</a></span>&#160;<span class="preprocessor">#define TEST_SUITE_F(suite, name)                                              \</span></div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">    static_assert(sizeof(#suite) &gt; 1, &quot;test fixture class must not be empty&quot;); \</span></div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">    static_assert(sizeof(#name) &gt; 1, &quot;test_suite name must not be empty&quot;);     \</span></div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">    class test_suite_##name : public suite {                                   \</span></div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">        const char* get_name() const override {                                \</span></div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">            return #name;                                                      \</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">        };                                                                     \</span></div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">    };                                                                         \</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">    test_suite_##name test_suite_##name;</span></div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div><div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="group__unittests__cpp.html#ga1dcc30e04987b50d0b98ad113ef0e6fc">  159</a></span>&#160;<span class="preprocessor">#define TEST_SUITE(name) TEST_SUITE_F(::riot::testing::test_suite, name)</span></div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div><div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="group__unittests__cpp.html#ga01650a6a471983b296a562fb062bc912">  168</a></span>&#160;<span class="preprocessor">#define TEST(suite, name)                                                      \</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">    class Test_##name : public ::riot::testing::test {                         \</span></div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">    private:                                                                   \</span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">        void test_body();                                                      \</span></div><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">                                                                               \</span></div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">    public:                                                                    \</span></div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">        Test_##name() {                                                        \</span></div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">            test_suite_##suite.addTest(this);                                  \</span></div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">        }                                                                      \</span></div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">        bool run() {                                                           \</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">            test_suite_##suite.set_up();                                       \</span></div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">            printf(&quot;Running test &quot; #name &quot;...\n&quot;);                             \</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">            test_body();                                                       \</span></div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">            printf(&quot;Test &quot; #name &quot;: %s\n&quot;, success() ? &quot;SUCCESS&quot; : &quot;FAILURE&quot;); \</span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">            test_suite_##suite.tear_down();                                    \</span></div><div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">            return success();                                                  \</span></div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">        };                                                                     \</span></div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">    };                                                                         \</span></div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">    void Test_##name::test_body()</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#else</span></div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#error This library needs C++11 and newer</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div><div class="ttc" id="classriot_1_1testing_1_1test_html"><div class="ttname"><a href="classriot_1_1testing_1_1test.html">riot::testing::test</a></div><div class="ttdoc">Test base class. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00042">cppunit_base.hpp:42</a></div></div>
+<div class="ttc" id="group__cpu__avr8__common__stdio__wrapper_html_gad2eb277496af160238e7306fff780ad2"><div class="ttname"><a href="group__cpu__avr8__common__stdio__wrapper.html#gad2eb277496af160238e7306fff780ad2">printf</a></div><div class="ttdeci">#define printf(...)</div><div class="ttdoc">A wrapper for the printf() function that passes arguments through unmodified, but fails to compile if...</div><div class="ttdef"><b>Definition:</b> <a href="stdio_8h_source.html#l00060">stdio.h:60</a></div></div>
+<div class="ttc" id="namespaceriot_html"><div class="ttname"><a href="namespaceriot.html">riot</a></div><div class="ttdoc">RIOT C++ namespace. </div><div class="ttdef"><b>Definition:</b> <a href="chrono_8hpp_source.html#l00035">chrono.hpp:35</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test_html_a541680138896391d7d4438c5c86f5bea"><div class="ttname"><a href="classriot_1_1testing_1_1test.html#a541680138896391d7d4438c5c86f5bea">riot::testing::test::fail</a></div><div class="ttdeci">void fail()</div><div class="ttdoc">Indicate failure during test run. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00061">cppunit_base.hpp:61</a></div></div>
+<div class="ttc" id="group__unittests__cpp_html_ga9f3f95cf05499e59ff1a067a3bb86158"><div class="ttname"><a href="group__unittests__cpp.html#ga9f3f95cf05499e59ff1a067a3bb86158">CPPUNIT_SUITE_CNT</a></div><div class="ttdeci">#define CPPUNIT_SUITE_CNT</div><div class="ttdoc">Maximum amount of tests in one test suite. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00027">cppunit_base.hpp:27</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_a23e2b28300c3e3bb0f13aadc82c34c40"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#a23e2b28300c3e3bb0f13aadc82c34c40">riot::testing::test_suite::tear_down</a></div><div class="ttdeci">virtual void tear_down()</div><div class="ttdoc">method to run after each test </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00096">cppunit_base.hpp:96</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test_html_ad9dee3a0d49b4c996069290a9c446855"><div class="ttname"><a href="classriot_1_1testing_1_1test.html#ad9dee3a0d49b4c996069290a9c446855">riot::testing::test::run</a></div><div class="ttdeci">virtual bool run()=0</div><div class="ttdoc">Run the test. </div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_a6d2bf499dda697095e0920381ca0cd00"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#a6d2bf499dda697095e0920381ca0cd00">riot::testing::test_suite::tests</a></div><div class="ttdeci">std::array&lt; test *, CPPUNIT_SUITE_CNT &gt; tests</div><div class="ttdoc">array of tests to run </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00086">cppunit_base.hpp:86</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_ab831b7964b28e903ce0459ee2882671c"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#ab831b7964b28e903ce0459ee2882671c">riot::testing::test_suite::suc</a></div><div class="ttdeci">bool suc</div><div class="ttdoc">Indicates success of all tests after running the suite. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00085">cppunit_base.hpp:85</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_a7435ca26669851b45ed3c3aa1c177402"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#a7435ca26669851b45ed3c3aa1c177402">riot::testing::test_suite::get_name</a></div><div class="ttdeci">virtual const char * get_name() const</div><div class="ttdoc">get the name of the test suite </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00102">cppunit_base.hpp:102</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_abd096ab7189f1f8985fdc1dcbd227196"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#abd096ab7189f1f8985fdc1dcbd227196">riot::testing::test_suite::set_up</a></div><div class="ttdeci">virtual void set_up()</div><div class="ttdoc">method to run before each test </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00091">cppunit_base.hpp:91</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html">riot::testing::test_suite</a></div><div class="ttdoc">Test suite base class. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00083">cppunit_base.hpp:83</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_a1c689dc171e388f05743e02df6971fba"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#a1c689dc171e388f05743e02df6971fba">riot::testing::test_suite::addTest</a></div><div class="ttdeci">void addTest(test *test)</div><div class="ttdoc">Run all tests in the suite. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00120">cppunit_base.hpp:120</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test_html_a1a82ad389b1cfeadeae71e0652d1c1e8"><div class="ttname"><a href="classriot_1_1testing_1_1test.html#a1a82ad389b1cfeadeae71e0652d1c1e8">riot::testing::test::success</a></div><div class="ttdeci">bool success() const</div><div class="ttdoc">Check whether the test completed successfully. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00068">cppunit_base.hpp:68</a></div></div>
+<div class="ttc" id="classriot_1_1testing_1_1test__suite_html_a40d1c2a4a3f191979c2a0cf8e4a17479"><div class="ttname"><a href="classriot_1_1testing_1_1test__suite.html#a40d1c2a4a3f191979c2a0cf8e4a17479">riot::testing::test_suite::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdoc">Run all tests in the suite. </div><div class="ttdef"><b>Definition:</b> <a href="cppunit__base_8hpp_source.html#l00108">cppunit_base.hpp:108</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

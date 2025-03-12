@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/atxmega/include/cpu_ebi.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('cpu__ebi_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">cpu_ebi.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="cpu__ebi_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2021 Gerson Fernando Budke</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="atxmega_2include_2periph__cpu_8h.html">periph_cpu.h</a>&quot;</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef CPU_EBI_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define CPU_EBI_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">typedef</span> uint32_t hugemem_ptr_t;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define HUGEMEM_NULL        0</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span> ebi_init(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="cpu__ebi_8h.html#acd3523022b174f618638076e5417bbc9">   40</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint8_t <a class="code" href="cpu__ebi_8h.html#acd3523022b174f618638076e5417bbc9">hugemem_read8</a>(<span class="keyword">const</span> hugemem_ptr_t from)</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint8_t value;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    __asm__ <span class="keyword">volatile</span> (</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">/* place 24 bit address into r30, r31, RAMPZ</span></div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">         * r31:r30     &lt;- %B[from]:%A[from]</span></div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">         * RAMPZ       &lt;- %C[from]</span></div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">         */</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="stringliteral">&quot;movw   r30,        %A[from]           \n\t&quot;</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="stringliteral">&quot;out    %[rampz],   %C[from]           \n\t&quot;</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">/* read byte from 24 bit address</span></div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">         * register    &lt;- *(RAMPZ + Z)</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">         */</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="stringliteral">&quot;ld     %[dest],    Z                  \n\t&quot;</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">/* clear ramp */</span></div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="stringliteral">&quot;out    %[rampz],   __zero_reg__       \n\t&quot;</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        : [dest]    <span class="stringliteral">&quot;=r&quot;</span>(value)</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        : [from]    <span class="stringliteral">&quot;r&quot;</span>(from),</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          [rampz]   <span class="stringliteral">&quot;i&quot;</span>(&amp;RAMPZ)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        : <span class="stringliteral">&quot;r30&quot;</span>, <span class="stringliteral">&quot;r31&quot;</span></div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    );</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> value;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="cpu__ebi_8h.html#abd0933f07f824c57f8e2692c472772d6">   72</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="cpu__ebi_8h.html#abd0933f07f824c57f8e2692c472772d6">hugemem_write8</a>(hugemem_ptr_t to, uint8_t val)</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    __asm__ <span class="keyword">volatile</span> (</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">/* place 24 bit address into r30, r31, RAMPZ</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">         * r31:r30     &lt;- %B[from]:%A[from]</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">         * RAMPZ       &lt;- %C[from]</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">         */</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="stringliteral">&quot;movw   r30,        %A[to]             \n\t&quot;</span></div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="stringliteral">&quot;out    %[rampz],   %C[to]             \n\t&quot;</span></div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">/* write byte to 24 bit address</span></div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">         * (RAMPZ + Z) &lt;- register</span></div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">         */</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="stringliteral">&quot;st     Z,          %[val]             \n\t&quot;</span></div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="comment">/* clear ramp */</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="stringliteral">&quot;out    %[rampz],   __zero_reg__       \n\t&quot;</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        :</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        : [to]      <span class="stringliteral">&quot;r&quot;</span>(to),</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;          [val]     <span class="stringliteral">&quot;r&quot;</span>(val),</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          [rampz]   <span class="stringliteral">&quot;i&quot;</span>(&amp;RAMPZ)</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        : <span class="stringliteral">&quot;r30&quot;</span>, <span class="stringliteral">&quot;r31&quot;</span></div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    );</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;uint16_t <a class="code" href="cpu__ebi_8h.html#ad0404349529c5f29a5dd8f06960f4612">hugemem_read16</a>(<span class="keyword">const</span> hugemem_ptr_t from);</div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cpu__ebi_8h.html#ad9e25118d3755bab5a4ead8216e01bb2">hugemem_write16</a>(hugemem_ptr_t to, uint16_t val);</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;uint32_t <a class="code" href="cpu__ebi_8h.html#a8996106bf769e3e02640a7409ee1e845">hugemem_read32</a>(<span class="keyword">const</span> hugemem_ptr_t from);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cpu__ebi_8h.html#a88249aa9377a59fc506b7930da5f36dd">hugemem_write32</a>(hugemem_ptr_t to, uint32_t val);</div><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cpu__ebi_8h.html#ad5cf5e354a0bb64b4bb68b8a4debf9ac">hugemem_read_block</a>(<span class="keywordtype">void</span> *to, <span class="keyword">const</span> hugemem_ptr_t from, <span class="keywordtype">size_t</span> size);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keywordtype">void</span> <a class="code" href="cpu__ebi_8h.html#a8b1ab43bf351dd8b0bc7bb04bc796b6f">hugemem_write_block</a>(hugemem_ptr_t to, <span class="keyword">const</span> <span class="keywordtype">void</span> *from, <span class="keywordtype">size_t</span> size);</div><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;}</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* CPU_EBI_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="ttc" id="atxmega_2include_2periph__cpu_8h_html"><div class="ttname"><a href="atxmega_2include_2periph__cpu_8h.html">periph_cpu.h</a></div><div class="ttdoc">CPU specific definitions for internal peripheral handling. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_a8996106bf769e3e02640a7409ee1e845"><div class="ttname"><a href="cpu__ebi_8h.html#a8996106bf769e3e02640a7409ee1e845">hugemem_read32</a></div><div class="ttdeci">uint32_t hugemem_read32(const hugemem_ptr_t from)</div><div class="ttdoc">Load two register pair from external memory pointer. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_abd0933f07f824c57f8e2692c472772d6"><div class="ttname"><a href="cpu__ebi_8h.html#abd0933f07f824c57f8e2692c472772d6">hugemem_write8</a></div><div class="ttdeci">static void hugemem_write8(hugemem_ptr_t to, uint8_t val)</div><div class="ttdoc">Store byte register to external memory pointer. </div><div class="ttdef"><b>Definition:</b> <a href="cpu__ebi_8h_source.html#l00072">cpu_ebi.h:72</a></div></div>
+<div class="ttc" id="cpu__ebi_8h_html_ad9e25118d3755bab5a4ead8216e01bb2"><div class="ttname"><a href="cpu__ebi_8h.html#ad9e25118d3755bab5a4ead8216e01bb2">hugemem_write16</a></div><div class="ttdeci">void hugemem_write16(hugemem_ptr_t to, uint16_t val)</div><div class="ttdoc">Store register pair to external memory pointer. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_a88249aa9377a59fc506b7930da5f36dd"><div class="ttname"><a href="cpu__ebi_8h.html#a88249aa9377a59fc506b7930da5f36dd">hugemem_write32</a></div><div class="ttdeci">void hugemem_write32(hugemem_ptr_t to, uint32_t val)</div><div class="ttdoc">Store two register pair to external memory pointer. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_acd3523022b174f618638076e5417bbc9"><div class="ttname"><a href="cpu__ebi_8h.html#acd3523022b174f618638076e5417bbc9">hugemem_read8</a></div><div class="ttdeci">static uint8_t hugemem_read8(const hugemem_ptr_t from)</div><div class="ttdoc">Load byte register from external memory pointer. </div><div class="ttdef"><b>Definition:</b> <a href="cpu__ebi_8h_source.html#l00040">cpu_ebi.h:40</a></div></div>
+<div class="ttc" id="cpu__ebi_8h_html_ad5cf5e354a0bb64b4bb68b8a4debf9ac"><div class="ttname"><a href="cpu__ebi_8h.html#ad5cf5e354a0bb64b4bb68b8a4debf9ac">hugemem_read_block</a></div><div class="ttdeci">void hugemem_read_block(void *to, const hugemem_ptr_t from, size_t size)</div><div class="ttdoc">Read byte stream from external memory to internal memory. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_ad0404349529c5f29a5dd8f06960f4612"><div class="ttname"><a href="cpu__ebi_8h.html#ad0404349529c5f29a5dd8f06960f4612">hugemem_read16</a></div><div class="ttdeci">uint16_t hugemem_read16(const hugemem_ptr_t from)</div><div class="ttdoc">Load register pair from external memory pointer. </div></div>
+<div class="ttc" id="cpu__ebi_8h_html_a8b1ab43bf351dd8b0bc7bb04bc796b6f"><div class="ttname"><a href="cpu__ebi_8h.html#a8b1ab43bf351dd8b0bc7bb04bc796b6f">hugemem_write_block</a></div><div class="ttdeci">void hugemem_write_block(hugemem_ptr_t to, const void *from, size_t size)</div><div class="ttdoc">Write byte stream from internal memory to external memory. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:18 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

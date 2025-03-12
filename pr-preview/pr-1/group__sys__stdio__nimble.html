@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>STDIO over NimBLE</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__sys__stdio__nimble.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle">
+<div class="title">STDIO over NimBLE<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__stdio.html">STDIO abstraction</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Standard input/output backend using NimBLE.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>Standard input/output backend using NimBLE. </p>
+<dl class="section warning"><dt>Warning</dt><dd><b class="text-danger">This feature is experimental!</b><br />
+ This feature is experimental as some use-cases, such as examples/advanced/twr_aloha, show unexpected behaviour.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>'stdio_read' blocks until at least one character was read.</dd>
+<dd>
+'stdio_write' is considered non-blocking even though it uses a mutex to protect the write buffer since only 'stdio_write' uses this mutex. Characters will be written in FIFO mode. Characters that do not fit in the buffer will be dropped.</dd></dl>
+<p>This module uses NimBLE for stdio. The bluetooth characteristic for stdin is writable and the characteristic for stdout uses the indicate mechanism to publish the system's output to a connected device. Data will be sent out asynchronously via callout functions.</p>
+<p>To use this module, add </p><div class="fragment"><div class="line">USEMODULE += stdio_nimble</div></div><!-- fragment --><p> to your makefile.</p>
+<p>You can change the default buffer sizes by adding </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_STDIO_NIMBLE_STDIN_BUFSIZE=1024</div><div class="line">CFLAGS += -DCONFIG_STDIO_NIMBLE_STDOUT_BUFSIZE=2048</div></div><!-- fragment --><p> to your makefile.</p>
+<p><b>NOTE:</b> These values must be a power of two!</p>
+<p>By default, stdin and stdout buffers are cleared on a connect event. To keep the content add the following to your makefile: </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_STDIO_NIMBLE_CLEAR_BUFFER_ON_CONNECT=0</div></div><!-- fragment --><p>For automatic bluetooth advertising a module is provided: <em>nimble_autoadv</em>. It will take care of enabling advertising on disconnect events and disabling advertising on connect events. It can be enabled by adding </p><div class="fragment"><div class="line">USEMODULE += nimble_autoadv</div></div><!-- fragment --><p> to your makefile.</p>
+<p>The advertised device name can then optionally be configured with </p><div class="fragment"><div class="line">CFLAGS += -DCONFIG_NIMBLE_AUTOADV_DEVICE_NAME=<span class="stringliteral">&#39;&quot;Riot OS device&quot;&#39;</span></div></div><!-- fragment --><p> Otherwise the device will appear as "*RIOT OS device*".</p>
+<p>This example is for the <code>nrf52840dongle</code> target in <code>tests/sys/shell</code>, other targets that are supported by NimBLE can be used similarly.</p>
+<p>Add following to Makefile: </p><div class="fragment"><div class="line">BOARD = nrf52840dongle</div><div class="line">USEMODULE += nimble_autoadv</div><div class="line">USEMODULE += stdio_nimble</div></div><!-- fragment --><p><b>NOTE:</b> You can also have a look at <code>tests/sys/shell_ble</code>, which is already set up for NimBLE.</p>
+<div class="fragment"><div class="line">$ make -C tests/sys/shell -j clean all flash</div></div><!-- fragment --><div class="fragment"><div class="line">$ pip install ble-serial</div></div><!-- fragment --><p>To connect to the device, you have to find out the BLE address. For this example, the device name is <code>Riot OS device</code>. For the <code>tests/sys/shell_ble</code> test, the device name is <code>tests/sys/shell_ble</code>. When you get an <code>ble-scan: command not found</code> error you can also run <code>python -m ble_serial.scan</code> instead.</p>
+<p><b>NOTE:</b> Windows and Linux use MAC addresses instead of the UUIDs.</p>
+<div class="fragment"><div class="line">$ ble-scan</div><div class="line">Started BLE scan</div><div class="line"></div><div class="line">6BE8174C-A0F8-4479-AFA6-9828372CAFE9 (RSSI=-40): Riot OS device</div><div class="line">A2862DCB-D382-4C0B-95BF-FA9A961F8D88 (RSSI=-48): Unknown</div><div class="line">F2C75C08-7DD7-4F43-BEF0-151C92068FE5 (RSSI=-66): Unknown</div><div class="line">69400683-FBE5-4B45-8CFE-98594076E5F4 (RSSI=-89): Unknown</div></div><!-- fragment --><p>### Discover characteristics (check the one advertised by the gatt server stdin/stdout) </p><div class="fragment"><div class="line">$ ble-scan -d 6BE8174C-A0F8-4479-AFA6-9828372CAFE9</div><div class="line">Started deep scan of 6BE8174C-A0F8-4479-AFA6-9828372CAFE9</div><div class="line"></div><div class="line">SERVICE e6d54866-0292-4779-b8f8-c52bbec91e71 (Handle: 10): Unknown</div><div class="line">     CHARACTERISTIC 35f28386-3070-4f3b-ba38-27507e991762 (Handle: 11): Unknown [<span class="stringliteral">&#39;indicate&#39;</span>]</div><div class="line">         DESCRIPTOR 00002902-0000-1000-8000-00805f9b34fb (Handle: 13): Client Characteristic</div><div class="line">Configuration</div><div class="line">     CHARACTERISTIC ccdd113f-40d5-4d68-86ac-a728dd82f4aa (Handle: 14): Unknown [<span class="stringliteral">&#39;write&#39;</span>]</div><div class="line"></div><div class="line">Completed deep scan of 6BE8174C-A0F8-4479-AFA6-9828372CAFE9</div></div><!-- fragment --><p><b>NOTE:</b> for older versions (<code>&lt;=2.8.0</code>) of <code>ble-serial</code>, the command line option <code>--write-with-response</code> is unsupported and has to be removed!</p>
+<div class="fragment"><div class="line">$ ble-serial -d 6BE8174C-A0F8-4479-AFA6-9828372CAFE9 -p /tmp/dev_riot_ble</div><div class="line">--write-uuid ccdd113f-40d5-4d68-86ac-a728dd82f4aa</div><div class="line">--read-uuid 35f28386-3070-4f3b-ba38-27507e991762 --write-with-response</div><div class="line"></div><div class="line">17:44:18.765 | INFO | linux_pty.py: Slave created on /tmp/dev_riot_ble -&gt; /dev/ttys006</div><div class="line">17:44:18.766 | INFO | ble_interface.py: Receiver <span class="keyword">set</span> up</div><div class="line">17:44:18.766 | INFO | ble_interface.py: Trying to <a class="code" href="group__posix__sockets.html#gaeedaa5cac80a95d50232c1d130615a1a">connect</a> with 6BE8174C-A0F8-4479-AFA6-</div><div class="line">9828372CAFE9</div><div class="line">17:44:19.861 | INFO | ble_interface.py: Device 6BE8174C-A0F8-4479-AFA6-9828372CAFE9 connected</div><div class="line">17:44:19.862 | INFO | ble_interface.py: Found write characteristic ccdd113f-40d5-4d68-86ac-</div><div class="line">a728dd82f4aa (H. 14)</div><div class="line">17:44:19.862 | INFO | ble_interface.py: Found notify characteristic 35f28386-3070-4f3b-ba38-</div><div class="line">27507e991762 (H. 11)</div><div class="line">17:44:19.883 | INFO | main.py: Running main loop!</div></div><!-- fragment --><div class="fragment"><div class="line">$ picocom -q -b 115200 --imap lfcrlf /tmp/dev_riot_ble</div><div class="line">&gt; <a class="code" href="group__sys__ps.html#ga36626c0c8ad41d9689b2d6f9aa76bd8f">ps</a></div><div class="line">    pid | state    Q | pri</div><div class="line">      1 | running  Q |   7</div><div class="line">      2 | bl anyfl _ |   5</div><div class="line">      3 | bl anyfl _ |   0</div><div class="line">&gt;</div></div><!-- fragment --> <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:stdio__nimble_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="stdio__nimble_8h.html">stdio_nimble.h</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga6d57e3f5b80ad0678bffedecf02a1b15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__nimble.html#ga6d57e3f5b80ad0678bffedecf02a1b15">CONFIG_STDIO_NIMBLE_CLEAR_BUFFER_ON_CONNECT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memdesc:ga6d57e3f5b80ad0678bffedecf02a1b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to clear the buffers when establishing a new connection or not.  <a href="#ga6d57e3f5b80ad0678bffedecf02a1b15">More...</a><br /></td></tr>
+<tr class="separator:ga6d57e3f5b80ad0678bffedecf02a1b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga399fd711e0cfad83b43e598b97f61520"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__nimble.html#ga399fd711e0cfad83b43e598b97f61520">CONFIG_STDIO_NIMBLE_STDIN_BUFSIZE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memdesc:ga399fd711e0cfad83b43e598b97f61520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of buffer for stdin in bytes.  <a href="#ga399fd711e0cfad83b43e598b97f61520">More...</a><br /></td></tr>
+<tr class="separator:ga399fd711e0cfad83b43e598b97f61520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87e8c108fd505eccb3e944b86312dbc3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__sys__stdio__nimble.html#ga87e8c108fd505eccb3e944b86312dbc3">CONFIG_STDIO_NIMBLE_STDOUT_BUFSIZE</a>&#160;&#160;&#160;2048</td></tr>
+<tr class="memdesc:ga87e8c108fd505eccb3e944b86312dbc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size of buffer for stdout in bytes.  <a href="#ga87e8c108fd505eccb3e944b86312dbc3">More...</a><br /></td></tr>
+<tr class="separator:ga87e8c108fd505eccb3e944b86312dbc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga6d57e3f5b80ad0678bffedecf02a1b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6d57e3f5b80ad0678bffedecf02a1b15">&#9670;&nbsp;</a></span>CONFIG_STDIO_NIMBLE_CLEAR_BUFFER_ON_CONNECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_STDIO_NIMBLE_CLEAR_BUFFER_ON_CONNECT&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether to clear the buffers when establishing a new connection or not. </p>
+<p>Defaults to true. </p>
+
+<p class="definition">Definition at line <a class="el" href="stdio__nimble_8h_source.html#l00178">178</a> of file <a class="el" href="stdio__nimble_8h_source.html">stdio_nimble.h</a>.</p>
+
+</div>
+</div>
+<a id="ga399fd711e0cfad83b43e598b97f61520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga399fd711e0cfad83b43e598b97f61520">&#9670;&nbsp;</a></span>CONFIG_STDIO_NIMBLE_STDIN_BUFSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_STDIO_NIMBLE_STDIN_BUFSIZE&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of buffer for stdin in bytes. </p>
+<dl class="section note"><dt>Note</dt><dd>Must be a power of two! </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stdio__nimble_8h_source.html#l00187">187</a> of file <a class="el" href="stdio__nimble_8h_source.html">stdio_nimble.h</a>.</p>
+
+</div>
+</div>
+<a id="ga87e8c108fd505eccb3e944b86312dbc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87e8c108fd505eccb3e944b86312dbc3">&#9670;&nbsp;</a></span>CONFIG_STDIO_NIMBLE_STDOUT_BUFSIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_STDIO_NIMBLE_STDOUT_BUFSIZE&#160;&#160;&#160;2048</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Size of buffer for stdout in bytes. </p>
+<dl class="section note"><dt>Note</dt><dd>Must be a power of two! </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="stdio__nimble_8h_source.html#l00196">196</a> of file <a class="el" href="stdio__nimble_8h_source.html">stdio_nimble.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

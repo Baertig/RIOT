@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>pkg/opendsme/include/opendsme/dsme_settings.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dsme__settings_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">dsme_settings.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="dsme__settings_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2022 HAW Hamburg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#ifndef OPENDSME_DSME_SETTINGS_H</span></div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define OPENDSME_DSME_SETTINGS_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stdio_8h.html">stdio.h</a>&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="kernel__defines_8h.html">kernel_defines.h</a>&quot;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="sys_2include_2net_2ieee802154_8h.html">net/ieee802154.h</a>&quot;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;opendsme.h&quot;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a90cd6f01c5b052f142a1cebfbfd3a38d">   35</a></span>&#160;<span class="preprocessor">#define DSME_MAX_LOST_BEACONS CONFIG_OPENDSME_MAX_LOST_BEACONS</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacedsme.html">dsme</a> {</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>const_redefines {</div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a1214ba98783a0f4486753640e2c2c862">   43</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a1214ba98783a0f4486753640e2c2c862">aNumSuperframeSlots</a> = 16;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a24494081f34bac156805c5bcd80f692c">   47</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a24494081f34bac156805c5bcd80f692c">macSIFSPeriod</a> = 12;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#af75122a878e04649d5fed0950690c85c">   52</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#af75122a878e04649d5fed0950690c85c">macLIFSPeriod</a> = 40;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#af71a647ab23ca77f544f26844a82b741">   58</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#af71a647ab23ca77f544f26844a82b741">PRE_EVENT_SHIFT</a> = const_redefines::macLIFSPeriod;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a661c8c88a3848ae9813cddce9da0d7d7">   63</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a661c8c88a3848ae9813cddce9da0d7d7">MIN_CSMA_SLOTS</a> = 0;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ac7d1621341e0b42ee2271ac3dee840b0">   68</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#ac7d1621341e0b42ee2271ac3dee840b0">MAX_GTSLOTS</a> = const_redefines::aNumSuperframeSlots - <a class="code" href="dsme__settings_8h.html#a661c8c88a3848ae9813cddce9da0d7d7">MIN_CSMA_SLOTS</a> - 1;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a3038d1ffa504738501d78c081ee60608">   73</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a3038d1ffa504738501d78c081ee60608">MAX_CHANNELS</a> = 16; <span class="comment">/* For O-QPSK */</span></div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ade740c6ddf9ebaa2620e19b8cfc2f882">   78</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#ade740c6ddf9ebaa2620e19b8cfc2f882">MIN_CHANNEL</a> = 11;  <span class="comment">/* For O-QPSK */</span></div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div><div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ae5537d087b9c38135b4c9382216663e3">   83</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#ae5537d087b9c38135b4c9382216663e3">MAC_DEFAULT_CHANNEL</a> = <a class="code" href="group__net__ieee802154__conf.html#gaaf010b48025ab9631e632c8ca936dc54">CONFIG_IEEE802154_DEFAULT_CHANNEL</a>; <span class="comment">/* For O-QPSK */</span></div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a67dba2b4ec393b6c34cf043f263dd015">   88</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a67dba2b4ec393b6c34cf043f263dd015">MAX_NEIGHBORS</a> = <a class="code" href="group__pkg__opendsme.html#ga3f19b309fea607941516d60402db56f6">CONFIG_OPENDSME_MAX_NEIGHBOURS</a>;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a2fa4d9ca8c22607d68fe05ce170f9476">   93</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#a2fa4d9ca8c22607d68fe05ce170f9476">MAC_DEFAULT_NWK_ID</a> = <a class="code" href="group__net__ieee802154__conf.html#ga3ce7993741c7ab943712750e050256f6">CONFIG_IEEE802154_DEFAULT_PANID</a>;</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a579f52344c28d3445530b1178ee2ae7f">   98</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a579f52344c28d3445530b1178ee2ae7f">MIN_SO</a> = <a class="code" href="group__net__ieee802154__header.html#ga8f79e05ed5e61d1900e0f630aa662a4a">CONFIG_IEEE802154_DSME_SUPERFRAME_ORDER</a>;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a8ad681d42dd3b780a0b552ac33d9c8b8">  103</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a8ad681d42dd3b780a0b552ac33d9c8b8">MAX_BO</a> = <a class="code" href="group__net__ieee802154__header.html#ga0cf916c449c052f9f9cfbc34fddfeaa3">CONFIG_IEEE802154_DSME_BEACON_ORDER</a>;</div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ae80d885795f976db915e8f86e67b617f">  108</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#ae80d885795f976db915e8f86e67b617f">MAX_MO</a> = <a class="code" href="group__net__ieee802154__header.html#gae35970cf9219a86a89d857763f944b78">CONFIG_IEEE802154_DSME_MULTISUPERFRAME_ORDER</a>;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ad6bdb1ae0232a20876f9d6cf48a7426e">  113</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#ad6bdb1ae0232a20876f9d6cf48a7426e">MAX_SLOTS_PER_SUPERFRAMES</a> = 1 &lt;&lt; (uint16_t)(MAX_BO - MIN_SO);</div><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div><div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a79067d706511acf403d6a83689322fac">  118</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#a79067d706511acf403d6a83689322fac">MAX_TOTAL_SUPERFRAMES</a> = 1 &lt;&lt; (uint16_t)(MAX_BO - MIN_SO);</div><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div><div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ae1b239442731988e6d2b9c2a8664dc3f">  123</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#ae1b239442731988e6d2b9c2a8664dc3f">MAX_SUPERFRAMES_PER_MULTI_SUPERFRAME</a> = 1 &lt;&lt; (uint16_t)(MAX_MO - MIN_SO);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a3b9f49d1fb2088251e33e1ff2e16b2b2">  128</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#a3b9f49d1fb2088251e33e1ff2e16b2b2">MAX_OCCUPIED_SLOTS</a> = <a class="code" href="dsme__settings_8h.html#ae1b239442731988e6d2b9c2a8664dc3f">MAX_SUPERFRAMES_PER_MULTI_SUPERFRAME</a>*<a class="code" href="dsme__settings_8h.html#ac7d1621341e0b42ee2271ac3dee840b0">MAX_GTSLOTS</a>*<a class="code" href="dsme__settings_8h.html#a3038d1ffa504738501d78c081ee60608">MAX_CHANNELS</a>;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div><div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ad066417a3993fc6a25afc344e424e90d">  133</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#ad066417a3993fc6a25afc344e424e90d">MAX_SAB_UNITS</a> = 1;</div><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div><div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#ac21d1d3a8fa177bf60e323f8336bb9f2">  138</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#ac21d1d3a8fa177bf60e323f8336bb9f2">CAP_QUEUE_SIZE</a> = <a class="code" href="group__pkg__opendsme.html#ga50cb4fb3fea04a94017828690be47a7b">CONFIG_OPENDSME_CAP_QUEUE_SIZE</a>;</div><div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div><div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#aacf26d328e44723368c57d65f795a58c">  143</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#aacf26d328e44723368c57d65f795a58c">TOTAL_GTS_QUEUE_SIZE</a> = <a class="code" href="group__pkg__opendsme.html#ga36c731dfb78f3451035a0fdc20e38425">CONFIG_OPENDSME_CFP_QUEUE_SIZE</a>;</div><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div><div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a7b913e277ad26e451ce4211b7ae1c3d7">  148</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#a7b913e277ad26e451ce4211b7ae1c3d7">UPPER_LAYER_QUEUE_SIZE</a> = 4;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div><div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a4448c6ef3f4162fddeb12192cbbb09a5">  153</a></span>&#160;constexpr uint16_t <a class="code" href="dsme__settings_8h.html#a4448c6ef3f4162fddeb12192cbbb09a5">DSME_BROADCAST_PAN_ID</a> = 0xffff;</div><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div><div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="dsme__settings_8h.html#a905ae18f0fc2e1f79c98bfb4bb4f5d49">  158</a></span>&#160;constexpr uint8_t <a class="code" href="dsme__settings_8h.html#a905ae18f0fc2e1f79c98bfb4bb4f5d49">ADDITIONAL_ACK_WAIT_DURATION</a> = 63;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* OPENDSME_DSME_SETTINGS_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div><div class="ttc" id="dsme__settings_8h_html_a1214ba98783a0f4486753640e2c2c862"><div class="ttname"><a href="dsme__settings_8h.html#a1214ba98783a0f4486753640e2c2c862">dsme::const_redefines::aNumSuperframeSlots</a></div><div class="ttdeci">constexpr uint8_t aNumSuperframeSlots</div><div class="ttdoc">fixed value, see Table 8-80 of IEEE 802.15.4-2015, this includes beacon, CAP and GTS ...</div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00043">dsme_settings.h:43</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a2fa4d9ca8c22607d68fe05ce170f9476"><div class="ttname"><a href="dsme__settings_8h.html#a2fa4d9ca8c22607d68fe05ce170f9476">dsme::MAC_DEFAULT_NWK_ID</a></div><div class="ttdeci">constexpr uint16_t MAC_DEFAULT_NWK_ID</div><div class="ttdoc">default PAN ID </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00093">dsme_settings.h:93</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ae80d885795f976db915e8f86e67b617f"><div class="ttname"><a href="dsme__settings_8h.html#ae80d885795f976db915e8f86e67b617f">dsme::MAX_MO</a></div><div class="ttdeci">constexpr uint8_t MAX_MO</div><div class="ttdoc">Maximum multi-superframe order. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00108">dsme_settings.h:108</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a24494081f34bac156805c5bcd80f692c"><div class="ttname"><a href="dsme__settings_8h.html#a24494081f34bac156805c5bcd80f692c">dsme::const_redefines::macSIFSPeriod</a></div><div class="ttdeci">constexpr uint8_t macSIFSPeriod</div><div class="ttdoc">fixed value, see 8.1.3 of IEEE 802.15.4-2011 (assuming no UWB PHY) </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00047">dsme_settings.h:47</a></div></div>
+<div class="ttc" id="group__net__ieee802154__header_html_ga0cf916c449c052f9f9cfbc34fddfeaa3"><div class="ttname"><a href="group__net__ieee802154__header.html#ga0cf916c449c052f9f9cfbc34fddfeaa3">CONFIG_IEEE802154_DSME_BEACON_ORDER</a></div><div class="ttdeci">#define CONFIG_IEEE802154_DSME_BEACON_ORDER</div><div class="ttdoc">Set IEEE 802.15.4 DSME Beacon Order (BO) </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2net_2ieee802154_8h_source.html#l00521">ieee802154.h:521</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a79067d706511acf403d6a83689322fac"><div class="ttname"><a href="dsme__settings_8h.html#a79067d706511acf403d6a83689322fac">dsme::MAX_TOTAL_SUPERFRAMES</a></div><div class="ttdeci">constexpr uint16_t MAX_TOTAL_SUPERFRAMES</div><div class="ttdoc">Maximum number of superframes per beacon interval. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00118">dsme_settings.h:118</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_af71a647ab23ca77f544f26844a82b741"><div class="ttname"><a href="dsme__settings_8h.html#af71a647ab23ca77f544f26844a82b741">dsme::PRE_EVENT_SHIFT</a></div><div class="ttdeci">constexpr uint8_t PRE_EVENT_SHIFT</div><div class="ttdoc">guard time before a DSME event </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00058">dsme_settings.h:58</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a67dba2b4ec393b6c34cf043f263dd015"><div class="ttname"><a href="dsme__settings_8h.html#a67dba2b4ec393b6c34cf043f263dd015">dsme::MAX_NEIGHBORS</a></div><div class="ttdeci">constexpr uint8_t MAX_NEIGHBORS</div><div class="ttdoc">maximum number of neighbors </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00088">dsme_settings.h:88</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a3038d1ffa504738501d78c081ee60608"><div class="ttname"><a href="dsme__settings_8h.html#a3038d1ffa504738501d78c081ee60608">dsme::MAX_CHANNELS</a></div><div class="ttdeci">constexpr uint8_t MAX_CHANNELS</div><div class="ttdoc">maximum number of IEEE 802.15.4 channels </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00073">dsme_settings.h:73</a></div></div>
+<div class="ttc" id="sys_2include_2net_2ieee802154_8h_html"><div class="ttname"><a href="sys_2include_2net_2ieee802154_8h.html">ieee802154.h</a></div><div class="ttdoc">IEEE 802.15.4 header definitions. </div></div>
+<div class="ttc" id="dsme__settings_8h_html_ae5537d087b9c38135b4c9382216663e3"><div class="ttname"><a href="dsme__settings_8h.html#ae5537d087b9c38135b4c9382216663e3">dsme::MAC_DEFAULT_CHANNEL</a></div><div class="ttdeci">constexpr uint8_t MAC_DEFAULT_CHANNEL</div><div class="ttdoc">default MAC channel </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00083">dsme_settings.h:83</a></div></div>
+<div class="ttc" id="namespacedsme_html"><div class="ttname"><a href="namespacedsme.html">dsme</a></div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00037">dsme_settings.h:37</a></div></div>
+<div class="ttc" id="group__net__ieee802154__header_html_ga8f79e05ed5e61d1900e0f630aa662a4a"><div class="ttname"><a href="group__net__ieee802154__header.html#ga8f79e05ed5e61d1900e0f630aa662a4a">CONFIG_IEEE802154_DSME_SUPERFRAME_ORDER</a></div><div class="ttdeci">#define CONFIG_IEEE802154_DSME_SUPERFRAME_ORDER</div><div class="ttdoc">Set IEEE 802.15.4 DSME Superframe Order (SO) The SO sets the slot duration to 60 * symbol_time_us * 2...</div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2net_2ieee802154_8h_source.html#l00495">ieee802154.h:495</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a3b9f49d1fb2088251e33e1ff2e16b2b2"><div class="ttname"><a href="dsme__settings_8h.html#a3b9f49d1fb2088251e33e1ff2e16b2b2">dsme::MAX_OCCUPIED_SLOTS</a></div><div class="ttdeci">constexpr uint16_t MAX_OCCUPIED_SLOTS</div><div class="ttdoc">Maximum number of GTS slots per superframe. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00128">dsme_settings.h:128</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ac21d1d3a8fa177bf60e323f8336bb9f2"><div class="ttname"><a href="dsme__settings_8h.html#ac21d1d3a8fa177bf60e323f8336bb9f2">dsme::CAP_QUEUE_SIZE</a></div><div class="ttdeci">constexpr uint16_t CAP_QUEUE_SIZE</div><div class="ttdoc">Size of the CAP queue. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00138">dsme_settings.h:138</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ad6bdb1ae0232a20876f9d6cf48a7426e"><div class="ttname"><a href="dsme__settings_8h.html#ad6bdb1ae0232a20876f9d6cf48a7426e">dsme::MAX_SLOTS_PER_SUPERFRAMES</a></div><div class="ttdeci">constexpr uint16_t MAX_SLOTS_PER_SUPERFRAMES</div><div class="ttdoc">Maximum number of slots per superframe. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00113">dsme_settings.h:113</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ae1b239442731988e6d2b9c2a8664dc3f"><div class="ttname"><a href="dsme__settings_8h.html#ae1b239442731988e6d2b9c2a8664dc3f">dsme::MAX_SUPERFRAMES_PER_MULTI_SUPERFRAME</a></div><div class="ttdeci">constexpr uint16_t MAX_SUPERFRAMES_PER_MULTI_SUPERFRAME</div><div class="ttdoc">Maximum number of superframes per multi-superframe. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00123">dsme_settings.h:123</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a7b913e277ad26e451ce4211b7ae1c3d7"><div class="ttname"><a href="dsme__settings_8h.html#a7b913e277ad26e451ce4211b7ae1c3d7">dsme::UPPER_LAYER_QUEUE_SIZE</a></div><div class="ttdeci">constexpr uint16_t UPPER_LAYER_QUEUE_SIZE</div><div class="ttdoc">Size of the CAP queue. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00148">dsme_settings.h:148</a></div></div>
+<div class="ttc" id="group__pkg__opendsme_html_ga36c731dfb78f3451035a0fdc20e38425"><div class="ttname"><a href="group__pkg__opendsme.html#ga36c731dfb78f3451035a0fdc20e38425">CONFIG_OPENDSME_CFP_QUEUE_SIZE</a></div><div class="ttdeci">#define CONFIG_OPENDSME_CFP_QUEUE_SIZE</div><div class="ttdoc">DSME CFP queue size (for GTS transmissions) </div><div class="ttdef"><b>Definition:</b> <a href="opendsme_8h_source.html#l00242">opendsme.h:242</a></div></div>
+<div class="ttc" id="group__pkg__opendsme_html_ga3f19b309fea607941516d60402db56f6"><div class="ttname"><a href="group__pkg__opendsme.html#ga3f19b309fea607941516d60402db56f6">CONFIG_OPENDSME_MAX_NEIGHBOURS</a></div><div class="ttdeci">#define CONFIG_OPENDSME_MAX_NEIGHBOURS</div><div class="ttdoc">maximum number of DSME neighbours </div><div class="ttdef"><b>Definition:</b> <a href="opendsme_8h_source.html#l00206">opendsme.h:206</a></div></div>
+<div class="ttc" id="group__net__ieee802154__conf_html_ga3ce7993741c7ab943712750e050256f6"><div class="ttname"><a href="group__net__ieee802154__conf.html#ga3ce7993741c7ab943712750e050256f6">CONFIG_IEEE802154_DEFAULT_PANID</a></div><div class="ttdeci">#define CONFIG_IEEE802154_DEFAULT_PANID</div><div class="ttdoc">IEEE802.15.4 default PANID. </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2net_2ieee802154_8h_source.html#l00382">ieee802154.h:382</a></div></div>
+<div class="ttc" id="group__net__ieee802154__conf_html_gaaf010b48025ab9631e632c8ca936dc54"><div class="ttname"><a href="group__net__ieee802154__conf.html#gaaf010b48025ab9631e632c8ca936dc54">CONFIG_IEEE802154_DEFAULT_CHANNEL</a></div><div class="ttdeci">#define CONFIG_IEEE802154_DEFAULT_CHANNEL</div><div class="ttdoc">IEEE802.15.4 default channel. </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2net_2ieee802154_8h_source.html#l00312">ieee802154.h:312</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a4448c6ef3f4162fddeb12192cbbb09a5"><div class="ttname"><a href="dsme__settings_8h.html#a4448c6ef3f4162fddeb12192cbbb09a5">dsme::DSME_BROADCAST_PAN_ID</a></div><div class="ttdeci">constexpr uint16_t DSME_BROADCAST_PAN_ID</div><div class="ttdoc">Broadcast PAN ID. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00153">dsme_settings.h:153</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a8ad681d42dd3b780a0b552ac33d9c8b8"><div class="ttname"><a href="dsme__settings_8h.html#a8ad681d42dd3b780a0b552ac33d9c8b8">dsme::MAX_BO</a></div><div class="ttdeci">constexpr uint8_t MAX_BO</div><div class="ttdoc">Maximum beacon order. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00103">dsme_settings.h:103</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a661c8c88a3848ae9813cddce9da0d7d7"><div class="ttname"><a href="dsme__settings_8h.html#a661c8c88a3848ae9813cddce9da0d7d7">dsme::MIN_CSMA_SLOTS</a></div><div class="ttdeci">constexpr uint8_t MIN_CSMA_SLOTS</div><div class="ttdoc">Minimum number of CSMA slots. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00063">dsme_settings.h:63</a></div></div>
+<div class="ttc" id="stdio_8h_html"><div class="ttname"><a href="stdio_8h.html">stdio.h</a></div><div class="ttdoc">stdio wrapper to extend the C libs stdio </div></div>
+<div class="ttc" id="dsme__settings_8h_html_a579f52344c28d3445530b1178ee2ae7f"><div class="ttname"><a href="dsme__settings_8h.html#a579f52344c28d3445530b1178ee2ae7f">dsme::MIN_SO</a></div><div class="ttdeci">constexpr uint8_t MIN_SO</div><div class="ttdoc">Minimum superframe order. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00098">dsme_settings.h:98</a></div></div>
+<div class="ttc" id="kernel__defines_8h_html"><div class="ttname"><a href="kernel__defines_8h.html">kernel_defines.h</a></div><div class="ttdoc">Common macros and compiler attributes/pragmas configuration. </div></div>
+<div class="ttc" id="dsme__settings_8h_html_ac7d1621341e0b42ee2271ac3dee840b0"><div class="ttname"><a href="dsme__settings_8h.html#ac7d1621341e0b42ee2271ac3dee840b0">dsme::MAX_GTSLOTS</a></div><div class="ttdeci">constexpr uint8_t MAX_GTSLOTS</div><div class="ttdoc">maximum number of GTS slots </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00068">dsme_settings.h:68</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_a905ae18f0fc2e1f79c98bfb4bb4f5d49"><div class="ttname"><a href="dsme__settings_8h.html#a905ae18f0fc2e1f79c98bfb4bb4f5d49">dsme::ADDITIONAL_ACK_WAIT_DURATION</a></div><div class="ttdeci">constexpr uint8_t ADDITIONAL_ACK_WAIT_DURATION</div><div class="ttdoc">Additional time to wait for an ACK. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00158">dsme_settings.h:158</a></div></div>
+<div class="ttc" id="group__net__ieee802154__header_html_gae35970cf9219a86a89d857763f944b78"><div class="ttname"><a href="group__net__ieee802154__header.html#gae35970cf9219a86a89d857763f944b78">CONFIG_IEEE802154_DSME_MULTISUPERFRAME_ORDER</a></div><div class="ttdeci">#define CONFIG_IEEE802154_DSME_MULTISUPERFRAME_ORDER</div><div class="ttdoc">Set IEEE 802.15.4 DSME Multisuperframe Order (MO) </div><div class="ttdef"><b>Definition:</b> <a href="sys_2include_2net_2ieee802154_8h_source.html#l00508">ieee802154.h:508</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_af75122a878e04649d5fed0950690c85c"><div class="ttname"><a href="dsme__settings_8h.html#af75122a878e04649d5fed0950690c85c">dsme::const_redefines::macLIFSPeriod</a></div><div class="ttdeci">constexpr uint8_t macLIFSPeriod</div><div class="ttdoc">fixed value, see 8.1.3 of IEEE 802.15.4-2011 (assuming no UWB PHY) </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00052">dsme_settings.h:52</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ad066417a3993fc6a25afc344e424e90d"><div class="ttname"><a href="dsme__settings_8h.html#ad066417a3993fc6a25afc344e424e90d">dsme::MAX_SAB_UNITS</a></div><div class="ttdeci">constexpr uint8_t MAX_SAB_UNITS</div><div class="ttdoc">Maximum number of SAB units. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00133">dsme_settings.h:133</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_ade740c6ddf9ebaa2620e19b8cfc2f882"><div class="ttname"><a href="dsme__settings_8h.html#ade740c6ddf9ebaa2620e19b8cfc2f882">dsme::MIN_CHANNEL</a></div><div class="ttdeci">constexpr uint8_t MIN_CHANNEL</div><div class="ttdoc">minimum number of IEEE 802.15.4 channels </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00078">dsme_settings.h:78</a></div></div>
+<div class="ttc" id="group__pkg__opendsme_html_ga50cb4fb3fea04a94017828690be47a7b"><div class="ttname"><a href="group__pkg__opendsme.html#ga50cb4fb3fea04a94017828690be47a7b">CONFIG_OPENDSME_CAP_QUEUE_SIZE</a></div><div class="ttdeci">#define CONFIG_OPENDSME_CAP_QUEUE_SIZE</div><div class="ttdoc">DSME CAP queue size. </div><div class="ttdef"><b>Definition:</b> <a href="opendsme_8h_source.html#l00230">opendsme.h:230</a></div></div>
+<div class="ttc" id="dsme__settings_8h_html_aacf26d328e44723368c57d65f795a58c"><div class="ttname"><a href="dsme__settings_8h.html#aacf26d328e44723368c57d65f795a58c">dsme::TOTAL_GTS_QUEUE_SIZE</a></div><div class="ttdeci">constexpr uint16_t TOTAL_GTS_QUEUE_SIZE</div><div class="ttdoc">Size of the CFP queue. </div><div class="ttdef"><b>Definition:</b> <a href="dsme__settings_8h_source.html#l00143">dsme_settings.h:143</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:20 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

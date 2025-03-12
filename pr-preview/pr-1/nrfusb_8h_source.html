@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/nrf5x_common/include/nrfusb.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('nrfusb_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">nrfusb.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="nrfusb_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2019 Koen Zandberg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef NRFUSB_H</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define NRFUSB_H</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="usbdev_8h.html">periph/usbdev.h</a>&quot;</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;cpu.h&quot;</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#gacdc43aebf3d925d881271c1867d5f23f">   37</a></span>&#160;<span class="preprocessor">#define NRF_USB_NUM_PERIPH 1</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ga089a0ba9b1190535a0fd06d90ebf6762">   42</a></span>&#160;<span class="preprocessor">#define NRF_USB_NUM_EP      USBDEV_NUM_ENDPOINTS</span></div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#gad28d87b14919967685c0f52afa717fa2">   47</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2ac57fd9da9e6e0fa8ab6d21663cedeca1">   48</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2ac57fd9da9e6e0fa8ab6d21663cedeca1">NRFUSB_SETUP_READY</a>,     </div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2abf5fdb7bb2c8f698e8289501fca7137e">   49</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2abf5fdb7bb2c8f698e8289501fca7137e">NRFUSB_SETUP_READ</a>,      </div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a116b4ff719127fca33e6f801ad10ffc1">   50</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a116b4ff719127fca33e6f801ad10ffc1">NRFUSB_SETUP_WRITE</a>,     </div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a302b3fb777043a298372c6d96bab4fd9">   51</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a302b3fb777043a298372c6d96bab4fd9">NRFUSB_SETUP_ACKOUT</a>,    </div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a5106a7b6adfa93ea3bc6b5552248943d">   52</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a5106a7b6adfa93ea3bc6b5552248943d">NRFUSB_SETUP_ACKIN</a>,     </div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <a class="code" href="group__cpu__nrf52__nrfusb.html#gad28d87b14919967685c0f52afa717fa2">nrfusb_setup_state_t</a>;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structnrfusb__t.html">   58</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structnrfusb__t.html#af19af08e169a6600210e69f2d5518808">   59</a></span>&#160;    <a class="code" href="structusbdev.html">usbdev_t</a> <a class="code" href="structnrfusb__t.html#af19af08e169a6600210e69f2d5518808">usbdev</a>;                        </div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structnrfusb__t.html#a51760838593a9fd532488c9091a7b0c4">   60</a></span>&#160;    <a class="code" href="structusbdev__ep.html">usbdev_ep_t</a> ep_ins[<a class="code" href="group__cpu__nrf52__nrfusb.html#ga089a0ba9b1190535a0fd06d90ebf6762">NRF_USB_NUM_EP</a>];     </div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structnrfusb__t.html#a2aa1f28af39c75dc9800b273e17ad5dc">   61</a></span>&#160;    <a class="code" href="structusbdev__ep.html">usbdev_ep_t</a> ep_outs[ <a class="code" href="group__cpu__nrf52__nrfusb.html#ga089a0ba9b1190535a0fd06d90ebf6762">NRF_USB_NUM_EP</a>];   </div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structnrfusb__t.html#a709f7ab1d247f5f257cd0d6f5d466a48">   62</a></span>&#160;    NRF_USBD_Type *<a class="code" href="structnrfusb__t.html#a709f7ab1d247f5f257cd0d6f5d466a48">device</a>;                  </div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="structnrfusb__t.html#a6e920e50f313a5d9090f3993b96c75fa">   63</a></span>&#160;    <a class="code" href="group__cpu__nrf52__nrfusb.html#gad28d87b14919967685c0f52afa717fa2">nrfusb_setup_state_t</a> <a class="code" href="structnrfusb__t.html#a6e920e50f313a5d9090f3993b96c75fa">sstate</a>;            </div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <a class="code" href="structnrfusb__t.html">nrfusb_t</a>;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NRFUSB_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div><div class="ttc" id="usbdev_8h_html"><div class="ttname"><a href="usbdev_8h.html">usbdev.h</a></div><div class="ttdoc">Definitions low-level USB driver interface. </div></div>
+<div class="ttc" id="structnrfusb__t_html_a709f7ab1d247f5f257cd0d6f5d466a48"><div class="ttname"><a href="structnrfusb__t.html#a709f7ab1d247f5f257cd0d6f5d466a48">nrfusb_t::device</a></div><div class="ttdeci">NRF_USBD_Type * device</div><div class="ttdoc">Ptr to the device registers. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00062">nrfusb.h:62</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ggad28d87b14919967685c0f52afa717fa2a5106a7b6adfa93ea3bc6b5552248943d"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a5106a7b6adfa93ea3bc6b5552248943d">NRFUSB_SETUP_ACKIN</a></div><div class="ttdoc">Expecting an ACK on the in endpoint. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00052">nrfusb.h:52</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ggad28d87b14919967685c0f52afa717fa2a116b4ff719127fca33e6f801ad10ffc1"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a116b4ff719127fca33e6f801ad10ffc1">NRFUSB_SETUP_WRITE</a></div><div class="ttdoc">Write request received. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00050">nrfusb.h:50</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ggad28d87b14919967685c0f52afa717fa2a302b3fb777043a298372c6d96bab4fd9"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2a302b3fb777043a298372c6d96bab4fd9">NRFUSB_SETUP_ACKOUT</a></div><div class="ttdoc">Expecting an ACK on the out endpoint. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00051">nrfusb.h:51</a></div></div>
+<div class="ttc" id="structnrfusb__t_html_a6e920e50f313a5d9090f3993b96c75fa"><div class="ttname"><a href="structnrfusb__t.html#a6e920e50f313a5d9090f3993b96c75fa">nrfusb_t::sstate</a></div><div class="ttdeci">nrfusb_setup_state_t sstate</div><div class="ttdoc">Setup request state machine. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00063">nrfusb.h:63</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ggad28d87b14919967685c0f52afa717fa2ac57fd9da9e6e0fa8ab6d21663cedeca1"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2ac57fd9da9e6e0fa8ab6d21663cedeca1">NRFUSB_SETUP_READY</a></div><div class="ttdoc">Ready for a new setup request. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00048">nrfusb.h:48</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_gad28d87b14919967685c0f52afa717fa2"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#gad28d87b14919967685c0f52afa717fa2">nrfusb_setup_state_t</a></div><div class="ttdeci">nrfusb_setup_state_t</div><div class="ttdoc">nrfusb setup packet state tracker for endpoint 0 handling </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00047">nrfusb.h:47</a></div></div>
+<div class="ttc" id="structnrfusb__t_html_af19af08e169a6600210e69f2d5518808"><div class="ttname"><a href="structnrfusb__t.html#af19af08e169a6600210e69f2d5518808">nrfusb_t::usbdev</a></div><div class="ttdeci">usbdev_t usbdev</div><div class="ttdoc">Inherited usbdev struct. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00059">nrfusb.h:59</a></div></div>
+<div class="ttc" id="structnrfusb__t_html"><div class="ttname"><a href="structnrfusb__t.html">nrfusb_t</a></div><div class="ttdoc">nrf usb peripheral device context </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00058">nrfusb.h:58</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ggad28d87b14919967685c0f52afa717fa2abf5fdb7bb2c8f698e8289501fca7137e"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ggad28d87b14919967685c0f52afa717fa2abf5fdb7bb2c8f698e8289501fca7137e">NRFUSB_SETUP_READ</a></div><div class="ttdoc">Read request received. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00049">nrfusb.h:49</a></div></div>
+<div class="ttc" id="structusbdev__ep_html"><div class="ttname"><a href="structusbdev__ep.html">usbdev_ep</a></div><div class="ttdoc">usbdev endpoint descriptor </div><div class="ttdef"><b>Definition:</b> <a href="usbdev_8h_source.html#l00259">usbdev.h:259</a></div></div>
+<div class="ttc" id="structusbdev_html"><div class="ttname"><a href="structusbdev.html">usbdev</a></div><div class="ttdoc">usbdev device descriptor </div><div class="ttdef"><b>Definition:</b> <a href="usbdev_8h_source.html#l00247">usbdev.h:247</a></div></div>
+<div class="ttc" id="group__cpu__nrf52__nrfusb_html_ga089a0ba9b1190535a0fd06d90ebf6762"><div class="ttname"><a href="group__cpu__nrf52__nrfusb.html#ga089a0ba9b1190535a0fd06d90ebf6762">NRF_USB_NUM_EP</a></div><div class="ttdeci">#define NRF_USB_NUM_EP</div><div class="ttdoc">Number of USB IN and OUT endpoints. </div><div class="ttdef"><b>Definition:</b> <a href="nrfusb_8h_source.html#l00042">nrfusb.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:19 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

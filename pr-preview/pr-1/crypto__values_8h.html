@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/crypto_values.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('crypto__values_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">crypto_values.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Value definitions for PSA Crypto.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Value definitions for PSA Crypto. </p>
+<dl class="section author"><dt>Author</dt><dd>Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Some of the macros in this file have already been copied here from the PSA API specification, but are not implemented, yet. They are marked by comments that either say "specification-defined" or "implementation-defined". These macros will be implemented successively in the future. </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="crypto__types_8h_source.html">crypto_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hash_2algorithm_8h_source.html">psa/hash/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mac_2algorithm_8h_source.html">psa/mac/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="cipher_2algorithm_8h_source.html">psa/cipher/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="aead_2algorithm_8h_source.html">psa/aead/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="key__agreement_2algorithm_8h_source.html">psa/key_agreement/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="key__derivation_2algorithm_8h_source.html">psa/key_derivation/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">psa/asymmetric_encryption/algorithm.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="asymmetric__signature_2algorithm_8h_source.html">psa/asymmetric_signature/algorithm.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for crypto_values.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto__values_8h__incl.svg" width="1418" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="crypto__values_8h__dep__incl.svg" width="2546" height="618"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="crypto__values_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:aa7b817f4977b3a9b1380c9bf61970bd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#aa7b817f4977b3a9b1380c9bf61970bd3">PSA_KEY_DERIVATION_INPUT_CONTEXT</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:aa7b817f4977b3a9b1380c9bf61970bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A context for key derivation.  <a href="#aa7b817f4977b3a9b1380c9bf61970bd3">More...</a><br /></td></tr>
+<tr class="separator:aa7b817f4977b3a9b1380c9bf61970bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc0f85fedc37168ac55117ffdba6cd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#a4cc0f85fedc37168ac55117ffdba6cd1">PSA_KEY_DERIVATION_INPUT_COST</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:a4cc0f85fedc37168ac55117ffdba6cd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cost parameter for password hashing or key stretching.  <a href="#a4cc0f85fedc37168ac55117ffdba6cd1">More...</a><br /></td></tr>
+<tr class="separator:a4cc0f85fedc37168ac55117ffdba6cd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef8df989e09c769233f4b779acb5b7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#acef8df989e09c769233f4b779acb5b7d">PSA_KEY_DERIVATION_INPUT_INFO</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:acef8df989e09c769233f4b779acb5b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">An information string for key derivation.  <a href="#acef8df989e09c769233f4b779acb5b7d">More...</a><br /></td></tr>
+<tr class="separator:acef8df989e09c769233f4b779acb5b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6489d91aa4a2eb50d28c1209bffe9541"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#a6489d91aa4a2eb50d28c1209bffe9541">PSA_KEY_DERIVATION_INPUT_LABEL</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:a6489d91aa4a2eb50d28c1209bffe9541"><td class="mdescLeft">&#160;</td><td class="mdescRight">A label for key derivation.  <a href="#a6489d91aa4a2eb50d28c1209bffe9541">More...</a><br /></td></tr>
+<tr class="separator:a6489d91aa4a2eb50d28c1209bffe9541"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae19de2d7c74759878b4a6677b0acdda7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#ae19de2d7c74759878b4a6677b0acdda7">PSA_KEY_DERIVATION_INPUT_PASSWORD</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:ae19de2d7c74759878b4a6677b0acdda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">A low-entropy secret input for password hashing or key stretching.  <a href="#ae19de2d7c74759878b4a6677b0acdda7">More...</a><br /></td></tr>
+<tr class="separator:ae19de2d7c74759878b4a6677b0acdda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab62757fb125243562c3947a752470d4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#ab62757fb125243562c3947a752470d4a">PSA_KEY_DERIVATION_INPUT_SALT</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:ab62757fb125243562c3947a752470d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A salt for key derivation.  <a href="#ab62757fb125243562c3947a752470d4a">More...</a><br /></td></tr>
+<tr class="separator:ab62757fb125243562c3947a752470d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ddfbe764baba995c402b1b0ef59392e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#a0ddfbe764baba995c402b1b0ef59392e">PSA_KEY_DERIVATION_INPUT_SECRET</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:a0ddfbe764baba995c402b1b0ef59392e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A high-entropy secret input for key derivation.  <a href="#a0ddfbe764baba995c402b1b0ef59392e">More...</a><br /></td></tr>
+<tr class="separator:a0ddfbe764baba995c402b1b0ef59392e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accc41e8b4bd4e34bcb46ad1577709535"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#accc41e8b4bd4e34bcb46ad1577709535">PSA_KEY_DERIVATION_INPUT_SEED</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:accc41e8b4bd4e34bcb46ad1577709535"><td class="mdescLeft">&#160;</td><td class="mdescRight">A seed for key derivation.  <a href="#accc41e8b4bd4e34bcb46ad1577709535">More...</a><br /></td></tr>
+<tr class="separator:accc41e8b4bd4e34bcb46ad1577709535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80e7d71949ec72039c163b33cc2154d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#af80e7d71949ec72039c163b33cc2154d">PSA_KEY_DERIVATION_UNLIMITED_CAPACITY</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:af80e7d71949ec72039c163b33cc2154d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the maximum possible capacity for a key derivation operation.  <a href="#af80e7d71949ec72039c163b33cc2154d">More...</a><br /></td></tr>
+<tr class="separator:af80e7d71949ec72039c163b33cc2154d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9612bd2bc7851c937fd6d6f94b4aba0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#af9612bd2bc7851c937fd6d6f94b4aba0">PSA_RAW_KEY_AGREEMENT_OUTPUT_MAX_SIZE</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:af9612bd2bc7851c937fd6d6f94b4aba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sufficient output buffer size for <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, for any of the supported key types and key agreement algorithms.  <a href="#af9612bd2bc7851c937fd6d6f94b4aba0">More...</a><br /></td></tr>
+<tr class="separator:af9612bd2bc7851c937fd6d6f94b4aba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189c37b83f1d5f792dc119bc5013a978"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#a189c37b83f1d5f792dc119bc5013a978">PSA_RAW_KEY_AGREEMENT_OUTPUT_SIZE</a>(key_type,  key_bits)&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:a189c37b83f1d5f792dc119bc5013a978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sufficient output buffer size for <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>.  <a href="#a189c37b83f1d5f792dc119bc5013a978">More...</a><br /></td></tr>
+<tr class="separator:a189c37b83f1d5f792dc119bc5013a978"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a687a317642db9486fda38ea553900a1e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#a687a317642db9486fda38ea553900a1e">PSA_SIGNATURE_MAX_SIZE</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:a687a317642db9486fda38ea553900a1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sufficient signature buffer size for <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a>, for any of the supported key types and asymmetric signature algorithms.  <a href="#a687a317642db9486fda38ea553900a1e">More...</a><br /></td></tr>
+<tr class="separator:a687a317642db9486fda38ea553900a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea956970b7c2221f5c8d179c02d74d43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="crypto__values_8h.html#aea956970b7c2221f5c8d179c02d74d43">PSA_TLS12_PSK_TO_MS_PSK_MAX_SIZE</a>&#160;&#160;&#160;/* implementation-defined value */</td></tr>
+<tr class="memdesc:aea956970b7c2221f5c8d179c02d74d43"><td class="mdescLeft">&#160;</td><td class="mdescRight">This macro returns the maximum supported length of the PSK for the TLS-1.2 PSK-to-MS key derivation.  <a href="#aea956970b7c2221f5c8d179c02d74d43">More...</a><br /></td></tr>
+<tr class="separator:aea956970b7c2221f5c8d179c02d74d43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa7b817f4977b3a9b1380c9bf61970bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b817f4977b3a9b1380c9bf61970bd3">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_CONTEXT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_CONTEXT&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A context for key derivation. </p>
+<p>This is typically a direct input. It can also be a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aa97f92025533102616b32d571c940d80">PSA_KEY_TYPE_RAW_DATA</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00048">48</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="a4cc0f85fedc37168ac55117ffdba6cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc0f85fedc37168ac55117ffdba6cd1">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_COST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_COST&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A cost parameter for password hashing or key stretching. </p>
+<p>This must be a direct input, passed to <a class="el" href="crypto_8h.html#ac14f4c2fa41c2c1f6154f8a9c7a5a0cd">psa_key_derivation_input_integer()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00055">55</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="acef8df989e09c769233f4b779acb5b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef8df989e09c769233f4b779acb5b7d">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_INFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_INFO&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An information string for key derivation. </p>
+<p>This is typically a direct input. It can also be a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aa97f92025533102616b32d571c940d80">PSA_KEY_TYPE_RAW_DATA</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00063">63</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="a6489d91aa4a2eb50d28c1209bffe9541"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6489d91aa4a2eb50d28c1209bffe9541">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_LABEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_LABEL&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A label for key derivation. </p>
+<p>This is typically a direct input. It can also be a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aa97f92025533102616b32d571c940d80">PSA_KEY_TYPE_RAW_DATA</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00071">71</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="ae19de2d7c74759878b4a6677b0acdda7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19de2d7c74759878b4a6677b0acdda7">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_PASSWORD&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A low-entropy secret input for password hashing or key stretching. </p>
+<p>This is usually a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aad682c8fe975aee537af922f9503d510">PSA_KEY_TYPE_PASSWORD</a> passed to <a class="el" href="crypto_8h.html#aa936b9b1f6264beb6e23afd5f87bcccc">psa_key_derivation_input_key()</a> or a direct input passed to <a class="el" href="crypto_8h.html#a8fd934dfb0ca45cbf89542ef2a5494c2">psa_key_derivation_input_bytes()</a> that is a password or passphrase. It can also be high-entropy secret, for example, a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ae871b2357b8593f33bfd51abbf93ebb1">PSA_KEY_TYPE_DERIVE</a>, or the shared secret resulting from a key agreement.</p>
+<p>If the secret is a direct input, the derivation operation cannot be used to derive keys: the operation will not allow a call to <a class="el" href="crypto_8h.html#ad286b675f3f8b46fa6cab620de6bead3">psa_key_derivation_output_key()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00085">85</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="ab62757fb125243562c3947a752470d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab62757fb125243562c3947a752470d4a">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_SALT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_SALT&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A salt for key derivation. </p>
+<p>This is typically a direct input. It can also be a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aa97f92025533102616b32d571c940d80">PSA_KEY_TYPE_RAW_DATA</a> or <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ab47765c3f82af1b6a7d213f9881cb6d6">PSA_KEY_TYPE_PEPPER</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00093">93</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="a0ddfbe764baba995c402b1b0ef59392e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddfbe764baba995c402b1b0ef59392e">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_SECRET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_SECRET&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A high-entropy secret input for key derivation. </p>
+<p>This is typically a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#ae871b2357b8593f33bfd51abbf93ebb1">PSA_KEY_TYPE_DERIVE</a> passed to <a class="el" href="crypto_8h.html#aa936b9b1f6264beb6e23afd5f87bcccc">psa_key_derivation_input_key()</a>, or the shared secret resulting from a key agreement obtained via <a class="el" href="crypto_8h.html#a4da37a87ff9863e2a61eccefd331254a">psa_key_derivation_key_agreement()</a>.</p>
+<p>The secret can also be a direct input passed to <a class="el" href="crypto_8h.html#a8fd934dfb0ca45cbf89542ef2a5494c2">psa_key_derivation_input_bytes()</a>. In this case, the derivation operation cannot be used to derive keys: the operation will not allow a call to <a class="el" href="crypto_8h.html#ad286b675f3f8b46fa6cab620de6bead3">psa_key_derivation_output_key()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00106">106</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="accc41e8b4bd4e34bcb46ad1577709535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accc41e8b4bd4e34bcb46ad1577709535">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_INPUT_SEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_INPUT_SEED&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A seed for key derivation. </p>
+<p>This is typically a direct input. It can also be a key of type <a class="el" href="psa__crypto_2psa_2key_2type_8h.html#aa97f92025533102616b32d571c940d80">PSA_KEY_TYPE_RAW_DATA</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00114">114</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="af80e7d71949ec72039c163b33cc2154d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af80e7d71949ec72039c163b33cc2154d">&#9670;&nbsp;</a></span>PSA_KEY_DERIVATION_UNLIMITED_CAPACITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_KEY_DERIVATION_UNLIMITED_CAPACITY&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use the maximum possible capacity for a key derivation operation. </p>
+<p>Use this value as the capacity argument when setting up a key derivation to specify that the operation will use the maximum possible capacity. The value of the maximum possible capacity depends on the key derivation algorithm. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00123">123</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="af9612bd2bc7851c937fd6d6f94b4aba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9612bd2bc7851c937fd6d6f94b4aba0">&#9670;&nbsp;</a></span>PSA_RAW_KEY_AGREEMENT_OUTPUT_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_RAW_KEY_AGREEMENT_OUTPUT_MAX_SIZE&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sufficient output buffer size for <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>, for any of the supported key types and key agreement algorithms. </p>
+<p>If the size of the output buffer is at least this large, it is guaranteed that <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a> will not fail due to an insufficient buffer size.</p>
+<p>See also <a class="el" href="crypto__values_8h.html#a189c37b83f1d5f792dc119bc5013a978">PSA_RAW_KEY_AGREEMENT_OUTPUT_SIZE()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00135">135</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="a189c37b83f1d5f792dc119bc5013a978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189c37b83f1d5f792dc119bc5013a978">&#9670;&nbsp;</a></span>PSA_RAW_KEY_AGREEMENT_OUTPUT_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_RAW_KEY_AGREEMENT_OUTPUT_SIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">key_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">key_bits&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sufficient output buffer size for <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a>. </p>
+<p>If the size of the output buffer is at least this large, it is guaranteed that <a class="el" href="crypto_8h.html#a0c87346ea56b79f3dd173adee2abbde8">psa_raw_key_agreement()</a> will not fail due to an insufficient buffer size. The actual size of the output might be smaller in any given call.</p>
+<p>See also <a class="el" href="crypto__values_8h.html#af9612bd2bc7851c937fd6d6f94b4aba0">PSA_RAW_KEY_AGREEMENT_OUTPUT_MAX_SIZE</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_type</td><td>A supported key type. </td></tr>
+    <tr><td class="paramname">key_bits</td><td>The size of the key in bits.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A sufficient output buffer size for the specified key type and size. 0 if key type is not supported. If the parameters are not valid, the return value is unspecified. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00154">154</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="a687a317642db9486fda38ea553900a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a687a317642db9486fda38ea553900a1e">&#9670;&nbsp;</a></span>PSA_SIGNATURE_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_SIGNATURE_MAX_SIZE&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A sufficient signature buffer size for <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a>, for any of the supported key types and asymmetric signature algorithms. </p>
+<p>If the size of the signature buffer is at least this large, it is guaranteed that <a class="el" href="crypto_8h.html#a295407a9d6fd0d7ddc6aebf6ead4955c">psa_sign_message()</a> and <a class="el" href="crypto_8h.html#a429241820edc81d0f262bdf43d3b6523">psa_sign_hash()</a> will not fail due to an insufficient buffer size.</p>
+<p>See also <a class="el" href="crypto__sizes_8h.html#a31021bbd8bb365fc350532b5fd18a25a">PSA_SIGN_OUTPUT_SIZE()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00168">168</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+<a id="aea956970b7c2221f5c8d179c02d74d43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea956970b7c2221f5c8d179c02d74d43">&#9670;&nbsp;</a></span>PSA_TLS12_PSK_TO_MS_PSK_MAX_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_TLS12_PSK_TO_MS_PSK_MAX_SIZE&#160;&#160;&#160;/* implementation-defined value */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This macro returns the maximum supported length of the PSK for the TLS-1.2 PSK-to-MS key derivation. </p>
+<p>This implementation-defined value specifies the maximum length for the PSK input used with a <a class="el" href="key__derivation_2algorithm_8h.html#a039ec797f15d1635d9b2e09a611f8a68">PSA_ALG_TLS12_PSK_TO_MS()</a> key agreement algorithm.</p>
+<p>Quoting Pre-Shared Key Ciphersuites for Transport Layer Security (TLS) <a href="https://tools.ietf.org/html/rfc4279.html">RFC4279</a> §5.3: TLS implementations supporting these cipher suites MUST support arbitrary PSK identities up to 128 octets in length, and arbitrary PSKs up to 64 octets in length. Supporting longer identities and keys is RECOMMENDED.</p>
+<p>Therefore, it is recommended that implementations define <a class="el" href="crypto__values_8h.html#aea956970b7c2221f5c8d179c02d74d43">PSA_TLS12_PSK_TO_MS_PSK_MAX_SIZE</a> with a value greater than or equal to 64. </p>
+
+<p class="definition">Definition at line <a class="el" href="crypto__values_8h_source.html#l00186">186</a> of file <a class="el" href="crypto__values_8h_source.html">crypto_values.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:28 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/avr8_common/include/flash_utils_arch.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('flash__utils__arch_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">flash_utils_arch.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="flash__utils__arch_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2022 Otto-von-Guericke-Universität Magdeburg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef FLASH_UTILS_ARCH_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define FLASH_UTILS_ARCH_H</span></div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="stdio_8h.html">stdio.h</a>&gt;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;stdarg.h&gt;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;avr/pgmspace.h&gt;</span></div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* this is documented in sys/include/flash_utils.h - let&#39;s not confuse</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> * Doxygen */</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#ifndef DOXYGEN</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define FLASH_ATTR __flash</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define PRIsflash &quot;S&quot;</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define TO_FLASH(x) __extension__({static FLASH_ATTR const char __c[] = (x); &amp;__c[0];})</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#ga73b91c7dc9190b55abd2996aeedc5847">flash_strcmp</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *ram, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash)</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> strcmp_P(ram, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash);</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#ga3c989264c8f44c899f54a4b22344f3ea">flash_strncmp</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *ram, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, <span class="keywordtype">size_t</span> n)</div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> strncmp_P(ram, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash, n);</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="group__sys__flash__utils.html#gae26e20d6cb6b9626a8cf4fef9960ee61">flash_strlen</a>(<a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash)</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> strlen_P((<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> * <a class="code" href="group__sys__flash__utils.html#ga2f2734aeb61b48b5d48c069c7cd23cdc">flash_strcpy</a>(<span class="keywordtype">char</span> *ram, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash)</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> strcpy_P(ram, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash);</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">char</span> * <a class="code" href="group__sys__flash__utils.html#ga1bb045c1d8b29eb2e678bbbae51d8826">flash_strncpy</a>(<span class="keywordtype">char</span> *ram, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, <span class="keywordtype">size_t</span> n)</div><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> strncpy_P(ram, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash, n);</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#ga786c1fe92f7cbed8e4c9fdbd75d93a85">flash_vprintf</a>(<a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, va_list args)</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">/* vprintf_P() is not provided by avr-libc. But vfprintf_P() with</span></div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     * stdout as stream can be used to implement it */</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> vfprintf_P(stdout, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash, args);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#ga1b7492913dd9d3a362d8da1d64bbdaec">flash_vfprintf</a>(FILE *stream, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash,</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                                 va_list args)</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">return</span> vfprintf_P(stream, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash, args);</div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#gad9cc79147675fcd5fb80d391c3ba1510">flash_vsnprintf</a>(<span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> buf_len,</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                  <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, va_list args)</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> vsnprintf_P(buf, buf_len, (<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash, args);</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__sys__flash__utils.html#gaee2a02e74e608ac3cc669a411b80fcc4">flash_puts</a>(<a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash)</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    puts_P((<span class="keyword">const</span> <span class="keywordtype">char</span> *)flash);</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> * <a class="code" href="group__sys__flash__utils.html#ga9fe953f7c3abbd13b33c1d3c8edc2017">flash_memcpy</a>(<span class="keywordtype">void</span> *dest, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">void</span> *src,</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                  <span class="keywordtype">size_t</span> n)</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;{</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> memcpy_P(dest, (<span class="keyword">const</span> <span class="keywordtype">void</span> *)src, n);</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* aliases need to be provided by the linker, as passing through va-args is</span></div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * not possible */</span></div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#gac52c4e2c8557542bc7c0b05707c02837">flash_printf</a>(<a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, ...);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#gaaf4143091f8bf5c9a408d1961f79034c">flash_fprintf</a>(FILE *stream, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, ...);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__flash__utils.html#ga1415448138a652b4cc728a6831e6694a">flash_snprintf</a>(<span class="keywordtype">char</span> *buf, <span class="keywordtype">size_t</span> buf_len, <a class="code" href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a> <span class="keyword">const</span> <span class="keywordtype">char</span> *flash, ...);</div><div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div><div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Doxygen */</span><span class="preprocessor"></span></div><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FLASH_UTILS_ARCH_H */</span><span class="preprocessor"></span></div><div class="ttc" id="group__sys__flash__utils_html_ga786c1fe92f7cbed8e4c9fdbd75d93a85"><div class="ttname"><a href="group__sys__flash__utils.html#ga786c1fe92f7cbed8e4c9fdbd75d93a85">flash_vprintf</a></div><div class="ttdeci">int flash_vprintf(FLASH_ATTR const char *flash, va_list args)</div><div class="ttdoc">Like vprintf(), but the format string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga1b7492913dd9d3a362d8da1d64bbdaec"><div class="ttname"><a href="group__sys__flash__utils.html#ga1b7492913dd9d3a362d8da1d64bbdaec">flash_vfprintf</a></div><div class="ttdeci">int flash_vfprintf(FILE *stream, FLASH_ATTR const char *flash, va_list args)</div><div class="ttdoc">Like vfprintf(), but the format string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_gae26e20d6cb6b9626a8cf4fef9960ee61"><div class="ttname"><a href="group__sys__flash__utils.html#gae26e20d6cb6b9626a8cf4fef9960ee61">flash_strlen</a></div><div class="ttdeci">size_t flash_strlen(FLASH_ATTR const char *flash)</div><div class="ttdoc">Like strlen(), but the string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga9fe953f7c3abbd13b33c1d3c8edc2017"><div class="ttname"><a href="group__sys__flash__utils.html#ga9fe953f7c3abbd13b33c1d3c8edc2017">flash_memcpy</a></div><div class="ttdeci">void * flash_memcpy(void *dest, FLASH_ATTR const void *src, size_t n)</div><div class="ttdoc">Like memcpy(), but src resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga1415448138a652b4cc728a6831e6694a"><div class="ttname"><a href="group__sys__flash__utils.html#ga1415448138a652b4cc728a6831e6694a">flash_snprintf</a></div><div class="ttdeci">int flash_snprintf(char *buf, size_t buf_len, FLASH_ATTR const char *flash,...)</div><div class="ttdoc">Like snprintf(), but the format string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_gaee2a02e74e608ac3cc669a411b80fcc4"><div class="ttname"><a href="group__sys__flash__utils.html#gaee2a02e74e608ac3cc669a411b80fcc4">flash_puts</a></div><div class="ttdeci">void flash_puts(FLASH_ATTR const char *flash)</div><div class="ttdoc">Like puts(), but the string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga3c989264c8f44c899f54a4b22344f3ea"><div class="ttname"><a href="group__sys__flash__utils.html#ga3c989264c8f44c899f54a4b22344f3ea">flash_strncmp</a></div><div class="ttdeci">int flash_strncmp(const char *ram, FLASH_ATTR const char *flash, size_t n)</div><div class="ttdoc">Like strncmp(), but the first string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_gac52c4e2c8557542bc7c0b05707c02837"><div class="ttname"><a href="group__sys__flash__utils.html#gac52c4e2c8557542bc7c0b05707c02837">flash_printf</a></div><div class="ttdeci">int flash_printf(FLASH_ATTR const char *flash,...)</div><div class="ttdoc">Like printf(), but the format string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga2f2734aeb61b48b5d48c069c7cd23cdc"><div class="ttname"><a href="group__sys__flash__utils.html#ga2f2734aeb61b48b5d48c069c7cd23cdc">flash_strcpy</a></div><div class="ttdeci">char * flash_strcpy(char *ram, FLASH_ATTR const char *flash)</div><div class="ttdoc">Like strcpy(), but the source flash resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga73b91c7dc9190b55abd2996aeedc5847"><div class="ttname"><a href="group__sys__flash__utils.html#ga73b91c7dc9190b55abd2996aeedc5847">flash_strcmp</a></div><div class="ttdeci">int flash_strcmp(const char *ram, FLASH_ATTR const char *flash)</div><div class="ttdoc">Like strcmp(), but the second string resides in flash. </div></div>
+<div class="ttc" id="stdio_8h_html"><div class="ttname"><a href="stdio_8h.html">stdio.h</a></div><div class="ttdoc">stdio wrapper to extend the C libs stdio </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga6ac949979ebabc3d7130779422ead49a"><div class="ttname"><a href="group__sys__flash__utils.html#ga6ac949979ebabc3d7130779422ead49a">FLASH_ATTR</a></div><div class="ttdeci">#define FLASH_ATTR</div><div class="ttdoc">C type qualifier required to place a variable in flash. </div><div class="ttdef"><b>Definition:</b> <a href="flash__utils_8h_source.html#l00068">flash_utils.h:68</a></div></div>
+<div class="ttc" id="group__sys__flash__utils_html_ga1bb045c1d8b29eb2e678bbbae51d8826"><div class="ttname"><a href="group__sys__flash__utils.html#ga1bb045c1d8b29eb2e678bbbae51d8826">flash_strncpy</a></div><div class="ttdeci">char * flash_strncpy(char *ram, FLASH_ATTR const char *flash, size_t n)</div><div class="ttdoc">Like strncpy(), but the source flash resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_gaaf4143091f8bf5c9a408d1961f79034c"><div class="ttname"><a href="group__sys__flash__utils.html#gaaf4143091f8bf5c9a408d1961f79034c">flash_fprintf</a></div><div class="ttdeci">int flash_fprintf(FILE *stream, FLASH_ATTR const char *flash,...)</div><div class="ttdoc">Like fprintf(), but the format string resides in flash. </div></div>
+<div class="ttc" id="group__sys__flash__utils_html_gad9cc79147675fcd5fb80d391c3ba1510"><div class="ttname"><a href="group__sys__flash__utils.html#gad9cc79147675fcd5fb80d391c3ba1510">flash_vsnprintf</a></div><div class="ttdeci">int flash_vsnprintf(char *buf, size_t buf_len, FLASH_ATTR const char *flash, va_list args)</div><div class="ttdoc">Like vsnprintf(), but the format string resides in flash. </div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:18 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

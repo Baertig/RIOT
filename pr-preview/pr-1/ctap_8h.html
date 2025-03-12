@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/fido2/ctap.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('ctap_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">ctap.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__fido2.html">FIDO2 - Fast Identity Online 2</a> &raquo; <a class="el" href="group__fido2__ctap.html">CTAP</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Public FIDO2 CTAP defines, structures and function declarations.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Public FIDO2 CTAP defines, structures and function declarations. </p>
+<dl class="section author"><dt>Author</dt><dd>Nils Ollrogge <a href="#" onclick="location.href='mai'+'lto:'+'nil'+'s.'+'oll'+'ro'+'gge'+'@f'+'u-b'+'er'+'lin'+'.d'+'e'; return false;">nils.<span style="display: none;">.nosp@m.</span>ollr<span style="display: none;">.nosp@m.</span>ogge@<span style="display: none;">.nosp@m.</span>fu-b<span style="display: none;">.nosp@m.</span>erlin<span style="display: none;">.nosp@m.</span>.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="ctap_8h_source.html">ctap.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for ctap.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ctap_8h__incl.svg" width="182" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="ctap_8h__dep__incl.svg" width="535" height="306"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="ctap_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structctap__req__t.html">ctap_req_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAP request struct.  <a href="structctap__req__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structctap__resp__t.html">ctap_resp_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAP response struct.  <a href="structctap__resp__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga5d925ee5e930f90e8ff67c0529e77bf7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#ga5d925ee5e930f90e8ff67c0529e77bf7">CTAP_MAX_MSG_SIZE</a>&#160;&#160;&#160;0x400</td></tr>
+<tr class="memdesc:ga5d925ee5e930f90e8ff67c0529e77bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAP max message size.  <a href="group__fido2__ctap.html#ga5d925ee5e930f90e8ff67c0529e77bf7">More...</a><br /></td></tr>
+<tr class="separator:ga5d925ee5e930f90e8ff67c0529e77bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga94b170d3694cc9c3eaf6c7b7a91462af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#ga94b170d3694cc9c3eaf6c7b7a91462af">fido2_ctap_init</a> (void)</td></tr>
+<tr class="memdesc:ga94b170d3694cc9c3eaf6c7b7a91462af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize ctap.  <a href="group__fido2__ctap.html#ga94b170d3694cc9c3eaf6c7b7a91462af">More...</a><br /></td></tr>
+<tr class="separator:ga94b170d3694cc9c3eaf6c7b7a91462af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac2f4af28573dd70230f21a9975858e9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gac2f4af28573dd70230f21a9975858e9a">fido2_ctap_handle_request</a> (<a class="el" href="structctap__req__t.html">ctap_req_t</a> *req, <a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:gac2f4af28573dd70230f21a9975858e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle CBOR encoded ctap request.  <a href="group__fido2__ctap.html#gac2f4af28573dd70230f21a9975858e9a">More...</a><br /></td></tr>
+<tr class="separator:gac2f4af28573dd70230f21a9975858e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2b57d3e1e1a27ead901ebc91bdd21f7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#ga2b57d3e1e1a27ead901ebc91bdd21f7d">fido2_ctap_make_credential</a> (<a class="el" href="structctap__req__t.html">ctap_req_t</a> *req, <a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:ga2b57d3e1e1a27ead901ebc91bdd21f7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">MakeCredential method.  <a href="group__fido2__ctap.html#ga2b57d3e1e1a27ead901ebc91bdd21f7d">More...</a><br /></td></tr>
+<tr class="separator:ga2b57d3e1e1a27ead901ebc91bdd21f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeebbef531e44ec9ef12acb12865c41f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gaeebbef531e44ec9ef12acb12865c41f7">fido2_ctap_get_assertion</a> (<a class="el" href="structctap__req__t.html">ctap_req_t</a> *req, <a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:gaeebbef531e44ec9ef12acb12865c41f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetAssertion method.  <a href="group__fido2__ctap.html#gaeebbef531e44ec9ef12acb12865c41f7">More...</a><br /></td></tr>
+<tr class="separator:gaeebbef531e44ec9ef12acb12865c41f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga226bb4d790421a3e3bdee170d5a3b9e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#ga226bb4d790421a3e3bdee170d5a3b9e7">fido2_ctap_get_next_assertion</a> (<a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:ga226bb4d790421a3e3bdee170d5a3b9e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetNextAssertion method.  <a href="group__fido2__ctap.html#ga226bb4d790421a3e3bdee170d5a3b9e7">More...</a><br /></td></tr>
+<tr class="separator:ga226bb4d790421a3e3bdee170d5a3b9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa26fb0d0151c0168867151c34921a902"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gaa26fb0d0151c0168867151c34921a902">fido2_ctap_get_info</a> (<a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:gaa26fb0d0151c0168867151c34921a902"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetInfo method.  <a href="group__fido2__ctap.html#gaa26fb0d0151c0168867151c34921a902">More...</a><br /></td></tr>
+<tr class="separator:gaa26fb0d0151c0168867151c34921a902"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7b5fa2b2cae7a0621838a3fff67f8cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gaf7b5fa2b2cae7a0621838a3fff67f8cf">fido2_ctap_client_pin</a> (<a class="el" href="structctap__req__t.html">ctap_req_t</a> *req, <a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:gaf7b5fa2b2cae7a0621838a3fff67f8cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">ClientPIN method.  <a href="group__fido2__ctap.html#gaf7b5fa2b2cae7a0621838a3fff67f8cf">More...</a><br /></td></tr>
+<tr class="separator:gaf7b5fa2b2cae7a0621838a3fff67f8cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd94ddd4a8ecf087ef27429e906189b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gacd94ddd4a8ecf087ef27429e906189b7">fido2_ctap_reset</a> (<a class="el" href="structctap__resp__t.html">ctap_resp_t</a> *resp)</td></tr>
+<tr class="memdesc:gacd94ddd4a8ecf087ef27429e906189b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset method.  <a href="group__fido2__ctap.html#gacd94ddd4a8ecf087ef27429e906189b7">More...</a><br /></td></tr>
+<tr class="separator:gacd94ddd4a8ecf087ef27429e906189b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf0c1973e0b2f38562f5b8fe94c91931b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">ctap_status_code_t</a> { <br />
+&#160;&#160;<b>CTAP2_OK</b> = 0x00, 
+<b>CTAP1_ERR_INVALID_COMMAND</b> = 0x01, 
+<b>CTAP1_ERR_INVALID_PARAMETER</b> = 0x02, 
+<b>CTAP1_ERR_INVALID_LENGTH</b> = 0x03, 
+<br />
+&#160;&#160;<b>CTAP1_ERR_INVALID_SEQ</b> = 0x04, 
+<b>CTAP1_ERR_TIMEOUT</b> = 0x05, 
+<b>CTAP1_ERR_CHANNEL_BUSY</b> = 0x06, 
+<b>CTAP1_ERR_LOCK_REQUIRED</b> = 0x0A, 
+<br />
+&#160;&#160;<b>CTAP1_ERR_INVALID_CHANNEL</b> = 0x0B, 
+<b>CTAP2_ERR_CBOR_PARSING</b> = 0x10, 
+<b>CTAP2_ERR_CBOR_UNEXPECTED_TYPE</b> = 0x11, 
+<b>CTAP2_ERR_INVALID_CBOR</b> = 0x12, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_INVALID_CBOR_TYPE</b> = 0x13, 
+<b>CTAP2_ERR_MISSING_PARAMETER</b> = 0x14, 
+<b>CTAP2_ERR_LIMIT_EXCEEDED</b> = 0x15, 
+<b>CTAP2_ERR_UNSUPPORTED_EXTENSION</b> = 0x16, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_TOO_MANY_ELEMENTS</b> = 0x17, 
+<b>CTAP2_ERR_EXTENSION_NOT_SUPPORTED</b> = 0x18, 
+<b>CTAP2_ERR_CREDENTIAL_EXCLUDED</b> = 0x19, 
+<b>CTAP2_ERR_CREDENTIAL_NOT_VALID</b> = 0x20, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_PROCESSING</b> = 0x21, 
+<b>CTAP2_ERR_INVALID_CREDENTIAL</b> = 0x22, 
+<b>CTAP2_ERR_USER_ACTION_PENDING</b> = 0x23, 
+<b>CTAP2_ERR_OPERATION_PENDING</b> = 0x24, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_NO_OPERATIONS</b> = 0x25, 
+<b>CTAP2_ERR_UNSUPPORTED_ALGORITHM</b> = 0x26, 
+<b>CTAP2_ERR_OPERATION_DENIED</b> = 0x27, 
+<b>CTAP2_ERR_KEY_STORE_FULL</b> = 0x28, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_NOT_BUSY</b> = 0x29, 
+<b>CTAP2_ERR_NO_OPERATION_PENDING</b> = 0x2A, 
+<b>CTAP2_ERR_UNSUPPORTED_OPTION</b> = 0x2B, 
+<b>CTAP2_ERR_INVALID_OPTION</b> = 0x2C, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_KEEPALIVE_CANCEL</b> = 0x2D, 
+<b>CTAP2_ERR_NO_CREDENTIALS</b> = 0x2E, 
+<b>CTAP2_ERR_USER_ACTION_TIMEOUT</b> = 0x2F, 
+<b>CTAP2_ERR_NOT_ALLOWED</b> = 0x30, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_PIN_INVALID</b> = 0x31, 
+<b>CTAP2_ERR_PIN_BLOCKED</b> = 0x32, 
+<b>CTAP2_ERR_PIN_AUTH_INVALID</b> = 0x33, 
+<b>CTAP2_ERR_PIN_AUTH_BLOCKED</b> = 0x34, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_PIN_NOT_SET</b> = 0x35, 
+<b>CTAP2_ERR_PIN_REQUIRED</b> = 0x36, 
+<b>CTAP2_ERR_PIN_POLICY_VIOLATION</b> = 0x37, 
+<b>CTAP2_ERR_PIN_TOKEN_EXPIRED</b> = 0x38, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_REQUEST_TOO_LARGE</b> = 0x39, 
+<b>CTAP2_ERR_ACTION_TIMEOUT</b> = 0x3A, 
+<b>CTAP2_ERR_UP_REQUIRED</b> = 0x3B, 
+<b>CTAP1_ERR_OTHER</b> = 0x7F, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_SPEC_LAST</b> = 0xDF, 
+<b>CTAP2_ERR_EXTENSION_FIRST</b> = 0xE0, 
+<b>CTAP2_ERR_EXTENSION_LAST</b> = 0xEF, 
+<b>CTAP2_ERR_VENDOR_FIRST</b> = 0xF0, 
+<br />
+&#160;&#160;<b>CTAP2_ERR_VENDOR_LAST</b> = 0xFF
+<br />
+ }</td></tr>
+<tr class="memdesc:gaf0c1973e0b2f38562f5b8fe94c91931b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAP status codes.  <a href="group__fido2__ctap.html#gaf0c1973e0b2f38562f5b8fe94c91931b">More...</a><br /></td></tr>
+<tr class="separator:gaf0c1973e0b2f38562f5b8fe94c91931b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7c4d96b22d1adcbd780c8a24645e75c2"><td class="memItemLeft" align="right" valign="top"><a id="ga7c4d96b22d1adcbd780c8a24645e75c2"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__fido2__ctap.html#ga7c4d96b22d1adcbd780c8a24645e75c2">ctap_method_t</a> { <br />
+&#160;&#160;<b>CTAP_MAKE_CREDENTIAL</b> = 0x01, 
+<b>CTAP_GET_ASSERTION</b> = 0x02, 
+<b>CTAP_GET_INFO</b> = 0x04, 
+<b>CTAP_CLIENT_PIN</b> = 0x06, 
+<br />
+&#160;&#160;<b>CTAP_RESET</b> = 0x07, 
+<b>CTAP_GET_NEXT_ASSERTION</b> = 0x08
+<br />
+ }</td></tr>
+<tr class="memdesc:ga7c4d96b22d1adcbd780c8a24645e75c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAP methods. <br /></td></tr>
+<tr class="separator:ga7c4d96b22d1adcbd780c8a24645e75c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>ina3221_params_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structina3221__params__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">ina3221_params_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__ina3221.html">INA3221 current/power monitor</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>INA3221 device parameters.  
+ <a href="structina3221__params__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>INA3221 device parameters. </p>
+
+<p class="definition">Definition at line <a class="el" href="ina3221_8h_source.html#l00253">253</a> of file <a class="el" href="ina3221_8h_source.html">ina3221.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="ina3221_8h_source.html">ina3221.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa1393b70eb347e35ba6e6f82a2395edf"><td class="memItemLeft" align="right" valign="top"><a id="aa1393b70eb347e35ba6e6f82a2395edf"></a>
+<a class="el" href="group__drivers__periph__i2c.html#ga53bedf646ffe6ddd17f13b893a17fa74">i2c_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#aa1393b70eb347e35ba6e6f82a2395edf">i2c</a></td></tr>
+<tr class="memdesc:aa1393b70eb347e35ba6e6f82a2395edf"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus. <br /></td></tr>
+<tr class="separator:aa1393b70eb347e35ba6e6f82a2395edf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7a147c0c37e99b18db7deef45817a61"><td class="memItemLeft" align="right" valign="top"><a id="aa7a147c0c37e99b18db7deef45817a61"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#aa7a147c0c37e99b18db7deef45817a61">addr</a></td></tr>
+<tr class="memdesc:aa7a147c0c37e99b18db7deef45817a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C address. <br /></td></tr>
+<tr class="separator:aa7a147c0c37e99b18db7deef45817a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fbe6214e4a7ff937444446a694340f6"><td class="memItemLeft" ><a id="a8fbe6214e4a7ff937444446a694340f6"></a>
+union {</td></tr>
+<tr class="memitem:a9d35072ef99f5d49fe391838ed375df3"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a6b93f114f2a23d0613ba0ee58653c707"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#a1fa36941b19561935f6ace155088bea5">pin_warn</a></td></tr>
+<tr class="memdesc:a6b93f114f2a23d0613ba0ee58653c707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Warning alert pin, becomes configured as input. <br /></td></tr>
+<tr class="separator:a6b93f114f2a23d0613ba0ee58653c707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a0939bf35a510f5d38b230dbc9b360c"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#a218209de7de66a77ac5b5540a1eb520a">pin_crit</a></td></tr>
+<tr class="memdesc:a5a0939bf35a510f5d38b230dbc9b360c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Critical alert pin, becomes configured as input. <br /></td></tr>
+<tr class="separator:a5a0939bf35a510f5d38b230dbc9b360c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae41a6db8269e6a96f335d339fc32f868"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#ae5d92cdbae951f5c77bbc8d968881ed7">pin_tc</a></td></tr>
+<tr class="memdesc:ae41a6db8269e6a96f335d339fc32f868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Timing control alert pin, becomes configured as input. <br /></td></tr>
+<tr class="separator:ae41a6db8269e6a96f335d339fc32f868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8078ba57e8edaf3ea76b8750a2529a3b"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#ab07e9e45065da5583aa9e8d241bbd7e2">pin_pv</a></td></tr>
+<tr class="memdesc:a8078ba57e8edaf3ea76b8750a2529a3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Power valid alert pin, becomes configured as input. <br /></td></tr>
+<tr class="separator:a8078ba57e8edaf3ea76b8750a2529a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d35072ef99f5d49fe391838ed375df3"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#a923e176994b85a0ca9a61f1e25b00a63">pins</a></td></tr>
+<tr class="memdesc:a9d35072ef99f5d49fe391838ed375df3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct of alert pins. <br /></td></tr>
+<tr class="separator:a9d35072ef99f5d49fe391838ed375df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2feb674c407f6654c5c6ebf91f8c8284"><td class="memItemLeft" >
+&#160;&#160;&#160;struct {</td></tr>
+<tr class="memitem:a9bc92e2fc0006010bc8cb7d84ad047d1"><td class="memItemLeft" >
+&#160;&#160;&#160;&#160;&#160;&#160;<a class="el" href="group__drivers__periph__gpio.html#gadacfc0deb08affff1e88f9549c8e2823">gpio_t</a>&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#a0f1c96b1361aa6498ff0a9ed42dd7308">alert_pins</a> [<a class="el" href="group__drivers__ina3221.html#ga894e0b909eccd767e0aa5e5afcc6a3f3">INA3221_NUM_ALERTS</a>]</td></tr>
+<tr class="memdesc:a9bc92e2fc0006010bc8cb7d84ad047d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array to access alert pins via an index. <br /></td></tr>
+<tr class="separator:a9bc92e2fc0006010bc8cb7d84ad047d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2feb674c407f6654c5c6ebf91f8c8284"><td class="memItemLeft" valign="top">&#160;&#160;&#160;}&#160;&#160;&#160;<a class="el" href="structina3221__params__t.html#a6773d0b05d84ab0669e1e3b6bd1a4413">apins</a></td></tr>
+<tr class="memdesc:a2feb674c407f6654c5c6ebf91f8c8284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct of array of alert pins. <br /></td></tr>
+<tr class="separator:a2feb674c407f6654c5c6ebf91f8c8284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fbe6214e4a7ff937444446a694340f6"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#a8fbe6214e4a7ff937444446a694340f6">upins</a></td></tr>
+<tr class="memdesc:a8fbe6214e4a7ff937444446a694340f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Union of alert pins as array and as single members. <br /></td></tr>
+<tr class="separator:a8fbe6214e4a7ff937444446a694340f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496f366a7fe62bcccd90d8374aa92124"><td class="memItemLeft" align="right" valign="top"><a id="a496f366a7fe62bcccd90d8374aa92124"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#a496f366a7fe62bcccd90d8374aa92124">gpio_config</a></td></tr>
+<tr class="memdesc:a496f366a7fe62bcccd90d8374aa92124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure pull up resistors for gpio pins. <br /></td></tr>
+<tr class="separator:a496f366a7fe62bcccd90d8374aa92124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4edb658b56c2cb38e8259b88b2857b"><td class="memItemLeft" align="right" valign="top"><a id="acc4edb658b56c2cb38e8259b88b2857b"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#acc4edb658b56c2cb38e8259b88b2857b">config</a></td></tr>
+<tr class="memdesc:acc4edb658b56c2cb38e8259b88b2857b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration. <br /></td></tr>
+<tr class="separator:acc4edb658b56c2cb38e8259b88b2857b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38e01b2a06034079c1d60d0eebf7da01"><td class="memItemLeft" align="right" valign="top"><a id="a38e01b2a06034079c1d60d0eebf7da01"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structina3221__params__t.html#a38e01b2a06034079c1d60d0eebf7da01">rshunt_mohm</a> [<a class="el" href="group__drivers__ina3221.html#ga7c91e6f7a7561b5411172b736c52ff06">INA3221_NUM_CH</a>]</td></tr>
+<tr class="memdesc:a38e01b2a06034079c1d60d0eebf7da01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shunt resistances in mOhm for each channel. <br /></td></tr>
+<tr class="separator:a38e01b2a06034079c1d60d0eebf7da01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="ina3221_8h_source.html">ina3221.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:35 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

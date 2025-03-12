@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/sam0_common/include/sdhc.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sdhc_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">sdhc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="sdhc_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2018 Alkgrove</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifndef SDHC_H</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define SDHC_H</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="drivers_2include_2periph_2gpio_8h.html">periph/gpio.h</a>&quot;</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mutex_8h.html">mutex.h</a>&quot;</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#adc8d71244c278bfdae9d3871ec13f24b">   42</a></span>&#160;    Sdhc *<a class="code" href="structsdhc__state__t.html#adc8d71244c278bfdae9d3871ec13f24b">dev</a>;              </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#abae54377b31f8ff7b399a3e75470c14e">   43</a></span>&#160;    gpio_t <a class="code" href="structsdhc__state__t.html#abae54377b31f8ff7b399a3e75470c14e">cd</a>;              </div><div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#aa50f8c2dfac9455122edd7383498b8e8">   44</a></span>&#160;    gpio_t <a class="code" href="structsdhc__state__t.html#aa50f8c2dfac9455122edd7383498b8e8">wp</a>;              </div><div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#ae74b39bf935dafe2419bf438c94ccd06">   45</a></span>&#160;    <a class="code" href="structmutex__t.html">mutex_t</a> <a class="code" href="structsdhc__state__t.html#ae74b39bf935dafe2419bf438c94ccd06">lock</a>;           </div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#abf145746a15fa98a79f37846e7489dce">   46</a></span>&#160;    <a class="code" href="structmutex__t.html">mutex_t</a> <a class="code" href="structsdhc__state__t.html#abf145746a15fa98a79f37846e7489dce">sync</a>;           </div><div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#ab42f196860c278d9c3b0c74041cd8677">   47</a></span>&#160;    uint32_t <a class="code" href="structsdhc__state__t.html#ab42f196860c278d9c3b0c74041cd8677">sectors</a>;       </div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#ace80dc58e87fc653835d8db4e8a04bf5">   48</a></span>&#160;    uint32_t <a class="code" href="structsdhc__state__t.html#ace80dc58e87fc653835d8db4e8a04bf5">clock</a>;         </div><div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#ac476c29fe5d29a049e4ac134171300ff">   49</a></span>&#160;    uint16_t <a class="code" href="structsdhc__state__t.html#ac476c29fe5d29a049e4ac134171300ff">rca</a>;           </div><div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#a16754e2f5f1c8c01dd41ec35bb2796eb">   50</a></span>&#160;    uint16_t <a class="code" href="structsdhc__state__t.html#a16754e2f5f1c8c01dd41ec35bb2796eb">error</a>;         </div><div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#a437eda1159b788e7d7c606e5f9d5415c">   51</a></span>&#160;    uint8_t <a class="code" href="structsdhc__state__t.html#a437eda1159b788e7d7c606e5f9d5415c">type</a>;           </div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#a72604505671ec13a5aa898a678f6ae4a">   52</a></span>&#160;    uint8_t <a class="code" href="structsdhc__state__t.html#a72604505671ec13a5aa898a678f6ae4a">version</a>;        </div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#a706478a31bca8e8144e06c806e2582ca">   53</a></span>&#160;    uint8_t <a class="code" href="structsdhc__state__t.html#a706478a31bca8e8144e06c806e2582ca">bus_width</a>;      </div><div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#af3243bddb2b38865686b749d1a78060d">   54</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structsdhc__state__t.html#af3243bddb2b38865686b749d1a78060d">high_speed</a>;        </div><div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structsdhc__state__t.html#a1788ab6f4fead51bf646959b64ea9d96">   55</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="structsdhc__state__t.html#a1788ab6f4fead51bf646959b64ea9d96">need_init</a>;         </div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <a class="code" href="structsdhc__state__t.html">sdhc_state_t</a>;</div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div><div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga5fd9a903f60efde801492b8b1450f65b">   60</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_UNKNOWN   (0)         </span></div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga36890c0bca39ec6ba4059fc7d993933a">   61</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_SD        (1 &lt;&lt; 0)    </span></div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gab37f42c106d4cfa8728f373c086d4988">   62</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_MMC       (1 &lt;&lt; 1)    </span></div><div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga9454609943cc676df80cdc9e108bd7c5">   63</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_SDIO      (1 &lt;&lt; 2)    </span></div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gac6c20853f3e658902a0410c8f71f1946">   64</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_HC        (1 &lt;&lt; 3)    </span></div><div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga6e30ebefd7397e5651c16e57811f3da0">   66</a></span>&#160;<span class="preprocessor">#define CARD_TYPE_SD_COMBO (CARD_TYPE_SD | CARD_TYPE_SDIO)</span></div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga0af5ca822dd9d4731ad600857b618be1">   71</a></span>&#160;<span class="preprocessor">#define CARD_VER_UNKNOWN    (0)     </span></div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gab81ba0feb8c90e3f9b2524509da9bac0">   72</a></span>&#160;<span class="preprocessor">#define CARD_VER_SD_1_0     (0x10)  </span></div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga3060d99cba92d5769d6e6276a21d3032">   73</a></span>&#160;<span class="preprocessor">#define CARD_VER_SD_1_10    (0x1A)  </span></div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga7be4a87e51ad0410b16dd6901066c24d">   74</a></span>&#160;<span class="preprocessor">#define CARD_VER_SD_2_0     (0X20)  </span></div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga695202257c082bd3f10856b69356c38c">   75</a></span>&#160;<span class="preprocessor">#define CARD_VER_SD_3_0     (0X30)  </span></div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gaff87e330692bd301f5928e6fae9cfd4c">   76</a></span>&#160;<span class="preprocessor">#define CARD_VER_MMC_1_2    (0x12)  </span></div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gae7e9a02a90dcfd6f8336b47f74e21c02">   77</a></span>&#160;<span class="preprocessor">#define CARD_VER_MMC_1_4    (0x14)  </span></div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gab267a0a07917328d53db0c099a8faed1">   78</a></span>&#160;<span class="preprocessor">#define CARD_VER_MMC_2_2    (0x22)  </span></div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gaf31e147be973cbb1739c18c583628b22">   79</a></span>&#160;<span class="preprocessor">#define CARD_VER_MMC_3      (0x30)  </span></div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga4b12fa91d2b2db880a22dc24fbfee9a7">   80</a></span>&#160;<span class="preprocessor">#define CARD_VER_MMC_4      (0x40)  </span></div><div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga7e0c41699824da2c1371267e64105d02">   85</a></span>&#160;<span class="preprocessor">#define MCI_RESP_PRESENT    (1ul &lt;&lt;  8)     </span></div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga839e6ce7def511207d2feb0b3dd6022e">   86</a></span>&#160;<span class="preprocessor">#define MCI_RESP_136        (1ul &lt;&lt; 11)     </span></div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga6ec1b49efffd3171ac5909989ecd3323">   87</a></span>&#160;<span class="preprocessor">#define MCI_RESP_CRC        (1ul &lt;&lt; 12)     </span></div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga5fc912f48bcee3510e9b57758c092506">   88</a></span>&#160;<span class="preprocessor">#define MCI_RESP_BUSY       (1ul &lt;&lt; 13)     </span></div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gabddeb828c6427c0b4b433b4ce7f8f605">   89</a></span>&#160;<span class="preprocessor">#define MCI_CMD_OPENDRAIN   (1ul &lt;&lt; 14)     </span></div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga4e494792ed606017f9f22a1639988d03">   90</a></span>&#160;<span class="preprocessor">#define MCI_CMD_WRITE       (1ul &lt;&lt; 15)     </span></div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga701a64254bed23b7d69145df0e597c60">   91</a></span>&#160;<span class="preprocessor">#define MCI_CMD_SDIO_BYTE   (1ul &lt;&lt; 16)     </span></div><div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gad1529c004a126a3f38572005ac386e7b">   92</a></span>&#160;<span class="preprocessor">#define MCI_CMD_SDIO_BLOCK  (1ul &lt;&lt; 17)     </span></div><div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga37314e592a841b6bef721cb17f965baa">   93</a></span>&#160;<span class="preprocessor">#define MCI_CMD_STREAM      (1ul &lt;&lt; 18)     </span></div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga28e2c3285eafe1929a9ff07ab5233301">   94</a></span>&#160;<span class="preprocessor">#define MCI_CMD_SINGLE_BLOCK (1ul &lt;&lt; 19)    </span></div><div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga46a0cdc1b8507418d5bf7a2b33ba1db2">   95</a></span>&#160;<span class="preprocessor">#define MCI_CMD_MULTI_BLOCK (1ul &lt;&lt; 20)     </span></div><div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#gab6ff7ea8e66efbfd90d8b809fefff1e4">   99</a></span>&#160;<span class="preprocessor">#define SD_MMC_BLOCK_SIZE   512             </span></div><div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga67b30f54001ffe32553fe18a6d35c44f">  100</a></span>&#160;<span class="preprocessor">#define SDHC_SLOW_CLOCK_HZ  400000          </span></div><div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="group__cpu__sam0__common__sdhc.html#ga10c50bd3a30fbef93cb9db33e4f56df9">  101</a></span>&#160;<span class="preprocessor">#define SDHC_FAST_CLOCK_HZ  25000000        </span></div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">int sdhc_init(sdhc_state_t *state);</span></div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__cpu__sam0__common__sdhc.html#gabfa4f7812d0fc37dc529e90d0f0c24a2">sdhc_send_cmd</a>(<a class="code" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t cmd, uint32_t arg);</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div><div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__cpu__sam0__common__sdhc.html#gafafab6bb494bfdc5a2ec02674fb5be7c">sdhc_read_blocks</a>(<a class="code" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, <span class="keywordtype">void</span> *dst, uint16_t num);</div><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__cpu__sam0__common__sdhc.html#ga0a0badb145e55ecc3c3a694a4f32f7b5">sdhc_write_blocks</a>(<a class="code" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, <span class="keyword">const</span> <span class="keywordtype">void</span> *src,</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                      uint16_t num);</div><div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__cpu__sam0__common__sdhc.html#gacecfff5aff12ab20695252e1648b1b56">sdhc_erase_blocks</a>(<a class="code" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, uint16_t num);</div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SDHC_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div><div class="ttc" id="structsdhc__state__t_html_adc8d71244c278bfdae9d3871ec13f24b"><div class="ttname"><a href="structsdhc__state__t.html#adc8d71244c278bfdae9d3871ec13f24b">sdhc_state_t::dev</a></div><div class="ttdeci">Sdhc * dev</div><div class="ttdoc">SDHC instance. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00042">sdhc.h:42</a></div></div>
+<div class="ttc" id="group__cpu__sam0__common__sdhc_html_gacecfff5aff12ab20695252e1648b1b56"><div class="ttname"><a href="group__cpu__sam0__common__sdhc.html#gacecfff5aff12ab20695252e1648b1b56">sdhc_erase_blocks</a></div><div class="ttdeci">int sdhc_erase_blocks(sdhc_state_t *state, uint32_t block, uint16_t num)</div><div class="ttdoc">Erase memory from SD card blocks. </div></div>
+<div class="ttc" id="structsdhc__state__t_html_a706478a31bca8e8144e06c806e2582ca"><div class="ttname"><a href="structsdhc__state__t.html#a706478a31bca8e8144e06c806e2582ca">sdhc_state_t::bus_width</a></div><div class="ttdeci">uint8_t bus_width</div><div class="ttdoc">Acceptable Bus Width (1 or 4) </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00053">sdhc.h:53</a></div></div>
+<div class="ttc" id="group__cpu__sam0__common__sdhc_html_gabfa4f7812d0fc37dc529e90d0f0c24a2"><div class="ttname"><a href="group__cpu__sam0__common__sdhc.html#gabfa4f7812d0fc37dc529e90d0f0c24a2">sdhc_send_cmd</a></div><div class="ttdeci">bool sdhc_send_cmd(sdhc_state_t *state, uint32_t cmd, uint32_t arg)</div><div class="ttdoc">Send a command to the SD card. </div></div>
+<div class="ttc" id="structsdhc__state__t_html_a72604505671ec13a5aa898a678f6ae4a"><div class="ttname"><a href="structsdhc__state__t.html#a72604505671ec13a5aa898a678f6ae4a">sdhc_state_t::version</a></div><div class="ttdeci">uint8_t version</div><div class="ttdoc">Version of Card. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00052">sdhc.h:52</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_abae54377b31f8ff7b399a3e75470c14e"><div class="ttname"><a href="structsdhc__state__t.html#abae54377b31f8ff7b399a3e75470c14e">sdhc_state_t::cd</a></div><div class="ttdeci">gpio_t cd</div><div class="ttdoc">Card detect pin. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00043">sdhc.h:43</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_ae74b39bf935dafe2419bf438c94ccd06"><div class="ttname"><a href="structsdhc__state__t.html#ae74b39bf935dafe2419bf438c94ccd06">sdhc_state_t::lock</a></div><div class="ttdeci">mutex_t lock</div><div class="ttdoc">Ensure thread-safe access. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00045">sdhc.h:45</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_a1788ab6f4fead51bf646959b64ea9d96"><div class="ttname"><a href="structsdhc__state__t.html#a1788ab6f4fead51bf646959b64ea9d96">sdhc_state_t::need_init</a></div><div class="ttdeci">bool need_init</div><div class="ttdoc">Card installed but not initialized if true. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00055">sdhc.h:55</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_a437eda1159b788e7d7c606e5f9d5415c"><div class="ttname"><a href="structsdhc__state__t.html#a437eda1159b788e7d7c606e5f9d5415c">sdhc_state_t::type</a></div><div class="ttdeci">uint8_t type</div><div class="ttdoc">Type of Card. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00051">sdhc.h:51</a></div></div>
+<div class="ttc" id="mutex_8h_html"><div class="ttname"><a href="mutex_8h.html">mutex.h</a></div><div class="ttdoc">Mutex for thread synchronization. </div></div>
+<div class="ttc" id="structsdhc__state__t_html_af3243bddb2b38865686b749d1a78060d"><div class="ttname"><a href="structsdhc__state__t.html#af3243bddb2b38865686b749d1a78060d">sdhc_state_t::high_speed</a></div><div class="ttdeci">bool high_speed</div><div class="ttdoc">Turbo mode. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00054">sdhc.h:54</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_abf145746a15fa98a79f37846e7489dce"><div class="ttname"><a href="structsdhc__state__t.html#abf145746a15fa98a79f37846e7489dce">sdhc_state_t::sync</a></div><div class="ttdeci">mutex_t sync</div><div class="ttdoc">ISR mutex. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00046">sdhc.h:46</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_ace80dc58e87fc653835d8db4e8a04bf5"><div class="ttname"><a href="structsdhc__state__t.html#ace80dc58e87fc653835d8db4e8a04bf5">sdhc_state_t::clock</a></div><div class="ttdeci">uint32_t clock</div><div class="ttdoc">Accepted Cloc Rate in Hz. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00048">sdhc.h:48</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_aa50f8c2dfac9455122edd7383498b8e8"><div class="ttname"><a href="structsdhc__state__t.html#aa50f8c2dfac9455122edd7383498b8e8">sdhc_state_t::wp</a></div><div class="ttdeci">gpio_t wp</div><div class="ttdoc">Write Protect pin. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00044">sdhc.h:44</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_ac476c29fe5d29a049e4ac134171300ff"><div class="ttname"><a href="structsdhc__state__t.html#ac476c29fe5d29a049e4ac134171300ff">sdhc_state_t::rca</a></div><div class="ttdeci">uint16_t rca</div><div class="ttdoc">Relative Card Address. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00049">sdhc.h:49</a></div></div>
+<div class="ttc" id="group__cpu__sam0__common__sdhc_html_ga0a0badb145e55ecc3c3a694a4f32f7b5"><div class="ttname"><a href="group__cpu__sam0__common__sdhc.html#ga0a0badb145e55ecc3c3a694a4f32f7b5">sdhc_write_blocks</a></div><div class="ttdeci">int sdhc_write_blocks(sdhc_state_t *state, uint32_t block, const void *src, uint16_t num)</div><div class="ttdoc">Write memory to SD card blocks. </div></div>
+<div class="ttc" id="structmutex__t_html"><div class="ttname"><a href="structmutex__t.html">mutex_t</a></div><div class="ttdoc">Mutex structure. </div><div class="ttdef"><b>Definition:</b> <a href="mutex_8h_source.html#l00146">mutex.h:146</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html"><div class="ttname"><a href="structsdhc__state__t.html">sdhc_state_t</a></div><div class="ttdoc">SD Card driver context. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00041">sdhc.h:41</a></div></div>
+<div class="ttc" id="structsdhc__state__t_html_ab42f196860c278d9c3b0c74041cd8677"><div class="ttname"><a href="structsdhc__state__t.html#ab42f196860c278d9c3b0c74041cd8677">sdhc_state_t::sectors</a></div><div class="ttdeci">uint32_t sectors</div><div class="ttdoc">Capacity in bytes. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00047">sdhc.h:47</a></div></div>
+<div class="ttc" id="group__cpu__sam0__common__sdhc_html_gafafab6bb494bfdc5a2ec02674fb5be7c"><div class="ttname"><a href="group__cpu__sam0__common__sdhc.html#gafafab6bb494bfdc5a2ec02674fb5be7c">sdhc_read_blocks</a></div><div class="ttdeci">int sdhc_read_blocks(sdhc_state_t *state, uint32_t block, void *dst, uint16_t num)</div><div class="ttdoc">Read blocks from the SD card into memory. </div></div>
+<div class="ttc" id="drivers_2include_2periph_2gpio_8h_html"><div class="ttname"><a href="drivers_2include_2periph_2gpio_8h.html">gpio.h</a></div><div class="ttdoc">Low-level GPIO peripheral driver interface definitions. </div></div>
+<div class="ttc" id="structsdhc__state__t_html_a16754e2f5f1c8c01dd41ec35bb2796eb"><div class="ttname"><a href="structsdhc__state__t.html#a16754e2f5f1c8c01dd41ec35bb2796eb">sdhc_state_t::error</a></div><div class="ttdeci">uint16_t error</div><div class="ttdoc">Last error state. </div><div class="ttdef"><b>Definition:</b> <a href="sdhc_8h_source.html#l00050">sdhc.h:50</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:19 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

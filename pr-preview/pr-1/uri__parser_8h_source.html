@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/uri_parser.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('uri__parser_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">uri_parser.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2020 HAW Hamburg</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * General Public License v2.1. See the file LICENSE in the top level</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * directory for more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#ifndef URI_PARSER_H</span></div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define URI_PARSER_H</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a017d5ff36127167ec60ee6ee254ee2fa">   42</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#a017d5ff36127167ec60ee6ee254ee2fa">scheme</a>;             </div><div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a2a963c5b4fc56996e2c1024f3c68f361">   43</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#a2a963c5b4fc56996e2c1024f3c68f361">userinfo</a>;           </div><div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">   52</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">host</a>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">   61</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">ipv6addr</a>;</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#ac0f9b1556af4806f15a9a85a4beea761">   68</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#ac0f9b1556af4806f15a9a85a4beea761">zoneid</a>;</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a875ed730e095223aaae4cb786bced5ca">   70</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#a875ed730e095223aaae4cb786bced5ca">port_str</a>;           </div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#ab95f3a39b5110a9d318b435206a8c2bf">   71</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#ab95f3a39b5110a9d318b435206a8c2bf">path</a>;               </div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a39a2b6ca48518b155deb9d8dc51e719c">   72</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__result__t.html#a39a2b6ca48518b155deb9d8dc51e719c">query</a>;              </div><div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a999d3641eb320b3714f8a383d97adc5a">   73</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a999d3641eb320b3714f8a383d97adc5a">port</a>;                  </div><div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a0102a05b60801ee5f03f8cc7fbc960f9">   74</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a0102a05b60801ee5f03f8cc7fbc960f9">scheme_len</a>;            </div><div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a36f00aa15d0ad2d995a817db208fe7a3">   75</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a36f00aa15d0ad2d995a817db208fe7a3">userinfo_len</a>;          </div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#ae89f1b565ff75a1406d4071ca17a8b35">   76</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#ae89f1b565ff75a1406d4071ca17a8b35">host_len</a>;              </div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a8595922ba848a921442d72fb29940fc5">   77</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a8595922ba848a921442d72fb29940fc5">ipv6addr_len</a>;          </div><div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a062814ef7261afd64007aad39f2d68da">   78</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a062814ef7261afd64007aad39f2d68da">zoneid_len</a>;            </div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a540b59383376bb2dd13b3fff838dc68f">   79</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a540b59383376bb2dd13b3fff838dc68f">port_str_len</a>;          </div><div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a228b45249254745ecf61e6d5f0c6850d">   80</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a228b45249254745ecf61e6d5f0c6850d">path_len</a>;              </div><div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structuri__parser__result__t.html#a4f155d5a5a202c097a5014edacf043fc">   81</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__result__t.html#a4f155d5a5a202c097a5014edacf043fc">query_len</a>;             </div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <a class="code" href="structuri__parser__result__t.html">uri_parser_result_t</a>;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div><div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structuri__parser__query__param__t.html">   87</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div><div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structuri__parser__query__param__t.html#a88a325e6299d9910a36f79e7b81063a3">   88</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__query__param__t.html#a88a325e6299d9910a36f79e7b81063a3">name</a>;               </div><div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structuri__parser__query__param__t.html#a3edd902258e49999a7115f542d33cd74">   89</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code" href="structuri__parser__query__param__t.html#a3edd902258e49999a7115f542d33cd74">value</a>;              </div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structuri__parser__query__param__t.html#ac3b839514da781893263e911a85bab12">   90</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__query__param__t.html#ac3b839514da781893263e911a85bab12">name_len</a>;              </div><div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="structuri__parser__query__param__t.html#ad618a29df8b71e7c52032ba4c288868c">   91</a></span>&#160;    uint16_t <a class="code" href="structuri__parser__query__param__t.html#ad618a29df8b71e7c52032ba4c288868c">value_len</a>;             </div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <a class="code" href="structuri__parser__query__param__t.html">uri_parser_query_param_t</a>;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__sys__uri__parser.html#gafd24e49920b50f2b497e08741c49eec9">uri_parser_is_absolute</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *uri, <span class="keywordtype">size_t</span> uri_len);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="group__sys__uri__parser.html#gaf4a8cc43860021dc3d687eaa2819ea8e">uri_parser_is_absolute_string</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *uri);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__uri__parser.html#ga75b5c66965f3451eefb274569ce1147b">uri_parser_process</a>(<a class="code" href="structuri__parser__result__t.html">uri_parser_result_t</a> *result, <span class="keyword">const</span> <span class="keywordtype">char</span> *uri,</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                       <span class="keywordtype">size_t</span> uri_len);</div><div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div><div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__uri__parser.html#ga4876944783543416891f67c5457c4c97">uri_parser_process_string</a>(<a class="code" href="structuri__parser__result__t.html">uri_parser_result_t</a> *result, <span class="keyword">const</span> <span class="keywordtype">char</span> *uri);</div><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="keywordtype">int</span> <a class="code" href="group__sys__uri__parser.html#gad370292728b0290311388894bb7d2342">uri_parser_split_query</a>(<span class="keyword">const</span> <a class="code" href="structuri__parser__result__t.html">uri_parser_result_t</a> *uri_parsed,</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                           <a class="code" href="structuri__parser__query__param__t.html">uri_parser_query_param_t</a> *params,</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                           <span class="keywordtype">size_t</span> params_len);</div><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div><div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div><div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* URI_PARSER_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div><div class="ttc" id="group__sys__uri__parser_html_gad370292728b0290311388894bb7d2342"><div class="ttname"><a href="group__sys__uri__parser.html#gad370292728b0290311388894bb7d2342">uri_parser_split_query</a></div><div class="ttdeci">int uri_parser_split_query(const uri_parser_result_t *uri_parsed, uri_parser_query_param_t *params, size_t params_len)</div><div class="ttdoc">Provides a list of URI query parameters from a given URI parser result. </div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a540b59383376bb2dd13b3fff838dc68f"><div class="ttname"><a href="structuri__parser__result__t.html#a540b59383376bb2dd13b3fff838dc68f">uri_parser_result_t::port_str_len</a></div><div class="ttdeci">uint16_t port_str_len</div><div class="ttdoc">length of port_str </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00079">uri_parser.h:79</a></div></div>
+<div class="ttc" id="structuri__parser__query__param__t_html_a3edd902258e49999a7115f542d33cd74"><div class="ttname"><a href="structuri__parser__query__param__t.html#a3edd902258e49999a7115f542d33cd74">uri_parser_query_param_t::value</a></div><div class="ttdeci">const char * value</div><div class="ttdoc">value of the query parameter </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00089">uri_parser.h:89</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_ab95f3a39b5110a9d318b435206a8c2bf"><div class="ttname"><a href="structuri__parser__result__t.html#ab95f3a39b5110a9d318b435206a8c2bf">uri_parser_result_t::path</a></div><div class="ttdeci">const char * path</div><div class="ttdoc">path </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00071">uri_parser.h:71</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a257ca5000f0dafa9449a2b9bb2aa533e"><div class="ttname"><a href="structuri__parser__result__t.html#a257ca5000f0dafa9449a2b9bb2aa533e">uri_parser_result_t::host</a></div><div class="ttdeci">const char * host</div><div class="ttdoc">host part </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00052">uri_parser.h:52</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a36f00aa15d0ad2d995a817db208fe7a3"><div class="ttname"><a href="structuri__parser__result__t.html#a36f00aa15d0ad2d995a817db208fe7a3">uri_parser_result_t::userinfo_len</a></div><div class="ttdeci">uint16_t userinfo_len</div><div class="ttdoc">length of userinfo </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00075">uri_parser.h:75</a></div></div>
+<div class="ttc" id="group__sys__uri__parser_html_ga4876944783543416891f67c5457c4c97"><div class="ttname"><a href="group__sys__uri__parser.html#ga4876944783543416891f67c5457c4c97">uri_parser_process_string</a></div><div class="ttdeci">int uri_parser_process_string(uri_parser_result_t *result, const char *uri)</div><div class="ttdoc">Parse a URI reference. </div></div>
+<div class="ttc" id="structuri__parser__result__t_html_ae8cf38311f4582d339524603fe0f4105"><div class="ttname"><a href="structuri__parser__result__t.html#ae8cf38311f4582d339524603fe0f4105">uri_parser_result_t::ipv6addr</a></div><div class="ttdeci">const char * ipv6addr</div><div class="ttdoc">Pointer to the start of the address, if host is an IPv6 address and NULL otherwise. </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00061">uri_parser.h:61</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a875ed730e095223aaae4cb786bced5ca"><div class="ttname"><a href="structuri__parser__result__t.html#a875ed730e095223aaae4cb786bced5ca">uri_parser_result_t::port_str</a></div><div class="ttdeci">const char * port_str</div><div class="ttdoc">port as str </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00070">uri_parser.h:70</a></div></div>
+<div class="ttc" id="group__sys__uri__parser_html_gaf4a8cc43860021dc3d687eaa2819ea8e"><div class="ttname"><a href="group__sys__uri__parser.html#gaf4a8cc43860021dc3d687eaa2819ea8e">uri_parser_is_absolute_string</a></div><div class="ttdeci">bool uri_parser_is_absolute_string(const char *uri)</div><div class="ttdoc">Checks whether uri is in absolute form. </div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a0102a05b60801ee5f03f8cc7fbc960f9"><div class="ttname"><a href="structuri__parser__result__t.html#a0102a05b60801ee5f03f8cc7fbc960f9">uri_parser_result_t::scheme_len</a></div><div class="ttdeci">uint16_t scheme_len</div><div class="ttdoc">length of scheme </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00074">uri_parser.h:74</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a062814ef7261afd64007aad39f2d68da"><div class="ttname"><a href="structuri__parser__result__t.html#a062814ef7261afd64007aad39f2d68da">uri_parser_result_t::zoneid_len</a></div><div class="ttdeci">uint16_t zoneid_len</div><div class="ttdoc">length of zoneid </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00078">uri_parser.h:78</a></div></div>
+<div class="ttc" id="structuri__parser__query__param__t_html"><div class="ttname"><a href="structuri__parser__query__param__t.html">uri_parser_query_param_t</a></div><div class="ttdoc">Container to represent a query parameter. </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00087">uri_parser.h:87</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a39a2b6ca48518b155deb9d8dc51e719c"><div class="ttname"><a href="structuri__parser__result__t.html#a39a2b6ca48518b155deb9d8dc51e719c">uri_parser_result_t::query</a></div><div class="ttdeci">const char * query</div><div class="ttdoc">query </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00072">uri_parser.h:72</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a2a963c5b4fc56996e2c1024f3c68f361"><div class="ttname"><a href="structuri__parser__result__t.html#a2a963c5b4fc56996e2c1024f3c68f361">uri_parser_result_t::userinfo</a></div><div class="ttdeci">const char * userinfo</div><div class="ttdoc">userinfo </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00043">uri_parser.h:43</a></div></div>
+<div class="ttc" id="group__sys__uri__parser_html_ga75b5c66965f3451eefb274569ce1147b"><div class="ttname"><a href="group__sys__uri__parser.html#ga75b5c66965f3451eefb274569ce1147b">uri_parser_process</a></div><div class="ttdeci">int uri_parser_process(uri_parser_result_t *result, const char *uri, size_t uri_len)</div><div class="ttdoc">Parse a URI reference. </div></div>
+<div class="ttc" id="structuri__parser__query__param__t_html_ac3b839514da781893263e911a85bab12"><div class="ttname"><a href="structuri__parser__query__param__t.html#ac3b839514da781893263e911a85bab12">uri_parser_query_param_t::name_len</a></div><div class="ttdeci">uint16_t name_len</div><div class="ttdoc">length of name </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00090">uri_parser.h:90</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_ae89f1b565ff75a1406d4071ca17a8b35"><div class="ttname"><a href="structuri__parser__result__t.html#ae89f1b565ff75a1406d4071ca17a8b35">uri_parser_result_t::host_len</a></div><div class="ttdeci">uint16_t host_len</div><div class="ttdoc">length of host </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00076">uri_parser.h:76</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a017d5ff36127167ec60ee6ee254ee2fa"><div class="ttname"><a href="structuri__parser__result__t.html#a017d5ff36127167ec60ee6ee254ee2fa">uri_parser_result_t::scheme</a></div><div class="ttdeci">const char * scheme</div><div class="ttdoc">scheme </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00042">uri_parser.h:42</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_ac0f9b1556af4806f15a9a85a4beea761"><div class="ttname"><a href="structuri__parser__result__t.html#ac0f9b1556af4806f15a9a85a4beea761">uri_parser_result_t::zoneid</a></div><div class="ttdeci">const char * zoneid</div><div class="ttdoc">zoneid if host is IPv6 address, NULL otherwise </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00068">uri_parser.h:68</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html"><div class="ttname"><a href="structuri__parser__result__t.html">uri_parser_result_t</a></div><div class="ttdoc">container that holds all results </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00041">uri_parser.h:41</a></div></div>
+<div class="ttc" id="group__sys__uri__parser_html_gafd24e49920b50f2b497e08741c49eec9"><div class="ttname"><a href="group__sys__uri__parser.html#gafd24e49920b50f2b497e08741c49eec9">uri_parser_is_absolute</a></div><div class="ttdeci">bool uri_parser_is_absolute(const char *uri, size_t uri_len)</div><div class="ttdoc">Checks whether uri is in absolute form. </div></div>
+<div class="ttc" id="structuri__parser__query__param__t_html_a88a325e6299d9910a36f79e7b81063a3"><div class="ttname"><a href="structuri__parser__query__param__t.html#a88a325e6299d9910a36f79e7b81063a3">uri_parser_query_param_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">name of the query parameter </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00088">uri_parser.h:88</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a999d3641eb320b3714f8a383d97adc5a"><div class="ttname"><a href="structuri__parser__result__t.html#a999d3641eb320b3714f8a383d97adc5a">uri_parser_result_t::port</a></div><div class="ttdeci">uint16_t port</div><div class="ttdoc">port as uint16_t </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00073">uri_parser.h:73</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a8595922ba848a921442d72fb29940fc5"><div class="ttname"><a href="structuri__parser__result__t.html#a8595922ba848a921442d72fb29940fc5">uri_parser_result_t::ipv6addr_len</a></div><div class="ttdeci">uint16_t ipv6addr_len</div><div class="ttdoc">length of ipv6addr </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00077">uri_parser.h:77</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a228b45249254745ecf61e6d5f0c6850d"><div class="ttname"><a href="structuri__parser__result__t.html#a228b45249254745ecf61e6d5f0c6850d">uri_parser_result_t::path_len</a></div><div class="ttdeci">uint16_t path_len</div><div class="ttdoc">length of path </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00080">uri_parser.h:80</a></div></div>
+<div class="ttc" id="structuri__parser__query__param__t_html_ad618a29df8b71e7c52032ba4c288868c"><div class="ttname"><a href="structuri__parser__query__param__t.html#ad618a29df8b71e7c52032ba4c288868c">uri_parser_query_param_t::value_len</a></div><div class="ttdeci">uint16_t value_len</div><div class="ttdoc">length of value </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00091">uri_parser.h:91</a></div></div>
+<div class="ttc" id="structuri__parser__result__t_html_a4f155d5a5a202c097a5014edacf043fc"><div class="ttname"><a href="structuri__parser__result__t.html#a4f155d5a5a202c097a5014edacf043fc">uri_parser_result_t::query_len</a></div><div class="ttdeci">uint16_t query_len</div><div class="ttdoc">length of query </div><div class="ttdef"><b>Definition:</b> <a href="uri__parser_8h_source.html#l00081">uri_parser.h:81</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

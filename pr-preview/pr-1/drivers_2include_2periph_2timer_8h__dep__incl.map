@@ -1,0 +1,42 @@
+<map id="drivers/include/periph/timer.h" name="drivers/include/periph/timer.h">
+<area shape="rect" id="node2" href="$ek-lm4f120xl_2include_2board_8h.html" title="Board specific definitions for the Stellaris Launchpad LM4F120 board. " alt="" coords="705,95,856,136"/>
+<area shape="rect" id="node4" href="$dac__dds_8h.html" title="Use a DAC to play a buffer of samples. " alt="" coords="881,95,1022,136"/>
+<area shape="rect" id="node5" href="$servo_8h.html" title="High&#45;level driver for easy handling of servo motors. " alt="" coords="1047,102,1213,129"/>
+<area shape="rect" id="node6" href="$servo__params_8h.html" title="Default configuration for servo devices. " alt="" coords="1063,184,1218,225"/>
+<area shape="rect" id="node7" href="$soft__uart_8h.html" title="Software UART port descriptor definition. " alt="" coords="1289,95,1433,136"/>
+<area shape="rect" id="node9" href="$implementation_8h.html" title="xtimer implementation " alt="" coords="1457,95,1595,136"/>
+<area shape="rect" id="node41" href="$periph__timer_8h.html" title="ztimer periph/timer backend API " alt="" coords="1619,95,1753,136"/>
+<area shape="rect" id="node3" href="$ek-lm4f120xl_2include_2gpio__params_8h.html" title="Board specific configuration of direct mapped GPIOs. " alt="" coords="697,184,864,225"/>
+<area shape="rect" id="node8" href="$soft__uart__params_8h.html" title="Software UART configuration. " alt="" coords="1262,184,1438,225"/>
+<area shape="rect" id="node10" href="$xtimer_8h.html" title="xtimer interface definitions " alt="" coords="1462,191,1609,218"/>
+<area shape="rect" id="node11" href="$at86rf215_8h.html" title="Interface definition for AT86RF215 based drivers. " alt="" coords="199,288,394,315"/>
+<area shape="rect" id="node14" href="$dcf77_8h.html" title="Interface definition for the dcf77 sensor driver. " alt="" coords="419,288,585,315"/>
+<area shape="rect" id="node16" href="$scd30_8h.html" title="Device driver interface for the SCD30 sensor. " alt="" coords="610,288,778,315"/>
+<area shape="rect" id="node18" href="$sdp3x_8h.html" title="Device driver interface for the SDP3x sensor. " alt="" coords="803,288,972,315"/>
+<area shape="rect" id="node20" href="$srf04_8h.html" title="Device driver for the srf04 ultra sonic range finder. " alt="" coords="997,288,1162,315"/>
+<area shape="rect" id="node22" href="$ws281x_8h.html" title="WS2812/SK6812 RGB LED Driver. " alt="" coords="1186,288,1365,315"/>
+<area shape="rect" id="node24" href="$my9221__internal_8h.html" title="Internal config and parameters for the MY9221 LED controller. " alt="" coords="1389,281,1559,322"/>
+<area shape="rect" id="node25" href="$net_2gnrc_2gomach_2timeout_8h.html" title="Timeout handling of GoMacH. " alt="" coords="1423,377,1573,419"/>
+<area shape="rect" id="node26" href="$sys_2include_2net_2gnrc_2gomach_2types_8h.html" title="Internal used types of GoMacH. " alt="" coords="1634,281,1783,322"/>
+<area shape="rect" id="node27" href="$sys_2include_2net_2gnrc_2lwmac_2types_8h.html" title="Definition of internal types used by LWMAC. " alt="" coords="1807,281,1957,322"/>
+<area shape="rect" id="node30" href="$net_2gnrc_2netif_2pktq_2type_8h.html" title="Send queue for Network interface API type definitions " alt="" coords="1981,281,2130,322"/>
+<area shape="rect" id="node32" href="$sfr__types_8h.html" title="6LoWPAN selective fragment recovery type definitions for GNRC " alt="" coords="2154,281,2346,322"/>
+<area shape="rect" id="node39" href="$sntp_8h.html" title="SNTP definitions. " alt="" coords="2370,288,2530,315"/>
+<area shape="rect" id="node40" href="$gnrc__ipv6__auto__subnets_8c.html" title="sys/net/gnrc/routing\l/ipv6_auto_subnets/gnrc\l_ipv6_auto_subnets.c" alt="" coords="2555,273,2729,329"/>
+<area shape="rect" id="node12" href="$at86rf215__internal_8h.html" title="Low&#45;Level functions for the AT86RF215 driver. " alt="" coords="5,377,188,419"/>
+<area shape="rect" id="node13" href="$at86rf215__params_8h.html" title="Default configuration for the AT86RF215 driver. " alt="" coords="212,377,395,419"/>
+<area shape="rect" id="node15" href="$dcf77__params_8h.html" title="Default configuration for DCF77 devices. " alt="" coords="425,377,579,419"/>
+<area shape="rect" id="node17" href="$scd30__params_8h.html" title="Device driver params interface for the SCD30 sensor. " alt="" coords="616,377,772,419"/>
+<area shape="rect" id="node19" href="$sdp3x__params_8h.html" title="Device driver params interface for the SDP3x sensor. " alt="" coords="809,377,966,419"/>
+<area shape="rect" id="node21" href="$srf04__params_8h.html" title="Default configuration for srf04 devices. " alt="" coords="1003,377,1156,419"/>
+<area shape="rect" id="node23" href="$ws281x__params_8h.html" title="Default configuration for WS2812/SK6812 RGB LEDs. " alt="" coords="1192,377,1359,419"/>
+<area shape="rect" id="node28" href="$net_2gnrc_2lwmac_2timeout_8h.html" title="Timeout handling of LWMAC. " alt="" coords="1597,377,1746,419"/>
+<area shape="rect" id="node29" href="$lwmac__internal_8h.html" title="Interface definition for internal functions of LWMAC protocol. " alt="" coords="1771,377,1993,419"/>
+<area shape="rect" id="node31" href="$pktq_8h.html" title="Send queue for Network interface API definitions " alt="" coords="2017,377,2166,419"/>
+<area shape="rect" id="node33" href="$gnrc_2sixlowpan_2frag_2sfr_8h.html" title="6LoWPAN selective fragment recovery definitions for GNRC " alt="" coords="2191,377,2341,419"/>
+<area shape="rect" id="node34" href="$net_2gnrc_2sixlowpan_2frag_2sfr_2congure_8h.html" title="Congure definitions for 6LoWPAN selective fragment recovery. " alt="" coords="2217,467,2427,508"/>
+<area shape="rect" id="node35" href="$congure_2mock_8h.html" title="sys/include/congure\l/mock.h" alt="" coords="2078,556,2225,597"/>
+<area shape="rect" id="node36" href="$quic_8h.html" title="sys/include/congure\l/quic.h" alt="" coords="2249,556,2395,597"/>
+<area shape="rect" id="node37" href="$reno_8h.html" title="sys/include/congure\l/reno.h" alt="" coords="2419,556,2566,597"/>
+<area shape="rect" id="node38" href="$abe_8h.html" title="sys/include/congure\l/abe.h" alt="" coords="2419,645,2566,687"/>
+</map>

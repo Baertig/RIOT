@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>cpu/sam0_common/include/sdhc.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('sdhc_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">sdhc.h File Reference<div class="ingroups"><a class="el" href="group__cpu.html">CPU</a> &raquo; <a class="el" href="group__cpu__sam0__common.html">Atmel SAM0 common</a> &raquo; <a class="el" href="group__cpu__sam0__common__sdhc.html">sam0 SD Host Controller</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>SD card interface functions for sam0 class devices.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>SD card interface functions for sam0 class devices. </p>
+<dl class="section author"><dt>Author</dt><dd>alkgrove <a href="#" onclick="location.href='mai'+'lto:'+'bob'+'@a'+'lkg'+'ro'+'ve.'+'co'+'m'; return false;">bob@a<span style="display: none;">.nosp@m.</span>lkgr<span style="display: none;">.nosp@m.</span>ove.c<span style="display: none;">.nosp@m.</span>om</a> </dd>
+<dd>
+Benjamin Valentin <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'ja'+'min'+'.v'+'ale'+'nt'+'in@'+'ml'+'-pa'+'.c'+'om'; return false;">benja<span style="display: none;">.nosp@m.</span>min.<span style="display: none;">.nosp@m.</span>valen<span style="display: none;">.nosp@m.</span>tin@<span style="display: none;">.nosp@m.</span>ml-pa<span style="display: none;">.nosp@m.</span>.com</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="sdhc_8h_source.html">sdhc.h</a>.</p>
+</div><div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="drivers_2include_2periph_2gpio_8h_source.html">periph/gpio.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mutex_8h_source.html">mutex.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sdhc.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sdhc_8h__incl.svg" width="1822" height="650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="sdhc_8h__dep__incl.svg" width="202" height="142"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="sdhc_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structsdhc__state__t.html">sdhc_state_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD Card driver context.  <a href="structsdhc__state__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gab6ff7ea8e66efbfd90d8b809fefff1e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gab6ff7ea8e66efbfd90d8b809fefff1e4">SD_MMC_BLOCK_SIZE</a>&#160;&#160;&#160;512</td></tr>
+<tr class="memdesc:gab6ff7ea8e66efbfd90d8b809fefff1e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This SD stack uses the maximum block size authorized (512 bytes)  <a href="group__cpu__sam0__common__sdhc.html#gab6ff7ea8e66efbfd90d8b809fefff1e4">More...</a><br /></td></tr>
+<tr class="separator:gab6ff7ea8e66efbfd90d8b809fefff1e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga67b30f54001ffe32553fe18a6d35c44f"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga67b30f54001ffe32553fe18a6d35c44f">SDHC_SLOW_CLOCK_HZ</a>&#160;&#160;&#160;400000</td></tr>
+<tr class="memdesc:ga67b30f54001ffe32553fe18a6d35c44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock frequency on init. <br /></td></tr>
+<tr class="separator:ga67b30f54001ffe32553fe18a6d35c44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10c50bd3a30fbef93cb9db33e4f56df9"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga10c50bd3a30fbef93cb9db33e4f56df9">SDHC_FAST_CLOCK_HZ</a>&#160;&#160;&#160;25000000</td></tr>
+<tr class="memdesc:ga10c50bd3a30fbef93cb9db33e4f56df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clock frequency after init. <br /></td></tr>
+<tr class="separator:ga10c50bd3a30fbef93cb9db33e4f56df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae81f68e7e32cb426b01798a868fa89fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gae81f68e7e32cb426b01798a868fa89fe">sdhc_init</a> (<a class="el" href="structsdhc__state__t.html">sdhc_state_t</a> *state)</td></tr>
+<tr class="memdesc:gae81f68e7e32cb426b01798a868fa89fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the SD host controller.  <a href="group__cpu__sam0__common__sdhc.html#gae81f68e7e32cb426b01798a868fa89fe">More...</a><br /></td></tr>
+<tr class="separator:gae81f68e7e32cb426b01798a868fa89fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabfa4f7812d0fc37dc529e90d0f0c24a2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gabfa4f7812d0fc37dc529e90d0f0c24a2">sdhc_send_cmd</a> (<a class="el" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t cmd, uint32_t arg)</td></tr>
+<tr class="memdesc:gabfa4f7812d0fc37dc529e90d0f0c24a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a command to the SD card.  <a href="group__cpu__sam0__common__sdhc.html#gabfa4f7812d0fc37dc529e90d0f0c24a2">More...</a><br /></td></tr>
+<tr class="separator:gabfa4f7812d0fc37dc529e90d0f0c24a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafafab6bb494bfdc5a2ec02674fb5be7c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gafafab6bb494bfdc5a2ec02674fb5be7c">sdhc_read_blocks</a> (<a class="el" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, void *dst, uint16_t num)</td></tr>
+<tr class="memdesc:gafafab6bb494bfdc5a2ec02674fb5be7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read blocks from the SD card into memory.  <a href="group__cpu__sam0__common__sdhc.html#gafafab6bb494bfdc5a2ec02674fb5be7c">More...</a><br /></td></tr>
+<tr class="separator:gafafab6bb494bfdc5a2ec02674fb5be7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a0badb145e55ecc3c3a694a4f32f7b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga0a0badb145e55ecc3c3a694a4f32f7b5">sdhc_write_blocks</a> (<a class="el" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, const void *src, uint16_t num)</td></tr>
+<tr class="memdesc:ga0a0badb145e55ecc3c3a694a4f32f7b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write memory to SD card blocks.  <a href="group__cpu__sam0__common__sdhc.html#ga0a0badb145e55ecc3c3a694a4f32f7b5">More...</a><br /></td></tr>
+<tr class="separator:ga0a0badb145e55ecc3c3a694a4f32f7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacecfff5aff12ab20695252e1648b1b56"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gacecfff5aff12ab20695252e1648b1b56">sdhc_erase_blocks</a> (<a class="el" href="structsdhc__state__t.html">sdhc_state_t</a> *state, uint32_t block, uint16_t num)</td></tr>
+<tr class="memdesc:gacecfff5aff12ab20695252e1648b1b56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erase memory from SD card blocks.  <a href="group__cpu__sam0__common__sdhc.html#gacecfff5aff12ab20695252e1648b1b56">More...</a><br /></td></tr>
+<tr class="separator:gacecfff5aff12ab20695252e1648b1b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Card Types</h2></td></tr>
+<tr class="memitem:ga5fd9a903f60efde801492b8b1450f65b"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga5fd9a903f60efde801492b8b1450f65b">CARD_TYPE_UNKNOWN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga5fd9a903f60efde801492b8b1450f65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown type card. <br /></td></tr>
+<tr class="separator:ga5fd9a903f60efde801492b8b1450f65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga36890c0bca39ec6ba4059fc7d993933a"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga36890c0bca39ec6ba4059fc7d993933a">CARD_TYPE_SD</a>&#160;&#160;&#160;(1 &lt;&lt; 0)</td></tr>
+<tr class="memdesc:ga36890c0bca39ec6ba4059fc7d993933a"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD card. <br /></td></tr>
+<tr class="separator:ga36890c0bca39ec6ba4059fc7d993933a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab37f42c106d4cfa8728f373c086d4988"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gab37f42c106d4cfa8728f373c086d4988">CARD_TYPE_MMC</a>&#160;&#160;&#160;(1 &lt;&lt; 1)</td></tr>
+<tr class="memdesc:gab37f42c106d4cfa8728f373c086d4988"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC card. <br /></td></tr>
+<tr class="separator:gab37f42c106d4cfa8728f373c086d4988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9454609943cc676df80cdc9e108bd7c5"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga9454609943cc676df80cdc9e108bd7c5">CARD_TYPE_SDIO</a>&#160;&#160;&#160;(1 &lt;&lt; 2)</td></tr>
+<tr class="memdesc:ga9454609943cc676df80cdc9e108bd7c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">SDIO card. <br /></td></tr>
+<tr class="separator:ga9454609943cc676df80cdc9e108bd7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac6c20853f3e658902a0410c8f71f1946"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gac6c20853f3e658902a0410c8f71f1946">CARD_TYPE_HC</a>&#160;&#160;&#160;(1 &lt;&lt; 3)</td></tr>
+<tr class="memdesc:gac6c20853f3e658902a0410c8f71f1946"><td class="mdescLeft">&#160;</td><td class="mdescRight">High capacity card. <br /></td></tr>
+<tr class="separator:gac6c20853f3e658902a0410c8f71f1946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e30ebefd7397e5651c16e57811f3da0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga6e30ebefd7397e5651c16e57811f3da0">CARD_TYPE_SD_COMBO</a>&#160;&#160;&#160;(<a class="el" href="group__cpu__sam0__common__sdhc.html#ga36890c0bca39ec6ba4059fc7d993933a">CARD_TYPE_SD</a> | <a class="el" href="group__cpu__sam0__common__sdhc.html#ga9454609943cc676df80cdc9e108bd7c5">CARD_TYPE_SDIO</a>)</td></tr>
+<tr class="memdesc:ga6e30ebefd7397e5651c16e57811f3da0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD combo card (io + memory) <br /></td></tr>
+<tr class="separator:ga6e30ebefd7397e5651c16e57811f3da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Card Versions</h2></td></tr>
+<tr class="memitem:ga0af5ca822dd9d4731ad600857b618be1"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga0af5ca822dd9d4731ad600857b618be1">CARD_VER_UNKNOWN</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga0af5ca822dd9d4731ad600857b618be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unknown card version. <br /></td></tr>
+<tr class="separator:ga0af5ca822dd9d4731ad600857b618be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab81ba0feb8c90e3f9b2524509da9bac0"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gab81ba0feb8c90e3f9b2524509da9bac0">CARD_VER_SD_1_0</a>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="memdesc:gab81ba0feb8c90e3f9b2524509da9bac0"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD version 1.0 and 1.01. <br /></td></tr>
+<tr class="separator:gab81ba0feb8c90e3f9b2524509da9bac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3060d99cba92d5769d6e6276a21d3032"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga3060d99cba92d5769d6e6276a21d3032">CARD_VER_SD_1_10</a>&#160;&#160;&#160;(0x1A)</td></tr>
+<tr class="memdesc:ga3060d99cba92d5769d6e6276a21d3032"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD version 1.10. <br /></td></tr>
+<tr class="separator:ga3060d99cba92d5769d6e6276a21d3032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7be4a87e51ad0410b16dd6901066c24d"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga7be4a87e51ad0410b16dd6901066c24d">CARD_VER_SD_2_0</a>&#160;&#160;&#160;(0X20)</td></tr>
+<tr class="memdesc:ga7be4a87e51ad0410b16dd6901066c24d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD version 2.00. <br /></td></tr>
+<tr class="separator:ga7be4a87e51ad0410b16dd6901066c24d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga695202257c082bd3f10856b69356c38c"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga695202257c082bd3f10856b69356c38c">CARD_VER_SD_3_0</a>&#160;&#160;&#160;(0X30)</td></tr>
+<tr class="memdesc:ga695202257c082bd3f10856b69356c38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD version 3.0X. <br /></td></tr>
+<tr class="separator:ga695202257c082bd3f10856b69356c38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff87e330692bd301f5928e6fae9cfd4c"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gaff87e330692bd301f5928e6fae9cfd4c">CARD_VER_MMC_1_2</a>&#160;&#160;&#160;(0x12)</td></tr>
+<tr class="memdesc:gaff87e330692bd301f5928e6fae9cfd4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC version 1.2. <br /></td></tr>
+<tr class="separator:gaff87e330692bd301f5928e6fae9cfd4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae7e9a02a90dcfd6f8336b47f74e21c02"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gae7e9a02a90dcfd6f8336b47f74e21c02">CARD_VER_MMC_1_4</a>&#160;&#160;&#160;(0x14)</td></tr>
+<tr class="memdesc:gae7e9a02a90dcfd6f8336b47f74e21c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC version 1.4. <br /></td></tr>
+<tr class="separator:gae7e9a02a90dcfd6f8336b47f74e21c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab267a0a07917328d53db0c099a8faed1"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gab267a0a07917328d53db0c099a8faed1">CARD_VER_MMC_2_2</a>&#160;&#160;&#160;(0x22)</td></tr>
+<tr class="memdesc:gab267a0a07917328d53db0c099a8faed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC version 2.2. <br /></td></tr>
+<tr class="separator:gab267a0a07917328d53db0c099a8faed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf31e147be973cbb1739c18c583628b22"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gaf31e147be973cbb1739c18c583628b22">CARD_VER_MMC_3</a>&#160;&#160;&#160;(0x30)</td></tr>
+<tr class="memdesc:gaf31e147be973cbb1739c18c583628b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC version 3. <br /></td></tr>
+<tr class="separator:gaf31e147be973cbb1739c18c583628b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b12fa91d2b2db880a22dc24fbfee9a7"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga4b12fa91d2b2db880a22dc24fbfee9a7">CARD_VER_MMC_4</a>&#160;&#160;&#160;(0x40)</td></tr>
+<tr class="memdesc:ga4b12fa91d2b2db880a22dc24fbfee9a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">MMC version 4. <br /></td></tr>
+<tr class="separator:ga4b12fa91d2b2db880a22dc24fbfee9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Flags used to define MCI parser for SD/MMC command</h2></td></tr>
+<tr class="memitem:ga7e0c41699824da2c1371267e64105d02"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga7e0c41699824da2c1371267e64105d02">MCI_RESP_PRESENT</a>&#160;&#160;&#160;(1ul &lt;&lt;  8)</td></tr>
+<tr class="memdesc:ga7e0c41699824da2c1371267e64105d02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Have response. <br /></td></tr>
+<tr class="separator:ga7e0c41699824da2c1371267e64105d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga839e6ce7def511207d2feb0b3dd6022e"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga839e6ce7def511207d2feb0b3dd6022e">MCI_RESP_136</a>&#160;&#160;&#160;(1ul &lt;&lt; 11)</td></tr>
+<tr class="memdesc:ga839e6ce7def511207d2feb0b3dd6022e"><td class="mdescLeft">&#160;</td><td class="mdescRight">136 bit response <br /></td></tr>
+<tr class="separator:ga839e6ce7def511207d2feb0b3dd6022e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6ec1b49efffd3171ac5909989ecd3323"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga6ec1b49efffd3171ac5909989ecd3323">MCI_RESP_CRC</a>&#160;&#160;&#160;(1ul &lt;&lt; 12)</td></tr>
+<tr class="memdesc:ga6ec1b49efffd3171ac5909989ecd3323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Expect valid crc. <br /></td></tr>
+<tr class="separator:ga6ec1b49efffd3171ac5909989ecd3323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5fc912f48bcee3510e9b57758c092506"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga5fc912f48bcee3510e9b57758c092506">MCI_RESP_BUSY</a>&#160;&#160;&#160;(1ul &lt;&lt; 13)</td></tr>
+<tr class="memdesc:ga5fc912f48bcee3510e9b57758c092506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Card may send busy. <br /></td></tr>
+<tr class="separator:ga5fc912f48bcee3510e9b57758c092506"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabddeb828c6427c0b4b433b4ce7f8f605"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gabddeb828c6427c0b4b433b4ce7f8f605">MCI_CMD_OPENDRAIN</a>&#160;&#160;&#160;(1ul &lt;&lt; 14)</td></tr>
+<tr class="memdesc:gabddeb828c6427c0b4b433b4ce7f8f605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open drain for a broadcast command. <br /></td></tr>
+<tr class="separator:gabddeb828c6427c0b4b433b4ce7f8f605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e494792ed606017f9f22a1639988d03"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga4e494792ed606017f9f22a1639988d03">MCI_CMD_WRITE</a>&#160;&#160;&#160;(1ul &lt;&lt; 15)</td></tr>
+<tr class="memdesc:ga4e494792ed606017f9f22a1639988d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a data write operation. <br /></td></tr>
+<tr class="separator:ga4e494792ed606017f9f22a1639988d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga701a64254bed23b7d69145df0e597c60"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga701a64254bed23b7d69145df0e597c60">MCI_CMD_SDIO_BYTE</a>&#160;&#160;&#160;(1ul &lt;&lt; 16)</td></tr>
+<tr class="memdesc:ga701a64254bed23b7d69145df0e597c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a SDIO transfer in multi byte mode. <br /></td></tr>
+<tr class="separator:ga701a64254bed23b7d69145df0e597c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1529c004a126a3f38572005ac386e7b"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#gad1529c004a126a3f38572005ac386e7b">MCI_CMD_SDIO_BLOCK</a>&#160;&#160;&#160;(1ul &lt;&lt; 17)</td></tr>
+<tr class="memdesc:gad1529c004a126a3f38572005ac386e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a SDIO transfer in block mode. <br /></td></tr>
+<tr class="separator:gad1529c004a126a3f38572005ac386e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37314e592a841b6bef721cb17f965baa"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga37314e592a841b6bef721cb17f965baa">MCI_CMD_STREAM</a>&#160;&#160;&#160;(1ul &lt;&lt; 18)</td></tr>
+<tr class="memdesc:ga37314e592a841b6bef721cb17f965baa"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a data transfer in stream mode. <br /></td></tr>
+<tr class="separator:ga37314e592a841b6bef721cb17f965baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28e2c3285eafe1929a9ff07ab5233301"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga28e2c3285eafe1929a9ff07ab5233301">MCI_CMD_SINGLE_BLOCK</a>&#160;&#160;&#160;(1ul &lt;&lt; 19)</td></tr>
+<tr class="memdesc:ga28e2c3285eafe1929a9ff07ab5233301"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a data transfer in single block mode. <br /></td></tr>
+<tr class="separator:ga28e2c3285eafe1929a9ff07ab5233301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga46a0cdc1b8507418d5bf7a2b33ba1db2"><td class="memItemLeft" align="right" valign="top">
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpu__sam0__common__sdhc.html#ga46a0cdc1b8507418d5bf7a2b33ba1db2">MCI_CMD_MULTI_BLOCK</a>&#160;&#160;&#160;(1ul &lt;&lt; 20)</td></tr>
+<tr class="memdesc:ga46a0cdc1b8507418d5bf7a2b33ba1db2"><td class="mdescLeft">&#160;</td><td class="mdescRight">To signal a data transfer in multi block mode. <br /></td></tr>
+<tr class="separator:ga46a0cdc1b8507418d5bf7a2b33ba1db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:24 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

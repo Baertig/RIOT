@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>drivers/at86rf2xx/include/at86rf2xx_aes.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('at86rf2xx__aes_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">at86rf2xx_aes.h File Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__netdev.html">Network Device Drivers</a> &raquo; <a class="el" href="group__drivers__at86rf2xx.html">AT86RF2xx based drivers</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>The extended feature set of at86rf2xx transceivers comprises a hardware implementation of AES.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The extended feature set of at86rf2xx transceivers comprises a hardware implementation of AES. </p>
+<p>There are two supported block cipher modes, ECB and CBC.</p>
+<p>Interface of the at86rf2xx security module (AES)</p>
+<dl class="section author"><dt>Author</dt><dd>Fabian Hüßler <a href="#" onclick="location.href='mai'+'lto:'+'fab'+'ia'+'n.h'+'ue'+'ssl'+'er'+'@ov'+'gu'+'.de'; return false;">fabia<span style="display: none;">.nosp@m.</span>n.hu<span style="display: none;">.nosp@m.</span>essle<span style="display: none;">.nosp@m.</span>r@ov<span style="display: none;">.nosp@m.</span>gu.de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="at86rf2xx__aes_8h_source.html">at86rf2xx_aes.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;<a class="el" href="at86rf2xx_8h_source.html">at86rf2xx.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for at86rf2xx_aes.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="at86rf2xx__aes_8h__incl.svg" width="1819" height="650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="at86rf2xx__aes_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a25f3874496f109b28239f897bb55dc97"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a>[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>]</td></tr>
+<tr class="memdesc:a25f3874496f109b28239f897bb55dc97"><td class="mdescLeft">&#160;</td><td class="mdescRight">An AES block.  <a href="#a25f3874496f109b28239f897bb55dc97">More...</a><br /></td></tr>
+<tr class="separator:a25f3874496f109b28239f897bb55dc97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3de0c12f02916e9b6b02271e4b9383e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a3de0c12f02916e9b6b02271e4b9383e1">at86rf2xx_aes_key_read_encrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#adcf8953ea85c7d2c79f7a5c824584ddb">AT86RF2XX_AES_KEY_LENGTH</a>])</td></tr>
+<tr class="memdesc:a3de0c12f02916e9b6b02271e4b9383e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the AES key used for encryption.  <a href="#a3de0c12f02916e9b6b02271e4b9383e1">More...</a><br /></td></tr>
+<tr class="separator:a3de0c12f02916e9b6b02271e4b9383e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08eeeb9df59d995d86da986f126df099"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a08eeeb9df59d995d86da986f126df099">at86rf2xx_aes_key_write_encrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, const uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#adcf8953ea85c7d2c79f7a5c824584ddb">AT86RF2XX_AES_KEY_LENGTH</a>])</td></tr>
+<tr class="memdesc:a08eeeb9df59d995d86da986f126df099"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the AES key used for encryption.  <a href="#a08eeeb9df59d995d86da986f126df099">More...</a><br /></td></tr>
+<tr class="separator:a08eeeb9df59d995d86da986f126df099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49a92900bdd8f4ef9243cc0420810a25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a49a92900bdd8f4ef9243cc0420810a25">at86rf2xx_aes_key_read_decrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#adcf8953ea85c7d2c79f7a5c824584ddb">AT86RF2XX_AES_KEY_LENGTH</a>])</td></tr>
+<tr class="memdesc:a49a92900bdd8f4ef9243cc0420810a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the AES key used for decryption.  <a href="#a49a92900bdd8f4ef9243cc0420810a25">More...</a><br /></td></tr>
+<tr class="separator:a49a92900bdd8f4ef9243cc0420810a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a7a7601ce953f8db9dff0b31abed62e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a5a7a7601ce953f8db9dff0b31abed62e">at86rf2xx_aes_key_write_decrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, const uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#adcf8953ea85c7d2c79f7a5c824584ddb">AT86RF2XX_AES_KEY_LENGTH</a>])</td></tr>
+<tr class="memdesc:a5a7a7601ce953f8db9dff0b31abed62e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the AES key used for decryption.  <a href="#a5a7a7601ce953f8db9dff0b31abed62e">More...</a><br /></td></tr>
+<tr class="separator:a5a7a7601ce953f8db9dff0b31abed62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1458f0fad3c84e8152dafb501d2f90f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#ae1458f0fad3c84e8152dafb501d2f90f">at86rf2xx_aes_ecb_encrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *cipher, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *plain, uint8_t nblocks)</td></tr>
+<tr class="memdesc:ae1458f0fad3c84e8152dafb501d2f90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform AES algorithm and encrypt data blocks in <code>plain</code> to cipher data blocks, using ECB mode.  <a href="#ae1458f0fad3c84e8152dafb501d2f90f">More...</a><br /></td></tr>
+<tr class="separator:ae1458f0fad3c84e8152dafb501d2f90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58251a389fb3c6f67d98bb0ab26ca59d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a58251a389fb3c6f67d98bb0ab26ca59d">at86rf2xx_aes_ecb_decrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *plain, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *cipher, uint8_t nblocks)</td></tr>
+<tr class="memdesc:a58251a389fb3c6f67d98bb0ab26ca59d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform AES algorithm and decrypt data blocks in <code>cipher</code> to plain data blocks, using ECB mode.  <a href="#a58251a389fb3c6f67d98bb0ab26ca59d">More...</a><br /></td></tr>
+<tr class="separator:a58251a389fb3c6f67d98bb0ab26ca59d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a8bb5a1221241931e293e916ecac01b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a8a8bb5a1221241931e293e916ecac01b">at86rf2xx_aes_cbc_encrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *cipher, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], uint8_t iv[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *plain, uint8_t nblocks)</td></tr>
+<tr class="memdesc:a8a8bb5a1221241931e293e916ecac01b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform AES algorithm and encrypt data blocks in <code>plain</code> to cipher data blocks, using CBC mode.  <a href="#a8a8bb5a1221241931e293e916ecac01b">More...</a><br /></td></tr>
+<tr class="separator:a8a8bb5a1221241931e293e916ecac01b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfbd352a83a240fa9398790a938d27a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#abfbd352a83a240fa9398790a938d27a6">at86rf2xx_aes_cbc_decrypt</a> (<a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *dev, <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *plain, uint8_t key[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], uint8_t iv[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>], const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *cipher, uint8_t nblocks)</td></tr>
+<tr class="memdesc:abfbd352a83a240fa9398790a938d27a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform AES algorithm and decrypt data blocks in <code>cipher</code> to plain data blocks, using CBC mode.  <a href="#abfbd352a83a240fa9398790a938d27a6">More...</a><br /></td></tr>
+<tr class="separator:abfbd352a83a240fa9398790a938d27a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4046f5f4d249d1b7638ec3906806e267"><td class="memItemLeft" align="right" valign="top"><a id="a4046f5f4d249d1b7638ec3906806e267"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a4046f5f4d249d1b7638ec3906806e267">AT86RF2XX_AES_KEY_BITS</a>&#160;&#160;&#160;(128U)</td></tr>
+<tr class="memdesc:a4046f5f4d249d1b7638ec3906806e267"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES key length in bits. <br /></td></tr>
+<tr class="separator:a4046f5f4d249d1b7638ec3906806e267"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcf8953ea85c7d2c79f7a5c824584ddb"><td class="memItemLeft" align="right" valign="top"><a id="adcf8953ea85c7d2c79f7a5c824584ddb"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#adcf8953ea85c7d2c79f7a5c824584ddb">AT86RF2XX_AES_KEY_LENGTH</a>&#160;&#160;&#160;((<a class="el" href="at86rf2xx__aes_8h.html#a4046f5f4d249d1b7638ec3906806e267">AT86RF2XX_AES_KEY_BITS</a>) / 8)</td></tr>
+<tr class="memdesc:adcf8953ea85c7d2c79f7a5c824584ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES key length in bytes. <br /></td></tr>
+<tr class="separator:adcf8953ea85c7d2c79f7a5c824584ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d250231663ccc00a19f63fac0c8857f"><td class="memItemLeft" align="right" valign="top"><a id="a9d250231663ccc00a19f63fac0c8857f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>&#160;&#160;&#160;((<a class="el" href="at86rf2xx__aes_8h.html#a4046f5f4d249d1b7638ec3906806e267">AT86RF2XX_AES_KEY_BITS</a>) / 8)</td></tr>
+<tr class="memdesc:a9d250231663ccc00a19f63fac0c8857f"><td class="mdescLeft">&#160;</td><td class="mdescRight">AES block size in bytes. <br /></td></tr>
+<tr class="separator:a9d250231663ccc00a19f63fac0c8857f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe2049751b06c342e9e086b1e5fbec3"><td class="memItemLeft" align="right" valign="top"><a id="adfe2049751b06c342e9e086b1e5fbec3"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="at86rf2xx__aes_8h.html#adfe2049751b06c342e9e086b1e5fbec3">AT86RF2XX_AES_DELAY_US</a>&#160;&#160;&#160;(24)</td></tr>
+<tr class="memdesc:adfe2049751b06c342e9e086b1e5fbec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time to complete the AES algorithm in us. <br /></td></tr>
+<tr class="separator:adfe2049751b06c342e9e086b1e5fbec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+AES rigister addresses</h2></td></tr>
+<tr class="memitem:ab90558f2f60fca9c9b6779e7894d4605"><td class="memItemLeft" align="right" valign="top"><a id="ab90558f2f60fca9c9b6779e7894d4605"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_STATUS</b>&#160;&#160;&#160;(0x82)</td></tr>
+<tr class="separator:ab90558f2f60fca9c9b6779e7894d4605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8177dfb9d4c70d60acab5c913369ca9"><td class="memItemLeft" align="right" valign="top"><a id="af8177dfb9d4c70d60acab5c913369ca9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_CTRL</b>&#160;&#160;&#160;(0x83)</td></tr>
+<tr class="separator:af8177dfb9d4c70d60acab5c913369ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a901c9276e5c3ee85aed5286c78244533"><td class="memItemLeft" align="right" valign="top"><a id="a901c9276e5c3ee85aed5286c78244533"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_KEY_START</b>&#160;&#160;&#160;(0x84)</td></tr>
+<tr class="separator:a901c9276e5c3ee85aed5286c78244533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c07ae74da2bbf4688068a531fe3f876"><td class="memItemLeft" align="right" valign="top"><a id="a8c07ae74da2bbf4688068a531fe3f876"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_KEY_END</b>&#160;&#160;&#160;(0x93)</td></tr>
+<tr class="separator:a8c07ae74da2bbf4688068a531fe3f876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55350640b682c479b2037687347b1b27"><td class="memItemLeft" align="right" valign="top"><a id="a55350640b682c479b2037687347b1b27"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_DATA_START</b>&#160;&#160;&#160;(0x84)</td></tr>
+<tr class="separator:a55350640b682c479b2037687347b1b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb7238d3f62a185d3e50a500a5c87ca"><td class="memItemLeft" align="right" valign="top"><a id="afdb7238d3f62a185d3e50a500a5c87ca"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_DATA_END</b>&#160;&#160;&#160;(0x93)</td></tr>
+<tr class="separator:afdb7238d3f62a185d3e50a500a5c87ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7ed1ae391921c8903a956c4971c9a1a"><td class="memItemLeft" align="right" valign="top"><a id="ab7ed1ae391921c8903a956c4971c9a1a"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_REG__AES_CTRL_MIRROR</b>&#160;&#160;&#160;(0x94)</td></tr>
+<tr class="separator:ab7ed1ae391921c8903a956c4971c9a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Layout of register AES_STATUS</h2></td></tr>
+<tr class="memitem:a45107d3c2142892e15814e0b4e0ca8c4"><td class="memItemLeft" align="right" valign="top"><a id="a45107d3c2142892e15814e0b4e0ca8c4"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_MASK__AES_ER</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:a45107d3c2142892e15814e0b4e0ca8c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82805a5f03de7f4ffd790b1b0db28d75"><td class="memItemLeft" align="right" valign="top"><a id="a82805a5f03de7f4ffd790b1b0db28d75"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_MASK__AES_DONE</b>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:a82805a5f03de7f4ffd790b1b0db28d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad5d229d3a294e5750878ad1808d163d"><td class="memItemLeft" align="right" valign="top"><a id="aad5d229d3a294e5750878ad1808d163d"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_AES_ER__NO_ERROR</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:aad5d229d3a294e5750878ad1808d163d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0fb6099ae10e16526a417bbe5a8309"><td class="memItemLeft" align="right" valign="top"><a id="aeb0fb6099ae10e16526a417bbe5a8309"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_AES_ER__ERROR</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:aeb0fb6099ae10e16526a417bbe5a8309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d20507244d57bab1e90bc8e3916e138"><td class="memItemLeft" align="right" valign="top"><a id="a0d20507244d57bab1e90bc8e3916e138"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_AES_DONE__NOT_DONE</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:a0d20507244d57bab1e90bc8e3916e138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a393bc4090f2351c72695dff0381d95"><td class="memItemLeft" align="right" valign="top"><a id="a4a393bc4090f2351c72695dff0381d95"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_STATUS_AES_DONE__DONE</b>&#160;&#160;&#160;(0x01)</td></tr>
+<tr class="separator:a4a393bc4090f2351c72695dff0381d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Layout of register AES_CTRL</h2></td></tr>
+<tr class="memitem:a7bb9beeef5ce4ea017f7c22e667de312"><td class="memItemLeft" align="right" valign="top"><a id="a7bb9beeef5ce4ea017f7c22e667de312"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MASK__AES_REQUEST</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:a7bb9beeef5ce4ea017f7c22e667de312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54647ef1cfa2dbb09caeeb59116f9059"><td class="memItemLeft" align="right" valign="top"><a id="a54647ef1cfa2dbb09caeeb59116f9059"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MASK__AES_MODE</b>&#160;&#160;&#160;(0x70)</td></tr>
+<tr class="separator:a54647ef1cfa2dbb09caeeb59116f9059"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a696afd6ff3dd8041157156f4af22683c"><td class="memItemLeft" align="right" valign="top"><a id="a696afd6ff3dd8041157156f4af22683c"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MASK__AES_DIR</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:a696afd6ff3dd8041157156f4af22683c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca38db9a334b38f68a47e53e9c6046ef"><td class="memItemLeft" align="right" valign="top"><a id="aca38db9a334b38f68a47e53e9c6046ef"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_REQUEST__IDLE</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:aca38db9a334b38f68a47e53e9c6046ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e4bdd2eb819a5a69f020e45f7ba738"><td class="memItemLeft" align="right" valign="top"><a id="a77e4bdd2eb819a5a69f020e45f7ba738"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_REQUEST__START</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:a77e4bdd2eb819a5a69f020e45f7ba738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b06f5ff07ee4f7aa2a1db951fb8327"><td class="memItemLeft" align="right" valign="top"><a id="ac3b06f5ff07ee4f7aa2a1db951fb8327"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_MODE__ECB</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:ac3b06f5ff07ee4f7aa2a1db951fb8327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af61d85fec6ec24378d0a185255c76bb2"><td class="memItemLeft" align="right" valign="top"><a id="af61d85fec6ec24378d0a185255c76bb2"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_MODE__KEY</b>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:af61d85fec6ec24378d0a185255c76bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b20cc83c15a2fd5118d820ed54007db"><td class="memItemLeft" align="right" valign="top"><a id="a7b20cc83c15a2fd5118d820ed54007db"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_MODE__CBC</b>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:a7b20cc83c15a2fd5118d820ed54007db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0e2642341912ac9e23af3e7b049fe8"><td class="memItemLeft" align="right" valign="top"><a id="a2e0e2642341912ac9e23af3e7b049fe8"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_DIR__ENC</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:a2e0e2642341912ac9e23af3e7b049fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa798b2c8492d255ce39c866162f568a7"><td class="memItemLeft" align="right" valign="top"><a id="aa798b2c8492d255ce39c866162f568a7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_AES_DIR__DEC</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:aa798b2c8492d255ce39c866162f568a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="member-group"></a>
+Layout of register AES_CTRL_MIRROR</h2></td></tr>
+<tr class="memitem:ac49110a5474c52f2758d8ea760752a2e"><td class="memItemLeft" align="right" valign="top"><a id="ac49110a5474c52f2758d8ea760752a2e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_MASK__AES_REQUEST</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:ac49110a5474c52f2758d8ea760752a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a156182fe94ffa056d6d8cbfd33f948a5"><td class="memItemLeft" align="right" valign="top"><a id="a156182fe94ffa056d6d8cbfd33f948a5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_MASK__AES_MODE</b>&#160;&#160;&#160;(0x70)</td></tr>
+<tr class="separator:a156182fe94ffa056d6d8cbfd33f948a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47b06b49a2a5ef45b1cf0ed53f337de"><td class="memItemLeft" align="right" valign="top"><a id="ac47b06b49a2a5ef45b1cf0ed53f337de"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_MASK__AES_DIR</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:ac47b06b49a2a5ef45b1cf0ed53f337de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdcb87add09d5a598154d21a35cfcb32"><td class="memItemLeft" align="right" valign="top"><a id="acdcb87add09d5a598154d21a35cfcb32"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_REQUEST__IDLE</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:acdcb87add09d5a598154d21a35cfcb32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa12e476eefe611ac91a81fca1c7891ed"><td class="memItemLeft" align="right" valign="top"><a id="aa12e476eefe611ac91a81fca1c7891ed"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_REQUEST__START</b>&#160;&#160;&#160;(0x80)</td></tr>
+<tr class="separator:aa12e476eefe611ac91a81fca1c7891ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54bb872e2ff4efe31e23959137bbea78"><td class="memItemLeft" align="right" valign="top"><a id="a54bb872e2ff4efe31e23959137bbea78"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_MODE__ECB</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:a54bb872e2ff4efe31e23959137bbea78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8395127999970ffc86b2820fc5fc570"><td class="memItemLeft" align="right" valign="top"><a id="ae8395127999970ffc86b2820fc5fc570"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_MODE__KEY</b>&#160;&#160;&#160;(0x10)</td></tr>
+<tr class="separator:ae8395127999970ffc86b2820fc5fc570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e1075d76dff6e43f17c21f95c8aaab5"><td class="memItemLeft" align="right" valign="top"><a id="a5e1075d76dff6e43f17c21f95c8aaab5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_MODE__CBC</b>&#160;&#160;&#160;(0x20)</td></tr>
+<tr class="separator:a5e1075d76dff6e43f17c21f95c8aaab5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86dc164f825563d2cd8cad3d6eecb0e"><td class="memItemLeft" align="right" valign="top"><a id="aa86dc164f825563d2cd8cad3d6eecb0e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_DIR__ENC</b>&#160;&#160;&#160;(0x00)</td></tr>
+<tr class="separator:aa86dc164f825563d2cd8cad3d6eecb0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60c46e400811aad555aa8494a8fac1b"><td class="memItemLeft" align="right" valign="top"><a id="ad60c46e400811aad555aa8494a8fac1b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AT86RF2XX_AES_CTRL_MIRROR_AES_DIR__DEC</b>&#160;&#160;&#160;(0x08)</td></tr>
+<tr class="separator:ad60c46e400811aad555aa8494a8fac1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a25f3874496f109b28239f897bb55dc97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f3874496f109b28239f897bb55dc97">&#9670;&nbsp;</a></span>aes_block_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef uint8_t aes_block_t[<a class="el" href="at86rf2xx__aes_8h.html#a9d250231663ccc00a19f63fac0c8857f">AT86RF2XX_AES_BLOCK_SIZE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An AES block. </p>
+<p>AES works on blocks of 16 bytes </p>
+
+<p class="definition">Definition at line <a class="el" href="at86rf2xx__aes_8h_source.html#l00119">119</a> of file <a class="el" href="at86rf2xx__aes_8h_source.html">at86rf2xx_aes.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="abfbd352a83a240fa9398790a938d27a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfbd352a83a240fa9398790a938d27a6">&#9670;&nbsp;</a></span>at86rf2xx_aes_cbc_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_cbc_decrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>plain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>iv</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>cipher</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nblocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform AES algorithm and decrypt data blocks in <code>cipher</code> to plain data blocks, using CBC mode. </p>
+<dl class="section note"><dt>Note</dt><dd>The decryption key must have been written before.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">plain</td><td>If not NUll, plain data blocks </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>If not NULL, last round decryption key is stored </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iv</td><td>in: initial vector, out: last plain block if plain is NULL </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cipher</td><td>Cipher data blocks </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nblocks</td><td>Number of blocks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8a8bb5a1221241931e293e916ecac01b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a8bb5a1221241931e293e916ecac01b">&#9670;&nbsp;</a></span>at86rf2xx_aes_cbc_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_cbc_encrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>cipher</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>iv</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>plain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nblocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform AES algorithm and encrypt data blocks in <code>plain</code> to cipher data blocks, using CBC mode. </p>
+<dl class="section note"><dt>Note</dt><dd>The encryption key must have been written before.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cipher</td><td>If not NULL, cipher blocks </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>If not NULL, last round encryption key is stored </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">iv</td><td>in: initial vector, out: last cipher block if cipher is NULL </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">plain</td><td>Plain data blocks </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nblocks</td><td>Number of blocks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58251a389fb3c6f67d98bb0ab26ca59d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58251a389fb3c6f67d98bb0ab26ca59d">&#9670;&nbsp;</a></span>at86rf2xx_aes_ecb_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_ecb_decrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>plain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>cipher</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nblocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform AES algorithm and decrypt data blocks in <code>cipher</code> to plain data blocks, using ECB mode. </p>
+<dl class="section note"><dt>Note</dt><dd>The decryption key must have been written before.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">plain</td><td>If not NULL, plain data blocks </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>If not NULL, last round decryption key is stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cipher</td><td>Cipher data blocks </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nblocks</td><td>Number of blocks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae1458f0fad3c84e8152dafb501d2f90f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1458f0fad3c84e8152dafb501d2f90f">&#9670;&nbsp;</a></span>at86rf2xx_aes_ecb_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_ecb_encrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>cipher</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_BLOCK_SIZE], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="at86rf2xx__aes_8h.html#a25f3874496f109b28239f897bb55dc97">aes_block_t</a> *&#160;</td>
+          <td class="paramname"><em>plain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nblocks</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Perform AES algorithm and encrypt data blocks in <code>plain</code> to cipher data blocks, using ECB mode. </p>
+<dl class="section note"><dt>Note</dt><dd>The encryption key must have been written before.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cipher</td><td>If not NULL, cipher data blocks </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>If not NULL, last round encryption key is stored </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">plain</td><td>Plain data blocks </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nblocks</td><td>Number of blocks </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a49a92900bdd8f4ef9243cc0420810a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49a92900bdd8f4ef9243cc0420810a25">&#9670;&nbsp;</a></span>at86rf2xx_aes_key_read_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_key_read_decrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_KEY_LENGTH]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the AES key used for decryption. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>Buffer to store the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3de0c12f02916e9b6b02271e4b9383e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de0c12f02916e9b6b02271e4b9383e1">&#9670;&nbsp;</a></span>at86rf2xx_aes_key_read_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_key_read_encrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_KEY_LENGTH]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read the AES key used for encryption. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">key</td><td>Buffer to store the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5a7a7601ce953f8db9dff0b31abed62e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a7a7601ce953f8db9dff0b31abed62e">&#9670;&nbsp;</a></span>at86rf2xx_aes_key_write_decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_key_write_decrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_KEY_LENGTH]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the AES key used for decryption. </p>
+<p>It is important to write the decryption key, before decryption is done</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Buffer which stores the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a08eeeb9df59d995d86da986f126df099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08eeeb9df59d995d86da986f126df099">&#9670;&nbsp;</a></span>at86rf2xx_aes_key_write_encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void at86rf2xx_aes_key_write_encrypt </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structat86rf2xx__t.html">at86rf2xx_t</a> *&#160;</td>
+          <td class="paramname"><em>dev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>key</em>[AT86RF2XX_AES_KEY_LENGTH]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the AES key used for encryption. </p>
+<p>It is important to write the encryption key, before encryption is done</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dev</td><td>Device </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Buffer which stores the key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:25 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

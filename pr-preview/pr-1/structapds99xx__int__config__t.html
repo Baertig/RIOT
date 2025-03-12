@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>apds99xx_int_config_t Struct Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('structapds99xx__int__config__t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">apds99xx_int_config_t Struct Reference<div class="ingroups"><a class="el" href="group__drivers.html">Drivers</a> &raquo; <a class="el" href="group__drivers__sensors.html">Sensor Device Drivers</a><a class="el" href="group__drivers.html">Drivers</a> &raquo;  &#124; <a class="el" href="group__drivers__saul.html">[S]ensor [A]ctuator [U]ber [L]ayer</a> &raquo; <a class="el" href="group__drivers__apds99xx.html">APDS99XX proximity and ambient light sensors</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Interrupt configuration.  
+ <a href="structapds99xx__int__config__t.html#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Interrupt configuration. </p>
+<p>The interrupt enable flags <a class="el" href="structapds99xx__int__config__t.html#aa6714b8f4009b680889293431d507b8b" title="ALS interrupt enabled. ">apds99xx_int_config_t::als_int_en</a> and <a class="el" href="structapds99xx__int__config__t.html#aa74b462cc086784ea87a19a803852626" title="Proximity interrupt enabled. ">apds99xx_int_config_t::prx_int_en</a> control whether ALS and proximity sensor interrupts are enable.</p>
+<p>The persistence values <a class="el" href="structapds99xx__int__config__t.html#ab789227157c8b3af125bafc9c22e0900" title="Number of consecutive ALS values that have to be outside the thresholds to generate an interrupt: Val...">apds99xx_int_config_t::als_pers</a> and <a class="el" href="structapds99xx__int__config__t.html#a43a89e44fc11f12ae109e938b6ffb13f" title="Number of consecutive proximity values that have to be outside the thresholds to generate an interrup...">apds99xx_int_config_t::prx_pers</a> specify how many ALS or proximity values have to be outside of the thresholds defined by <a class="el" href="structapds99xx__int__config__t.html#a67f8a9a7bc86b4ebb914beaae92e46f6" title="Low threshold value for ALS interrupts. ">apds99xx_int_config_t::als_thresh_low</a> and <a class="el" href="structapds99xx__int__config__t.html#a02fe32997aebf312fe14755269631f71" title="High threshold value for ALS interrupts. ">apds99xx_int_config_t::als_thresh_high</a> or <a class="el" href="structapds99xx__int__config__t.html#a8c5ea7d81ee315c7b48b0b57d7881b90" title="Low threshold for proximity values (only the low byte is used for APDS9960) ">apds99xx_int_config_t::prx_thresh_low</a> and <a class="el" href="structapds99xx__int__config__t.html#af845121e3853da30a9020a9bde4d4274" title="High threshold for proximity values (only the low byte is used for APDS9960) ">apds99xx_int_config_t::prx_thresh_high</a>.</p>
+<dl class="section note"><dt>Note</dt><dd>If the persistence values are 0, an interrupt is generated in each cycle at the end of the corresponding measurement step, regardless of the values and the defined threshold. The corresponding interrupt is thus used as a data-ready interrupt. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="apds99xx_8h_source.html#l00376">376</a> of file <a class="el" href="apds99xx_8h_source.html">apds99xx.h</a>.</p>
+</div>
+<p><code>#include &lt;<a class="el" href="apds99xx_8h_source.html">apds99xx.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa6714b8f4009b680889293431d507b8b"><td class="memItemLeft" align="right" valign="top"><a id="aa6714b8f4009b680889293431d507b8b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#aa6714b8f4009b680889293431d507b8b">als_int_en</a></td></tr>
+<tr class="memdesc:aa6714b8f4009b680889293431d507b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">ALS interrupt enabled. <br /></td></tr>
+<tr class="separator:aa6714b8f4009b680889293431d507b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab789227157c8b3af125bafc9c22e0900"><td class="memItemLeft" align="right" valign="top"><a id="ab789227157c8b3af125bafc9c22e0900"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#ab789227157c8b3af125bafc9c22e0900">als_pers</a></td></tr>
+<tr class="memdesc:ab789227157c8b3af125bafc9c22e0900"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of consecutive ALS values that have to be outside the thresholds to generate an interrupt: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Value  </th><th class="markdownTableHeadNone">Interru   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0  </td><td class="markdownTableBodyNone">every cycle (ALS data-ready interrupt)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1...15  </td><td class="markdownTableBodyNone">when n values are outside the thresholds   </td></tr>
+</table>
+<br /></td></tr>
+<tr class="separator:ab789227157c8b3af125bafc9c22e0900"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f8a9a7bc86b4ebb914beaae92e46f6"><td class="memItemLeft" align="right" valign="top"><a id="a67f8a9a7bc86b4ebb914beaae92e46f6"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#a67f8a9a7bc86b4ebb914beaae92e46f6">als_thresh_low</a></td></tr>
+<tr class="memdesc:a67f8a9a7bc86b4ebb914beaae92e46f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low threshold value for ALS interrupts. <br /></td></tr>
+<tr class="separator:a67f8a9a7bc86b4ebb914beaae92e46f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fe32997aebf312fe14755269631f71"><td class="memItemLeft" align="right" valign="top"><a id="a02fe32997aebf312fe14755269631f71"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#a02fe32997aebf312fe14755269631f71">als_thresh_high</a></td></tr>
+<tr class="memdesc:a02fe32997aebf312fe14755269631f71"><td class="mdescLeft">&#160;</td><td class="mdescRight">High threshold value for ALS interrupts. <br /></td></tr>
+<tr class="separator:a02fe32997aebf312fe14755269631f71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa74b462cc086784ea87a19a803852626"><td class="memItemLeft" align="right" valign="top"><a id="aa74b462cc086784ea87a19a803852626"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#aa74b462cc086784ea87a19a803852626">prx_int_en</a></td></tr>
+<tr class="memdesc:aa74b462cc086784ea87a19a803852626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Proximity interrupt enabled. <br /></td></tr>
+<tr class="separator:aa74b462cc086784ea87a19a803852626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43a89e44fc11f12ae109e938b6ffb13f"><td class="memItemLeft" align="right" valign="top"><a id="a43a89e44fc11f12ae109e938b6ffb13f"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#a43a89e44fc11f12ae109e938b6ffb13f">prx_pers</a></td></tr>
+<tr class="memdesc:a43a89e44fc11f12ae109e938b6ffb13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of consecutive proximity values that have to be outside the thresholds to generate an interrupt: </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Value  </th><th class="markdownTableHeadNone">Interru   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">0  </td><td class="markdownTableBodyNone">every cycle (PRX data-ready interrupt)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyNone">1, 2, 3  </td><td class="markdownTableBodyNone">when 1, 2, or 3 values are outside the thresholds   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">4...15  </td><td class="markdownTableBodyNone">when (n - 3) * 5 values are outside the thresholds   </td></tr>
+</table>
+<br /></td></tr>
+<tr class="separator:a43a89e44fc11f12ae109e938b6ffb13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c5ea7d81ee315c7b48b0b57d7881b90"><td class="memItemLeft" align="right" valign="top"><a id="a8c5ea7d81ee315c7b48b0b57d7881b90"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#a8c5ea7d81ee315c7b48b0b57d7881b90">prx_thresh_low</a></td></tr>
+<tr class="memdesc:a8c5ea7d81ee315c7b48b0b57d7881b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low threshold for proximity values (only the low byte is used for APDS9960) <br /></td></tr>
+<tr class="separator:a8c5ea7d81ee315c7b48b0b57d7881b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af845121e3853da30a9020a9bde4d4274"><td class="memItemLeft" align="right" valign="top"><a id="af845121e3853da30a9020a9bde4d4274"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapds99xx__int__config__t.html#af845121e3853da30a9020a9bde4d4274">prx_thresh_high</a></td></tr>
+<tr class="memdesc:af845121e3853da30a9020a9bde4d4274"><td class="mdescLeft">&#160;</td><td class="mdescRight">High threshold for proximity values (only the low byte is used for APDS9960) <br /></td></tr>
+<tr class="separator:af845121e3853da30a9020a9bde4d4274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>drivers/include/<a class="el" href="apds99xx_8h_source.html">apds99xx.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:34 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

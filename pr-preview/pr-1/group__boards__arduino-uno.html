@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Arduino Uno</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__boards__arduino-uno.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a>  </div>
+  <div class="headertitle">
+<div class="title">Arduino Uno<div class="ingroups"><a class="el" href="group__boards.html">Boards</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+Support for the Arduino Uno board  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><br />
+</p>
+<p>Support for the Arduino Uno board </p>
+<p>The Arduino Uno is one of the cheapest board to start and discover with electronics and embedded coding. It is based on Atmel's AVR architecture and sports an ATmega328p MCU. It is like many Arduinos extensible by using shields.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">MCU  </th><th class="markdownTableHeadLeft">ATmega328p   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Family  </td><td class="markdownTableBodyLeft">AVR/ATmega   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Vendor  </td><td class="markdownTableBodyLeft">Atmel/Microchip   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">RAM  </td><td class="markdownTableBodyLeft">2 KiB   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Flash  </td><td class="markdownTableBodyLeft">32 KiB   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Frequency  </td><td class="markdownTableBodyLeft">16 MHz   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Timers  </td><td class="markdownTableBodyLeft">3 (2x 8bit, 1x 16bit)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">ADCs  </td><td class="markdownTableBodyLeft">6 analog input pins   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">UARTs  </td><td class="markdownTableBodyLeft">1   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">SPIs  </td><td class="markdownTableBodyLeft">1   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">I2Cs  </td><td class="markdownTableBodyLeft">1 (called TWI)   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Vcc  </td><td class="markdownTableBodyLeft">5.0 V   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">Datasheet / Reference Manual  </td><td class="markdownTableBodyLeft"><a href="http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061A.pdf">Datasheet and Reference Manual</a>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Board Manual  </td><td class="markdownTableBodyLeft"><a href="https://www.arduino.cc/en/Main/ArduinoBoardUno">Board Manual</a>   </td></tr>
+</table>
+<p>Flashing RIOT on the Arduino Uno is quite straight forward, just connect your Arduino Uno using the programming port to your host computer and type:</p>
+<p><code>make BOARD=arduino-uno flash</code></p>
+<p>This should take care of everything!</p>
+<p>We use the open <code>avrdude</code> tool to write the new code into the ATmega328p's flash</p>
+<p>More pins can be used for hardware interrupts using the Pin Change Interrupt feature. See <a class="el" href="group__boards__common__atmega.html">ATmega common</a> for details.</p>
+<p>Don't expect having a working network stack due to very limited resources.</p>
+<p>On-Chip Debugging on the Arduino Uno is not supported via the usual JTAG interface used in ATmega MCUs with higher pin counts, but via debugWIRE. While debugWIRE has the advantage of only using the RESET pin to transfer data, the features provided are extremely limited. If the same issue can be reproduced on an Arduino Mega2560, which supports JTAG, it will be much easier and more productive to debug your code on the Arduino Mega2560. If the bug cannot be reproduced, limited on chip debugging is possible on the Arduino Uno nonetheless.</p>
+<p>In order to be able to use On-Chip Debugging you will need the AVR Dragon, which is the ~~cheapest~~ least expensive programmer and debugger available that supports programming via SPI ("normal ISP"), High Voltage Serial Programming, and Parallel Programming, as well as debugging via JTAG, debugWIRE, PDI and aWire. So at least can use it for just about every AVR device.</p>
+<p>On the Arduino Uno the RESET pin of the MCU is connected to a 100 nF capacitor, which in turn is connected to the ATmega16U2 (or an CH340 TTL Adapter in case of most clones). This allows the device to be automatically reset when you connected to the board via a serial. This is particularly useful during programming via the bootloader (without external ISP programmer), as avrdude can trigger the reset and, thus, start the bootloader without the user having to press a button.</p>
+<p>In order to use on-chip debugging, the capacitor needs however to be disconnected from the reset pin. With the original Arduino Uno this can be done by cutting the solder jumper labeled "RESET EN". This can easily be resoldered to restore the original state. Most clones do not have this solder jumper and you will likely have to break off the usually surface mounted capacitor. A multimeter can be used to detect which capacitor is connected to the reset pin. Keep in mind that the capacitor will likely be destroyed when removed by force and it will be difficult to restore the auto-reset feature of the clones.</p>
+<p>You need to have <a href="http://avarice.sourceforge.net/">AVaRICE</a> installed. Some distros have this packaged already. If you need to compile it by hand, go for the latest SVN revision. The latest release cannot be compiled on anything but historic platforms and contains bugs that prevent it from debugging the ATmega328P anyway.</p>
+<p>In order to use On-Chip Debugging, the <code>DWEN</code> bit in the high fuse needs to be enabled (set to zero). The exact fuse settings for debugging and the default fuse setting are these:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Fuse  </th><th class="markdownTableHeadLeft">Default Setting  </th><th class="markdownTableHeadLeft">Debug Setting   </th></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Low Fuse  </td><td class="markdownTableBodyLeft"><code>0xFF</code>  </td><td class="markdownTableBodyLeft"><code>0xFF</code>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">High Fuse  </td><td class="markdownTableBodyLeft"><code>0xDE</code>  </td><td class="markdownTableBodyLeft"><code>0x9E</code>   </td></tr>
+<tr class="markdownTableBody" class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">Extended Fuse  </td><td class="markdownTableBodyLeft"><code>0xFD</code>  </td><td class="markdownTableBodyLeft"><code>0xFD</code>   </td></tr>
+</table>
+<p>You can enable debugWIRE debugging by running (replace <code>&lt;PROGRAMMER&gt;</code> by the name of your programmer, e.g. <code>dragon_isp</code> in case of the AVR Dragon): </p><pre class="fragment">avrdude -p m328p -c &lt;PROGRAMMER&gt; -U hfuse:w:0x9e:m
+</pre><p>And disable debugging via: </p><pre class="fragment">avrdude -p m328p -c &lt;PROGRAMMER&gt; -U hfuse:w:0xde:m
+</pre><dl class="section note"><dt>Note</dt><dd>You can use a different ISP to enable debugging, but disabling it again will only work with the AVR Dragon: The ISP will require the RESET pin to work, but the RESET pin is re-purposed for debugWIRE when debugging is enabled. Recent versions of avrdude will use the debugWIRE interface to temporarily disable debugWIRE and restore the RESET pin's default behavior in order to use the ISP. But this requires a programmer/debugger that can be used as both ISP and debugWIRE debugger using the same connector. So don't enable debugging unless you have an AVR Dragon or another plan on how to disable debugging again.</dd></dl>
+<p>With the AVR Dragon, debugging is as simple as running: </p><pre class="fragment">make BOARD=arduino-uno debug
+</pre><dl class="section warning"><dt>Warning</dt><dd>For flashing the device via ISP, avrdude will temporarily disable debugWIRE. If AVaRICE complains that synchronization with the device is not possible after having it flashed, the device might need a cold boot to enable debugWIRE again.</dd></dl>
+<p>The memory map of the ELF file does not take the bootloader into account. The author of this text used an ISP to program the Arduino Uno during debugging to avoid any issues. You might want to do the same, e.g. via: </p><pre class="fragment">make BOARD=arduino-uno PROGRAMMER=dragon_isp flash
+</pre><dl class="section warning"><dt>Warning</dt><dd>Flashing via ISP overwrites the bootloader. But you can restore it easily using the ISP. Consult the Arduino documentation on how to restore the bootloader.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you are using a different debugger than the AVR Dragon, you have to export the <code>AVR_DEBUGDEVICE</code> environment variable to the required flag to pass to AVaRICE, e.g. when using the Atmel-ICE you have to export <code>AVR_DEBUGDEVICE=--edbg</code>. If the debug device is not connected via USB, you also need to export <code>AVR_DEBUGINTERFACE</code> to the correct value.</dd></dl>
+<p>The ATmega328P only has a single hardware break point and zero watchpoints. The single hardware breakpoint is used for single-stepping. As a result neither breakpoints nor watchpoints can be used. AVaRICE tries to emulate breakpoints be inserting the break machine instruction into the ROM in place of the original instruction to break on. Once this break instruction is reached, the original instruction is restored. This is not only super slow, but also wastes two flash cycles every time a breakpoint is hit. This cumulates to significant flash wear during long debugging sessions. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:arduino-uno_2include_2board_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="arduino-uno_2include_2board_8h.html">board.h</a></td></tr>
+<tr class="memdesc:arduino-uno_2include_2board_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Board specific definitions for the Arduino Uno board. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

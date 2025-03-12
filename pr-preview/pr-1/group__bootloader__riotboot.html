@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>riotboot</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__bootloader__riotboot.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">riotboot<div class="ingroups"><a class="el" href="group__bootloaders.html">Bootloaders</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><br />
+<h1><a class="anchor" id="autotoc_md1607"></a>
+Overview</h1>
+<p>This folder contains a simple bootloader called "riotboot". </p>
+ 
+<a href="#details">More...</a></p>
+<p><br />
+</p>
+<h1><a class="anchor" id="autotoc_md1607"></a>
+Overview</h1>
+<p>This folder contains a simple bootloader called "riotboot". </p>
+<p>A header with metadata of length <code>RIOTBOOT_HDR_LEN</code> precedes the RIOT firmware. The header contains "RIOT" as a magic number to recognize a RIOT firmware image, a checksum, and the version of the RIOT firmware <code>APP_VER</code>. This bootloader verifies the checksum of the header which is located at an offset (<code>ROM_OFFSET</code>) with respect to the <code>ROM_START_ADDR</code> defined by the CPU, just after the space allocated for riotboot.</p>
+<p>In case of multiple firmware slots, the bootloader iterates through valid headers and boots the newest image.</p>
+<p>riotboot consists of:</p>
+<ul>
+<li>This application which serves as minimal bootloader,</li>
+<li>the module "riotboot_hdr" used to recognize RIOT firmware which riotboot can boot,</li>
+<li>the module "riotboot_slot" used to manage the partitions (slots) with a RIOT header attached to them,</li>
+<li>a tool in dist/tools/riotboot_gen_hdr for header generation,</li>
+<li>several make targets to glue everything together.</li>
+</ul>
+<p><code>riotboot</code> expects the flash to be formatted in slots: at the <code>CPU_FLASH_BASE</code> address resides the bootloader, which is followed by a slot 0 containing a RIOT firmware image. If present, a second firmware image (in slot 1) starts just afterwards.</p>
+<p>The bootloader and a RIOT firmware in slot 0 are depicted below:</p>
+<div class="fragment"><div class="line">|------------------------------- <a class="code" href="cc26xx__cc13xx__vims_8h.html#a844ea28ba1e0a5a0e497f16b61ea306b">FLASH</a> -------------------------------------|</div><div class="line">|----- RIOTBOOT_LEN ----|----------- RIOTBOOT_SLOT_SIZE (slot 0) -----------|</div><div class="line">                        |----- RIOTBOOT_HDR_LEN ------|</div><div class="line"> ---------------------------------------------------------------------------</div><div class="line">|        riotboot       | <a class="code" href="structriotboot__hdr__t.html">riotboot_hdr_t</a> + filler (0) |   RIOT firmware     |</div><div class="line"> ---------------------------------------------------------------------------</div></div><!-- fragment --><p>Please note that <code>RIOTBOOT_HDR_LEN</code> depends on the architecture of the MCU, since it needs to be aligned to 256B. This is fixed regardless of <code>sizeof(riotboot_hdr_t)</code></p>
+<p>Also note that, if no slot is available with a valid checksum, no image will be booted and the bootloader will enter <code>while(1);</code> endless loop.</p>
+<h1><a class="anchor" id="autotoc_md1609"></a>
+Requirements</h1>
+<p>Try to compile and run tests/riotboot: </p><pre class="fragment">$ BOARD=&lt;board&gt; make -C tests/riotboot flash test
+</pre><p>If the test succeeds, your board is supported. Else you can try to port riotboot to your board (see the below porting guide).</p>
+<p>When building the bootloader, the global define <code>RIOTBOOT</code> is available. You can use this define to skip certain parts in <code><a class="el" href="group__core__init__config.html#ga916f2adc2080b4fe88034086d107a8dc" title="Initialize board specific hardware. ">board_init()</a></code> (or <code>cpu_init()</code>) that should not be executed during boot. Note that this define is different from <code>MODULE_RIOTBOOT</code>, which is also defined when building an application that utilizes riotboot.</p>
+<h1><a class="anchor" id="autotoc_md1610"></a>
+Single Slot</h1>
+<p>Just compile your application with <code>FEATURES_REQUIRED += riotboot</code>. The header is generated automatically according to your <code>APP_VER</code>, which can be optionally set (current system time in seconds since 1970 (epoch) by default) in your makefile.</p>
+<h2><a class="anchor" id="autotoc_md1611"></a>
+Flashing example</h2>
+<p>If your application is using the riotboot feature, the usual targets (<code>all</code>, <code>flash</code>, <code>flash-only</code>) will automatically compile and/or flash both the bootloader and slot0, while ensuring that slot 1 is invalidated so slot 0 will be booted.</p>
+<p>The image can also be flashed using <code>riotboot/flash</code> which also flashes the bootloader. Below a concrete example:</p>
+<p><code>BOARD=samr21-xpro FEATURES_REQUIRED+=riotboot APP_VER=$(date +s) make -C examples/basic/hello-world riotboot/flash-combined-slot0</code></p>
+<p>The above compiles a hello world binary and a bootloader, then flashes the combined binary comprising of: bootloader + slot 0 header + slot 0 image. If booted, the device will execute the Hello-World image.</p>
+<p>A comprehensive test is available at tests/riotboot (also see below).</p>
+<h1><a class="anchor" id="autotoc_md1612"></a>
+Multi-Slot</h1>
+<p>When several slots are available, the bootloader iterates through valid headers and boots the newest image (which has the greater <code>VERSION</code>)</p>
+<p>Dedicated make targets are available to build and flash several slots:</p>
+<ul>
+<li><code>riotboot/slot1</code>: Builds a firmware in ELF and binary format with an offset at the end of slot 0;</li>
+<li><code>riotboot/flash-slot1</code>: builds and flashes a firmware for slot 1;</li>
+<li><code>riotboot/flash-extended-slot0</code> builds + flashes slot 0 and erases (zeroes) the metadata of slot 1 (invalidating it);</li>
+<li><code>riotboot</code> builds both slot 0 and 1.</li>
+</ul>
+<p>In particular, if one wants to be sure to boot a particular image, using the target <code>riotboot/flash-extended-slot0</code> is the way to go (resulting in only slot 0 being valid, thus being booted). This is done automatically by <code>make flash</code> if the <code>riotboot</code> feature is used.</p>
+<h2><a class="anchor" id="autotoc_md1613"></a>
+Testing riotboot</h2>
+<p>See <a href="https://github.com/RIOT-OS/RIOT/blob/master/tests/riotboot/README.md">tests/riotboot/README.md</a>.</p>
+<h1><a class="anchor" id="autotoc_md1614"></a>
+Quick riotboot porting guide</h1>
+<p>Your board/cpu is not supported yet? Try to port riotboot!</p>
+<h2><a class="anchor" id="autotoc_md1615"></a>
+Porting to a board based on an Arm Cortex-M0+/3/4/7/22/33 MCU</h2>
+<p>Extending riotboot to support another board with a Cortex-M0+/3/4/7/22/33 microcontroller is rather straightforward. You need to:</p>
+<ul>
+<li>Provide the variables <code>ROM_START_ADDR</code> and <code>ROM_LEN</code> as well as <code>RAM_LEN</code> and <code>RAM_START_ADDR</code>.</li>
+<li>Adapt the linker scripts for your cpu to pass the test <a href="../../tests/cpu/cortexm_common_ldscript">tests/cpu/cortexm_common_ldscript</a>. This test ensures that the linker script supports building firmware's with a rom offset and specific sized firmware's.</li>
+<li>Make the startup code <code><a class="el" href="group__core__init__config.html#ga916f2adc2080b4fe88034086d107a8dc" title="Initialize board specific hardware. ">board_init()</a></code>, <code>cpu_init</code> idempotent, i.e. whether you execute it once, or twice, it works all the same. The global define <code>RIOTBOOT</code> can be useful here. (e.g. <a href="../../cpu/efm32/cpu.c">cpu/efm32/cpu.c</a>)</li>
+<li>Make sure (and adapt if needed) that the flasher script can:<ul>
+<li>flash a <code>.bin</code></li>
+<li>flash at a specified offset</li>
+<li>flash without performing mass erase, only erase flash sections to be written e.g.: <a href="../../makefiles/tools/edbg.inc.mk">makefiles/tools/edbg.inc.mk</a></li>
+</ul>
+</li>
+<li>Declare <code>FEATURES_PROVIDED += riotboot</code> for the target <code>BOARD</code>.</li>
+<li>Make sure that <code>RIOTBOOT_LEN</code> size is such that the remainder of the flash can be divided by the number slots while staying <code>FLASHPAGE_SIZE</code> aligned. e.g: <a href="../../cpu/nrf52/Makefile.include">cpu/nrf52/Makefile.include</a></li>
+<li>Check other specific <code>BOARD</code>/<code>CPU</code> flash alignment requirements (e.g.: kinetis vector table must be naturally aligned to the power of two, see <a href="../../cpu/kinetis/Makefile.include">cpu/kinetis/Makefile.include</a>)</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md1616"></a>
+Porting to a board based on other types of MCUs</h2>
+<p>For other MCU architectures the following extra requirements must be fulfilled:</p>
+<ul>
+<li>Provide the functions defined in the header <a href="../../sys/include/riotboot/slot.h">sys/include/riotboot/slot.h</a>, in particular <code><a class="el" href="slot_8h.html#a710390db1c80984b25972cc129db9259" title="Boot into image in slot slot. ">riotboot_slot_jump(unsigned slot)</a></code> which will allow jumping from the bootloader to another slot/application.</li>
+<li>Adapt the linker script so that it supports building firmware's with a rom offset and a defined firmware size. To get an idea look at <a href="../../cpu/cortexm_common/Makefile.include">cpu/cortexm_common/Makefile.include</a></li>
+</ul>
+<p>Additional remarks:</p>
+<ul>
+<li>If your are in Big-Endian, you may need to further adapt some part of the code. </li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:30 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

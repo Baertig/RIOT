@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/net/netstats/neighbor.h Source File</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('neighbor_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">neighbor.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="neighbor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2017 Koen Zandberg &lt;koen@bergzand.net&gt;</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * This file is subject to the terms and conditions of the GNU Lesser General</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Public License v2.1. See the file LICENSE in the top level directory for</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * more details.</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> */</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef NET_NETSTATS_NEIGHBOR_H</span></div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define NET_NETSTATS_NEIGHBOR_H</span></div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;string.h&gt;</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="netif_8h.html">net/netif.h</a>&quot;</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="timex_8h.html">timex.h</a>&quot;</span></div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34">   34</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div><div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a554034dc15ccb6b9745c1fda046f5066">   35</a></span>&#160;    <a class="code" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a554034dc15ccb6b9745c1fda046f5066">NETSTATS_NB_BUSY</a>,       </div><div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a4f5b82c254c5919f7d581882ae94c51b">   36</a></span>&#160;    <a class="code" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a4f5b82c254c5919f7d581882ae94c51b">NETSTATS_NB_NOACK</a>,      </div><div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34aec0175984c5e5243b2e373ce141ec485">   37</a></span>&#160;    <a class="code" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34aec0175984c5e5243b2e373ce141ec485">NETSTATS_NB_SUCCESS</a>,    </div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <a class="code" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34">netstats_nb_result_t</a>;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="neighbor_8h.html#afcf6b61b6e5d0b300eb0c1464c7b41fd">   48</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_EWMA_SCALE            100</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div><div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="neighbor_8h.html#adbb480ed018ffd12c2f7115ac7aae0c5">   53</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_EWMA_ALPHA             15</span></div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a36e1c2e8d4d7bf21814e94d9dd2cf6b6">   58</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_EWMA_ALPHA_RAMP        30</span></div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a695fe101838939ae11e9094b4f653ae7">   68</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_ETX_NOACK_PENALTY       6</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="neighbor_8h.html#abc46e8ae8dbd9bd8396ef952fee658ed">   72</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_ETX_DIVISOR           128</span></div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div><div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a14acea31506d90e943028403c6f1b572">   76</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_ETX_INIT                2</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="neighbor_8h.html#ab1d220d0f0abe5b0e69438971f0bf61b">   86</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_FRESHNESS_HALF        600</span></div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="neighbor_8h.html#aca3ffbf1d07e141785fa61ca2084ac2c">   90</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_FRESHNESS_TARGET        4</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a7f4682ddf8f7ccf62cf01874e2f43fba">   94</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_FRESHNESS_MAX          16</span></div><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="neighbor_8h.html#a03452a933b281361917e9d7cad410640">   98</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_FRESHNESS_EXPIRATION 1200</span></div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="neighbor_8h.html#ae6720c3626253c10607bd1c89ec79c92">  108</a></span>&#160;<span class="preprocessor">#define NETSTATS_NB_TX_TIMEOUT_MS         100</span></div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">void</span> <a class="code" href="neighbor_8h.html#a5d11248e7e2a43ea875e1da66be68b49">netstats_nb_init</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif);</div><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="neighbor_8h.html#a84c818052d710574c80b5a8914b8f9de">netstats_nb_get</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif, <span class="keyword">const</span> uint8_t *l2_addr, uint8_t len, <a class="code" href="structnetstats__nb__t.html">netstats_nb_t</a> *out);</div><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="keywordtype">void</span> <a class="code" href="neighbor_8h.html#a6c74048309e3086f03aa9b44ec66f58b">netstats_nb_record</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif, <span class="keyword">const</span> uint8_t *l2_addr, uint8_t len);</div><div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<a class="code" href="structnetstats__nb__t.html">netstats_nb_t</a> *<a class="code" href="neighbor_8h.html#ad0123a134553269a336d8dcc2a1ff60f">netstats_nb_update_tx</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif, <a class="code" href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34">netstats_nb_result_t</a> result,</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                     uint8_t transmissions);</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div><div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<a class="code" href="structnetstats__nb__t.html">netstats_nb_t</a> *<a class="code" href="neighbor_8h.html#aff00adbaeb65712df18dfd06eaad7d5b">netstats_nb_update_rx</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif, <span class="keyword">const</span> uint8_t *l2_addr,</div><div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                                     uint8_t l2_addr_len, uint8_t rssi, uint8_t lqi);</div><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div><div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="keywordtype">bool</span> <a class="code" href="neighbor_8h.html#a27294a959198225136a3f8a109574695">netstats_nb_isfresh</a>(<a class="code" href="structnetif__t.html">netif_t</a> *netif, <a class="code" href="structnetstats__nb__t.html">netstats_nb_t</a> *stats);</div><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div><div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div><div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* NET_NETSTATS_NEIGHBOR_H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div><div class="ttc" id="structnetif__t_html"><div class="ttname"><a href="structnetif__t.html">netif_t</a></div><div class="ttdoc">Network interface descriptor. </div><div class="ttdef"><b>Definition:</b> <a href="netif_8h_source.html#l00071">netif.h:71</a></div></div>
+<div class="ttc" id="neighbor_8h_html_a776befa21a12c0dc0e40c9b0264d1f34"><div class="ttname"><a href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34">netstats_nb_result_t</a></div><div class="ttdeci">netstats_nb_result_t</div><div class="ttdoc">Result of the transmission. </div><div class="ttdef"><b>Definition:</b> <a href="neighbor_8h_source.html#l00034">neighbor.h:34</a></div></div>
+<div class="ttc" id="neighbor_8h_html_a6c74048309e3086f03aa9b44ec66f58b"><div class="ttname"><a href="neighbor_8h.html#a6c74048309e3086f03aa9b44ec66f58b">netstats_nb_record</a></div><div class="ttdeci">void netstats_nb_record(netif_t *netif, const uint8_t *l2_addr, uint8_t len)</div><div class="ttdoc">Store this neighbor as next in the transmission queue. </div></div>
+<div class="ttc" id="neighbor_8h_html_a84c818052d710574c80b5a8914b8f9de"><div class="ttname"><a href="neighbor_8h.html#a84c818052d710574c80b5a8914b8f9de">netstats_nb_get</a></div><div class="ttdeci">bool netstats_nb_get(netif_t *netif, const uint8_t *l2_addr, uint8_t len, netstats_nb_t *out)</div><div class="ttdoc">Find a neighbor stat by the mac address. </div></div>
+<div class="ttc" id="timex_8h_html"><div class="ttname"><a href="timex_8h.html">timex.h</a></div><div class="ttdoc">Utility library for comparing and computing timestamps. </div></div>
+<div class="ttc" id="neighbor_8h_html_aff00adbaeb65712df18dfd06eaad7d5b"><div class="ttname"><a href="neighbor_8h.html#aff00adbaeb65712df18dfd06eaad7d5b">netstats_nb_update_rx</a></div><div class="ttdeci">netstats_nb_t * netstats_nb_update_rx(netif_t *netif, const uint8_t *l2_addr, uint8_t l2_addr_len, uint8_t rssi, uint8_t lqi)</div><div class="ttdoc">Record rx stats for the l2_addr. </div></div>
+<div class="ttc" id="netif_8h_html"><div class="ttname"><a href="netif_8h.html">netif.h</a></div><div class="ttdoc">Common network interface API definitions. </div></div>
+<div class="ttc" id="neighbor_8h_html_a776befa21a12c0dc0e40c9b0264d1f34a4f5b82c254c5919f7d581882ae94c51b"><div class="ttname"><a href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a4f5b82c254c5919f7d581882ae94c51b">NETSTATS_NB_NOACK</a></div><div class="ttdoc">Failed due to no ack received. </div><div class="ttdef"><b>Definition:</b> <a href="neighbor_8h_source.html#l00036">neighbor.h:36</a></div></div>
+<div class="ttc" id="neighbor_8h_html_a27294a959198225136a3f8a109574695"><div class="ttname"><a href="neighbor_8h.html#a27294a959198225136a3f8a109574695">netstats_nb_isfresh</a></div><div class="ttdeci">bool netstats_nb_isfresh(netif_t *netif, netstats_nb_t *stats)</div><div class="ttdoc">Check if a record is fresh. </div></div>
+<div class="ttc" id="structnetstats__nb__t_html"><div class="ttname"><a href="structnetstats__nb__t.html">netstats_nb_t</a></div><div class="ttdoc">Stats per peer struct. </div><div class="ttdef"><b>Definition:</b> <a href="include_2net_2netstats_8h_source.html#l00076">netstats.h:76</a></div></div>
+<div class="ttc" id="neighbor_8h_html_a5d11248e7e2a43ea875e1da66be68b49"><div class="ttname"><a href="neighbor_8h.html#a5d11248e7e2a43ea875e1da66be68b49">netstats_nb_init</a></div><div class="ttdeci">void netstats_nb_init(netif_t *netif)</div><div class="ttdoc">Initialize the neighbor stats. </div></div>
+<div class="ttc" id="neighbor_8h_html_a776befa21a12c0dc0e40c9b0264d1f34a554034dc15ccb6b9745c1fda046f5066"><div class="ttname"><a href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34a554034dc15ccb6b9745c1fda046f5066">NETSTATS_NB_BUSY</a></div><div class="ttdoc">Failed due to medium busy. </div><div class="ttdef"><b>Definition:</b> <a href="neighbor_8h_source.html#l00035">neighbor.h:35</a></div></div>
+<div class="ttc" id="neighbor_8h_html_ad0123a134553269a336d8dcc2a1ff60f"><div class="ttname"><a href="neighbor_8h.html#ad0123a134553269a336d8dcc2a1ff60f">netstats_nb_update_tx</a></div><div class="ttdeci">netstats_nb_t * netstats_nb_update_tx(netif_t *netif, netstats_nb_result_t result, uint8_t transmissions)</div><div class="ttdoc">Update the next recorded neighbor with the provided numbers. </div></div>
+<div class="ttc" id="neighbor_8h_html_a776befa21a12c0dc0e40c9b0264d1f34aec0175984c5e5243b2e373ce141ec485"><div class="ttname"><a href="neighbor_8h.html#a776befa21a12c0dc0e40c9b0264d1f34aec0175984c5e5243b2e373ce141ec485">NETSTATS_NB_SUCCESS</a></div><div class="ttdoc">Successful transmission. </div><div class="ttdef"><b>Definition:</b> <a href="neighbor_8h_source.html#l00037">neighbor.h:37</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:21 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

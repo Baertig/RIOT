@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>sys/include/psa_crypto/psa/asymmetric_encryption/algorithm.h File Reference</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('asymmetric__encryption_2algorithm_8h.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">algorithm.h File Reference<div class="ingroups"><a class="el" href="group__sys.html">System</a> &raquo; <a class="el" href="group__sys__psa__crypto.html">PSA Cryptographic API</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Asymmetric encryption algorithm definitions for the PSA Crypto API.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Asymmetric encryption algorithm definitions for the PSA Crypto API. </p>
+<dl class="section author"><dt>Author</dt><dd>Armin Wolf <a href="#" onclick="location.href='mai'+'lto:'+'wol'+'f.'+'arm'+'in'+'@ma'+'il'+'box'+'.t'+'u-d'+'re'+'sde'+'n.'+'de'; return false;">wolf.<span style="display: none;">.nosp@m.</span>armi<span style="display: none;">.nosp@m.</span>n@mai<span style="display: none;">.nosp@m.</span>lbox<span style="display: none;">.nosp@m.</span>.tu-d<span style="display: none;">.nosp@m.</span>resd<span style="display: none;">.nosp@m.</span>en.de</a> </dd>
+<dd>
+Lena Boeckmann <a href="#" onclick="location.href='mai'+'lto:'+'len'+'a.'+'boe'+'ck'+'man'+'n@'+'haw'+'-h'+'amb'+'ur'+'g.d'+'e'; return false;">lena.<span style="display: none;">.nosp@m.</span>boec<span style="display: none;">.nosp@m.</span>kmann<span style="display: none;">.nosp@m.</span>@haw<span style="display: none;">.nosp@m.</span>-hamb<span style="display: none;">.nosp@m.</span>urg.<span style="display: none;">.nosp@m.</span>de</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">algorithm.h</a>.</p>
+</div><div class="textblock"><code>#include &quot;psa/algorithm.h&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for algorithm.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="asymmetric__encryption_2algorithm_8h__incl.svg" width="210" height="216"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="asymmetric__encryption_2algorithm_8h__dep__incl.svg" width="2546" height="722"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="asymmetric__encryption_2algorithm_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="memitem:a72f46c8256b760b174e6db61a61cd608"><td class="memItemLeft" align="right" valign="top"><a id="a72f46c8256b760b174e6db61a61cd608"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__encryption_2algorithm_8h.html#a72f46c8256b760b174e6db61a61cd608">PSA_ALG_CATEGORY_ASYMMETRIC_ENCRYPTION</a>&#160;&#160;&#160;((psa_algorithm_t)0x07000000)</td></tr>
+<tr class="memdesc:a72f46c8256b760b174e6db61a61cd608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Category for asymmetric encryption algorithms. <br /></td></tr>
+<tr class="separator:a72f46c8256b760b174e6db61a61cd608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41d2ee937d54efd76bd54a97b2ebc08a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__encryption_2algorithm_8h.html#a41d2ee937d54efd76bd54a97b2ebc08a">PSA_ALG_IS_ASYMMETRIC_ENCRYPTION</a>(alg)&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="asymmetric__encryption_2algorithm_8h.html#a72f46c8256b760b174e6db61a61cd608">PSA_ALG_CATEGORY_ASYMMETRIC_ENCRYPTION</a>)</td></tr>
+<tr class="memdesc:a41d2ee937d54efd76bd54a97b2ebc08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an asymmetric encryption algorithm, also known as public-key encryption algorithm.  <a href="#a41d2ee937d54efd76bd54a97b2ebc08a">More...</a><br /></td></tr>
+<tr class="separator:a41d2ee937d54efd76bd54a97b2ebc08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a85c05fd5c39ca63bbc47fb0755da39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__encryption_2algorithm_8h.html#a9a85c05fd5c39ca63bbc47fb0755da39">PSA_ALG_IS_RSA_OAEP</a>(alg)&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x07000300)</td></tr>
+<tr class="memdesc:a9a85c05fd5c39ca63bbc47fb0755da39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the specified algorithm is an RSA OAEP encryption algorithm.  <a href="#a9a85c05fd5c39ca63bbc47fb0755da39">More...</a><br /></td></tr>
+<tr class="separator:a9a85c05fd5c39ca63bbc47fb0755da39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c540d3abe43fb9abcb94f2bc51acef9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__encryption_2algorithm_8h.html#a4c540d3abe43fb9abcb94f2bc51acef9">PSA_ALG_RSA_PKCS1V15_CRYPT</a>&#160;&#160;&#160;((psa_algorithm_t)0x07000200)</td></tr>
+<tr class="memdesc:a4c540d3abe43fb9abcb94f2bc51acef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSA PKCS#1 v1.5 asymmetric encryption algorithm.  <a href="#a4c540d3abe43fb9abcb94f2bc51acef9">More...</a><br /></td></tr>
+<tr class="separator:a4c540d3abe43fb9abcb94f2bc51acef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1235dc3fdd9839c6c1b1a9857344c76"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="asymmetric__encryption_2algorithm_8h.html#aa1235dc3fdd9839c6c1b1a9857344c76">PSA_ALG_RSA_OAEP</a>(hash_alg)&#160;&#160;&#160;((psa_algorithm_t)(0x07000300 | ((hash_alg) &amp; 0x000000ff)))</td></tr>
+<tr class="memdesc:aa1235dc3fdd9839c6c1b1a9857344c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">The RSA OAEP asymmetric encryption algorithm.  <a href="#aa1235dc3fdd9839c6c1b1a9857344c76">More...</a><br /></td></tr>
+<tr class="separator:aa1235dc3fdd9839c6c1b1a9857344c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a41d2ee937d54efd76bd54a97b2ebc08a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41d2ee937d54efd76bd54a97b2ebc08a">&#9670;&nbsp;</a></span>PSA_ALG_IS_ASYMMETRIC_ENCRYPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_ASYMMETRIC_ENCRYPTION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; PSA_ALG_CATEGORY_MASK) == <a class="el" href="asymmetric__encryption_2algorithm_8h.html#a72f46c8256b760b174e6db61a61cd608">PSA_ALG_CATEGORY_ASYMMETRIC_ENCRYPTION</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an asymmetric encryption algorithm, also known as public-key encryption algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is an asymmetric encryption algorithm, 0 otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html#l00045">45</a> of file <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a9a85c05fd5c39ca63bbc47fb0755da39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a85c05fd5c39ca63bbc47fb0755da39">&#9670;&nbsp;</a></span>PSA_ALG_IS_RSA_OAEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_IS_RSA_OAEP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">alg</td><td>)</td>
+          <td>&#160;&#160;&#160;(((alg) &amp; ~0x000000ff) == 0x07000300)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether the specified algorithm is an RSA OAEP encryption algorithm. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alg</td><td>An algorithm identifier: a value of type psa_algorithm_t.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if alg is a RSA OAEP algorithm 0 otherwise </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html#l00056">56</a> of file <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="aa1235dc3fdd9839c6c1b1a9857344c76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1235dc3fdd9839c6c1b1a9857344c76">&#9670;&nbsp;</a></span>PSA_ALG_RSA_OAEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_OAEP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">hash_alg</td><td>)</td>
+          <td>&#160;&#160;&#160;((psa_algorithm_t)(0x07000300 | ((hash_alg) &amp; 0x000000ff)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RSA OAEP asymmetric encryption algorithm. </p>
+<p>This encryption scheme is defined by <a href="https://tools.ietf.org/html/rfc8017.html">RFC8017</a> §7.1 under the name RSAES-OAEP, with the following options:</p><ul>
+<li>The mask generation function MGF1 defined in <a href="https://tools.ietf.org/html/rfc8017.html">RFC8017</a> Appendix B.2.1.</li>
+<li>The specified hash algorithm is used to hash the label, and for the mask generation function.</li>
+</ul>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a11745b110166e927e2abeabc7d532051">PSA_KEY_TYPE_RSA_KEY_PAIR</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a9ba0878f56c8bcd1995ac017a74f513b">PSA_KEY_TYPE_RSA_PUBLIC_KEY</a> (asymmetric encryption only)</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hash_alg</td><td>A hash algorithm: a value of type psa_algorithm_t such that <a class="el" href="hash_2algorithm_8h.html#ac9280662bb482590b4b33d1dcd32930f">PSA_ALG_IS_HASH</a>(<code>hash_alg</code>) is true. The hash algorithm is used for MGF1.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The corresponding RSA OAEP encryption algorithm. Unspecified if <code>hash_alg</code> is not a supported hash algorithm. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html#l00094">94</a> of file <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="a4c540d3abe43fb9abcb94f2bc51acef9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c540d3abe43fb9abcb94f2bc51acef9">&#9670;&nbsp;</a></span>PSA_ALG_RSA_PKCS1V15_CRYPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PSA_ALG_RSA_PKCS1V15_CRYPT&#160;&#160;&#160;((psa_algorithm_t)0x07000200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The RSA PKCS#1 v1.5 asymmetric encryption algorithm. </p>
+<p>This encryption scheme is defined by PKCS #1: RSA Cryptography Specifications Version 2.2 <a href="https://tools.ietf.org/html/rfc8017.html">RFC8017</a> §7.2 under the name RSAES-PKCS-v1_5.</p>
+<p><b>Compatible</b> <b>key</b> <b>types</b> </p><ul>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a11745b110166e927e2abeabc7d532051">PSA_KEY_TYPE_RSA_KEY_PAIR</a></li>
+<li><a class="el" href="psa__crypto_2psa_2key_2type_8h.html#a9ba0878f56c8bcd1995ac017a74f513b">PSA_KEY_TYPE_RSA_PUBLIC_KEY</a> (asymmetric encryption only) </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html#l00070">70</a> of file <a class="el" href="asymmetric__encryption_2algorithm_8h_source.html">algorithm.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:27 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>

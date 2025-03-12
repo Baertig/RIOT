@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mutex</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery.powertip.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="jquery.scrollTo.min.js"></script>
+    <script src="doxy-jquery.js"></script>
+    <script src="dynsections.js"></script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+    <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <!-- Bootstrap -->
+    <link href="doxygen.css" rel="stylesheet">
+    <link href="fonts.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="riot.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        <script>
+            function displaySR(){
+            searchBox.Search();
+            var rhtml=(document.getElementById('MSearchResults').contentWindow.document.body.innerHTML).replace(/href=\"\.\.\//g,'href="');
+            document.getElementById('MSearchResultsWindow').style.display='none';
+            document.getElementById('top').append(document.getElementById('MSearchSelectWindow'));
+            document.getElementById('top').append(document.getElementById('MSearchResultsWindow'));
+            document.getElementById('doc-content').innerHTML=rhtml;
+            }
+            function modSearch(){
+            if(!searchBox.doxySearch){
+                searchBox.doxySearch=searchBox.Search
+                searchBox.Search= function(){this.doxySearch();
+                var r=document.getElementById('MSearchResultsWindow');console.log(r.style);
+                if(parseInt(r.style.left)<0)r.style.left=0;
+                var x=document.getElementById('MSearchResults');
+                if(x.scrollWidth>window.screen.width)x.style.width=window.screen.width-2+'px';
+                var f=document.getElementById('riot-searchform');
+                if(parseInt( r.style.top) < f.offsetTop+f.scrollHeight) r.style.top = f.offsetTop+f.scrollHeight+'px';}
+            }
+            }
+        </script>
+  </head>
+  <body>
+      <div id="top">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" id="brand-logo" href="http://riot-os.org"><img height="40px" src="riot-logo.svg" /></a>
+              <p class="navbar-text text-center visible-xs">Documentation</p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+              <p class="navbar-text navbar-left"><span id="projectbrief">The friendly Operating System for the Internet of Things</span></p>
+              <ul id="riot-navlist" class="nav navbar-nav"></ul>
+              <form id="riot-searchform" class="navbar-form navbar-left navbar-right" action="https://duckduckgo.com/" method="get">
+                 <input type="hidden" name="sites" value="doc.riot-os.org"/>
+                 <input type="hidden" name="kt" value="h"/>
+                 <div class="form-group">
+                   <div id="MSearchBox" class="MSearchBoxActive">
+                     <div class="input-group">
+                       <div class="input-group-addon">
+                         <span id="MSearchSelect" class="glyphicon glyphicon-search" aria-hidden="true" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"></span>
+                       </div>
+                       <input class="form-control" type="text" name="q" id="MSearchField" placeholder="Search" accesskey="S" onfocus="searchBox.OnSearchFieldFocus(true)" onblur="searchBox.OnSearchFieldFocus(false)" onkeyup="searchBox.OnSearchFieldChange(event); modSearch();">
+                       <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()">
+                         <span id="search-reset" class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                       </a>
+                     </div>
+                   </div>
+                 </div>
+              </form>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+<!-- Generated by Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group__core__sync__mutex.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#files">Files</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle">
+<div class="title">Mutex<div class="ingroups"><a class="el" href="group__core.html">Kernel</a> &raquo; <a class="el" href="group__core__sync.html">Thread Synchronization</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> for thread synchronization.  
+<a href="#details">More...</a></p>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> for thread synchronization. </p>
+<dl class="section warning"><dt>Warning</dt><dd>By default, no mitigation against priority inversion is employed. If your application is subject to priority inversion and cannot tolerate the additional delay this can cause, use module <code>core_mutex_priority_inheritance</code> to employ priority inheritance as mitigation.</dd></dl>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Mutex Implementation Basics</h1>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Data Structures and Encoding</h2>
+<p>A <code><a class="el" href="structmutex__t.html" title="Mutex structure. ">mutex_t</a></code> contains basically a point, which can have one of the following values:</p>
+<ol type="1">
+<li><code>NULL</code>, in case it is unlocked</li>
+<li><code>MUTEX_LOCKED</code> in case it is locked, but no other thread is waiting on it</li>
+<li>A pointer to the head of single linked list of threads (or more precisely their <code>thread_t</code> structures) blocked waiting for obtaining the mutex. This list is terminated by <code>NULL</code>, not by <code>MUTEX_LOCKED</code></li>
+</ol>
+<p>The same information graphically:</p>
+<div class="fragment"><div class="line">Unlocked mutex:</div><div class="line">+-------+</div><div class="line">| <a class="code" href="structMutex.html">Mutex</a> | --&gt; NULL</div><div class="line">+-------+</div><div class="line"></div><div class="line">Locked mutex, no waiters:</div><div class="line">+-------+</div><div class="line">| <a class="code" href="structMutex.html">Mutex</a> | --&gt; MUTEX_LOCKED</div><div class="line">+-------+</div><div class="line"></div><div class="line">Locked mutex, one waiter:</div><div class="line">+-------+     +--------+</div><div class="line">| <a class="code" href="structMutex.html">Mutex</a> | --&gt; | Waiter | --&gt; NULL</div><div class="line">+-------+     +--------+</div><div class="line"></div><div class="line">Locked mutex, 2 waiters:</div><div class="line">+-------+     +--------+     +--------+</div><div class="line">| <a class="code" href="structMutex.html">Mutex</a> | --&gt; | Waiter | --&gt; | Waiter | --&gt; NULL</div><div class="line">+-------+     +--------+     +--------+</div></div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+Obtaining a Mutex</h2>
+<p>If a <code><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201" title="Locks a mutex, blocking. ">mutex_lock()</a></code> is called, one of the following happens:</p>
+<ol type="1">
+<li>If the mutex was unlocked (value of <code>NULL</code>), its value is changed to <code>MUTEX_LOCKED</code> and the call to <code><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201" title="Locks a mutex, blocking. ">mutex_lock()</a></code> returns right away without blocking.</li>
+<li>If the mutex has a value of <code>MUTEX_LOCKED</code>, it will be changed to point to the <code>thread_t</code> of the running thread. The single item list is terminated by setting the <code>thread_t::rq_entry.next</code> of the running thread to <code>NULL</code>. The running thread blocks as described below.</li>
+<li>Otherwise, the current thread is inserted into the list of waiting threads sorted by thread priority. The running thread blocks as described below.</li>
+</ol>
+<p>In case 2) and 3), the running thread will mark itself as blocked (waiting for a mutex) and yields. Once control is transferred back to this thread (which is done in the call to <code><a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187" title="Unlocks the mutex. ">mutex_unlock()</a></code>), it has the mutex and the function <code><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201" title="Locks a mutex, blocking. ">mutex_lock()</a></code> returns.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
+Returning a Mutex</h2>
+<p>If <code><a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187" title="Unlocks the mutex. ">mutex_unlock()</a></code> is called, one of the following happens:</p>
+<ol type="1">
+<li>If the mutex was already unlocked (value of <code>NULL</code>), the call returns without modifying the mutex.</li>
+<li>If the mutex was locked without waiters (value of <code>MUTEX_LOCKED</code>), it is unlocked by setting its value to <code>NULL</code>.</li>
+<li>Otherwise the first <code>thread_t</code> from the linked list of waiters is removed from the list.<ul>
+<li>This thread is the one with the highest priority, as the list is sorted by priority.</li>
+<li>This thread's status is set to pending and its added to the appropriate run queue.</li>
+<li>If that thread was the last item in the list, the mutex is set to <code>MUTEX_LOCK</code>.</li>
+<li>The scheduler is run, so that if the unblocked waiting thread can run now, in case it has a higher priority than the running thread.</li>
+</ul>
+</li>
+</ol>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Debugging deadlocks</h2>
+<p>The module <code>core_mutex_debug</code> can be used to print on whom <code><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201" title="Locks a mutex, blocking. ">mutex_lock()</a></code> is waiting. This information includes the thread ID of the owner and the program counter (PC) from where <code><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201" title="Locks a mutex, blocking. ">mutex_lock()</a></code> was called. Note that the information is only valid if:</p>
+<ul>
+<li>The mutex was locked by a thread, and not e.g. by <code>MUTEX_INIT_LOCKED</code></li>
+<li>The function <code><a class="el" href="avr8__common_2include_2cpu_8h.html#a74669397ad6a179d9dc4454497af9cc4" title="Get the last instruction&#39;s address. ">cpu_get_caller_pc()</a></code> is implemented for the target architecture. (The thread ID will remain valid, though.)</li>
+<li>The caller PC is briefly 0 when the current owner passes over ownership to the next thread, but that thread didn't get CPU time yet to write its PC into the data structure. Even worse, on architectures where an aligned function-pointer-sized write is not atomic, the value may briefly be bogus. Chances are close to zero this ever hits and since this only effects debug output, the ostrich algorithm was chosen here. </li>
+</ul>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:mutex_8h"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mutex_8h.html">mutex.h</a></td></tr>
+<tr class="memdesc:mutex_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> for thread synchronization. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__t.html">mutex_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> structure.  <a href="structmutex__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cancellation structure for use with <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> and <a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a>.  <a href="structmutex__cancel__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga96be0bfc33e7e113099c7546798bec99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga96be0bfc33e7e113099c7546798bec99">MUTEX_INIT</a>&#160;&#160;&#160;{ .queue = { .next = NULL } }</td></tr>
+<tr class="memdesc:ga96be0bfc33e7e113099c7546798bec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure. ">mutex_t</a>.  <a href="#ga96be0bfc33e7e113099c7546798bec99">More...</a><br /></td></tr>
+<tr class="separator:ga96be0bfc33e7e113099c7546798bec99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memItemLeft" align="right" valign="top"><a id="ga5ca0fa72dfde3f969c5c3eae33fc67cc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga5ca0fa72dfde3f969c5c3eae33fc67cc">MUTEX_INIT_LOCKED</a>&#160;&#160;&#160;{ .queue = { .next = MUTEX_LOCKED } }</td></tr>
+<tr class="memdesc:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure. ">mutex_t</a> with a locked mutex. <br /></td></tr>
+<tr class="separator:ga5ca0fa72dfde3f969c5c3eae33fc67cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gae431f4c9893728f5744c2c330824ff05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#gae431f4c9893728f5744c2c330824ff05">mutex_lock_internal</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex, bool block)</td></tr>
+<tr class="memdesc:gae431f4c9893728f5744c2c330824ff05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal function implementing <a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> and <a class="el" href="group__core__sync__mutex.html#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a>.  <a href="#gae431f4c9893728f5744c2c330824ff05">More...</a><br /></td></tr>
+<tr class="separator:gae431f4c9893728f5744c2c330824ff05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga863625fd3252b5ebdadafaa6509ddb6d">mutex_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a mutex object.  <a href="#ga863625fd3252b5ebdadafaa6509ddb6d">More...</a><br /></td></tr>
+<tr class="separator:ga863625fd3252b5ebdadafaa6509ddb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4480fcd36a038f846788510219fe2ef7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga4480fcd36a038f846788510219fe2ef7">mutex_init_locked</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga4480fcd36a038f846788510219fe2ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a mutex object in a locked state.  <a href="#ga4480fcd36a038f846788510219fe2ef7">More...</a><br /></td></tr>
+<tr class="separator:ga4480fcd36a038f846788510219fe2ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga21c96cf5c177e4262fdc86157f44f5c0">mutex_cancel_init</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a mutex cancellation structure.  <a href="#ga21c96cf5c177e4262fdc86157f44f5c0">More...</a><br /></td></tr>
+<tr class="separator:ga21c96cf5c177e4262fdc86157f44f5c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadece3a92e8921da1468368dd041c40fe"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gadece3a92e8921da1468368dd041c40fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to get a mutex, non-blocking.  <a href="#gadece3a92e8921da1468368dd041c40fe">More...</a><br /></td></tr>
+<tr class="separator:gadece3a92e8921da1468368dd041c40fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac50891b4f3d2930d34c173567d739201"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gac50891b4f3d2930d34c173567d739201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <a href="#gac50891b4f3d2930d34c173567d739201">More...</a><br /></td></tr>
+<tr class="separator:gac50891b4f3d2930d34c173567d739201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43956ba0c5f17a235917a0f165c3c535"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
+<tr class="memdesc:ga43956ba0c5f17a235917a0f165c3c535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks a mutex, blocking.  <a href="#ga43956ba0c5f17a235917a0f165c3c535">More...</a><br /></td></tr>
+<tr class="separator:ga43956ba0c5f17a235917a0f165c3c535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05ccabe849d63b032f6317323da60187"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga05ccabe849d63b032f6317323da60187">mutex_unlock</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:ga05ccabe849d63b032f6317323da60187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex.  <a href="#ga05ccabe849d63b032f6317323da60187">More...</a><br /></td></tr>
+<tr class="separator:ga05ccabe849d63b032f6317323da60187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7d277fbba41acd77cb81fa52bc17b92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#gab7d277fbba41acd77cb81fa52bc17b92">mutex_unlock_and_sleep</a> (<a class="el" href="structmutex__t.html">mutex_t</a> *mutex)</td></tr>
+<tr class="memdesc:gab7d277fbba41acd77cb81fa52bc17b92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex and sends the current thread to sleep.  <a href="#gab7d277fbba41acd77cb81fa52bc17b92">More...</a><br /></td></tr>
+<tr class="separator:gab7d277fbba41acd77cb81fa52bc17b92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a> (<a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *mc)</td></tr>
+<tr class="memdesc:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancels a call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>.  <a href="#ga11d0c4f5c85caba5bea75de8c9c0b954">More...</a><br /></td></tr>
+<tr class="separator:ga11d0c4f5c85caba5bea75de8c9c0b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga96be0bfc33e7e113099c7546798bec99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga96be0bfc33e7e113099c7546798bec99">&#9670;&nbsp;</a></span>MUTEX_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MUTEX_INIT&#160;&#160;&#160;{ .queue = { .next = NULL } }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Static initializer for <a class="el" href="structmutex__t.html" title="Mutex structure. ">mutex_t</a>. </p>
+<p>This initializer is preferable to <a class="el" href="group__core__sync__mutex.html#ga863625fd3252b5ebdadafaa6509ddb6d" title="Initializes a mutex object. ">mutex_init()</a>. </p>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00224">224</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga11d0c4f5c85caba5bea75de8c9c0b954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11d0c4f5c85caba5bea75de8c9c0b954">&#9670;&nbsp;</a></span>mutex_cancel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mutex_cancel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *&#160;</td>
+          <td class="paramname"><em>mc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Cancels a call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mc</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> cancellation structure referring to the thread calling <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> and to the mutex to cancel the operation on</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function is considered internal. Out of tree users should be aware that breaking API changes or removal of this API without an deprecation period might happen.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mc</code> is used to cancel at most one call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>. (You can reinitialize the same memory to safely reuse it.) </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You <em><b>MUST NOT</b></em> call this function once the thread referred to by <code>mc</code> reuses the mutex object referred to by <code>mc</code> (not counting the call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> <code>mc</code> was used in). </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is safe to call this function from IRQ context, e.g. from a timer interrupt. </dd>
+<dd>
+It is safe to call this function more than once on the same <code>mc</code> while it is still valid (see the warning above). The first call will cancel the operation and subsequent calls will have no effect.</dd></dl>
+<p>If <code>thread</code> is currently running (or pending), a subsequent call from <code>thread</code> to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> will also fail</p>
+<p>Canonical use:</p>
+<div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> timeout_cb(<span class="keywordtype">void</span> *arg) {</div><div class="line">    <a class="code" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a>(arg);</div><div class="line">}</div><div class="line"></div><div class="line"><span class="keywordtype">int</span> <a class="code" href="group__sys__ztimer.html#gaf418c7bedd6246adfdcb1399aa72a75b">ztimer_mutex_lock_timeout</a>(<a class="code" href="structztimer__clock.html">ztimer_clock_t</a> *clock, <a class="code" href="structmutex__t.html">mutex_t</a> *mutex,</div><div class="line">                              uint32_t timeout)</div><div class="line">{</div><div class="line">    <a class="code" href="structmutex__cancel__t.html">mutex_cancel_t</a> mc = <a class="code" href="group__core__sync__mutex.html#ga21c96cf5c177e4262fdc86157f44f5c0">mutex_cancel_init</a>(mutex);</div><div class="line">    <a class="code" href="structztimer__t.html">ztimer_t</a> t = { .<a class="code" href="structztimer__t.html#a320594a37924b7d784242ff75ada6f92">callback</a> = timeout_cb, .arg = &amp;mc };</div><div class="line">    <a class="code" href="group__sys__ztimer.html#ga8934a79a89e35d58673418a1e4a2e69c">ztimer_set</a>(clock, &amp;t, timeout);</div><div class="line">    <span class="keywordflow">if</span> (<a class="code" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>(&amp;mc)) {</div><div class="line">        <span class="keywordflow">return</span> -<a class="code" href="group__cpu__atmega__common.html#ga9532d840ef91fd8e1ecc5d7ca7cbf212">ECANCELED</a>;</div><div class="line">    }</div><div class="line">    <a class="code" href="group__sys__ztimer.html#gadf7bdfdd20c4eaa767abd39efe6d5e50">ztimer_remove</a>(clock, &amp;t);</div><div class="line">    <span class="keywordflow">return</span> 0;</div><div class="line">}</div></div><!-- fragment --><p>In the above example a simple implementation of how to implement mutex locking with a timeout is given. There are two corner cases:</p>
+<ol type="1">
+<li>The call to <a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a> could occur <em>before</em> the call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a>. (E.g. for <code>timeout == 0</code>.)</li>
+<li>The call to <a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a> could occur right after the mutex was <em>successfully</em> obtained, but before <code><a class="el" href="group__sys__ztimer.html#gadf7bdfdd20c4eaa767abd39efe6d5e50" title="Remove a timer from a clock. ">ztimer_remove()</a></code> was executed.</li>
+</ol>
+<p>In the first corner case the cancellation is stored in <code>mc</code>. Hence, the subsequent call to <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> gets indeed canceled. In the second corner case the cancellation is also stored in <code>mc</code> but never used - the mutex cancellation structure <code>mc</code> is not allowed to be reused without reinitialization. </p>
+
+</div>
+</div>
+<a id="ga21c96cf5c177e4262fdc86157f44f5c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21c96cf5c177e4262fdc86157f44f5c0">&#9670;&nbsp;</a></span>mutex_cancel_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> mutex_cancel_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initialize a mutex cancellation structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutex</td><td>The mutex that the calling thread wants to lock </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The cancellation structure for use with <a class="el" href="group__core__sync__mutex.html#ga43956ba0c5f17a235917a0f165c3c535">mutex_lock_cancelable</a> and <a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is considered internal. Out of tree users should be aware that breaking API changes or removal of this API without an deprecation period might happen. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00277">277</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<a id="ga863625fd3252b5ebdadafaa6509ddb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga863625fd3252b5ebdadafaa6509ddb6d">&#9670;&nbsp;</a></span>mutex_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mutex_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a mutex object. </p>
+<p>For initialization of variables use MUTEX_INIT instead. Only use the function call for dynamically allocated mutexes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">mutex</td><td>pre-allocated mutex structure, must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00251">251</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<a id="ga4480fcd36a038f846788510219fe2ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4480fcd36a038f846788510219fe2ef7">&#9670;&nbsp;</a></span>mutex_init_locked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mutex_init_locked </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a mutex object in a locked state. </p>
+<p>For initialization of variables use MUTEX_INIT_LOCKED instead. Only use the function call for dynamically allocated mutexes. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">mutex</td><td>pre-allocated mutex structure, must not be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00262">262</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<a id="gac50891b4f3d2930d34c173567d739201"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac50891b4f3d2930d34c173567d739201">&#9670;&nbsp;</a></span>mutex_lock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void mutex_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locks a mutex, blocking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mutex</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> object to lock.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mutex</code> is not <code>NULL</code> </dd>
+<dd>
+<a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> at <code>mutex</code> has been initialized </dd>
+<dd>
+Must be called in thread context</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The mutex <code>is</code> locked and held by the calling thread. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00312">312</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<a id="ga43956ba0c5f17a235917a0f165c3c535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43956ba0c5f17a235917a0f165c3c535">&#9670;&nbsp;</a></span>mutex_lock_cancelable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mutex_lock_cancelable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__cancel__t.html">mutex_cancel_t</a> *&#160;</td>
+          <td class="paramname"><em>mc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Locks a mutex, blocking. </p>
+<p>This function can be canceled.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mc</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> cancellation structure to work on</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0</td><td>The mutex was locked by the caller </td></tr>
+    <tr><td class="paramname">-ECANCELED</td><td>The mutex was <em><b>NOT</b></em> locked, operation was canceled. See <a class="el" href="group__core__sync__mutex.html#ga11d0c4f5c85caba5bea75de8c9c0b954">mutex_cancel</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function is considered internal. Out of tree users should be aware that breaking API changes or removal of this API without an deprecation period might happen.</dd></dl>
+<dl class="section pre"><dt>Precondition</dt><dd>Must be called in thread context </dd>
+<dd>
+<code>mc</code> has been initialized with <a class="el" href="group__core__sync__mutex.html#ga21c96cf5c177e4262fdc86157f44f5c0">mutex_cancel_init</a> by the calling thread. </dd>
+<dd>
+<code>mc</code> has <em><b>NOT</b></em> been used for previous calls to this function. (Reinitialize before reusing!)</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The mutex referred to by <code>mc</code> is locked and held by the calling thread, unless <code>-ECANCELED</code> was returned. </dd></dl>
+
+</div>
+</div>
+<a id="gae431f4c9893728f5744c2c330824ff05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae431f4c9893728f5744c2c330824ff05">&#9670;&nbsp;</a></span>mutex_lock_internal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mutex_lock_internal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>block</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Internal function implementing <a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> and <a class="el" href="group__core__sync__mutex.html#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a>. </p>
+<p>Do not call this function, use <a class="el" href="group__core__sync__mutex.html#gac50891b4f3d2930d34c173567d739201">mutex_lock</a> or <a class="el" href="group__core__sync__mutex.html#gadece3a92e8921da1468368dd041c40fe">mutex_trylock</a> instead</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mutex</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> object to lock. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">block</td><td>Whether to block</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mutex</code> is not <code>NULL</code> </dd>
+<dd>
+<a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> at <code>mutex</code> has been initialized </dd>
+<dd>
+Must be called in thread context</dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>The mutex <code>is</code> locked and held by the calling thread.</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> obtained </td></tr>
+    <tr><td class="paramname">false</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> not obtained (only possible if <code>block</code> is <code>false</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gadece3a92e8921da1468368dd041c40fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadece3a92e8921da1468368dd041c40fe">&#9670;&nbsp;</a></span>mutex_trylock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int mutex_trylock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tries to get a mutex, non-blocking. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mutex</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> object to lock.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">1</td><td>if mutex was unlocked, now it is locked. </td></tr>
+    <tr><td class="paramname">0</td><td>if the mutex was locked.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mutex</code> is not <code>NULL</code> </dd>
+<dd>
+<a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> at <code>mutex</code> has been initialized </dd>
+<dd>
+Must be called in thread context </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mutex_8h_source.html#l00296">296</a> of file <a class="el" href="mutex_8h_source.html">mutex.h</a>.</p>
+
+</div>
+</div>
+<a id="ga05ccabe849d63b032f6317323da60187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05ccabe849d63b032f6317323da60187">&#9670;&nbsp;</a></span>mutex_unlock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mutex_unlock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unlocks the mutex. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mutex</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> object to unlock.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mutex</code> is not <code>NULL</code> </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>It is safe to unlock a mutex held by a different thread. </dd>
+<dd>
+It is safe to call this function from IRQ context. </dd></dl>
+
+</div>
+</div>
+<a id="gab7d277fbba41acd77cb81fa52bc17b92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7d277fbba41acd77cb81fa52bc17b92">&#9670;&nbsp;</a></span>mutex_unlock_and_sleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mutex_unlock_and_sleep </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmutex__t.html">mutex_t</a> *&#160;</td>
+          <td class="paramname"><em>mutex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unlocks the mutex and sends the current thread to sleep. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">mutex</td><td><a class="el" href="structMutex.html" title="Mutex struct within mqtt paho. ">Mutex</a> object to unlock. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>mutex</code> is not <code>NULL</code> </dd>
+<dd>
+Must be called in thread context. </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+    <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+        <ul>
+            <li class="footer">Generated on Wed Mar 12 2025 10:21:29 by <a href="http://www.doxygen.org/index.html">
+                       <img class="footer" src="doxygen.png" alt="doxygen"></a> 1.8.14</li>
+        </ul>
+    </div>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+    <script src="jquery.smartmenus.min.js"></script>
+    <script src="jquery.smartmenus.bootstrap.min.js"></script>
+    <script src="riot-doxy.js"></script>
+  </body>
+</html>
