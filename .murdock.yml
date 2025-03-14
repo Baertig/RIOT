@@ -22,7 +22,6 @@ artifacts:
 
 tasks:
   - name: checkout and execute tests
-    command: build.sh
     image: riot/murdock-scripts:latest
   - name: build docs
     image: docker-doxygen-doxygen
