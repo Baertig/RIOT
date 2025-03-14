@@ -26,3 +26,6 @@ tasks:
   - name: build docs
     image: docker-doxygen-doxygen
     command: /bin/sh -c "ls -la . && ls -la / && cd /murdock/RIOT && make doc && cp -R ./doc/doxygen/html ../doc-preview"
+  - name: remove local repo
+    image: riot/murdock-scripts:latest
+    command: rm -rf /murdock/RIOT
