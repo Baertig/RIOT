@@ -25,4 +25,4 @@ tasks:
     image: riot/murdock-scripts:latest
   - name: build docs
     image: docker-doxygen-doxygen
-    command: /bin/sh -c "cd /murdock/RIOT && make doc && cp -R ./doc/doxygen/html ../doc-preview"
+    command: /bin/sh -c "ls -la . && ls -la / && cd /murdock/RIOT && make doc && cp -R ./doc/doxygen/html ../doc-preview"
