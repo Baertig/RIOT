@@ -19,3 +19,11 @@ commit:
 artifacts:
   - output.txt
   - doc-preview/
+
+tasks:
+  - name: checkout and execute tests
+    command: build.sh
+    image: riot/murdock-scripts:latest
+  - name: build docs
+    image: docker-doxygen-doxygen
+    command: cd RIOT && make doc && cp -R ./doc/doxygen/html ../doc-preview
