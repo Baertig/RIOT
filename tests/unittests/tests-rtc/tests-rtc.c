@@ -242,16 +242,19 @@ static void test_mktime(void)
         .tm_wday =   0,
         .tm_yday =   1,
     };
+
+    tzset();
+
+    printf("Standard timezone: %s\n", tzname[0]);
+    printf("DST timezone: %s\n", tzname[1] ? tzname[1] : "none");
+    printf("Offset from UTC: %ld seconds\n", timezone);
+    printf("DST defined: %s\n", daylight ? "yes" : "no");
     /* This test will fail if mktime is applying timezone information
      * that is not 0 seconds offset from UTC (GMT) and therefore returning unixtime.
      * A usual reason for failure might be that nativ is run in a local not "UTC" timezone,
      * a "Fix" for this failure is setting the environment variable TZ to "UTC" */
     TEST_ASSERT_EQUAL_INT(1, mktime(&t));
 
-    printf("Standard timezone: %s\n", tzname[0]);
-    printf("DST timezone: %s\n", tzname[1] ? tzname[1] : "none");
-    printf("Offset from UTC: %ld seconds\n", timezone);
-    printf("DST defined: %s\n", daylight ? "yes" : "no");
 
     t  = (struct tm){
         .tm_sec  =  11,
