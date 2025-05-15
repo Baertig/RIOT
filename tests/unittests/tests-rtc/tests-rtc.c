@@ -13,6 +13,8 @@
  */
 #include <string.h>
 #include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "embUnit.h"
 
@@ -226,6 +228,9 @@ static void test_rtc_mktime(void)
 
 static void test_mktime(void)
 {
+    char *tz = getenv("TZ");
+    printf("TZ environment variable: %s\n", tz ? tz : "unset (system default)");
+
     /* second 1 of 1970 is defined 1 second of unixtime */
     struct tm t  = {
         .tm_sec  =  1,
@@ -242,6 +247,11 @@ static void test_mktime(void)
      * A usual reason for failure might be that nativ is run in a local not "UTC" timezone,
      * a "Fix" for this failure is setting the environment variable TZ to "UTC" */
     TEST_ASSERT_EQUAL_INT(1, mktime(&t));
+
+    printf("Standard timezone: %s\n", tzname[0]);
+    printf("DST timezone: %s\n", tzname[1] ? tzname[1] : "none");
+    printf("Offset from UTC: %ld seconds\n", timezone);
+    printf("DST defined: %s\n", daylight ? "yes" : "no");
 
     t  = (struct tm){
         .tm_sec  =  11,
